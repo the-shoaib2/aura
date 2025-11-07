@@ -11,13 +11,20 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@aura/ui": "workspace:*",
+    "@aura/design-system": "workspace:*",
+    "@aura/api-client": "workspace:*",
+    "@aura/hooks": "workspace:*",
+    "@aura/stores": "workspace:*",
+    "@aura/i18n": "workspace:*",
+    "@aura/db": "workspace:*",
     "@types/ot": "^0.0.8",
     "diff-match-patch": "^1.0.5",
+    "lucide-react": "^0.469.0",
     "next": "^16.0.0",
     "ot": "^0.0.15",
     "react": "^19.2.0",
-    "react-dom": "^19.1.0",
+    "react-dom": "^19.2.0",
+    "react-i18next": "catalog:frontend",
     "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
@@ -26,7 +33,10 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.38.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
     "typescript": "5.9.2"
   }
 }

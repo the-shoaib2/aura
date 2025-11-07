@@ -1,0 +1,12 @@
+{
+	"extends": "@aura/typescript-config/base.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"outDir": "dist",
+		"declaration": true,
+		"declarationMap": true,
+		"types": ["vitest/globals"]
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules", "dist"]
+}

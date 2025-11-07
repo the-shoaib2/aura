@@ -1,0 +1,18 @@
+{
+	"extends": "@aura/typescript-config/base.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"outDir": "dist",
+		"declaration": true,
+		"declarationMap": true,
+		"jsx": "react-jsx",
+		"types": ["vite/client", "vitest/globals"],
+		"paths": {
+			"@aura/design-system*": ["./src*"],
+			"@aura/hooks*": ["../hooks/src*"],
+			"@aura/utils*": ["../../../@aura/utils/src*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["node_modules", "dist"]
+}

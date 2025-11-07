@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Suspense } from "react";
+import "@aura/design-system/css";
 import "./globals.css";
-import { Navigation } from "../src/components/Navigation";
+import { Navigation } from "../components/Navigation";
+import { I18nProvider } from "../providers/I18nProvider";
+import { TopLoadingBar } from "../components/TopLoadingBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,10 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Navigation />
-        <main>{children}</main>
+        <I18nProvider>
+          <Suspense fallback={null}>
+            <TopLoadingBar />
+          </Suspense>
+          <Navigation />
+          <main>{children}</main>
+        </I18nProvider>
       </body>
     </html>
   );

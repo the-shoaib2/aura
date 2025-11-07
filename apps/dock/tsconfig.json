@@ -1,0 +1,25 @@
+{
+	"extends": "@aura/typescript-config/nextjs.json",
+	"compilerOptions": {
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./app/*"],
+			"@/components/*": ["./components/*"]
+		}
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"next-env.d.ts",
+		"next.config.js",
+		".next/types/**/*.ts",
+		"electron/**/*.ts",
+		"types/**/*.ts"
+	],
+	"exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+.vercel
+
+# Electron
+dist/
+*.log
+
+# Build
+*.js
+!next.config.js
+!postcss.config.js
+!tailwind.config.ts
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

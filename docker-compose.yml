@@ -39,7 +39,11 @@ services:
   gateway:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.gateway
+      dockerfile: docker/images/services/Dockerfile.gateway
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-gateway
     ports:
       - "3000:3000"
@@ -66,7 +70,11 @@ services:
   workflow-engine:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.workflow-engine
+      dockerfile: docker/images/services/Dockerfile.workflow-engine
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-workflow-engine
     ports:
       - "3001:3001"
@@ -98,7 +106,11 @@ services:
   webhook-handler:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.webhook-handler
+      dockerfile: docker/images/services/Dockerfile.webhook-handler
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-webhook-handler
     ports:
       - "3002:3002"
@@ -130,7 +142,11 @@ services:
   scheduler:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.scheduler
+      dockerfile: docker/images/services/Dockerfile.scheduler
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-scheduler
     ports:
       - "3003:3003"
@@ -162,7 +178,11 @@ services:
   notification:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.notification
+      dockerfile: docker/images/services/Dockerfile.notification
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-notification
     ports:
       - "3004:3004"
@@ -190,7 +210,11 @@ services:
   collaboration:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.collaboration
+      dockerfile: docker/images/services/Dockerfile.collaboration
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-collaboration
     ports:
       - "3005:3005"
@@ -214,7 +238,11 @@ services:
   agent:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.agent
+      dockerfile: docker/images/services/Dockerfile.agent
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-agent
     ports:
       - "3006:3006"
@@ -247,7 +275,11 @@ services:
   plugin:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.plugin
+      dockerfile: docker/images/services/Dockerfile.plugin
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-plugin
     ports:
       - "3007:3007"
@@ -266,7 +298,11 @@ services:
   registry:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.registry
+      dockerfile: docker/images/services/Dockerfile.registry
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-registry
     ports:
       - "3008:3008"
@@ -288,7 +324,11 @@ services:
   messaging:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.messaging
+      dockerfile: docker/images/services/Dockerfile.messaging
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-messaging
     ports:
       - "3009:3009"
@@ -318,7 +358,11 @@ services:
   analytics:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.analytics
+      dockerfile: docker/images/services/Dockerfile.analytics
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-analytics
     ports:
       - "3010:3010"
@@ -350,7 +394,11 @@ services:
   rag:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.rag
+      dockerfile: docker/images/services/Dockerfile.rag
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-rag
     ports:
       - "3011:3011"
@@ -380,7 +428,11 @@ services:
   vector:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.vector
+      dockerfile: docker/images/services/Dockerfile.vector
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-vector
     ports:
       - "3012:3012"
@@ -410,7 +462,11 @@ services:
   auth:
     build:
       context: .
-      dockerfile: deployments/docker/Dockerfile.auth
+      dockerfile: docker/images/services/Dockerfile.auth
+      args:
+        - NODE_VERSION=22.16.0
+        - AURA_VERSION=latest
+        - BASE_IMAGE=aura-base:latest
     container_name: aura-auth
     ports:
       - "3013:3013"
