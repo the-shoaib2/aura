@@ -1,7 +1,20 @@
 {
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ]
+	"eslint.workingDirectories": [
+		{
+			"mode": "auto"
+		}
+	],
+	"yaml.schemas": {},
+	"files.associations": {
+		"CODEOWNERS": "plaintext",
+		"**/.github/CODEOWNERS": "plaintext"
+	},
+	"[plaintext]": {
+		"editor.defaultFormatter": null
+	},
+	"yaml.validate": true,
+	"yaml.customTags": [],
+	"[yaml]": {
+		"editor.defaultFormatter": null
+	}
 }

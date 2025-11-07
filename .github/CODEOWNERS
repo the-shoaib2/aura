@@ -1,0 +1,62 @@
+# Code owners for AURA project
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Core packages
+packages/core/ @aura/core-team
+packages/db/ @aura/core-team
+packages/auth/ @aura/core-team
+packages/config/ @aura/core-team
+packages/common/ @aura/core-team
+packages/utils/ @aura/core-team
+packages/types/ @aura/core-team
+packages/crypto/ @aura/core-team
+
+# Services - Core
+services/workflow-engine/ @aura/core-team
+services/gateway/ @aura/core-team
+services/webhook-handler/ @aura/core-team
+services/scheduler/ @aura/core-team
+services/registry/ @aura/core-team
+services/collaboration/ @aura/core-team
+services/realtime/ @aura/core-team
+
+# Services - Auth
+services/auth/ @aura/core-team
+
+# Services - Agent
+services/agent/ @aura/core-team
+services/real-time-agent/ @aura/core-team
+
+# Services - Messaging & Notifications
+services/messaging/ @aura/core-team
+services/notification/ @aura/core-team
+
+# Services - Plugin System
+services/plugin/ @aura/core-team
+
+# Services - Analytics
+services/analytics/ @aura/core-team
+
+# Frontend
+apps/web/ @aura/frontend-team
+apps/docs/ @aura/frontend-team
+packages/ui/ @aura/frontend-team
+
+# AI/ML
+packages/ai/ @aura/ai-team
+packages/agent/ @aura/ai-team
+packages/voice/ @aura/ai-team
+services/rag/ @aura/ai-team
+services/vector/ @aura/ai-team
+
+# Plugins
+packages/plugins/ @aura/core-team
+
+# TypeScript & ESLint Configs
+packages/typescript-config/ @aura/core-team
+packages/eslint-config/ @aura/core-team
+
+# Infrastructure
+deployments/ @aura/devops-team
+.github/ @aura/devops-team
+scripts/ @aura/devops-team

@@ -1,0 +1,96 @@
+name: Bug Report
+description: Create a bug report to help us improve
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > ⚠️ This form is for reporting bugs only.
+        > ❌ Please do not use this form for general support, feature requests, or questions.
+        > 💬 For help and general inquiries, visit our [discussions](https://github.com/your-org/aura/discussions).
+        > ☁️ If you're experiencing issues with deployment or infrastructure-related problems, contact support directly.
+        ---
+        Thank you for helping us improve AURA!
+        To ensure we can address your report efficiently, please fill out all sections in English and provide as much detail as possible.
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: To Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen
+    validations:
+      required: true
+  - type: textarea
+    id: debug-info
+    attributes:
+      label: Debug Info
+      description: Include relevant logs, error messages, or stack traces
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: '## Environment'
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: ex. Ubuntu Linux 22.04, macOS 14.0, Windows 11
+    validations:
+      required: true
+  - type: input
+    id: aura-version
+    attributes:
+      label: AURA Version
+      placeholder: ex. 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: nodejs-version
+    attributes:
+      label: Node.js Version
+      placeholder: ex. 22.16.0
+    validations:
+      required: true
+  - type: dropdown
+    id: db
+    attributes:
+      label: Database
+      options:
+        - SQLite (default)
+        - PostgreSQL
+        - MySQL
+        - MariaDB
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: hosting
+    attributes:
+      label: Hosting
+      options:
+        - Docker
+        - Kubernetes
+        - Local development
+        - Cloud (AWS/GCP/Azure)
+      default: 2
+    validations:
+      required: true
+

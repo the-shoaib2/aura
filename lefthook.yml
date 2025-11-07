@@ -1,21 +1,21 @@
 pre-commit:
   commands:
     biome_check:
-      glob: 'packages/**/*.{js,ts,json}'
+      glob: '{packages,services,apps}/**/*.{js,ts,json}'
       run: pnpm biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
       stage_fixed: true
       skip:
         - merge
         - rebase
     prettier_check:
-      glob: 'packages/**/*.{vue,yml,md,css,scss}'
+      glob: '{packages,services,apps}/**/*.{vue,yml,md,css,scss}'
       run: pnpm prettier --write --ignore-unknown --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
       skip:
         - merge
         - rebase
     styles_check:
-      glob: 'packages/**/*.{scss,sass,vue}'
+      glob: '{packages,services,apps}/**/*.{scss,sass,vue}'
       run: pnpm lint:styles:fix
       skip:
         - merge

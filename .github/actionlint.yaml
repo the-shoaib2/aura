@@ -1,0 +1,6 @@
+self-hosted-runner:
+  labels:
+    - ubuntu-latest
+    - macos-latest
+    - windows-latest
+

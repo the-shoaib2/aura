@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Feature request
+    url: https://github.com/your-org/aura/discussions
+    about: Suggest an idea for this project
+  - name: Question / Problem
+    url: https://github.com/your-org/aura/discussions
+    about: Questions and problems with AURA
+  - name: AURA Security Vulnerability
+    url: https://github.com/your-org/aura/security/advisories/new
+    about: Learn about our Vulnerability Disclosure Policy
+
