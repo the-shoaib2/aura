@@ -1,38 +1,50 @@
 {
-  "name": "@aura/core",
-  "version": "0.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc --skipLibCheck 2>&1 | tee /tmp/core-build.log && (grep -q 'openai/src/core.ts' /tmp/core-build.log && echo 'Warning: Build completed with known openai dependency error' || true) || (grep -q 'openai/src/core.ts' /tmp/core-build.log && echo 'Warning: Build completed with known openai dependency error' && exit 0 || exit 1)",
-    "clean": "rimraf dist",
-    "check-types": "tsc --noEmit",
-    "lint": "eslint src --ext .ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@aura/types": "workspace:*",
-    "@aura/utils": "workspace:*",
-    "@aura/ai": "workspace:*",
-    "@aura/db": "workspace:*",
-    "@types/chokidar": "^2.1.7",
-    "bullmq": "^4.18.3",
-    "chokidar": "^4.0.3",
-    "express-rate-limit": "^8.2.1",
-    "ioredis": "^5.8.2",
-    "n8n-core": "^1.117.0",
-    "n8n-workflow": "^1.115.0",
-    "typeorm": "^0.3.20",
-    "vm2": "^3.10.0",
-    "node-cron": "^3.0.3"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.5",
-    "@types/form-data": "^2.5.2",
-    "@types/nock": "^11.1.0",
-    "@types/node": "^22.15.3",
-    "@types/node-cron": "^3.0.11",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.0.0"
-  }
+	"name": "@aura/core",
+	"version": "1.0.0",
+	"description": "Core functionality of AURA",
+	"main": "dist/index",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"clean": "rimraf dist .turbo",
+		"typecheck": "tsc --noEmit",
+		"build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+		"dev": "pnpm watch",
+		"format": "biome format --write .",
+		"format:check": "biome ci .",
+		"lint": "eslint . --quiet",
+		"lint:fix": "eslint . --fix",
+		"watch": "tsc-watch -p tsconfig.build.json --onCompilationComplete \"tsc-alias -p tsconfig.build.json\"",
+		"test": "jest",
+		"test:dev": "jest --watch"
+	},
+	"dependencies": {
+		"@aura/types": "workspace:*",
+		"@aura/utils": "workspace:*",
+		"@aura/ai": "workspace:*",
+		"@aura/db": "workspace:*",
+		"@aura/config": "workspace:*",
+		"@aura/constants": "workspace:*",
+		"@aura/errors": "workspace:*",
+		"@aura/plugins": "workspace:*",
+		"bullmq": "^4.18.3",
+		"chokidar": "catalog:",
+		"express-rate-limit": "^8.2.1",
+		"ioredis": "^5.8.2",
+		"n8n-workflow": "^1.0.0",
+		"typeorm": "^0.3.20",
+		"vm2": "^3.10.0",
+		"node-cron": "^3.0.3"
+	},
+	"devDependencies": {
+		"@aura/typescript-config": "workspace:*",
+		"@types/express": "catalog:",
+		"@types/node": "*",
+		"@types/node-cron": "^3.0.11",
+		"tsc-alias": "catalog:",
+		"tsc-watch": "catalog:",
+		"typescript": "catalog:"
+	}
 }

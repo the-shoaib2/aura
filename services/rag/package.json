@@ -9,7 +9,7 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
     "start": "node dist/index.js",
-    "dev": "ts-node --esm src/index.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "dependencies": {
     "@aura/ai": "workspace:*",
@@ -28,7 +28,7 @@
     "@types/node": "^20.12.7",
     "@types/pdf-parse": "^1.1.1",
     "rimraf": "^5.0.5",
-    "ts-node": "^10.9.2",
+    "tsx": "catalog:",
     "typescript": "^5.4.5"
   }
 }

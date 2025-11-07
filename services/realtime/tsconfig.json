@@ -1,13 +1,15 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "module": "ESNext",
-    "target": "ES2022",
-    "moduleResolution": "node",
-    "esModuleInterop": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+	"extends": "../../packages/@aura/typescript-config/base.json",
+	"compilerOptions": {
+		"outDir": "./dist",
+		"module": "ESNext",
+		"target": "ES2022",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noImplicitReturns": false
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
 }
-

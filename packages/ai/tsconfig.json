@@ -1,16 +1,14 @@
 {
-  "extends": "../../packages/typescript-config/base.json",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "module": "ESNext",
-    "target": "ES2022",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+	"extends": "@aura/typescript-config/base.json",
+	"compilerOptions": {
+		"rootDir": ".",
+		"types": ["node", "jest"],
+		"baseUrl": "src",
+		"tsBuildInfoFile": "dist/typecheck.tsbuildinfo"
+	},
+	"include": ["src/**/*.ts"],
+	"references": [
+		{ "path": "../@aura/utils/tsconfig.build.json" },
+		{ "path": "../@aura/types/tsconfig.build.json" }
+	]
 }

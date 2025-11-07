@@ -14,6 +14,10 @@ const tsJestOptions = {
 const isCoverageEnabled = process.env.COVERAGE_ENABLED === 'true';
 
 const esmDependencies = [
+	'pdfjs-dist',
+	'openid-client',
+	'oauth4webapi',
+	'jose',
 	// Add other ESM dependencies that need to be transformed here
 ];
 

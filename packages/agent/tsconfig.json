@@ -1,9 +1,18 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "outDir": "./dist"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+	"extends": "@aura/typescript-config/base.json",
+	"compilerOptions": {
+		"rootDir": ".",
+		"types": ["node", "jest"],
+		"baseUrl": "src",
+		"tsBuildInfoFile": "dist/typecheck.tsbuildinfo",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true
+	},
+	"include": ["src/**/*.ts"],
+	"references": [
+		{ "path": "../@aura/utils/tsconfig.build.json" },
+		{ "path": "../@aura/types/tsconfig.build.json" },
+		{ "path": "../@aura/ai/tsconfig.build.json" },
+		{ "path": "../@aura/voice/tsconfig.build.json" }
+	]
 }
-

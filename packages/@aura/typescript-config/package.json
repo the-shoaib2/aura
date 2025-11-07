@@ -1,0 +1,19 @@
+{
+	"name": "@aura/typescript-config",
+	"version": "1.0.0",
+	"type": "module",
+	"files": [
+		"base.json",
+		"tsconfig.build.json",
+		"nextjs.json",
+		"react-library.json"
+	],
+	"exports": {
+		"./base.json": "./base.json",
+		"./tsconfig.build.json": "./tsconfig.build.json",
+		"./nextjs.json": "./nextjs.json",
+		"./react-library.json": "./react-library.json",
+		"./*": "./*"
+	},
+	"license": "See LICENSE.md file in the root of the repository"
+}

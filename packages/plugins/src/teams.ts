@@ -1,13 +1,13 @@
-import { AuraPlugin } from './plugin';
+import { AuraPlugin } from '@aura/types';
 
 export class TeamsPlugin implements AuraPlugin {
-  name = 'teams';
+	name = 'teams';
 
-  async init() {
-    // Initialize Microsoft Teams connection
-  }
+	async init() {
+		// Initialize Microsoft Teams connection
+	}
 
-  async execute(params: any) {
-    // Execute Microsoft Teams action
-  }
+	async execute(params: any) {
+		// Execute Microsoft Teams action
+	}
 }

@@ -1,0 +1,14 @@
+{
+	"extends": ["./tsconfig.json"],
+	"compilerOptions": {
+		"composite": true,
+		"rootDir": "src",
+		"outDir": "dist",
+		"tsBuildInfoFile": "dist/build.tsbuildinfo",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"declaration": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["src/**/__tests__/**"]
+}

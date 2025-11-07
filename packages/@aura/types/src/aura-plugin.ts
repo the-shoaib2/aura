@@ -1,0 +1,10 @@
+/**
+ * AuraPlugin Interface
+ *
+ * Base interface for all AURA plugins
+ */
+export interface AuraPlugin {
+	name: string;
+	init(): Promise<void>;
+	execute(params: any): Promise<any>;
+}

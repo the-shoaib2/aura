@@ -1,32 +1,44 @@
 {
-  "name": "@aura/db",
-  "version": "0.0.1",
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "clean": "rimraf dist",
-    "check-types": "tsc --noEmit",
-    "lint": "eslint src --ext .ts",
-    "db:migrate": "ts-node --esm src/scripts/run-migrations.ts",
-    "db:revert": "ts-node --esm src/scripts/revert-migrations.ts",
-    "db:seed": "ts-node --esm src/seeds/seed-data.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.1",
-    "dotenv": "^16.4.5",
-    "reflect-metadata": "^0.2.2",
-    "sqlite3": "^5.1.7",
-    "pg": "^8.13.1",
-    "typeorm": "^0.3.20"
-  },
-  "devDependencies": {
-    "@types/node": "^20.12.7",
-    "rimraf": "^5.0.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
-  }
+	"name": "@aura/db",
+	"version": "1.0.0",
+	"scripts": {
+		"clean": "rimraf dist .turbo",
+		"dev": "pnpm watch",
+		"typecheck": "tsc --noEmit",
+		"build": "tsc -p tsconfig.build.json",
+		"format": "biome format --write .",
+		"format:check": "biome ci .",
+		"lint": "eslint . --quiet",
+		"lint:fix": "eslint . --fix",
+		"watch": "tsc -p tsconfig.build.json --watch",
+		"test": "jest",
+		"test:dev": "jest --watch",
+		"db:migrate": "ts-node --esm src/scripts/run-migrations.ts",
+		"db:revert": "ts-node --esm src/scripts/revert-migrations.ts",
+		"db:seed": "ts-node --esm src/seeds/seed-data.ts"
+	},
+	"main": "dist/index.js",
+	"module": "src/index.ts",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/**/*"
+	],
+	"dependencies": {
+		"@aura/config": "workspace:*",
+		"@aura/constants": "workspace:*",
+		"class-transformer": "^0.5.1",
+		"class-validator": "^0.14.1",
+		"reflect-metadata": "catalog:",
+		"sqlite3": "^5.1.7",
+		"pg": "^8.13.1",
+		"typeorm": "^0.3.20",
+		"uuid": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@aura/typescript-config": "workspace:*",
+		"@types/node": "*",
+		"ts-node": "^10.9.2",
+		"typescript": "catalog:"
+	}
 }

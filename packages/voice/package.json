@@ -1,27 +1,46 @@
 {
-  "name": "@aura/voice",
-  "version": "0.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@aura/utils": "workspace:*",
-    "@aura/types": "workspace:*",
-    "openai": "^4.104.0",
-    "elevenlabs-node": "^1.0.0",
-    "@google-cloud/text-to-speech": "^5.0.0",
-    "vosk": "^0.3.0",
-    "mediasoup": "^3.12.0",
-    "mediasoup-client": "^3.6.0",
-    "wav": "^1.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "^20.12.7",
-    "@types/wav": "^1.0.4",
-    "typescript": "^5.4.5"
-  }
+	"name": "@aura/voice",
+	"version": "1.0.0",
+	"description": "Voice functionality of AURA",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"clean": "rimraf dist .turbo",
+		"dev": "pnpm watch",
+		"typecheck": "tsc --noEmit",
+		"build": "tsc -p tsconfig.build.json",
+		"format": "biome format --write .",
+		"format:check": "biome ci .",
+		"lint": "eslint . --quiet",
+		"lint:fix": "eslint . --fix",
+		"watch": "tsc -p tsconfig.build.json --watch",
+		"test": "jest",
+		"test:dev": "jest --watch"
+	},
+	"files": [
+		"dist/**/*"
+	],
+	"dependencies": {
+		"@aura/utils": "workspace:*",
+		"@aura/types": "workspace:*",
+		"@aura/constants": "workspace:*",
+		"@aura/errors": "workspace:*",
+		"openai": "^4.104.0",
+		"elevenlabs-node": "^1.0.0",
+		"@google-cloud/text-to-speech": "^5.0.0",
+		"vosk": "^0.3.0",
+		"mediasoup": "^3.12.0",
+		"mediasoup-client": "^3.6.0",
+		"wav": "^1.0.2"
+	},
+	"devDependencies": {
+		"@aura/typescript-config": "workspace:*",
+		"@types/node": "*",
+		"@types/wav": "^1.0.4",
+		"jest": "catalog:",
+		"ts-jest": "catalog:",
+		"typescript": "catalog:"
+	},
+	"license": "See LICENSE.md file in the root of the repository"
 }
 

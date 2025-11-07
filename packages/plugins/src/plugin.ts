@@ -1,5 +1,2 @@
-export interface AuraPlugin {
-  name: string;
-  init(): Promise<void>;
-  execute(params: any): Promise<any>;
-}
+// Re-export from @aura/types to avoid circular dependency
+export type { AuraPlugin } from '@aura/types';

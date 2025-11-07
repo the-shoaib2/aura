@@ -12,7 +12,7 @@
 		"format": {},
 		"format:check": {},
 		"lint": {
-			"dependsOn": ["^build"]
+			"dependsOn": ["^build", "@aura/eslint-config#build"]
 		},
 		"lint:fix": {},
 		"lint:styles": {
