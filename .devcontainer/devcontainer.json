@@ -1,0 +1,63 @@
+{
+	"name": "AURA",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "aura-dev",
+	"workspaceFolder": "/workspace",
+	"mounts": [
+		"type=bind,source=${localWorkspaceFolder},target=/workspace,consistency=cached",
+		"type=bind,source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,consistency=cached"
+	],
+	"forwardPorts": [3000, 3008, 6379, 5432],
+	"portsAttributes": {
+		"3000": {
+			"label": "Gateway",
+			"onAutoForward": "notify"
+		},
+		"3008": {
+			"label": "Registry",
+			"onAutoForward": "silent"
+		},
+		"6379": {
+			"label": "Redis",
+			"onAutoForward": "silent"
+		},
+		"5432": {
+			"label": "PostgreSQL",
+			"onAutoForward": "silent"
+		}
+	},
+	"postCreateCommand": "pnpm install",
+	"postAttachCommand": "pnpm build",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"ms-vscode.vscode-typescript-next"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode"
+			}
+		},
+		"codespaces": {
+			"openFiles": ["README.md"]
+		}
+	},
+	"remoteUser": "node",
+	"remoteEnv": {
+		"DB_TYPE": "postgres",
+		"DB_HOST": "postgres",
+		"DB_PORT": "5432",
+		"DB_USER": "aura",
+		"DB_PASS": "aura_dev_password",
+		"DB_NAME": "aura",
+		"REDIS_HOST": "redis",
+		"REDIS_PORT": "6379",
+		"JWT_SECRET": "aura-dev-jwt-secret-key-min-32-characters",
+		"GATEWAY_URL": "http://gateway:3000",
+		"REGISTRY_URL": "http://registry:3008",
+		"NODE_ENV": "development"
+	}
+}
+

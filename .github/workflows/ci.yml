@@ -2,14 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, master ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main, develop, master ]
   workflow_dispatch:
 
+# Environment variables (like n8n)
 env:
   NODE_VERSION: '22'
   PNPM_VERSION: '10.0.0'
+  NODE_OPTIONS: '--max-old-space-size=6144'
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 

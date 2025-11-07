@@ -3,6 +3,10 @@
 
 set -e
 
+# Get the project root directory (parent of scripts directory)
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$PROJECT_ROOT"
+
 echo "🚀 Starting AURA Project..."
 echo ""
 
@@ -24,7 +28,7 @@ else
     echo "  docker run -d -p 6379:6379 --name redis redis:7-alpine"
     echo ""
     echo "After Redis is running, run this script again:"
-    echo "  ./START_PROJECT.sh"
+    echo "  ./scripts/START_PROJECT.sh"
     exit 1
 fi
 

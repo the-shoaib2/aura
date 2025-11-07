@@ -1,0 +1,89 @@
+version: '3.8'
+
+# AURA Development Setup
+# Simplified setup like n8n - single port access through gateway
+# All services accessible via gateway reverse proxy
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_NAME:-aura}
+      - POSTGRES_USER=${DB_USER:-aura}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-aura_dev_password}
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-aura}"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  registry:
+    build:
+      context: .
+      dockerfile: deployments/docker/Dockerfile.registry
+    environment:
+      - PORT=3008
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REGISTRY_URL=http://registry:3008
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - NODE_ENV=${NODE_ENV:-development}
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  gateway:
+    build:
+      context: .
+      dockerfile: deployments/docker/Dockerfile.gateway
+    ports:
+      - "3000:3000"  # Single port - all services accessed via gateway
+    environment:
+      - PORT=3000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - JWT_SECRET=${JWT_SECRET:-aura-dev-jwt-secret-key-min-32-characters}
+      - GATEWAY_URL=http://gateway:3000
+      - REGISTRY_URL=http://registry:3008
+      - CORS_ORIGIN=${CORS_ORIGIN:-http://localhost:3000}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - NODE_ENV=${NODE_ENV:-development}
+      # Database
+      - DB_TYPE=${DB_TYPE:-postgres}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=${DB_USER:-aura}
+      - DB_PASS=${DB_PASSWORD:-aura_dev_password}
+      - DB_NAME=${DB_NAME:-aura}
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      registry:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+

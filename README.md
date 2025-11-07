@@ -98,14 +98,86 @@ aura/
 
 ## Getting Started
 
-### Prerequisites
+### Quick Start (One Command - Just like n8n!)
+
+The fastest way to get started with AURA - just like n8n's simple approach:
+
+```bash
+# Single command to get started (creates config, builds, and starts)
+./scripts/quickstart.sh
+```
+
+**That's it!** AURA will be running at **http://localhost:3000**
+
+**Like :**
+- ✅ Single port access (3000) - all services through gateway
+- ✅ Simple environment variables (no complex config)
+- ✅ Automatic setup
+- ✅ Dev container support
+
+📖 **See [QUICK_START.md](./QUICK_START.md) for details**
+
+Or use Docker directly:
+
+```bash
+# Development setup (single port, like n8n)
+docker-compose -f docker-compose.dev.yml up -d
+
+# Or minimal setup
+docker-compose -f docker-compose.quickstart.yml up -d
+```
+
+### Full Installation (All Services)
+
+For the complete platform with all services:
+
+```bash
+# 1. Install (sets up everything)
+./scripts/install.sh
+
+# 2. Run (starts all services)
+./scripts/run.sh
+
+# 3. Stop (when you're done)
+./scripts/stop.sh
+```
+
+📖 **For detailed installation instructions, see [SIMPLE_INSTALL.md](./SIMPLE_INSTALL.md)**
+
+**Services will be available at:**
+- Gateway: http://localhost:3000
+- Workflow Engine: http://localhost:3001
+- Agent Service: http://localhost:3006
+- Registry: http://localhost:3008
+- Auth Service: http://localhost:3013
+
+**Useful commands:**
+```bash
+# View logs
+docker-compose logs -f
+
+# Stop all services
+docker-compose down
+
+# Restart a specific service
+docker-compose restart gateway
+
+# Check service status
+docker-compose ps
+```
+
+### Manual Installation (Development)
+
+For development without Docker:
+
+#### Prerequisites
 
 - Node.js >= 18
 - pnpm >= 10.0.0
 - Redis (for queue and caching)
 - PostgreSQL (for production) or SQLite (for development)
 
-### Installation
+#### Installation
 
 ```bash
 # Install dependencies

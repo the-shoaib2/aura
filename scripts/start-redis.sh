@@ -1,6 +1,10 @@
 #!/bin/bash
 # Quick Redis installation and start script for macOS
 
+# Get the project root directory (parent of scripts directory)
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$PROJECT_ROOT"
+
 echo "🔍 Checking for Redis..."
 
 # Check if Redis is already running

@@ -1,0 +1,16 @@
+coverage
+dist
+package.json
+pnpm-lock.yaml
+CHANGELOG.md
+# Ignored for now
+**/*.md
+# Handled by biome
+**/*.ts
+**/*.js
+**/*.json
+**/*.jsonc
+
+# Auto-generated
+**/components.d.ts
+
