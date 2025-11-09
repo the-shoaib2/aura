@@ -4,6 +4,29 @@
  * Organizes integrations into logical categories for easy discovery and management
  */
 
+// Export all category plugins
+export * from './system';
+export * from './network';
+export * from './ai';
+export * from './core';
+export * from './integration';
+export * from './dev';
+export * from './creative';
+export * from './analytics';
+export * from './security';
+export * from './automation';
+export * from './data';
+export * from './cloud';
+export * from './iot';
+export * from './communication';
+export * from './ui';
+export * from './map';
+export * from './finance';
+export * from './travel';
+export * from './util';
+export * from './game';
+export * from './experimental';
+
 export const INTEGRATION_CATEGORIES = {
 	COMMUNICATION: 'communication',
 	CRM: 'crm',
@@ -19,6 +42,7 @@ export const INTEGRATION_CATEGORIES = {
 	MARKETING: 'marketing',
 	WORKFLOW: 'workflow',
 	TRIGGERS: 'triggers',
+	SYSTEM: 'system',
 	FINANCE: 'finance',
 	HR: 'hr',
 	SUPPORT: 'support',
@@ -34,11 +58,11 @@ export const INTEGRATION_CATEGORIES = {
 	OTHER: 'other',
 } as const;
 
-export type IntegrationCategory =
+export type IntegrationCategoryType =
 	(typeof INTEGRATION_CATEGORIES)[keyof typeof INTEGRATION_CATEGORIES];
 
 export const CATEGORY_INFO: Record<
-	IntegrationCategory,
+	IntegrationCategoryType,
 	{ displayName: string; description: string; icon?: string }
 > = {
 	[INTEGRATION_CATEGORIES.COMMUNICATION]: {
@@ -110,6 +134,11 @@ export const CATEGORY_INFO: Record<
 		displayName: 'Triggers',
 		description: 'Webhooks, schedules, manual triggers',
 		icon: '⚡',
+	},
+	[INTEGRATION_CATEGORIES.SYSTEM]: {
+		displayName: 'System',
+		description: 'OS-level operations: file, mouse, keyboard, window, audio, network, etc.',
+		icon: '⚙️',
 	},
 	[INTEGRATION_CATEGORIES.FINANCE]: {
 		displayName: 'Finance',

@@ -39,7 +39,10 @@ export const envSchema = z.object({
 	REDIS_DB: z.string().transform(Number).pipe(z.number().int().nonnegative()).default('0'),
 
 	// JWT
-	JWT_SECRET: z.string().min(32),
+	JWT_SECRET: z
+		.string()
+		.min(32)
+		.default('aura-jwt-secret-key-change-in-production-min-32-characters-long'),
 	JWT_EXPIRES_IN: z.string().default('7d'),
 	JWT_REFRESH_SECRET: z.string().min(32).optional(),
 	JWT_REFRESH_EXPIRES_IN: z.string().default('30d'),

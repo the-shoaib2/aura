@@ -74,3 +74,5 @@ After generating an integration:
 5. Document the integration
 6. Register in the category index
 
+
+

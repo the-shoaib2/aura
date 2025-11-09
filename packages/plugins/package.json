@@ -15,7 +15,9 @@
 		"lint:fix": "eslint . --fix",
 		"watch": "tsc -p tsconfig.build.json --watch",
 		"test": "jest",
-		"test:dev": "jest --watch"
+		"test:dev": "jest --watch",
+		"manifest:generate": "ts-node scripts/generate-manifest.ts",
+		"manifest:stubs": "ts-node scripts/create-plugin-stubs.ts"
 	},
 	"files": [
 		"dist/**/*"

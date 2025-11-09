@@ -1,10 +1,5 @@
-import {
-  Entity,
-  Column,
-  Index,
-  OneToMany,
-  Unique,
-} from 'typeorm';
+import { Entity, Column, Index, OneToMany, Unique } from 'typeorm';
+import type { Relation } from 'typeorm';
 import { BaseEntity } from './base.entity.js';
 import { Session } from './Session.js';
 import { Workflow } from './Workflow.js';
@@ -16,25 +11,31 @@ import { Workflow } from './Workflow.js';
 @Entity({ name: 'users' })
 @Unique(['email'])
 export class User extends BaseEntity {
-  @Column({ length: 120 })
-  name!: string;
+	@Column({ length: 120 })
+	name!: string;
 
-  @Index()
-  @Column({ length: 160 })
-  email!: string;
+	@Index()
+	@Column({ length: 160 })
+	email!: string;
 
-  @Column({ name: 'hashed_password', length: 255 })
-  hashedPassword!: string;
+	@Column({ name: 'hashed_password', length: 255 })
+	hashedPassword!: string;
 
-  @Column({ name: 'role', default: 'user' })
-  role!: string;
+	@Column({ name: 'role', default: 'user' })
+	role!: string;
 
-  @Column({ name: 'is_active', default: true })
-  isActive!: boolean;
+	@Column({ name: 'is_active', default: true })
+	isActive!: boolean;
 
-  @OneToMany(() => Session, session => session.user)
-  sessions!: Session[];
+	@OneToMany(
+		() => Session,
+		(session) => session.user,
+	)
+	sessions!: Relation<Session[]>;
 
-  @OneToMany(() => Workflow, workflow => workflow.owner)
-  workflows!: Workflow[];
+	@OneToMany(
+		() => Workflow,
+		(workflow) => workflow.owner,
+	)
+	workflows!: Relation<Workflow[]>;
 }

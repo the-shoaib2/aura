@@ -6,7 +6,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"next dev -p 3001\" \"wait-on http://localhost:3001 && electron .\"",
+    "dev": "concurrently \"next dev -p 3001 --webpack\" \"wait-on http://localhost:3001 && electron .\"",
     "build": "npm run build:next && npm run build:electron",
     "build:next": "next build",
     "build:electron": "tsc -p electron/tsconfig.json",
@@ -59,7 +59,7 @@
       "app/**/*",
       "public/**/*",
       "package.json",
-      "next.config.js",
+      "next.config.cjs",
       "node_modules/next/**/*",
       "node_modules/react/**/*",
       "node_modules/react-dom/**/*",

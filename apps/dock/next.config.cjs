@@ -2,6 +2,8 @@
 const nextConfig = {
 	output: 'standalone',
 	transpilePackages: ['@aura/design-system'],
+	// Turbopack config (empty to silence warning, using webpack for now)
+	turbopack: {},
 	webpack: (config, { isServer }) => {
 		if (!isServer) {
 			config.resolve.fallback = {
@@ -15,4 +17,5 @@ const nextConfig = {
 	},
 };
 
-export default nextConfig;
+module.exports = nextConfig;
+

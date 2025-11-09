@@ -14,6 +14,9 @@ import type {
 	CredentialDefinition,
 	ExecutionResult,
 } from './integration.types';
+
+// Re-export types for use in other modules
+export type { ExecuteParams, IntegrationMetadata, IntegrationConfig, ExecutionResult };
 import { createLogger } from '@aura/utils';
 
 const logger = createLogger();
@@ -21,8 +24,8 @@ const logger = createLogger();
 export abstract class BaseIntegration implements AuraIntegration {
 	abstract metadata: IntegrationMetadata;
 	abstract actions?: ActionDefinition[];
-	abstract triggers?: TriggerDefinition[];
-	abstract credentials?: CredentialDefinition[];
+	triggers?: TriggerDefinition[];
+	credentials?: CredentialDefinition[];
 
 	protected config?: IntegrationConfig;
 	protected initialized = false;

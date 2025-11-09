@@ -1,0 +1,6100 @@
+{
+	"version": "1.0.0",
+	"generatedAt": "2025-11-08T14:17:57.519Z",
+	"totalPlugins": 201,
+	"categories": {
+		"system": {
+			"name": "system",
+			"displayName": "System & OS",
+			"description": "OS-level system plugins for file operations, hardware access, automation",
+			"plugins": [
+				"@system/file",
+				"@system/mouse",
+				"@system/keyboard",
+				"@system/window",
+				"@system/app",
+				"@system/audio",
+				"@system/network",
+				"@system/voice",
+				"@system/screen",
+				"@system/clipboard",
+				"@system/scheduler",
+				"@system/power",
+				"@system/notifications",
+				"@system/hardware",
+				"@system/shell",
+				"@system/security",
+				"@system/process",
+				"@system/update"
+			],
+			"count": 18
+		},
+		"network": {
+			"name": "network",
+			"displayName": "Internet & Network",
+			"description": "Network communication, HTTP, sockets, webhooks",
+			"plugins": [
+				"@network/http",
+				"@network/socket",
+				"@network/webhook",
+				"@network/dns",
+				"@network/proxy",
+				"@network/ftp",
+				"@network/vpn",
+				"@network/ping",
+				"@network/torrent",
+				"@network/cloudsync"
+			],
+			"count": 10
+		},
+		"ai": {
+			"name": "ai",
+			"displayName": "AI Core",
+			"description": "AI runtime engine, agents, memory, RAG, reasoning",
+			"plugins": [
+				"@ai/core",
+				"@ai/agent",
+				"@ai/memory",
+				"@ai/rag",
+				"@ai/prompt",
+				"@ai/reasoner",
+				"@ai/planner",
+				"@ai/tool",
+				"@ai/code",
+				"@ai/math",
+				"@ai/analyzer",
+				"@ai/vision",
+				"@ai/audio",
+				"@ai/video",
+				"@ai/translation",
+				"@ai/summarizer",
+				"@ai/speech",
+				"@ai/brain",
+				"@ai/autonomy"
+			],
+			"count": 19
+		},
+		"core": {
+			"name": "core",
+			"displayName": "Core System",
+			"description": "Core workflow, event bus, queue, logger, database",
+			"plugins": [
+				"@core/workflow",
+				"@core/eventbus",
+				"@core/queue",
+				"@core/logger",
+				"@core/crypto",
+				"@core/database",
+				"@core/cache",
+				"@core/config",
+				"@core/errors",
+				"@core/api",
+				"@core/metrics",
+				"@core/testing",
+				"@core/registry",
+				"@core/cli"
+			],
+			"count": 14
+		},
+		"integration": {
+			"name": "integration",
+			"displayName": "Integration",
+			"description": "External service integrations (GitHub, Slack, OpenAI, etc.)",
+			"plugins": [
+				"@integration/github",
+				"@integration/gitlab",
+				"@integration/notion",
+				"@integration/slack",
+				"@integration/discord",
+				"@integration/telegram",
+				"@integration/twitter",
+				"@integration/google",
+				"@integration/dropbox",
+				"@integration/aws",
+				"@integration/azure",
+				"@integration/vercel",
+				"@integration/openai",
+				"@integration/anthropic",
+				"@integration/gemini",
+				"@integration/mistral",
+				"@integration/localai",
+				"@integration/stripe",
+				"@integration/paypal",
+				"@integration/firebase",
+				"@integration/supabase",
+				"@integration/web3",
+				"@integration/ipfs"
+			],
+			"count": 23
+		},
+		"dev": {
+			"name": "dev",
+			"displayName": "Developer Tools",
+			"description": "Git, Docker, VSCode, build, test, CI/CD tools",
+			"plugins": [
+				"@dev/git",
+				"@dev/docker",
+				"@dev/vscode",
+				"@dev/build",
+				"@dev/test",
+				"@dev/ci",
+				"@dev/deploy",
+				"@dev/analyzer",
+				"@dev/lint",
+				"@dev/ai-coder"
+			],
+			"count": 10
+		},
+		"creative": {
+			"name": "creative",
+			"displayName": "Creative",
+			"description": "Image, music, video, 3D, design generation",
+			"plugins": [
+				"@creative/image",
+				"@creative/music",
+				"@creative/video",
+				"@creative/3d",
+				"@creative/text",
+				"@creative/design",
+				"@creative/prompt-art",
+				"@creative/meme"
+			],
+			"count": 8
+		},
+		"analytics": {
+			"name": "analytics",
+			"displayName": "Analytics & Insights",
+			"description": "Usage tracking, logs, AI metrics, dashboards",
+			"plugins": [
+				"@analytics/usage",
+				"@analytics/logs",
+				"@analytics/ai",
+				"@analytics/event",
+				"@analytics/system",
+				"@analytics/dashboard"
+			],
+			"count": 6
+		},
+		"security": {
+			"name": "security",
+			"displayName": "Security",
+			"description": "Auth, vault, permissions, audit, sandbox",
+			"plugins": [
+				"@security/auth",
+				"@security/vault",
+				"@security/permission",
+				"@security/audit",
+				"@security/sandbox",
+				"@security/network",
+				"@security/antivirus",
+				"@security/ai-guardian"
+			],
+			"count": 8
+		},
+		"automation": {
+			"name": "automation",
+			"displayName": "Automation",
+			"description": "Task automation, triggers, scripts, IFTTT",
+			"plugins": [
+				"@automation/task",
+				"@automation/trigger",
+				"@automation/script",
+				"@automation/ifttt",
+				"@automation/schedule",
+				"@automation/work"
+			],
+			"count": 6
+		},
+		"data": {
+			"name": "data",
+			"displayName": "Data & Database",
+			"description": "SQLite, Postgres, MySQL, MongoDB, Redis, vector DB",
+			"plugins": [
+				"@data/sqlite",
+				"@data/postgres",
+				"@data/mysql",
+				"@data/mongo",
+				"@data/redis",
+				"@data/elasticsearch",
+				"@data/vector",
+				"@data/csv",
+				"@data/api",
+				"@data/spreadsheet"
+			],
+			"count": 10
+		},
+		"cloud": {
+			"name": "cloud",
+			"displayName": "Cloud & DevOps",
+			"description": "Docker, Kubernetes, AWS, Azure, GCP",
+			"plugins": [
+				"@cloud/docker",
+				"@cloud/k8s",
+				"@cloud/vercel",
+				"@cloud/ci",
+				"@cloud/monitor",
+				"@cloud/aws",
+				"@cloud/azure",
+				"@cloud/gcp"
+			],
+			"count": 8
+		},
+		"iot": {
+			"name": "iot",
+			"displayName": "IoT",
+			"description": "Device registration, sensors, smart home, Arduino, Raspberry Pi",
+			"plugins": [
+				"@iot/device",
+				"@iot/sensor",
+				"@iot/home",
+				"@iot/camera",
+				"@iot/arduino",
+				"@iot/raspberrypi",
+				"@iot/robot",
+				"@iot/voice"
+			],
+			"count": 8
+		},
+		"communication": {
+			"name": "communication",
+			"displayName": "Communication",
+			"description": "Chat, Discord, Slack, Telegram, SMS, email, voice",
+			"plugins": [
+				"@chat/socket",
+				"@chat/discord",
+				"@chat/slack",
+				"@chat/telegram",
+				"@chat/sms",
+				"@chat/email",
+				"@chat/voice",
+				"@chat/assistant"
+			],
+			"count": 8
+		},
+		"ui": {
+			"name": "ui",
+			"displayName": "UI",
+			"description": "Dock, workflow builder, agent monitor, editor, terminal",
+			"plugins": [
+				"@ui/dock",
+				"@ui/workflow",
+				"@ui/agent",
+				"@ui/editor",
+				"@ui/terminal",
+				"@ui/inspector",
+				"@ui/settings",
+				"@ui/voice",
+				"@ui/analytics",
+				"@ui/theme"
+			],
+			"count": 10
+		},
+		"map": {
+			"name": "map",
+			"displayName": "Navigation & Map",
+			"description": "Geo location, Google Maps, OpenStreetMap, GPS",
+			"plugins": ["@map/location", "@map/google", "@map/openstreet", "@map/routing", "@map/gps"],
+			"count": 5
+		},
+		"finance": {
+			"name": "finance",
+			"displayName": "Finance & Crypto",
+			"description": "Crypto wallets, stocks, exchange, banking, payments",
+			"plugins": [
+				"@finance/crypto",
+				"@finance/stocks",
+				"@finance/exchange",
+				"@finance/banking",
+				"@finance/payments",
+				"@finance/invoice",
+				"@finance/tax"
+			],
+			"count": 7
+		},
+		"travel": {
+			"name": "travel",
+			"displayName": "Travel & Environment",
+			"description": "Flight search, hotel booking, weather, GPS",
+			"plugins": [
+				"@travel/flight",
+				"@travel/hotel",
+				"@travel/weather",
+				"@travel/location",
+				"@travel/maps"
+			],
+			"count": 5
+		},
+		"util": {
+			"name": "util",
+			"displayName": "Utility",
+			"description": "Time, string, math, random, parser, converter",
+			"plugins": [
+				"@util/time",
+				"@util/string",
+				"@util/math",
+				"@util/random",
+				"@util/parser",
+				"@util/converter"
+			],
+			"count": 6
+		},
+		"game": {
+			"name": "game",
+			"displayName": "Gaming & Simulation",
+			"description": "Gamepad control, game engine, NPC AI, automation",
+			"plugins": [
+				"@game/control",
+				"@game/engine",
+				"@game/ai",
+				"@game/automation",
+				"@game/simulation"
+			],
+			"count": 5
+		},
+		"experimental": {
+			"name": "experimental",
+			"displayName": "Experimental",
+			"description": "Quantum simulator, neural interface, drone, VR, AR, bio sensors",
+			"plugins": [
+				"@quantum/simulator",
+				"@neural/interface",
+				"@drone/control",
+				"@vr/interface",
+				"@ar/overlay",
+				"@bio/sensor",
+				"@ai/genome"
+			],
+			"count": 7
+		}
+	},
+	"plugins": {
+		"@system/file": {
+			"metadata": {
+				"name": "@system/file",
+				"displayName": "File",
+				"version": "1.0.0",
+				"description": "File read/write, move, delete, zip/unzip",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "file", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/file.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/mouse": {
+			"metadata": {
+				"name": "@system/mouse",
+				"displayName": "Mouse",
+				"version": "1.0.0",
+				"description": "Mouse automation",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "mouse", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/mouse.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.mouse",
+					"description": "Mouse control",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/keyboard": {
+			"metadata": {
+				"name": "@system/keyboard",
+				"displayName": "Keyboard",
+				"version": "1.0.0",
+				"description": "Keyboard simulation",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "keyboard", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/keyboard.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.keyboard",
+					"description": "Keyboard control",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/window": {
+			"metadata": {
+				"name": "@system/window",
+				"displayName": "Window",
+				"version": "1.0.0",
+				"description": "Window manager",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "window", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/window.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.window",
+					"description": "Window management",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/app": {
+			"metadata": {
+				"name": "@system/app",
+				"displayName": "App",
+				"version": "1.0.0",
+				"description": "App launcher/killer",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "app", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/app.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/audio": {
+			"metadata": {
+				"name": "@system/audio",
+				"displayName": "Audio",
+				"version": "1.0.0",
+				"description": "Speaker & mic control",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "audio", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/audio.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.audio",
+					"description": "Audio access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/network": {
+			"metadata": {
+				"name": "@system/network",
+				"displayName": "Network",
+				"version": "1.0.0",
+				"description": "WiFi, IP, VPN control",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "network", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/network.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Network access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/voice": {
+			"metadata": {
+				"name": "@system/voice",
+				"displayName": "Voice",
+				"version": "1.0.0",
+				"description": "Voice in/out",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "voice", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/voice.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.audio",
+					"description": "Audio access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/screen": {
+			"metadata": {
+				"name": "@system/screen",
+				"displayName": "Screen",
+				"version": "1.0.0",
+				"description": "Screenshot, record screen",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "screen", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/screen.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.screen",
+					"description": "Screen access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/clipboard": {
+			"metadata": {
+				"name": "@system/clipboard",
+				"displayName": "Clipboard",
+				"version": "1.0.0",
+				"description": "Clipboard access",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "clipboard", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/clipboard.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.clipboard",
+					"description": "Clipboard access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/scheduler": {
+			"metadata": {
+				"name": "@system/scheduler",
+				"displayName": "Scheduler",
+				"version": "1.0.0",
+				"description": "Time-based job triggers",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "scheduler", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/scheduler.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/power": {
+			"metadata": {
+				"name": "@system/power",
+				"displayName": "Power",
+				"version": "1.0.0",
+				"description": "Sleep, restart, shutdown",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "power", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/power.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.power",
+					"description": "Power management",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/notifications": {
+			"metadata": {
+				"name": "@system/notifications",
+				"displayName": "Notifications",
+				"version": "1.0.0",
+				"description": "Local system notifications",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "notifications", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/notifications.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.notification",
+					"description": "Notifications",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/hardware": {
+			"metadata": {
+				"name": "@system/hardware",
+				"displayName": "Hardware",
+				"version": "1.0.0",
+				"description": "Access GPU, CPU, RAM stats",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "hardware", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/hardware.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.hardware",
+					"description": "Hardware access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/shell": {
+			"metadata": {
+				"name": "@system/shell",
+				"displayName": "Shell",
+				"version": "1.0.0",
+				"description": "Safe command execution",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "shell", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/shell.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/security": {
+			"metadata": {
+				"name": "@system/security",
+				"displayName": "Security",
+				"version": "1.0.0",
+				"description": "File permissions, sandbox control",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "security", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/security.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.sandbox",
+					"description": "Security sandbox",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/process": {
+			"metadata": {
+				"name": "@system/process",
+				"displayName": "Process",
+				"version": "1.0.0",
+				"description": "Monitor system processes",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "process", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/process.ts"
+			},
+			"permissions": [
+				{
+					"type": "system.process",
+					"description": "Process management",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@system/update": {
+			"metadata": {
+				"name": "@system/update",
+				"displayName": "Update",
+				"version": "1.0.0",
+				"description": "Auto-update & patch installer",
+				"category": "system",
+				"type": "system",
+				"status": "stable",
+				"tags": ["system", "update", "system"],
+				"platforms": ["all"],
+				"architectures": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/system/update.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@network/http": {
+			"metadata": {
+				"name": "@network/http",
+				"displayName": "Http",
+				"version": "1.0.0",
+				"description": "Fetch, POST, REST calls",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "http", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/http.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/socket": {
+			"metadata": {
+				"name": "@network/socket",
+				"displayName": "Socket",
+				"version": "1.0.0",
+				"description": "Real-time socket connections",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "socket", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/socket.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/webhook": {
+			"metadata": {
+				"name": "@network/webhook",
+				"displayName": "Webhook",
+				"version": "1.0.0",
+				"description": "Inbound/outbound webhooks",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "webhook", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/webhook.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/dns": {
+			"metadata": {
+				"name": "@network/dns",
+				"displayName": "Dns",
+				"version": "1.0.0",
+				"description": "Domain lookup, resolve",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "dns", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/dns.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/proxy": {
+			"metadata": {
+				"name": "@network/proxy",
+				"displayName": "Proxy",
+				"version": "1.0.0",
+				"description": "Proxy routing",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "proxy", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/proxy.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/ftp": {
+			"metadata": {
+				"name": "@network/ftp",
+				"displayName": "Ftp",
+				"version": "1.0.0",
+				"description": "File transfer over FTP/SFTP",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "ftp", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/ftp.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/vpn": {
+			"metadata": {
+				"name": "@network/vpn",
+				"displayName": "Vpn",
+				"version": "1.0.0",
+				"description": "Manage VPN tunnels",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "vpn", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/vpn.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/ping": {
+			"metadata": {
+				"name": "@network/ping",
+				"displayName": "Ping",
+				"version": "1.0.0",
+				"description": "Connectivity test",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "ping", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/ping.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/torrent": {
+			"metadata": {
+				"name": "@network/torrent",
+				"displayName": "Torrent",
+				"version": "1.0.0",
+				"description": "Torrent download/upload manager",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "torrent", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/torrent.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@network/cloudsync": {
+			"metadata": {
+				"name": "@network/cloudsync",
+				"displayName": "Cloudsync",
+				"version": "1.0.0",
+				"description": "Sync workflows to cloud",
+				"category": "network",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["network", "cloudsync", "network"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/network/cloudsync.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP requests",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "Socket connections",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@ai/core": {
+			"metadata": {
+				"name": "@ai/core",
+				"displayName": "Core",
+				"version": "1.0.0",
+				"description": "Main AI runtime engine",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "core", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/core.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/agent": {
+			"metadata": {
+				"name": "@ai/agent",
+				"displayName": "Agent",
+				"version": "1.0.0",
+				"description": "Multi-agent system",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "agent", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/agent.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/memory": {
+			"metadata": {
+				"name": "@ai/memory",
+				"displayName": "Memory",
+				"version": "1.0.0",
+				"description": "Long/short term memory",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "memory", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/memory.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/rag": {
+			"metadata": {
+				"name": "@ai/rag",
+				"displayName": "Rag",
+				"version": "1.0.0",
+				"description": "Knowledge retrieval",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "rag", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/rag.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/prompt": {
+			"metadata": {
+				"name": "@ai/prompt",
+				"displayName": "Prompt",
+				"version": "1.0.0",
+				"description": "Prompt template engine",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "prompt", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/prompt.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/reasoner": {
+			"metadata": {
+				"name": "@ai/reasoner",
+				"displayName": "Reasoner",
+				"version": "1.0.0",
+				"description": "Logical reasoning unit",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "reasoner", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/reasoner.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/planner": {
+			"metadata": {
+				"name": "@ai/planner",
+				"displayName": "Planner",
+				"version": "1.0.0",
+				"description": "Task planner",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "planner", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/planner.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/tool": {
+			"metadata": {
+				"name": "@ai/tool",
+				"displayName": "Tool",
+				"version": "1.0.0",
+				"description": "Agent tool handler",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "tool", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/tool.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/code": {
+			"metadata": {
+				"name": "@ai/code",
+				"displayName": "Code",
+				"version": "1.0.0",
+				"description": "Code understanding/generation",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "code", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/code.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/math": {
+			"metadata": {
+				"name": "@ai/math",
+				"displayName": "Math",
+				"version": "1.0.0",
+				"description": "Math solver",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "math", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/math.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/analyzer": {
+			"metadata": {
+				"name": "@ai/analyzer",
+				"displayName": "Analyzer",
+				"version": "1.0.0",
+				"description": "Data analysis",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "analyzer", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/analyzer.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/vision": {
+			"metadata": {
+				"name": "@ai/vision",
+				"displayName": "Vision",
+				"version": "1.0.0",
+				"description": "Image understanding",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "vision", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/vision.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/audio": {
+			"metadata": {
+				"name": "@ai/audio",
+				"displayName": "Audio",
+				"version": "1.0.0",
+				"description": "Audio transcription/classification",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "audio", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/audio.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/video": {
+			"metadata": {
+				"name": "@ai/video",
+				"displayName": "Video",
+				"version": "1.0.0",
+				"description": "Video analysis",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "video", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/video.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/translation": {
+			"metadata": {
+				"name": "@ai/translation",
+				"displayName": "Translation",
+				"version": "1.0.0",
+				"description": "Multilingual translation",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "translation", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/translation.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/summarizer": {
+			"metadata": {
+				"name": "@ai/summarizer",
+				"displayName": "Summarizer",
+				"version": "1.0.0",
+				"description": "Document summarization",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "summarizer", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/summarizer.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/speech": {
+			"metadata": {
+				"name": "@ai/speech",
+				"displayName": "Speech",
+				"version": "1.0.0",
+				"description": "Speech to text / text to speech",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "speech", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/speech.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/brain": {
+			"metadata": {
+				"name": "@ai/brain",
+				"displayName": "Brain",
+				"version": "1.0.0",
+				"description": "Adaptive cognitive layer",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "brain", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/brain.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@ai/autonomy": {
+			"metadata": {
+				"name": "@ai/autonomy",
+				"displayName": "Autonomy",
+				"version": "1.0.0",
+				"description": "Self-learning adaptive agent",
+				"category": "ai",
+				"type": "ai",
+				"status": "beta",
+				"tags": ["ai", "autonomy", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ai/autonomy.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI execution",
+					"required": true
+				},
+				{
+					"type": "ai.memory",
+					"description": "Memory access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 2048
+			}
+		},
+		"@core/workflow": {
+			"metadata": {
+				"name": "@core/workflow",
+				"displayName": "Workflow",
+				"version": "1.0.0",
+				"description": "Visual workflow builder",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "workflow", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/workflow.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/eventbus": {
+			"metadata": {
+				"name": "@core/eventbus",
+				"displayName": "Eventbus",
+				"version": "1.0.0",
+				"description": "Internal event communication",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "eventbus", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/eventbus.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/queue": {
+			"metadata": {
+				"name": "@core/queue",
+				"displayName": "Queue",
+				"version": "1.0.0",
+				"description": "Background job manager",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "queue", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/queue.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/logger": {
+			"metadata": {
+				"name": "@core/logger",
+				"displayName": "Logger",
+				"version": "1.0.0",
+				"description": "Central log system",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "logger", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/logger.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/crypto": {
+			"metadata": {
+				"name": "@core/crypto",
+				"displayName": "Crypto",
+				"version": "1.0.0",
+				"description": "Encryption utilities",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "crypto", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/crypto.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/database": {
+			"metadata": {
+				"name": "@core/database",
+				"displayName": "Database",
+				"version": "1.0.0",
+				"description": "ORM, SQLite/Postgres handler",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "database", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/database.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/cache": {
+			"metadata": {
+				"name": "@core/cache",
+				"displayName": "Cache",
+				"version": "1.0.0",
+				"description": "Memory caching",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "cache", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/cache.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/config": {
+			"metadata": {
+				"name": "@core/config",
+				"displayName": "Config",
+				"version": "1.0.0",
+				"description": "Global config manager",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "config", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/config.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/errors": {
+			"metadata": {
+				"name": "@core/errors",
+				"displayName": "Errors",
+				"version": "1.0.0",
+				"description": "Error recovery & retry",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "errors", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/errors.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/api": {
+			"metadata": {
+				"name": "@core/api",
+				"displayName": "Api",
+				"version": "1.0.0",
+				"description": "Gateway layer",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "api", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/api.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/metrics": {
+			"metadata": {
+				"name": "@core/metrics",
+				"displayName": "Metrics",
+				"version": "1.0.0",
+				"description": "Performance analytics",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "metrics", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/metrics.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/testing": {
+			"metadata": {
+				"name": "@core/testing",
+				"displayName": "Testing",
+				"version": "1.0.0",
+				"description": "Plugin sandbox testing",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "testing", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/testing.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/registry": {
+			"metadata": {
+				"name": "@core/registry",
+				"displayName": "Registry",
+				"version": "1.0.0",
+				"description": "Plugin registry/loader",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "registry", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/registry.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@core/cli": {
+			"metadata": {
+				"name": "@core/cli",
+				"displayName": "Cli",
+				"version": "1.0.0",
+				"description": "Local CLI interface",
+				"category": "core",
+				"type": "system",
+				"status": "stable",
+				"tags": ["core", "cli", "core"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/core/cli.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@integration/github": {
+			"metadata": {
+				"name": "@integration/github",
+				"displayName": "Github",
+				"version": "1.0.0",
+				"description": "Repo automation",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "github", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/github.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/gitlab": {
+			"metadata": {
+				"name": "@integration/gitlab",
+				"displayName": "Gitlab",
+				"version": "1.0.0",
+				"description": "CI/CD control",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "gitlab", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/gitlab.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/notion": {
+			"metadata": {
+				"name": "@integration/notion",
+				"displayName": "Notion",
+				"version": "1.0.0",
+				"description": "Notion pages",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "notion", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/notion.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/slack": {
+			"metadata": {
+				"name": "@integration/slack",
+				"displayName": "Slack",
+				"version": "1.0.0",
+				"description": "Slack messages",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "slack", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/slack.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/discord": {
+			"metadata": {
+				"name": "@integration/discord",
+				"displayName": "Discord",
+				"version": "1.0.0",
+				"description": "Discord bots",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "discord", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/discord.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/telegram": {
+			"metadata": {
+				"name": "@integration/telegram",
+				"displayName": "Telegram",
+				"version": "1.0.0",
+				"description": "Telegram bots",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "telegram", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/telegram.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/twitter": {
+			"metadata": {
+				"name": "@integration/twitter",
+				"displayName": "Twitter",
+				"version": "1.0.0",
+				"description": "Tweet automation",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "twitter", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/twitter.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/google": {
+			"metadata": {
+				"name": "@integration/google",
+				"displayName": "Google",
+				"version": "1.0.0",
+				"description": "Drive, Sheets, Gmail",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "google", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/google.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/dropbox": {
+			"metadata": {
+				"name": "@integration/dropbox",
+				"displayName": "Dropbox",
+				"version": "1.0.0",
+				"description": "File cloud",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "dropbox", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/dropbox.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/aws": {
+			"metadata": {
+				"name": "@integration/aws",
+				"displayName": "Aws",
+				"version": "1.0.0",
+				"description": "AWS SDK tools",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "aws", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/aws.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/azure": {
+			"metadata": {
+				"name": "@integration/azure",
+				"displayName": "Azure",
+				"version": "1.0.0",
+				"description": "Azure cloud",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "azure", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/azure.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/vercel": {
+			"metadata": {
+				"name": "@integration/vercel",
+				"displayName": "Vercel",
+				"version": "1.0.0",
+				"description": "Deployments",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "vercel", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/vercel.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/openai": {
+			"metadata": {
+				"name": "@integration/openai",
+				"displayName": "Openai",
+				"version": "1.0.0",
+				"description": "OpenAI models",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "openai", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/openai.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/anthropic": {
+			"metadata": {
+				"name": "@integration/anthropic",
+				"displayName": "Anthropic",
+				"version": "1.0.0",
+				"description": "Claude models",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "anthropic", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/anthropic.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/gemini": {
+			"metadata": {
+				"name": "@integration/gemini",
+				"displayName": "Gemini",
+				"version": "1.0.0",
+				"description": "Google Gemini models",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "gemini", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/gemini.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/mistral": {
+			"metadata": {
+				"name": "@integration/mistral",
+				"displayName": "Mistral",
+				"version": "1.0.0",
+				"description": "Mistral local models",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "mistral", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/mistral.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/localai": {
+			"metadata": {
+				"name": "@integration/localai",
+				"displayName": "Localai",
+				"version": "1.0.0",
+				"description": "LLaMA, Ollama models",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "localai", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/localai.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/stripe": {
+			"metadata": {
+				"name": "@integration/stripe",
+				"displayName": "Stripe",
+				"version": "1.0.0",
+				"description": "Payments",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "stripe", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/stripe.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/paypal": {
+			"metadata": {
+				"name": "@integration/paypal",
+				"displayName": "Paypal",
+				"version": "1.0.0",
+				"description": "Invoices/payments",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "paypal", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/paypal.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/firebase": {
+			"metadata": {
+				"name": "@integration/firebase",
+				"displayName": "Firebase",
+				"version": "1.0.0",
+				"description": "Realtime DB",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "firebase", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/firebase.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/supabase": {
+			"metadata": {
+				"name": "@integration/supabase",
+				"displayName": "Supabase",
+				"version": "1.0.0",
+				"description": "Auth & DB",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "supabase", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/supabase.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/web3": {
+			"metadata": {
+				"name": "@integration/web3",
+				"displayName": "Web3",
+				"version": "1.0.0",
+				"description": "Ethereum, blockchain",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "web3", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/web3.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@integration/ipfs": {
+			"metadata": {
+				"name": "@integration/ipfs",
+				"displayName": "Ipfs",
+				"version": "1.0.0",
+				"description": "Decentralized storage",
+				"category": "integration",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["integration", "ipfs", "integration"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/integration/ipfs.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "HTTP API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@dev/git": {
+			"metadata": {
+				"name": "@dev/git",
+				"displayName": "Git",
+				"version": "1.0.0",
+				"description": "Local git commands",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "git", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/git.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/docker": {
+			"metadata": {
+				"name": "@dev/docker",
+				"displayName": "Docker",
+				"version": "1.0.0",
+				"description": "Container automation",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "docker", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/docker.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/vscode": {
+			"metadata": {
+				"name": "@dev/vscode",
+				"displayName": "Vscode",
+				"version": "1.0.0",
+				"description": "VSCode API automation",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "vscode", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/vscode.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/build": {
+			"metadata": {
+				"name": "@dev/build",
+				"displayName": "Build",
+				"version": "1.0.0",
+				"description": "Build manager",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "build", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/build.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/test": {
+			"metadata": {
+				"name": "@dev/test",
+				"displayName": "Test",
+				"version": "1.0.0",
+				"description": "Unit/integration tests",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "test", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/test.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/ci": {
+			"metadata": {
+				"name": "@dev/ci",
+				"displayName": "Ci",
+				"version": "1.0.0",
+				"description": "CI/CD pipelines",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "ci", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/ci.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/deploy": {
+			"metadata": {
+				"name": "@dev/deploy",
+				"displayName": "Deploy",
+				"version": "1.0.0",
+				"description": "Auto deploy tools",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "deploy", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/deploy.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/analyzer": {
+			"metadata": {
+				"name": "@dev/analyzer",
+				"displayName": "Analyzer",
+				"version": "1.0.0",
+				"description": "Code analysis",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "analyzer", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/analyzer.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/lint": {
+			"metadata": {
+				"name": "@dev/lint",
+				"displayName": "Lint",
+				"version": "1.0.0",
+				"description": "Lint fixer",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "lint", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/lint.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@dev/ai-coder": {
+			"metadata": {
+				"name": "@dev/ai-coder",
+				"displayName": "Ai Coder",
+				"version": "1.0.0",
+				"description": "AI code assistant",
+				"category": "dev",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["dev", "ai-coder", "dev"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/dev/ai-coder.ts"
+			},
+			"permissions": [
+				{
+					"type": "file.read",
+					"description": "Read files",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Write files",
+					"required": true
+				},
+				{
+					"type": "system.shell",
+					"description": "Shell access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"fileSystemAccess": true
+			}
+		},
+		"@creative/image": {
+			"metadata": {
+				"name": "@creative/image",
+				"displayName": "Image",
+				"version": "1.0.0",
+				"description": "Image generation",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "image", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/image.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@creative/music": {
+			"metadata": {
+				"name": "@creative/music",
+				"displayName": "Music",
+				"version": "1.0.0",
+				"description": "Music generation",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "music", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/music.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@creative/video": {
+			"metadata": {
+				"name": "@creative/video",
+				"displayName": "Video",
+				"version": "1.0.0",
+				"description": "Video editing",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "video", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/video.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@creative/3d": {
+			"metadata": {
+				"name": "@creative/3d",
+				"displayName": "3d",
+				"version": "1.0.0",
+				"description": "3D model rendering",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "3d", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/3d.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@creative/text": {
+			"metadata": {
+				"name": "@creative/text",
+				"displayName": "Text",
+				"version": "1.0.0",
+				"description": "Story, script, or copywriting",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "text", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/text.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@creative/design": {
+			"metadata": {
+				"name": "@creative/design",
+				"displayName": "Design",
+				"version": "1.0.0",
+				"description": "Auto UI/UX generation",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "design", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/design.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@creative/prompt-art": {
+			"metadata": {
+				"name": "@creative/prompt-art",
+				"displayName": "Prompt Art",
+				"version": "1.0.0",
+				"description": "AI art prompts",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "prompt-art", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/prompt-art.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@creative/meme": {
+			"metadata": {
+				"name": "@creative/meme",
+				"displayName": "Meme",
+				"version": "1.0.0",
+				"description": "Meme generator",
+				"category": "creative",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["creative", "meme", "creative", "ai"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/creative/meme.ts"
+			},
+			"permissions": [
+				{
+					"type": "ai.execute",
+					"description": "AI generation",
+					"required": true
+				},
+				{
+					"type": "file.write",
+					"description": "Save generated content",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"memoryLimit": 4096
+			}
+		},
+		"@analytics/usage": {
+			"metadata": {
+				"name": "@analytics/usage",
+				"displayName": "Usage",
+				"version": "1.0.0",
+				"description": "Track user stats",
+				"category": "analytics",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["analytics", "usage", "analytics"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/analytics/usage.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read analytics data",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write analytics data",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@analytics/logs": {
+			"metadata": {
+				"name": "@analytics/logs",
+				"displayName": "Logs",
+				"version": "1.0.0",
+				"description": "Collect logs",
+				"category": "analytics",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["analytics", "logs", "analytics"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/analytics/logs.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read analytics data",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write analytics data",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@analytics/ai": {
+			"metadata": {
+				"name": "@analytics/ai",
+				"displayName": "Ai",
+				"version": "1.0.0",
+				"description": "Agent performance metrics",
+				"category": "analytics",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["analytics", "ai", "analytics"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/analytics/ai.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read analytics data",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write analytics data",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@analytics/event": {
+			"metadata": {
+				"name": "@analytics/event",
+				"displayName": "Event",
+				"version": "1.0.0",
+				"description": "Event heatmaps",
+				"category": "analytics",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["analytics", "event", "analytics"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/analytics/event.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read analytics data",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write analytics data",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@analytics/system": {
+			"metadata": {
+				"name": "@analytics/system",
+				"displayName": "System",
+				"version": "1.0.0",
+				"description": "CPU/RAM usage tracker",
+				"category": "analytics",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["analytics", "system", "analytics"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/analytics/system.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read analytics data",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write analytics data",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@analytics/dashboard": {
+			"metadata": {
+				"name": "@analytics/dashboard",
+				"displayName": "Dashboard",
+				"version": "1.0.0",
+				"description": "Data visualization tools",
+				"category": "analytics",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["analytics", "dashboard", "analytics"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/analytics/dashboard.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read analytics data",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write analytics data",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@security/auth": {
+			"metadata": {
+				"name": "@security/auth",
+				"displayName": "Auth",
+				"version": "1.0.0",
+				"description": "JWT, OAuth2, MFA",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "auth", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/auth.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": true
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": false
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@security/vault": {
+			"metadata": {
+				"name": "@security/vault",
+				"displayName": "Vault",
+				"version": "1.0.0",
+				"description": "Encrypted credential store",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "vault", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/vault.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": false
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": true
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@security/permission": {
+			"metadata": {
+				"name": "@security/permission",
+				"displayName": "Permission",
+				"version": "1.0.0",
+				"description": "Role-based access",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "permission", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/permission.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": false
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": false
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@security/audit": {
+			"metadata": {
+				"name": "@security/audit",
+				"displayName": "Audit",
+				"version": "1.0.0",
+				"description": "Security audit log",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "audit", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/audit.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": false
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": false
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@security/sandbox": {
+			"metadata": {
+				"name": "@security/sandbox",
+				"displayName": "Sandbox",
+				"version": "1.0.0",
+				"description": "Plugin sandbox manager",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "sandbox", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/sandbox.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": false
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": false
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@security/network": {
+			"metadata": {
+				"name": "@security/network",
+				"displayName": "Network",
+				"version": "1.0.0",
+				"description": "Firewall, proxy, port scanning",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "network", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/network.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": false
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": false
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@security/antivirus": {
+			"metadata": {
+				"name": "@security/antivirus",
+				"displayName": "Antivirus",
+				"version": "1.0.0",
+				"description": "Local file scanning",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "antivirus", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/antivirus.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": false
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": false
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@security/ai-guardian": {
+			"metadata": {
+				"name": "@security/ai-guardian",
+				"displayName": "Ai Guardian",
+				"version": "1.0.0",
+				"description": "AI behavior monitor",
+				"category": "security",
+				"type": "system",
+				"status": "stable",
+				"tags": ["security", "ai-guardian", "security"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/security/ai-guardian.ts"
+			},
+			"permissions": [
+				{
+					"type": "security.auth",
+					"description": "Authentication",
+					"required": false
+				},
+				{
+					"type": "security.vault",
+					"description": "Vault access",
+					"required": false
+				},
+				{
+					"type": "security.sandbox",
+					"description": "Sandbox control",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "strict"
+			}
+		},
+		"@automation/task": {
+			"metadata": {
+				"name": "@automation/task",
+				"displayName": "Task",
+				"version": "1.0.0",
+				"description": "Run tasks periodically",
+				"category": "automation",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["automation", "task", "automation"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/automation/task.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@automation/trigger": {
+			"metadata": {
+				"name": "@automation/trigger",
+				"displayName": "Trigger",
+				"version": "1.0.0",
+				"description": "Conditional automation",
+				"category": "automation",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["automation", "trigger", "automation"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/automation/trigger.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@automation/script": {
+			"metadata": {
+				"name": "@automation/script",
+				"displayName": "Script",
+				"version": "1.0.0",
+				"description": "Run JS/Python/Lua scripts",
+				"category": "automation",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["automation", "script", "automation"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/automation/script.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@automation/ifttt": {
+			"metadata": {
+				"name": "@automation/ifttt",
+				"displayName": "Ifttt",
+				"version": "1.0.0",
+				"description": "If-this-then-that system",
+				"category": "automation",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["automation", "ifttt", "automation"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/automation/ifttt.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@automation/schedule": {
+			"metadata": {
+				"name": "@automation/schedule",
+				"displayName": "Schedule",
+				"version": "1.0.0",
+				"description": "Calendar automation",
+				"category": "automation",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["automation", "schedule", "automation"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/automation/schedule.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@automation/work": {
+			"metadata": {
+				"name": "@automation/work",
+				"displayName": "Work",
+				"version": "1.0.0",
+				"description": "Workplace macros",
+				"category": "automation",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["automation", "work", "automation"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/automation/work.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@data/sqlite": {
+			"metadata": {
+				"name": "@data/sqlite",
+				"displayName": "Sqlite",
+				"version": "1.0.0",
+				"description": "Local DB",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "sqlite", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/sqlite.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": false
+			}
+		},
+		"@data/postgres": {
+			"metadata": {
+				"name": "@data/postgres",
+				"displayName": "Postgres",
+				"version": "1.0.0",
+				"description": "Postgres connection",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "postgres", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/postgres.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@data/mysql": {
+			"metadata": {
+				"name": "@data/mysql",
+				"displayName": "Mysql",
+				"version": "1.0.0",
+				"description": "MySQL connection",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "mysql", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/mysql.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@data/mongo": {
+			"metadata": {
+				"name": "@data/mongo",
+				"displayName": "Mongo",
+				"version": "1.0.0",
+				"description": "MongoDB",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "mongo", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/mongo.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@data/redis": {
+			"metadata": {
+				"name": "@data/redis",
+				"displayName": "Redis",
+				"version": "1.0.0",
+				"description": "Cache DB",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "redis", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/redis.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@data/elasticsearch": {
+			"metadata": {
+				"name": "@data/elasticsearch",
+				"displayName": "Elasticsearch",
+				"version": "1.0.0",
+				"description": "Search index",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "elasticsearch", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/elasticsearch.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@data/vector": {
+			"metadata": {
+				"name": "@data/vector",
+				"displayName": "Vector",
+				"version": "1.0.0",
+				"description": "Embedding vector DB",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "vector", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/vector.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@data/csv": {
+			"metadata": {
+				"name": "@data/csv",
+				"displayName": "Csv",
+				"version": "1.0.0",
+				"description": "CSV parsing",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "csv", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/csv.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": false
+			}
+		},
+		"@data/api": {
+			"metadata": {
+				"name": "@data/api",
+				"displayName": "Api",
+				"version": "1.0.0",
+				"description": "Data API connector",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "api", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/api.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@data/spreadsheet": {
+			"metadata": {
+				"name": "@data/spreadsheet",
+				"displayName": "Spreadsheet",
+				"version": "1.0.0",
+				"description": "Spreadsheet parser",
+				"category": "data",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["data", "spreadsheet", "data", "database"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/data/spreadsheet.ts"
+			},
+			"permissions": [
+				{
+					"type": "database.read",
+					"description": "Read database",
+					"required": true
+				},
+				{
+					"type": "database.write",
+					"description": "Write database",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/docker": {
+			"metadata": {
+				"name": "@cloud/docker",
+				"displayName": "Docker",
+				"version": "1.0.0",
+				"description": "Docker manager",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "docker", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/docker.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/k8s": {
+			"metadata": {
+				"name": "@cloud/k8s",
+				"displayName": "K8s",
+				"version": "1.0.0",
+				"description": "Kubernetes automation",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "k8s", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/k8s.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/vercel": {
+			"metadata": {
+				"name": "@cloud/vercel",
+				"displayName": "Vercel",
+				"version": "1.0.0",
+				"description": "Deploy and logs",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "vercel", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/vercel.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/ci": {
+			"metadata": {
+				"name": "@cloud/ci",
+				"displayName": "Ci",
+				"version": "1.0.0",
+				"description": "CI/CD workflows",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "ci", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/ci.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/monitor": {
+			"metadata": {
+				"name": "@cloud/monitor",
+				"displayName": "Monitor",
+				"version": "1.0.0",
+				"description": "Uptime monitoring",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "monitor", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/monitor.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/aws": {
+			"metadata": {
+				"name": "@cloud/aws",
+				"displayName": "Aws",
+				"version": "1.0.0",
+				"description": "AWS Lambda, EC2",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "aws", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/aws.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/azure": {
+			"metadata": {
+				"name": "@cloud/azure",
+				"displayName": "Azure",
+				"version": "1.0.0",
+				"description": "Azure management",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "azure", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/azure.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@cloud/gcp": {
+			"metadata": {
+				"name": "@cloud/gcp",
+				"displayName": "Gcp",
+				"version": "1.0.0",
+				"description": "Google Cloud services",
+				"category": "cloud",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["cloud", "gcp", "cloud", "devops"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/cloud/gcp.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Cloud API access",
+					"required": true
+				},
+				{
+					"type": "cloud.deploy",
+					"description": "Deployment access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/device": {
+			"metadata": {
+				"name": "@iot/device",
+				"displayName": "Device",
+				"version": "1.0.0",
+				"description": "Device registration",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "device", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/device.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/sensor": {
+			"metadata": {
+				"name": "@iot/sensor",
+				"displayName": "Sensor",
+				"version": "1.0.0",
+				"description": "Sensor data read",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "sensor", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/sensor.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/home": {
+			"metadata": {
+				"name": "@iot/home",
+				"displayName": "Home",
+				"version": "1.0.0",
+				"description": "Smart home control",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "home", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/home.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/camera": {
+			"metadata": {
+				"name": "@iot/camera",
+				"displayName": "Camera",
+				"version": "1.0.0",
+				"description": "IP camera feed",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "camera", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/camera.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/arduino": {
+			"metadata": {
+				"name": "@iot/arduino",
+				"displayName": "Arduino",
+				"version": "1.0.0",
+				"description": "Arduino board connector",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "arduino", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/arduino.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/raspberrypi": {
+			"metadata": {
+				"name": "@iot/raspberrypi",
+				"displayName": "Raspberrypi",
+				"version": "1.0.0",
+				"description": "Pi GPIO control",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "raspberrypi", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/raspberrypi.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/robot": {
+			"metadata": {
+				"name": "@iot/robot",
+				"displayName": "Robot",
+				"version": "1.0.0",
+				"description": "Robot motion control",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "robot", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/robot.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@iot/voice": {
+			"metadata": {
+				"name": "@iot/voice",
+				"displayName": "Voice",
+				"version": "1.0.0",
+				"description": "Voice-controlled device",
+				"category": "iot",
+				"type": "integration",
+				"status": "beta",
+				"tags": ["iot", "voice", "iot"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/iot/voice.ts"
+			},
+			"permissions": [
+				{
+					"type": "iot.device",
+					"description": "Device access",
+					"required": true
+				},
+				{
+					"type": "network.http",
+					"description": "Device communication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/socket": {
+			"metadata": {
+				"name": "@chat/socket",
+				"displayName": "Socket",
+				"version": "1.0.0",
+				"description": "Real-time chat",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "socket", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/socket.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/discord": {
+			"metadata": {
+				"name": "@chat/discord",
+				"displayName": "Discord",
+				"version": "1.0.0",
+				"description": "Discord chat bot",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "discord", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/discord.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/slack": {
+			"metadata": {
+				"name": "@chat/slack",
+				"displayName": "Slack",
+				"version": "1.0.0",
+				"description": "Slack messages",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "slack", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/slack.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/telegram": {
+			"metadata": {
+				"name": "@chat/telegram",
+				"displayName": "Telegram",
+				"version": "1.0.0",
+				"description": "Telegram bot",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "telegram", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/telegram.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/sms": {
+			"metadata": {
+				"name": "@chat/sms",
+				"displayName": "Sms",
+				"version": "1.0.0",
+				"description": "Twilio integration",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "sms", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/sms.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/email": {
+			"metadata": {
+				"name": "@chat/email",
+				"displayName": "Email",
+				"version": "1.0.0",
+				"description": "SMTP/IMAP handler",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "email", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/email.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/voice": {
+			"metadata": {
+				"name": "@chat/voice",
+				"displayName": "Voice",
+				"version": "1.0.0",
+				"description": "Voice chat agent",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "voice", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/voice.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@chat/assistant": {
+			"metadata": {
+				"name": "@chat/assistant",
+				"displayName": "Assistant",
+				"version": "1.0.0",
+				"description": "Full conversational AI layer",
+				"category": "communication",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["chat", "assistant", "communication", "chat"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/communication/assistant.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "API access",
+					"required": true
+				},
+				{
+					"type": "network.socket",
+					"description": "WebSocket access",
+					"required": false
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@ui/dock": {
+			"metadata": {
+				"name": "@ui/dock",
+				"displayName": "Dock",
+				"version": "1.0.0",
+				"description": "Floating dock (Electron)",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "dock", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/dock.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/workflow": {
+			"metadata": {
+				"name": "@ui/workflow",
+				"displayName": "Workflow",
+				"version": "1.0.0",
+				"description": "Visual flow builder",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "workflow", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/workflow.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/agent": {
+			"metadata": {
+				"name": "@ui/agent",
+				"displayName": "Agent",
+				"version": "1.0.0",
+				"description": "Agent monitor",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "agent", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/agent.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/editor": {
+			"metadata": {
+				"name": "@ui/editor",
+				"displayName": "Editor",
+				"version": "1.0.0",
+				"description": "Code editor",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "editor", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/editor.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/terminal": {
+			"metadata": {
+				"name": "@ui/terminal",
+				"displayName": "Terminal",
+				"version": "1.0.0",
+				"description": "Console interface",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "terminal", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/terminal.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/inspector": {
+			"metadata": {
+				"name": "@ui/inspector",
+				"displayName": "Inspector",
+				"version": "1.0.0",
+				"description": "Debug inspector",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "inspector", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/inspector.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/settings": {
+			"metadata": {
+				"name": "@ui/settings",
+				"displayName": "Settings",
+				"version": "1.0.0",
+				"description": "Preferences manager",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "settings", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/settings.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/voice": {
+			"metadata": {
+				"name": "@ui/voice",
+				"displayName": "Voice",
+				"version": "1.0.0",
+				"description": "Voice command panel",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "voice", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/voice.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/analytics": {
+			"metadata": {
+				"name": "@ui/analytics",
+				"displayName": "Analytics",
+				"version": "1.0.0",
+				"description": "Visualization dashboard",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "analytics", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/analytics.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@ui/theme": {
+			"metadata": {
+				"name": "@ui/theme",
+				"displayName": "Theme",
+				"version": "1.0.0",
+				"description": "Theme manager",
+				"category": "ui",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["ui", "theme", "ui", "frontend"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/ui/theme.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": false,
+				"isolation": "permissive"
+			}
+		},
+		"@map/location": {
+			"metadata": {
+				"name": "@map/location",
+				"displayName": "Location",
+				"version": "1.0.0",
+				"description": "Geo location",
+				"category": "map",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["map", "location", "map", "location"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/map/location.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Map API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@map/google": {
+			"metadata": {
+				"name": "@map/google",
+				"displayName": "Google",
+				"version": "1.0.0",
+				"description": "Google Maps integration",
+				"category": "map",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["map", "google", "map", "location"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/map/google.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Map API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@map/openstreet": {
+			"metadata": {
+				"name": "@map/openstreet",
+				"displayName": "Openstreet",
+				"version": "1.0.0",
+				"description": "OpenStreetMap API",
+				"category": "map",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["map", "openstreet", "map", "location"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/map/openstreet.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Map API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@map/routing": {
+			"metadata": {
+				"name": "@map/routing",
+				"displayName": "Routing",
+				"version": "1.0.0",
+				"description": "Directions & navigation",
+				"category": "map",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["map", "routing", "map", "location"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/map/routing.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Map API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@map/gps": {
+			"metadata": {
+				"name": "@map/gps",
+				"displayName": "Gps",
+				"version": "1.0.0",
+				"description": "GPS sensor access",
+				"category": "map",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["map", "gps", "map", "location"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/map/gps.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Map API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@finance/crypto": {
+			"metadata": {
+				"name": "@finance/crypto",
+				"displayName": "Crypto",
+				"version": "1.0.0",
+				"description": "Wallet connect, on-chain data",
+				"category": "finance",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["finance", "crypto", "finance", "crypto"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/finance/crypto.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Financial API access",
+					"required": true
+				},
+				{
+					"type": "security.auth",
+					"description": "Secure authentication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true,
+				"isolation": "strict"
+			}
+		},
+		"@finance/stocks": {
+			"metadata": {
+				"name": "@finance/stocks",
+				"displayName": "Stocks",
+				"version": "1.0.0",
+				"description": "Market analysis",
+				"category": "finance",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["finance", "stocks", "finance", "crypto"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/finance/stocks.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Financial API access",
+					"required": true
+				},
+				{
+					"type": "security.auth",
+					"description": "Secure authentication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true,
+				"isolation": "strict"
+			}
+		},
+		"@finance/exchange": {
+			"metadata": {
+				"name": "@finance/exchange",
+				"displayName": "Exchange",
+				"version": "1.0.0",
+				"description": "Crypto exchange API",
+				"category": "finance",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["finance", "exchange", "finance", "crypto"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/finance/exchange.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Financial API access",
+					"required": true
+				},
+				{
+					"type": "security.auth",
+					"description": "Secure authentication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true,
+				"isolation": "strict"
+			}
+		},
+		"@finance/banking": {
+			"metadata": {
+				"name": "@finance/banking",
+				"displayName": "Banking",
+				"version": "1.0.0",
+				"description": "Bank transaction automation",
+				"category": "finance",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["finance", "banking", "finance", "crypto"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/finance/banking.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Financial API access",
+					"required": true
+				},
+				{
+					"type": "security.auth",
+					"description": "Secure authentication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true,
+				"isolation": "strict"
+			}
+		},
+		"@finance/payments": {
+			"metadata": {
+				"name": "@finance/payments",
+				"displayName": "Payments",
+				"version": "1.0.0",
+				"description": "Payment gateway integration",
+				"category": "finance",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["finance", "payments", "finance", "crypto"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/finance/payments.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Financial API access",
+					"required": true
+				},
+				{
+					"type": "security.auth",
+					"description": "Secure authentication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true,
+				"isolation": "strict"
+			}
+		},
+		"@finance/invoice": {
+			"metadata": {
+				"name": "@finance/invoice",
+				"displayName": "Invoice",
+				"version": "1.0.0",
+				"description": "Generate bills/invoices",
+				"category": "finance",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["finance", "invoice", "finance", "crypto"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/finance/invoice.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Financial API access",
+					"required": true
+				},
+				{
+					"type": "security.auth",
+					"description": "Secure authentication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true,
+				"isolation": "strict"
+			}
+		},
+		"@finance/tax": {
+			"metadata": {
+				"name": "@finance/tax",
+				"displayName": "Tax",
+				"version": "1.0.0",
+				"description": "Tax calculator",
+				"category": "finance",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["finance", "tax", "finance", "crypto"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/finance/tax.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Financial API access",
+					"required": true
+				},
+				{
+					"type": "security.auth",
+					"description": "Secure authentication",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true,
+				"isolation": "strict"
+			}
+		},
+		"@travel/flight": {
+			"metadata": {
+				"name": "@travel/flight",
+				"displayName": "Flight",
+				"version": "1.0.0",
+				"description": "Flight search",
+				"category": "travel",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["travel", "flight", "travel"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/travel/flight.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Travel API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@travel/hotel": {
+			"metadata": {
+				"name": "@travel/hotel",
+				"displayName": "Hotel",
+				"version": "1.0.0",
+				"description": "Hotel booking",
+				"category": "travel",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["travel", "hotel", "travel"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/travel/hotel.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Travel API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@travel/weather": {
+			"metadata": {
+				"name": "@travel/weather",
+				"displayName": "Weather",
+				"version": "1.0.0",
+				"description": "Weather info",
+				"category": "travel",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["travel", "weather", "travel"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/travel/weather.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Travel API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@travel/location": {
+			"metadata": {
+				"name": "@travel/location",
+				"displayName": "Location",
+				"version": "1.0.0",
+				"description": "GPS-based agent movement",
+				"category": "travel",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["travel", "location", "travel"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/travel/location.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Travel API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@travel/maps": {
+			"metadata": {
+				"name": "@travel/maps",
+				"displayName": "Maps",
+				"version": "1.0.0",
+				"description": "Map route planner",
+				"category": "travel",
+				"type": "integration",
+				"status": "stable",
+				"tags": ["travel", "maps", "travel"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/travel/maps.ts"
+			},
+			"permissions": [
+				{
+					"type": "network.http",
+					"description": "Travel API access",
+					"required": true
+				}
+			],
+			"runtime": {
+				"sandbox": true,
+				"networkAccess": true
+			}
+		},
+		"@util/time": {
+			"metadata": {
+				"name": "@util/time",
+				"displayName": "Time",
+				"version": "1.0.0",
+				"description": "Time/date functions",
+				"category": "util",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["util", "time", "utility"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/util/time.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@util/string": {
+			"metadata": {
+				"name": "@util/string",
+				"displayName": "String",
+				"version": "1.0.0",
+				"description": "String formatter",
+				"category": "util",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["util", "string", "utility"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/util/string.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@util/math": {
+			"metadata": {
+				"name": "@util/math",
+				"displayName": "Math",
+				"version": "1.0.0",
+				"description": "Math helper",
+				"category": "util",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["util", "math", "utility"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/util/math.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@util/random": {
+			"metadata": {
+				"name": "@util/random",
+				"displayName": "Random",
+				"version": "1.0.0",
+				"description": "Random generator",
+				"category": "util",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["util", "random", "utility"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/util/random.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@util/parser": {
+			"metadata": {
+				"name": "@util/parser",
+				"displayName": "Parser",
+				"version": "1.0.0",
+				"description": "Text parsing",
+				"category": "util",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["util", "parser", "utility"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/util/parser.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@util/converter": {
+			"metadata": {
+				"name": "@util/converter",
+				"displayName": "Converter",
+				"version": "1.0.0",
+				"description": "Format converter",
+				"category": "util",
+				"type": "utility",
+				"status": "stable",
+				"tags": ["util", "converter", "utility"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/util/converter.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@game/control": {
+			"metadata": {
+				"name": "@game/control",
+				"displayName": "Control",
+				"version": "1.0.0",
+				"description": "Gamepad control",
+				"category": "game",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["game", "control", "game", "gaming"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/game/control.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@game/engine": {
+			"metadata": {
+				"name": "@game/engine",
+				"displayName": "Engine",
+				"version": "1.0.0",
+				"description": "Game engine interface",
+				"category": "game",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["game", "engine", "game", "gaming"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/game/engine.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@game/ai": {
+			"metadata": {
+				"name": "@game/ai",
+				"displayName": "Ai",
+				"version": "1.0.0",
+				"description": "NPC AI plugin",
+				"category": "game",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["game", "ai", "game", "gaming"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/game/ai.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@game/automation": {
+			"metadata": {
+				"name": "@game/automation",
+				"displayName": "Automation",
+				"version": "1.0.0",
+				"description": "Auto game macro",
+				"category": "game",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["game", "automation", "game", "gaming"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/game/automation.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@game/simulation": {
+			"metadata": {
+				"name": "@game/simulation",
+				"displayName": "Simulation",
+				"version": "1.0.0",
+				"description": "Simulation loop agent",
+				"category": "game",
+				"type": "utility",
+				"status": "beta",
+				"tags": ["game", "simulation", "game", "gaming"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/game/simulation.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true
+			}
+		},
+		"@quantum/simulator": {
+			"metadata": {
+				"name": "@quantum/simulator",
+				"displayName": "Simulator",
+				"version": "1.0.0",
+				"description": "Quantum logic simulation",
+				"category": "experimental",
+				"type": "experimental",
+				"status": "experimental",
+				"tags": ["quantum", "simulator", "experimental"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/experimental/simulator.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@neural/interface": {
+			"metadata": {
+				"name": "@neural/interface",
+				"displayName": "Interface",
+				"version": "1.0.0",
+				"description": "Brainwave control (EEG link)",
+				"category": "experimental",
+				"type": "experimental",
+				"status": "experimental",
+				"tags": ["neural", "interface", "experimental"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/experimental/interface.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@drone/control": {
+			"metadata": {
+				"name": "@drone/control",
+				"displayName": "Control",
+				"version": "1.0.0",
+				"description": "Drone flying interface",
+				"category": "experimental",
+				"type": "experimental",
+				"status": "experimental",
+				"tags": ["drone", "control", "experimental"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/experimental/control.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@vr/interface": {
+			"metadata": {
+				"name": "@vr/interface",
+				"displayName": "Interface",
+				"version": "1.0.0",
+				"description": "Virtual reality control",
+				"category": "experimental",
+				"type": "experimental",
+				"status": "experimental",
+				"tags": ["vr", "interface", "experimental"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/experimental/interface.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@ar/overlay": {
+			"metadata": {
+				"name": "@ar/overlay",
+				"displayName": "Overlay",
+				"version": "1.0.0",
+				"description": "AR object overlay",
+				"category": "experimental",
+				"type": "experimental",
+				"status": "experimental",
+				"tags": ["ar", "overlay", "experimental"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/experimental/overlay.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@bio/sensor": {
+			"metadata": {
+				"name": "@bio/sensor",
+				"displayName": "Sensor",
+				"version": "1.0.0",
+				"description": "Health or biometric data",
+				"category": "experimental",
+				"type": "experimental",
+				"status": "experimental",
+				"tags": ["bio", "sensor", "experimental"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/experimental/sensor.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		},
+		"@ai/genome": {
+			"metadata": {
+				"name": "@ai/genome",
+				"displayName": "Genome",
+				"version": "1.0.0",
+				"description": "AI behavior DNA plugin",
+				"category": "experimental",
+				"type": "experimental",
+				"status": "experimental",
+				"tags": ["ai", "genome", "experimental"],
+				"platforms": ["all"]
+			},
+			"entry": {
+				"main": "src/categories/experimental/genome.ts"
+			},
+			"permissions": [],
+			"runtime": {
+				"sandbox": true,
+				"isolation": "strict"
+			}
+		}
+	}
+}
