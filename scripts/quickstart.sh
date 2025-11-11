@@ -83,11 +83,8 @@ echo ""
 # Use dev compose for simpler setup (like n8n - single port)
 COMPOSE_FILE="docker-compose.dev.yml"
 if [ ! -f "$COMPOSE_FILE" ]; then
-    COMPOSE_FILE="docker-compose.quickstart.yml"
-    if [ ! -f "$COMPOSE_FILE" ]; then
-        COMPOSE_FILE="docker-compose.yml"
-        echo -e "${YELLOW}⚠️  Dev compose not found, using full compose${NC}"
-    fi
+    COMPOSE_FILE="docker-compose.yml"
+    echo -e "${YELLOW}⚠️  Dev compose not found, using full compose${NC}"
 fi
 
 # Pull/build and start

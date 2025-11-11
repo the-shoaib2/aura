@@ -122,9 +122,6 @@ Or use Docker directly:
 ```bash
 # Development setup (single port, like n8n)
 docker-compose -f docker-compose.dev.yml up -d
-
-# Or minimal setup
-docker-compose -f docker-compose.quickstart.yml up -d
 ```
 
 ### Full Installation (All Services)
