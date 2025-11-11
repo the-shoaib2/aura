@@ -19,8 +19,8 @@ const prettierConfig = path.resolve('.prettierrc.js');
 const biomeConfig = path.resolve('biome.jsonc');
 const ignore = path.resolve('.prettierignore');
 
-const ROOT_DIRS_TO_SKIP = ['.git', 'node_modules', 'packages', '.turbo', 'services', 'apps', 'deployments'];
-const EXTENSIONS_TO_FORMAT_WITH_PRETTIER = ['.yml', '.md', '.css', '.scss', '.vue'];
+const ROOT_DIRS_TO_SKIP = ['.git', 'node_modules', 'packages', '.turbo'];
+const EXTENSIONS_TO_FORMAT_WITH_PRETTIER = ['.yml'];
 const EXTENSIONS_TO_FORMAT_WITH_BIOME = ['.js', '.json', '.ts'];
 
 const isDir = (path) => fs.lstatSync(path).isDirectory();
@@ -48,25 +48,18 @@ fs.readdirSync('.').forEach((cur) => {
 	if (isBiomeTarget(cur)) biomeTargets.push(cur);
 });
 
-if (prettierTargets.length > 0) {
-	execSync(
-		[
-			prettier,
-			'--config',
-			prettierConfig,
-			'--ignore-path',
-			ignore,
-			'--write',
-			prettierTargets.join(' '),
-		].join(' '),
-		{ stdio: 'inherit' },
-	);
-}
+execSync(
+	[
+		prettier,
+		'--config',
+		prettierConfig,
+		'--ignore-path',
+		ignore,
+		'--write',
+		prettierTargets.join(' '),
+	].join(' '),
+);
 
-if (biomeTargets.length > 0) {
-	execSync(
-		[biome, 'format', '--write', `--config-path=${biomeConfig}`, biomeTargets.join(' ')].join(' '),
-		{ stdio: 'inherit' },
-	);
-}
-
+execSync(
+	[biome, 'format', '--write', `--config-path=${biomeConfig}`, biomeTargets.join(' ')].join(' '),
+);

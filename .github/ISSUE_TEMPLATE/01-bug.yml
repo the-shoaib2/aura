@@ -6,10 +6,10 @@ body:
       value: |
         > ⚠️ This form is for reporting bugs only.
         > ❌ Please do not use this form for general support, feature requests, or questions.
-        > 💬 For help and general inquiries, visit our [discussions](https://github.com/your-org/aura/discussions).
-        > ☁️ If you're experiencing issues with deployment or infrastructure-related problems, contact support directly.
+        > 💬 For help and general inquiries, visit our [community support forum](https://community.n8n.io).
+        > ☁️ If you're experiencing issues with cloud instances not starting or license-related problems, contact [n8n support directly](mailto:help@n8n.io).
         ---
-        Thank you for helping us improve AURA!
+        Thank you for helping us improve n8n!
         To ensure we can address your report efficiently, please fill out all sections in English and provide as much detail as possible.
   - type: textarea
     id: description
@@ -42,9 +42,9 @@ body:
     id: debug-info
     attributes:
       label: Debug Info
-      description: Include relevant logs, error messages, or stack traces
+      description: This can be found under Help > About n8n > Copy debug information
     validations:
-      required: false
+      required: true
   - type: markdown
     attributes:
       value: '## Environment'
@@ -52,14 +52,14 @@ body:
     id: os
     attributes:
       label: Operating System
-      placeholder: ex. Ubuntu Linux 22.04, macOS 14.0, Windows 11
+      placeholder: ex. Ubuntu Linux 22.04
     validations:
       required: true
   - type: input
-    id: aura-version
+    id: n8n-version
     attributes:
-      label: AURA Version
-      placeholder: ex. 1.0.0
+      label: n8n Version
+      placeholder: ex. 1.25.0
     validations:
       required: true
   - type: input
@@ -82,15 +82,24 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: execution-mode
+    attributes:
+      label: Execution mode
+      description: '[Info](https://docs.n8n.io/hosting/scaling/queue-mode/)'
+      options:
+        - main (default)
+        - queue
+        - own (deprecated)
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
     id: hosting
     attributes:
       label: Hosting
       options:
-        - Docker
-        - Kubernetes
-        - Local development
-        - Cloud (AWS/GCP/Azure)
-      default: 2
+        - n8n cloud
+        - self hosted
+      default: 0
     validations:
       required: true
-

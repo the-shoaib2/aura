@@ -32,4 +32,3 @@ await $`pnpm install`;
 
 echo('🏗️ Running pnpm build...');
 await $`pnpm build`;
-

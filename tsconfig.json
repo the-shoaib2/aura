@@ -1,5 +1,4 @@
 {
-	"extends": "./packages/@aura/typescript-config/base.json",
+	"extends": "./packages/@n8n/typescript-config/tsconfig.common.json",
 	"exclude": ["**/dist/**/*", "**/node_modules/**/*"]
 }
-

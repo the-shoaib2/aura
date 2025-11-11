@@ -11,7 +11,7 @@ A PR title consists of these elements:
   |       |                        Capitalized
   |       |                        No period at the end.
   │       │
-  │       └─⫸ Scope: API | core | gateway | workflow | agent | ai | frontend
+  │       └─⫸ Scope: API | benchmark | core | editor | * Node
   │
   └─⫸ Type: build | ci | chore | docs | feat | fix | perf | refactor | test
 ```
@@ -50,14 +50,13 @@ Must be one of the following:
 The scope should specify the place of the commit change as long as the commit clearly addresses one of the following supported scopes. (Otherwise, omit the scope!)
 
 - `API` - changes to the _public_ API
-- `core` - changes to the core / private API / backend of AURA
-- `gateway` - changes to the gateway service
-- `workflow` - changes to the workflow engine
-- `agent` - changes to the agent service
-- `ai` - changes to AI/ML features
-- `frontend` - changes to the frontend UI
-- `auth` - changes to authentication/authorization
-- `db` - changes to database layer
+- `benchmark` - changes to the benchmark cli
+- `core` - changes to the core / private API / backend of n8n
+- `editor` - changes to the Editor UI
+- `* Node` - changes to a specific node or trigger node (”`*`” to be replaced with the node name, not its display name), e.g.
+  - mattermost → Mattermost Node
+  - microsoftToDo → Microsoft To Do Node
+  - n8n → n8n Node
 
 ## Summary
 
@@ -66,12 +65,12 @@ The summary contains succinct description of the change:
 - use the imperative, present tense: "change" not "changed" nor "changes"
 - capitalize the first letter
 - _no_ dot (.) at the end
-- do _not_ include Linear ticket IDs etc. (e.g. AURA-1234)
-- suffix with "(no-changelog)" for commits / PRs that should not get mentioned in the changelog.
+- do _not_ include Linear ticket IDs etc. (e.g. N8N-1234)
+- suffix with “(no-changelog)” for commits / PRs that should not get mentioned in the changelog.
 
 ## Body (optional)
 
-Just as in the **summary**, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
+Just as in the **summary**, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
 
 ## Footer (optional)
 
@@ -99,18 +98,19 @@ Closes #<pr number>
 
 A Breaking Change section should start with the phrase "`BREAKING CHANGE:` " followed by a summary of the breaking change, a blank line, and a detailed description of the breaking change that also includes migration instructions.
 
-> 💡 A breaking change can additionally also be marked by adding a "`!`" to the header, right before the "`:`", e.g. `feat(api)!: Remove support for legacy endpoints`
+> 💡 A breaking change can additionally also be marked by adding a “`!`” to the header, right before the “`:`”, e.g. `feat(editor)!: Remove support for dark mode`
 >
 > This makes locating breaking changes easier when just skimming through commit messages.
+
+> 💡 The breaking changes must also be added to the [packages/cli/BREAKING-CHANGES.md](https://github.com/n8n-io/n8n/blob/master/packages/cli/BREAKING-CHANGES.md) file located in the n8n repository.
 
 Similarly, a Deprecation section should start with "`DEPRECATED:` " followed by a short description of what is deprecated, a blank line, and a detailed description of the deprecation that also mentions the recommended update path.
 
 ### Revert commits
 
-If the commit reverts a previous commit, it should begin with `revert:` , followed by the header of the reverted commit.
+If the commit reverts a previous commit, it should begin with `revert:` , followed by the header of the reverted commit.
 
 The content of the commit message body should contain:
 
-- information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
+- information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
 - a clear description of the reason for reverting the commit message.
-

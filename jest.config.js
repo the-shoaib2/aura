@@ -60,4 +60,3 @@ if (process.env.CI === 'true') {
 }
 
 module.exports = config;
-

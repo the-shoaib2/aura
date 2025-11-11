@@ -10,4 +10,3 @@ if (name !== 'pnpm') {
 	console.error('\033[0m');
 	process.exit(1);
 }
-

@@ -8,4 +8,3 @@ if (process.env.CI || process.env.DOCKER_BUILD) {
 }
 
 execSync('pnpm lefthook install', { stdio: 'inherit' });
-

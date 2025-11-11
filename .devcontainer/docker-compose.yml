@@ -1,8 +1,5 @@
-version: '3.8'
-
 volumes:
   postgres-data:
-  redis-data:
 
 services:
   postgres:
@@ -11,59 +8,17 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=aura
-      - POSTGRES_USER=aura
-      - POSTGRES_PASSWORD=aura_dev_password
-    ports:
-      - "5432:5432"
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U aura"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
+      - POSTGRES_DB=n8n
+      - POSTGRES_PASSWORD=password
 
-  redis:
-    image: redis:7-alpine
-    restart: unless-stopped
-    volumes:
-      - redis-data:/data
-    ports:
-      - "6379:6379"
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 3s
-      retries: 5
-
-  aura-dev:
+  n8n:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ..:/workspace:cached
-      - node_modules:/workspace/node_modules
-      - pnpm-store:/home/node/.pnpm-store
+      - ..:/workspaces:cached
     command: sleep infinity
     environment:
-      - DB_TYPE=postgres
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_USER=aura
-      - DB_PASS=aura_dev_password
-      - DB_NAME=aura
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - JWT_SECRET=aura-dev-jwt-secret-key-min-32-characters
-      - GATEWAY_URL=http://gateway:3000
-      - REGISTRY_URL=http://registry:3008
-      - NODE_ENV=development
-    depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-
-volumes:
-  node_modules:
-  pnpm-store:
-
+      DB_POSTGRESDB_HOST: postgres
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_PASSWORD: password

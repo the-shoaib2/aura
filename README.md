@@ -1,398 +1,72 @@
-# AURA - Scalable Workflow Automation Platform
+![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-AURA is a comprehensive, scalable workflow automation platform that combines AI-powered workflows, real-time collaboration, cross-platform desktop automation, and enterprise-grade infrastructure.
+# n8n - Secure Workflow Automation for Technical Teams
 
-## Architecture Overview
+n8n is a workflow automation platform that gives technical teams the flexibility of code with the speed of no-code. With 400+ integrations, native AI capabilities, and a fair-code license, n8n lets you build powerful automations while maintaining full control over your data and deployments.
+
+![n8n.io - Screenshot](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot-readme.png)
+
+## Key Capabilities
+
+- **Code When You Need It**: Write JavaScript/Python, add npm packages, or use the visual interface
+- **AI-Native Platform**: Build AI agent workflows based on LangChain with your own data and models
+- **Full Control**: Self-host with our fair-code license or use our [cloud offering](https://app.n8n.cloud/login)
+- **Enterprise-Ready**: Advanced permissions, SSO, and air-gapped deployments
+- **Active Community**: 400+ integrations and 900+ ready-to-use [templates](https://n8n.io/workflows)
+
+## Quick Start
+
+Try n8n instantly with [npx](https://docs.n8n.io/hosting/installation/npm/) (requires [Node.js](https://nodejs.org/en/)):
 
 ```
-aura/
-│
-├── apps/
-│   ├── web/                   # Next.js Admin UI (cross-platform)
-│   ├── docs/                  # Documentation + API reference
-│
-├── packages/
-│   ├── core/                  # Workflow engine wrapper (n8n-core)
-│   ├── plugins/               # All integrations & custom nodes
-│   ├── db/                    # TypeORM entities + DB connectors
-│   ├── utils/                 # Shared utilities (logging, validation)
-│   ├── auth/                  # JWT/OAuth & RBAC logic
-│   ├── types/                 # TS type definitions
-│   └── ai/                    # RAG, MCP, GPT integration wrapper
-│
-├── services/
-│   ├── workflow-engine/       # Executes workflows (containerized)
-│   ├── webhook-handler/       # Listens for external events
-│   ├── scheduler/             # Cron/interval workflows
-│   ├── notification/          # Slack/email/SMS notifications
-│   ├── real-time-agent/       # Cross-platform desktop agent (Windows/Linux/macOS)
-│   └── collaboration/         # Multi-user real-time sync
-│
-├── deployments/
-│   ├── docker/                # Dockerfiles & docker-compose
-│   ├── k8s/                   # Kubernetes manifests
-│   └── scripts/               # Deployment scripts
+npx n8n
 ```
 
-## Features
+Or deploy with [Docker](https://docs.n8n.io/hosting/installation/docker/):
 
-### 🤖 Workflow Engine
-- Built on n8n-core and n8n-workflow
-- Queue-based execution using BullMQ and Redis
-- Dynamic plugin loading
-- Horizontal scaling support
-
-### 🤝 Real-Time Collaboration
-- Multi-user workflow editing
-- Operational transformation (OT) for conflict-free editing
-- Real-time presence indicators
-- Socket.io-based synchronization
-
-### 🖥️ Cross-Platform Desktop Agent
-- Electron-based desktop application
-- Windows, macOS, and Linux support
-- Screen capture and automation
-- Mouse and keyboard control
-- Secure WebSocket connection to workflow engine
-
-### 🤖 AI Integration
-- GPT-4/GPT-5 integration
-- RAG (Retrieval-Augmented Generation) support
-- MCP (Model Context Protocol) for tool calling
-- Vector database support (Pinecone, Weaviate)
-
-### 📧 Notifications
-- Slack integration
-- Email (SMTP)
-- SMS (Twilio)
-- Push notifications (Firebase)
-
-### 🔐 Authentication & Authorization
-- JWT-based authentication
-- OAuth 2.0 (Google)
-- Role-based access control (RBAC)
-- Admin, Editor, Viewer, User roles
-
-### 📊 Database
-- TypeORM with SQLite (dev) or PostgreSQL (prod)
-- Migrations support
-- Entity relationships
-- Caching layer ready
-
-## Tech Stack
-
-| Layer           | Tech / Library                                   |
-| --------------- | ------------------------------------------------ |
-| Workflow engine | n8n-core, n8n-workflow, n8n-nodes-base           |
-| Plugins         | @slack/web-api, @octokit/rest, googleapis, axios |
-| AI / RAG / MCP  | openai, langchain, pinecone/weaviate             |
-| Desktop agent   | electron, robotjs, desktopCapturer               |
-| Real-time voice | whisper, vosk, google TTS, ElevenLabs            |
-| Real-time comms | WebRTC, mediasoup, socket.io                     |
-| Database        | SQLite (dev), PostgreSQL/MySQL (prod)            |
-| Scheduler       | node-cron, agenda, BullMQ                        |
-| Notification    | nodemailer, twilio, Slack API                    |
-| Web admin       | Next.js, React, Tailwind, React Flow, Socket.io  |
-| Auth            | JWT, bcrypt, next-auth                           |
-| Deployment      | Docker, Kubernetes, CI/CD pipelines               |
-
-## Getting Started
-
-### Quick Start (One Command - Just like n8n!)
-
-The fastest way to get started with AURA - just like n8n's simple approach:
-
-```bash
-# Single command to get started (creates config, builds, and starts)
-./scripts/quickstart.sh
+```
+docker volume create n8n_data
+docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
 ```
 
-**That's it!** AURA will be running at **http://localhost:3000**
-
-**Like :**
-- ✅ Single port access (3000) - all services through gateway
-- ✅ Simple environment variables (no complex config)
-- ✅ Automatic setup
-- ✅ Dev container support
-
-📖 **See [QUICK_START.md](./QUICK_START.md) for details**
-
-Or use Docker directly:
-
-```bash
-# Development setup (single port, like n8n)
-docker-compose -f docker-compose.dev.yml up -d
-```
-
-### Full Installation (All Services)
-
-For the complete platform with all services:
-
-```bash
-# 1. Install (sets up everything)
-./scripts/install.sh
-
-# 2. Run (starts all services)
-./scripts/run.sh
-
-# 3. Stop (when you're done)
-./scripts/stop.sh
-```
-
-📖 **For detailed installation instructions, see [SIMPLE_INSTALL.md](./SIMPLE_INSTALL.md)**
-
-**Services will be available at:**
-- Gateway: http://localhost:3000
-- Workflow Engine: http://localhost:3001
-- Agent Service: http://localhost:3006
-- Registry: http://localhost:3008
-- Auth Service: http://localhost:3013
-
-**Useful commands:**
-```bash
-# View logs
-docker-compose logs -f
-
-# Stop all services
-docker-compose down
-
-# Restart a specific service
-docker-compose restart gateway
-
-# Check service status
-docker-compose ps
-```
-
-### Manual Installation (Development)
-
-For development without Docker:
-
-#### Prerequisites
-
-- Node.js >= 18
-- pnpm >= 10.0.0
-- Redis (for queue and caching)
-- PostgreSQL (for production) or SQLite (for development)
-
-#### Installation
-
-```bash
-# Install dependencies
-pnpm install
-
-# Build all packages
-pnpm build
-
-# Start development servers
-pnpm dev
-```
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-# Database
-DB_TYPE=sqlite  # or postgres
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=aura
-DB_PASS=securepassword
-DB_NAME=aura
-
-# Redis
-REDIS_HOST=localhost
-REDIS_PORT=6379
-REDIS_PASSWORD=
-
-# JWT
-JWT_SECRET=your-secret-key
-
-# OAuth
-GOOGLE_CLIENT_ID=your-client-id
-GOOGLE_CLIENT_SECRET=your-client-secret
-GOOGLE_CALLBACK_URL=http://localhost:3000/auth/google/callback
-
-# OpenAI
-OPENAI_API_KEY=your-openai-key
-
-# SMTP
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-
-# Slack
-SLACK_TOKEN=xoxb-your-token
-
-# Twilio
-TWILIO_ACCOUNT_SID=your-sid
-TWILIO_AUTH_TOKEN=your-token
-TWILIO_FROM=+1234567890
-
-# Firebase (for push notifications)
-FIREBASE_SERVICE_ACCOUNT=path/to/service-account.json
-```
-
-## Development
-
-### Running Services Locally
-
-```bash
-# Start workflow engine
-cd services/workflow-engine
-pnpm dev
-
-# Start webhook handler
-cd services/webhook-handler
-pnpm dev
-
-# Start scheduler
-cd services/scheduler
-pnpm dev
-
-# Start notification service
-cd services/notification
-pnpm dev
-
-# Start collaboration service
-cd services/collaboration
-pnpm dev
-
-# Start web app
-cd apps/web
-pnpm dev
-```
-
-### Running Desktop Agent
-
-```bash
-cd services/real-time-agent
-pnpm start
-```
-
-## Deployment
-
-### Docker Compose
-
-```bash
-# Build and start all services
-docker-compose -f deployments/docker/docker-compose.yml up -d
-
-# View logs
-docker-compose -f deployments/docker/docker-compose.yml logs -f
-
-# Stop services
-docker-compose -f deployments/docker/docker-compose.yml down
-```
-
-### Kubernetes
-
-```bash
-# Deploy to Kubernetes
-./deployments/scripts/deploy-k8s.sh
-
-# Check status
-kubectl get pods -n aura
-
-# View logs
-kubectl logs -f deployment/workflow-engine -n aura
-```
-
-### Building Docker Images
-
-```bash
-# Build all images
-./deployments/scripts/docker-build.sh
-
-# Or build individual services
-docker build -f deployments/docker/Dockerfile.workflow-engine -t aura/workflow-engine:latest .
-```
-
-## API Endpoints
-
-### Workflow Engine (Port 3001)
-
-- `GET /health` - Health check
-- `POST /workflows/execute` - Execute a workflow
-- `GET /workflows/:id/status` - Get workflow status
-
-### Webhook Handler (Port 3002)
-
-- `GET /health` - Health check
-- `POST /webhooks/register` - Register a webhook
-- `GET /webhooks` - List all webhooks
-- `DELETE /webhooks/:id` - Delete a webhook
-
-### Notification Service (Port 3004)
-
-- `GET /health` - Health check
-- `POST /notifications/send` - Send a notification
-- `POST /notifications/send-bulk` - Send bulk notifications
-
-### Collaboration Service (Port 3005)
-
-- WebSocket connection for real-time collaboration
-- Events: `join_workflow`, `workflow_operation`, `presence_update`
-
-## Plugins
-
-AURA supports dynamic plugin loading. Plugins are located in `packages/plugins/src/`:
-
-- **Slack** - Slack integration
-- **GitHub** - GitHub API integration
-- **Google Workspace** - Google Workspace integration
-- **Email** - Email sending
-- **Teams** - Microsoft Teams integration
-- **Internal API** - Internal API calls
-
-### Creating a Custom Plugin
-
-1. Create a new file in `packages/plugins/src/`
-2. Implement the `AuraPlugin` interface
-3. Export the plugin
-4. Register it in `packages/plugins/src/index.ts`
-
-## Database Migrations
-
-```bash
-# Run migrations
-cd packages/db
-pnpm db:migrate
-
-# Revert migrations
-pnpm db:revert
-
-# Seed database
-pnpm db:seed
-```
-
-## Documentation
-
-- **[Development Guide](./DEVELOPMENT.md)** - Setup and development workflow
-- **[Architecture](./ARCHITECTURE.md)** - System architecture and design
-- **[Deployment Guide](./DEPLOYMENT.md)** - Deployment instructions
-- **[Contributing](./CONTRIBUTING.md)** - Contribution guidelines
-- **[Changelog](./CHANGELOG.md)** - Version history and changes
-- **[Implementation Status](./IMPLEMENTATION_STATUS.md)** - Historical implementation status
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details.
+Access the editor at http://localhost:5678
+
+## Resources
+
+- 📚 [Documentation](https://docs.n8n.io)
+- 🔧 [400+ Integrations](https://n8n.io/integrations)
+- 💡 [Example Workflows](https://n8n.io/workflows)
+- 🤖 [AI & LangChain Guide](https://docs.n8n.io/advanced-ai/)
+- 👥 [Community Forum](https://community.n8n.io)
+- 📖 [Community Tutorials](https://community.n8n.io/c/tutorials/28)
 
 ## Support
 
-For issues and questions:
-- Check the [documentation](./DEVELOPMENT.md)
-- Search existing [GitHub Issues](https://github.com/your-org/aura/issues)
-- Open a new issue if needed
+Need help? Our community forum is the place to get support and connect with other users:
+[community.n8n.io](https://community.n8n.io)
+
+## License
+
+n8n is [fair-code](https://faircode.io) distributed under the [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) and [n8n Enterprise License](https://github.com/n8n-io/n8n/blob/master/LICENSE_EE.md).
+
+- **Source Available**: Always visible source code
+- **Self-Hostable**: Deploy anywhere
+- **Extensible**: Add your own nodes and functionality
+
+[Enterprise licenses](mailto:license@n8n.io) available for additional features and support.
+
+Additional information about the license model can be found in the [docs](https://docs.n8n.io/sustainable-use-license/).
+
+## Contributing
+
+Found a bug 🐛 or have a feature idea ✨? Check our [Contributing Guide](https://github.com/n8n-io/n8n/blob/master/CONTRIBUTING.md) to get started.
+
+## Join the Team
+
+Want to shape the future of automation? Check out our [job posts](https://n8n.io/careers) and join our team!
+
+## What does n8n mean?
+
+**Short answer:** It means "nodemation" and is pronounced as n-eight-n.
+
+**Long answer:** "I get that question quite often (more often than I expected) so I decided it is probably best to answer it here. While looking for a good name for the project with a free domain I realized very quickly that all the good ones I could think of were already taken. So, in the end, I chose nodemation. 'node-' in the sense that it uses a Node-View and that it uses Node.js and '-mation' for 'automation' which is what the project is supposed to help with. However, I did not like how long the name was and I could not imagine writing something that long every time in the CLI. That is when I then ended up on 'n8n'." - **Jan Oberhauser, Founder and CEO, n8n.io**
