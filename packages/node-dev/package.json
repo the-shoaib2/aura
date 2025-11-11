@@ -1,12 +1,12 @@
 {
-  "name": "n8n-node-dev",
+  "name": "aura-node-dev",
   "version": "1.117.0",
-  "description": "CLI to simplify n8n credentials/node development",
+  "description": "CLI to simplify aura credentials/node development",
   "main": "dist/src/index",
   "types": "dist/src/index.d.ts",
   "oclif": {
     "commands": "./dist/commands",
-    "bin": "n8n-node-dev"
+    "bin": "aura-node-dev"
   },
   "scripts": {
     "clean": "rimraf dist .turbo",
@@ -21,13 +21,13 @@
     "watch": "tsc --watch"
   },
   "bin": {
-    "n8n-node-dev": "./bin/n8n-node-dev"
+    "aura-node-dev": "./bin/aura-node-dev"
   },
   "keywords": [
     "development",
     "node",
     "helper",
-    "n8n"
+    "aura"
   ],
   "files": [
     "bin",
@@ -36,17 +36,17 @@
     "src/tsconfig-build.json"
   ],
   "devDependencies": {
-    "@n8n/typescript-config": "workspace:*",
+    "@aura/typescript-config": "workspace:*",
     "@types/inquirer": "^6.5.0"
   },
   "dependencies": {
-    "@n8n/di": "workspace:*",
+    "@aura/di": "workspace:*",
     "@oclif/core": "4.0.7",
     "change-case": "^4.1.1",
     "fast-glob": "catalog:",
     "inquirer": "^7.0.1",
-    "n8n-core": "workspace:*",
-    "n8n-workflow": "workspace:*",
+    "aura-core": "workspace:*",
+    "workflow": "workspace:*",
     "replace-in-file": "^6.0.0",
     "tmp-promise": "^3.0.3"
   }

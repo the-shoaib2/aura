@@ -1,4 +1,4 @@
-import type { ChatHubConversationModel, ChatModelDto } from '@n8n/api-types';
+import type { ChatHubConversationModel, ChatModelDto } from '@aura/api-types';
 import { computed, type ComputedRef, type MaybeRef, toValue } from 'vue';
 import { useChatStore } from '../chat.store';
 

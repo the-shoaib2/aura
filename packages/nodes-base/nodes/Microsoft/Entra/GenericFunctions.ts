@@ -12,8 +12,8 @@ import type {
 	INodePropertyOptions,
 	INodeListSearchResult,
 	INodeListSearchItems,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 import { parseStringPromise } from 'xml2js';
 
 export async function microsoftApiRequest(
@@ -135,7 +135,7 @@ export async function handleErrorPostReceive(
 					errorCode === 'BadRequest' &&
 					errorMessage === 'Empty Payload. JSON content expected.'
 				) {
-					// Ignore empty payload error. Currently n8n deletes the empty body object from the request.
+					// Ignore empty payload error. Currently aura deletes the empty body object from the request.
 					return data;
 				}
 				if (errorCode === 'Request_ResourceNotFound') {
@@ -209,7 +209,7 @@ export async function handleErrorPostReceive(
 					errorCode === 'BadRequest' &&
 					errorMessage === 'Empty Payload. JSON content expected.'
 				) {
-					// Ignore empty payload error. Currently n8n deletes the empty body object from the request.
+					// Ignore empty payload error. Currently aura deletes the empty body object from the request.
 					return data;
 				}
 				if (errorCode === 'Request_ResourceNotFound') {

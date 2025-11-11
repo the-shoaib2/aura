@@ -1,4 +1,4 @@
-import { Time } from '@n8n/constants';
+import { Time } from '@aura/constants';
 
 import { TaskRunnerRestartLoopError } from '@/task-runners/errors/task-runner-restart-loop-error';
 import { TypedEmitter } from '@/typed-emitter';

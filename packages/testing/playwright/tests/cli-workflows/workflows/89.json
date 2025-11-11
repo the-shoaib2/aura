@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [100, 450],
 			"id": "5f0064e0-df3f-4b86-9ff6-5914642a97b3"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "S3",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [300, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"limit": 1
 			},
 			"name": "S",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"additionalFields": {}
 			},
 			"name": "S1",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -80,7 +80,7 @@
 				}
 			},
 			"name": "S2",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"credentials": {
@@ -93,10 +93,10 @@
 		},
 		{
 			"parameters": {
-				"filePath": "/tmp/n8n-logo.png"
+				"filePath": "/tmp/aura-logo.png"
 			},
 			"name": "Read Binary File",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
 			"position": [300, 450],
 			"id": "c8f464bb-d963-449f-8ee7-ad8d29e70271"
@@ -109,7 +109,7 @@
 				"options": {}
 			},
 			"name": "S4",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"credentials": {
@@ -126,7 +126,7 @@
 				"fileKey": "={{$node[\"S4\"].json[\"Key\"]}}"
 			},
 			"name": "S5",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [750, 450],
 			"credentials": {
@@ -145,7 +145,7 @@
 				"additionalFields": {}
 			},
 			"name": "S6",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [900, 450],
 			"credentials": {
@@ -164,7 +164,7 @@
 				"options": {}
 			},
 			"name": "S7",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [1050, 450],
 			"credentials": {
@@ -183,7 +183,7 @@
 				"options": {}
 			},
 			"name": "S8",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [1200, 450],
 			"credentials": {
@@ -202,7 +202,7 @@
 				"additionalFields": {}
 			},
 			"name": "S9",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [300, 600],
 			"credentials": {
@@ -222,7 +222,7 @@
 				"options": {}
 			},
 			"name": "S10",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [450, 600],
 			"credentials": {
@@ -241,7 +241,7 @@
 				"folderKey": "={{$node[\"S10\"].json[\"Key\"]}}"
 			},
 			"name": "S11",
-			"type": "n8n-nodes-base.s3",
+			"type": "aura-nodes-base.s3",
 			"typeVersion": 1,
 			"position": [600, 600],
 			"credentials": {

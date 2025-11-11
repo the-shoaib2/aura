@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [310, 550],
 			"id": "2ee04975-ff22-40e0-a3a9-d2542266c3bf"
@@ -22,7 +22,7 @@
 				"options": {}
 			},
 			"name": "YouTube",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"channelId": "UCiHVTkJtWSdc9N3h0nUGWLg"
 			},
 			"name": "YouTube1",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -65,7 +65,7 @@
 				}
 			},
 			"name": "YouTube2",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [950, 300],
 			"credentials": {
@@ -82,7 +82,7 @@
 				"channelId": "UCkdph8FDLpq2UD2i_OlwErA"
 			},
 			"name": "YouTube3",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1250, 300],
 			"credentials": {
@@ -102,7 +102,7 @@
 				"options": {}
 			},
 			"name": "YouTube4",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [500, 450],
 			"credentials": {
@@ -122,7 +122,7 @@
 				"updateFields": {}
 			},
 			"name": "YouTube5",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 450],
 			"credentials": {
@@ -141,7 +141,7 @@
 				"options": {}
 			},
 			"name": "YouTube6",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1860, 450],
 			"alwaysOutputData": true,
@@ -161,7 +161,7 @@
 				"options": {}
 			},
 			"name": "YouTube9",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [950, 550],
 			"credentials": {
@@ -182,7 +182,7 @@
 				"options": {}
 			},
 			"name": "YouTube10",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1250, 550],
 			"credentials": {
@@ -202,7 +202,7 @@
 				"options": {}
 			},
 			"name": "YouTube11",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1400, 550],
 			"credentials": {
@@ -221,7 +221,7 @@
 				"options": {}
 			},
 			"name": "YouTube12",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1700, 550],
 			"credentials": {
@@ -240,7 +240,7 @@
 				"rating": "like"
 			},
 			"name": "YouTube13",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [500, 800],
 			"credentials": {
@@ -260,7 +260,7 @@
 				"options": {}
 			},
 			"name": "YouTube14",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 800],
 			"credentials": {
@@ -281,7 +281,7 @@
 				"options": {}
 			},
 			"name": "YouTube15",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1250, 800],
 			"credentials": {
@@ -300,7 +300,7 @@
 				"options": {}
 			},
 			"name": "HTTP Request",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 1,
 			"position": [950, 800],
 			"disabled": true,
@@ -317,7 +317,7 @@
 				"updateFields": {}
 			},
 			"name": "YouTube16",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1400, 800],
 			"credentials": {
@@ -337,7 +337,7 @@
 				"options": {}
 			},
 			"name": "YouTube17",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [1690, 800],
 			"credentials": {
@@ -356,7 +356,7 @@
 				"limit": 1
 			},
 			"name": "YouTube18",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [500, 630],
 			"credentials": {
@@ -369,10 +369,10 @@
 		},
 		{
 			"parameters": {
-				"filePath": "/tmp/n8n-logo.png"
+				"filePath": "/tmp/aura-logo.png"
 			},
 			"name": "Read Binary File",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
 			"position": [1100, 300],
 			"disabled": true,
@@ -383,7 +383,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [650, 300],
 			"typeVersion": 1,
 			"id": "bea9b966-028f-4891-892b-30415cb38452"
@@ -393,7 +393,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [650, 450],
 			"typeVersion": 1,
 			"id": "74460a7d-956c-4a9c-8357-de6b2d1e6076"
@@ -403,7 +403,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second2",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1100, 550],
 			"typeVersion": 1,
 			"id": "a565a893-fdb1-45f5-96b9-846146a10c14"
@@ -413,7 +413,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second3",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1550, 550],
 			"typeVersion": 1,
 			"id": "4659b2a6-7c8d-4290-9f57-b17e9c566c50"
@@ -423,7 +423,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second4",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [650, 800],
 			"typeVersion": 1,
 			"id": "15cca754-b296-4cb5-93d1-efd315175e9e"
@@ -433,7 +433,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second5",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1110, 800],
 			"typeVersion": 1,
 			"disabled": true,
@@ -444,7 +444,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second6",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1550, 800],
 			"typeVersion": 1,
 			"disabled": true,
@@ -458,7 +458,7 @@
 				"options": {}
 			},
 			"name": "YouTube7",
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [2030, 450],
 			"credentials": {

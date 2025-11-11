@@ -1,4 +1,4 @@
-import { NodeOperationError, type IExecuteFunctions, type IDataObject } from 'n8n-workflow';
+import { NodeOperationError, type IExecuteFunctions, type IDataObject } from 'workflow';
 
 import { checkIfFieldExists, type Aggregations } from '../../utils';
 

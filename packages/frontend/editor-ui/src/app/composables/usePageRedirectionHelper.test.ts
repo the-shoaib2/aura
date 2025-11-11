@@ -1,11 +1,11 @@
-import { ROLE } from '@n8n/api-types';
+import { ROLE } from '@aura/api-types';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import merge from 'lodash/merge';
 import { usePageRedirectionHelper } from './usePageRedirectionHelper';
 import { defaultSettings } from '@/__tests__/defaults';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { createPinia, setActivePinia } from 'pinia';
-import * as cloudPlanApi from '@n8n/rest-api-client/api/cloudPlans';
+import * as cloudPlanApi from '@aura/rest-api-client/api/cloudPlans';
 import { useVersionsStore } from '@/app/stores/versions.store';
 import { useTelemetry } from './useTelemetry';
 
@@ -42,7 +42,7 @@ describe('usePageRedirectionHelper', () => {
 			code: '123',
 		});
 
-		const url = 'https://test.app.n8n.cloud';
+		const url = 'https://test.app.aura.cloud';
 
 		Object.defineProperty(window, 'location', {
 			value: {
@@ -55,7 +55,7 @@ describe('usePageRedirectionHelper', () => {
 			enabled: true,
 			endpoint: '',
 			infoUrl:
-				'https://docs.n8n.io/release-notes/#n8n1652?utm_source=n8n_app&utm_medium=instance_upgrade_releases',
+				'https://docs.aura.io/release-notes/#aura1652?utm_source=aura_app&utm_medium=instance_upgrade_releases',
 			whatsNewEnabled: true,
 			whatsNewEndpoint: '',
 		});
@@ -66,19 +66,19 @@ describe('usePageRedirectionHelper', () => {
 			'default',
 			'production',
 			ROLE.Owner,
-			'https://n8n.io/pricing?utm_campaign=upgrade-api&source=advanced-permissions',
+			'https://aura.io/pricing?utm_campaign=upgrade-api&source=advanced-permissions',
 		],
 		[
 			'default',
 			'development',
 			ROLE.Owner,
-			'https://n8n.io/pricing?utm_campaign=upgrade-api&source=advanced-permissions',
+			'https://aura.io/pricing?utm_campaign=upgrade-api&source=advanced-permissions',
 		],
 		[
 			'cloud',
 			'production',
 			ROLE.Owner,
-			`https://app.n8n.cloud/login?code=123&returnPath=${encodeURIComponent(
+			`https://app.aura.cloud/login?code=123&returnPath=${encodeURIComponent(
 				'/account/change-plan',
 			)}&utm_campaign=upgrade-api&source=advanced-permissions`,
 		],
@@ -86,7 +86,7 @@ describe('usePageRedirectionHelper', () => {
 			'cloud',
 			'production',
 			ROLE.Member,
-			'https://n8n.io/pricing?utm_campaign=upgrade-api&source=advanced-permissions',
+			'https://aura.io/pricing?utm_campaign=upgrade-api&source=advanced-permissions',
 		],
 	])(
 		'"goToUpgrade" should generate the correct URL for "%s" deployment and "%s" license environment and user role "%s"',
@@ -143,13 +143,13 @@ describe('usePageRedirectionHelper', () => {
 			'cloud',
 			'production',
 			ROLE.Owner,
-			`https://app.n8n.cloud/login?code=123&returnPath=${encodeURIComponent('/manage')}`,
+			`https://app.aura.cloud/login?code=123&returnPath=${encodeURIComponent('/manage')}`,
 		],
 		[
 			'cloud',
 			'production',
 			ROLE.Member,
-			'https://docs.n8n.io/release-notes/#n8n1652?utm_source=n8n_app&utm_medium=instance_upgrade_releases',
+			'https://docs.aura.io/release-notes/#aura1652?utm_source=aura_app&utm_medium=instance_upgrade_releases',
 		],
 	])(
 		'"goToVersions" should generate the correct URL for "%s" deployment and "%s" license environment and user role "%s"',
@@ -192,9 +192,9 @@ describe('usePageRedirectionHelper', () => {
 			'cloud',
 			'production',
 			ROLE.Owner,
-			`https://app.n8n.cloud/login?code=123&returnPath=${encodeURIComponent('/dashboard')}`,
+			`https://app.aura.cloud/login?code=123&returnPath=${encodeURIComponent('/dashboard')}`,
 		],
-		['cloud', 'production', ROLE.Member, 'https://test.app.n8n.cloud'],
+		['cloud', 'production', ROLE.Member, 'https://test.app.aura.cloud'],
 	])(
 		'"goToDashboard" should generate the correct URL for "%s" deployment and "%s" license environment and user role "%s"',
 		async (type, environment, role, expectation) => {

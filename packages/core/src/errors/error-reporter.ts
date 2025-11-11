@@ -1,11 +1,11 @@
-import { inProduction, inTest, Logger } from '@n8n/backend-common';
-import { type InstanceType } from '@n8n/constants';
-import { Service } from '@n8n/di';
-import type { ReportingOptions } from '@n8n/errors';
+import { inProduction, inTest, Logger } from '@aura/backend-common';
+import { type InstanceType } from '@aura/constants';
+import { Service } from '@aura/di';
+import type { ReportingOptions } from '@aura/errors';
 import type { ErrorEvent, EventHint } from '@sentry/core';
 import type { NodeOptions } from '@sentry/node';
 import { AxiosError } from 'axios';
-import { ApplicationError, ExecutionCancelledError, BaseError } from 'n8n-workflow';
+import { ApplicationError, ExecutionCancelledError, BaseError } from 'workflow';
 import { createHash } from 'node:crypto';
 
 type ErrorReporterInitOptions = {
@@ -193,14 +193,14 @@ export class ErrorReporter {
 		if (originalException instanceof BaseError) {
 			if (!originalException.shouldReport) return null;
 
-			this.extractEventDetailsFromN8nError(event, originalException);
+			this.extractEventDetailsFromauraError(event, originalException);
 		}
 
 		if (this.isIgnoredSqliteError(originalException)) return null;
 		if (originalException instanceof ApplicationError || originalException instanceof BaseError) {
-			if (this.isIgnoredN8nError(originalException)) return null;
+			if (this.isIgnoredauraError(originalException)) return null;
 
-			this.extractEventDetailsFromN8nError(event, originalException);
+			this.extractEventDetailsFromauraError(event, originalException);
 		}
 
 		if (
@@ -253,11 +253,11 @@ export class ErrorReporter {
 		);
 	}
 
-	private isIgnoredN8nError(error: ApplicationError | BaseError) {
+	private isIgnoredauraError(error: ApplicationError | BaseError) {
 		return error.level === 'warning' || error.level === 'info';
 	}
 
-	private extractEventDetailsFromN8nError(
+	private extractEventDetailsFromauraError(
 		event: ErrorEvent,
 		originalException: ApplicationError | BaseError,
 	) {

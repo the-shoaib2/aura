@@ -10,31 +10,33 @@ test.describe('Focus panel', () => {
 		};
 
 		test('should keep showing selected node when canvas is clicked while mapper popover is shown', async ({
-			n8n,
+			aura,
 			setupRequirements,
 		}) => {
 			await setupRequirements(requirements);
-			await n8n.start.fromImportedWorkflow('Test_workflow_3.json');
-			await n8n.canvas.clickZoomToFitButton();
-			await n8n.canvas.deselectAll();
-			await n8n.canvas.toggleFocusPanelButton().click();
-			await n8n.canvas.nodeByName('Set').click();
-			await expect(n8n.canvas.focusPanel.getHeaderNodeName()).toHaveText('Set');
-			await n8n.canvas.focusPanel.getParameterInputField('assignments.assignments.0.value').focus();
-			await expect(n8n.canvas.focusPanel.getMapper()).toBeVisible();
+			await aura.start.fromImportedWorkflow('Test_workflow_3.json');
+			await aura.canvas.clickZoomToFitButton();
+			await aura.canvas.deselectAll();
+			await aura.canvas.toggleFocusPanelButton().click();
+			await aura.canvas.nodeByName('Set').click();
+			await expect(aura.canvas.focusPanel.getHeaderNodeName()).toHaveText('Set');
+			await aura.canvas.focusPanel
+				.getParameterInputField('assignments.assignments.0.value')
+				.focus();
+			await expect(aura.canvas.focusPanel.getMapper()).toBeVisible();
 
 			// Assert that mapper is closed but the Set node is still selected and shown in
-			await n8n.canvas.canvasBody().click({ position: { x: 0, y: 0 } });
+			await aura.canvas.canvasBody().click({ position: { x: 0, y: 0 } });
 
-			await expect(n8n.canvas.focusPanel.getMapper()).toBeHidden();
-			await expect(n8n.canvas.focusPanel.getHeaderNodeName()).toHaveText('Set');
-			await expect(n8n.canvas.selectedNodes()).toHaveCount(1);
+			await expect(aura.canvas.focusPanel.getMapper()).toBeHidden();
+			await expect(aura.canvas.focusPanel.getHeaderNodeName()).toHaveText('Set');
+			await expect(aura.canvas.selectedNodes()).toHaveCount(1);
 
 			// Assert that another click on canvas does de-select the Set node
-			await n8n.canvas.canvasBody().click({ position: { x: 0, y: 0 } });
+			await aura.canvas.canvasBody().click({ position: { x: 0, y: 0 } });
 
-			await expect(n8n.canvas.focusPanel.getHeaderNodeName()).toBeHidden();
-			await expect(n8n.canvas.selectedNodes()).toHaveCount(0);
+			await expect(aura.canvas.focusPanel.getHeaderNodeName()).toBeHidden();
+			await expect(aura.canvas.selectedNodes()).toHaveCount(0);
 		});
 	});
 });

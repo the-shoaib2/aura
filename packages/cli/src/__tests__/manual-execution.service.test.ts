@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import * as core from 'n8n-core';
-import { DirectedGraph, recreateNodeExecutionStack, WorkflowExecute } from 'n8n-core';
+import * as core from 'aura-core';
+import { DirectedGraph, recreateNodeExecutionStack, WorkflowExecute } from 'aura-core';
 import type {
 	Workflow,
 	IWorkflowExecutionDataProcess,
@@ -13,12 +13,12 @@ import type {
 	IWaitingForExecution,
 	IWaitingForExecutionSource,
 	INodeExecutionData,
-} from 'n8n-workflow';
+} from 'workflow';
 import type PCancelable from 'p-cancelable';
 
 import { ManualExecutionService } from '@/manual-execution.service';
 
-jest.mock('n8n-core');
+jest.mock('aura-core');
 
 describe('ManualExecutionService', () => {
 	const manualExecutionService = new ManualExecutionService(mock());
@@ -74,12 +74,12 @@ describe('ManualExecutionService', () => {
 
 		it('should return undefined, even if manual trigger node is available', () => {
 			const scheduleTrigger = mock<INode>({
-				type: 'n8n-nodes-base.scheduleTrigger',
+				type: 'aura-nodes-base.scheduleTrigger',
 				name: 'Wed 12:00',
 			});
 
 			const manualTrigger = mock<INode>({
-				type: 'n8n-nodes-base.manualTrigger',
+				type: 'aura-nodes-base.manualTrigger',
 				name: 'When clicking ‘Execute workflow’',
 			});
 
@@ -251,7 +251,7 @@ describe('ManualExecutionService', () => {
 			const executionId = 'test-execution-id';
 
 			const mockRun = jest.fn().mockReturnValue('mockRunReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('aura-core').WorkflowExecute.mockImplementationOnce(() => ({
 				run: mockRun,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -285,7 +285,7 @@ describe('ManualExecutionService', () => {
 			jest.spyOn(manualExecutionService, 'getExecutionStartNode').mockReturnValue(startNode);
 
 			const mockRun = jest.fn().mockReturnValue('mockRunReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('aura-core').WorkflowExecute.mockImplementationOnce(() => ({
 				run: mockRun,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -331,7 +331,7 @@ describe('ManualExecutionService', () => {
 			jest.spyOn(manualExecutionService, 'getExecutionStartNode').mockReturnValue(startNode);
 
 			const mockRun = jest.fn().mockReturnValue('mockRunReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('aura-core').WorkflowExecute.mockImplementationOnce(() => ({
 				run: mockRun,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -362,7 +362,7 @@ describe('ManualExecutionService', () => {
 			const executionId = 'test-execution-id';
 
 			const mockRunPartialWorkflow = jest.fn().mockReturnValue('mockPartialReturn');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('aura-core').WorkflowExecute.mockImplementationOnce(() => ({
 				runPartialWorkflow2: mockRunPartialWorkflow,
 			}));
 
@@ -396,7 +396,7 @@ describe('ManualExecutionService', () => {
 			const pinData: IPinData = { node1: [{ json: { pinned: true } }] };
 
 			const mockRunPartialWorkflow2 = jest.fn().mockReturnValue('mockPartial2Return');
-			require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+			require('aura-core').WorkflowExecute.mockImplementationOnce(() => ({
 				runPartialWorkflow2: mockRunPartialWorkflow2,
 				processRunExecutionData: jest.fn(),
 			}));
@@ -550,7 +550,7 @@ describe('ManualExecutionService', () => {
 		const executionId = 'test-execution-id-evaluation';
 
 		const mockRun = jest.fn().mockReturnValue('mockRunReturnEvaluation');
-		require('n8n-core').WorkflowExecute.mockImplementationOnce(() => ({
+		require('aura-core').WorkflowExecute.mockImplementationOnce(() => ({
 			run: mockRun,
 			processRunExecutionData: jest.fn(),
 		}));

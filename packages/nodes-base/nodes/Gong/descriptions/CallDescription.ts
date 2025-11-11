@@ -5,8 +5,8 @@ import type {
 	IN8nHttpFullResponse,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import {
 	getCursorPaginatorCalls,
@@ -165,7 +165,7 @@ const getFields: INodeProperties[] = [
 				type: 'multiOptions',
 				default: [],
 				description:
-					'The Call properties to include in the returned results. Choose from a list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
+					'The Call properties to include in the returned results. Choose from a list, or specify IDs using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>.',
 				options: [
 					{
 						name: 'Action Items',
@@ -552,7 +552,7 @@ const getAllFields: INodeProperties[] = [
 				type: 'multiOptions',
 				default: [],
 				description:
-					'The Call properties to include in the returned results. Choose from a list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
+					'The Call properties to include in the returned results. Choose from a list, or specify IDs using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>.',
 				options: [
 					{
 						name: 'Participants',

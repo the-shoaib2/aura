@@ -28,7 +28,7 @@
 					{
 						"hints": [
 							{
-								"message": "To make sure expressions after this node work, return the input items that produced each output item. <a target=\"_blank\" href=\"https://docs.n8n.io/data/data-mapping/data-item-linking/item-linking-code-node/\">More info</a>",
+								"message": "To make sure expressions after this node work, return the input items that produced each output item. <a target=\"_blank\" href=\"https://docs.aura.io/data/data-mapping/data-item-linking/item-linking-code-node/\">More info</a>",
 								"location": "outputPane"
 							}
 						],
@@ -46,7 +46,7 @@
 									{
 										"json": {
 											"full_name": "Mr. Input 1",
-											"email": "input1@n8n.io"
+											"email": "input1@aura.io"
 										},
 										"pairedItem": {
 											"item": 0
@@ -55,7 +55,7 @@
 									{
 										"json": {
 											"full_name": "Mr. Input 2",
-											"email": "input2@n8n.io"
+											"email": "input2@aura.io"
 										},
 										"pairedItem": {
 											"item": 0
@@ -80,7 +80,7 @@
 											"response": [
 												{
 													"full name": "Mr. Input 1",
-													"email": "input1@n8n.io"
+													"email": "input1@aura.io"
 												},
 												{},
 												{}
@@ -96,7 +96,7 @@
 									{
 										"json": {
 											"full_name": "Mr. Input 1",
-											"email": "input1@n8n.io"
+											"email": "input1@aura.io"
 										}
 									}
 								]
@@ -128,7 +128,7 @@
 											"response": [
 												{
 													"full name": "Mr. Input 1",
-													"email": "input1@n8n.io"
+													"email": "input1@aura.io"
 												},
 												{},
 												{}
@@ -144,7 +144,7 @@
 									{
 										"json": {
 											"full_name": "Mr. Input 2",
-											"email": "input2@n8n.io"
+											"email": "input2@aura.io"
 										}
 									}
 								]
@@ -168,7 +168,7 @@
 								[
 									{
 										"json": {
-											"output": "The user \"Mr. Input 1\" with the email \"input1@n8n.io\" has been successfully added to your Users sheet."
+											"output": "The user \"Mr. Input 1\" with the email \"input1@aura.io\" has been successfully added to your Users sheet."
 										},
 										"pairedItem": {
 											"item": 0
@@ -176,7 +176,7 @@
 									},
 									{
 										"json": {
-											"output": "The user \"Mr. Input 2\" with the email \"input2@n8n.io\" has been successfully added to your Users sheet."
+											"output": "The user \"Mr. Input 2\" with the email \"input2@aura.io\" has been successfully added to your Users sheet."
 										},
 										"pairedItem": {
 											"item": 1

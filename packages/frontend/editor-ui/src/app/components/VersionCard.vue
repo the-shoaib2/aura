@@ -3,8 +3,8 @@ import NodeIcon from './NodeIcon.vue';
 import TimeAgo from './TimeAgo.vue';
 import Badge from './Badge.vue';
 import WarningTooltip from './WarningTooltip.vue';
-import type { Version, VersionNode } from '@n8n/rest-api-client/api/versions';
-import { useI18n } from '@n8n/i18n';
+import type { Version, VersionNode } from '@aura/rest-api-client/api/versions';
+import { useI18n } from '@aura/i18n';
 
 defineProps<{
 	version: Version;
@@ -31,7 +31,7 @@ const nodeName = (node: VersionNode): string => {
 					{{ `${i18n.baseText('versionCard.version')} ${version.name}` }}
 				</div>
 				<WarningTooltip v-if="version.hasSecurityIssue">
-					<span v-n8n-html="i18n.baseText('versionCard.thisVersionHasASecurityIssue')"></span>
+					<span v-aura-html="i18n.baseText('versionCard.thisVersionHasASecurityIssue')"></span>
 				</WarningTooltip>
 				<Badge
 					v-if="version.hasSecurityFix"
@@ -55,7 +55,7 @@ const nodeName = (node: VersionNode): string => {
 		<div>
 			<div
 				v-if="version.description"
-				v-n8n-html="version.description"
+				v-aura-html="version.description"
 				:class="$style.description"
 			></div>
 			<div v-if="version.nodes && version.nodes.length > 0" :class="$style.nodes">

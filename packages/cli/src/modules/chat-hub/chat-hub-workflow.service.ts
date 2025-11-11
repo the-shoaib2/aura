@@ -1,14 +1,14 @@
-import { ChatHubConversationModel, ChatSessionId } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
+import { ChatHubConversationModel, ChatSessionId } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
 import {
 	SharedWorkflow,
 	SharedWorkflowRepository,
 	withTransaction,
 	WorkflowEntity,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import { EntityManager } from '@n8n/typeorm';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import { EntityManager } from '@aura/typeorm';
 import {
 	AGENT_LANGCHAIN_NODE_TYPE,
 	CHAT_TRIGGER_NODE_TYPE,
@@ -22,7 +22,7 @@ import {
 	MEMORY_MANAGER_NODE_TYPE,
 	NodeConnectionTypes,
 	OperationalError,
-} from 'n8n-workflow';
+} from 'workflow';
 import { v4 as uuidv4 } from 'uuid';
 
 import { ChatHubMessage } from './chat-hub-message.entity';
@@ -340,7 +340,7 @@ export class ChatHubWorkflowService {
 				options: {
 					enableStreaming: true,
 					maxTokensFromMemory:
-						model.provider !== 'n8n' && model.provider !== 'custom-agent'
+						model.provider !== 'aura' && model.provider !== 'custom-agent'
 							? getMaxContextWindowTokens(model.provider, model.model)
 							: undefined,
 					systemMessage,
@@ -358,7 +358,7 @@ export class ChatHubWorkflowService {
 		credentials: INodeCredentials,
 		conversationModel: ChatHubConversationModel,
 	): INode {
-		if (conversationModel.provider === 'n8n' || conversationModel.provider === 'custom-agent') {
+		if (conversationModel.provider === 'aura' || conversationModel.provider === 'custom-agent') {
 			throw new OperationalError('Custom agent workflows do not require a model node');
 		}
 

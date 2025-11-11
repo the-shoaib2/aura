@@ -4,12 +4,12 @@
 /* eslint-disable id-denylist */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { Project } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import type { Project } from '@aura/db';
+import { Container } from '@aura/di';
 import type express from 'express';
-import { BinaryDataService, ErrorReporter } from 'n8n-core';
+import { BinaryDataService, ErrorReporter } from 'aura-core';
 import type {
 	IBinaryData,
 	IDataObject,
@@ -29,7 +29,7 @@ import type {
 	IWorkflowExecutionDataProcess,
 	IWorkflowBase,
 	WebhookResponseData,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	CHAT_TRIGGER_NODE_TYPE,
 	createDeferredPromise,
@@ -41,7 +41,7 @@ import {
 	UnexpectedError,
 	WAIT_NODE_TYPE,
 	WorkflowConfigurationError,
-} from 'n8n-workflow';
+} from 'workflow';
 import { finished } from 'stream/promises';
 
 import { WebhookService } from './webhook.service';

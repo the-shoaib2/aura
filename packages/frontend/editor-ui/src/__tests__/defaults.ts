@@ -1,4 +1,4 @@
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 
 export const defaultSettings: FrontendSettings = {
 	inE2ETests: false,
@@ -166,7 +166,7 @@ export const defaultSettings: FrontendSettings = {
 	activeModules: [],
 	envFeatureFlags: {},
 	dynamicBanners: {
-		endpoint: 'https://api.n8n.io/api/banners',
+		endpoint: 'https://api.aura.io/api/banners',
 		enabled: true,
 	},
 };

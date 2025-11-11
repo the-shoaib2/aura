@@ -1,5 +1,5 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import { Container } from '@aura/di';
 
 import { ClearLicenseCommand } from '@/commands/license/clear';
 import { License } from '@/license';

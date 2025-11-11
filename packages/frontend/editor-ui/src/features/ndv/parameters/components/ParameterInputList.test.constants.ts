@@ -1,5 +1,5 @@
 import type { INodeUi } from '@/Interface';
-import type { INodeParameters, INodeProperties } from 'n8n-workflow';
+import type { INodeParameters, INodeProperties } from 'workflow';
 
 export const TEST_PARAMETERS: INodeProperties[] = [
 	{
@@ -35,7 +35,7 @@ export const TEST_PARAMETERS: INodeProperties[] = [
 	},
 	{
 		displayName:
-			'Note: This is a notice with <a href="notice.n8n.io" target="_blank">notice link</a>',
+			'Note: This is a notice with <a href="notice.aura.io" target="_blank">notice link</a>',
 		name: 'testNotice',
 		type: 'notice',
 		default: '',
@@ -45,7 +45,7 @@ export const TEST_PARAMETERS: INodeProperties[] = [
 	},
 	{
 		displayName:
-			'Tip: This is a callout with <a href="callout.n8n.io" target="_blank">callout link</a>',
+			'Tip: This is a callout with <a href="callout.aura.io" target="_blank">callout link</a>',
 		name: 'testCallout',
 		type: 'callout',
 		default: '',
@@ -84,7 +84,7 @@ export const TEST_NODE_NO_ISSUES: INodeUi = {
 	parameters: { fixedCollectionTest: { values: [{ name: 'firstName' }] } },
 	typeVersion: 1.1,
 	name: 'Test Node',
-	type: 'n8n-nodes-base.executeWorkflowTrigger',
+	type: 'aura-nodes-base.executeWorkflowTrigger',
 	position: [260, 340],
 };
 

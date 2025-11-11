@@ -1,7 +1,7 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
 import { mock } from 'jest-mock-extended';
 import { DateTime } from 'luxon';
-import { NodeOperationError, type IExecuteFunctions } from 'n8n-workflow';
+import { NodeOperationError, type IExecuteFunctions } from 'workflow';
 
 import { Wait } from '../Wait.node';
 

@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'workflow';
 
 import { wrapData } from '../../../../../../utils/utilities';
 import type { GoogleSheet } from '../../helpers/GoogleSheet';
@@ -12,7 +12,7 @@ export const description: SheetProperties = [
 		name: 'title',
 		type: 'string',
 		required: true,
-		default: 'n8n-sheet',
+		default: 'aura-sheet',
 		displayOptions: {
 			show: {
 				resource: ['sheet'],

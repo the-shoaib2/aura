@@ -1,7 +1,7 @@
-import { isContainedWithin, safeJoinPath } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
-import type { FileSystemHelperFunctions, INode } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import { isContainedWithin, safeJoinPath } from '@aura/backend-common';
+import { Container } from '@aura/di';
+import type { FileSystemHelperFunctions, INode } from 'workflow';
+import { NodeOperationError } from 'workflow';
 import { createReadStream } from 'node:fs';
 import {
 	access as fsAccess,
@@ -88,7 +88,7 @@ export const getFileSystemHelperFunctions = (node: INode): FileSystemHelperFunct
 	},
 
 	getStoragePath() {
-		return safeJoinPath(Container.get(InstanceSettings).n8nFolder, `storage/${node.type}`);
+		return safeJoinPath(Container.get(InstanceSettings).auraFolder, `storage/${node.type}`);
 	},
 
 	async writeContentToFile(filePath, content, flag) {
@@ -102,11 +102,11 @@ export const getFileSystemHelperFunctions = (node: INode): FileSystemHelperFunct
 });
 
 /**
- * @returns The restricted paths for the n8n instance.
+ * @returns The restricted paths for the aura instance.
  */
 function getN8nRestrictedPaths() {
-	const { n8nFolder, staticCacheDir } = Container.get(InstanceSettings);
-	const restrictedPaths = [n8nFolder, staticCacheDir];
+	const { auraFolder, staticCacheDir } = Container.get(InstanceSettings);
+	const restrictedPaths = [auraFolder, staticCacheDir];
 
 	if (process.env[CONFIG_FILES]) {
 		restrictedPaths.push(...process.env[CONFIG_FILES].split(','));

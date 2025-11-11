@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { IRunDataDisplayMode, IUpdateInformation, TargetItem } from '@/Interface';
 import type { MainPanelType, NodePanelType } from '../ndv.types';
-import { createEventBus } from '@n8n/utils/event-bus';
-import type { IRunData, NodeConnectionType, Workflow } from 'n8n-workflow';
-import { jsonParse, NodeConnectionTypes, NodeHelpers } from 'n8n-workflow';
+import { createEventBus } from '@aura/utils/event-bus';
+import type { IRunData, NodeConnectionType, Workflow } from 'workflow';
+import { jsonParse, NodeConnectionTypes, NodeHelpers } from 'workflow';
 import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 import NDVHeader from '../../panel/components/NDVHeader.vue';
@@ -33,8 +33,8 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { getNodeIconSource } from '@/app/utils/nodeIcon';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
-import { useI18n } from '@n8n/i18n';
+import { useDeviceSupport } from '@aura/composables/useDeviceSupport';
+import { useI18n } from '@aura/i18n';
 import { storeToRefs } from 'pinia';
 import InputPanel from '../../panel/components/InputPanel.vue';
 import OutputPanel from '../../panel/components/OutputPanel.vue';
@@ -42,7 +42,7 @@ import PanelDragButtonV2 from '../../panel/components/PanelDragButtonV2.vue';
 import TriggerPanel from '../../panel/components/TriggerPanel.vue';
 import { useTelemetryContext } from '@/app/composables/useTelemetryContext';
 
-import { N8nResizeWrapper } from '@n8n/design-system';
+import { N8nResizeWrapper } from '@aura/design-system';
 import NDVFloatingNodes from '@/features/ndv/panel/components/NDVFloatingNodes.vue';
 const emit = defineEmits<{
 	saveKeyboardShortcut: [event: KeyboardEvent];

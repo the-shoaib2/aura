@@ -1,9 +1,9 @@
-import { mockLogger } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
-import type { DbConnection } from '@n8n/db';
+import { mockLogger } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
+import type { DbConnection } from '@aura/db';
 import type express from 'express';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 import { AssertionError } from 'node:assert';
 import * as http from 'node:http';
 

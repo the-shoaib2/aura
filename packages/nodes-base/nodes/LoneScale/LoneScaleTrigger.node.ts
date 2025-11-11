@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookFunctions,
 	type IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { lonescaleApiRequest } from './GenericFunctions';
 
@@ -42,7 +42,7 @@ export class LoneScaleTrigger implements INodeType {
 
 		properties: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 				displayName: 'Workflow Name',
 				name: 'workflow',
 				type: 'options',
@@ -51,7 +51,7 @@ export class LoneScaleTrigger implements INodeType {
 					loadOptionsMethod: 'getWorkflows',
 				},
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-missing-final-period, n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-description-missing-final-period, aura-nodes-base/node-param-description-wrong-for-dynamic-options
 				description: 'Select one workflow. Choose from the list',
 				required: true,
 			},
@@ -79,7 +79,7 @@ export class LoneScaleTrigger implements INodeType {
 				const webhook = await lonescaleApiRequest.call(
 					this,
 					'GET',
-					`/workflows/${workflowId}/hook?type=n8n`,
+					`/workflows/${workflowId}/hook?type=aura`,
 				);
 				if (webhook.target_url === webhookUrl) {
 					webhookData.webhookId = webhook.webhook_id;
@@ -92,7 +92,7 @@ export class LoneScaleTrigger implements INodeType {
 				const webhookData = this.getWorkflowStaticData('node');
 				const workflowId = this.getNodeParameter('workflow') as string;
 				const body: IDataObject = {
-					type: 'n8n',
+					type: 'aura',
 					target_url: webhookUrl,
 				};
 				const webhook = await lonescaleApiRequest.call(
@@ -110,7 +110,7 @@ export class LoneScaleTrigger implements INodeType {
 					await lonescaleApiRequest.call(
 						this,
 						'DELETE',
-						`/workflows/${webhookData.webhookId}/hook?type=n8n`,
+						`/workflows/${webhookData.webhookId}/hook?type=aura`,
 					);
 				} catch (error) {
 					return false;

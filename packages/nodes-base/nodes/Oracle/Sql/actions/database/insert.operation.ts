@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	INode,
-} from 'n8n-workflow';
+} from 'workflow';
 import type * as oracleDBTypes from 'oracledb';
 
 import { updateDisplayOptions } from '@utils/utilities';

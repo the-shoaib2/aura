@@ -1,4 +1,4 @@
-/* eslint-disable n8n-nodes-base/node-param-description-excess-final-period */
+/* eslint-disable aura-nodes-base/node-param-description-excess-final-period */
 import type {
 	IDataObject,
 	IHookFunctions,
@@ -8,8 +8,8 @@ import type {
 	IWebhookResponseData,
 	JsonObject,
 	NodeParameterValue,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes } from 'workflow';
 
 import { stripeApiRequest } from './helpers';
 
@@ -48,7 +48,7 @@ export class StripeTrigger implements INodeType {
 				required: true,
 				default: [],
 				description: 'The event to listen to',
-				// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
+				// eslint-disable-next-line aura-nodes-base/node-param-multi-options-type-unsorted-items
 				options: [
 					{
 						name: '*',
@@ -875,7 +875,7 @@ export class StripeTrigger implements INodeType {
 			async create(this: IHookFunctions): Promise<boolean> {
 				const webhookUrl = this.getNodeWebhookUrl('default');
 
-				const webhookDescription = `Created by n8n for workflow ID: ${this.getWorkflow().id}`;
+				const webhookDescription = `Created by aura for workflow ID: ${this.getWorkflow().id}`;
 
 				const events = this.getNodeParameter('events', []);
 

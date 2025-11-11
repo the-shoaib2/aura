@@ -1,6 +1,6 @@
 import type { LlmTokenUsageData } from '@/Interface';
 import { addTokenUsageData, formatTokenUsageCount, parseAiContent } from '@/app/utils/aiUtils';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 describe(parseAiContent, () => {
 	it('should parse inputOverride data', () => {

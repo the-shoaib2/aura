@@ -1,7 +1,7 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import type { IExecuteFunctions } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { Summarize } from '../../Summarize.node';
 import type { Aggregations } from '../../utils';

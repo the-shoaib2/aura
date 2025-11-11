@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { ApplicationError, type IWebhookFunctions } from 'n8n-workflow';
+import { ApplicationError, type IWebhookFunctions } from 'workflow';
 
 import type { WebhookParameters } from '../utils';
 import {
@@ -278,7 +278,7 @@ describe('Webhook Utils', () => {
 		it('should throw an error if response mode is not "responseNode" but a Respond to Webhook node is found', () => {
 			const context: Partial<IWebhookFunctions> = {
 				getNodeParameter: jest.fn().mockReturnValue('onReceived'),
-				getChildNodes: jest.fn().mockReturnValue([{ type: 'n8n-nodes-base.respondToWebhook' }]),
+				getChildNodes: jest.fn().mockReturnValue([{ type: 'aura-nodes-base.respondToWebhook' }]),
 				getNode: jest.fn().mockReturnValue({ name: 'Webhook' }),
 			};
 			expect(() => {

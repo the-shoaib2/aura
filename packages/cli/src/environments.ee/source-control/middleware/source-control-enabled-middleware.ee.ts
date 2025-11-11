@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import type { RequestHandler } from 'express';
 
 import { isSourceControlLicensed } from '../source-control-helper.ee';

@@ -1,11 +1,11 @@
 import type { Schema } from '@/Interface';
-import { ApplicationError, type INodeExecutionData } from 'n8n-workflow';
+import { ApplicationError, type INodeExecutionData } from 'workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useDataSchema } from '@/app/composables/useDataSchema';
 import { executionDataToJson } from '@/app/utils/nodeTypesUtils';
 import { generateCodeForPrompt } from '@/features/ai/assistant/assistant.api';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { type AskAiRequest } from '@/features/ai/assistant/assistant.types';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { format } from 'prettier';

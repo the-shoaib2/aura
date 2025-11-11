@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const optionsCollection: INodeProperties = {
 	displayName: 'Options',
@@ -72,7 +72,7 @@ export const optionsCollection: INodeProperties = {
 			type: 'string',
 			default: '',
 			description:
-				'Comma-separated list of the values you want to use as query parameters. <a href="https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/#use-query-parameters" target="_blank">More info</a>.',
+				'Comma-separated list of the values you want to use as query parameters. <a href="https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.postgres/#use-query-parameters" target="_blank">More info</a>.',
 			hint: 'Comma-separated list of values: reference them in your query as $1, $2, $3…',
 			placeholder: 'e.g. value1,value2,value3',
 			displayOptions: {
@@ -80,7 +80,7 @@ export const optionsCollection: INodeProperties = {
 			},
 		},
 		{
-			// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+			// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 			displayName: 'Treat query parameters in single quotes as text',
 			name: 'treatQueryParametersInSingleQuotesAsText',
 			type: 'boolean',
@@ -91,13 +91,13 @@ export const optionsCollection: INodeProperties = {
 			},
 		},
 		{
-			// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+			// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 			displayName: 'Output Columns',
 			name: 'outputColumns',
 			type: 'multiOptions',
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options
+			// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-multi-options
 			description:
-				'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>',
+				'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/" target="_blank">expression</a>',
 			typeOptions: {
 				loadOptionsMethod: 'getColumnsMultiOptions',
 				loadOptionsDependsOn: ['table.value'],
@@ -220,13 +220,13 @@ export const whereFixedCollection: INodeProperties = {
 			name: 'values',
 			values: [
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 					displayName: 'Column',
 					name: 'column',
 					type: 'options',
-					// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+					// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 					description:
-						'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>',
+						'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/" target="_blank">expression</a>',
 					default: '',
 					placeholder: 'e.g. ID',
 					typeOptions: {
@@ -240,7 +240,7 @@ export const whereFixedCollection: INodeProperties = {
 					type: 'options',
 					description:
 						"The operator to check the column against. When using 'LIKE' operator percent sign ( %) matches zero or more characters, underscore ( _ ) matches any single character.",
-					// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+					// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 					options: [
 						{
 							name: 'Equal',
@@ -312,13 +312,13 @@ export const sortFixedCollection: INodeProperties = {
 			name: 'values',
 			values: [
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 					displayName: 'Column',
 					name: 'column',
 					type: 'options',
-					// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+					// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 					description:
-						'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>',
+						'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/" target="_blank">expression</a>',
 					default: '',
 					typeOptions: {
 						loadOptionsMethod: 'getColumns',

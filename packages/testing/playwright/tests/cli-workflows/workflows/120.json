@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "5b615e13-07d6-4c71-af21-318ec21ec4a0"
@@ -32,7 +32,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"id": "7fb26b4f-a2aa-4cb9-aa75-8514d7095189"
@@ -56,7 +56,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"id": "2494e933-9a78-418a-afe2-ada2340d2f56"
@@ -67,7 +67,7 @@
 				"columns": "id,name"
 			},
 			"name": "MySQL",
-			"type": "n8n-nodes-base.mySql",
+			"type": "aura-nodes-base.mySql",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -85,7 +85,7 @@
 				"columns": "id,name"
 			},
 			"name": "MySQL1",
-			"type": "n8n-nodes-base.mySql",
+			"type": "aura-nodes-base.mySql",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -102,7 +102,7 @@
 				"query": "=SELECT * FROM TestTable LIMIT 1;"
 			},
 			"name": "MySQL2",
-			"type": "n8n-nodes-base.mySql",
+			"type": "aura-nodes-base.mySql",
 			"typeVersion": 1,
 			"position": [1250, 300],
 			"credentials": {
@@ -119,7 +119,7 @@
 				"query": "=DELETE FROM TestTable WHERE id={{$node[\"Set1\"].json[\"id\"]}};"
 			},
 			"name": "MySQL3",
-			"type": "n8n-nodes-base.mySql",
+			"type": "aura-nodes-base.mySql",
 			"typeVersion": 1,
 			"position": [1450, 300],
 			"credentials": {

@@ -1,12 +1,12 @@
 import fs from 'fs/promises';
 import { mock } from 'jest-mock-extended';
-import type { DirectoryLoader } from 'n8n-core';
-import type { INodeProperties, INodeTypeDescription } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { DirectoryLoader } from 'aura-core';
+import type { INodeProperties, INodeTypeDescription } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 import watcher from '@parcel/watcher';
 
 import { LoadNodesAndCredentials } from '../load-nodes-and-credentials';
-import { Service } from '@n8n/di';
+import { Service } from '@aura/di';
 
 jest.mock('lodash/debounce', () => (fn: () => void) => fn);
 
@@ -291,7 +291,7 @@ describe('LoadNodesAndCredentials', () => {
 
 		beforeEach(() => {
 			instance = new LoadNodesAndCredentials(mock(), mock(), mock(), mock(), mock());
-			instance.knownNodes['n8n-nodes-base.test'] = {
+			instance.knownNodes['aura-nodes-base.test'] = {
 				className: 'Test',
 				sourcePath: '/nodes-base/dist/nodes/Test/Test.node.js',
 			};
@@ -299,7 +299,7 @@ describe('LoadNodesAndCredentials', () => {
 
 		it('should return undefined if the node is not known', () => {
 			const result = instance.resolveSchema({
-				node: 'n8n-nodes-base.doesNotExist',
+				node: 'aura-nodes-base.doesNotExist',
 				version: '1.0.0',
 				resource: 'account',
 				operation: 'get',
@@ -309,7 +309,7 @@ describe('LoadNodesAndCredentials', () => {
 
 		it('should return the correct path if the node is known', () => {
 			const result = instance.resolveSchema({
-				node: 'n8n-nodes-base.test',
+				node: 'aura-nodes-base.test',
 				version: '1.0.0',
 				resource: 'account',
 				operation: 'get',
@@ -319,7 +319,7 @@ describe('LoadNodesAndCredentials', () => {
 
 		it('should return the correct path if there is no resource or operation', () => {
 			const result = instance.resolveSchema({
-				node: 'n8n-nodes-base.test',
+				node: 'aura-nodes-base.test',
 				version: '1.0.0',
 			});
 			expect(result).toEqual('/nodes-base/dist/nodes/Test/__schema__/v1.0.0.json');

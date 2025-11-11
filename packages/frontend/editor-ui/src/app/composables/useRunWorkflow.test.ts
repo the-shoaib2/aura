@@ -2,7 +2,7 @@ import { setActivePinia } from 'pinia';
 import { createTestingPinia } from '@pinia/testing';
 import { useRouter } from 'vue-router';
 import type router from 'vue-router';
-import { ExpressionError, NodeConnectionTypes } from 'n8n-workflow';
+import { ExpressionError, NodeConnectionTypes } from 'workflow';
 import type {
 	IPinData,
 	IRunData,
@@ -11,7 +11,7 @@ import type {
 	ITaskData,
 	INodeConnections,
 	INode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import {
@@ -21,17 +21,17 @@ import {
 } from '@/app/composables/useWorkflowState';
 import type { IStartRunData } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
-import type { WorkflowData } from '@n8n/rest-api-client/api/workflows';
+import type { WorkflowData } from '@aura/rest-api-client/api/workflows';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { useToast } from './useToast';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { captor, mock } from 'vitest-mock-extended';
 import { usePushConnectionStore } from '@/app/stores/pushConnection.store';
 import { createTestNode, createTestWorkflow } from '@/__tests__/mocks';
 import { waitFor } from '@testing-library/vue';
-import { useAgentRequestStore } from '@n8n/stores/useAgentRequestStore';
+import { useAgentRequestStore } from '@aura/stores/useAgentRequestStore';
 import { SLACK_TRIGGER_NODE_TYPE, MANUAL_TRIGGER_NODE_TYPE } from '@/app/constants';
 
 vi.mock('@/app/stores/workflows.store', () => {
@@ -93,7 +93,7 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 	useTelemetry: vi.fn().mockReturnValue({ track: vi.fn() }),
 }));
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@aura/i18n', () => ({
 	i18n: { baseText: vi.fn().mockImplementation((key) => key) },
 	useI18n: vi.fn().mockReturnValue({ baseText: vi.fn().mockImplementation((key) => key) }),
 }));
@@ -754,7 +754,7 @@ describe('useRunWorkflow({ router })', () => {
 							param: '0',
 						},
 						position: [0, 0],
-						type: 'n8n-nodes-base.test',
+						type: 'aura-nodes-base.test',
 						typeVersion: 1,
 					} as INode,
 				],
@@ -1066,7 +1066,7 @@ describe('useRunWorkflow({ router })', () => {
 			return {
 				name,
 				position,
-				type: 'n8n-nodes-base.test',
+				type: 'aura-nodes-base.test',
 				typeVersion: 1,
 				id: name,
 				parameters: {},

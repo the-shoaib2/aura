@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { DataTable, DataTableCreateColumnSchema } from '@n8n/api-types';
+import type { DataTable, DataTableCreateColumnSchema } from '@aura/api-types';
 import {
 	createTeamProject,
 	getPersonalProject,
 	linkUserToProject,
 	testDb,
-} from '@n8n/backend-test-utils';
-import type { Project, User } from '@n8n/db';
-import { ProjectRepository, QueryFailedError } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import type { Project, User } from '@aura/db';
+import { ProjectRepository, QueryFailedError } from '@aura/db';
+import { Container } from '@aura/di';
 import { DateTime } from 'luxon';
-import type { DataTableRow } from 'n8n-workflow';
+import type { DataTableRow } from 'workflow';
 
 import { createDataTable } from '@test-integration/db/data-tables';
 import { createOwner, createMember, createAdmin } from '@test-integration/db/users';

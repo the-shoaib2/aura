@@ -1,5 +1,5 @@
-import type { DatabaseConfig } from '@n8n/config';
-import { sql } from '@n8n/db';
+import type { DatabaseConfig } from '@aura/config';
+import { sql } from '@aura/db';
 import { DateTime } from 'luxon';
 
 /**

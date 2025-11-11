@@ -7,8 +7,8 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	ISupplyDataFunctions,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import type { SetField, SetNodeOptions } from './helpers/interfaces';
 import {
@@ -57,7 +57,7 @@ const properties: INodeProperties[] = [
 						name: 'type',
 						type: 'options',
 						description: 'The field value type',
-						// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+						// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 						options: [
 							{
 								name: 'String',

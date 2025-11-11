@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "94003e55-6c4e-492f-802a-49f4fb5b5f4b",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [120, 940]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "da82fbb0-b689-4c4e-b310-303361e8411c",
 			"name": "Mock data A",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [340, 840]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "493ecb02-52e7-43b7-8c73-d45a3f7e76f6",
 			"name": "Mock data B",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [340, 1040]
 		},
@@ -45,7 +45,7 @@
 			},
 			"id": "d0c0f123-1461-4b78-9cf8-6410440430d3",
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2.1,
 			"position": [700, 500]
 		},
@@ -65,7 +65,7 @@
 			},
 			"id": "5093ec3e-c987-44c7-815f-279ea7842db5",
 			"name": "Merge1",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2.1,
 			"position": [700, 680]
 		},
@@ -86,7 +86,7 @@
 			},
 			"id": "0453bb35-3971-4a23-93b7-31853e4634fb",
 			"name": "Merge2",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2.1,
 			"position": [700, 880]
 		},
@@ -107,7 +107,7 @@
 			},
 			"id": "f09c9327-4557-406b-8ae0-db851055dd08",
 			"name": "Merge3",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2.1,
 			"position": [700, 1060],
 			"alwaysOutputData": true
@@ -129,7 +129,7 @@
 			},
 			"id": "d5bc6ee7-141e-4eba-a9aa-cb866b177b89",
 			"name": "Merge4",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2.1,
 			"position": [700, 1280],
 			"alwaysOutputData": true
@@ -151,7 +151,7 @@
 			},
 			"id": "4c881679-3f76-491a-a2c9-e35e4c9e28ff",
 			"name": "Merge5",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2.1,
 			"position": [700, 1460],
 			"alwaysOutputData": true

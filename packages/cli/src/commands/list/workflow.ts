@@ -1,6 +1,6 @@
-import { WorkflowRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { WorkflowRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import { z } from 'zod';
 
 import { BaseCommand } from '../base-command';

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
-import type { BaseTextKey } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import { ASSIGNMENT_TYPES } from './constants';
 import { computed } from 'vue';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import { type IconName } from '@aura/design-system/components/N8nIcon/icons';
 
-import { N8nIcon, N8nOption, N8nSelect } from '@n8n/design-system';
+import { N8nIcon, N8nOption, N8nSelect } from '@aura/design-system';
 interface Props {
 	modelValue: string;
 	isReadOnly?: boolean;

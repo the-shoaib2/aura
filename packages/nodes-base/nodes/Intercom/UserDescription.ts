@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const userOperations: INodeProperties[] = [
 	{
@@ -323,7 +323,7 @@ export const userFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'Identifies the companies this user belongs to. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Identifies the companies this user belongs to. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Email',

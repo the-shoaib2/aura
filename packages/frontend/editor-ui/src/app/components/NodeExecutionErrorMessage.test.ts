@@ -20,11 +20,11 @@ describe('NodeExecutionErrorMessage', () => {
 			props: {
 				nodeName: 'Test Node',
 				errorMessage:
-					'Insufficient quota detected. <a href="https://docs.n8n.io/" target="_blank">Learn more</a>',
+					'Insufficient quota detected. <a href="https://docs.aura.io/" target="_blank">Learn more</a>',
 			},
 		});
 		expect(getByTestId('sanitized-error-message')).toContainHTML(
-			'Insufficient quota detected. <a href="https://docs.n8n.io/" target="_blank">Learn more</a>',
+			'Insufficient quota detected. <a href="https://docs.aura.io/" target="_blank">Learn more</a>',
 		);
 	});
 

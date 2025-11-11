@@ -1,18 +1,13 @@
-import { createWorkflow, testDb, mockInstance } from '@n8n/backend-test-utils';
-import type { Project, WebhookEntity } from '@n8n/db';
-import { WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createWorkflow, testDb, mockInstance } from '@aura/backend-test-utils';
+import type { Project, WebhookEntity } from '@aura/db';
+import { WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import { InstanceSettings, ExternalSecretsProxy } from 'n8n-core';
-import { FormTrigger } from 'n8n-nodes-base/nodes/Form/FormTrigger.node';
-import { ScheduleTrigger } from 'n8n-nodes-base/nodes/Schedule/ScheduleTrigger.node';
-import { NodeApiError, Workflow } from 'n8n-workflow';
-import type {
-	IWebhookData,
-	IWorkflowBase,
-	WorkflowActivateMode,
-	INodeTypeData,
-} from 'n8n-workflow';
+import { InstanceSettings, ExternalSecretsProxy } from 'aura-core';
+import { FormTrigger } from 'aura-nodes-base/nodes/Form/FormTrigger.node';
+import { ScheduleTrigger } from 'aura-nodes-base/nodes/Schedule/ScheduleTrigger.node';
+import { NodeApiError, Workflow } from 'workflow';
+import type { IWebhookData, IWorkflowBase, WorkflowActivateMode, INodeTypeData } from 'workflow';
 
 import { createOwner } from './shared/db/users';
 import * as utils from './shared/utils/';
@@ -52,11 +47,11 @@ beforeAll(async () => {
 	activeWorkflowManager = Container.get(ActiveWorkflowManager);
 
 	const nodes: INodeTypeData = {
-		'n8n-nodes-base.scheduleTrigger': {
+		'aura-nodes-base.scheduleTrigger': {
 			type: new ScheduleTrigger(),
 			sourcePath: '',
 		},
-		'n8n-nodes-base.formTrigger': {
+		'aura-nodes-base.formTrigger': {
 			type: new FormTrigger(),
 			sourcePath: '',
 		},
@@ -182,7 +177,7 @@ describe('add()', () => {
 					id: 'uuid-1',
 					parameters: { path: 'test-webhook-path', options: {} },
 					name: 'Form Trigger',
-					type: 'n8n-nodes-base.formTrigger',
+					type: 'aura-nodes-base.formTrigger',
 					typeVersion: 1,
 					position: [500, 300],
 				},

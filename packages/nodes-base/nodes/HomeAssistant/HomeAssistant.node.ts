@@ -10,7 +10,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { cameraProxyFields, cameraProxyOperations } from './CameraProxyDescription';
 import { configOperations } from './ConfigDescription';

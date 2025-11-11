@@ -1,6 +1,6 @@
-import type { LicenseProvider } from '@n8n/backend-common';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
+import type { LicenseProvider } from '@aura/backend-common';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
 import {
 	LICENSE_FEATURES,
 	LICENSE_QUOTAS,
@@ -8,13 +8,13 @@ import {
 	UNLIMITED_LICENSE_QUOTA,
 	type BooleanLicenseFeature,
 	type NumericLicenseFeature,
-} from '@n8n/constants';
-import { SettingsRepository } from '@n8n/db';
-import { OnLeaderStepdown, OnLeaderTakeover, OnPubSubEvent, OnShutdown } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
-import type { TEntitlement, TLicenseBlock } from '@n8n_io/license-sdk';
-import { LicenseManager } from '@n8n_io/license-sdk';
-import { InstanceSettings } from 'n8n-core';
+} from '@aura/constants';
+import { SettingsRepository } from '@aura/db';
+import { OnLeaderStepdown, OnLeaderTakeover, OnPubSubEvent, OnShutdown } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
+import type { TEntitlement, TLicenseBlock } from '@aura_io/license-sdk';
+import { LicenseManager } from '@aura_io/license-sdk';
+import { InstanceSettings } from 'aura-core';
 
 import { LicenseMetricsService } from '@/metrics/license-metrics.service';
 
@@ -95,7 +95,7 @@ export class License implements LicenseProvider {
 			this.manager = new LicenseManager({
 				server,
 				tenantId: this.globalConfig.license.tenantId,
-				productIdentifier: `n8n-${N8N_VERSION}`,
+				productIdentifier: `aura-${N8N_VERSION}`,
 				autoRenewEnabled: shouldRenew,
 				renewOnInit: shouldRenew,
 				autoRenewOffset,

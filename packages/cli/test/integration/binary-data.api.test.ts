@@ -1,5 +1,5 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { BinaryDataService, FileNotFoundError } from 'n8n-core';
+import { mockInstance } from '@aura/backend-test-utils';
+import { BinaryDataService, FileNotFoundError } from 'aura-core';
 import fsp from 'node:fs/promises';
 import { Readable } from 'node:stream';
 
@@ -30,7 +30,7 @@ describe('GET /binary-data', () => {
 	const fileId = '599c5f84007-7d14-4b63-8f1e-d726098d0cc0';
 	const fsBinaryDataId = `filesystem:${fileId}`;
 	const s3BinaryDataId = `s3:${fileId}`;
-	const binaryFilePath = `/Users/john/.n8n/binaryData/${fileId}`;
+	const binaryFilePath = `/Users/john/.aura/binaryData/${fileId}`;
 	const mimeType = 'text/plain';
 	const fileName = 'test.txt';
 	const buffer = Buffer.from('content');

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { VIEWS } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useCalloutHelpers } from '@/app/composables/useCalloutHelpers';
 import { computed, onMounted } from 'vue';
 import type { OpenTemplateElement } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 
-import { N8nCard, N8nHeading, N8nLink, N8nNodeCreatorNode } from '@n8n/design-system';
+import { N8nCard, N8nHeading, N8nLink, N8nNodeCreatorNode } from '@aura/design-system';
 import PageViewLayout from '@/app/components/layouts/PageViewLayout.vue';
 const nodeTypesStore = useNodeTypesStore();
 

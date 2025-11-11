@@ -41,7 +41,7 @@
 						"id": "toolu_013thFL8v3q6of8iUoQWizXT",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "n8n-nodes-base.manualTrigger",
+							"nodeType": "aura-nodes-base.manualTrigger",
 							"name": "Manual Trigger",
 							"connectionParametersReasoning": "Manual Trigger is a trigger node with static outputs, no connection parameters needed",
 							"connectionParameters": {},
@@ -53,7 +53,7 @@
 						"id": "toolu_01G8Z3KuuRQgo5g4BXtAmYUa",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "n8n-nodes-base.set",
+							"nodeType": "aura-nodes-base.set",
 							"name": "Workflow Configuration",
 							"connectionParametersReasoning": "Set node has static inputs/outputs, no connection parameters needed",
 							"connectionParameters": {},
@@ -65,7 +65,7 @@
 						"id": "toolu_01L8K8CGhbgV6Ze2dWtd1Cac",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "n8n-nodes-base.youTube",
+							"nodeType": "aura-nodes-base.youTube",
 							"name": "Get Video Details",
 							"connectionParametersReasoning": "YouTube node has static inputs/outputs, no connection parameters needed",
 							"connectionParameters": {},
@@ -77,7 +77,7 @@
 						"id": "toolu_01KNwD4y2r2QTkRB8UJtHbeH",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "n8n-nodes-base.youTube",
+							"nodeType": "aura-nodes-base.youTube",
 							"name": "Get Video Captions",
 							"connectionParametersReasoning": "YouTube node has static inputs/outputs, no connection parameters needed",
 							"connectionParameters": {},
@@ -89,7 +89,7 @@
 						"id": "toolu_01KbQ7NVJSd69hHhBtfpvoxq",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "n8n-nodes-base.set",
+							"nodeType": "aura-nodes-base.set",
 							"name": "Merge Video Data",
 							"connectionParametersReasoning": "Set node has static inputs/outputs, no connection parameters needed",
 							"connectionParameters": {},
@@ -101,7 +101,7 @@
 						"id": "toolu_01NJeeLN4wyjHUaKsAV1GMYN",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "@n8n/n8n-nodes-langchain.googleGemini",
+							"nodeType": "@aura/aura-nodes-langchain.googleGemini",
 							"name": "Generate Chapters with AI",
 							"connectionParametersReasoning": "Google Gemini node has dynamic inputs based on resource and operation parameters. For text message operation, it accepts main input and optional ai_tool connections. Setting resource to text and operation to message.",
 							"connectionParameters": {
@@ -116,7 +116,7 @@
 						"id": "toolu_01LuFTi539bJ6vW8ep3x8ftH",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "n8n-nodes-base.code",
+							"nodeType": "aura-nodes-base.code",
 							"name": "Format Chapters",
 							"connectionParametersReasoning": "Code node has static inputs/outputs, no connection parameters needed",
 							"connectionParameters": {},
@@ -128,7 +128,7 @@
 						"id": "toolu_01SHXumSgbGXkQLzvezk4iKq",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "n8n-nodes-base.youTube",
+							"nodeType": "aura-nodes-base.youTube",
 							"name": "Update Video Description",
 							"connectionParametersReasoning": "YouTube node has static inputs/outputs, no connection parameters needed",
 							"connectionParameters": {},
@@ -140,7 +140,7 @@
 						"id": "toolu_01RWis13u9kDHJMaJR2w9JPo",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+							"nodeType": "@aura/aura-nodes-langchain.lmChatGoogleGemini",
 							"name": "Google Gemini Chat Model",
 							"connectionParametersReasoning": "Google Gemini Chat Model is an AI sub-node that provides ai_languageModel output, no connection parameters needed",
 							"connectionParameters": {},

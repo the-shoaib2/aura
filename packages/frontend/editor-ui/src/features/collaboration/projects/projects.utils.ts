@@ -1,4 +1,4 @@
-import { truncate } from '@n8n/utils/string/truncate';
+import { truncate } from '@aura/utils/string/truncate';
 
 // Splits a project name into first name, last name, and email when it is in the format "First Last <email@domain.com>"
 export const splitName = (

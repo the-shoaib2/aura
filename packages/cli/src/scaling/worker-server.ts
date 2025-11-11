@@ -1,10 +1,10 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { DbConnection } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { DbConnection } from '@aura/db';
+import { Service } from '@aura/di';
 import type { Application } from 'express';
 import express from 'express';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 import { strict as assert } from 'node:assert';
 import http from 'node:http';
 import type { Server } from 'node:http';
@@ -23,7 +23,7 @@ export type WorkerServerEndpointsConfig = {
 	/** Whether the `/healthz` endpoint is enabled. */
 	health: boolean;
 
-	/** Whether the [credentials overwrites endpoint](https://docs.n8n.io/embed/configuration/#credential-overwrites) is enabled. */
+	/** Whether the [credentials overwrites endpoint](https://docs.aura.io/embed/configuration/#credential-overwrites) is enabled. */
 	overwrites: boolean;
 
 	/** Whether the `/metrics` endpoint is enabled. */
@@ -73,7 +73,7 @@ export class WorkerServer {
 		this.server.on('error', (error: NodeJS.ErrnoException) => {
 			if (error.code === 'EADDRINUSE') {
 				this.logger.error(
-					`Port ${this.port} is already in use, possibly by the n8n main process server. Please set a different port for the worker server.`,
+					`Port ${this.port} is already in use, possibly by the aura main process server. Please set a different port for the worker server.`,
 				);
 				process.exit(1);
 			}
@@ -95,7 +95,7 @@ export class WorkerServer {
 
 		await this.externalHooks.run('worker.ready');
 
-		this.logger.info(`\nn8n worker server listening on port ${this.port}`);
+		this.logger.info(`\naura worker server listening on port ${this.port}`);
 	}
 
 	private async mountEndpoints() {

@@ -171,7 +171,7 @@
 							"jsCode": "for (let i = 0; i < $input.all().length; i++) {   $(\"DebugHelper\").itemMatching(i) }  return []",
 							"notice": ""
 						},
-						"type": "n8n-nodes-base.code",
+						"type": "aura-nodes-base.code",
 						"typeVersion": 2,
 						"position": [720, 0],
 						"id": "d4e8b6a2-cd73-452d-b5f0-986753f5dc4a",

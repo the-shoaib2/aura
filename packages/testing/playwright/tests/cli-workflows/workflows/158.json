@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "07cfaafd-88a2-4563-9c2d-7ecfacc4a008"
@@ -19,7 +19,7 @@
 				"columns": "id,content"
 			},
 			"name": "Microsoft SQL",
-			"type": "n8n-nodes-base.microsoftSql",
+			"type": "aura-nodes-base.microsoftSql",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -49,7 +49,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"id": "59f67b24-0711-4944-aec9-b3470e58ef3a"
@@ -61,7 +61,7 @@
 				"columns": "id,content"
 			},
 			"name": "Microsoft SQL1",
-			"type": "n8n-nodes-base.microsoftSql",
+			"type": "aura-nodes-base.microsoftSql",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -86,7 +86,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"id": "a7177030-713f-456c-97d8-2d1eeeabacd8"
@@ -97,7 +97,7 @@
 				"query": "=SELECT * FROM TestTable WHERE id={{$node[\"Set\"].json[\"id\"]}};"
 			},
 			"name": "Microsoft SQL2",
-			"type": "n8n-nodes-base.microsoftSql",
+			"type": "aura-nodes-base.microsoftSql",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"notesInFlow": true,
@@ -116,7 +116,7 @@
 				"table": "TestTable"
 			},
 			"name": "Microsoft SQL3",
-			"type": "n8n-nodes-base.microsoftSql",
+			"type": "aura-nodes-base.microsoftSql",
 			"typeVersion": 1,
 			"position": [1150, 300],
 			"credentials": {
@@ -133,7 +133,7 @@
 				"query": "SELECT * FROM TestTable;"
 			},
 			"name": "Microsoft SQL4",
-			"type": "n8n-nodes-base.microsoftSql",
+			"type": "aura-nodes-base.microsoftSql",
 			"typeVersion": 1,
 			"position": [1300, 300],
 			"notesInFlow": true,

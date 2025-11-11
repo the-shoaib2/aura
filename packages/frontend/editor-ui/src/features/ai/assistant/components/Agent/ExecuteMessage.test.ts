@@ -26,7 +26,7 @@ const workflowNodes = reactive<INodeUi[]>([
 	{
 		id: '1',
 		name: 'Start Trigger',
-		type: 'n8n-nodes-base.manualTrigger',
+		type: 'aura-nodes-base.manualTrigger',
 		position: [0, 0],
 		parameters: {},
 		typeVersion: 1,
@@ -37,7 +37,7 @@ const workflowNodes = reactive<INodeUi[]>([
 const showMessageMock = vi.fn();
 const runWorkflowMock = vi.fn();
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,
@@ -91,7 +91,7 @@ describe('ExecuteMessage', () => {
 		workflowNodes.splice(0, workflowNodes.length, {
 			id: '1',
 			name: 'Start Trigger',
-			type: 'n8n-nodes-base.manualTrigger',
+			type: 'aura-nodes-base.manualTrigger',
 			position: [0, 0],
 			parameters: {},
 			typeVersion: 1,

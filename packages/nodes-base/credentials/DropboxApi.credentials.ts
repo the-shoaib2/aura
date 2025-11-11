@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class DropboxApi implements ICredentialType {
 	name = 'dropboxApi';

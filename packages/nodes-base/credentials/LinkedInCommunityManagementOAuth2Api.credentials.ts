@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 const scopes = ['w_member_social', 'w_organization_social', 'r_basicprofile'];
 

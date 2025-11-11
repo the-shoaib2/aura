@@ -6,8 +6,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import {
 	getAutomaticSecret,
@@ -21,7 +21,7 @@ export class CiscoWebexTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Webex by Cisco Trigger',
 		name: 'ciscoWebexTrigger',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:ciscoWebex.png',
 		group: ['trigger'],
 		version: 1,
@@ -100,7 +100,7 @@ export class CiscoWebexTrigger implements INodeType {
 					},
 				},
 				default: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'By default the response only contain a reference to the data the user inputed. If this option gets activated, it will resolve the data automatically.',
 			},
@@ -531,7 +531,7 @@ export class CiscoWebexTrigger implements INodeType {
 				const endpoint = '/webhooks';
 
 				const body: IDataObject = {
-					name: `n8n-webhook:${webhookUrl}`,
+					name: `aura-webhook:${webhookUrl}`,
 					targetUrl: webhookUrl,
 					event,
 					resource: mapResource(resource),

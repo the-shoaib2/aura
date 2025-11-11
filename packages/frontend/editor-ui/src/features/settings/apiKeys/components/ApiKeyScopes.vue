@@ -2,12 +2,12 @@
 import { ref, computed, watch } from 'vue';
 
 import { capitalCase } from 'change-case';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { I18nT } from 'vue-i18n';
 
 import { ElCheckbox, ElOption, ElOptionGroup, ElSelect } from 'element-plus';
-import { N8nInputLabel, N8nLink, N8nNotice } from '@n8n/design-system';
+import { N8nInputLabel, N8nLink, N8nNotice } from '@aura/design-system';
 // Define props
 const props = defineProps({
 	modelValue: {

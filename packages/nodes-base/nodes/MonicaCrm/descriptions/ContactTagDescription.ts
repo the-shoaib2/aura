@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const contactTagOperations: INodeProperties[] = [
 	{
@@ -49,7 +49,7 @@ export const contactTagFields: INodeProperties[] = [
 		displayName: 'Tag Names or IDs',
 		name: 'tagsToAdd',
 		description:
-			'Tags to add to the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Tags to add to the contact. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		type: 'multiOptions',
 		typeOptions: {
 			loadOptionsMethod: 'getTagsToAdd',
@@ -85,7 +85,7 @@ export const contactTagFields: INodeProperties[] = [
 		displayName: 'Tag Names or IDs',
 		name: 'tagsToRemove',
 		description:
-			'Tags to remove from the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Tags to remove from the contact. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		type: 'multiOptions',
 		required: true,
 		typeOptions: {

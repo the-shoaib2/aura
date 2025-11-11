@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const DATA_TABLE_ID_FIELD = 'dataTableId';
 

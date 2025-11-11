@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.editImage",
+	"node": "aura-nodes-base.editImage",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "The Edit Image node allows you to manipulate and edit images. Use this node when you want to:\n\n- Blur an image\n- Add a border to an image\n- Create a new image\n- Crop an image\n- Composite an image on top of another\n- Draw on an image\n- Get information about the image\n- Rotate an image\n- Change the size of an image\n- Shear an image along the X or Y axis\n- Add text to the image",
@@ -7,7 +7,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.editimage/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.editimage/"
 			}
 		]
 	},

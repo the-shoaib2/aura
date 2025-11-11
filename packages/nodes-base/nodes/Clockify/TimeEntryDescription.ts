@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const timeEntryOperations: INodeProperties[] = [
 	{
@@ -102,7 +102,7 @@ export const timeEntryFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'The ID of the field to add custom field to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'The ID of the field to add custom field to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Value',
@@ -132,7 +132,7 @@ export const timeEntryFields: INodeProperties[] = [
 				name: 'projectId',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsDependsOn: ['workspaceId'],
 					loadOptionsMethod: 'loadProjectsForWorkspace',
@@ -144,7 +144,7 @@ export const timeEntryFields: INodeProperties[] = [
 				name: 'tagIds',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsDependsOn: ['workspaceId'],
 					loadOptionsMethod: 'loadTagsForWorkspace',
@@ -283,7 +283,7 @@ export const timeEntryFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'The ID of the field to add custom field to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'The ID of the field to add custom field to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Value',
@@ -313,7 +313,7 @@ export const timeEntryFields: INodeProperties[] = [
 				name: 'projectId',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsDependsOn: ['workspaceId'],
 					loadOptionsMethod: 'loadProjectsForWorkspace',
@@ -331,7 +331,7 @@ export const timeEntryFields: INodeProperties[] = [
 				name: 'tagIds',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsDependsOn: ['workspaceId'],
 					loadOptionsMethod: 'loadTagsForWorkspace',

@@ -1,7 +1,7 @@
-import { NoXss } from '@n8n/db';
+import { NoXss } from '@aura/db';
 import { Expose } from 'class-transformer';
 import { IsString, IsArray, IsOptional, IsEmail, IsEnum } from 'class-validator';
-import type { IPersonalizationSurveyAnswersV4 } from 'n8n-workflow';
+import type { IPersonalizationSurveyAnswersV4 } from 'workflow';
 
 export class PersonalizationSurveyAnswersV4 implements IPersonalizationSurveyAnswersV4 {
 	@NoXss()
@@ -17,7 +17,7 @@ export class PersonalizationSurveyAnswersV4 implements IPersonalizationSurveyAns
 	@NoXss()
 	@Expose()
 	@IsString()
-	personalization_survey_n8n_version: string;
+	personalization_survey_aura_version: string;
 
 	@Expose()
 	@IsOptional()

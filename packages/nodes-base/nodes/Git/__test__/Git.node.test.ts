@@ -1,7 +1,7 @@
-import { DeploymentConfig, SecurityConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { DeploymentConfig, SecurityConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 import type { SimpleGit } from 'simple-git';
 import simpleGit from 'simple-git';
 

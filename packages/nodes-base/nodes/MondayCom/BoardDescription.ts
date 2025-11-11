@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const boardOperations: INodeProperties[] = [
 	{
@@ -61,7 +61,7 @@ export const boardFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	/* -------------------------------------------------------------------------- */
 	/*                                 board:create                               */
@@ -152,7 +152,7 @@ export const boardFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	/* -------------------------------------------------------------------------- */
 	/*                                  board:getAll                              */

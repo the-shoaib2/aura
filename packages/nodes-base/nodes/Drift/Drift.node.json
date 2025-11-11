@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.drift",
+	"node": "aura-nodes-base.drift",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Sales"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/drift/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/drift/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.drift/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.drift/"
 			}
 		]
 	}

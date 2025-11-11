@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { N8nButton, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nTooltip } from '@aura/design-system';
 
 type Props = {
 	value: string;

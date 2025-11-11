@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { Service } from '@n8n/di';
-import { OnShutdown } from '@n8n/decorators';
-import { jsonParse, UnexpectedError, ensureError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { Service } from '@aura/di';
+import { OnShutdown } from '@aura/decorators';
+import { jsonParse, UnexpectedError, ensureError } from 'workflow';
 import { type RawData, WebSocket } from 'ws';
 import { z } from 'zod';
 
@@ -13,8 +13,8 @@ import {
 	Session,
 } from './chat-service.types';
 import { getLastNodeExecuted, getMessage, shouldResumeImmediately } from './utils';
-import { ErrorReporter } from 'n8n-core';
-import { IExecutionResponse } from '@n8n/db';
+import { ErrorReporter } from 'aura-core';
+import { IExecutionResponse } from '@aura/db';
 
 const CHECK_FOR_RESPONSE_INTERVAL = 3000;
 const DRAIN_TIMEOUT = 50;
@@ -24,15 +24,15 @@ const HEARTBEAT_TIMEOUT = 60 * 1000;
 /**
  * let frontend know that no user input is expected
  */
-const N8N_CONTINUE = 'n8n|continue';
+const N8N_CONTINUE = 'aura|continue';
 /**
  * send message for heartbeat check
  */
-const N8N_HEARTBEAT = 'n8n|heartbeat';
+const N8N_HEARTBEAT = 'aura|heartbeat';
 /**
  * frontend did acknowledge the heartbeat
  */
-const N8N_HEARTBEAT_ACK = 'n8n|heartbeat-ack';
+const N8N_HEARTBEAT_ACK = 'aura|heartbeat-ack';
 
 function closeConnection(ws: WebSocket) {
 	if (ws.readyState !== WebSocket.OPEN) return;

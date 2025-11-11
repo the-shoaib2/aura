@@ -1,10 +1,5 @@
 import set from 'lodash/set';
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { updateDisplayOptions, wrapData } from '@utils/utilities';
 

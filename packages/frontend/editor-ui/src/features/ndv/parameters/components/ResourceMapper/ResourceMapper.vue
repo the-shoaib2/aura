@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ResourceMapperFieldsRequestDto } from '@n8n/api-types';
+import type { ResourceMapperFieldsRequestDto } from '@aura/api-types';
 import type { IUpdateInformation } from '@/Interface';
 import { resolveRequiredParameters } from '@/app/composables/useWorkflowHelpers';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -12,8 +12,8 @@ import type {
 	ResourceMapperField,
 	ResourceMapperFields,
 	ResourceMapperValue,
-} from 'n8n-workflow';
-import { deepCopy, NodeHelpers } from 'n8n-workflow';
+} from 'workflow';
+import { deepCopy, NodeHelpers } from 'workflow';
 import { computed, onMounted, reactive, watch } from 'vue';
 import MappingModeSelect from './MappingModeSelect.vue';
 import MatchingColumnsSelect from './MatchingColumnsSelect.vue';
@@ -24,7 +24,7 @@ import {
 	parseResourceMapperFieldName,
 } from '@/app/utils/nodeTypesUtils';
 import { isFullExecutionResponse, isResourceMapperValue } from '@/app/utils/typeGuards';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@aura/i18n';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useDocumentVisibility } from '@/app/composables/useDocumentVisibility';
@@ -32,7 +32,7 @@ import isEqual from 'lodash/isEqual';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import ParameterInputFull from '../ParameterInputFull.vue';
 
-import { N8nButton, N8nCallout, N8nIcon, N8nNotice, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nCallout, N8nIcon, N8nNotice, N8nText } from '@aura/design-system';
 type Props = {
 	parameter: INodeProperties;
 	node: INode | null;
@@ -638,7 +638,7 @@ defineExpose({
 			type="info"
 			data-test-id="empty-fields-notice"
 		>
-			<span v-n8n-html="state.emptyFieldsNotice"></span>
+			<span v-aura-html="state.emptyFieldsNotice"></span>
 		</N8nNotice>
 		<N8nCallout v-else-if="state.hasStaleFields" theme="info" :iconless="true">
 			{{ locale.baseText('resourceMapper.staleDataWarning.notice') }}

@@ -1,7 +1,7 @@
-import { LicenseState } from '@n8n/backend-common';
-import { mockInstance, testDb } from '@n8n/backend-test-utils';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { LicenseState } from '@aura/backend-common';
+import { mockInstance, testDb } from '@aura/backend-test-utils';
+import type { AuthenticatedRequest } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import { DateTime } from 'luxon';
 

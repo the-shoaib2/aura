@@ -1,4 +1,4 @@
-import { NodeConnectionTypes, type INode, type IPinData, type IRunData } from 'n8n-workflow';
+import { NodeConnectionTypes, type INode, type IPinData, type IRunData } from 'workflow';
 
 import type { DirectedGraph } from './directed-graph';
 import { getIncomingData, getIncomingDataFromAnyRun } from './get-incoming-data';
@@ -76,7 +76,7 @@ function findStartNodesRecursive(
 	// If the current node is a loop node, check if the `done` output has data on
 	// the last run. If it doesn't the loop wasn't fully executed and needs to be
 	// re-run from the start. Thus the loop node become the start node.
-	if (current.type === 'n8n-nodes-base.splitInBatches') {
+	if (current.type === 'aura-nodes-base.splitInBatches') {
 		const nodeRunData = getIncomingData(
 			runData,
 			current.name,

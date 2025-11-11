@@ -22,7 +22,7 @@ describe('Test DiscordV2, message => send', () => {
 			channel_id: '1168516240332034067',
 			author: {
 				id: '1070667629972430879',
-				username: 'n8n-node-overhaul',
+				username: 'aura-node-overhaul',
 				avatar: null,
 				discriminator: '1037',
 				public_flags: 0,

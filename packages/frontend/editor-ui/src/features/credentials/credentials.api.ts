@@ -1,15 +1,15 @@
 import type { ICredentialsDecryptedResponse, ICredentialsResponse } from './credentials.types';
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import type { IRestApiContext } from '@aura/rest-api-client';
+import { makeRestApiRequest } from '@aura/rest-api-client';
 import type {
 	ICredentialsDecrypted,
 	ICredentialType,
 	IDataObject,
 	INodeCredentialTestRequest,
 	INodeCredentialTestResult,
-} from 'n8n-workflow';
+} from 'workflow';
 import axios from 'axios';
-import type { CreateCredentialDto } from '@n8n/api-types';
+import type { CreateCredentialDto } from '@aura/api-types';
 
 export async function getCredentialTypes(baseUrl: string): Promise<ICredentialType[]> {
 	const { data } = await axios.get(baseUrl + 'types/credentials.json', { withCredentials: true });

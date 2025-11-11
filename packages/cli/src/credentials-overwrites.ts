@@ -1,12 +1,12 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { SettingsRepository } from '@n8n/db';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { SettingsRepository } from '@aura/db';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import { Request, Response, NextFunction } from 'express';
-import { Cipher } from 'n8n-core';
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
-import { deepCopy, jsonParse } from 'n8n-workflow';
+import { Cipher } from 'aura-core';
+import type { ICredentialDataDecryptedObject } from 'workflow';
+import { deepCopy, jsonParse } from 'workflow';
 
 import { CredentialTypes } from '@/credential-types';
 import type { ICredentialsOverwrite } from '@/interfaces';

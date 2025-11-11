@@ -9,7 +9,7 @@ vi.mock('@/features/core/dataTable/composables/useDataTableTypes', () => ({
 	}),
 }));
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@aura/i18n', () => ({
 	useI18n: () => ({
 		baseText: (key: string) => key,
 	}),

@@ -1,4 +1,4 @@
-import type { AllEntities, Entity } from 'n8n-workflow';
+import type { AllEntities, Entity } from 'workflow';
 
 type PostgresMap = {
 	database: 'deleteTable' | 'executeQuery' | 'insert' | 'select' | 'update' | 'upsert';

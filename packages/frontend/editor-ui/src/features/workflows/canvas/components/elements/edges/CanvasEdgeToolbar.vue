@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed, useCssModule } from 'vue';
-import type { NodeConnectionType } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { NodeConnectionType } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
-import { N8nIconButton } from '@n8n/design-system';
+import { N8nIconButton } from '@aura/design-system';
 const emit = defineEmits<{
 	add: [];
 	delete: [];
@@ -67,7 +67,7 @@ function onDelete() {
 	gap: var(--spacing--2xs);
 	pointer-events: all;
 	padding: var(--spacing--2xs);
-	/* stylelint-disable-next-line @n8n/css-var-naming */
+	/* stylelint-disable-next-line @aura/css-var-naming */
 	transform: scale(var(--canvas-zoom-compensation-factor, 1));
 }
 </style>

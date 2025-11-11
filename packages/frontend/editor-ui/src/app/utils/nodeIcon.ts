@@ -5,14 +5,14 @@ import {
 	isNodePreviewKey,
 	removePreviewToken,
 } from '@/features/shared/nodeCreator/nodeCreator.utils';
-import type { VersionNode } from '@n8n/rest-api-client/api/versions';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import type { VersionNode } from '@aura/rest-api-client/api/versions';
+import { useRootStore } from '@aura/stores/useRootStore';
 import {
 	type INode,
 	type INodeTypeDescription,
 	type IWorkflowDataProxyAdditionalKeys,
 	isExpression,
-} from 'n8n-workflow';
+} from 'workflow';
 import { getThemedValue } from './nodeTypesUtils';
 
 type NodeIconSourceIcon = { type: 'icon'; name: string; color?: string };

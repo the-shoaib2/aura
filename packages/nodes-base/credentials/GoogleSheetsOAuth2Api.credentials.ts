@@ -1,4 +1,4 @@
-import type { Icon, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { Icon, ICredentialType, INodeProperties } from 'workflow';
 
 const scopes = [
 	'https://www.googleapis.com/auth/drive.file',
@@ -13,7 +13,7 @@ export class GoogleSheetsOAuth2Api implements ICredentialType {
 
 	displayName = 'Google Sheets OAuth2 API';
 
-	icon: Icon = 'node:n8n-nodes-base.googleSheets';
+	icon: Icon = 'node:aura-nodes-base.googleSheets';
 
 	documentationUrl = 'google/oauth-single-service';
 
@@ -26,7 +26,7 @@ export class GoogleSheetsOAuth2Api implements ICredentialType {
 		},
 		{
 			displayName:
-				'Make sure you enabled the following APIs & Services in the Google Cloud Console: Google Drive API, Google Sheets API. <a href="https://docs.n8n.io/integrations/builtin/credentials/google/oauth-generic/#scopes" target="_blank">More info</a>.',
+				'Make sure you enabled the following APIs & Services in the Google Cloud Console: Google Drive API, Google Sheets API. <a href="https://docs.aura.io/integrations/builtin/credentials/google/oauth-generic/#scopes" target="_blank">More info</a>.',
 			name: 'notice',
 			type: 'notice',
 			default: '',

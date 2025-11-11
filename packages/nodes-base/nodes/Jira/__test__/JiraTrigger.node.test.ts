@@ -1,10 +1,5 @@
 import { mock, mockDeep } from 'jest-mock-extended';
-import type {
-	ICredentialDataDecryptedObject,
-	IDataObject,
-	IHookFunctions,
-	INode,
-} from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject, IDataObject, IHookFunctions, INode } from 'workflow';
 
 import { testWebhookTriggerNode } from '@test/nodes/TriggerHelpers';
 
@@ -23,7 +18,7 @@ describe('JiraTrigger', () => {
 		) {
 			const baseUrl = 'https://jira.local';
 			const credential = {
-				email: 'test@n8n.io',
+				email: 'test@aura.io',
 				password: 'secret',
 				domain: baseUrl,
 			};
@@ -31,7 +26,7 @@ describe('JiraTrigger', () => {
 			return mockDeep<IHookFunctions>({
 				getWorkflowStaticData: () => staticData,
 				getNode: jest.fn(() => mock<INode>({ typeVersion: 1 })),
-				getNodeWebhookUrl: jest.fn(() => 'https://n8n.local/webhook/id'),
+				getNodeWebhookUrl: jest.fn(() => 'https://aura.local/webhook/id'),
 				getNodeParameter: jest.fn((param: string) => {
 					if (param === 'events') return ['jira:issue_created'];
 					return {};
@@ -84,8 +79,8 @@ describe('JiraTrigger', () => {
 						events: ['jira:issue_created'],
 						excludeBody: false,
 						filters: {},
-						name: 'n8n-webhook:https://n8n.local/webhook/id',
-						url: 'https://n8n.local/webhook/id',
+						name: 'aura-webhook:https://aura.local/webhook/id',
+						url: 'https://aura.local/webhook/id',
 					}),
 				}),
 			);
@@ -147,8 +142,8 @@ describe('JiraTrigger', () => {
 						events: ['jira:issue_created'],
 						excludeBody: false,
 						filters: {},
-						name: 'n8n-webhook:https://n8n.local/webhook/id',
-						url: 'https://n8n.local/webhook/id',
+						name: 'aura-webhook:https://aura.local/webhook/id',
+						url: 'https://aura.local/webhook/id',
 					}),
 				}),
 			);
@@ -210,8 +205,8 @@ describe('JiraTrigger', () => {
 						events: ['jira:issue_created'],
 						excludeBody: false,
 						filters: {},
-						name: 'n8n-webhook:https://n8n.local/webhook/id',
-						url: 'https://n8n.local/webhook/id',
+						name: 'aura-webhook:https://aura.local/webhook/id',
+						url: 'https://aura.local/webhook/id',
 					}),
 				}),
 			);

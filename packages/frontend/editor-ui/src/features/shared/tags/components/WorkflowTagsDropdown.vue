@@ -4,7 +4,7 @@ import TagsDropdown from './TagsDropdown.vue';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useTagsStore } from '../tags.store';
 import { TAGS_MANAGER_MODAL_KEY } from '../tags.constants';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
 
 interface TagsDropdownWrapperProps {
 	placeholder?: string;

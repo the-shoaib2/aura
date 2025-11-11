@@ -1,15 +1,15 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { EventDestinationsRepository, ExecutionRepository, WorkflowRepository } from '@n8n/db';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Service } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { DeleteResult } from '@n8n/typeorm';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In } from '@n8n/typeorm';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { EventDestinationsRepository, ExecutionRepository, WorkflowRepository } from '@aura/db';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Service } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { DeleteResult } from '@aura/typeorm';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In } from '@aura/typeorm';
 import EventEmitter from 'events';
 import uniqby from 'lodash/uniqBy';
-import type { MessageEventBusDestinationOptions } from 'n8n-workflow';
+import type { MessageEventBusDestinationOptions } from 'workflow';
 
 import { License } from '@/license';
 import { Publisher } from '@/scaling/pubsub/publisher.service';
@@ -56,7 +56,7 @@ export interface MessageEventBusInitializeOptions {
 
 @Service()
 // TODO: Convert to TypedEventEmitter
-// eslint-disable-next-line n8n-local-rules/no-type-unsafe-event-emitter
+// eslint-disable-next-line aura-local-rules/no-type-unsafe-event-emitter
 export class MessageEventBus extends EventEmitter {
 	private isInitialized = false;
 
@@ -199,7 +199,7 @@ export class MessageEventBus extends EventEmitter {
 					if (recoveredIds.length > 0) {
 						this.logger.warn(`Found unfinished executions: ${recoveredIds.join(', ')}`);
 						this.logger.info(
-							'This could be due to a crash of an active workflow or a restart of n8n',
+							'This could be due to a crash of an active workflow or a restart of aura',
 						);
 					}
 				}

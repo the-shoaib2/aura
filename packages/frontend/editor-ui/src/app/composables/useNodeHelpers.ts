@@ -6,7 +6,7 @@ import {
 	PLACEHOLDER_FILLED_AT_EXECUTION_TIME,
 } from '@/app/constants';
 
-import { NodeHelpers, NodeConnectionTypes } from 'n8n-workflow';
+import { NodeHelpers, NodeConnectionTypes } from 'workflow';
 import type {
 	INodeProperties,
 	INodeCredentialDescription,
@@ -30,7 +30,7 @@ import type {
 	IRunExecutionData,
 	NodeHint,
 	INodeCredentials,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { ICredentialsResponse } from '@/features/credentials/credentials.types';
 import type { AddedNode, INodeUi, INodeUpdatePropertiesInformation } from '@/Interface';
@@ -41,7 +41,7 @@ import { isObject } from '@/app/utils/objectUtils';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { EnableNodeToggleCommand } from '@/app/models/history';
 import { useTelemetry } from './useTelemetry';
 import { hasPermission } from '@/app/utils/rbac/permissions';
@@ -902,28 +902,28 @@ export function useNodeHelpers(opts: { workflowState?: WorkflowState } = {}) {
 
 	/** nodes that would execute only once with such parameters add 'undefined' to parameters values if it is parameter's default value */
 	const SINGLE_EXECUTION_NODES: { [key: string]: { [key: string]: NodeParameterValue[] } } = {
-		'n8n-nodes-base.code': {
+		'aura-nodes-base.code': {
 			mode: [undefined, 'runOnceForAllItems'],
 		},
-		'n8n-nodes-base.executeWorkflow': {
+		'aura-nodes-base.executeWorkflow': {
 			mode: [undefined, 'once'],
 		},
-		'n8n-nodes-base.crateDb': {
+		'aura-nodes-base.crateDb': {
 			operation: [undefined, 'update'], // default insert
 		},
-		'n8n-nodes-base.timescaleDb': {
+		'aura-nodes-base.timescaleDb': {
 			operation: [undefined, 'update'], // default insert
 		},
-		'n8n-nodes-base.microsoftSql': {
+		'aura-nodes-base.microsoftSql': {
 			operation: [undefined, 'update', 'delete'], // default insert
 		},
-		'n8n-nodes-base.questDb': {
+		'aura-nodes-base.questDb': {
 			operation: [undefined], // default insert
 		},
-		'n8n-nodes-base.mongoDb': {
+		'aura-nodes-base.mongoDb': {
 			operation: ['insert', 'update'],
 		},
-		'n8n-nodes-base.redis': {
+		'aura-nodes-base.redis': {
 			operation: [undefined], // default info
 		},
 	};

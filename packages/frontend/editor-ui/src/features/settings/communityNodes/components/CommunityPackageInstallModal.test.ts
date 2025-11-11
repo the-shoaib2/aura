@@ -2,7 +2,7 @@ import { createComponentRenderer } from '@/__tests__/render';
 import { retry } from '@/__tests__/utils';
 import { useInstallNode } from '../composables/useInstallNode';
 import { COMMUNITY_PACKAGE_INSTALL_MODAL_KEY } from '../communityNodes.constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
 import { vi, type MockedFunction } from 'vitest';
@@ -83,12 +83,12 @@ describe('CommunityPackageInstallModal', () => {
 
 	describe('Package Name Input', () => {
 		it('should initialize with provided package name', async () => {
-			const { getByTestId } = renderComponent({ packageName: 'n8n-nodes-custom' });
+			const { getByTestId } = renderComponent({ packageName: 'aura-nodes-custom' });
 
 			await retry(() => expect(getByTestId('communityPackageInstall-modal')).toBeInTheDocument());
 
 			const packageNameInput = getByTestId('package-name-input');
-			expect(packageNameInput).toHaveValue('n8n-nodes-custom');
+			expect(packageNameInput).toHaveValue('aura-nodes-custom');
 		});
 
 		it('should clean npm commands on blur', async () => {
@@ -98,10 +98,10 @@ describe('CommunityPackageInstallModal', () => {
 
 			const packageNameInput = getByTestId('package-name-input');
 
-			await userEvent.type(packageNameInput, 'npm install n8n-nodes-test');
+			await userEvent.type(packageNameInput, 'npm install aura-nodes-test');
 			await userEvent.tab(); // Trigger blur
 
-			expect(packageNameInput).toHaveValue('n8n-nodes-test');
+			expect(packageNameInput).toHaveValue('aura-nodes-test');
 		});
 
 		it('should clean npm i commands on blur', async () => {
@@ -111,10 +111,10 @@ describe('CommunityPackageInstallModal', () => {
 
 			const packageNameInput = getByTestId('package-name-input');
 
-			await userEvent.type(packageNameInput, 'npm i n8n-nodes-test');
+			await userEvent.type(packageNameInput, 'npm i aura-nodes-test');
 			await userEvent.tab(); // Trigger blur
 
-			expect(packageNameInput).toHaveValue('n8n-nodes-test');
+			expect(packageNameInput).toHaveValue('aura-nodes-test');
 		});
 
 		it('should be disabled when loading', async () => {
@@ -148,7 +148,7 @@ describe('CommunityPackageInstallModal', () => {
 			const packageNameInput = getByTestId('package-name-input');
 			const installButton = getByTestId('install-community-package-button');
 
-			await userEvent.type(packageNameInput, 'n8n-nodes-test');
+			await userEvent.type(packageNameInput, 'aura-nodes-test');
 
 			expect(installButton).toBeDisabled();
 
@@ -180,7 +180,7 @@ describe('CommunityPackageInstallModal', () => {
 			const packageNameInput = getByTestId('package-name-input');
 			const installButton = getByTestId('install-community-package-button');
 
-			await userEvent.type(packageNameInput, 'n8n-nodes-test');
+			await userEvent.type(packageNameInput, 'aura-nodes-test');
 
 			expect(installButton).toBeDisabled();
 		});
@@ -193,7 +193,7 @@ describe('CommunityPackageInstallModal', () => {
 			const packageNameInput = getByTestId('package-name-input');
 			const installButton = getByTestId('install-community-package-button');
 
-			await userEvent.type(packageNameInput, 'n8n-nodes-test');
+			await userEvent.type(packageNameInput, 'aura-nodes-test');
 			await userEvent.click(getByTestId('user-agreement-checkbox'));
 
 			expect(installButton).toBeEnabled();
@@ -217,21 +217,21 @@ describe('CommunityPackageInstallModal', () => {
 		it('should call installNode with correct parameters on successful install', async () => {
 			mockInstallNode.mockResolvedValue({ success: true });
 
-			const { getByTestId } = renderComponent({ nodeType: 'n8n-nodes-test.TestNode' });
+			const { getByTestId } = renderComponent({ nodeType: 'aura-nodes-test.TestNode' });
 
 			await retry(() => expect(getByTestId('communityPackageInstall-modal')).toBeInTheDocument());
 
 			const packageNameInput = getByTestId('package-name-input');
 			const installButton = getByTestId('install-community-package-button');
 
-			await userEvent.type(packageNameInput, 'n8n-nodes-test');
+			await userEvent.type(packageNameInput, 'aura-nodes-test');
 			await userEvent.click(getByTestId('user-agreement-checkbox'));
 			await userEvent.click(installButton);
 
 			expect(mockInstallNode).toHaveBeenCalledWith({
 				type: 'unverified',
-				packageName: 'n8n-nodes-test',
-				nodeType: 'n8n-nodes-test.TestNode',
+				packageName: 'aura-nodes-test',
+				nodeType: 'aura-nodes-test.TestNode',
 			});
 		});
 
@@ -249,7 +249,7 @@ describe('CommunityPackageInstallModal', () => {
 			const packageNameInput = getByTestId('package-name-input');
 			const installButton = getByTestId('install-community-package-button');
 
-			await userEvent.type(packageNameInput, 'n8n-nodes-test');
+			await userEvent.type(packageNameInput, 'aura-nodes-test');
 			await userEvent.click(getByTestId('user-agreement-checkbox'));
 			await userEvent.click(installButton);
 

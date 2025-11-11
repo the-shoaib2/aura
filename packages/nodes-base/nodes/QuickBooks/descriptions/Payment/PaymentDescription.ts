@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { paymentAdditionalFieldsOptions } from './PaymentAdditionalFieldsOptions';
 
@@ -64,7 +64,7 @@ export const paymentFields: INodeProperties[] = [
 		type: 'options',
 		required: true,
 		description:
-			'The ID of the customer who the payment is for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The ID of the customer who the payment is for. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		default: [],
 		typeOptions: {
 			loadOptionsMethod: 'getCustomers',

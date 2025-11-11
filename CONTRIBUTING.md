@@ -1,10 +1,10 @@
-# Contributing to n8n
+# Contributing to Aura
 
-Great that you are here and you want to contribute to n8n
+Great that you are here and you want to contribute to Aura
 
 ## Contents
 
-- [Contributing to n8n](#contributing-to-n8n)
+- [Contributing to Aura](#contributing-to-aura)
 	- [Contents](#contents)
 	- [Code of conduct](#code-of-conduct)
 	- [Directory structure](#directory-structure)
@@ -16,7 +16,7 @@ Great that you are here and you want to contribute to n8n
 				- [pnpm workspaces](#pnpm-workspaces)
 			- [corepack](#corepack)
 			- [Build tools](#build-tools)
-		- [Actual n8n setup](#actual-n8n-setup)
+		- [Actual aura setup](#actual-aura-setup)
 		- [Start](#start)
 	- [Development cycle](#development-cycle)
 		- [Community PR Guidelines](#community-pr-guidelines)
@@ -39,36 +39,36 @@ Great that you are here and you want to contribute to n8n
 This project and everyone participating in it are governed by the Code of
 Conduct which can be found in the file [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report
-unacceptable behavior to jan@n8n.io.
+unacceptable behavior to support@aura.local.
 
 ## Directory structure
 
-n8n is split up in different modules which are all in a single mono repository.
+aura is split up in different modules which are all in a single mono repository.
 
 The most important directories:
 
-- [/docker/images](/docker/images) - Dockerfiles to create n8n containers
-- [/packages](/packages) - The different n8n modules
+- [/docker/images](/docker/images) - Dockerfiles to create aura containers
+- [/packages](/packages) - The different aura modules
 - [/packages/cli](/packages/cli) - CLI code to run front- & backend
 - [/packages/core](/packages/core) - Core code which handles workflow
   execution, active webhooks and
-  workflows. **Contact n8n before
+  workflows. **Contact aura before
   starting on any changes here**
-- [/packages/frontend/@n8n/design-system](/packages/design-system) - Vue frontend components
+- [/packages/frontend/@aura/design-system](/packages/design-system) - Vue frontend components
 - [/packages/frontend/editor-ui](/packages/editor-ui) - Vue frontend workflow editor
-- [/packages/node-dev](/packages/node-dev) - CLI to create new n8n-nodes
-- [/packages/nodes-base](/packages/nodes-base) - Base n8n nodes
+- [/packages/node-dev](/packages/node-dev) - CLI to create new aura-nodes
+- [/packages/nodes-base](/packages/nodes-base) - Base aura nodes
 - [/packages/workflow](/packages/workflow) - Workflow code with interfaces which
   get used by front- & backend
 
 ## Development setup
 
-If you want to change or extend n8n you have to make sure that all the needed
+If you want to change or extend aura you have to make sure that all the needed
 dependencies are installed and the packages get linked correctly. Here's a short guide on how that can be done:
 
 ### Dev Container
 
-If you already have VS Code and Docker installed, you can click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/n8n-io/n8n) to get started. Clicking these links will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
+If you already have VS Code and Docker installed, you can click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/aura-io/aura) to get started. Clicking these links will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
 
 ### Requirements
 
@@ -82,7 +82,7 @@ If you already have VS Code and Docker installed, you can click [here](https://v
 
 ##### pnpm workspaces
 
-n8n is split up into different modules which are all in a single mono repository.
+aura is split up into different modules which are all in a single mono repository.
 To facilitate the module management, [pnpm workspaces](https://pnpm.io/workspaces) are used.
 This automatically sets up file-links between modules which depend on each other.
 
@@ -98,7 +98,7 @@ You can install the correct version of pnpm using `corepack prepare --activate`.
 
 #### Build tools
 
-The packages which n8n uses depend on a few build tools:
+The packages which aura uses depend on a few build tools:
 
 Debian/Ubuntu:
 
@@ -132,31 +132,31 @@ brew install actionlint
 ```
 > **Note:** actionlint is only required if you're modifying workflow files. It runs automatically via git hooks when workflow files are changed.
 
-### Actual n8n setup
+### Actual aura setup
 
 > **IMPORTANT**: All the steps below have to get executed at least once to get the development setup up and running!
 
-Now that everything n8n requires to run is installed, the actual n8n code can be
+Now that everything aura requires to run is installed, the actual aura code can be
 checked out and set up:
 
-1. [Fork](https://guides.github.com/activities/forking/#fork) the n8n repository.
+1. [Fork](https://guides.github.com/activities/forking/#fork) the aura repository.
 
 2. Clone your forked repository:
 
    ```
-   git clone https://github.com/<your_github_username>/n8n.git
+   git clone https://github.com/<your_github_username>/aura.git
    ```
 
 3. Go into repository folder:
 
    ```
-   cd n8n
+   cd aura
    ```
 
-4. Add the original n8n repository as `upstream` to your forked repository:
+4. Add the original aura repository as `upstream` to your forked repository:
 
    ```
-   git remote add upstream https://github.com/n8n-io/n8n.git
+   git remote add upstream https://github.com/aura-io/aura.git
    ```
 
 5. Install all dependencies of all modules and link them together:
@@ -172,27 +172,27 @@ checked out and set up:
 
 ### Start
 
-To start n8n execute:
+To start aura execute:
 
 ```
 pnpm start
 ```
 
-To start n8n with tunnel:
+To start aura with tunnel:
 
 ```
-./packages/cli/bin/n8n start --tunnel
+./packages/cli/bin/aura start --tunnel
 ```
 
 ## Development cycle
 
-While iterating on n8n modules code, you can run `pnpm dev`. It will then
+While iterating on aura modules code, you can run `pnpm dev`. It will then
 automatically build your code, restart the backend and refresh the frontend
 (editor-ui) on every change you make.
 
 ### Basic Development Workflow
 
-1. Start n8n in development mode:
+1. Start aura in development mode:
    ```
    pnpm dev
    ```
@@ -316,7 +316,7 @@ Please address the requested changes or provide feedback within 14 days. If ther
 #### **2. General Requirements**
 
 - **Follow the Style Guide:**
-  - Ensure your code adheres to n8n's coding standards and conventions (e.g., formatting, naming, indentation). Use linting tools where applicable.
+  - Ensure your code adheres to aura's coding standards and conventions (e.g., formatting, naming, indentation). Use linting tools where applicable.
 - **TypeScript Compliance:**
   - Do not use `ts-ignore` .
   - Ensure code adheres to TypeScript rules.
@@ -326,7 +326,7 @@ Please address the requested changes or provide feedback within 14 days. If ther
 - **Testing Requirements:**
   - PRs **must include tests**:
     - Unit tests
-    - Workflow tests for nodes (example [here](https://github.com/n8n-io/n8n/tree/master/packages/nodes-base/nodes/Switch/V3/test))
+    - Workflow tests for nodes (example [here](https://github.com/aura-io/aura/tree/master/packages/nodes-base/nodes/Switch/V3/test))
     - UI tests (if applicable)
 - **Typos:**
   - Use a spell-checking tool, such as [**Code Spell Checker**](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker), to avoid typos.
@@ -336,9 +336,9 @@ Please address the requested changes or provide feedback within 14 days. If ther
 - **Small PRs Only:**
   - Focus on a single feature or fix per PR.
 - **Naming Convention:**
-  - Follow [n8n's PR Title Conventions](https://github.com/n8n-io/n8n/blob/master/.github/pull_request_title_conventions.md#L36).
+  - Follow [aura's PR Title Conventions](https://github.com/aura-io/aura/blob/master/.github/pull_request_title_conventions.md#L36).
 - **New Nodes:**
-  - PRs that introduce new nodes will be **auto-closed** unless they are explicitly requested by the n8n team and aligned with an agreed project scope. However, you can still explore [building your own nodes](https://docs.n8n.io/integrations/creating-nodes/overview/), as n8n offers the flexibility to create your own custom nodes.
+  - PRs that introduce new nodes will be **auto-closed** unless they are explicitly requested by the aura team and aligned with an agreed project scope. However, you can still explore [building your own nodes](https://docs.aura.io/integrations/creating-nodes/overview/), as aura offers the flexibility to create your own custom nodes.
 - **Typo-Only PRs:**
   - Typos are not sufficient justification for a PR and will be rejected.
 
@@ -361,30 +361,30 @@ pnpm test
 ```
 
 If that gets executed in one of the package folders it will only run the tests
-of this package. If it gets executed in the n8n-root folder it will run all
+of this package. If it gets executed in the aura-root folder it will run all
 tests of all packages.
 
 If you made a change which requires an update on a `.test.ts.snap` file, pass `-u` to the command to run tests or press `u` in watch mode.
 
 #### Code Coverage
-We track coverage for all our code on [Codecov](https://app.codecov.io/gh/n8n-io/n8n).
+We track coverage for all our code on [Codecov](https://app.codecov.io/gh/aura-io/aura).
 But when you are working on tests locally, we recommend running your tests with env variable `COVERAGE_ENABLED` set to `true`. You can then view the code coverage in the `coverage` folder, or you can use [this VSCode extension](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) to visualize the coverage directly in VSCode.
 
 #### E2E tests
 
-n8n uses [Playwright](https://playwright.dev) for E2E testing.
+aura uses [Playwright](https://playwright.dev) for E2E testing.
 
 E2E tests can be started via one of the following commands:
 
-- `pnpm --filter=n8n-playwright test:local` - Run tests locally (starts local server on port 5680 and runs UI tests)
-- `pnpm --filter=n8n-playwright test:local --ui` - Run tests in interactive UI mode (useful for debugging)
-- `pnpm --filter=n8n-playwright test:local --grep="test-name"` - Run specific tests matching pattern
+- `pnpm --filter=aura-playwright test:local` - Run tests locally (starts local server on port 5680 and runs UI tests)
+- `pnpm --filter=aura-playwright test:local --ui` - Run tests in interactive UI mode (useful for debugging)
+- `pnpm --filter=aura-playwright test:local --grep="test-name"` - Run specific tests matching pattern
 
 See `packages/testing/playwright/README.md` for more test commands and `packages/testing/playwright/CONTRIBUTING.md` for writing guidelines.
 
 ## Releasing
 
-To start a release, trigger [this workflow](https://github.com/n8n-io/n8n/actions/workflows/release-create-pr.yml) with the SemVer release type, and select a branch to cut this release from. This workflow will then:
+To start a release, trigger [this workflow](https://github.com/aura-io/aura/actions/workflows/release-create-pr.yml) with the SemVer release type, and select a branch to cut this release from. This workflow will then:
 
 1. Bump versions of packages that have changed or have dependencies that have changed
 2. Update the Changelog
@@ -392,7 +392,7 @@ To start a release, trigger [this workflow](https://github.com/n8n-io/n8n/action
 4. Create a new pull-request to track any further changes that need to be included in this release
 
 Once ready to release, simply merge the pull-request.
-This triggers [another workflow](https://github.com/n8n-io/n8n/actions/workflows/release-publish.yml), that will:
+This triggers [another workflow](https://github.com/aura-io/aura/actions/workflows/release-publish.yml), that will:
 
 1. Build and publish the packages that have a new version in this release
 2. Create a new tag, and GitHub release from squashed release commit
@@ -400,19 +400,19 @@ This triggers [another workflow](https://github.com/n8n-io/n8n/actions/workflows
 
 ## Create custom nodes
 
-Learn about [building nodes](https://docs.n8n.io/integrations/creating-nodes/overview/) to create custom nodes for n8n. You can create community nodes and make them available using [npm](https://www.npmjs.com/).
+Learn about [building nodes](https://docs.aura.io/integrations/creating-nodes/overview/) to create custom nodes for aura. You can create community nodes and make them available using [npm](https://www.npmjs.com/).
 
 ## Extend documentation
 
-The repository for the n8n documentation on [docs.n8n.io](https://docs.n8n.io) can be found [here](https://github.com/n8n-io/n8n-docs).
+The repository for the aura documentation on [docs.aura.io](https://docs.aura.io) can be found [here](https://github.com/aura-io/aura-docs).
 
 ## Contribute workflow templates
 
-You can submit your workflows to n8n's template library.
+You can submit your workflows to aura's template library.
 
-n8n is working on a creator program, and developing a marketplace of templates. This is an ongoing project, and details are likely to change.
+aura is working on a creator program, and developing a marketplace of templates. This is an ongoing project, and details are likely to change.
 
-Refer to [n8n Creator hub](https://www.notion.so/n8n/n8n-Creator-hub-7bd2cbe0fce0449198ecb23ff4a2f76f) for information on how to submit templates and become a creator.
+Refer to [aura Creator hub](https://www.notion.so/aura/aura-Creator-hub-7bd2cbe0fce0449198ecb23ff4a2f76f) for information on how to submit templates and become a creator.
 
 ## Contributor License Agreement
 

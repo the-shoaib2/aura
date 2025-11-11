@@ -1,5 +1,5 @@
-import type { INode, NodeApiError, Workflow } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { INode, NodeApiError, Workflow } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { setActivePinia } from 'pinia';
 import type { Ref } from 'vue';
 import { ref } from 'vue';
@@ -27,8 +27,8 @@ import {
 	type CanvasNodeDefaultRender,
 } from '../canvas.types';
 import { createCanvasConnectionHandleString, createCanvasConnectionId } from '../canvas.utils';
-import { STORES } from '@n8n/stores';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { STORES } from '@aura/stores';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { createTestingPinia } from '@pinia/testing';
 import { MarkerType } from '@vue-flow/core';
 import { mock } from 'vitest-mock-extended';
@@ -39,7 +39,7 @@ import {
 	type WorkflowState,
 } from '@/app/composables/useWorkflowState';
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		shortNodeType: (nodeType: string) => nodeType,
@@ -86,7 +86,7 @@ beforeEach(() => {
 						1: mockNodeTypeDescription({
 							name: FORM_TRIGGER_NODE_TYPE,
 							group: ['trigger'],
-							eventTriggerDescription: 'n8n-nodes-base.formTrigger',
+							eventTriggerDescription: 'aura-nodes-base.formTrigger',
 						}),
 					},
 					[SET_NODE_TYPE]: {
@@ -1031,7 +1031,7 @@ describe('useCanvasMapping', () => {
 
 				expect(mappedNodes.value[0]?.data?.issues).toEqual({
 					execution: [],
-					validation: ['Node Type "n8n-nodes-base.set" is not known.'],
+					validation: ['Node Type "aura-nodes-base.set" is not known.'],
 					visible: true,
 				});
 			});
@@ -1071,7 +1071,7 @@ describe('useCanvasMapping', () => {
 
 				expect(mappedNodes.value[0]?.data?.issues).toEqual({
 					execution: ['Execution error (Error description)'],
-					validation: ['Node Type "n8n-nodes-base.set" is not known.'],
+					validation: ['Node Type "aura-nodes-base.set" is not known.'],
 					visible: true,
 				});
 			});
@@ -1112,7 +1112,7 @@ describe('useCanvasMapping', () => {
 
 				expect(mappedNodes.value[0]?.data?.issues).toEqual({
 					execution: [],
-					validation: ['Node Type "n8n-nodes-base.set" is not known.'],
+					validation: ['Node Type "aura-nodes-base.set" is not known.'],
 					visible: true,
 				});
 				expect(mappedNodes.value[1]?.data?.issues).toEqual({
@@ -1797,7 +1797,7 @@ describe('useCanvasMapping', () => {
 				});
 
 				const renderOptions = mappedNodes.value[0]?.data?.render as CanvasNodeDefaultRender;
-				expect(renderOptions.options.tooltip).toBe('n8n-nodes-base.formTrigger');
+				expect(renderOptions.options.tooltip).toBe('aura-nodes-base.formTrigger');
 			});
 		});
 

@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "0b90cdc3-807a-4849-b2e2-a017eb77df17",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [20, 1820]
 		},
@@ -18,7 +18,7 @@
 			},
 			"id": "4a7807ca-e44c-46b4-9d2c-3424b1883c61",
 			"name": "Calculate Date: Add Day",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 1740]
 		},
@@ -32,7 +32,7 @@
 			},
 			"id": "04d26b36-9a31-4fc8-bbf4-4b6d8b9304bb",
 			"name": "Calculate Date: Substract Quarter",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 2100]
 		},
@@ -46,7 +46,7 @@
 			},
 			"id": "617145da-26c5-491b-bc58-a10fbb5a1825",
 			"name": "Calculate Date: Substract Day",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 1920]
 		},
@@ -60,7 +60,7 @@
 			},
 			"id": "c7b4967f-3ae4-452b-8d54-aa1623194f2b",
 			"name": "Calculate Date: Add months",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 2280]
 		},
@@ -75,7 +75,7 @@
 			},
 			"id": "a22a536c-bf23-4ff0-a3ad-b3761dfb3add",
 			"name": "Calculate Date: Substract Months",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 2440]
 		},
@@ -87,7 +87,7 @@
 			},
 			"id": "3ecc8ea0-9605-4017-b5e0-a9ddde4c1a4a",
 			"name": "Calculate Date: Format YYYY/MM/DD",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 2620]
 		},
@@ -101,7 +101,7 @@
 			},
 			"id": "c99c7124-c388-4c97-8e6e-8158ba83bddd",
 			"name": "Calculate Date: Format YYYY/MM/DD with Timezone",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 2800]
 		},
@@ -116,7 +116,7 @@
 			},
 			"id": "40abfde6-66f2-44a9-a16f-3d981178da84",
 			"name": "Calculate Date: Format YYYY/MM/DD with Timezone1",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [500, 2980]
 		},
@@ -131,7 +131,7 @@
 			},
 			"id": "20ea9e76-d656-406f-8e3d-a51712c2657d",
 			"name": "Calculate Date: Format YYYY/MM/DD with Timezone Unix",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [20, 2340]
 		},
@@ -147,7 +147,7 @@
 			},
 			"id": "53ddcd66-3cb5-47bb-bd59-64a70fc599b7",
 			"name": "Calculate Date: Format YYYY/MM/DD with Timezone with special zone",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [20, 2520]
 		},
@@ -157,7 +157,7 @@
 			},
 			"id": "0933e36d-43f4-46b5-8c3f-8d397d93a24c",
 			"name": "Mock Data",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [-140, 1200]
 		},
@@ -171,7 +171,7 @@
 			},
 			"id": "35eae914-b744-4a0b-a9ac-eab8bd685f02",
 			"name": "Fixed Value",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [160, 1080]
 		},
@@ -185,7 +185,7 @@
 			},
 			"id": "e7d16772-843d-43da-a411-ee46253619e8",
 			"name": "parseInt on fixed",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [160, 1580]
 		},
@@ -199,7 +199,7 @@
 			},
 			"id": "daf8a9da-7cab-4bb6-91fd-9a7315ecc61b",
 			"name": "Without toString()",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [160, 1400]
 		},
@@ -213,7 +213,7 @@
 			},
 			"id": "bc536546-4968-4b88-acaa-9a02bc013246",
 			"name": "With toString",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [160, 880]
 		}

@@ -1,4 +1,4 @@
-import type { GenericValue } from 'n8n-workflow';
+import type { GenericValue } from 'workflow';
 
 export type FormField = {
 	id: string;
@@ -42,7 +42,7 @@ export type FormTriggerData = {
 	formSubmittedHeader?: string;
 	formSubmittedText?: string;
 	redirectUrl?: string;
-	n8nWebsiteLink: string;
+	auraWebsiteLink: string;
 	formFields: FormField[];
 	useResponseData?: boolean;
 	appendAttribution?: boolean;

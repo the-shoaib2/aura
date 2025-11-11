@@ -19,13 +19,13 @@ import type {
 	INodePropertyOptions,
 	IParameterLabel,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	CREDENTIAL_EMPTY_VALUE,
 	isResourceLocatorValue,
 	NodeHelpers,
 	resolveRelativePath,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { CodeNodeLanguageOption } from '@/features/shared/editors/components/CodeNodeEditor/CodeNodeEditor.vue';
 import CodeNodeEditor from '@/features/shared/editors/components/CodeNodeEditor/CodeNodeEditor.vue';
@@ -64,7 +64,7 @@ import {
 
 import { useDebounce } from '@/app/composables/useDebounce';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
@@ -76,8 +76,8 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import { useElementSize } from '@vueuse/core';
 import { captureMessage } from '@sentry/vue';
 import { isCredentialOnlyNodeType } from '@/app/utils/credentialOnlyNodes';
@@ -97,7 +97,7 @@ import { useProjectsStore } from '@/features/collaboration/projects/projects.sto
 import { getParameterDisplayableOptions } from '@/app/utils/nodes/nodeTransforms';
 
 import { ElColorPicker, ElDatePicker, ElDialog, ElSwitch } from 'element-plus';
-import { N8nIcon, N8nInput, N8nInputNumber, N8nOption, N8nSelect } from '@n8n/design-system';
+import { N8nIcon, N8nInput, N8nInputNumber, N8nOption, N8nSelect } from '@aura/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 type Picker = { $emit: (arg0: string, arg1: Date) => void };
 
@@ -749,7 +749,7 @@ function trackExpressionEditOpen() {
 		return;
 	}
 
-	if (node.value.type.startsWith('n8n-nodes-base') || isCredentialOnlyNodeType(node.value.type)) {
+	if (node.value.type.startsWith('aura-nodes-base') || isCredentialOnlyNodeType(node.value.type)) {
 		telemetry.track('User opened Expression Editor', {
 			node_type: node.value.type,
 			parameter_name: props.parameter.displayName,
@@ -1195,7 +1195,7 @@ watch(isModelValueExpression, async (isExpression, wasExpression) => {
 });
 
 // Investigate invalid parameter options
-// Sentry issue: https://n8nio.sentry.io/issues/6275981089/?project=4503960699273216
+// Sentry issue: https://auraio.sentry.io/issues/6275981089/?project=4503960699273216
 const unwatchParameterOptions = watch(
 	[remoteParameterOptions, () => props.parameter.options],
 	([remoteOptions, options]) => {
@@ -1740,7 +1740,7 @@ onUpdated(async () => {
 						</div>
 						<div
 							v-if="option.description"
-							v-n8n-html="getOptionsOptionDescription(option)"
+							v-aura-html="getOptionsOptionDescription(option)"
 							class="option-description"
 						></div>
 					</div>
@@ -1773,7 +1773,7 @@ onUpdated(async () => {
 						<div class="option-headline">{{ getOptionsOptionDisplayName(option) }}</div>
 						<div
 							v-if="option.description"
-							v-n8n-html="getOptionsOptionDescription(option)"
+							v-aura-html="getOptionsOptionDescription(option)"
 							class="option-description"
 						></div>
 					</div>

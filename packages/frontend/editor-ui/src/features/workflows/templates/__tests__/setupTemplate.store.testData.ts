@@ -3,7 +3,7 @@ import type { ICredentialsResponse } from '@/features/credentials/credentials.ty
 import type {
 	ITemplatesWorkflowFull,
 	IWorkflowTemplateNode,
-} from '@n8n/rest-api-client/api/templates';
+} from '@aura/rest-api-client/api/templates';
 
 export const newFullOneNodeTemplate = (node: IWorkflowTemplateNode): ITemplatesWorkflowFull => ({
 	full: true,

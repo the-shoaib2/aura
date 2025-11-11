@@ -3,7 +3,7 @@ import ProjectCardBadge from './ProjectCardBadge.vue';
 import type { WorkflowResource } from '@/Interface';
 import type { Project } from '../projects.types';
 import { ResourceType } from '../projects.utils';
-import { truncate } from '@n8n/utils/string/truncate';
+import { truncate } from '@aura/utils/string/truncate';
 
 const renderComponent = createComponentRenderer(ProjectCardBadge, {
 	global: {

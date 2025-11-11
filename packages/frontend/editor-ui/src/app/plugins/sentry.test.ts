@@ -1,7 +1,7 @@
 import type * as Sentry from '@sentry/vue';
 import { beforeSend } from '@/app/plugins/sentry';
 import { AxiosError } from 'axios';
-import { ResponseError } from '@n8n/rest-api-client';
+import { ResponseError } from '@aura/rest-api-client';
 
 function createErrorEvent(): Sentry.ErrorEvent {
 	return {} as Sentry.ErrorEvent;
@@ -16,7 +16,7 @@ describe('beforeSend', () => {
 
 	it('should return null when originalException matches ignoredErrors by instance and message', () => {
 		const event = createErrorEvent();
-		const hint = { originalException: new ResponseError("Can't connect to n8n.") };
+		const hint = { originalException: new ResponseError("Can't connect to aura.") };
 		expect(beforeSend(event, hint)).toBeNull();
 	});
 

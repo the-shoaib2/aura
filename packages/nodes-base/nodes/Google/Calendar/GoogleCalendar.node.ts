@@ -10,8 +10,8 @@ import type {
 	JsonObject,
 	NodeExecutionHint,
 	INodeProperties,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeApiError, NodeOperationError } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { calendarFields, calendarOperations } from './CalendarDescription';
@@ -33,7 +33,7 @@ import {
 import { sortItemKeysByPriorityList } from '../../../utils/utilities';
 
 const preBuiltAgentsCallout: INodeProperties = {
-	// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+	// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 	displayName: 'Interact with your Google Calendar using our pre-built',
 	name: 'preBuiltAgentsCalloutGoogleCalendar',
 	type: 'callout',
@@ -94,7 +94,7 @@ export class GoogleCalendar implements INodeType {
 			...eventFields,
 			{
 				displayName:
-					'This node will use the time zone set in n8n’s settings, but you can override this in the workflow settings',
+					'This node will use the time zone set in aura’s settings, but you can override this in the workflow settings',
 				name: 'useN8nTimeZone',
 				type: 'notice',
 				default: '',

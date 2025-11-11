@@ -6,7 +6,7 @@
 				"path": "fded38b8-06bc-4308-a095-8507ef82ae27",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2.1,
 			"position": [0, 0],
 			"id": "e6846a10-fffa-495d-8d65-c34cea6e8f0d",
@@ -17,7 +17,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "n8n-nodes-base.respondToWebhook",
+			"type": "aura-nodes-base.respondToWebhook",
 			"typeVersion": 1.4,
 			"position": [416, 0],
 			"id": "c27ef742-1410-4d63-99a8-85bf083f5204",

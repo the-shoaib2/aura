@@ -1,5 +1,5 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import type { INodeParameterResourceLocator } from 'n8n-workflow';
+import type { INodeParameterResourceLocator } from 'workflow';
 import nock from 'nock';
 
 import { returnId } from '../V2/GenericFunctions';
@@ -67,7 +67,7 @@ const searchResult = {
 };
 
 const meResult = {
-	data: { id: '1285192200213626880', name: 'Integration-n8n', username: 'IntegrationN8n' },
+	data: { id: '1285192200213626880', name: 'Integration-aura', username: 'IntegrationN8n' },
 };
 
 describe('Test Twitter Request Node', () => {

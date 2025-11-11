@@ -1,12 +1,12 @@
-import type { ListDataTableQueryDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { User } from '@n8n/db';
-import { Service } from '@n8n/di';
+import type { ListDataTableQueryDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { User } from '@aura/db';
+import { Service } from '@aura/di';
 
 import { ProjectService } from '@/services/project.service.ee';
 
 import { DataTableRepository } from './data-table.repository';
-import { hasGlobalScope } from '@n8n/permissions';
+import { hasGlobalScope } from '@aura/permissions';
 
 @Service()
 export class DataTableAggregateService {

@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.helpScoutTrigger",
+	"node": "aura-nodes-base.helpScoutTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/helpscout/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/helpscout/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.helpscouttrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.helpscouttrigger/"
 			}
 		]
 	}

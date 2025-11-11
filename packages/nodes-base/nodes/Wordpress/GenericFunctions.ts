@@ -5,8 +5,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function wordpressApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions,
@@ -24,7 +24,7 @@ export async function wordpressApiRequest(
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
-			'User-Agent': 'n8n',
+			'User-Agent': 'aura',
 		},
 		method,
 		qs,

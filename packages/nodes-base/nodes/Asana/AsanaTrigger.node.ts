@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { asanaApiRequest, getWorkspaces } from './GenericFunctions';
 
@@ -92,7 +92,7 @@ export class AsanaTrigger implements INodeType {
 				options: [],
 				default: '',
 				description:
-					'The workspace ID the resource is registered under. This is only required if you want to allow overriding existing webhooks. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The workspace ID the resource is registered under. This is only required if you want to allow overriding existing webhooks. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	};

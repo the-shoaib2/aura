@@ -16,14 +16,14 @@ test.describe('Memory Consumption', () => {
 	const STARTER_PLAN_MEMORY_LIMIT = 768;
 
 	test('Memory consumption baseline with starter plan resources', async ({
-		n8nContainer,
+		auraContainer,
 	}, testInfo) => {
 		// Wait for container to stabilize
 		await new Promise((resolve) => setTimeout(resolve, CONTAINER_STABILIZATION_TIME));
 
 		// Poll memory metric for 30 seconds to get baseline
 		const averageMemoryBytes = await pollMemoryMetric(
-			n8nContainer.baseUrl,
+			auraContainer.baseUrl,
 			POLL_MEMORY_DURATION,
 			1000,
 		);

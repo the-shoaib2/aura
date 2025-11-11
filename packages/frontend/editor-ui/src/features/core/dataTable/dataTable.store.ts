@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { DATA_TABLE_STORE } from '@/features/core/dataTable/constants';
 import { computed, ref } from 'vue';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import {
 	fetchDataTablesApi,
 	createDataTableApi,
@@ -23,7 +23,7 @@ import type {
 } from '@/features/core/dataTable/dataTable.types';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { reorderItem } from '@/features/core/dataTable/utils';
-import { type DataTableSizeStatus } from 'n8n-workflow';
+import { type DataTableSizeStatus } from 'workflow';
 import { useSettingsStore } from '@/app/stores/settings.store';
 
 export const useDataTableStore = defineStore(DATA_TABLE_STORE, () => {

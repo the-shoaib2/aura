@@ -10,8 +10,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { googleApiRequest, hexToRgb } from './GenericFunctions';
 import type {

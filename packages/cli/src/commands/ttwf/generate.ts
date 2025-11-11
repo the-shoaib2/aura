@@ -1,4 +1,4 @@
-import { Command } from '@n8n/decorators';
+import { Command } from '@aura/decorators';
 import { z } from 'zod';
 
 import { BaseCommand } from '../base-command';
@@ -64,8 +64,8 @@ const flagsSchema = z.object({
 	name: 'ttwf:generate',
 	description: 'Create a workflow(s) using AI Text-to-Workflow builder',
 	examples: [
-		'$ n8n ttwf:generate --prompt "Create a telegram chatbot that can tell current weather in Berlin" --output result.json',
-		'$ n8n ttwf:generate --input dataset.jsonl --output results.jsonl',
+		'$ aura ttwf:generate --prompt "Create a telegram chatbot that can tell current weather in Berlin" --output result.json',
+		'$ aura ttwf:generate --input dataset.jsonl --output results.jsonl',
 	],
 	flagsSchema,
 })

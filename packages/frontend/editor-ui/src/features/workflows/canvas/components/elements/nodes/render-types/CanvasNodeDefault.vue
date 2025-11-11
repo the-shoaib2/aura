@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, ref, useCssModule, watch } from 'vue';
 import { useNodeConnections } from '@/app/composables/useNodeConnections';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useCanvasNode } from '../../../../composables/useCanvasNode';
 import type { CanvasNodeDefaultRender } from '../../../../canvas.types';
 import { useCanvas } from '../../../../composables/useCanvas';
@@ -281,7 +281,7 @@ function onActivate(event: MouseEvent) {
 	 */
 
 	&.selected {
-		/* stylelint-disable-next-line @n8n/css-var-naming */
+		/* stylelint-disable-next-line @aura/css-var-naming */
 		box-shadow: 0 0 0 calc(8px * var(--canvas-zoom-compensation-factor, 1))
 			var(--canvas--color--selected-transparent);
 	}

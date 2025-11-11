@@ -26,7 +26,7 @@ import {
 	NodeConnectionTypes,
 	type IBinaryData,
 	type INodeExecutionData,
-} from 'n8n-workflow';
+} from 'workflow';
 import { setActivePinia } from 'pinia';
 import { mock } from 'vitest-mock-extended';
 import { defaultSettings } from '@/__tests__/defaults';
@@ -65,14 +65,14 @@ const ifNode = createTestNode({
 
 const aiTool = createTestNode({
 	name: 'AI Tool',
-	type: '@n8n/n8n-nodes-langchain.memoryBufferWindow',
+	type: '@aura/aura-nodes-langchain.memoryBufferWindow',
 	typeVersion: 1,
 	disabled: false,
 });
 
 const nodeWithCredential = createTestNode({
 	name: 'Notion',
-	type: 'n8n-nodes-base.notion',
+	type: 'aura-nodes-base.notion',
 	typeVersion: 1,
 	credentials: { notionApi: { id: 'testId', name: 'testName' } },
 	disabled: false,
@@ -92,7 +92,7 @@ const splitInBatchesNode = createTestNode({
 
 const customerDatastoreNode = createTestNode({
 	name: 'Customer Datastore',
-	type: 'n8n-nodes-base.n8nTrainingCustomerDatastore',
+	type: 'aura-nodes-base.auraTrainingCustomerDatastore',
 	typeVersion: 1,
 	disabled: false,
 });
@@ -112,7 +112,7 @@ const mockI18nKeys: Record<string, string> = {
 	'dataMapping.schemaView.executeSchema': '{link} to view input data',
 	'dataMapping.schemaView.variablesContextTitle': 'Variables and context',
 	'dataMapping.schemaView.variablesUpgrade':
-		'Set global variables and use them across workflows with the Pro or Enterprise plan. <a href="https://docs.n8n.io/code/variables/" target="_blank">Details</a>',
+		'Set global variables and use them across workflows with the Pro or Enterprise plan. <a href="https://docs.aura.io/code/variables/" target="_blank">Details</a>',
 	'dataMapping.schemaView.variablesEmpty':
 		'Create variables that can be used across workflows <a href="/variables" target="_blank">here</a>',
 	'dataMapping.schemaView.execution.resumeUrl': "The URL for resuming a 'Wait' node",
@@ -169,7 +169,7 @@ async function setupStore() {
 			outputs: [NodeConnectionTypes.Main, NodeConnectionTypes.Main],
 		}),
 		mockNodeTypeDescription({
-			name: 'n8n-nodes-base.notion',
+			name: 'aura-nodes-base.notion',
 			outputs: [NodeConnectionTypes.Main],
 		}),
 		mockNodeTypeDescription({
@@ -177,7 +177,7 @@ async function setupStore() {
 			outputs: [NodeConnectionTypes.Main, NodeConnectionTypes.Main],
 		}),
 		mockNodeTypeDescription({
-			name: 'n8n-nodes-base.n8nTrainingCustomerDatastore',
+			name: 'aura-nodes-base.auraTrainingCustomerDatastore',
 			outputs: [NodeConnectionTypes.Main],
 		}),
 	]);
@@ -609,7 +609,7 @@ describe('VirtualSchema.vue', () => {
 						src_view: 'schema',
 						src_field_name: 'name',
 						src_field_nest_level: 0,
-						src_node_type: 'n8n-nodes-base.manualTrigger',
+						src_node_type: 'aura-nodes-base.manualTrigger',
 						src_nodes_back: '1',
 						src_has_credential: false,
 					}),

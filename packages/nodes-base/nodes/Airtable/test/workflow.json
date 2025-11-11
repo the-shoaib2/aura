@@ -7,7 +7,7 @@
 			"parameters": {},
 			"id": "f857c37f-36c1-4c9c-9b5f-f6ef49db67e3",
 			"name": "On clicking 'execute'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [820, 380]
 		},
@@ -33,7 +33,7 @@
 			},
 			"id": "5654d3b3-fe83-4988-889b-94f107d41807",
 			"name": "Airtable",
-			"type": "n8n-nodes-base.airtable",
+			"type": "aura-nodes-base.airtable",
 			"typeVersion": 2,
 			"position": [1020, 380],
 			"credentials": {

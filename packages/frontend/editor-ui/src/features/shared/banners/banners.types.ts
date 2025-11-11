@@ -1,6 +1,6 @@
 import type { Component } from 'vue';
-import type { BannerName } from '@n8n/api-types';
-import type { CalloutTheme } from '@n8n/design-system';
+import type { BannerName } from '@aura/api-types';
+import type { CalloutTheme } from '@aura/design-system';
 
 export type N8nBanners = {
 	[key in BannerName]: {

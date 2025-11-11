@@ -1,12 +1,12 @@
-import { Logger } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { Container } from '@aura/di';
 import type express from 'express';
 import {
 	isWebhookHtmlSandboxingDisabled,
 	getWebhookSandboxCSP,
 	isHtmlRenderedContentType,
-} from 'n8n-core';
-import { ensureError, type IHttpRequestMethods } from 'n8n-workflow';
+} from 'aura-core';
+import { ensureError, type IHttpRequestMethods } from 'workflow';
 import { Readable } from 'stream';
 import { finished } from 'stream/promises';
 

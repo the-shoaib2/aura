@@ -7,13 +7,13 @@
  */
 
 // Mock all external dependencies first, before any imports
-jest.mock('@n8n/config', () => ({
+jest.mock('@aura/config', () => ({
 	GlobalConfig: jest.fn().mockImplementation(() => ({
 		sentry: { backendDsn: '' },
 	})),
 }));
 
-jest.mock('@n8n/di', () => ({
+jest.mock('@aura/di', () => ({
 	Container: {
 		get: jest.fn(),
 	},
@@ -55,8 +55,8 @@ jest.mock('@/node-execute-functions', () => ({
 }));
 
 // Now import the real classes
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import type {
 	ExecutionBaseError,
@@ -67,8 +67,8 @@ import type {
 	ITaskDataConnections,
 	IWorkflowExecuteAdditionalData,
 	Workflow,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError, Node } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError, Node } from 'workflow';
 
 import { ExecuteContext, PollContext } from '../node-execution-context';
 import { RoutingNode } from '../routing-node';
@@ -304,7 +304,7 @@ describe('WorkflowExecute.runNode - Real Implementation', () => {
 			).rejects.toThrow('Generic error');
 		});
 
-		it('should create new Error with message and stack for non-n8n error types from previous execution', async () => {
+		it('should create new Error with message and stack for non-aura error types from previous execution', async () => {
 			const originalError = {
 				name: 'SomeCustomError',
 				message: 'Custom error message',

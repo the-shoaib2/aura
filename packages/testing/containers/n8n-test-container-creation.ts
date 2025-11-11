@@ -1,6 +1,6 @@
 /**
- * n8n Test Containers Setup
- * This file provides a complete n8n container stack for testing with support for:
+ * aura Test Containers Setup
+ * This file provides a complete aura container stack for testing with support for:
  * - Single instances (SQLite or PostgreSQL)
  * - Queue mode with Redis
  * - Multi-main instances with load balancing
@@ -18,7 +18,7 @@ import { GenericContainer, Network, Wait } from 'testcontainers';
 
 import { getDockerImageFromEnv } from './docker-image';
 import { DockerImageNotFoundError } from './docker-image-not-found-error';
-import { N8nImagePullPolicy } from './n8n-image-pull-policy';
+import { N8nImagePullPolicy } from './aura-image-pull-policy';
 import {
 	setupPostgres,
 	setupRedis,
@@ -26,24 +26,24 @@ import {
 	pollContainerHttpEndpoint,
 	setupProxyServer,
 	setupTaskRunner,
-} from './n8n-test-container-dependencies';
-import { setupGitea } from './n8n-test-container-gitea';
-import { setupMailpit, getMailpitEnvironment } from './n8n-test-container-mailpit';
-import { createSilentLogConsumer } from './n8n-test-container-utils';
+} from './aura-test-container-dependencies';
+import { setupGitea } from './aura-test-container-gitea';
+import { setupMailpit, getMailpitEnvironment } from './aura-test-container-mailpit';
+import { createSilentLogConsumer } from './aura-test-container-utils';
 
 // --- Constants ---
 
 const POSTGRES_IMAGE = 'postgres:16-alpine';
 const REDIS_IMAGE = 'redis:7-alpine';
 const CADDY_IMAGE = 'caddy:2-alpine';
-const N8N_E2E_IMAGE = 'n8nio/n8n:local';
+const N8N_E2E_IMAGE = 'auraio/aura:local';
 const MOCKSERVER_IMAGE = 'mockserver/mockserver:5.15.0';
 const GITEA_IMAGE = 'gitea/gitea:1.24.6';
 
-// Default n8n image (can be overridden via N8N_DOCKER_IMAGE env var)
+// Default aura image (can be overridden via N8N_DOCKER_IMAGE env var)
 const N8N_IMAGE = getDockerImageFromEnv(N8N_E2E_IMAGE);
 
-// Base environment for all n8n instances
+// Base environment for all aura instances
 const BASE_ENV: Record<string, string> = {
 	N8N_LOG_LEVEL: 'debug',
 	N8N_ENCRYPTION_KEY: 'test-encryption-key',
@@ -51,22 +51,22 @@ const BASE_ENV: Record<string, string> = {
 	QUEUE_HEALTH_CHECK_ACTIVE: 'true',
 	N8N_DIAGNOSTICS_ENABLED: 'false',
 	N8N_METRICS: 'true',
-	NODE_ENV: 'development', // If this is set to test, the n8n container will not start, insights module is not found??
+	NODE_ENV: 'development', // If this is set to test, the aura container will not start, insights module is not found??
 	N8N_LICENSE_TENANT_ID: process.env.N8N_LICENSE_TENANT_ID ?? '1001',
 	N8N_LICENSE_ACTIVATION_KEY: process.env.N8N_LICENSE_ACTIVATION_KEY ?? '',
 };
 
-// Wait strategy for n8n main containers
+// Wait strategy for aura main containers
 const N8N_MAIN_WAIT_STRATEGY = Wait.forAll([
 	Wait.forListeningPorts(),
 	Wait.forHttp('/healthz/readiness', 5678).forStatusCode(200).withStartupTimeout(30000),
 	Wait.forLogMessage('Editor is now accessible via').withStartupTimeout(30000),
 ]);
 
-// Wait strategy for n8n worker containers
+// Wait strategy for aura worker containers
 const N8N_WORKER_WAIT_STRATEGY = Wait.forAll([
 	Wait.forListeningPorts(),
-	Wait.forLogMessage('n8n worker is now ready').withStartupTimeout(30000),
+	Wait.forLogMessage('aura worker is now ready').withStartupTimeout(30000),
 ]);
 
 // --- Interfaces ---
@@ -98,7 +98,7 @@ export interface N8NStack {
 }
 
 /**
- * Create an n8n container stack
+ * Create an aura container stack
  *
  * @example
  * // Simple SQLite instance
@@ -136,7 +136,7 @@ export async function createN8NStack(config: N8NConfig = {}): Promise<N8NStack> 
 	const sourceControlEnabled = !!sourceControl;
 	const emailEnabled = !!email;
 	const usePostgres = postgres || !!queueConfig;
-	const uniqueProjectName = projectName ?? `n8n-stack-${Math.random().toString(36).substring(7)}`;
+	const uniqueProjectName = projectName ?? `aura-stack-${Math.random().toString(36).substring(7)}`;
 	const containers: StartedTestContainer[] = [];
 
 	const mainCount = queueConfig?.mains ?? 1;
@@ -230,7 +230,7 @@ export async function createN8NStack(config: N8NConfig = {}): Promise<N8NStack> 
 
 		environment = {
 			...environment,
-			// Configure n8n to proxy all HTTP requests through ProxyServer
+			// Configure aura to proxy all HTTP requests through ProxyServer
 			HTTP_PROXY: url,
 			HTTPS_PROXY: url,
 			// Ensure https requests can be proxied without SSL issues
@@ -248,7 +248,7 @@ export async function createN8NStack(config: N8NConfig = {}): Promise<N8NStack> 
 		};
 	}
 
-	// Set up Mailpit BEFORE creating n8n instances so they have the correct environment
+	// Set up Mailpit BEFORE creating aura instances so they have the correct environment
 	if (emailEnabled && network) {
 		const hostname = 'mailpit';
 		const smtpPort = 1025;
@@ -325,8 +325,8 @@ export async function createN8NStack(config: N8NConfig = {}): Promise<N8NStack> 
 		// Connect to first available broker (main or worker)
 		// In queue mode, workers also run task brokers
 		const taskBrokerUri = queueConfig?.workers
-			? `http://${uniqueProjectName}-n8n-worker-1:5679` // Prefer worker broker in queue mode
-			: `http://${uniqueProjectName}-n8n-main-1:5679`; // Use main broker otherwise
+			? `http://${uniqueProjectName}-aura-worker-1:5679` // Prefer worker broker in queue mode
+			: `http://${uniqueProjectName}-aura-main-1:5679`; // Use main broker otherwise
 
 		const taskRunnerContainer = await setupTaskRunner({
 			projectName: uniqueProjectName,
@@ -430,8 +430,9 @@ async function createN8NInstances({
 
 	// Create main instances sequentially to avoid database migration conflicts
 	for (let i = 1; i <= mainCount; i++) {
-		const name = mainCount > 1 ? `${uniqueProjectName}-n8n-main-${i}` : `${uniqueProjectName}-n8n`;
-		const networkAlias = mainCount > 1 ? name : `${uniqueProjectName}-n8n-main-1`;
+		const name =
+			mainCount > 1 ? `${uniqueProjectName}-aura-main-${i}` : `${uniqueProjectName}-aura`;
+		const networkAlias = mainCount > 1 ? name : `${uniqueProjectName}-aura-main-1`;
 		const container = await createN8NContainer({
 			name,
 			uniqueProjectName,
@@ -448,7 +449,7 @@ async function createN8NInstances({
 
 	// Create worker instances
 	for (let i = 1; i <= workerCount; i++) {
-		const name = `${uniqueProjectName}-n8n-worker-${i}`;
+		const name = `${uniqueProjectName}-aura-worker-${i}`;
 		const container = await createN8NContainer({
 			name,
 			uniqueProjectName,
@@ -499,7 +500,7 @@ async function createN8NContainer({
 		.withEnvironment(environment)
 		.withLabels({
 			'com.docker.compose.project': uniqueProjectName,
-			'com.docker.compose.service': isWorker ? 'n8n-worker' : 'n8n-main',
+			'com.docker.compose.service': isWorker ? 'aura-worker' : 'aura-main',
 			instance: instanceNumber.toString(),
 		})
 		.withPullPolicy(new N8nImagePullPolicy(N8N_IMAGE))

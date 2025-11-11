@@ -1,9 +1,9 @@
-import { Logger, ModuleRegistry } from '@n8n/backend-common';
-import { type ApiKey, type AuthenticatedRequest, WorkflowEntity, User, Role } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { Logger, ModuleRegistry } from '@aura/backend-common';
+import { type ApiKey, type AuthenticatedRequest, WorkflowEntity, User, Role } from '@aura/db';
+import { Container } from '@aura/di';
 import type { Response } from 'express';
 import { mock, mockDeep } from 'jest-mock-extended';
-import { HTTP_REQUEST_NODE_TYPE, WEBHOOK_NODE_TYPE, type INode } from 'n8n-workflow';
+import { HTTP_REQUEST_NODE_TYPE, WEBHOOK_NODE_TYPE, type INode } from 'workflow';
 
 import { UpdateMcpSettingsDto } from '../dto/update-mcp-settings.dto';
 import { McpServerApiKeyService } from '../mcp-api-key.service';

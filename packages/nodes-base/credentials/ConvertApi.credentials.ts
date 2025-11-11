@@ -4,7 +4,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class ConvertApi implements ICredentialType {
 	name = 'convertApi';

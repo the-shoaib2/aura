@@ -1,5 +1,5 @@
-import { Container, Service } from '@n8n/di';
-import type { RequesterMessage } from '@n8n/task-runner';
+import { Container, Service } from '@aura/di';
+import type { RequesterMessage } from '@aura/task-runner';
 
 import { EventService } from '@/events/event.service';
 import { NodeTypes } from '@/node-types';

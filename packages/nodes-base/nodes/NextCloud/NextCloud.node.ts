@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'workflow';
 import { URLSearchParams } from 'url';
 import { parseString } from 'xml2js';
 

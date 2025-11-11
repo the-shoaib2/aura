@@ -1,7 +1,7 @@
-import type { WorkflowFailedToActivate } from '@n8n/api-types/push/workflow';
+import type { WorkflowFailedToActivate } from '@aura/api-types/push/workflow';
 import { useToast } from '@/app/composables/useToast';
 import type { WorkflowState } from '@/app/composables/useWorkflowState';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 
 export async function workflowFailedToActivate(

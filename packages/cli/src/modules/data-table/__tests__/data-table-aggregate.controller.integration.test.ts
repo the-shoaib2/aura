@@ -1,11 +1,11 @@
-import type { DataTable } from '@n8n/api-types';
+import type { DataTable } from '@aura/api-types';
 import {
 	createTeamProject,
 	getPersonalProject,
 	linkUserToProject,
 	testDb,
-} from '@n8n/backend-test-utils';
-import type { Project, User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { Project, User } from '@aura/db';
 import { DateTime } from 'luxon';
 
 import { createDataTable } from '@test-integration/db/data-tables';

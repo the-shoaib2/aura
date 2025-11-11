@@ -1,5 +1,5 @@
 import { FREE_AI_CREDITS_CREDENTIAL_NAME, STREAM_SEPARATOR } from '@/constants';
-import type { CreateCredentialDto } from '@n8n/api-types';
+import type { CreateCredentialDto } from '@aura/api-types';
 import {
 	AiChatRequestDto,
 	AiApplySuggestionRequestDto,
@@ -8,12 +8,12 @@ import {
 	AiBuilderChatRequestDto,
 	AiSessionRetrievalRequestDto,
 	AiSessionMetadataResponseDto,
-} from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Body, Get, Licensed, Post, RestController } from '@n8n/decorators';
-import { type AiAssistantSDK, APIResponseError } from '@n8n_io/ai-assistant-sdk';
+} from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
+import { Body, Get, Licensed, Post, RestController } from '@aura/decorators';
+import { type AiAssistantSDK, APIResponseError } from '@aura_io/ai-assistant-sdk';
 import { Response } from 'express';
-import { OPEN_AI_API_CREDENTIAL_TYPE } from 'n8n-workflow';
+import { OPEN_AI_API_CREDENTIAL_TYPE } from 'workflow';
 import { strict as assert } from 'node:assert';
 import { WritableStream } from 'node:stream/web';
 

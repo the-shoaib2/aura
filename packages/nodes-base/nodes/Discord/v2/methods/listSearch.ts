@@ -1,8 +1,4 @@
-import {
-	type IDataObject,
-	type ILoadOptionsFunctions,
-	type INodeListSearchResult,
-} from 'n8n-workflow';
+import { type IDataObject, type ILoadOptionsFunctions, type INodeListSearchResult } from 'workflow';
 
 import { checkAccessToGuild } from '../helpers/utils';
 import { discordApiRequest } from '../transport';

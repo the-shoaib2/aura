@@ -1,6 +1,6 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { AuthenticatedRequest, User, ApiKey } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { AuthenticatedRequest, User, ApiKey } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 
 import { EventService } from '@/events/event.service';

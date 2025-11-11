@@ -4,7 +4,7 @@ import type {
 	IDataObject,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 
@@ -70,12 +70,12 @@ const properties: INodeProperties[] = [
 										value: 'application/pdf',
 									},
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Rich Text (rtf)',
 										value: 'application/rtf',
 									},
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Text (txt)',
 										value: 'text/plain',
 									},

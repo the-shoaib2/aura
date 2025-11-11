@@ -1,8 +1,8 @@
-import { LicenseState, ModuleRegistry } from '@n8n/backend-common';
-import { mockInstance, mockLogger, testModules, testDb } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { APIRequest, User } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { LicenseState, ModuleRegistry } from '@aura/backend-common';
+import { mockInstance, mockLogger, testModules, testDb } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { APIRequest, User } from '@aura/db';
+import { Container } from '@aura/di';
 import cookieParser from 'cookie-parser';
 import express from 'express';
 import type superagent from 'superagent';

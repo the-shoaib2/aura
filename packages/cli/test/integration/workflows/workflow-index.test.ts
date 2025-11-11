@@ -1,11 +1,11 @@
-import { Logger } from '@n8n/backend-common';
-import { testDb } from '@n8n/backend-test-utils';
-import { DatabaseConfig } from '@n8n/config';
-import type { IWorkflowDb } from '@n8n/db';
-import { WorkflowDependencyRepository, WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { testDb } from '@aura/backend-test-utils';
+import { DatabaseConfig } from '@aura/config';
+import type { IWorkflowDb } from '@aura/db';
+import { WorkflowDependencyRepository, WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { retryUntil } from '@test-integration/retry-until';
-import { ErrorReporter } from 'n8n-core';
+import { ErrorReporter } from 'aura-core';
 import { v4 as uuid } from 'uuid';
 
 import { createOwner } from '../shared/db/users';
@@ -71,7 +71,7 @@ describe('WorkflowIndexService Integration', () => {
 					{
 						id: 'node-1',
 						name: 'HTTP Request',
-						type: 'n8n-nodes-base.httpRequest',
+						type: 'aura-nodes-base.httpRequest',
 						typeVersion: 1,
 						position: [250, 300] as [number, number],
 						parameters: {},
@@ -114,7 +114,7 @@ describe('WorkflowIndexService Integration', () => {
 					workflowId,
 					workflowVersionId: 1,
 					dependencyType: 'nodeType',
-					dependencyKey: 'n8n-nodes-base.httpRequest',
+					dependencyKey: 'aura-nodes-base.httpRequest',
 					dependencyInfo: {
 						nodeId: 'node-1',
 						nodeVersion: 1,

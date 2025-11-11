@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { generateBarChartOptions } from '@/features/execution/insights/chartjs.utils';
 import {
 	GRANULARITY_DATE_FORMAT_MASK,
 	INSIGHTS_UNIT_MAPPING,
 } from '@/features/execution/insights/insights.constants';
 import { transformInsightsFailureRate } from '@/features/execution/insights/insights.utils';
-import { smartDecimal } from '@n8n/utils/number/smartDecimal';
+import { smartDecimal } from '@aura/utils/number/smartDecimal';
 import { useCssVar } from '@vueuse/core';
 import type { ChartData } from 'chart.js';
 import { computed } from 'vue';

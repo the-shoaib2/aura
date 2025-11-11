@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class TwakeCloudApi implements ICredentialType {
 	name = 'twakeCloudApi';
@@ -33,7 +33,7 @@ export class TwakeCloudApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://plugins.twake.app/plugins/n8n',
+			baseURL: 'https://plugins.twake.app/plugins/aura',
 			url: '/channel',
 			method: 'POST',
 		},

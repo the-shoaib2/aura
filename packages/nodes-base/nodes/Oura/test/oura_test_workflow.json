@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "c1e3b825-a9a8-4def-986b-9108d9441992",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"position": [720, 400],
 			"typeVersion": 1
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "7969bf78-9343-4f81-8f79-dc415a60e168",
 			"name": "Oura",
-			"type": "n8n-nodes-base.oura",
+			"type": "aura-nodes-base.oura",
 			"typeVersion": 1,
 			"position": [940, 400],
 			"credentials": {
@@ -29,7 +29,7 @@
 			"parameters": {},
 			"id": "9b97fa0e-51a6-41d3-8a7d-cff0531e5527",
 			"name": "No Operation, do nothing",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1140, 400]
 		}
@@ -43,7 +43,7 @@
 					"weight": 168,
 					"height": 80,
 					"biological_sex": "male",
-					"email": "nathan@n8n.io"
+					"email": "nathan@aura.io"
 				}
 			}
 		]

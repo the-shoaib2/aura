@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "0a7bd7bf-38ad-4d4f-9e74-390a5a008663"
@@ -23,7 +23,7 @@
 				"additionalFields": {}
 			},
 			"name": "Mailjet",
-			"type": "n8n-nodes-base.mailjet",
+			"type": "aura-nodes-base.mailjet",
 			"typeVersion": 1,
 			"position": [480, 240],
 			"credentials": {
@@ -43,7 +43,7 @@
 				"additionalFields": {}
 			},
 			"name": "Mailjet1",
-			"type": "n8n-nodes-base.mailjet",
+			"type": "aura-nodes-base.mailjet",
 			"typeVersion": 1,
 			"position": [620, 240],
 			"credentials": {
@@ -61,7 +61,7 @@
 				"text": "test"
 			},
 			"name": "Mailjet2",
-			"type": "n8n-nodes-base.mailjet",
+			"type": "aura-nodes-base.mailjet",
 			"typeVersion": 1,
 			"position": [480, 390],
 			"credentials": {

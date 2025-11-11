@@ -1,8 +1,8 @@
 import { computed, nextTick } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { useI18n } from '@n8n/i18n';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { useI18n } from '@aura/i18n';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { usePostHog } from '@/app/stores/posthog.store';
@@ -10,7 +10,7 @@ import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useViewStacks } from '@/features/shared/nodeCreator/composables/useViewStacks';
-import { updateCurrentUserSettings } from '@n8n/rest-api-client/api/users';
+import { updateCurrentUserSettings } from '@aura/rest-api-client/api/users';
 import {
 	NODE_CREATOR_OPEN_SOURCES,
 	PRE_BUILT_AGENTS_EXPERIMENT,

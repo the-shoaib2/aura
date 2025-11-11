@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import AiStarsIcon from '@/app/components/AiStarsIcon.vue';
 
-import { N8nButton, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nTooltip } from '@aura/design-system';
 const i18n = useI18n();
 
 const emit = defineEmits<{

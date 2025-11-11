@@ -11,7 +11,7 @@ import {
 	type ITaskDataConnectionsSource,
 	type IWaitingForExecution,
 	type IWaitingForExecutionSource,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { DirectedGraph } from './directed-graph';
 import { getIncomingDataFromAnyRun } from './get-incoming-data';

@@ -1,8 +1,8 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
-// eslint-disable-next-line n8n-nodes-base/cred-class-name-unsuffixed
+// eslint-disable-next-line aura-nodes-base/cred-class-name-unsuffixed
 export class Ldap implements ICredentialType {
-	// eslint-disable-next-line n8n-nodes-base/cred-class-field-name-unsuffixed
+	// eslint-disable-next-line aura-nodes-base/cred-class-field-name-unsuffixed
 	name = 'ldap';
 
 	displayName = 'LDAP';

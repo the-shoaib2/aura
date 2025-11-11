@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
-import { UserRepository } from '@n8n/db';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
+import { UserRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 
 import { JwtService } from '@/services/jwt.service';
 

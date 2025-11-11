@@ -1,5 +1,5 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import { createTeamProject, createWorkflow, testDb } from '@n8n/backend-test-utils';
+import type { SourceControlledFile } from '@aura/api-types';
+import { createTeamProject, createWorkflow, testDb } from '@aura/backend-test-utils';
 import {
 	CredentialsEntity,
 	type Folder,
@@ -10,15 +10,15 @@ import {
 	type TagEntity,
 	type User,
 	WorkflowEntity,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import { createCredentials } from '@test-integration/db/credentials';
 import { createFolder } from '@test-integration/db/folders';
 import { assignTagToWorkflow, createTag, updateTag } from '@test-integration/db/tags';
 import { createUser } from '@test-integration/db/users';
 import * as fastGlob from 'fast-glob';
 import { mock } from 'jest-mock-extended';
-import { Cipher } from 'n8n-core';
+import { Cipher } from 'aura-core';
 import fsp from 'node:fs/promises';
 import { basename, isAbsolute } from 'node:path';
 

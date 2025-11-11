@@ -1,7 +1,7 @@
-import { createWorkflow, testDb } from '@n8n/backend-test-utils';
-import { StatisticsNames, WorkflowStatistics, WorkflowStatisticsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { type InsertResult, QueryFailedError } from '@n8n/typeorm';
+import { createWorkflow, testDb } from '@aura/backend-test-utils';
+import { StatisticsNames, WorkflowStatistics, WorkflowStatisticsRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { type InsertResult, QueryFailedError } from '@aura/typeorm';
 import { mock, mockClear } from 'jest-mock-extended';
 
 import { mockEntityManager } from '@test/mocking';

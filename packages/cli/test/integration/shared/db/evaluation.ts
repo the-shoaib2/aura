@@ -1,13 +1,13 @@
-import { TestRunRepository, TestCaseExecutionRepository } from '@n8n/db';
+import { TestRunRepository, TestCaseExecutionRepository } from '@aura/db';
 import type {
 	TestRun,
 	TestCaseExecution,
 	AggregatedTestRunMetrics,
 	TestCaseExecutionErrorCode,
 	TestRunErrorCode,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { IDataObject } from 'n8n-workflow';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import type { IDataObject } from 'workflow';
 
 /**
  * Creates a test run for a workflow

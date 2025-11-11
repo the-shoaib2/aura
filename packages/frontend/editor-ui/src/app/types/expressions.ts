@@ -1,6 +1,6 @@
 import type { Basic } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
-import type { IConnections, IWorkflowDataProxyAdditionalKeys, Workflow } from 'n8n-workflow';
+import type { IConnections, IWorkflowDataProxyAdditionalKeys, Workflow } from 'workflow';
 
 type Range = { from: number; to: number };
 
@@ -10,7 +10,7 @@ export type Segment = Plaintext | Resolvable;
 
 export type Plaintext = { kind: 'plaintext'; plaintext: string } & Range;
 
-export type Html = Plaintext; // for n8n parser, functionally identical to plaintext
+export type Html = Plaintext; // for aura parser, functionally identical to plaintext
 
 export type ResolvableState = 'valid' | 'invalid' | 'pending';
 

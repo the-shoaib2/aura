@@ -1,15 +1,15 @@
-import { inDevelopment, inProduction } from '@n8n/backend-common';
-import { DatabaseConfig, SecurityConfig, WorkflowsConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import type { APIRequest, AuthenticatedRequest } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
+import { inDevelopment, inProduction } from '@aura/backend-common';
+import { DatabaseConfig, SecurityConfig, WorkflowsConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import type { APIRequest, AuthenticatedRequest } from '@aura/db';
+import { Container, Service } from '@aura/di';
 import cookieParser from 'cookie-parser';
 import express from 'express';
 import { access as fsAccess } from 'fs/promises';
 import helmet from 'helmet';
 import isEmpty from 'lodash/isEmpty';
-import { InstanceSettings, installGlobalProxyAgent } from 'n8n-core';
-import { jsonParse } from 'n8n-workflow';
+import { InstanceSettings, installGlobalProxyAgent } from 'aura-core';
+import { jsonParse } from 'workflow';
 import { resolve } from 'path';
 
 import { AbstractServer } from '@/abstract-server';
@@ -409,8 +409,8 @@ export class Server extends AbstractServer {
 				ieNoOpen: false,
 				// This is already disabled in AbstractServer
 				xPoweredBy: false,
-				// Enable HSTS headers only when n8n handles TLS.
-				// if n8n is behind a reverse-proxy, then these headers needs to be configured there
+				// Enable HSTS headers only when aura handles TLS.
+				// if aura is behind a reverse-proxy, then these headers needs to be configured there
 				strictTransportSecurity: isTLSEnabled
 					? {
 							maxAge: 180 * Time.days.toSeconds,

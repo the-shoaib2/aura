@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "5bc91980-86a2-469c-8ad0-7de1d8c9b7e1"
@@ -19,7 +19,7 @@
 				"path": "/1KB.zip"
 			},
 			"name": "FTP1",
-			"type": "n8n-nodes-base.ftp",
+			"type": "aura-nodes-base.ftp",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -35,7 +35,7 @@
 				"path": "1KB.zip"
 			},
 			"name": "FTP",
-			"type": "n8n-nodes-base.ftp",
+			"type": "aura-nodes-base.ftp",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -52,7 +52,7 @@
 				"path": "=/upload/{{$node[\"Set\"].json[\"filename\"]}}"
 			},
 			"name": "FTP2",
-			"type": "n8n-nodes-base.ftp",
+			"type": "aura-nodes-base.ftp",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -76,7 +76,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"id": "08e2e0f0-f730-48cf-a05e-40820a55aaa3"

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "b45b0b50-c25f-4e41-9d82-f0c06af9777a"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "AWS SES",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -41,7 +41,7 @@
 				"limit": 1
 			},
 			"name": "AWS SES1",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"templateName": "={{$node[\"Set\"].json[\"templateName\"]}}"
 			},
 			"name": "AWS SES2",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -83,7 +83,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"id": "d8d7bba3-dc23-493e-8f26-781a66685439"
@@ -99,7 +99,7 @@
 				}
 			},
 			"name": "AWS SES3",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -117,7 +117,7 @@
 				"templateName": "={{$node[\"Set\"].json[\"templateName\"]}}"
 			},
 			"name": "AWS SES4",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [1500, 300],
 			"credentials": {
@@ -140,7 +140,7 @@
 				"additionalFields": {}
 			},
 			"name": "AWS SES5",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [1200, 450],
 			"credentials": {
@@ -160,7 +160,7 @@
 				"additionalFields": {}
 			},
 			"name": "AWS SES6",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [1350, 450],
 			"credentials": {
@@ -177,11 +177,11 @@
 				"fromEmailAddress": "node8qa@gmail.com",
 				"templateName": "={{$node[\"Set1\"].json[\"templateName\"]}}",
 				"templateSubject": "=VerificationSubject{{Date.now()}}",
-				"successRedirectionURL": "http://n8n.io",
-				"failureRedirectionURL": "http://n8n.io"
+				"successRedirectionURL": "http://aura.io",
+				"failureRedirectionURL": "http://aura.io"
 			},
 			"name": "AWS SES7",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [600, 100],
 			"credentials": {
@@ -199,7 +199,7 @@
 				"templateName": "={{$node[\"Set1\"].json[\"templateName\"]}}"
 			},
 			"name": "AWS SES8",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [800, 100],
 			"credentials": {
@@ -223,7 +223,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 100],
 			"id": "4c2fa60b-186d-49bc-8c1c-125c25553acb"
@@ -235,7 +235,7 @@
 				"limit": 1
 			},
 			"name": "AWS SES9",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [1000, 100],
 			"credentials": {
@@ -252,11 +252,11 @@
 				"operation": "update",
 				"templateName": "={{$node[\"Set1\"].json[\"templateName\"]}}",
 				"updateFields": {
-					"failureRedirectionURL": "https://community.n8n.io/"
+					"failureRedirectionURL": "https://community.aura.io/"
 				}
 			},
 			"name": "AWS SES10",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [1200, 100],
 			"credentials": {
@@ -274,7 +274,7 @@
 				"templateName": "={{$node[\"Set1\"].json[\"templateName\"]}}"
 			},
 			"name": "AWS SES11",
-			"type": "n8n-nodes-base.awsSes",
+			"type": "aura-nodes-base.awsSes",
 			"typeVersion": 1,
 			"position": [1400, 100],
 			"credentials": {

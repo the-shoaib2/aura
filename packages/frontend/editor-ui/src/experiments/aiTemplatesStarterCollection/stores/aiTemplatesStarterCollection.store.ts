@@ -1,7 +1,7 @@
 import { useFoldersStore } from '@/features/core/folders/folders.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { WorkflowDataCreate } from '@n8n/rest-api-client';
-import { STORES } from '@n8n/stores';
+import type { WorkflowDataCreate } from '@aura/rest-api-client';
+import { STORES } from '@aura/stores';
 import { defineStore } from 'pinia';
 import { computed } from 'vue';
 import { AGENT_WITH_MEMORY } from '../workflows/1_agent_with_memory';
@@ -11,7 +11,7 @@ import { useTelemetry } from '@/app/composables/useTelemetry';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { TEMPLATE_ONBOARDING_EXPERIMENT } from '@/app/constants';
 import { useLocalStorage } from '@vueuse/core';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useSettingsStore } from '@/app/stores/settings.store';
 
 const LOCAL_STORAGE_SETTING_KEY = 'N8N_AI_TEMPLATES_STARTER_COLLECTION_CALL_OUT_DISMISSED';

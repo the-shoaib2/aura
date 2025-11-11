@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "7db7d51a-83c2-4aa0-a736-9c3d1c031b60",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [20, 340]
 		},
@@ -38,7 +38,7 @@
 			},
 			"id": "83d00275-0f98-4d5e-a3d6-bbca940ff8ac",
 			"name": "Google BigQuery",
-			"type": "n8n-nodes-base.googleBigQuery",
+			"type": "aura-nodes-base.googleBigQuery",
 			"typeVersion": 2,
 			"position": [500, 340],
 			"credentials": {
@@ -54,7 +54,7 @@
 			},
 			"id": "11d06660-cbd3-4bd2-9619-68e82438a0e3",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [240, 340]
 		}

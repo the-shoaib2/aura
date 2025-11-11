@@ -1,6 +1,6 @@
-import { Service } from '@n8n/di';
-import { DataSource, Repository } from '@n8n/typeorm';
-import type { PackageDirectoryLoader } from 'n8n-core';
+import { Service } from '@aura/di';
+import { DataSource, Repository } from '@aura/typeorm';
+import type { PackageDirectoryLoader } from 'aura-core';
 
 import { InstalledNodesRepository } from './installed-nodes.repository';
 import { InstalledPackages } from './installed-packages.entity';

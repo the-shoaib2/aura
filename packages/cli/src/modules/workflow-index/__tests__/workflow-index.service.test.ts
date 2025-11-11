@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { WorkflowDependencyRepository, WorkflowEntity, WorkflowRepository } from '@n8n/db';
-import { ErrorReporter } from 'n8n-core';
-import type { INode, IWorkflowBase } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import { WorkflowDependencyRepository, WorkflowEntity, WorkflowRepository } from '@aura/db';
+import { ErrorReporter } from 'aura-core';
+import type { INode, IWorkflowBase } from 'workflow';
 
 import { WorkflowIndexService } from '../workflow-index.service';
 import { EventService } from '@/events/event.service';
@@ -64,12 +64,12 @@ describe('WorkflowIndexService', () => {
 			const workflow = createWorkflow([
 				createNode({
 					id: 'node-1',
-					type: 'n8n-nodes-base.webhook',
+					type: 'aura-nodes-base.webhook',
 					parameters: { path: 'webhook-1' },
 				}),
 				createNode({
 					id: 'node-2',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					credentials: {
 						httpAuth: { id: 'cred-1', name: 'Auth 1' },
 						apiKey: { id: 'cred-2', name: 'Auth 2' },
@@ -77,12 +77,12 @@ describe('WorkflowIndexService', () => {
 				}),
 				createNode({
 					id: 'node-3',
-					type: 'n8n-nodes-base.executeWorkflow',
+					type: 'aura-nodes-base.executeWorkflow',
 					parameters: { workflowId: 'sub-workflow-1' },
 				}),
 				createNode({
 					id: 'node-4',
-					type: 'n8n-nodes-base.executeWorkflow',
+					type: 'aura-nodes-base.executeWorkflow',
 					parameters: { workflowId: { value: 'sub-workflow-2' } },
 				}),
 			]);
@@ -96,22 +96,22 @@ describe('WorkflowIndexService', () => {
 						// nodeType dependencies
 						expect.objectContaining({
 							dependencyType: 'nodeType',
-							dependencyKey: 'n8n-nodes-base.webhook',
+							dependencyKey: 'aura-nodes-base.webhook',
 							dependencyInfo: { nodeId: 'node-1', nodeVersion: 1 },
 						}),
 						expect.objectContaining({
 							dependencyType: 'nodeType',
-							dependencyKey: 'n8n-nodes-base.httpRequest',
+							dependencyKey: 'aura-nodes-base.httpRequest',
 							dependencyInfo: { nodeId: 'node-2', nodeVersion: 1 },
 						}),
 						expect.objectContaining({
 							dependencyType: 'nodeType',
-							dependencyKey: 'n8n-nodes-base.executeWorkflow',
+							dependencyKey: 'aura-nodes-base.executeWorkflow',
 							dependencyInfo: { nodeId: 'node-3', nodeVersion: 1 },
 						}),
 						expect.objectContaining({
 							dependencyType: 'nodeType',
-							dependencyKey: 'n8n-nodes-base.executeWorkflow',
+							dependencyKey: 'aura-nodes-base.executeWorkflow',
 							dependencyInfo: { nodeId: 'node-4', nodeVersion: 1 },
 						}),
 						// webhookPath dependencies
@@ -154,7 +154,7 @@ describe('WorkflowIndexService', () => {
 			const workflow = createWorkflow([
 				createNode({
 					id: 'node-1',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 				}),
 			]);
 
@@ -172,17 +172,17 @@ describe('WorkflowIndexService', () => {
 			const workflow = createWorkflow([
 				createNode({
 					id: 'node-1',
-					type: 'n8n-nodes-base.executeWorkflow',
+					type: 'aura-nodes-base.executeWorkflow',
 					parameters: { source: 'parameter' },
 				}),
 				createNode({
 					id: 'node-2',
-					type: 'n8n-nodes-base.executeWorkflow',
+					type: 'aura-nodes-base.executeWorkflow',
 					parameters: { source: 'localFile' },
 				}),
 				createNode({
 					id: 'node-3',
-					type: 'n8n-nodes-base.executeWorkflow',
+					type: 'aura-nodes-base.executeWorkflow',
 					parameters: { source: 'url' },
 				}),
 			]);
@@ -207,7 +207,7 @@ describe('WorkflowIndexService', () => {
 			const workflow = createWorkflow([
 				createNode({
 					id: 'node-1',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					credentials: {
 						httpAuth: { id: 'cred-1', name: 'Basic Auth' },
 						apiKey: { id: 'cred-2', name: 'API Key' },
@@ -258,10 +258,10 @@ describe('WorkflowIndexService', () => {
 	describe('buildIndex()', () => {
 		it('should retrieve unindexed workflows and update their dependencies', async () => {
 			const workflow1 = createWorkflowEntity([
-				createNode({ id: 'node-1', type: 'n8n-nodes-base.start' }),
+				createNode({ id: 'node-1', type: 'aura-nodes-base.start' }),
 			]);
 			const workflow2 = createWorkflowEntity([
-				createNode({ id: 'node-2', type: 'n8n-nodes-base.webhook', parameters: { path: 'test' } }),
+				createNode({ id: 'node-2', type: 'aura-nodes-base.webhook', parameters: { path: 'test' } }),
 			]);
 			workflow2.id = 'workflow-456';
 
@@ -306,7 +306,7 @@ describe('WorkflowIndexService', () => {
 			// Create 5 workflows to test multiple batches
 			const workflows = Array.from({ length: 5 }, (_, i) => {
 				const workflow = createWorkflowEntity([
-					createNode({ id: `node-${i}`, type: 'n8n-nodes-base.start' }),
+					createNode({ id: `node-${i}`, type: 'aura-nodes-base.start' }),
 				]);
 				workflow.id = `workflow-${i}`;
 				return workflow;

@@ -5,8 +5,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 type AggregationType =
 	| 'append'
@@ -173,7 +173,7 @@ export const description: INodeProperties[] = [
 						name: 'separateBy',
 						type: 'options',
 						default: ',',
-						// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+						// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 						options: [
 							{
 								name: 'Comma',
@@ -305,7 +305,7 @@ export const description: INodeProperties[] = [
 				],
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 				displayName: 'Ignore items without valid fields to group by',
 				name: 'skipEmptySplitFields',
 				type: 'boolean',

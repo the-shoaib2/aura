@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeProperties } from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 
@@ -35,12 +35,12 @@ export const properties: INodeProperties[] = [
 						value: 'lastModifiedDateTime',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'name',
 						value: 'name',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'size',
 						value: 'size',
 					},

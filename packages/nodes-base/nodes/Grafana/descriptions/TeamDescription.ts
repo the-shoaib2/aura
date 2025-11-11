@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const teamOperations: INodeProperties[] = [
 	{
@@ -83,7 +83,7 @@ export const teamFields: INodeProperties[] = [
 				displayName: 'Email',
 				name: 'email',
 				type: 'string',
-				placeholder: 'engineering@n8n.io',
+				placeholder: 'engineering@aura.io',
 				default: '',
 				description: 'Email of the team to create',
 			},
@@ -216,7 +216,7 @@ export const teamFields: INodeProperties[] = [
 				displayName: 'Email',
 				name: 'email',
 				type: 'string',
-				placeholder: 'engineering@n8n.io',
+				placeholder: 'engineering@aura.io',
 				default: '',
 				description: 'Email of the team to update',
 			},

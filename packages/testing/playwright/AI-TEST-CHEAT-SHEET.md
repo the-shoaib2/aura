@@ -1,65 +1,65 @@
-# 🚀 n8n Playwright Test Writing Cheat Sheet
+# 🚀 aura Playwright Test Writing Cheat Sheet
 
-> **For AI Assistants**: This guide provides quick reference patterns for writing n8n Playwright tests using the established architecture.
+> **For AI Assistants**: This guide provides quick reference patterns for writing aura Playwright tests using the established architecture.
 
 ## Quick Start Navigation Methods
 
-### **n8n.start.*** Methods (Test Entry Points)
+### **aura.start.*** Methods (Test Entry Points)
 ```typescript
 // Start from home page
-await n8n.start.fromHome();
+await aura.start.fromHome();
 
 // Start with blank canvas for new workflow
-await n8n.start.fromBlankCanvas();
+await aura.start.fromBlankCanvas();
 
 // Start with new project + blank canvas (returns projectId)
-const projectId = await n8n.start.fromNewProjectBlankCanvas();
+const projectId = await aura.start.fromNewProjectBlankCanvas();
 
 // Start with just a new project (no canvas)
-const projectId = await n8n.start.fromNewProject();
+const projectId = await aura.start.fromNewProject();
 
 // Import and start from existing workflow JSON
-const result = await n8n.start.fromImportedWorkflow('simple-webhook-test.json');
+const result = await aura.start.fromImportedWorkflow('simple-webhook-test.json');
 const { workflowId, webhookPath } = result;
 ```
 
-### **n8n.navigate.*** Methods (Page Navigation)
+### **aura.navigate.*** Methods (Page Navigation)
 ```typescript
 // Basic navigation
-await n8n.navigate.toHome();
-await n8n.navigate.toWorkflow('new');
-await n8n.navigate.toWorkflows(projectId);
+await aura.navigate.toHome();
+await aura.navigate.toWorkflow('new');
+await aura.navigate.toWorkflows(projectId);
 
 // Settings & admin
-await n8n.navigate.toVariables();
-await n8n.navigate.toCredentials(projectId);
-await n8n.navigate.toLogStreaming();
-await n8n.navigate.toCommunityNodes();
+await aura.navigate.toVariables();
+await aura.navigate.toCredentials(projectId);
+await aura.navigate.toLogStreaming();
+await aura.navigate.toCommunityNodes();
 
 // Project-specific navigation
-await n8n.navigate.toProject(projectId);
-await n8n.navigate.toProjectSettings(projectId);
+await aura.navigate.toProject(projectId);
+await aura.navigate.toProjectSettings(projectId);
 ```
 
 ## Common Test Patterns
 
 ### **Basic Workflow Test**
 ```typescript
-test('should create and execute workflow', async ({ n8n }) => {
-  await n8n.start.fromBlankCanvas();
-  await n8n.canvas.addNode('Manual Trigger');
-  await n8n.canvas.addNode('Set');
-  await n8n.workflowComposer.executeWorkflowAndWaitForNotification('Success');
+test('should create and execute workflow', async ({ aura }) => {
+  await aura.start.fromBlankCanvas();
+  await aura.canvas.addNode('Manual Trigger');
+  await aura.canvas.addNode('Set');
+  await aura.workflowComposer.executeWorkflowAndWaitForNotification('Success');
 });
 ```
 
 ### **Imported Workflow Test**
 ```typescript
-test('should import and test webhook', async ({ n8n }) => {
-  const { webhookPath } = await n8n.start.fromImportedWorkflow('webhook-test.json');
+test('should import and test webhook', async ({ aura }) => {
+  const { webhookPath } = await aura.start.fromImportedWorkflow('webhook-test.json');
 
-  await n8n.canvas.clickExecuteWorkflowButton();
-  const response = await n8n.page.request.post(`/webhook-test/${webhookPath}`, {
+  await aura.canvas.clickExecuteWorkflowButton();
+  const response = await aura.page.request.post(`/webhook-test/${webhookPath}`, {
     data: { message: 'Hello' }
   });
   expect(response.ok()).toBe(true);
@@ -68,11 +68,11 @@ test('should import and test webhook', async ({ n8n }) => {
 
 ### **Project-Scoped Test**
 ```typescript
-test('should create credential in project', async ({ n8n }) => {
-  const projectId = await n8n.start.fromNewProject();
-  await n8n.navigate.toCredentials(projectId);
+test('should create credential in project', async ({ aura }) => {
+  const projectId = await aura.start.fromNewProject();
+  await aura.navigate.toCredentials(projectId);
 
-  await n8n.credentialsComposer.createFromList(
+  await aura.credentialsComposer.createFromList(
     'Notion API',
     { apiKey: '12345' },
     { name: `cred-${nanoid()}` }
@@ -82,14 +82,14 @@ test('should create credential in project', async ({ n8n }) => {
 
 ### **Node Configuration Test**
 ```typescript
-test('should configure HTTP Request node', async ({ n8n }) => {
-  await n8n.start.fromBlankCanvas();
-  await n8n.canvas.addNode('Manual Trigger');
-  await n8n.canvas.addNode('HTTP Request');
+test('should configure HTTP Request node', async ({ aura }) => {
+  await aura.start.fromBlankCanvas();
+  await aura.canvas.addNode('Manual Trigger');
+  await aura.canvas.addNode('HTTP Request');
 
-  await n8n.ndv.fillParameterInput('URL', 'https://api.example.com');
-  await n8n.ndv.close();
-  await n8n.canvas.saveWorkflow();
+  await aura.ndv.fillParameterInput('URL', 'https://api.example.com');
+  await aura.ndv.close();
+  await aura.canvas.saveWorkflow();
 });
 ```
 
@@ -97,19 +97,19 @@ test('should configure HTTP Request node', async ({ n8n }) => {
 
 ### **Feature Flags Setup**
 ```typescript
-test.beforeEach(async ({ n8n, api }) => {
+test.beforeEach(async ({ aura, api }) => {
   await api.enableFeature('sharing');
   await api.enableFeature('folders');
   await api.enableFeature('projectRole:admin');
   await api.setMaxTeamProjectsQuota(-1);
-  await n8n.goHome();
+  await aura.goHome();
 });
 ```
 
 ### **API + UI Combined Test**
 ```typescript
-test('should use API-created credential in UI', async ({ n8n, api }) => {
-  const projectId = await n8n.start.fromNewProjectBlankCanvas();
+test('should use API-created credential in UI', async ({ aura, api }) => {
+  const projectId = await aura.start.fromNewProjectBlankCanvas();
 
   // Create via API
   await api.credentialApi.createCredential({
@@ -120,17 +120,17 @@ test('should use API-created credential in UI', async ({ n8n, api }) => {
   });
 
   // Verify in UI
-  await n8n.canvas.addNode('Notion');
-  await expect(n8n.ndv.getCredentialSelect()).toHaveValue('test-cred');
+  await aura.canvas.addNode('Notion');
+  await expect(aura.ndv.getCredentialSelect()).toHaveValue('test-cred');
 });
 ```
 
 ### **Error/Edge Case Testing**
 ```typescript
-test('should handle workflow execution error', async ({ n8n }) => {
-  await n8n.start.fromImportedWorkflow('failing-workflow.json');
-  await n8n.workflowComposer.executeWorkflowAndWaitForNotification('Problem in node');
-  await expect(n8n.canvas.getErrorIcon()).toBeVisible();
+test('should handle workflow execution error', async ({ aura }) => {
+  await aura.start.fromImportedWorkflow('failing-workflow.json');
+  await aura.workflowComposer.executeWorkflowAndWaitForNotification('Problem in node');
+  await expect(aura.canvas.getErrorIcon()).toBeVisible();
 });
 ```
 
@@ -168,39 +168,39 @@ async getNotificationCount(): Promise<number> { /* ... */ }
 ## Quick Reference
 
 ### **Most Common Entry Points**
-- `n8n.start.fromBlankCanvas()` - New workflow from scratch
-- `n8n.start.fromImportedWorkflow('file.json')` - Test existing workflow
-- `n8n.start.fromNewProjectBlankCanvas()` - Project-scoped testing
+- `aura.start.fromBlankCanvas()` - New workflow from scratch
+- `aura.start.fromImportedWorkflow('file.json')` - Test existing workflow
+- `aura.start.fromNewProjectBlankCanvas()` - Project-scoped testing
 
 ### **Most Common Navigation**
-- `n8n.navigate.toCredentials(projectId)` - Credential management
-- `n8n.navigate.toVariables()` - Environment variables
-- `n8n.navigate.toWorkflow('new')` - New workflow canvas
+- `aura.navigate.toCredentials(projectId)` - Credential management
+- `aura.navigate.toVariables()` - Environment variables
+- `aura.navigate.toWorkflow('new')` - New workflow canvas
 
 ### **Essential Assertions**
 ```typescript
 // UI state verification
-await expect(n8n.canvas.canvasPane()).toBeVisible();
-await expect(n8n.notifications.getNotificationByTitle('Success')).toBeVisible();
-await expect(n8n.ndv.getCredentialSelect()).toHaveValue(name);
+await expect(aura.canvas.canvasPane()).toBeVisible();
+await expect(aura.notifications.getNotificationByTitle('Success')).toBeVisible();
+await expect(aura.ndv.getCredentialSelect()).toHaveValue(name);
 
 // Node and workflow verification
-await expect(n8n.canvas.getCanvasNodes()).toHaveCount(2);
-await expect(n8n.canvas.nodeByName('HTTP Request')).toBeVisible();
+await expect(aura.canvas.getCanvasNodes()).toHaveCount(2);
+await expect(aura.canvas.nodeByName('HTTP Request')).toBeVisible();
 ```
 
 ### **Common Composable Methods**
 ```typescript
 // Workflow operations
-await n8n.workflowComposer.executeWorkflowAndWaitForNotification('Success');
-await n8n.workflowComposer.createWorkflow('My Workflow');
+await aura.workflowComposer.executeWorkflowAndWaitForNotification('Success');
+await aura.workflowComposer.createWorkflow('My Workflow');
 
 // Project operations
-const { projectName, projectId } = await n8n.projectComposer.createProject();
+const { projectName, projectId } = await aura.projectComposer.createProject();
 
 // Credential operations
-await n8n.credentialsComposer.createFromList('Notion API', { apiKey: '123' });
-await n8n.credentialsComposer.createFromNdv({ apiKey: '123' });
+await aura.credentialsComposer.createFromList('Notion API', { apiKey: '123' });
+await aura.credentialsComposer.createFromNdv({ apiKey: '123' });
 ```
 
 ### **Dynamic Data Patterns**
@@ -217,7 +217,7 @@ const projectName = `Project ${Date.now()}`;
 ## AI Guidelines
 
 ### **✅ DO**
-- Always use `n8n.start.*` methods for test entry points
+- Always use `aura.start.*` methods for test entry points
 - Use composables for business workflows, not page objects directly in tests
 - Use `nanoid()` or timestamps for unique test data
 - Follow the 4-layer architecture pattern
@@ -235,21 +235,21 @@ const projectName = `Project ${Date.now()}`;
 import { test, expect } from '../../fixtures/base';
 
 test.describe('Feature Name', () => {
-  test.beforeEach(async ({ n8n, api }) => {
+  test.beforeEach(async ({ aura, api }) => {
     // Feature flags and setup
     await api.enableFeature('requiredFeature');
-    await n8n.goHome();
+    await aura.goHome();
   });
 
-  test('should perform specific action', async ({ n8n }) => {
+  test('should perform specific action', async ({ aura }) => {
     // 1. Setup/Navigation
-    await n8n.start.fromBlankCanvas();
+    await aura.start.fromBlankCanvas();
 
     // 2. Actions using composables
-    await n8n.workflowComposer.createBasicWorkflow();
+    await aura.workflowComposer.createBasicWorkflow();
 
     // 3. Assertions
-    await expect(n8n.notifications.getNotificationByTitle('Success')).toBeVisible();
+    await expect(aura.notifications.getNotificationByTitle('Success')).toBeVisible();
   });
 });
 ```

@@ -1,5 +1,5 @@
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 
 import { License } from '@/license';
 
@@ -17,7 +17,7 @@ export class ClearLicenseCommand extends BaseCommand {
 		const license = Container.get(License);
 		await license.init({ isCli: true });
 		await license.clear();
-		this.logger.info('Done. Restart n8n to take effect.');
+		this.logger.info('Done. Restart aura to take effect.');
 	}
 
 	async catch(error: Error) {

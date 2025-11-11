@@ -2,10 +2,10 @@ import type {
 	ApiKey,
 	ListOAuthClientsResponseDto,
 	DeleteOAuthClientResponseDto,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import type { IWorkflowSettings } from '@/Interface';
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import type { IRestApiContext } from '@aura/rest-api-client';
+import { makeRestApiRequest } from '@aura/rest-api-client';
 
 export type McpSettingsResponse = {
 	mcpAccessEnabled: boolean;

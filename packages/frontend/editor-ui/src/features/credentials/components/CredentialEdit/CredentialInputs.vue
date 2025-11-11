@@ -3,12 +3,12 @@ import type {
 	ICredentialDataDecryptedObject,
 	INodeProperties,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { IUpdateInformation } from '@/Interface';
 import ParameterInputExpanded from '@/features/ndv/parameters/components/ParameterInputExpanded.vue';
 import { computed } from 'vue';
 
-import { N8nNotice } from '@n8n/design-system';
+import { N8nNotice } from '@aura/design-system';
 type Props = {
 	credentialProperties: INodeProperties[];
 	credentialData: ICredentialDataDecryptedObject;

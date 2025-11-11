@@ -1,4 +1,4 @@
-import { sleep } from 'n8n-workflow';
+import { sleep } from 'workflow';
 
 import { ConcurrencyQueue } from '../concurrency-queue';
 

@@ -1,4 +1,4 @@
-import type { TaskRunner } from '@n8n/task-runner';
+import type { TaskRunner } from '@aura/task-runner';
 import type { Response } from 'express';
 import type WebSocket from 'ws';
 

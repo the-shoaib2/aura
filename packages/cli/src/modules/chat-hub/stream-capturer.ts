@@ -1,7 +1,7 @@
-import type { ChatMessageId } from '@n8n/api-types';
+import type { ChatMessageId } from '@aura/api-types';
 import type { Response } from 'express';
 import type { ServerResponse } from 'http';
-import type { StructuredChunk } from 'n8n-workflow';
+import type { StructuredChunk } from 'workflow';
 import { v4 as uuidv4 } from 'uuid';
 
 import type { ChatHubMessage } from './chat-hub-message.entity';

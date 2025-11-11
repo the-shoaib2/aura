@@ -2,12 +2,12 @@ import type {
 	PullWorkFolderRequestDto,
 	PushWorkFolderRequestDto,
 	SourceControlledFile,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { type User } from '@n8n/db';
-import { Service } from '@n8n/di';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { type User } from '@aura/db';
+import { Service } from '@aura/di';
 import { writeFileSync } from 'fs';
-import { UnexpectedError, UserError, jsonParse } from 'n8n-workflow';
+import { UnexpectedError, UserError, jsonParse } from 'workflow';
 import path from 'path';
 import type { PushResult } from 'simple-git';
 

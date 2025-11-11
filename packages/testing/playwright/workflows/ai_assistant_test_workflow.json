@@ -4,7 +4,7 @@
 			"parameters": {},
 			"id": "ebfced75-2ce1-4c41-a971-6c3b83522c4d",
 			"name": "When clicking 'Execute workflow'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [360, 220]
 		},
@@ -14,7 +14,7 @@
 			},
 			"id": "f2e60459-401a-49d5-acfc-7b2b31cfdcf7",
 			"name": "Stop and Error",
-			"type": "n8n-nodes-base.stopAndError",
+			"type": "aura-nodes-base.stopAndError",
 			"typeVersion": 1,
 			"position": [1020, 220]
 		},
@@ -24,7 +24,7 @@
 			},
 			"id": "b54d4db9-b257-41a8-862f-26d293115bad",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [840, 320]
 		},
@@ -44,7 +44,7 @@
 			},
 			"id": "5fd89612-a871-4679-b7b0-d659e09c6a0e",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [600, 100]
 		}

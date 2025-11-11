@@ -17,7 +17,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [-80, -112],
 			"id": "75ca50eb-ce8e-4fac-a8ad-60d4c4ea4531",
@@ -32,7 +32,7 @@
 					"responseData": "=<html>hello</html>"
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [-80, 64],
 			"id": "d6a5cc31-1d88-4262-b26e-07be88ed190f",
@@ -48,7 +48,7 @@
 					"rawBody": false
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [-80, 880],
 			"id": "ba3bee07-9335-45f4-93c4-2a6d8894813f",
@@ -61,7 +61,7 @@
 				"height": 624,
 				"width": 560
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [-144, -192],
 			"id": "e1b4ddec-3946-44f9-9cbb-7f0a2e07b9bf",
@@ -74,7 +74,7 @@
 				"width": 560,
 				"color": 3
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [-144, 464],
 			"id": "b0f2e246-db74-4567-8102-0a1d6701bd17",
@@ -96,7 +96,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [-80, 528],
 			"id": "6ac9df7e-3f59-4bd3-91b2-877e6550ec74",
@@ -112,7 +112,7 @@
 					"responseContentType": "text/html"
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [-80, 704],
 			"id": "08437d43-6466-4de6-825a-a1d0222f30e0",
@@ -126,7 +126,7 @@
 				"width": 624,
 				"color": 6
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [480, -208],
 			"id": "845987df-e85e-43d9-a8d3-e1a7e13cc685",
@@ -136,7 +136,7 @@
 			"parameters": {
 				"jsCode": "const html = `<html>hello</html>`\n\nconst data = await this.helpers.prepareBinaryData(Buffer.from(html, \"utf8\"), \"index.html\", \"text/html\")\n\nreturn [{\n  binary: {\n    data\n  }\n}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [768, 48],
 			"id": "2be64f65-6ab2-4f2d-8446-30c6adf9820a",
@@ -158,7 +158,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [-80, 256],
 			"id": "8ca428c2-c02f-4237-bdcc-98cfe430e06d",
@@ -186,7 +186,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [-80, 1056],
 			"id": "1173f1bf-6b05-4757-b28b-62b44d95aa06",
@@ -210,7 +210,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [528, -128],
 			"id": "a14be18e-edf6-4336-829a-2cac6edce677",
@@ -226,7 +226,7 @@
 					"rawBody": false
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [528, 48],
 			"id": "691ef5dc-3028-47bb-a7ad-10e6571e229c",
@@ -254,7 +254,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [528, 240],
 			"id": "7ad87e90-826f-4e27-88ed-d3a22b37f6b8",
@@ -268,7 +268,7 @@
 				"width": 624,
 				"color": 7
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [480, 464],
 			"id": "ebd34041-d96b-43fd-b880-4007eae3a755",
@@ -280,7 +280,7 @@
 				"responseMode": "responseNode",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [528, 544],
 			"id": "0a37b594-7922-45e5-a8a3-e7cd874963d6",
@@ -293,7 +293,7 @@
 				"responseBody": "<html>hello</html>",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.respondToWebhook",
+			"type": "aura-nodes-base.respondToWebhook",
 			"typeVersion": 1.4,
 			"position": [736, 544],
 			"id": "5fddd62d-85c1-4237-9049-c0608f3f1e0c",
@@ -305,7 +305,7 @@
 				"responseMode": "responseNode",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [528, 720],
 			"id": "dd4e4711-a344-4bc0-ad64-c7aa925b128b",
@@ -327,7 +327,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.respondToWebhook",
+			"type": "aura-nodes-base.respondToWebhook",
 			"typeVersion": 1.4,
 			"position": [736, 720],
 			"id": "adc677d6-07d0-446c-a455-794a1c0dd35d",
@@ -339,7 +339,7 @@
 				"responseMode": "responseNode",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [528, 896],
 			"id": "2def671c-4ff2-42ee-abf9-17e455168dc6",
@@ -365,7 +365,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.respondToWebhook",
+			"type": "aura-nodes-base.respondToWebhook",
 			"typeVersion": 1.4,
 			"position": [736, 896],
 			"id": "95673f8e-2340-476c-825e-dc73b5c94148",
@@ -377,7 +377,7 @@
 				"responseMode": "responseNode",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 2,
 			"position": [528, 1072],
 			"id": "fdf2dc4e-7852-43fd-9c04-c19174874c8c",
@@ -399,7 +399,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.respondToWebhook",
+			"type": "aura-nodes-base.respondToWebhook",
 			"typeVersion": 1.4,
 			"position": [736, 1072],
 			"id": "9c6bcd19-71af-4b9a-aa9a-79c79996c2cd",
@@ -419,7 +419,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [128, 800],
 			"id": "adb4d88e-c7dc-4de1-849e-e89bafceefb2",

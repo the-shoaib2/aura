@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed, ref, watch } from 'vue';
 
 import RunsSection from '../components/ListRuns/RunsSection.vue';
@@ -7,7 +7,7 @@ import { useEvaluationStore } from '../evaluation.store';
 import orderBy from 'lodash/orderBy';
 import { useToast } from '@/app/composables/useToast';
 
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 const props = defineProps<{
 	name: string;
 }>();

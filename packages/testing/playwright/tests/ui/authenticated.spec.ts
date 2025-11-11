@@ -10,9 +10,9 @@ test.describe('Authentication', () => {
 	];
 
 	for (const { role, expectedUrl, auth } of testCases) {
-		test(`${role} authentication ${auth}`, async ({ n8n }) => {
-			await n8n.goHome();
-			await expect(n8n.page).toHaveURL(expectedUrl);
+		test(`${role} authentication ${auth}`, async ({ aura }) => {
+			await aura.goHome();
+			await expect(aura.page).toHaveURL(expectedUrl);
 		});
 	}
 });

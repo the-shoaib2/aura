@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 import Parser from 'rss-parser';
 
 interface PollData {
@@ -36,7 +36,7 @@ export class RssFeedReadTrigger implements INodeType {
 				displayName: 'Feed URL',
 				name: 'feedUrl',
 				type: 'string',
-				default: 'https://blog.n8n.io/rss/',
+				default: 'https://blog.aura.io/rss/',
 				required: true,
 				description: 'URL of the RSS feed to poll',
 			},

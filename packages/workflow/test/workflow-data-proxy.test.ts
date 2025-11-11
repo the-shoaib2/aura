@@ -252,7 +252,7 @@ describe('WorkflowDataProxy', () => {
 		test('$("NodeName").item, node has no connection to referenced node', () => {
 			const proxy = getProxyFromFixture(fixture.workflow, fixture.run, 'NoPathBack');
 			try {
-				proxy.$('Customer Datastore (n8n training)').item;
+				proxy.$('Customer Datastore (aura training)').item;
 			} catch (error) {
 				expect(error).toBeInstanceOf(ExpressionError);
 				const exprError = error as ExpressionError;
@@ -518,17 +518,17 @@ describe('WorkflowDataProxy', () => {
 
 		test('Retrieves values for first item', () => {
 			expect(getFromAIProxy().$fromAI('full_name')).toEqual('Mr. Input 1');
-			expect(getFromAIProxy().$fromAI('email')).toEqual('input1@n8n.io');
+			expect(getFromAIProxy().$fromAI('email')).toEqual('input1@aura.io');
 		});
 
 		test('Retrieves values for second item', () => {
 			expect(getFromAIProxy(1).$fromAI('full_name')).toEqual('Mr. Input 2');
-			expect(getFromAIProxy(1).$fromAI('email')).toEqual('input2@n8n.io');
+			expect(getFromAIProxy(1).$fromAI('email')).toEqual('input2@aura.io');
 		});
 
 		test('Case variants: $fromAi and $fromai', () => {
 			expect(getFromAIProxy().$fromAi('full_name')).toEqual('Mr. Input 1');
-			expect(getFromAIProxy().$fromai('email')).toEqual('input1@n8n.io');
+			expect(getFromAIProxy().$fromai('email')).toEqual('input1@aura.io');
 		});
 
 		test('Returns default value when key not found', () => {
@@ -552,7 +552,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: 'aiNode',
 						name: 'AI Node',
-						type: 'n8n-nodes-base.aiAgent',
+						type: 'aura-nodes-base.aiAgent',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},
@@ -614,7 +614,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: 'aiNode',
 						name: 'AI Node',
-						type: 'n8n-nodes-base.aiAgent',
+						type: 'aura-nodes-base.aiAgent',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},
@@ -990,7 +990,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: '1',
 						name: 'Telegram Trigger',
-						type: 'n8n-nodes-base.telegramTrigger',
+						type: 'aura-nodes-base.telegramTrigger',
 						typeVersion: 1.2,
 						position: [0, 0],
 						parameters: {},
@@ -998,7 +998,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: '2',
 						name: 'Send a text message',
-						type: 'n8n-nodes-base.telegram',
+						type: 'aura-nodes-base.telegram',
 						typeVersion: 1.2,
 						position: [576, 0],
 						parameters: {
@@ -1057,7 +1057,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: '1',
 						name: 'HTTP Request',
-						type: 'n8n-nodes-base.httpRequest',
+						type: 'aura-nodes-base.httpRequest',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},
@@ -1065,7 +1065,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: '2',
 						name: 'Process Data',
-						type: 'n8n-nodes-base.code',
+						type: 'aura-nodes-base.code',
 						typeVersion: 2,
 						position: [300, 0],
 						parameters: {
@@ -1120,7 +1120,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: '1',
 						name: 'Start Node',
-						type: 'n8n-nodes-base.manualTrigger',
+						type: 'aura-nodes-base.manualTrigger',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},
@@ -1128,7 +1128,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: '2',
 						name: 'End Node',
-						type: 'n8n-nodes-base.noOp',
+						type: 'aura-nodes-base.noOp',
 						typeVersion: 1,
 						position: [300, 0],
 						parameters: {},
@@ -1206,7 +1206,7 @@ describe('WorkflowDataProxy', () => {
 					{
 						id: '1',
 						name: 'Real Node',
-						type: 'n8n-nodes-base.manualTrigger',
+						type: 'aura-nodes-base.manualTrigger',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},

@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 const scopes = ['read', 'write'];
 
@@ -17,7 +17,7 @@ export class ZendeskOAuth2Api implements ICredentialType {
 			name: 'subdomain',
 			type: 'string',
 			default: '',
-			placeholder: 'n8n',
+			placeholder: 'aura',
 			description: 'The subdomain of your Zendesk work environment',
 			required: true,
 		},

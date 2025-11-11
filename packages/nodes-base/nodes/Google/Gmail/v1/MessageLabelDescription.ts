@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const messageLabelOperations: INodeProperties[] = [
 	{
@@ -58,6 +58,6 @@ export const messageLabelFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'The ID of the label. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The ID of the label. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 ];

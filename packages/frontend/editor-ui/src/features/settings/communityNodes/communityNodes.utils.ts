@@ -1,6 +1,6 @@
 import { useCommunityNodesStore } from './communityNodes.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { type PublicInstalledPackage } from 'n8n-workflow';
+import { type PublicInstalledPackage } from 'workflow';
 import semver from 'semver';
 
 export type ExtendedPublicInstalledPackage = PublicInstalledPackage & {

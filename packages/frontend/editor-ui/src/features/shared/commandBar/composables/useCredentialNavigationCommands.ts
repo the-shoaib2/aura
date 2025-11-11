@@ -1,7 +1,7 @@
 import { computed, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { N8nIcon } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nIcon } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import debounce from 'lodash/debounce';
 import type { ICredentialsResponse } from '@/features/credentials/credentials.types';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
@@ -12,7 +12,7 @@ import { VIEWS } from '@/app/constants';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import CredentialIcon from '@/features/credentials/components/CredentialIcon.vue';
 import CommandBarItemTitle from '@/features/shared/commandBar/components/CommandBarItemTitle.vue';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 
 const ITEM_ID = {
 	CREATE_CREDENTIAL: 'create-credential',

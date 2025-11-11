@@ -1,5 +1,5 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import type { WorkflowTestData } from 'n8n-workflow';
+import type { WorkflowTestData } from 'workflow';
 import nock from 'nock';
 
 const record = {

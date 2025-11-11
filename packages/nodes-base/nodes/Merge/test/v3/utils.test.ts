@@ -1,4 +1,4 @@
-import type { IDataObject, INodeExecutionData, IPairedItemData } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData, IPairedItemData } from 'workflow';
 
 import { modifySelectQuery, rowToExecutionData } from '../../v3/helpers/utils';
 

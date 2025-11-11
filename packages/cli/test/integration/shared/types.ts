@@ -1,6 +1,6 @@
-import type { CredentialPayload } from '@n8n/backend-test-utils';
-import type { BooleanLicenseFeature, NumericLicenseFeature } from '@n8n/constants';
-import type { CredentialsEntity, Project, User, ICredentialsDb } from '@n8n/db';
+import type { CredentialPayload } from '@aura/backend-test-utils';
+import type { BooleanLicenseFeature, NumericLicenseFeature } from '@aura/constants';
+import type { CredentialsEntity, Project, User, ICredentialsDb } from '@aura/db';
 import type { Application } from 'express';
 import type { Server } from 'http';
 import type TestAgent from 'supertest/lib/agent';

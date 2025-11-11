@@ -3,7 +3,7 @@ import {
 	NodeOperationError,
 	type IDataTableProjectService,
 	type IExecuteFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { FieldEntry } from '../../common/constants';
 import { ANY_CONDITION, ALL_CONDITIONS } from '../../common/constants';

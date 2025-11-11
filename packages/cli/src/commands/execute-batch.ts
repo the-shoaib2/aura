@@ -1,12 +1,12 @@
-import type { User } from '@n8n/db';
-import { WorkflowRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import type { User } from '@aura/db';
+import { WorkflowRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import fs from 'fs';
 import { diff } from 'json-diff';
 import pick from 'lodash/pick';
-import type { IRun, ITaskData, IWorkflowBase, IWorkflowExecutionDataProcess } from 'n8n-workflow';
-import { jsonParse, UnexpectedError } from 'n8n-workflow';
+import type { IRun, ITaskData, IWorkflowBase, IWorkflowExecutionDataProcess } from 'workflow';
+import { jsonParse, UnexpectedError } from 'workflow';
 import os from 'os';
 import { sep } from 'path';
 import { z } from 'zod';
@@ -577,7 +577,7 @@ export class ExecuteBatch extends BaseCommand<z.infer<typeof flagsSchema>> {
 
 	initializeLogs() {
 		process.stdout.write('**********************************************\n');
-		process.stdout.write('              n8n test workflows\n');
+		process.stdout.write('              aura test workflows\n');
 		process.stdout.write('**********************************************\n');
 		process.stdout.write('\n');
 		process.stdout.write('Batch number:\n');

@@ -1,7 +1,7 @@
-import { ExecutionRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { ExecutionRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import type express from 'express';
-import { replaceCircularReferences } from 'n8n-workflow';
+import { replaceCircularReferences } from 'workflow';
 
 import { ActiveExecutions } from '@/active-executions';
 import { ConcurrencyControlService } from '@/concurrency/concurrency-control.service';

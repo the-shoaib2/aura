@@ -1,9 +1,9 @@
-import { ITriggerFunctions, INodeType, INodeTypeDescription, ITriggerResponse } from 'n8n-workflow';
+import { ITriggerFunctions, INodeType, INodeTypeDescription, ITriggerResponse } from 'workflow';
 
 export class ClassNameReplace implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'DisplayNameReplace',
-		name: 'N8nNameReplace',
+		name: 'auraNameReplace',
 		group: ['trigger'],
 		version: 1,
 		description: 'NodeDescriptionReplace',
@@ -50,13 +50,13 @@ export class ClassNameReplace implements INodeType {
 		const intervalValue = interval * 60 * 1000;
 		const intervalObj = setInterval(executeTrigger, intervalValue);
 
-		// The "closeFunction" function gets called by n8n whenever
+		// The "closeFunction" function gets called by aura whenever
 		// the workflow gets deactivated and can so clean up.
 		async function closeFunction() {
 			clearInterval(intervalObj);
 		}
 
-		// The "manualTriggerFunction" function gets called by n8n
+		// The "manualTriggerFunction" function gets called by aura
 		// when a user is in the workflow editor and starts the
 		// workflow manually. So the function has to make sure that
 		// the emit() gets called with similar data like when it

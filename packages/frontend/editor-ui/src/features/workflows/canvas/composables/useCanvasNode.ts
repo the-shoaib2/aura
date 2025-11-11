@@ -1,6 +1,6 @@
 import { CanvasNodeKey } from '@/app/constants';
 import { computed, inject } from 'vue';
-import { isCommunityPackageName } from 'n8n-workflow';
+import { isCommunityPackageName } from 'workflow';
 import type { CanvasNodeData } from '../canvas.types';
 import { CanvasNodeRenderType, CanvasConnectionMode } from '../canvas.types';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';

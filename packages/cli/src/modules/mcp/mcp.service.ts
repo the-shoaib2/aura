@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { GlobalConfig } from '@n8n/config';
-import { User } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { User } from '@aura/db';
+import { Service } from '@aura/di';
 
 import { createWorkflowDetailsTool } from './tools/get-workflow-details.tool';
 import { createSearchWorkflowsTool } from './tools/search-workflows.tool';
@@ -25,7 +25,7 @@ export class McpService {
 
 	getServer(user: User) {
 		const server = new McpServer({
-			name: 'n8n MCP Server',
+			name: 'aura MCP Server',
 			version: '1.0.0',
 		});
 

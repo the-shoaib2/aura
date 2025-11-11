@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.urlScanIo",
+	"node": "aura-nodes-base.urlScanIo",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Utility"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/urlscanio/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/urlscanio/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.urlscanio/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.urlscanio/"
 			}
 		]
 	},

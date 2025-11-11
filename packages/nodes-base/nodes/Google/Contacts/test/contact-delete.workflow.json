@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "trigger-id",
@@ -15,7 +15,7 @@
 				"operation": "delete",
 				"contactId": "c123456789"
 			},
-			"type": "n8n-nodes-base.googleContacts",
+			"type": "aura-nodes-base.googleContacts",
 			"typeVersion": 1,
 			"position": [200, 0],
 			"id": "contact-delete",

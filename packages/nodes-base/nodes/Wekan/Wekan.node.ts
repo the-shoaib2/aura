@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { boardFields, boardOperations } from './BoardDescription';
 import { cardCommentFields, cardCommentOperations } from './CardCommentDescription';

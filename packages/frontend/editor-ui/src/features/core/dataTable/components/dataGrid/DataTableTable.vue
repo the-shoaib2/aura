@@ -7,7 +7,7 @@ import type {
 } from '@/features/core/dataTable/dataTable.types';
 import { AgGridVue } from 'ag-grid-vue3';
 import type { GetRowIdParams, GridReadyEvent, SortChangedEvent } from 'ag-grid-community';
-import { n8nTheme } from '@/features/core/dataTable/components/dataGrid/n8nTheme';
+import { auraTheme } from '@/features/core/dataTable/components/dataGrid/auraTheme';
 import { registerAgGridModulesOnce } from '@/features/core/dataTable/components/dataGrid/registerAgGridModulesOnce';
 import SelectedItemsInfo from '@/app/components/common/SelectedItemsInfo.vue';
 import {
@@ -22,7 +22,7 @@ import { useDataTableColumns } from '@/features/core/dataTable/composables/useDa
 import { useDataTableSelection } from '@/features/core/dataTable/composables/useDataTableSelection';
 import { useDataTableOperations } from '@/features/core/dataTable/composables/useDataTableOperations';
 import { useDataTableColumnFilters } from '@/features/core/dataTable/composables/useDataTableColumnFilters';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { GRID_FILTER_CONFIG } from '@/features/core/dataTable/utils/filterMappings';
 
 import { ElPagination } from 'element-plus';
@@ -156,7 +156,7 @@ defineExpose({
 				:row-height="DATA_TABLE_ROW_HEIGHT"
 				:header-height="DATA_TABLE_HEADER_HEIGHT"
 				:animate-rows="false"
-				:theme="n8nTheme"
+				:theme="auraTheme"
 				:suppress-drag-leave-hides-columns="true"
 				:loading="dataTableOperations.contentLoading.value"
 				:row-selection="selection.rowSelection"
@@ -358,7 +358,7 @@ defineExpose({
 		}
 	}
 
-	:global(.ag-row[row-id='__n8n_add_row__']) {
+	:global(.ag-row[row-id='__aura_add_row__']) {
 		border-bottom: none;
 	}
 

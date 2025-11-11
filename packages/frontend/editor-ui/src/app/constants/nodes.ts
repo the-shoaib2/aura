@@ -1,5 +1,5 @@
-import type { NodeConnectionType } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { NodeConnectionType } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 export const MAIN_NODE_PANEL_WIDTH = 390;
 

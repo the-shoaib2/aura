@@ -5,7 +5,7 @@ import PageViewLayout from '@/app/components/layouts/PageViewLayout.vue';
 import PageViewLayoutList from '@/app/components/layouts/PageViewLayoutList.vue';
 import ResourceFiltersDropdown from '@/app/components/forms/ResourceFiltersDropdown.vue';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import type { DatatableColumn } from '@n8n/design-system';
+import type { DatatableColumn } from '@aura/design-system';
 import { useDebounce } from '@/app/composables/useDebounce';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useRoute, useRouter } from 'vue-router';
@@ -28,7 +28,7 @@ import {
 	N8nRecycleScroller,
 	N8nSelect,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 type UIConfig = {
 	searchEnabled: boolean;
 	showFiltersDropdown: boolean;
@@ -40,7 +40,7 @@ const router = useRouter();
 const { callDebounced } = useDebounce();
 const usersStore = useUsersStore();
 const telemetry = useTelemetry();
-const n8nLocalStorage = useN8nLocalStorage();
+const auraLocalStorage = useN8nLocalStorage();
 
 const props = withDefaults(
 	defineProps<{
@@ -499,7 +499,7 @@ const savePaginationPreferences = async () => {
 		delete currentQuery.sort;
 	}
 
-	n8nLocalStorage.saveProjectPreferencesToLocalStorage(
+	auraLocalStorage.saveProjectPreferencesToLocalStorage(
 		(route.params.projectId as string) ?? '',
 		'workflows',
 		{
@@ -525,7 +525,7 @@ const loadPaginationPreferences = async () => {
 	}
 	const query = route.query;
 	// For now, only load workflow list preferences from local storage
-	const localStorageValues = n8nLocalStorage.loadProjectPreferencesFromLocalStorage(
+	const localStorageValues = auraLocalStorage.loadProjectPreferencesFromLocalStorage(
 		(route.params.projectId as string) ?? '',
 		'workflows',
 	);

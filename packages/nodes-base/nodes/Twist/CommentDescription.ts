@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const commentOperations: INodeProperties[] = [
 	{
@@ -194,7 +194,7 @@ export const commentFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'The users that are directly mentioned. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The users that are directly mentioned. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Mark Thread Position',
@@ -213,7 +213,7 @@ export const commentFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'The users that will attached to the comment. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The users that will attached to the comment. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Temporary ID',
@@ -505,7 +505,7 @@ export const commentFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'The users that are directly mentioned. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The users that are directly mentioned. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	},

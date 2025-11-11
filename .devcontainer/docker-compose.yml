@@ -8,10 +8,10 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=n8n
+      - POSTGRES_DB=aura
       - POSTGRES_PASSWORD=password
 
-  n8n:
+  aura:
     build:
       context: .
       dockerfile: Dockerfile

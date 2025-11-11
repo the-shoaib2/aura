@@ -1,5 +1,5 @@
-import { Service } from '@n8n/di';
-import type { ExecutionError, INode, IRun, WorkflowExecuteMode } from 'n8n-workflow';
+import { Service } from '@aura/di';
+import type { ExecutionError, INode, IRun, WorkflowExecuteMode } from 'workflow';
 
 @Service()
 export class ExecutionDataService {

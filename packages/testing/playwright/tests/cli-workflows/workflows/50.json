@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "82e5bad6-fe48-46f5-a494-d5c92fb33bde"
@@ -16,10 +16,10 @@
 		{
 			"parameters": {
 				"operation": "color",
-				"domain": "n8n.io"
+				"domain": "aura.io"
 			},
 			"name": "Brandfetch",
-			"type": "n8n-nodes-base.Brandfetch",
+			"type": "aura-nodes-base.Brandfetch",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -33,10 +33,10 @@
 		{
 			"parameters": {
 				"operation": "company",
-				"domain": "n8n.io"
+				"domain": "aura.io"
 			},
 			"name": "Brandfetch1",
-			"type": "n8n-nodes-base.Brandfetch",
+			"type": "aura-nodes-base.Brandfetch",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -50,10 +50,10 @@
 		{
 			"parameters": {
 				"operation": "font",
-				"domain": "n8n.io"
+				"domain": "aura.io"
 			},
 			"name": "Brandfetch2",
-			"type": "n8n-nodes-base.Brandfetch",
+			"type": "aura-nodes-base.Brandfetch",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -67,10 +67,10 @@
 		{
 			"parameters": {
 				"operation": "industry",
-				"domain": "n8n.io"
+				"domain": "aura.io"
 			},
 			"name": "Brandfetch3",
-			"type": "n8n-nodes-base.Brandfetch",
+			"type": "aura-nodes-base.Brandfetch",
 			"typeVersion": 1,
 			"position": [1100, 300],
 			"credentials": {
@@ -83,12 +83,12 @@
 		},
 		{
 			"parameters": {
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"download": true,
 				"imageTypes": ["icon"]
 			},
 			"name": "Brandfetch4",
-			"type": "n8n-nodes-base.Brandfetch",
+			"type": "aura-nodes-base.Brandfetch",
 			"typeVersion": 1,
 			"position": [950, 300],
 			"credentials": {

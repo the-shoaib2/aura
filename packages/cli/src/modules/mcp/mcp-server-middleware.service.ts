@@ -1,5 +1,5 @@
-import { AuthenticatedRequest, User } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { AuthenticatedRequest, User } from '@aura/db';
+import { Service } from '@aura/di';
 import { NextFunction, Response, Request } from 'express';
 
 import { AuthError } from '@/errors/response-errors/auth.error';

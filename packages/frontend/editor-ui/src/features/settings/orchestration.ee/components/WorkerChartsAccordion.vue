@@ -6,7 +6,7 @@ import type { ChartData, ChartOptions } from 'chart.js';
 import type { ChartComponentRef } from 'vue-chartjs';
 import { Chart } from 'vue-chartjs';
 import { averageWorkerLoadFromLoads, memAsGb } from '../orchestration.utils';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 const props = defineProps<{
 	workerId: string;

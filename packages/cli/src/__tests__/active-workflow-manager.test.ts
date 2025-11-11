@@ -1,15 +1,15 @@
-import { mockLogger } from '@n8n/backend-test-utils';
-import type { WorkflowEntity, WorkflowRepository } from '@n8n/db';
+import { mockLogger } from '@aura/backend-test-utils';
+import type { WorkflowEntity, WorkflowRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 import type {
 	WorkflowParameters,
 	INode,
 	INodeType,
 	INodeTypeDescription,
 	WorkflowActivateMode,
-} from 'n8n-workflow';
-import { Workflow } from 'n8n-workflow';
+} from 'workflow';
+import { Workflow } from 'workflow';
 
 import { ActiveWorkflowManager } from '@/active-workflow-manager';
 import type { NodeTypes } from '@/node-types';
@@ -93,7 +93,7 @@ describe('ActiveWorkflowManager', () => {
 			});
 
 			test('should return `true` for `init`', () => {
-				// ensure webhooks are populated on init: https://github.com/n8n-io/n8n/pull/8830
+				// ensure webhooks are populated on init: https://github.com/aura-io/aura/pull/8830
 				const result = activeWorkflowManager.shouldAddWebhooks('init');
 				expect(result).toBe(true);
 			});

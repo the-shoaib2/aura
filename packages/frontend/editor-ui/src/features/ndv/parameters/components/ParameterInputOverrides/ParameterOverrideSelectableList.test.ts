@@ -3,7 +3,7 @@ import { createComponentRenderer } from '@/__tests__/render';
 import ParameterOverrideSelectableList from './ParameterOverrideSelectableList.vue';
 import { createTestingPinia } from '@pinia/testing';
 import { ref } from 'vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { waitFor } from '@testing-library/vue';
 import type { FromAIOverride } from '../../utils/fromAIOverride.utils';
 
@@ -108,7 +108,7 @@ describe('ParameterOverrideSelectableList', () => {
 				{
 					name: 'parameters.workflowInputs.value["test"]',
 					value:
-						"={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('test', `Test description2`, 'string') }}",
+						"={{ /*aura-auto-generated-fromAI-override*/ $fromAI('test', `Test description2`, 'string') }}",
 				},
 			]);
 		});
@@ -153,7 +153,7 @@ describe('ParameterOverrideSelectableList', () => {
 		expect(emitted('update')[0]).toEqual([
 			{
 				name: 'parameters.workflowInputs.value["test"]',
-				value: "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('test', ``, 'string') }}",
+				value: "={{ /*aura-auto-generated-fromAI-override*/ $fromAI('test', ``, 'string') }}",
 			},
 		]);
 	});

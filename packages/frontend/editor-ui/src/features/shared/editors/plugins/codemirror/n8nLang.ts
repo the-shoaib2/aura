@@ -1,16 +1,16 @@
-import { parserWithMetaData as n8nParser } from '@n8n/codemirror-lang';
+import { parserWithMetaData as auraParser } from '@aura/codemirror-lang';
 import { LanguageSupport, LRLanguage } from '@codemirror/language';
 import { parseMixed, type SyntaxNodeRef } from '@lezer/common';
 import { javascriptLanguage } from '@codemirror/lang-javascript';
 
-import { n8nCompletionSources } from './completions/addCompletions';
+import { auraCompletionSources } from './completions/addCompletions';
 import type { Completion } from '@codemirror/autocomplete';
 import { autocompletion } from '@codemirror/autocomplete';
 import { expressionCloseBracketsConfig } from './expressionCloseBrackets';
 
 const isResolvable = (node: SyntaxNodeRef) => node.type.name === 'Resolvable';
 
-const n8nParserWithNestedJsParser = n8nParser.configure({
+const auraParserWithNestedJsParser = auraParser.configure({
 	wrap: parseMixed((node) => {
 		if (node.type.isTop) return null;
 
@@ -20,16 +20,16 @@ const n8nParserWithNestedJsParser = n8nParser.configure({
 	}),
 });
 
-const n8nLanguage = LRLanguage.define({ parser: n8nParserWithNestedJsParser });
+const auraLanguage = LRLanguage.define({ parser: auraParserWithNestedJsParser });
 
-export function n8nLang() {
-	return new LanguageSupport(n8nLanguage, [
-		n8nLanguage.data.of(expressionCloseBracketsConfig),
-		...n8nCompletionSources().map((source) => n8nLanguage.data.of(source)),
+export function auraLang() {
+	return new LanguageSupport(auraLanguage, [
+		auraLanguage.data.of(expressionCloseBracketsConfig),
+		...auraCompletionSources().map((source) => auraLanguage.data.of(source)),
 	]);
 }
 
-export const n8nAutocompletion = () =>
+export const auraAutocompletion = () =>
 	autocompletion({
 		icons: false,
 		aboveCursor: true,

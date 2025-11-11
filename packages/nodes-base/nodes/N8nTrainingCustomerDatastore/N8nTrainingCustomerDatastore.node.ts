@@ -3,8 +3,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 const data = [
 	{
@@ -51,18 +51,18 @@ const data = [
 
 export class N8nTrainingCustomerDatastore implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Customer Datastore (n8n training)',
-		name: 'n8nTrainingCustomerDatastore',
+		displayName: 'Customer Datastore (aura training)',
+		name: 'auraTrainingCustomerDatastore',
 		icon: {
-			light: 'file:n8nTrainingCustomerDatastore.svg',
-			dark: 'file:n8nTrainingCustomerDatastore.dark.svg',
+			light: 'file:auraTrainingCustomerDatastore.svg',
+			dark: 'file:auraTrainingCustomerDatastore.dark.svg',
 		},
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
-		description: 'Dummy node used for n8n training',
+		description: 'Dummy node used for aura training',
 		defaults: {
-			name: 'Customer Datastore (n8n training)',
+			name: 'Customer Datastore (aura training)',
 		},
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],

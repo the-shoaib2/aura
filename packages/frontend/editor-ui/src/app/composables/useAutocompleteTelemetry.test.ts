@@ -16,12 +16,12 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 
 vi.mock('@/features/ndv/shared/ndv.store', () => ({
 	useNDVStore: vi.fn(() => ({
-		activeNode: { type: 'n8n-nodes-base.test' },
+		activeNode: { type: 'aura-nodes-base.test' },
 		setAutocompleteOnboarded: setAutocompleteOnboardedSpy,
 	})),
 }));
 
-vi.mock('@n8n/stores/useRootStore', () => ({
+vi.mock('@aura/stores/useRootStore', () => ({
 	useRootStore: vi.fn(() => ({
 		instanceId: 'test-instance-id',
 	})),
@@ -71,7 +71,7 @@ describe('useAutocompleteTelemetry', () => {
 				field_type: 'expression',
 				inserted_text: 'foo',
 				instance_id: 'test-instance-id',
-				node_type: 'n8n-nodes-base.test',
+				node_type: 'aura-nodes-base.test',
 			}),
 		);
 	});

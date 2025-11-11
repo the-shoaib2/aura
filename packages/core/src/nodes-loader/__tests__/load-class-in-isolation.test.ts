@@ -2,9 +2,9 @@ import vm from 'vm';
 
 import { loadClassInIsolation } from '../load-class-in-isolation';
 
-jest.mock('@n8n/backend-common', () => {
+jest.mock('@aura/backend-common', () => {
 	return {
-		...jest.requireActual('@n8n/backend-common'),
+		...jest.requireActual('@aura/backend-common'),
 		inTest: false,
 	};
 });

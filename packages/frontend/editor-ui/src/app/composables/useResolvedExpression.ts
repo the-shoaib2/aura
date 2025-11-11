@@ -6,7 +6,7 @@ import {
 } from '@/app/utils/expressions';
 
 import debounce from 'lodash/debounce';
-import { createResultError, createResultOk, type IDataObject, type Result } from 'n8n-workflow';
+import { createResultError, createResultOk, type IDataObject, type Result } from 'workflow';
 import {
 	computed,
 	onMounted,

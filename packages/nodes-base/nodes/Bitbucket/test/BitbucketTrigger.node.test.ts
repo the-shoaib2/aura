@@ -6,7 +6,7 @@ import type {
 	ILoadOptionsFunctions,
 	INode,
 	IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { BitbucketTrigger } from '../BitbucketTrigger.node';
 import * as GenericFunctions from '../GenericFunctions';
@@ -22,7 +22,7 @@ describe('BitbucketTrigger', () => {
 	const mockNode: INode = {
 		id: 'test-node-id',
 		name: 'Bitbucket Trigger Test',
-		type: 'n8n-nodes-base.bitbucketTrigger',
+		type: 'aura-nodes-base.bitbucketTrigger',
 		typeVersion: 1.1,
 		position: [0, 0],
 		parameters: {},
@@ -262,13 +262,13 @@ describe('BitbucketTrigger', () => {
 
 				expect(result).toEqual([
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'repo1',
 						value: 'repo1',
 						description: 'First repository',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'repo2',
 						value: 'repo2',
 						description: 'Second repository',
@@ -316,7 +316,7 @@ describe('BitbucketTrigger', () => {
 
 		beforeEach(() => {
 			mockHookFunctions.getNode.mockReturnValue(mockNode);
-			mockHookFunctions.getNodeWebhookUrl.mockReturnValue('https://test.n8n.io/webhook/test');
+			mockHookFunctions.getNodeWebhookUrl.mockReturnValue('https://test.aura.io/webhook/test');
 			mockHookFunctions.getWorkflowStaticData.mockReturnValue({});
 		});
 
@@ -326,7 +326,7 @@ describe('BitbucketTrigger', () => {
 					values: [
 						{
 							uuid: '{12345678-1234-1234-1234-123456789012}',
-							url: 'https://test.n8n.io/webhook/test',
+							url: 'https://test.aura.io/webhook/test',
 							active: true,
 						},
 						{
@@ -364,7 +364,7 @@ describe('BitbucketTrigger', () => {
 					values: [
 						{
 							uuid: '{12345678-1234-1234-1234-123456789012}',
-							url: 'https://test.n8n.io/webhook/test',
+							url: 'https://test.aura.io/webhook/test',
 							active: true,
 						},
 					],
@@ -419,7 +419,7 @@ describe('BitbucketTrigger', () => {
 					values: [
 						{
 							uuid: '{12345678-1234-1234-1234-123456789012}',
-							url: 'https://test.n8n.io/webhook/test',
+							url: 'https://test.aura.io/webhook/test',
 							active: false,
 						},
 					],
@@ -444,7 +444,7 @@ describe('BitbucketTrigger', () => {
 			it('should create webhook for workspace', async () => {
 				const mockResponse = {
 					uuid: '{12345678-1234-1234-1234-123456789012}',
-					url: 'https://test.n8n.io/webhook/test',
+					url: 'https://test.aura.io/webhook/test',
 					active: true,
 				};
 
@@ -463,8 +463,8 @@ describe('BitbucketTrigger', () => {
 					'POST',
 					'/workspaces/test-workspace/hooks',
 					{
-						description: 'n8n webhook',
-						url: 'https://test.n8n.io/webhook/test',
+						description: 'aura webhook',
+						url: 'https://test.aura.io/webhook/test',
 						active: true,
 						events: ['repo:push', 'repo:fork'],
 					},
@@ -480,7 +480,7 @@ describe('BitbucketTrigger', () => {
 			it('should create webhook for repository', async () => {
 				const mockResponse = {
 					uuid: '{12345678-1234-1234-1234-123456789012}',
-					url: 'https://test.n8n.io/webhook/test',
+					url: 'https://test.aura.io/webhook/test',
 					active: true,
 				};
 
@@ -500,8 +500,8 @@ describe('BitbucketTrigger', () => {
 					'POST',
 					'/repositories/test-workspace/test-repo/hooks',
 					{
-						description: 'n8n webhook',
-						url: 'https://test.n8n.io/webhook/test',
+						description: 'aura webhook',
+						url: 'https://test.aura.io/webhook/test',
 						active: true,
 						events: ['pullrequest:created'],
 					},

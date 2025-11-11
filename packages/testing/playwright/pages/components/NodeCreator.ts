@@ -3,13 +3,13 @@ import { expect } from '@playwright/test';
 
 /**
  * Node Creator component for adding nodes to workflows.
- * Used within CanvasPage as `n8n.canvas.nodeCreator.*`
+ * Used within CanvasPage as `aura.canvas.nodeCreator.*`
  *
  * @example
  * // Access via canvas page
- * await n8n.canvas.nodeCreator.open();
- * await n8n.canvas.nodeCreator.searchFor('Gmail');
- * await n8n.canvas.nodeCreator.selectItem('Gmail');
+ * await aura.canvas.nodeCreator.open();
+ * await aura.canvas.nodeCreator.searchFor('Gmail');
+ * await aura.canvas.nodeCreator.selectItem('Gmail');
  */
 export class NodeCreator {
 	constructor(private page: Page) {}

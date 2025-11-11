@@ -1,6 +1,6 @@
-import type { ModuleInterface } from '@n8n/decorators';
-import { BackendModule, OnShutdown } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import type { ModuleInterface } from '@aura/decorators';
+import { BackendModule, OnShutdown } from '@aura/decorators';
+import { Container } from '@aura/di';
 
 @BackendModule({ name: 'data-table' })
 export class DataTableModule implements ModuleInterface {

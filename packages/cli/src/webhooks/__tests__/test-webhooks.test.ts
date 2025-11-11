@@ -1,5 +1,5 @@
-import type { WorkflowEntity } from '@n8n/db';
-import { generateNanoId } from '@n8n/db';
+import type { WorkflowEntity } from '@aura/db';
+import { generateNanoId } from '@aura/db';
 import type * as express from 'express';
 import { mock } from 'jest-mock-extended';
 import type {
@@ -9,7 +9,7 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	Workflow,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { NotFoundError } from '@/errors/response-errors/not-found.error';

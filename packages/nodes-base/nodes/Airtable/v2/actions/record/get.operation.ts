@@ -4,7 +4,7 @@ import type {
 	INodeProperties,
 	NodeApiError,
 	IExecuteFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { updateDisplayOptions, wrapData } from '../../../../../utils/utilities';
 import type { IRecord } from '../../helpers/interfaces';
@@ -19,7 +19,7 @@ const properties: INodeProperties[] = [
 		default: '',
 		placeholder: 'e.g. recf7EaZp707CEc8g',
 		required: true,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+		// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 		description:
 			'ID of the record to get. <a href="https://support.airtable.com/docs/record-id" target="_blank">More info</a>.',
 	},
@@ -32,7 +32,7 @@ const properties: INodeProperties[] = [
 		placeholder: 'Add option',
 		options: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 				displayName: 'Download Attachments',
 				name: 'downloadFields',
 				type: 'multiOptions',
@@ -41,7 +41,7 @@ const properties: INodeProperties[] = [
 					loadOptionsDependsOn: ['base.value', 'table.value'],
 				},
 				default: [],
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-multi-options
 				description: "The fields of type 'attachment' that should be downloaded",
 			},
 		],

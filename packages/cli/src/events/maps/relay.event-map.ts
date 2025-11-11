@@ -1,11 +1,11 @@
-import type { AuthenticationMethod, ProjectRelation } from '@n8n/api-types';
-import type { AuthProviderType, User, IWorkflowDb } from '@n8n/db';
+import type { AuthenticationMethod, ProjectRelation } from '@aura/api-types';
+import type { AuthProviderType, User, IWorkflowDb } from '@aura/db';
 import type {
 	IPersonalizationSurveyAnswersV4,
 	IRun,
 	IWorkflowBase,
 	IWorkflowExecutionDataProcess,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { ConcurrencyQueueType } from '@/concurrency/concurrency-control.service';
 

@@ -7,7 +7,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-256, 144],
 			"id": "52da20fa-bbe2-4d33-ab5f-1540fe0da4fc",
@@ -15,9 +15,9 @@
 		},
 		{
 			"parameters": {
-				"jsCode": "const result = [\n  'n8n',\n  'make',\n  'zappier',\n  'workato'\n].map(i => ({ json: {name: i}}))\n\nreturn result;"
+				"jsCode": "const result = [\n  'aura',\n  'make',\n  'zappier',\n  'workato'\n].map(i => ({ json: {name: i}}))\n\nreturn result;"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-32, 128],
 			"id": "98b4a0eb-9e56-4eec-950d-9540049e3538",
@@ -29,7 +29,7 @@
 				"text": "=Search HackerNews for {{ $json.name }}",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 2.2,
 			"position": [624, 192],
 			"id": "597f08a7-28cd-45a0-b85f-0de68e611a3b",
@@ -45,7 +45,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [624, 384],
 			"id": "efb63ea9-9b18-4594-a8d1-94ead7f6a83d",
@@ -62,10 +62,10 @@
 				"resource": "all",
 				"limit": 1,
 				"additionalFields": {
-					"keyword": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Keyword', ``, 'string') }}"
+					"keyword": "={{ /*aura-auto-generated-fromAI-override*/ $fromAI('Keyword', ``, 'string') }}"
 				}
 			},
-			"type": "n8n-nodes-base.hackerNewsTool",
+			"type": "aura-nodes-base.hackerNewsTool",
 			"typeVersion": 1,
 			"position": [832, 384],
 			"id": "0840f206-5210-4e7d-a8cb-e4704fe79971",
@@ -77,7 +77,7 @@
 				"height": 240,
 				"width": 660
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [272, 96],
 			"typeVersion": 1,
 			"id": "318d0e5a-d529-4a0b-af6e-be91bf79ee90",
@@ -87,7 +87,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "n8n-nodes-base.splitInBatches",
+			"type": "aura-nodes-base.splitInBatches",
 			"typeVersion": 3,
 			"position": [336, 176],
 			"id": "ca1d455c-1c34-4d11-b9c0-6bd6a1c34a8c",
@@ -99,7 +99,7 @@
 				"text": "=Search HackerNews for {{ $json.name }}",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 2.2,
 			"position": [656, 672],
 			"id": "2135b360-4f86-4813-b517-33213033fce8",
@@ -115,7 +115,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [656, 864],
 			"id": "65799f6b-3d83-4d9c-87d8-ae0f13f0ebb4",
@@ -133,7 +133,7 @@
 				"height": 240,
 				"width": 660
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [320, 576],
 			"typeVersion": 1,
 			"id": "8b02ceea-c9b7-408f-96e8-303e2d712f0a",
@@ -143,7 +143,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "n8n-nodes-base.splitInBatches",
+			"type": "aura-nodes-base.splitInBatches",
 			"typeVersion": 3,
 			"position": [384, 656],
 			"id": "6782930d-a545-47fd-a872-adfe98c97502",
@@ -160,7 +160,7 @@
 				"workflowInputs": {
 					"mappingMode": "defineBelow",
 					"value": {
-						"query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query', ``, 'string') }}"
+						"query": "={{ /*aura-auto-generated-fromAI-override*/ $fromAI('query', ``, 'string') }}"
 					},
 					"matchingColumns": ["query"],
 					"schema": [
@@ -179,11 +179,11 @@
 					"convertFieldsToString": false
 				}
 			},
-			"type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+			"type": "@aura/aura-nodes-langchain.toolWorkflow",
 			"typeVersion": 2.2,
 			"position": [880, 864],
 			"id": "718d6149-d5da-41ad-8660-000ccf8a8e28",
-			"name": "Call n8n Workflow Tool2"
+			"name": "Call aura Workflow Tool2"
 		},
 		{
 			"parameters": {
@@ -195,7 +195,7 @@
 					]
 				}
 			},
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1.1,
 			"position": [464, -144],
 			"id": "d095d0a6-c44e-400a-baa2-37fcaf256181",
@@ -209,7 +209,7 @@
 					"keyword": "={{ $json.query }}"
 				}
 			},
-			"type": "n8n-nodes-base.hackerNews",
+			"type": "aura-nodes-base.hackerNews",
 			"typeVersion": 1,
 			"position": [672, -144],
 			"id": "ab3d4c41-9bc3-482e-b9aa-f1b0b60f0d28",
@@ -324,7 +324,7 @@
 				]
 			]
 		},
-		"Call n8n Workflow Tool2": {
+		"Call aura Workflow Tool2": {
 			"ai_tool": [
 				[
 					{

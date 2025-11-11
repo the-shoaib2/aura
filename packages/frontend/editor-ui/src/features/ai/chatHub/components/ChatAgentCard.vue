@@ -2,8 +2,8 @@
 import TimeAgo from '@/app/components/TimeAgo.vue';
 import { getAgentRoute } from '@/features/ai/chatHub/chat.utils';
 import ChatAgentAvatar from '@/features/ai/chatHub/components/ChatAgentAvatar.vue';
-import type { ChatModelDto } from '@n8n/api-types';
-import { N8nIconButton, N8nText } from '@n8n/design-system';
+import type { ChatModelDto } from '@aura/api-types';
+import { N8nIconButton, N8nText } from '@aura/design-system';
 import { RouterLink } from 'vue-router';
 
 const { agent } = defineProps<{
@@ -29,7 +29,7 @@ const emit = defineEmits<{
 			</N8nText>
 			<div :class="$style.metadata">
 				<N8nText size="small" color="text-light">
-					{{ agent.model.provider === 'n8n' ? 'n8n workflow' : 'Custom agent' }}
+					{{ agent.model.provider === 'aura' ? 'aura workflow' : 'Custom agent' }}
 				</N8nText>
 				<N8nText v-if="agent.updatedAt" size="small" color="text-light">
 					Last updated <TimeAgo :date="agent.updatedAt" />

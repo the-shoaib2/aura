@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "746052e5-aa2d-44d8-9868-51eac17d07b2"
@@ -22,7 +22,7 @@
 				"additionalFields": {}
 			},
 			"name": "Cortex",
-			"type": "n8n-nodes-base.cortex",
+			"type": "aura-nodes-base.cortex",
 			"typeVersion": 1,
 			"position": [490, 300],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"jobId": "={{$node[\"Cortex\"].json[\"_id\"]}}"
 			},
 			"name": "Cortex1",
-			"type": "n8n-nodes-base.cortex",
+			"type": "aura-nodes-base.cortex",
 			"typeVersion": 1,
 			"position": [640, 300],
 			"credentials": {
@@ -57,7 +57,7 @@
 				"jobId": "={{$node[\"Cortex\"].json[\"_id\"]}}"
 			},
 			"name": "Cortex2",
-			"type": "n8n-nodes-base.cortex",
+			"type": "aura-nodes-base.cortex",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -85,7 +85,7 @@
 				}
 			},
 			"name": "Cortex3",
-			"type": "n8n-nodes-base.cortex",
+			"type": "aura-nodes-base.cortex",
 			"typeVersion": 1,
 			"position": [950, 300],
 			"credentials": {
@@ -103,7 +103,7 @@
 				"jobId": "={{$node[\"Cortex3\"].json[\"_id\"]}}"
 			},
 			"name": "Cortex4",
-			"type": "n8n-nodes-base.cortex",
+			"type": "aura-nodes-base.cortex",
 			"typeVersion": 1,
 			"position": [1250, 300],
 			"credentials": {
@@ -120,7 +120,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\nawait sleep(10000);\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 4 seconds",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1100, 300],
 			"typeVersion": 1,
 			"id": "68f7efca-c385-4642-814f-3123f7e892ee"

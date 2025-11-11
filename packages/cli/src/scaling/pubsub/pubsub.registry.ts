@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { PubSubEventName, PubSubMetadata } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
+import { Logger } from '@aura/backend-common';
+import { PubSubEventName, PubSubMetadata } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
 
 import { PubSubEventBus } from './pubsub.eventbus';
 

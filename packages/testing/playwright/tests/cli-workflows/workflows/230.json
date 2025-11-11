@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "d4c2fa93-d956-4b90-86ab-e8d7e1f89057",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [1360, 720]
 		},
@@ -30,7 +30,7 @@
 			},
 			"id": "11ba670f-87d9-4d4a-ae47-da3fe5bb7715",
 			"name": "VirusTotal HTTP Request",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 4.1,
 			"position": [1580, 720],
 			"extendsCredential": "virusTotalApi",

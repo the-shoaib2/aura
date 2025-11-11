@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import type { IFormBoxConfig } from '@n8n/design-system';
+import type { IFormBoxConfig } from '@aura/design-system';
 import AuthView from '@/features/core/auth/views/AuthView.vue';
 import { VIEWS } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useUsersStore } from '@/features/settings/users/users.store';
 

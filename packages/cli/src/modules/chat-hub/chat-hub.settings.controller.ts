@@ -1,6 +1,6 @@
-import { ModuleRegistry, Logger } from '@n8n/backend-common';
-import { type AuthenticatedRequest } from '@n8n/db';
-import { Body, Get, Patch, RestController, GlobalScope } from '@n8n/decorators';
+import { ModuleRegistry, Logger } from '@aura/backend-common';
+import { type AuthenticatedRequest } from '@aura/db';
+import { Body, Get, Patch, RestController, GlobalScope } from '@aura/decorators';
 
 import { ChatHubSettingsService } from './chat-hub.settings.service';
 import { UpdateChatSettingsDto } from './dto/update-chat-settings.dto';

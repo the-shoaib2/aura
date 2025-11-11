@@ -5,20 +5,20 @@
 			"parameters": {},
 			"id": "3c72284b-2b88-4d5f-81bc-b1970b14f2af",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [800, 240]
 		},
 		{
 			"parameters": {
-				"email": "user@n8n.io",
+				"email": "user@aura.io",
 				"additionalFields": {
 					"status": "active"
 				}
 			},
 			"id": "702c6598-cbe8-403e-962e-56621ec727a4",
 			"name": "Create Subscriber",
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 2,
 			"position": [1000, 0],
 			"credentials": {
@@ -30,7 +30,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1220, 0],
 			"id": "540b98b5-b3bf-49a1-a406-acc6872f4b50",
@@ -38,7 +38,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1220, 180],
 			"id": "17c0b8e7-a9d7-4a4f-882f-c3fb3f6bc289",
@@ -47,9 +47,9 @@
 		{
 			"parameters": {
 				"operation": "get",
-				"subscriberId": "user@n8n.io"
+				"subscriberId": "user@aura.io"
 			},
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 2,
 			"position": [1000, 180],
 			"id": "5598f2b9-4d67-4ad7-a8e4-7b7bf723cd5a",
@@ -64,13 +64,13 @@
 		{
 			"parameters": {
 				"operation": "update",
-				"subscriberId": "user@n8n.io",
+				"subscriberId": "user@aura.io",
 				"additionalFields": {
 					"status": "junk",
 					"optin_ip": "8.8.8.8"
 				}
 			},
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 2,
 			"position": [1000, 380],
 			"id": "223e4507-c88e-4066-a122-ccaf9cea7b49",
@@ -84,7 +84,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1220, 380],
 			"id": "94d04b52-8809-4670-a8ca-135921139fc9",
@@ -98,7 +98,7 @@
 					"status": "junk"
 				}
 			},
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 2,
 			"position": [960, 640],
 			"id": "30c6e797-ceda-4c84-8f34-b61200ffd9e9",
@@ -112,7 +112,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1180, 640],
 			"id": "c8529a30-889b-4ac9-a509-73f5dd8eef4a",
@@ -124,7 +124,7 @@
 			{
 				"json": {
 					"id": "139872142007207563",
-					"email": "user@n8n.io",
+					"email": "user@aura.io",
 					"status": "junk",
 					"source": "api",
 					"sent": 0,
@@ -157,7 +157,7 @@
 			{
 				"json": {
 					"id": "139872142007207563",
-					"email": "user@n8n.io",
+					"email": "user@aura.io",
 					"status": "junk",
 					"source": "api",
 					"sent": 0,
@@ -191,7 +191,7 @@
 				"json": {
 					"data": {
 						"id": "139872142007207563",
-						"email": "user@n8n.io",
+						"email": "user@aura.io",
 						"status": "junk",
 						"source": "api",
 						"sent": 0,
@@ -225,7 +225,7 @@
 			{
 				"json": {
 					"id": "139872142007207563",
-					"email": "user@n8n.io",
+					"email": "user@aura.io",
 					"status": "junk",
 					"source": "api",
 					"sent": 0,
@@ -255,7 +255,7 @@
 			{
 				"json": {
 					"id": "139059851540038710",
-					"email": "nathan@n8n.io",
+					"email": "nathan@aura.io",
 					"status": "junk",
 					"source": "api",
 					"sent": 0,

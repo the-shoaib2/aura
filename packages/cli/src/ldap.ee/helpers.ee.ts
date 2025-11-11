@@ -1,6 +1,6 @@
-import { GlobalConfig } from '@n8n/config';
-import type { LdapConfig, ConnectionSecurity } from '@n8n/constants';
-import type { AuthProviderSyncHistory } from '@n8n/db';
+import { GlobalConfig } from '@aura/config';
+import type { LdapConfig, ConnectionSecurity } from '@aura/constants';
+import type { AuthProviderSyncHistory } from '@aura/db';
 import {
 	AuthIdentity,
 	User,
@@ -8,12 +8,12 @@ import {
 	AuthProviderSyncHistoryRepository,
 	UserRepository,
 	GLOBAL_MEMBER_ROLE,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import { validate } from 'jsonschema';
 import type { Entry as LdapUser } from 'ldapts';
 import { Filter } from 'ldapts/filters/Filter';
-import { randomString } from 'n8n-workflow';
+import { randomString } from 'workflow';
 
 import { License } from '@/license';
 

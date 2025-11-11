@@ -1,7 +1,7 @@
 import ChatEmbedModal from '@/app/components/ChatEmbedModal.vue';
 import { createTestingPinia } from '@pinia/testing';
 import { CHAT_EMBED_MODAL_KEY, WEBHOOK_NODE_TYPE } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { createComponentRenderer } from '@/__tests__/render';
 import { waitFor } from '@testing-library/vue';
 
@@ -29,8 +29,8 @@ describe('ChatEmbedModal', () => {
 		await waitFor(() => expect(getByTestId('chatEmbed-modal')).toBeInTheDocument());
 
 		const modalContainer = getByTestId('chatEmbed-modal');
-		const tabs = modalContainer.querySelectorAll('.n8n-tabs .tab');
-		const activeTab = modalContainer.querySelector('.n8n-tabs .tab.activeTab');
+		const tabs = modalContainer.querySelectorAll('.aura-tabs .tab');
+		const activeTab = modalContainer.querySelector('.aura-tabs .tab.activeTab');
 		const editor = modalContainer.querySelector('.cm-editor');
 
 		expect(tabs).toHaveLength(4);

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 </script>
 
 <template>

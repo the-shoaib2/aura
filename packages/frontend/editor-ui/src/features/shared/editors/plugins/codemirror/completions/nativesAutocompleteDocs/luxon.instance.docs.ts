@@ -1,5 +1,5 @@
-import type { NativeDoc } from 'n8n-workflow';
-import { i18n } from '@n8n/i18n';
+import type { NativeDoc } from 'workflow';
+import { i18n } from '@aura/i18n';
 
 // Autocomplete documentation definition for DateTime instance props and methods
 export const luxonInstanceDocs: Required<NativeDoc> = {

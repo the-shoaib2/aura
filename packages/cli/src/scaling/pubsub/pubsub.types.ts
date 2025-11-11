@@ -61,7 +61,7 @@ export namespace PubSub {
 			ToCommand<'reload-sso-provisioning-configuration'>;
 	}
 
-	/** Command sent via the `n8n.commands` pubsub channel. */
+	/** Command sent via the `aura.commands` pubsub channel. */
 	export type Command =
 		| Commands.ReloadLicense
 		| Commands.RestartEventBus
@@ -107,6 +107,6 @@ export namespace PubSub {
 		_ToWorkerResponse<WorkerResponseKey>
 	>;
 
-	/** Response sent via the `n8n.worker-response` pubsub channel. */
+	/** Response sent via the `aura.worker-response` pubsub channel. */
 	export type WorkerResponse = ToWorkerResponse<'response-to-get-worker-status'>;
 }

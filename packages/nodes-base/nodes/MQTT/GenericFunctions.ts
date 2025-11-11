@@ -1,5 +1,5 @@
 import { connect, type IClientOptions, type MqttClient } from 'mqtt';
-import { ApplicationError, randomString } from 'n8n-workflow';
+import { ApplicationError, randomString } from 'workflow';
 
 import { formatPrivateKey } from '@utils/utilities';
 

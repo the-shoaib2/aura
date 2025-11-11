@@ -2,12 +2,12 @@ import { createTestingPinia } from '@pinia/testing';
 import { screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
-import type { UserAction } from '@n8n/design-system';
+import type { UserAction } from '@aura/design-system';
 import ProjectMembersActionsCell from './ProjectMembersActionsCell.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import type { ProjectMemberData } from '../projects.types';
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

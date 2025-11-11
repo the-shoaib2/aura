@@ -1,6 +1,6 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
 import fsPromises from 'fs/promises';
-import type { WorkflowTestData } from 'n8n-workflow';
+import type { WorkflowTestData } from 'workflow';
 import path from 'path';
 
 describe('Test Write Binary File Node', () => {

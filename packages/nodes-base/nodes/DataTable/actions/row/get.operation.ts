@@ -3,7 +3,7 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { ROWS_LIMIT_DEFAULT } from '../../common/constants';
 import { executeSelectMany, getSelectFields } from '../../common/selectMany';

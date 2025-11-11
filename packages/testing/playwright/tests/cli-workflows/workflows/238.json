@@ -18,7 +18,7 @@
 			},
 			"id": "086e03aa-f941-4dbc-9794-d418893efd48",
 			"name": "OpenAI Model",
-			"type": "@n8n/n8n-nodes-langchain.lmOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmOpenAi",
 			"typeVersion": 1,
 			"position": [660, 600],
 			"credentials": {
@@ -35,7 +35,7 @@
 			},
 			"id": "3d36ca4b-ca52-4c76-8729-2d1416b97254",
 			"name": "Open AI Instruct",
-			"type": "@n8n/n8n-nodes-langchain.chainLlm",
+			"type": "@aura/aura-nodes-langchain.chainLlm",
 			"typeVersion": 1.5,
 			"position": [640, 460]
 		},
@@ -43,7 +43,7 @@
 			"parameters": {},
 			"id": "6b6a91f3-cb8a-474b-8db8-e4309bd25d92",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [460, 460]
 		}

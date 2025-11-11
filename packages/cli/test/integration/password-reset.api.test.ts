@@ -5,13 +5,13 @@ import {
 	randomValidPassword,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
-import { GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
+import { GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { compare } from 'bcryptjs';
 import { mock } from 'jest-mock-extended';
-import { randomString } from 'n8n-workflow';
+import { randomString } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { AuthService } from '@/auth/auth.service';

@@ -1,5 +1,5 @@
-import type { INodeTypeBaseDescription, IVersionedNodeType } from 'n8n-workflow';
-import { VersionedNodeType } from 'n8n-workflow';
+import type { INodeTypeBaseDescription, IVersionedNodeType } from 'workflow';
+import { VersionedNodeType } from 'workflow';
 
 import { SpreadsheetFileV1 } from './v1/SpreadsheetFileV1.node';
 import { SpreadsheetFileV2 } from './v2/SpreadsheetFileV2.node';

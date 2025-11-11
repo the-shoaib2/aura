@@ -12,7 +12,7 @@
 			},
 			"id": "79cfd86e-b657-49de-bc61-13415ffa725b",
 			"name": "Embeddings OpenAI6",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1420, 1580],
 			"credentials": {
@@ -41,7 +41,7 @@
 			},
 			"id": "76ee3d77-836c-417d-8d8e-9822cddfe936",
 			"name": "Default Data Loader2",
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1,
 			"position": [1560, 1580]
 		},
@@ -52,7 +52,7 @@
 			},
 			"id": "1edacf5b-b7e4-4486-b98f-c78b338ac38e",
 			"name": "Token Splitter2",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [1560, 1760]
 		},
@@ -65,7 +65,7 @@
 			},
 			"id": "93ff6597-cac9-4847-8efd-e1d03520b4b9",
 			"name": "OpenAI Chat Model2",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [2100, 1660],
 			"credentials": {
@@ -79,7 +79,7 @@
 			"parameters": {},
 			"id": "8985b238-8814-4aab-bbf3-801fb52c7757",
 			"name": "Vector Store Retriever2",
-			"type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+			"type": "@aura/aura-nodes-langchain.retrieverVectorStore",
 			"typeVersion": 1,
 			"position": [2380, 1720]
 		},
@@ -90,7 +90,7 @@
 			},
 			"id": "b2ef63c3-2e18-49dc-8241-ee71eabdd6cb",
 			"name": "Embeddings OpenAI7",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [2320, 1980],
 			"credentials": {
@@ -116,7 +116,7 @@
 			},
 			"id": "046edb77-d0cd-4e8b-9db3-706c249e557f",
 			"name": "Edit Fields2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [3500, 1360]
 		},
@@ -126,7 +126,7 @@
 			},
 			"id": "11262bc3-f1db-4162-94c8-5f2d5b279900",
 			"name": "In-Memory Vector Store2",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1,
 			"position": [2320, 1860]
 		},
@@ -134,7 +134,7 @@
 			"parameters": {},
 			"id": "f4ff0f49-ac8b-4f7c-9cd4-90f0f9534772",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [1000, 1340]
 		},
@@ -144,7 +144,7 @@
 			},
 			"id": "06c12027-e965-441d-b1d8-b711eabbeb02",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [1220, 1340]
 		},
@@ -156,7 +156,7 @@
 			},
 			"id": "569a716b-c369-461e-b522-4f890af4fa34",
 			"name": "In-Memory Vector Store",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1,
 			"position": [1480, 1340]
 		},
@@ -168,7 +168,7 @@
 			},
 			"id": "031906b6-9157-4ec4-93ab-55486e5a32f2",
 			"name": "Question and Answer Chain 1.3",
-			"type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+			"type": "@aura/aura-nodes-langchain.chainRetrievalQa",
 			"typeVersion": 1.3,
 			"position": [2400, 1080]
 		},
@@ -178,7 +178,7 @@
 				"text": "What is the size of a block header with no transactions? Respond only with number of bytes.",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+			"type": "@aura/aura-nodes-langchain.chainRetrievalQa",
 			"typeVersion": 1.4,
 			"position": [2660, 1340],
 			"id": "412a579e-3531-4270-983a-c938d66362e3",
@@ -190,7 +190,7 @@
 				"text": "What is the size of a block header with no transactions? Respond only with number of bytes.",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+			"type": "@aura/aura-nodes-langchain.chainRetrievalQa",
 			"typeVersion": 1.5,
 			"position": [2800, 1560],
 			"id": "e3f4a4e8-ef8e-4204-ac46-f0896126fcbe",
@@ -200,7 +200,7 @@
 			"parameters": {
 				"numberInputs": 3
 			},
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 3,
 			"position": [3280, 1360],
 			"id": "619f459a-d2a5-41ce-9b92-85f54d3f4017",
@@ -234,7 +234,7 @@
 			},
 			"id": "e49fd92f-0a97-44a4-bbf5-c9aa94496ce1",
 			"name": "Check Vector Store Populated2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1940, 1340],
 			"executeOnce": true

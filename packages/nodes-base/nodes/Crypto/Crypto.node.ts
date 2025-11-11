@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { deepCopy, BINARY_ENCODING, NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { deepCopy, BINARY_ENCODING, NodeConnectionTypes } from 'workflow';
 import { pipeline } from 'stream/promises';
 import { v4 as uuid } from 'uuid';
 
@@ -335,7 +335,7 @@ export class Crypto implements INodeType {
 				},
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				options: supportedAlgorithms,
 				default: '',
 				required: true,

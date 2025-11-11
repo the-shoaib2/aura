@@ -1,4 +1,4 @@
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { IWorkflowBase } from 'workflow';
 
 export namespace Risk {
 	export type Category = 'database' | 'credentials' | 'nodes' | 'instance' | 'filesystem';
@@ -45,7 +45,7 @@ export namespace Risk {
 	export type InstanceSection = SectionBase & {
 		location?: NodeLocation[];
 		settings?: Record<string, unknown>;
-		nextVersions?: n8n.Version[];
+		nextVersions?: aura.Version[];
 	};
 
 	export type StandardReport = {
@@ -67,7 +67,7 @@ export namespace Risk {
 	export type AsyncReportFn = (workflows: IWorkflowBase[]) => Promise<Report | null>;
 }
 
-export namespace n8n {
+export namespace aura {
 	export type Version = {
 		name: string;
 		nodes: Array<

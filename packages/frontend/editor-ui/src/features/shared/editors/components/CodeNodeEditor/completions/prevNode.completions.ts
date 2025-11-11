@@ -1,6 +1,6 @@
 import { addVarType } from '@/features/settings/environments.ee/completions/variables.completions';
 import type { Completion, CompletionContext, CompletionResult } from '@codemirror/autocomplete';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 const DEFAULT_MATCHER = '$prevNode';
 

@@ -4,19 +4,19 @@ import {
 	uniqueId,
 	getPersonalProject,
 	testDb,
-} from '@n8n/backend-test-utils';
-import { LDAP_DEFAULT_CONFIGURATION } from '@n8n/constants';
-import type { User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import { LDAP_DEFAULT_CONFIGURATION } from '@aura/constants';
+import type { User } from '@aura/db';
 import {
 	AuthProviderSyncHistoryRepository,
 	GLOBAL_MEMBER_ROLE,
 	GLOBAL_OWNER_ROLE,
 	UserRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { Not } from '@n8n/typeorm';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { Not } from '@aura/typeorm';
 import type { Entry as LdapUser } from 'ldapts';
-import { Cipher } from 'n8n-core';
+import { Cipher } from 'aura-core';
 
 import config from '@/config';
 import { saveLdapSynchronization } from '@/ldap.ee/helpers.ee';
@@ -570,7 +570,7 @@ describe('POST /login', () => {
 
 		expect(response.statusCode).toBe(200);
 		expect(response.headers['set-cookie']).toBeDefined();
-		expect(response.headers['set-cookie'][0]).toContain('n8n-auth=');
+		expect(response.headers['set-cookie'][0]).toContain('aura-auth=');
 
 		// Make sure the changes in the "LDAP server" were persisted in the database
 		const localLdapIdentities = await getLdapIdentities();

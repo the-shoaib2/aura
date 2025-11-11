@@ -19,14 +19,14 @@ import { createUser } from '@/__tests__/data/users';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useRolesStore } from '@/app/stores/roles.store';
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 
 const mockTrack = vi.fn();
 const mockShowMessage = vi.fn();
 const mockShowError = vi.fn();
 const mockRouterPush = vi.fn();
 const { emitters, addEmitter } = useEmitters<
-	'projectMembersTable' | 'n8nUserSelect' | 'n8nIconPicker'
+	'projectMembersTable' | 'auraUserSelect' | 'auraIconPicker'
 >();
 
 vi.mock('@/app/composables/useTelemetry', () => ({
@@ -94,7 +94,7 @@ vi.mock('../components/ProjectMembersTable.vue', () => ({
 	}),
 }));
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,
@@ -103,7 +103,7 @@ vi.mock('@n8n/design-system', async (importOriginal) => {
 			props: { modelValue: { type: String, required: false } },
 			emits: ['update:model-value'],
 			template:
-				'<div data-test-id="n8n-input-stub"><input :value="modelValue" @input="$emit(\'update:model-value\', $event.target.value)" /></div>',
+				'<div data-test-id="aura-input-stub"><input :value="modelValue" @input="$emit(\'update:model-value\', $event.target.value)" /></div>',
 		}),
 		N8nUserSelect: defineComponent({
 			name: 'N8nUserSelectStub',
@@ -114,7 +114,7 @@ vi.mock('@n8n/design-system', async (importOriginal) => {
 			},
 			emits: ['update:model-value'],
 			setup(_, { emit }) {
-				addEmitter('n8nUserSelect', emit as unknown as Emitter);
+				addEmitter('auraUserSelect', emit as unknown as Emitter);
 				return {};
 			},
 			template: '<div data-test-id="project-members-select"></div>',
@@ -124,7 +124,7 @@ vi.mock('@n8n/design-system', async (importOriginal) => {
 			props: { modelValue: { type: Object, required: false } },
 			emits: ['update:model-value'],
 			setup(_, { emit }) {
-				addEmitter('n8nIconPicker', emit as unknown as Emitter);
+				addEmitter('auraIconPicker', emit as unknown as Emitter);
 				return {};
 			},
 			template: '<div data-test-id="icon-picker"></div>',
@@ -425,7 +425,7 @@ describe('ProjectSettings', () => {
 			expect(getByTestId('members-count').textContent).toBe('1');
 
 			// Add member via user select
-			emitters.n8nUserSelect.emit('update:model-value', '2');
+			emitters.auraUserSelect.emit('update:model-value', '2');
 			await nextTick();
 			expect(getByTestId('members-count').textContent).toBe('2');
 			expect(addSpy).toHaveBeenCalledWith('123', expect.objectContaining({ userId: '2' }));
@@ -688,7 +688,7 @@ describe('ProjectSettings', () => {
 			const updateSpy = vi.spyOn(projectsStore, 'updateProject').mockResolvedValue(undefined);
 			renderComponent();
 			await nextTick();
-			emitters.n8nIconPicker.emit('update:model-value', { type: 'icon', value: 'zap' });
+			emitters.auraIconPicker.emit('update:model-value', { type: 'icon', value: 'zap' });
 			await nextTick();
 			expect(updateSpy).toHaveBeenCalled();
 			expect(mockShowMessage).toHaveBeenCalledWith(expect.objectContaining({ type: 'success' }));

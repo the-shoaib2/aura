@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [180, 750],
 			"id": "f0955b0a-3d0c-48ef-adb2-541915a9acef"
@@ -21,7 +21,7 @@
 				"repository": "nodeQA"
 			},
 			"name": "GitHub",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [620, 300],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"repository": "nodeQA"
 			},
 			"name": "GitHub1",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [770, 300],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"repository": "nodeQA"
 			},
 			"name": "GitHub2",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [920, 300],
 			"alwaysOutputData": true,
@@ -80,7 +80,7 @@
 				"repository": "nodeQA"
 			},
 			"name": "GitHub3",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [1070, 300],
 			"alwaysOutputData": true,
@@ -101,7 +101,7 @@
 				"repository": "nodeQA"
 			},
 			"name": "GitHub4",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [470, 300],
 			"executeOnce": false,
@@ -123,7 +123,7 @@
 				"getRepositoryIssuesFilters": {}
 			},
 			"name": "GitHub5",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [1210, 300],
 			"alwaysOutputData": true,
@@ -150,7 +150,7 @@
 				}
 			},
 			"name": "GitHub6",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [470, 460],
 			"alwaysOutputData": true,
@@ -178,7 +178,7 @@
 				}
 			},
 			"name": "GitHub7",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [630, 460],
 			"alwaysOutputData": true,
@@ -200,7 +200,7 @@
 				"asBinaryProperty": false
 			},
 			"name": "GitHub8",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [770, 460],
 			"alwaysOutputData": true,
@@ -227,7 +227,7 @@
 				}
 			},
 			"name": "GitHub9",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [910, 460],
 			"alwaysOutputData": true,
@@ -249,7 +249,7 @@
 				"assignees": []
 			},
 			"name": "GitHub10",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [470, 620],
 			"alwaysOutputData": true,
@@ -270,7 +270,7 @@
 				"body": "=Comment on issue at {{(new Date()).toGMTString()}}"
 			},
 			"name": "GitHub11",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [620, 620],
 			"alwaysOutputData": true,
@@ -294,7 +294,7 @@
 				}
 			},
 			"name": "GitHub12",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [770, 620],
 			"alwaysOutputData": true,
@@ -314,7 +314,7 @@
 				"issueNumber": "={{$node[\"GitHub10\"].json[\"number\"]}}"
 			},
 			"name": "GitHub13",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [920, 620],
 			"alwaysOutputData": true,
@@ -335,7 +335,7 @@
 				"lockReason": "spam"
 			},
 			"name": "GitHub14",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [1060, 620],
 			"alwaysOutputData": true,
@@ -359,7 +359,7 @@
 				}
 			},
 			"name": "GitHub15",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [470, 770],
 			"alwaysOutputData": true,
@@ -377,7 +377,7 @@
 				"owner": "nodemationqa"
 			},
 			"name": "GitHub16",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [470, 930],
 			"alwaysOutputData": true,
@@ -394,10 +394,10 @@
 				"resource": "user",
 				"operation": "invite",
 				"organization": "OrgnodeQA",
-				"email": "nodeqa@n8n.io"
+				"email": "nodeqa@aura.io"
 			},
 			"name": "GitHub17",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [660, 930],
 			"alwaysOutputData": true,
@@ -420,7 +420,7 @@
 				"additionalFields": {}
 			},
 			"name": "GitHub18",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [460, 1080],
 			"alwaysOutputData": true,
@@ -442,7 +442,7 @@
 				"limit": 1
 			},
 			"name": "GitHub19",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [610, 1080],
 			"alwaysOutputData": true,
@@ -464,7 +464,7 @@
 				"reviewId": "={{$node[\"GitHub18\"].json[\"id\"]}}"
 			},
 			"name": "GitHub20",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [750, 1080],
 			"alwaysOutputData": true,
@@ -487,7 +487,7 @@
 				"body": "=Updated {{$node[\"GitHub18\"].json[\"body\"]}}"
 			},
 			"name": "GitHub21",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [900, 1080],
 			"alwaysOutputData": true,
@@ -508,7 +508,7 @@
 				"limit": 1
 			},
 			"name": "GitHub22",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [620, 770],
 			"alwaysOutputData": true,
@@ -529,7 +529,7 @@
 				"release_id": "={{$node[\"GitHub15\"].json[\"id\"]}}"
 			},
 			"name": "GitHub23",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [770, 770],
 			"alwaysOutputData": true,
@@ -555,7 +555,7 @@
 				}
 			},
 			"name": "GitHub24",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [920, 770],
 			"alwaysOutputData": true,
@@ -576,7 +576,7 @@
 				"release_id": "={{$node[\"GitHub15\"].json[\"id\"]}}"
 			},
 			"name": "GitHub25",
-			"type": "n8n-nodes-base.github",
+			"type": "aura-nodes-base.github",
 			"typeVersion": 1,
 			"position": [1060, 770],
 			"alwaysOutputData": true,

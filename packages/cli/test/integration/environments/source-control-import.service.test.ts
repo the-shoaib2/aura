@@ -1,4 +1,4 @@
-import type { SourceControlledFile } from '@n8n/api-types';
+import type { SourceControlledFile } from '@aura/api-types';
 import {
 	createTeamProject,
 	getPersonalProject,
@@ -7,7 +7,7 @@ import {
 	randomCredentialPayload,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
+} from '@aura/backend-test-utils';
 import {
 	type CredentialsEntity,
 	CredentialsRepository,
@@ -19,19 +19,19 @@ import {
 	type WorkflowEntity,
 	WorkflowRepository,
 	WorkflowTagMappingRepository,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	FolderRepository,
 	ProjectRepository,
 	SharedCredentialsRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import * as fastGlob from 'fast-glob';
 import { mock } from 'jest-mock-extended';
-import { Cipher } from 'n8n-core';
-import type { InstanceSettings } from 'n8n-core';
-import * as utils from 'n8n-workflow';
+import { Cipher } from 'aura-core';
+import type { InstanceSettings } from 'aura-core';
+import * as utils from 'workflow';
 import { nanoid } from 'nanoid';
 import fsp from 'node:fs/promises';
 
@@ -92,7 +92,7 @@ describe('SourceControlImportService', () => {
 			mock(),
 			mock(),
 			folderRepository,
-			mock<InstanceSettings>({ n8nFolder: '/some-path' }),
+			mock<InstanceSettings>({ auraFolder: '/some-path' }),
 			sourceControlScopedService,
 		);
 	});

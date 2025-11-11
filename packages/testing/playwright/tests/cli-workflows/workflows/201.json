@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "87df2205-aeb2-453f-920f-89f4d9da9608"
@@ -26,7 +26,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 220],
 			"id": "5d51609e-46fa-4c57-b1ed-447eb36ff334"
@@ -42,7 +42,7 @@
 				}
 			},
 			"name": "Iterable",
-			"type": "n8n-nodes-base.iterable",
+			"type": "aura-nodes-base.iterable",
 			"typeVersion": 1,
 			"position": [590, 220],
 			"credentials": {
@@ -60,7 +60,7 @@
 				"userId": "={{$node[\"Set\"].json[\"userId\"]}}"
 			},
 			"name": "Iterable1",
-			"type": "n8n-nodes-base.iterable",
+			"type": "aura-nodes-base.iterable",
 			"typeVersion": 1,
 			"position": [900, 220],
 			"credentials": {
@@ -80,7 +80,7 @@
 				"value": "={{$node[\"Set\"].json[\"userId\"]}}"
 			},
 			"name": "Iterable2",
-			"type": "n8n-nodes-base.iterable",
+			"type": "aura-nodes-base.iterable",
 			"typeVersion": 1,
 			"position": [1050, 320],
 			"credentials": {
@@ -101,7 +101,7 @@
 				"additionalFields": {}
 			},
 			"name": "Iterable3",
-			"type": "n8n-nodes-base.iterable",
+			"type": "aura-nodes-base.iterable",
 			"typeVersion": 1,
 			"position": [1200, 320],
 			"credentials": {
@@ -122,7 +122,7 @@
 				}
 			},
 			"name": "Iterable4",
-			"type": "n8n-nodes-base.iterable",
+			"type": "aura-nodes-base.iterable",
 			"typeVersion": 1,
 			"position": [1350, 390],
 			"credentials": {
@@ -139,7 +139,7 @@
 				"email": "={{$node[\"Iterable1\"].json[\"email\"]}}"
 			},
 			"name": "Iterable5",
-			"type": "n8n-nodes-base.iterable",
+			"type": "aura-nodes-base.iterable",
 			"typeVersion": 1,
 			"position": [1500, 210],
 			"credentials": {
@@ -155,7 +155,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [740, 220],
 			"typeVersion": 1,
 			"id": "a4cdbbb5-a101-40f3-9f52-efe768d27e62"

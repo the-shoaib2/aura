@@ -1,11 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import { RoutingNode, UnrecognizedNodeTypeError } from 'n8n-core';
-import type {
-	LoadedClass,
-	INodeType,
-	IVersionedNodeType,
-	INodeTypeDescription,
-} from 'n8n-workflow';
+import { RoutingNode, UnrecognizedNodeTypeError } from 'aura-core';
+import type { LoadedClass, INodeType, IVersionedNodeType, INodeTypeDescription } from 'workflow';
 
 import { LoadNodesAndCredentials } from '@/load-nodes-and-credentials';
 import { NodeTypes } from '@/node-types';
@@ -21,7 +16,7 @@ describe('NodeTypes', () => {
 		sourcePath: '',
 		type: {
 			description: mock<INodeTypeDescription>({
-				name: 'n8n-nodes-base.nonVersioned',
+				name: 'aura-nodes-base.nonVersioned',
 				usableAsTool: undefined,
 			}),
 			supplyData: undefined,
@@ -33,7 +28,7 @@ describe('NodeTypes', () => {
 		sourcePath: '',
 		type: {
 			description: mock<INodeTypeDescription>({
-				name: 'n8n-nodes-base.versioned',
+				name: 'aura-nodes-base.versioned',
 			}),
 			currentVersion: 2,
 			nodeVersions: {
@@ -50,7 +45,7 @@ describe('NodeTypes', () => {
 		sourcePath: '',
 		type: {
 			description: mock<INodeTypeDescription>({
-				name: 'n8n-nodes-base.toolNode',
+				name: 'aura-nodes-base.toolNode',
 				displayName: 'TestNode',
 				properties: [],
 			}),
@@ -61,7 +56,7 @@ describe('NodeTypes', () => {
 		sourcePath: '',
 		type: {
 			description: mock<INodeTypeDescription>({
-				name: 'n8n-nodes-base.testNode',
+				name: 'aura-nodes-base.testNode',
 				displayName: 'TestNode',
 				usableAsTool: true,
 				properties: [],
@@ -73,7 +68,7 @@ describe('NodeTypes', () => {
 		sourcePath: '',
 		type: {
 			description: mock<INodeTypeDescription>({
-				name: 'n8n-nodes-base.declarativeNode',
+				name: 'aura-nodes-base.declarativeNode',
 				displayName: 'Declarative Node',
 				usableAsTool: true,
 				properties: [],
@@ -90,7 +85,7 @@ describe('NodeTypes', () => {
 		sourcePath: '',
 		type: {
 			description: mock<INodeTypeDescription>({
-				name: 'n8n-nodes-community.testNode',
+				name: 'aura-nodes-community.testNode',
 				displayName: 'TestNode',
 				usableAsTool: true,
 				properties: [],
@@ -101,13 +96,13 @@ describe('NodeTypes', () => {
 
 	loadNodesAndCredentials.getNode.mockImplementation((fullNodeType) => {
 		const [packageName, nodeType] = fullNodeType.split('.');
-		if (packageName === 'n8n-nodes-base') {
+		if (packageName === 'aura-nodes-base') {
 			if (nodeType === 'nonVersioned') return nonVersionedNode;
 			if (nodeType === 'versioned') return versionedNode;
 			if (nodeType === 'testNode') return toolSupportingNode;
 			if (nodeType === 'declarativeNode') return declarativeNode;
 			if (nodeType === 'toolNode') return toolNode;
-		} else if (fullNodeType === 'n8n-nodes-community.testNode') return communityNode;
+		} else if (fullNodeType === 'aura-nodes-community.testNode') return communityNode;
 		throw new UnrecognizedNodeTypeError(packageName, nodeType);
 	});
 
@@ -118,7 +113,7 @@ describe('NodeTypes', () => {
 
 	describe('getByName', () => {
 		it('should return node type when it exists', () => {
-			const result = nodeTypes.getByName('n8n-nodes-base.nonVersioned');
+			const result = nodeTypes.getByName('aura-nodes-base.nonVersioned');
 			expect(result).toBe(nonVersionedNode.type);
 		});
 	});
@@ -131,37 +126,37 @@ describe('NodeTypes', () => {
 		});
 
 		it('should throw an error if the node-type does not exist', () => {
-			expect(() => nodeTypes.getByNameAndVersion('n8n-nodes-base.unknownNode')).toThrow(
-				'Unrecognized node type: n8n-nodes-base.unknownNode',
+			expect(() => nodeTypes.getByNameAndVersion('aura-nodes-base.unknownNode')).toThrow(
+				'Unrecognized node type: aura-nodes-base.unknownNode',
 			);
 		});
 
 		it('should return a regular node-type without version', () => {
-			const result = nodeTypes.getByNameAndVersion('n8n-nodes-base.nonVersioned');
+			const result = nodeTypes.getByNameAndVersion('aura-nodes-base.nonVersioned');
 			expect(result).toBe(nonVersionedNode.type);
 		});
 
 		it('should return a regular node-type with version', () => {
-			const result = nodeTypes.getByNameAndVersion('n8n-nodes-base.versioned');
+			const result = nodeTypes.getByNameAndVersion('aura-nodes-base.versioned');
 			expect(result).toBe(v2Node);
 		});
 
 		it('should throw when a node-type is requested as tool, but does not support being used as one', () => {
-			expect(() => nodeTypes.getByNameAndVersion('n8n-nodes-base.nonVersionedTool')).toThrow(
+			expect(() => nodeTypes.getByNameAndVersion('aura-nodes-base.nonVersionedTool')).toThrow(
 				'Node cannot be used as a tool',
 			);
 		});
 
 		it('should throw when a node-type is requested as tool, but the original node is already a tool', () => {
-			expect(() => nodeTypes.getByNameAndVersion('n8n-nodes-base.toolNodeTool')).toThrow(
+			expect(() => nodeTypes.getByNameAndVersion('aura-nodes-base.toolNodeTool')).toThrow(
 				'Node already has a `supplyData` method',
 			);
 		});
 
 		it('should return the tool node-type when requested as tool', () => {
-			const result = nodeTypes.getByNameAndVersion('n8n-nodes-base.testNodeTool');
+			const result = nodeTypes.getByNameAndVersion('aura-nodes-base.testNodeTool');
 			expect(result).not.toEqual(toolSupportingNode.type);
-			expect(result.description.name).toEqual('n8n-nodes-base.testNodeTool');
+			expect(result.description.name).toEqual('aura-nodes-base.testNodeTool');
 			expect(result.description.displayName).toEqual('TestNode Tool');
 			expect(result.description.codex?.categories).toContain('AI');
 			expect(result.description.inputs).toEqual([]);
@@ -169,9 +164,9 @@ describe('NodeTypes', () => {
 		});
 
 		it('should return a tool node-type from a community node,  when requested as tool', () => {
-			const result = nodeTypes.getByNameAndVersion('n8n-nodes-community.testNodeTool');
+			const result = nodeTypes.getByNameAndVersion('aura-nodes-community.testNodeTool');
 			expect(result).not.toEqual(toolSupportingNode.type);
-			expect(result.description.name).toEqual('n8n-nodes-community.testNodeTool');
+			expect(result.description.name).toEqual('aura-nodes-community.testNodeTool');
 			expect(result.description.displayName).toEqual('TestNode Tool');
 			expect(result.description.codex?.categories).toContain('AI');
 			expect(result.description.inputs).toEqual([]);
@@ -179,7 +174,7 @@ describe('NodeTypes', () => {
 		});
 
 		it('should return a declarative node-type with an `.execute` method', () => {
-			const result = nodeTypes.getByNameAndVersion('n8n-nodes-base.declarativeNode');
+			const result = nodeTypes.getByNameAndVersion('aura-nodes-base.declarativeNode');
 			expect(result).toBe(declarativeNode.type);
 			expect(result.execute).toBeDefined();
 
@@ -189,9 +184,9 @@ describe('NodeTypes', () => {
 		});
 
 		it('should return a declarative node-type as a tool with an `.execute` method', () => {
-			const result = nodeTypes.getByNameAndVersion('n8n-nodes-base.declarativeNodeTool');
+			const result = nodeTypes.getByNameAndVersion('aura-nodes-base.declarativeNodeTool');
 			expect(result).not.toEqual(declarativeNode.type);
-			expect(result.description.name).toEqual('n8n-nodes-base.declarativeNodeTool');
+			expect(result.description.name).toEqual('aura-nodes-base.declarativeNodeTool');
 			expect(result.description.displayName).toEqual('Declarative Node Tool');
 			expect(result.description.codex?.categories).toContain('AI');
 			expect(result.description.inputs).toEqual([]);
@@ -206,15 +201,15 @@ describe('NodeTypes', () => {
 
 	describe('getWithSourcePath', () => {
 		it('should return description and source path for existing node', () => {
-			const result = nodeTypes.getWithSourcePath('n8n-nodes-base.nonVersioned', 1);
+			const result = nodeTypes.getWithSourcePath('aura-nodes-base.nonVersioned', 1);
 			expect(result).toHaveProperty('description');
 			expect(result).toHaveProperty('sourcePath');
 			expect(result.sourcePath).toBe(nonVersionedNode.sourcePath);
 		});
 
 		it('should throw error for non-existent node', () => {
-			expect(() => nodeTypes.getWithSourcePath('n8n-nodes-base.nonExistent', 1)).toThrow(
-				'Unrecognized node type: n8n-nodes-base.nonExistent',
+			expect(() => nodeTypes.getWithSourcePath('aura-nodes-base.nonExistent', 1)).toThrow(
+				'Unrecognized node type: aura-nodes-base.nonExistent',
 			);
 		});
 	});
@@ -222,26 +217,26 @@ describe('NodeTypes', () => {
 	describe('getKnownTypes', () => {
 		it('should return known node types', () => {
 			// @ts-expect-error readonly property
-			loadNodesAndCredentials.knownNodes = ['n8n-nodes-base.nonVersioned'];
+			loadNodesAndCredentials.knownNodes = ['aura-nodes-base.nonVersioned'];
 			const result = nodeTypes.getKnownTypes();
-			expect(result).toEqual(['n8n-nodes-base.nonVersioned']);
+			expect(result).toEqual(['aura-nodes-base.nonVersioned']);
 		});
 	});
 
 	describe('getNodeTypeDescriptions', () => {
 		it('should return descriptions for valid node types', () => {
 			const result = nodeTypes.getNodeTypeDescriptions([
-				{ name: 'n8n-nodes-base.nonVersioned', version: 1 },
+				{ name: 'aura-nodes-base.nonVersioned', version: 1 },
 			]);
 
 			expect(result).toHaveLength(1);
-			expect(result[0].name).toBe('n8n-nodes-base.nonVersioned');
+			expect(result[0].name).toBe('aura-nodes-base.nonVersioned');
 		});
 
 		it('should throw error for invalid node type', () => {
 			expect(() =>
-				nodeTypes.getNodeTypeDescriptions([{ name: 'n8n-nodes-base.nonExistent', version: 1 }]),
-			).toThrow('Unrecognized node type: n8n-nodes-base.nonExistent');
+				nodeTypes.getNodeTypeDescriptions([{ name: 'aura-nodes-base.nonExistent', version: 1 }]),
+			).toThrow('Unrecognized node type: aura-nodes-base.nonExistent');
 		});
 	});
 });

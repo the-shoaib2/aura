@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { onMounted, ref, computed, reactive } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { useToast } from '@/app/composables/useToast';
 import { useProvisioningStore } from '../provisioning.store';
-import { N8nHeading, N8nText, N8nSpinner, N8nInput, N8nButton } from '@n8n/design-system';
-import { type ProvisioningConfig } from '@n8n/rest-api-client';
+import { N8nHeading, N8nText, N8nSpinner, N8nInput, N8nButton } from '@aura/design-system';
+import { type ProvisioningConfig } from '@aura/rest-api-client';
 import EnableJitProvisioningDialog from '../components/EnableJitProvisioningDialog.vue';
 
 const i18n = useI18n();

@@ -1,12 +1,12 @@
-import type { OidcConfigDto, SamlPreferences } from '@n8n/api-types';
+import type { OidcConfigDto, SamlPreferences } from '@aura/api-types';
 import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import * as ssoApi from '@n8n/rest-api-client/api/sso';
-import type { SamlPreferencesExtractedData } from '@n8n/rest-api-client/api/sso';
-import * as ldapApi from '@n8n/rest-api-client/api/ldap';
-import type { LdapConfig } from '@n8n/rest-api-client/api/ldap';
-import type { IDataObject } from 'n8n-workflow';
+import { useRootStore } from '@aura/stores/useRootStore';
+import * as ssoApi from '@aura/rest-api-client/api/sso';
+import type { SamlPreferencesExtractedData } from '@aura/rest-api-client/api/sso';
+import * as ldapApi from '@aura/rest-api-client/api/ldap';
+import type { LdapConfig } from '@aura/rest-api-client/api/ldap';
+import type { IDataObject } from 'workflow';
 import { UserManagementAuthenticationMethod } from '@/Interface';
 
 export const SupportedProtocols = {

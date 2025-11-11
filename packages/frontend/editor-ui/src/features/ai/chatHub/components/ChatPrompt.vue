@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useToast } from '@/app/composables/useToast';
 import { providerDisplayNames } from '@/features/ai/chatHub/constants';
-import type { ChatHubLLMProvider, ChatModelDto } from '@n8n/api-types';
-import { N8nIconButton, N8nInput, N8nText } from '@n8n/design-system';
+import type { ChatHubLLMProvider, ChatModelDto } from '@aura/api-types';
+import { N8nIconButton, N8nInput, N8nText } from '@aura/design-system';
 import { useSpeechRecognition } from '@vueuse/core';
 import { computed, ref, useTemplateRef, watch } from 'vue';
 
@@ -36,7 +36,7 @@ const placeholder = computed(() =>
 );
 
 const llmProvider = computed<ChatHubLLMProvider | undefined>(() =>
-	selectedModel?.model.provider === 'n8n' || selectedModel?.model.provider === 'custom-agent'
+	selectedModel?.model.provider === 'aura' || selectedModel?.model.provider === 'custom-agent'
 		? undefined
 		: selectedModel?.model.provider,
 );

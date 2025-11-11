@@ -9,7 +9,7 @@
 			},
 			"id": "d0ab7e12-0e1b-4c08-8081-83107794f37d",
 			"name": "Error",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [680, 460],
 			"disabled": true
@@ -18,7 +18,7 @@
 			"parameters": {},
 			"id": "f5026145-66c1-463c-8ac8-46a1309a6632",
 			"name": "On clicking 'execute'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [460, 460]
 		},
@@ -28,7 +28,7 @@
 			},
 			"id": "9926f884-348a-4af0-872e-dd7c8b3da811",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [900, 460]
 		}

@@ -10,7 +10,7 @@ import { mockedStore } from '@/__tests__/utils';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { ProjectTypes, type Project } from '@/features/collaboration/projects/projects.types';
 import { useFoldersStore } from '../folders.store';
-import type { IUser } from 'n8n-workflow';
+import type { IUser } from 'workflow';
 
 vi.mock('vue-router', async (importOriginal) => ({
 	// eslint-disable-next-line @typescript-eslint/consistent-type-imports

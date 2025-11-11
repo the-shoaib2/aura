@@ -1,5 +1,5 @@
-import type { ImportWorkflowFromUrlDto } from '@n8n/api-types';
-import type { AuthenticatedRequest, IExecutionResponse } from '@n8n/db';
+import type { ImportWorkflowFromUrlDto } from '@aura/api-types';
+import type { AuthenticatedRequest, IExecutionResponse } from '@aura/db';
 import axios from 'axios';
 import type { Response } from 'express';
 import { mock } from 'jest-mock-extended';
@@ -46,7 +46,7 @@ describe('WorkflowsController', () => {
 				expect(axiosMock).toHaveBeenCalledWith(query.url);
 			});
 
-			it('when the data is not a valid n8n workflow JSON', async () => {
+			it('when the data is not a valid aura workflow JSON', async () => {
 				const invalidWorkflowData = {
 					nodes: 'not an array',
 					connections: 'not an object',

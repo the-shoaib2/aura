@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "9f813425-3fe0-49b6-9fc6-a1779bdb71e3",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [200, 420]
 		},
@@ -15,7 +15,7 @@
 					"string": [
 						{
 							"name": "data[0]",
-							"value": "n8n"
+							"value": "aura"
 						},
 						{
 							"name": "data[1]",
@@ -27,7 +27,7 @@
 			},
 			"id": "cf02f88c-e64d-4831-9d5b-954ad21ca3ae",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [360, 420]
 		},
@@ -38,7 +38,7 @@
 			},
 			"id": "364b8576-cb5d-4ca5-b497-e3437b45831a",
 			"name": "Item Lists",
-			"type": "n8n-nodes-base.itemLists",
+			"type": "aura-nodes-base.itemLists",
 			"typeVersion": 1,
 			"position": [520, 420]
 		},
@@ -48,7 +48,7 @@
 			},
 			"id": "73854e53-324d-46f8-a222-9a9897807307",
 			"name": "EC Once",
-			"type": "n8n-nodes-base.executeCommand",
+			"type": "aura-nodes-base.executeCommand",
 			"typeVersion": 1,
 			"position": [700, 300]
 		},
@@ -59,7 +59,7 @@
 			},
 			"id": "b47ec541-6e85-489f-b925-2f9a77681f18",
 			"name": "EC All",
-			"type": "n8n-nodes-base.executeCommand",
+			"type": "aura-nodes-base.executeCommand",
 			"typeVersion": 1,
 			"position": [700, 540]
 		}
@@ -70,7 +70,7 @@
 				"json": {
 					"exitCode": 0,
 					"stderr": "",
-					"stdout": "n8n"
+					"stdout": "aura"
 				}
 			}
 		],
@@ -79,7 +79,7 @@
 				"json": {
 					"exitCode": 0,
 					"stderr": "",
-					"stdout": "n8n"
+					"stdout": "aura"
 				}
 			},
 			{

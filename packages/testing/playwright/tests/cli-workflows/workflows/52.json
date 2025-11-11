@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 450],
 			"id": "20619e15-af58-4fc0-9d21-275a6e4d4ebb"
@@ -21,7 +21,7 @@
 				"limit": 1
 			},
 			"name": "Coda",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [430, 220],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"controlId": "={{$node[\"Coda\"].json[\"id\"]}}"
 			},
 			"name": "Coda1",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [580, 220],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"limit": 1
 			},
 			"name": "Coda2",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [430, 370],
 			"credentials": {
@@ -76,7 +76,7 @@
 				"formulaId": "={{$node[\"Coda2\"].json[\"id\"]}}"
 			},
 			"name": "Coda3",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [580, 370],
 			"credentials": {
@@ -95,7 +95,7 @@
 				"limit": 1
 			},
 			"name": "Coda4",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [430, 530],
 			"credentials": {
@@ -114,7 +114,7 @@
 				"columnId": "={{$node[\"Coda4\"].json[\"id\"]}}"
 			},
 			"name": "Coda5",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [580, 530],
 			"credentials": {
@@ -134,7 +134,7 @@
 				"options": {}
 			},
 			"name": "Coda6",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [730, 530],
 			"credentials": {
@@ -154,7 +154,7 @@
 				"options": {}
 			},
 			"name": "Coda7",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [880, 530],
 			"credentials": {
@@ -172,7 +172,7 @@
 				"options": {}
 			},
 			"name": "Coda8",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [1180, 530],
 			"credentials": {
@@ -200,7 +200,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1030, 530],
 			"id": "99b92bf6-f5d5-4c43-bd76-f55735c496f2"
@@ -213,7 +213,7 @@
 				"rowId": "={{$node[\"Coda6\"].json[\"id\"]}}"
 			},
 			"name": "Coda9",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [1480, 530],
 			"credentials": {
@@ -233,7 +233,7 @@
 				"columnId": "c-hTB8QwFtUS"
 			},
 			"name": "Coda10",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [1330, 530],
 			"credentials": {
@@ -252,7 +252,7 @@
 				"limit": 1
 			},
 			"name": "Coda11",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [430, 700],
 			"credentials": {
@@ -270,7 +270,7 @@
 				"viewId": "table-FTj1L0rh08"
 			},
 			"name": "Coda12",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [580, 700],
 			"credentials": {
@@ -290,7 +290,7 @@
 				"limit": 1
 			},
 			"name": "Coda13",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [730, 700],
 			"credentials": {
@@ -311,7 +311,7 @@
 				"options": {}
 			},
 			"name": "Coda14",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [880, 700],
 			"credentials": {
@@ -335,7 +335,7 @@
 				}
 			},
 			"name": "Coda15",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [1180, 700],
 			"credentials": {
@@ -363,7 +363,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1030, 700],
 			"id": "8af848c3-52a4-465b-99c7-e73c480825e4"
@@ -378,7 +378,7 @@
 				"columnId": "c-hTB8QwFtUS"
 			},
 			"name": "Coda16",
-			"type": "n8n-nodes-base.coda",
+			"type": "aura-nodes-base.coda",
 			"typeVersion": 1,
 			"position": [1330, 700],
 			"credentials": {

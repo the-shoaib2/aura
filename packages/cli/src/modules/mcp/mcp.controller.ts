@@ -1,9 +1,9 @@
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Post, RootLevelController } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { AuthenticatedRequest } from '@aura/db';
+import { Post, RootLevelController } from '@aura/decorators';
+import { Container } from '@aura/di';
 import type { Response } from 'express';
-import { ErrorReporter } from 'n8n-core';
+import { ErrorReporter } from 'aura-core';
 
 import { Telemetry } from '@/telemetry';
 

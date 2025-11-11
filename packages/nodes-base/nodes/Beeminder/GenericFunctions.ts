@@ -6,8 +6,8 @@ import type {
 	IWebhookFunctions,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { ApplicationError } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError } from 'workflow';
 
 const BEEMINDER_URI = 'https://www.beeminder.com/api/v1';
 

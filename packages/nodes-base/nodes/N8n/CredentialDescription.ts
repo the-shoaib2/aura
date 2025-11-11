@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { parseAndSetBodyJson } from './GenericFunctions';
 
@@ -58,7 +58,7 @@ const createOperation: INodeProperties[] = [
 		name: 'name',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. n8n account',
+		placeholder: 'e.g. aura account',
 		required: true,
 		displayOptions: {
 			show: {
@@ -79,7 +79,7 @@ const createOperation: INodeProperties[] = [
 		displayName: 'Credential Type',
 		name: 'credentialTypeName',
 		type: 'string',
-		placeholder: 'e.g. n8nApi',
+		placeholder: 'e.g. auraApi',
 		default: '',
 		required: true,
 		displayOptions: {
@@ -96,7 +96,7 @@ const createOperation: INodeProperties[] = [
 			},
 		},
 		description:
-			"The available types depend on nodes installed on the n8n instance. Some built-in types include e.g. 'githubApi', 'notionApi', and 'slackApi'.",
+			"The available types depend on nodes installed on the aura instance. Some built-in types include e.g. 'githubApi', 'notionApi', and 'slackApi'.",
 	},
 	{
 		displayName: 'Data',
@@ -104,7 +104,7 @@ const createOperation: INodeProperties[] = [
 		type: 'json',
 		default: '',
 		placeholder:
-			'// e.g. for n8nApi \n{\n  "apiKey": "my-n8n-api-key",\n  "baseUrl": "https://<name>.app.n8n.cloud/api/v1",\n}',
+			'// e.g. for auraApi \n{\n  "apiKey": "my-aura-api-key",\n  "baseUrl": "https://<name>.app.aura.cloud/api/v1",\n}',
 		required: true,
 		typeOptions: {
 			alwaysOpenEditWindow: true,
@@ -148,7 +148,7 @@ const getSchemaOperation: INodeProperties[] = [
 		displayName: 'Credential Type',
 		name: 'credentialTypeName',
 		default: '',
-		placeholder: 'e.g. n8nApi',
+		placeholder: 'e.g. auraApi',
 		required: true,
 		type: 'string',
 		displayOptions: {
@@ -158,7 +158,7 @@ const getSchemaOperation: INodeProperties[] = [
 			},
 		},
 		description:
-			"The available types depend on nodes installed on the n8n instance. Some built-in types include e.g. 'githubApi', 'notionApi', and 'slackApi'.",
+			"The available types depend on nodes installed on the aura instance. Some built-in types include e.g. 'githubApi', 'notionApi', and 'slackApi'.",
 	},
 ];
 

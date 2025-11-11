@@ -22,7 +22,7 @@
 					},
 					"id": "b4ef3357-de92-41c4-bc0d-526a736f463d",
 					"name": "When clicking \"Execute Workflow\"",
-					"type": "n8n-nodes-base.manualTrigger",
+					"type": "aura-nodes-base.manualTrigger",
 					"typeVersion": 1,
 					"position": [240, 640]
 				},
@@ -35,7 +35,7 @@
 					},
 					"id": "e5fb96ab-2e0c-4283-96f8-ad2b02fc6eb7",
 					"name": "Code",
-					"type": "n8n-nodes-base.code",
+					"type": "aura-nodes-base.code",
 					"typeVersion": 1,
 					"position": [460, 460]
 				}

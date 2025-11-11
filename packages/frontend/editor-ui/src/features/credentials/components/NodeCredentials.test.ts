@@ -28,7 +28,7 @@ const httpNode: INodeUi = {
 		options: {},
 		infoMessage: '',
 	},
-	type: 'n8n-nodes-base.httpRequest',
+	type: 'aura-nodes-base.httpRequest',
 	typeVersion: 4.2,
 	position: [-200, -160],
 	id: '416988b5-e994-42c7-8576-6ef28a7619b2',
@@ -47,12 +47,12 @@ const openAiNode: INodeUi = {
 		jsonOutput: false,
 		options: {},
 	},
-	type: '@n8n/n8n-nodes-langchain.openAi',
+	type: '@aura/aura-nodes-langchain.openAi',
 	typeVersion: 1.8,
 	position: [440, 0],
 	id: '17241295-a277-4cdf-8c46-6c3f85b335e9',
 	name: 'OpenAI',
-	credentials: { openAiApi: { id: 'byDFnd7vN5GzMVD2', name: 'n8n free OpenAI API credits' } },
+	credentials: { openAiApi: { id: 'byDFnd7vN5GzMVD2', name: 'aura free OpenAI API credits' } },
 	issues: { parameters: { modelId: ['Parameter "Model" is required.'] } },
 };
 
@@ -119,8 +119,8 @@ describe('NodeCredentials', () => {
 				test: { request: { baseURL: '={{$credentials?.url}}', url: '/models' } },
 				supportedNodes: ['openAi'],
 				iconUrl: {
-					light: 'icons/n8n-nodes-base/dist/nodes/OpenAi/openAi.svg',
-					dark: 'icons/n8n-nodes-base/dist/nodes/OpenAi/openAi.dark.svg',
+					light: 'icons/aura-nodes-base/dist/nodes/OpenAi/openAi.svg',
+					dark: 'icons/aura-nodes-base/dist/nodes/OpenAi/openAi.dark.svg',
 				},
 			},
 		};

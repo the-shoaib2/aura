@@ -1,5 +1,5 @@
-import type { INodeTypeBaseDescription, IVersionedNodeType } from 'n8n-workflow';
-import { VersionedNodeType } from 'n8n-workflow';
+import type { INodeTypeBaseDescription, IVersionedNodeType } from 'workflow';
+import { VersionedNodeType } from 'workflow';
 
 import { SeaTableTriggerV1 } from './v1/SeaTableTriggerV1.node';
 import { SeaTableTriggerV2 } from './v2/SeaTableTriggerV2.node';

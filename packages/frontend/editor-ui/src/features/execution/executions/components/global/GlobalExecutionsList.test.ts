@@ -3,10 +3,10 @@ import merge from 'lodash/merge';
 import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
 import { faker } from '@faker-js/faker';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { VIEWS } from '@/app/constants';
 import ExecutionsList from './GlobalExecutionsList.vue';
-import { randomInt, type ExecutionSummary } from 'n8n-workflow';
+import { randomInt, type ExecutionSummary } from 'workflow';
 import type { MockedStore } from '@/__tests__/utils';
 import {
 	mockedStore,
@@ -27,7 +27,7 @@ vi.mock('vue-router', () => ({
 	RouterLink: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		displayTimer: (timer: number) => timer,

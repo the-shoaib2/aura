@@ -1,4 +1,4 @@
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'workflow';
 
 import { paginatedRequest } from './strapi-utils';
 
@@ -21,8 +21,8 @@ export type StrapiCommunityNodeType = {
 	nodeVersions?: Array<{ npmVersion: string; checksum: string }>;
 };
 
-const N8N_VETTED_NODE_TYPES_STAGING_URL = 'https://api-staging.n8n.io/api/community-nodes';
-const N8N_VETTED_NODE_TYPES_PRODUCTION_URL = 'https://api.n8n.io/api/community-nodes';
+const N8N_VETTED_NODE_TYPES_STAGING_URL = 'https://api-staging.aura.io/api/community-nodes';
+const N8N_VETTED_NODE_TYPES_PRODUCTION_URL = 'https://api.aura.io/api/community-nodes';
 
 export async function getCommunityNodeTypes(
 	environment: 'staging' | 'production',

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "850eb506-8c40-4257-92f9-13b39588d01a"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "MQTT qos:1",
-			"type": "n8n-nodes-base.mqtt",
+			"type": "aura-nodes-base.mqtt",
 			"typeVersion": 1,
 			"position": [450, 160],
 			"credentials": {
@@ -44,7 +44,7 @@
 				}
 			},
 			"name": "MQTT1 qos:0",
-			"type": "n8n-nodes-base.mqtt",
+			"type": "aura-nodes-base.mqtt",
 			"typeVersion": 1,
 			"position": [450, 310],
 			"credentials": {
@@ -63,7 +63,7 @@
 				}
 			},
 			"name": "MQTT2 qos:2",
-			"type": "n8n-nodes-base.mqtt",
+			"type": "aura-nodes-base.mqtt",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"credentials": {
@@ -79,7 +79,7 @@
 				"functionCode": "items = [\n  {\n    json:{\n      \"message\":`MQTT-item-message${Date.now()}`\n    }\n  }\n]\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"id": "37ef3107-c80c-4bad-a5d6-3d9a349ca76a"

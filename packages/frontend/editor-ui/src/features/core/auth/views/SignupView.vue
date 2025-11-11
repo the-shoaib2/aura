@@ -6,7 +6,7 @@ import { computed, onMounted, ref } from 'vue';
 import type { IFormBoxConfig } from '@/Interface';
 import { VIEWS } from '@/app/constants';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRoute, useRouter } from 'vue-router';
 
 const usersStore = useUsersStore();

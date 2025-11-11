@@ -1,5 +1,5 @@
 import { type DeepMockProxy, mockDeep } from 'jest-mock-extended';
-import type { IDataObject, IExecuteFunctions } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions } from 'workflow';
 
 import { handlePagination, jiraSoftwareCloudApiRequestAllItems } from '../GenericFunctions';
 

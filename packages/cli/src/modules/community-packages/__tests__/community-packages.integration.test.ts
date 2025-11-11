@@ -1,4 +1,4 @@
-import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@aura/backend-test-utils';
 import path from 'path';
 
 import { LoadNodesAndCredentials } from '@/load-nodes-and-credentials';

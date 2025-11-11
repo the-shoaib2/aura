@@ -9,7 +9,7 @@ export interface Tag {
 }
 
 /**
- * Helper class for managing tags via the n8n API
+ * Helper class for managing tags via the aura API
  */
 export class TagApiHelper {
 	constructor(private readonly api: ApiHelpers) {}

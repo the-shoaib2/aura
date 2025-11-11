@@ -1,9 +1,9 @@
-import { TestCaseExecutionRepository, TestRunRepository } from '@n8n/db';
-import type { User } from '@n8n/db';
-import { Delete, Get, Post, RestController } from '@n8n/decorators';
+import { TestCaseExecutionRepository, TestRunRepository } from '@aura/db';
+import type { User } from '@aura/db';
+import { Delete, Get, Post, RestController } from '@aura/decorators';
 import express from 'express';
-import { InstanceSettings } from 'n8n-core';
-import { UnexpectedError } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { UnexpectedError } from 'workflow';
 
 import { ConflictError } from '@/errors/response-errors/conflict.error';
 import { NotFoundError } from '@/errors/response-errors/not-found.error';

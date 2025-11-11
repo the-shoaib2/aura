@@ -1,7 +1,7 @@
-import { SecurityConfig } from '@n8n/config';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-import { UserError } from 'n8n-workflow';
+import { SecurityConfig } from '@aura/config';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
+import { UserError } from 'workflow';
 import z from 'zod';
 
 import { RISK_CATEGORIES } from '@/security-audit/constants';
@@ -23,7 +23,7 @@ const flagsSchema = z.object({
 
 @Command({
 	name: 'audit',
-	description: 'Generate a security audit report for this n8n instance',
+	description: 'Generate a security audit report for this aura instance',
 	examples: ['', '--categories=database,credentials', '--days-abandoned-workflow=10'],
 	flagsSchema,
 })

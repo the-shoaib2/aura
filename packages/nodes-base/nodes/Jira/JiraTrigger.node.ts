@@ -6,8 +6,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import {
 	allEvents,
@@ -63,7 +63,7 @@ export class JiraTrigger implements INodeType {
 				},
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-class-description-credentials-name-unsuffixed
+				// eslint-disable-next-line aura-nodes-base/node-class-description-credentials-name-unsuffixed
 				name: 'httpQueryAuth',
 				displayName: 'Credentials to Authenticate Webhook',
 				displayOptions: {
@@ -462,7 +462,7 @@ export class JiraTrigger implements INodeType {
 				}
 
 				const body = {
-					name: `n8n-webhook:${webhookUrl}`,
+					name: `aura-webhook:${webhookUrl}`,
 					url: webhookUrl,
 					events,
 					filters: {},
@@ -501,7 +501,7 @@ export class JiraTrigger implements INodeType {
 
 				if (additionalFields.includeFields) {
 					for (const field of additionalFields.includeFields as string[]) {
-						// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+						// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 						parameters[field] = '${' + field + '}';
 					}
 				}

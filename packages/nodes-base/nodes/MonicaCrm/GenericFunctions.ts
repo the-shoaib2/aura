@@ -5,8 +5,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError } from 'workflow';
 
 import type { LoaderGetResponse } from './types';
 
@@ -92,7 +92,7 @@ export async function monicaCrmApiRequestAllItems(
 }
 
 /**
- * Get day, month, and year from the n8n UI datepicker.
+ * Get day, month, and year from the aura UI datepicker.
  */
 export const getDateParts = (date: string) => date.split('T')[0].split('-').map(Number).reverse();
 

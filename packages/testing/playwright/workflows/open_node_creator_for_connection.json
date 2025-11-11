@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "25ff0c17-7064-4e14-aec6-45c71d63201b",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [740, 520]
 		},
@@ -13,7 +13,7 @@
 			"parameters": {},
 			"id": "49f376ca-845b-4737-aac0-073d0e4fa95c",
 			"name": "Token Splitter",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [1180, 540]
 		},
@@ -21,7 +21,7 @@
 			"parameters": {},
 			"id": "d1db5111-4b01-4620-8ccb-a16ea576c363",
 			"name": "Memory",
-			"type": "@n8n/n8n-nodes-langchain.memoryXata",
+			"type": "@aura/aura-nodes-langchain.memoryXata",
 			"typeVersion": 1.2,
 			"position": [940, 540],
 			"credentials": {
@@ -35,7 +35,7 @@
 			"parameters": {},
 			"id": "b08b6d3a-bef8-42ac-9cef-ec9d4e5402b1",
 			"name": "Output Parser",
-			"type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+			"type": "@aura/aura-nodes-langchain.outputParserStructured",
 			"typeVersion": 1.1,
 			"position": [1060, 540]
 		},
@@ -43,7 +43,7 @@
 			"parameters": {},
 			"id": "ee557938-9cf1-4b78-afef-c783c52fd307",
 			"name": "Tool",
-			"type": "@n8n/n8n-nodes-langchain.toolWikipedia",
+			"type": "@aura/aura-nodes-langchain.toolWikipedia",
 			"typeVersion": 1,
 			"position": [1300, 540]
 		},
@@ -53,7 +53,7 @@
 			},
 			"id": "814f2e9c-cc7b-4f3c-89b4-d6eb82bc24df",
 			"name": "Embeddings",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsHuggingFaceInference",
+			"type": "@aura/aura-nodes-langchain.embeddingsHuggingFaceInference",
 			"typeVersion": 1,
 			"position": [1420, 540]
 		},
@@ -68,7 +68,7 @@
 			},
 			"id": "e8569b0b-a580-4249-9c5e-f1feed5c644e",
 			"name": "Vector Store",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+			"type": "@aura/aura-nodes-langchain.vectorStoreSupabase",
 			"typeVersion": 1,
 			"position": [1540, 540]
 		}

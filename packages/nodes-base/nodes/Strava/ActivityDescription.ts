@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const activityOperations: INodeProperties[] = [
 	{
@@ -307,7 +307,7 @@ export const activityFields: INodeProperties[] = [
 				name: 'hide_from_home',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description: 'Do not publish to Home or Club feeds',
 			},
 			{

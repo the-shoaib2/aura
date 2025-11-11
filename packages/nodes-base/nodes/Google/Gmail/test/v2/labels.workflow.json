@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-60, 100],
 			"id": "636b40bc-2c98-4b9a-8ce2-9d1322294518",
@@ -16,7 +16,7 @@
 				"name": "Test Label Name",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [220, -180],
 			"id": "45758452-3b5b-478d-aece-001e117ce69d",
@@ -35,7 +35,7 @@
 				"operation": "delete",
 				"labelId": "test-label-id"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [220, 20],
 			"id": "ed979c3a-b2ea-413e-be63-0392cc1714a5",
@@ -54,7 +54,7 @@
 				"operation": "get",
 				"labelId": "test-label-id"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [220, 200],
 			"id": "8802fdb5-2741-407b-82a4-ccedc4055076",
@@ -72,7 +72,7 @@
 				"resource": "label",
 				"limit": 2
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [220, 400],
 			"id": "bae81586-7641-4fdc-81a4-0006b289bf9d",

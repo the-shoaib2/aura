@@ -1,8 +1,8 @@
-import { mockLogger } from '@n8n/backend-test-utils';
-import { OnPubSubEvent, PubSubMetadata } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import { mockLogger } from '@aura/backend-test-utils';
+import { OnPubSubEvent, PubSubMetadata } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 
 import { PubSubEventBus } from '../pubsub.eventbus';
 import { PubSubRegistry } from '../pubsub.registry';

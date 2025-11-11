@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "4509b9ad-036c-4042-9094-565f3831b616"
@@ -19,7 +19,7 @@
 				"id": "0dwFxqYkvZLSA6U6XfQcDV"
 			},
 			"name": "Spotify",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [440, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"limit": 1
 			},
 			"name": "Spotify1",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"id": "0dwFxqYkvZLSA6U6XfQcDV"
 			},
 			"name": "Spotify2",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [600, 150],
 			"credentials": {
@@ -75,7 +75,7 @@
 				"id": "0dwFxqYkvZLSA6U6XfQcDV"
 			},
 			"name": "Spotify3",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [600, 460],
 			"credentials": {
@@ -93,7 +93,7 @@
 				"id": "={{$node[\"Spotify1\"].json[\"id\"]}}"
 			},
 			"name": "Spotify4",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [810, 300],
 			"credentials": {
@@ -112,7 +112,7 @@
 				"limit": 1
 			},
 			"name": "Spotify5",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [1100, 300],
 			"credentials": {
@@ -130,7 +130,7 @@
 				"id": "={{$node[\"Spotify5\"].json[\"id\"]}}"
 			},
 			"name": "Spotify6",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [1250, 300],
 			"credentials": {
@@ -148,7 +148,7 @@
 				"id": "={{$node[\"Spotify5\"].json[\"id\"]}}"
 			},
 			"name": "Spotify7",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [1400, 300],
 			"credentials": {
@@ -166,7 +166,7 @@
 				"limit": 1
 			},
 			"name": "Spotify8",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [450, 610],
 			"credentials": {
@@ -184,7 +184,7 @@
 				"id": "={{$node[\"Spotify8\"].json[\"id\"]}}"
 			},
 			"name": "Spotify9",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [600, 610],
 			"credentials": {
@@ -203,7 +203,7 @@
 				"additionalFields": {}
 			},
 			"name": "Spotify10",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [750, 610],
 			"credentials": {
@@ -222,7 +222,7 @@
 				"limit": 1
 			},
 			"name": "Spotify11",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [900, 610],
 			"credentials": {
@@ -241,7 +241,7 @@
 				"trackID": "spotify:track:2ea6bt302Bq8Hiulp8Bn2C"
 			},
 			"name": "Spotify12",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [1050, 610],
 			"credentials": {
@@ -258,7 +258,7 @@
 				"limit": 1
 			},
 			"name": "Spotify14",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [450, 0],
 			"credentials": {
@@ -274,7 +274,7 @@
 				"operation": "currentlyPlaying"
 			},
 			"name": "Spotify15",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [600, 0],
 			"credentials": {
@@ -295,7 +295,7 @@
 				}
 			},
 			"name": "Spotify13",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [950, 300],
 			"credentials": {
@@ -316,7 +316,7 @@
 				}
 			},
 			"name": "Spotify16",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [1200, 610],
 			"credentials": {
@@ -333,7 +333,7 @@
 				"limit": 1
 			},
 			"name": "Spotify17",
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"credentials": {

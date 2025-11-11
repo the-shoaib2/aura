@@ -4,7 +4,7 @@ import {
 	createWorkflow,
 	testDb,
 	randomCredentialPayload,
-} from '@n8n/backend-test-utils';
+} from '@aura/backend-test-utils';
 import {
 	CredentialsEntity,
 	SettingsRepository,
@@ -13,8 +13,8 @@ import {
 	SharedWorkflowRepository,
 	UserRepository,
 	GLOBAL_OWNER_ROLE,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 
 import { Reset } from '@/commands/user-management/reset';
 import { LoadNodesAndCredentials } from '@/load-nodes-and-credentials';

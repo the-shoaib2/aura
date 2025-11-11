@@ -24,9 +24,9 @@ import { useViewStacks } from '../../composables/useViewStacks';
 
 import ItemsRenderer from '../Renderers/ItemsRenderer.vue';
 import CategorizedItemsRenderer from '../Renderers/CategorizedItemsRenderer.vue';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'workflow';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 import OrderSwitcher from './../OrderSwitcher.vue';
 import { getActiveViewCallouts, isNodePreviewKey } from '../../nodeCreator.utils';
@@ -35,7 +35,7 @@ import CommunityNodeInfo from '@/features/settings/communityNodes/components/nod
 import CommunityNodeFooter from '@/features/settings/communityNodes/components/nodeCreator/CommunityNodeFooter.vue';
 import { useCalloutHelpers } from '@/app/composables/useCalloutHelpers';
 
-import { N8nCallout, N8nInfoTip } from '@n8n/design-system';
+import { N8nCallout, N8nInfoTip } from '@aura/design-system';
 const emit = defineEmits<{
 	nodeTypeSelected: [value: NodeTypeSelectedPayload[]];
 }>();
@@ -289,7 +289,7 @@ const callouts = computed<INodeCreateElement[]>(() =>
 							data-test-id="actions-panel-no-triggers-callout"
 						>
 							<span
-								v-n8n-html="
+								v-aura-html="
 									i18n.baseText('nodeCreator.actionsCallout.noTriggerItems', {
 										interpolate: { nodeName: subcategory ?? '' },
 									})
@@ -300,7 +300,7 @@ const callouts = computed<INodeCreateElement[]>(() =>
 					</template>
 					<template v-else #empty>
 						<p
-							v-n8n-html="i18n.baseText('nodeCreator.actionsCategory.noMatchingTriggers')"
+							v-aura-html="i18n.baseText('nodeCreator.actionsCategory.noMatchingTriggers')"
 							:class="$style.resetSearch"
 							@click="resetSearch"
 						/>
@@ -324,13 +324,13 @@ const callouts = computed<INodeCreateElement[]>(() =>
 						slim
 						data-test-id="actions-panel-activation-callout"
 					>
-						<span v-n8n-html="i18n.baseText('nodeCreator.actionsCallout.triggersStartWorkflow')" />
+						<span v-aura-html="i18n.baseText('nodeCreator.actionsCallout.triggersStartWorkflow')" />
 					</N8nCallout>
 					<!-- Empty state -->
 					<template #empty>
 						<N8nInfoTip v-if="!search" theme="info" type="note" :class="$style.actionsEmpty">
 							<span
-								v-n8n-html="
+								v-aura-html="
 									i18n.baseText('nodeCreator.actionsCallout.noActionItems', {
 										interpolate: { nodeName: subcategory ?? '' },
 									})
@@ -339,7 +339,7 @@ const callouts = computed<INodeCreateElement[]>(() =>
 						</N8nInfoTip>
 						<p
 							v-else
-							v-n8n-html="i18n.baseText('nodeCreator.actionsCategory.noMatchingActions')"
+							v-aura-html="i18n.baseText('nodeCreator.actionsCategory.noMatchingActions')"
 							:class="$style.resetSearch"
 							data-test-id="actions-panel-no-matching-actions"
 							@click="resetSearch"
@@ -350,7 +350,7 @@ const callouts = computed<INodeCreateElement[]>(() =>
 		</OrderSwitcher>
 		<div v-if="containsAPIAction && !communityNodeDetails" :class="$style.apiHint">
 			<span
-				v-n8n-html="
+				v-aura-html="
 					i18n.baseText('nodeCreator.actionsList.apiCall', {
 						interpolate: { node: subcategory ?? '' },
 					})

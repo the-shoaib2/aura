@@ -1,8 +1,8 @@
 import type { TestRunRecord } from './evaluation.api';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
-import type { IconColor } from '@n8n/design-system/types/icon';
+import { type IconName } from '@aura/design-system/components/N8nIcon/icons';
+import type { IconColor } from '@aura/design-system/types/icon';
 
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 
 const TEST_CASE_EXECUTION_ERROR_CODE = {
 	MOCKED_NODE_NOT_FOUND: 'MOCKED_NODE_NOT_FOUND',

@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { Role } from '@n8n/permissions';
+import type { Role } from '@aura/permissions';
 import { computed, ref, watch, onBeforeMount, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
-import { deepCopy } from 'n8n-workflow';
+import { deepCopy } from 'workflow';
 import { useDebounceFn } from '@vueuse/core';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { type ResourceCounts, useProjectsStore } from '../projects.store';
 import type { Project, ProjectRelation, ProjectMemberData } from '../projects.types';
 import { useToast } from '@/app/composables/useToast';
@@ -18,9 +18,12 @@ import { useCloudPlanStore } from '@/app/stores/cloudPlan.store';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import ProjectHeader from '../components/ProjectHeader.vue';
-import { isIconOrEmoji, type IconOrEmoji } from '@n8n/design-system/components/N8nIconPicker/types';
-import type { TableOptions } from '@n8n/design-system/components/N8nDataTableServer';
-import type { UserAction } from '@n8n/design-system';
+import {
+	isIconOrEmoji,
+	type IconOrEmoji,
+} from '@aura/design-system/components/N8nIconPicker/types';
+import type { TableOptions } from '@aura/design-system/components/N8nDataTableServer';
+import type { UserAction } from '@aura/design-system';
 import { isProjectRole } from '@/app/utils/typeGuards';
 
 import {
@@ -31,7 +34,7 @@ import {
 	N8nInput,
 	N8nText,
 	N8nUserSelect,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 type FormDataDiff = {
 	name?: string;
 	description?: string;

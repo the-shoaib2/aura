@@ -3,8 +3,8 @@ import type {
 	ICredentialType,
 	IHttpRequestOptions,
 	INodeProperties,
-} from 'n8n-workflow';
-import { ApplicationError } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError } from 'workflow';
 
 import { type AwsAssumeRoleCredentialsType, type AWSRegion } from './common/aws/types';
 import { awsCustomEndpoints, awsRegionProperty } from './common/aws/descriptions';
@@ -30,7 +30,7 @@ export class AwsAssumeRole implements ICredentialType {
 			displayName: 'Use System Credentials',
 			name: 'useSystemCredentialsForRole',
 			description:
-				'Use system credentials (environment variables, container role, etc.) to call STS.AssumeRole. Access to AWS system credentials is disabled by default and must be explicitly enabled. See <a href="https://docs.n8n.io/integrations/credentials/awsassumerole/">documentation</a> for more information.',
+				'Use system credentials (environment variables, container role, etc.) to call STS.AssumeRole. Access to AWS system credentials is disabled by default and must be explicitly enabled. See <a href="https://docs.aura.io/integrations/credentials/awsassumerole/">documentation</a> for more information.',
 			type: 'boolean',
 			default: false,
 			displayOptions: {
@@ -41,7 +41,7 @@ export class AwsAssumeRole implements ICredentialType {
 			displayName: 'STS Access Key ID',
 			name: 'stsAccessKeyId',
 			description: 'Access Key ID to use for the STS.AssumeRole call',
-			// eslint-disable-next-line n8n-nodes-base/cred-class-field-type-options-password-missing
+			// eslint-disable-next-line aura-nodes-base/cred-class-field-type-options-password-missing
 			type: 'string',
 			displayOptions: {
 				show: {
@@ -110,7 +110,7 @@ export class AwsAssumeRole implements ICredentialType {
 			description: 'Name for the role session',
 			type: 'string',
 			required: true,
-			default: 'n8n-session',
+			default: 'aura-session',
 		},
 		...awsCustomEndpoints,
 	];

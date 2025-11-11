@@ -2,9 +2,9 @@ import { createComponentRenderer } from '@/__tests__/render';
 import WorkflowExecutionsCard from './WorkflowExecutionsCard.vue';
 import { setActivePinia } from 'pinia';
 import { createTestingPinia } from '@pinia/testing';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import type { ComponentProps } from 'vue-component-type-helpers';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'workflow';
 
 vi.mock('vue-router', () => ({
 	useRoute: () => ({
@@ -19,7 +19,7 @@ const initialState = {
 		settings: {
 			templates: {
 				enabled: true,
-				host: 'https://api.n8n.io/api/',
+				host: 'https://api.aura.io/api/',
 			},
 			license: {
 				environment: 'development',

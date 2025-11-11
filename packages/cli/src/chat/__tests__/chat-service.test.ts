@@ -1,11 +1,11 @@
-import type { Logger } from '@n8n/backend-common';
+import type { Logger } from '@aura/backend-common';
 import { mock } from 'jest-mock-extended';
 import { WebSocket } from 'ws';
 
 import type { ChatExecutionManager } from '../chat-execution-manager';
 import { ChatService } from '../chat-service';
 import type { ChatRequest } from '../chat-service.types';
-import type { ErrorReporter } from 'n8n-core';
+import type { ErrorReporter } from 'aura-core';
 
 describe('ChatService', () => {
 	let mockExecutionManager: ReturnType<typeof mock<ChatExecutionManager>>;
@@ -168,7 +168,7 @@ describe('ChatService', () => {
 
 				await (chatService as any).checkHeartbeats();
 
-				expect(mockWs.send).toHaveBeenCalledWith('n8n|heartbeat');
+				expect(mockWs.send).toHaveBeenCalledWith('aura|heartbeat');
 				expect(clearInterval).toHaveBeenCalledWith(123);
 				expect((chatService as any).sessions.get(sessionKey)).toBeUndefined();
 			});
@@ -186,7 +186,7 @@ describe('ChatService', () => {
 
 				await (chatService as any).checkHeartbeats();
 
-				expect(mockWs.send).toHaveBeenCalledWith('n8n|heartbeat');
+				expect(mockWs.send).toHaveBeenCalledWith('aura|heartbeat');
 				expect((chatService as any).sessions.get(sessionKey)).toBeDefined();
 			});
 		});
@@ -210,7 +210,7 @@ describe('ChatService', () => {
 			};
 			(chatService as any).sessions.set(sessionKey, session);
 
-			const data = 'n8n|heartbeat-ack';
+			const data = 'aura|heartbeat-ack';
 			const incomingMessageHandler = (chatService as any).incomingMessageHandler(sessionKey);
 			await incomingMessageHandler(data);
 
@@ -315,7 +315,7 @@ describe('ChatService', () => {
 			);
 			await pollAndProcessChatResponses();
 
-			expect(session.connection.send).toHaveBeenCalledWith('n8n|continue');
+			expect(session.connection.send).toHaveBeenCalledWith('aura|continue');
 			expect(session.nodeWaitingForChatResponse).toBeUndefined();
 		});
 
@@ -364,7 +364,7 @@ describe('ChatService', () => {
 			mockExecutionManager.findExecution.mockResolvedValue({
 				status: 'success',
 				data: { resultData: { lastNodeExecuted: 'node1' } },
-				workflowData: { nodes: [{ type: 'n8n-core.respondToWebhook', name: 'node1' }] },
+				workflowData: { nodes: [{ type: 'aura-core.respondToWebhook', name: 'node1' }] },
 				mode: 'manual',
 			} as any);
 

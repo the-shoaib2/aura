@@ -4,11 +4,11 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { computed, onMounted, onBeforeUnmount } from 'vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
-import { NodeConnectionTypes, type INodeTypeDescription } from 'n8n-workflow';
+import { NodeConnectionTypes, type INodeTypeDescription } from 'workflow';
 import { NDV_UI_OVERHAUL_EXPERIMENT } from '@/app/constants';
 import { usePostHog } from '@/app/stores/posthog.store';
 
-import { N8nTooltip } from '@n8n/design-system';
+import { N8nTooltip } from '@aura/design-system';
 interface Props {
 	rootNode: INodeUi;
 }

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "280bf9cc-7749-4adb-972f-17c43e386aa9"
@@ -19,7 +19,7 @@
 				"title": "=Slides{{(new Date()).toUTCString()}}"
 			},
 			"name": "Google Slides",
-			"type": "n8n-nodes-base.googleSlides",
+			"type": "aura-nodes-base.googleSlides",
 			"typeVersion": 1,
 			"position": [480, 220],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"presentationId": "={{$node[\"Google Slides\"].json[\"presentationId\"]}}"
 			},
 			"name": "Google Slides1",
-			"type": "n8n-nodes-base.googleSlides",
+			"type": "aura-nodes-base.googleSlides",
 			"typeVersion": 1,
 			"position": [640, 220],
 			"credentials": {
@@ -55,7 +55,7 @@
 				"presentationId": "={{$node[\"Google Slides\"].json[\"presentationId\"]}}"
 			},
 			"name": "Google Slides2",
-			"type": "n8n-nodes-base.googleSlides",
+			"type": "aura-nodes-base.googleSlides",
 			"typeVersion": 1,
 			"position": [800, 220],
 			"credentials": {
@@ -75,7 +75,7 @@
 					"textValues": [
 						{
 							"pageObjectIds": ["p"],
-							"replaceText": "n8n",
+							"replaceText": "aura",
 							"text": "Title"
 						}
 					]
@@ -85,7 +85,7 @@
 				}
 			},
 			"name": "Google Slides3",
-			"type": "n8n-nodes-base.googleSlides",
+			"type": "aura-nodes-base.googleSlides",
 			"typeVersion": 1,
 			"position": [500, 50],
 			"credentials": {
@@ -106,7 +106,7 @@
 				"download": true
 			},
 			"name": "Google Slides4",
-			"type": "n8n-nodes-base.googleSlides",
+			"type": "aura-nodes-base.googleSlides",
 			"typeVersion": 1,
 			"position": [640, 390],
 			"credentials": {
@@ -125,7 +125,7 @@
 				"pageObjectId": "p"
 			},
 			"name": "Google Slides5",
-			"type": "n8n-nodes-base.googleSlides",
+			"type": "aura-nodes-base.googleSlides",
 			"typeVersion": 1,
 			"position": [800, 390],
 			"credentials": {
@@ -146,7 +146,7 @@
 						{
 							"pageObjectIds": ["p"],
 							"replaceText": "Title",
-							"text": "n8n"
+							"text": "aura"
 						}
 					]
 				},
@@ -155,7 +155,7 @@
 				}
 			},
 			"name": "Google Slides6",
-			"type": "n8n-nodes-base.googleSlides",
+			"type": "aura-nodes-base.googleSlides",
 			"typeVersion": 1,
 			"position": [650, 50],
 			"credentials": {

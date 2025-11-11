@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.lonescale",
+	"node": "aura-nodes-base.lonescale",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Sales"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/lonescale/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/lonescale/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.lonescale/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.lonescale/"
 			}
 		]
 	}

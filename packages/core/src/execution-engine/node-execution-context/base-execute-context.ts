@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import get from 'lodash/get';
 import type {
 	Workflow,
@@ -23,7 +23,7 @@ import type {
 	NodeConnectionType,
 	Result,
 	IExecuteFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	ApplicationError,
 	NodeHelpers,
@@ -31,7 +31,7 @@ import {
 	WAIT_INDEFINITELY,
 	WorkflowDataProxy,
 	createEnvProviderState,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { BinaryDataService } from '@/binary-data/binary-data.service';
 
@@ -169,7 +169,7 @@ export class BaseExecuteContext extends NodeExecutionContext {
 
 	getInputSourceData(inputIndex = 0, connectionType = NodeConnectionTypes.Main): ISourceData {
 		if (this.executeData?.source === null) {
-			// Should never happen as n8n sets it automatically
+			// Should never happen as aura sets it automatically
 			throw new ApplicationError('Source data is missing');
 		}
 		return this.executeData.source[connectionType][inputIndex]!;

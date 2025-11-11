@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'workflow';
 
 global.fetch = jest.fn();
 
@@ -6,17 +6,17 @@ class MockSecurityConfig {
 	awsSystemCredentialsAccess = true;
 }
 
-jest.mock('@n8n/di', () => ({
+jest.mock('@aura/di', () => ({
 	Container: {
 		get: jest.fn(),
 	},
 }));
 
-jest.mock('@n8n/config', () => ({
+jest.mock('@aura/config', () => ({
 	SecurityConfig: MockSecurityConfig,
 }));
 
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import * as systemCredentialsUtils from './system-credentials-utils';
 
 const mockEnvGetter = jest.fn();
@@ -244,7 +244,7 @@ describe('system-credentials-utils', () => {
 				expect.objectContaining({
 					method: 'GET',
 					headers: {
-						'User-Agent': 'n8n-aws-credential',
+						'User-Agent': 'aura-aws-credential',
 					},
 				}),
 			);
@@ -279,7 +279,7 @@ describe('system-credentials-utils', () => {
 				'http://169.254.170.2/v2/credentials/test-uuid',
 				expect.objectContaining({
 					headers: {
-						'User-Agent': 'n8n-aws-credential',
+						'User-Agent': 'aura-aws-credential',
 						Authorization: 'Bearer test-auth-token',
 					},
 				}),
@@ -368,7 +368,7 @@ describe('system-credentials-utils', () => {
 				expect.objectContaining({
 					method: 'GET',
 					headers: {
-						'User-Agent': 'n8n-aws-credential',
+						'User-Agent': 'aura-aws-credential',
 					},
 				}),
 			);
@@ -403,7 +403,7 @@ describe('system-credentials-utils', () => {
 				'https://eks-pod-identity.amazonaws.com/v1/credentials',
 				expect.objectContaining({
 					headers: {
-						'User-Agent': 'n8n-aws-credential',
+						'User-Agent': 'aura-aws-credential',
 						Authorization: 'Bearer test-auth-token',
 					},
 				}),

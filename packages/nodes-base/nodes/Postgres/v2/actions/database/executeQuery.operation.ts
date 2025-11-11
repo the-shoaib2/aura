@@ -1,10 +1,5 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { getResolvables, updateDisplayOptions } from '@utils/utilities';
 
@@ -32,7 +27,7 @@ const properties: INodeProperties[] = [
 		noDataExpression: true,
 		required: true,
 		description:
-			"The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.",
+			"The SQL query to execute. You can use aura expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.",
 		typeOptions: {
 			editor: 'sqlEditor',
 			sqlDialect: 'PostgreSQL',

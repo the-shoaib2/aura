@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { usePersonalizedTemplatesStore } from '@/experiments/personalizedTemplates/stores/personalizedTemplates.store';
-import { useI18n } from '@n8n/i18n';
-import { N8nCallout, N8nIcon, N8nLink } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nCallout, N8nIcon, N8nLink } from '@aura/design-system';
 
 type SuggestedWorkflow = {
 	id: number;

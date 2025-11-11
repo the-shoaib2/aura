@@ -16,11 +16,11 @@ import {
 	ChatHubN8nModel,
 	ChatHubCustomAgentModel,
 	emptyChatModelsResponse,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { ExecutionRepository, IExecutionResponse, User, WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import type { EntityManager } from '@n8n/typeorm';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { ExecutionRepository, IExecutionResponse, User, WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import type { EntityManager } from '@aura/typeorm';
 import type { Response } from 'express';
 import {
 	CHAT_TRIGGER_NODE_TYPE,
@@ -37,7 +37,7 @@ import {
 	IRunExecutionData,
 	INodeParameters,
 	INode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { ActiveExecutions } from '@/active-executions';
 import { CredentialsFinderService } from '@/credentials/credentials-finder.service';
@@ -101,7 +101,7 @@ export class ChatHubService {
 				async (provider: ChatHubProvider) => {
 					const credentials: INodeCredentials = {};
 
-					if (provider !== 'n8n' && provider !== 'custom-agent') {
+					if (provider !== 'aura' && provider !== 'custom-agent') {
 						const credentialId = credentialIds[provider];
 						if (!credentialId) {
 							return [provider, { models: [] }];
@@ -155,7 +155,7 @@ export class ChatHubService {
 				return await this.fetchAnthropicModels(credentials, additionalData);
 			case 'google':
 				return await this.fetchGoogleModels(credentials, additionalData);
-			case 'n8n':
+			case 'aura':
 				return await this.fetchAgentWorkflowsAsModels(user);
 			case 'custom-agent':
 				return await this.chatHubAgentService.getAgentsByUserIdAsModels(user.id);
@@ -223,7 +223,7 @@ export class ChatHubService {
 		const results = await this.nodeParametersService.getOptionsViaLoadOptions(
 			{
 				// From Gemini node
-				// https://github.com/n8n-io/n8n/blob/master/packages/%40n8n/nodes-langchain/nodes/llms/LmChatGoogleGemini/LmChatGoogleGemini.node.ts#L75
+				// https://github.com/aura-io/aura/blob/master/packages/%40aura/nodes-langchain/nodes/llms/LmChatGoogleGemini/LmChatGoogleGemini.node.ts#L75
 				routing: {
 					request: {
 						method: 'GET',
@@ -281,7 +281,7 @@ export class ChatHubService {
 		};
 	}
 
-	private async fetchAgentWorkflowsAsModels(user: User): Promise<ChatModelsResponse['n8n']> {
+	private async fetchAgentWorkflowsAsModels(user: User): Promise<ChatModelsResponse['aura']> {
 		const nodeTypes = [CHAT_TRIGGER_NODE_TYPE];
 		const workflows = await this.workflowService.getWorkflowsWithNodesIncluded(
 			user,
@@ -319,7 +319,7 @@ export class ChatHubService {
 									? chatTrigger.parameters.agentDescription
 									: null,
 							model: {
-								provider: 'n8n',
+								provider: 'aura',
 								workflowId: workflow.id,
 							},
 							createdAt: workflow.createdAt ? workflow.createdAt.toISOString() : null,
@@ -367,7 +367,7 @@ export class ChatHubService {
 		provider: ChatHubProvider,
 		credentials: INodeCredentials,
 	): string | null {
-		if (provider === 'n8n' || provider === 'custom-agent') {
+		if (provider === 'aura' || provider === 'custom-agent') {
 			return null;
 		}
 
@@ -396,7 +396,7 @@ export class ChatHubService {
 					trx,
 				);
 
-				if (provider === 'n8n') {
+				if (provider === 'aura') {
 					return await this.prepareCustomAgentWorkflow(user, sessionId, model.workflowId, message);
 				}
 
@@ -482,7 +482,7 @@ export class ChatHubService {
 					trx,
 				);
 
-				if (provider === 'n8n') {
+				if (provider === 'aura') {
 					return await this.prepareCustomAgentWorkflow(user, sessionId, model.workflowId, message);
 				}
 
@@ -568,7 +568,7 @@ export class ChatHubService {
 			const message = lastHumanMessage ? lastHumanMessage.content : '';
 
 			let workflow;
-			if (provider === 'n8n') {
+			if (provider === 'aura') {
 				workflow = await this.prepareCustomAgentWorkflow(
 					user,
 					sessionId,
@@ -665,7 +665,7 @@ export class ChatHubService {
 			throw new BadRequestError('Provider or model not set for agent');
 		}
 
-		if (agent.provider === 'n8n' || agent.provider === 'custom-agent') {
+		if (agent.provider === 'aura' || agent.provider === 'custom-agent') {
 			throw new BadRequestError('Invalid provider');
 		}
 
@@ -986,7 +986,7 @@ export class ChatHubService {
 				retryOfMessageId,
 			);
 		} finally {
-			if (provider !== 'n8n') {
+			if (provider !== 'aura') {
 				await this.deleteChatWorkflow(workflowData.id);
 			}
 		}
@@ -1068,7 +1068,7 @@ export class ChatHubService {
 		resolvedModel: ChatHubConversationModel;
 		credential: CredentialWithProjectId;
 	}> {
-		if (model.provider === 'n8n') {
+		if (model.provider === 'aura') {
 			return await this.resolveFromN8nWorkflow(user, model, trx);
 		}
 
@@ -1192,7 +1192,7 @@ export class ChatHubService {
 			throw new BadRequestError('Agent not found for title generation');
 		}
 
-		if (agent.provider === 'n8n' || agent.provider === 'custom-agent') {
+		if (agent.provider === 'aura' || agent.provider === 'custom-agent') {
 			throw new BadRequestError('Invalid provider for title generation');
 		}
 
@@ -1334,7 +1334,7 @@ export class ChatHubService {
 
 		const modelWithCredentials: ModelWithCredentials = {
 			...selectedModel,
-			credentialId: provider !== 'n8n' ? this.pickCredentialId(provider, credentials) : null,
+			credentialId: provider !== 'aura' ? this.pickCredentialId(provider, credentials) : null,
 		};
 
 		return modelWithCredentials;
@@ -1365,7 +1365,7 @@ export class ChatHubService {
 			agentName = agent.name;
 		}
 
-		if (selectedModel?.provider === 'n8n') {
+		if (selectedModel?.provider === 'aura') {
 			// Find the workflow to get its name
 			const workflow = await this.workflowFinderService.findWorkflowForUser(
 				selectedModel.workflowId!,
@@ -1595,8 +1595,8 @@ export class ChatHubService {
 			updates.agentName = agent.name;
 		}
 
-		if (updates.provider === 'n8n') {
-			// n8n provider only stores workflowId
+		if (updates.provider === 'aura') {
+			// aura provider only stores workflowId
 			updates.model = null;
 			updates.credentialId = null;
 			updates.agentId = null;

@@ -1,12 +1,12 @@
-import { DataTableCreateColumnSchema } from '@n8n/api-types';
-import { withTransaction } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { DataSource, EntityManager, Repository } from '@n8n/typeorm';
+import { DataTableCreateColumnSchema } from '@aura/api-types';
+import { withTransaction } from '@aura/db';
+import { Service } from '@aura/di';
+import { DataSource, EntityManager, Repository } from '@aura/typeorm';
 import {
 	DATA_TABLE_SYSTEM_COLUMNS,
 	DATA_TABLE_SYSTEM_TESTING_COLUMN,
 	UnexpectedError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DataTableColumn } from './data-table-column.entity';
 import { DataTableDDLService } from './data-table-ddl.service';

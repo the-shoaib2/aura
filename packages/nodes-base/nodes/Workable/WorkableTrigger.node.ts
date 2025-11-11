@@ -8,8 +8,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { workableApiRequest } from './GenericFunctions';
 
@@ -17,7 +17,7 @@ export class WorkableTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Workable Trigger',
 		name: 'workableTrigger',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:workable.png',
 		group: ['trigger'],
 		version: 1,
@@ -76,7 +76,7 @@ export class WorkableTrigger implements INodeType {
 						},
 						default: '',
 						description:
-							'Get notifications only for one job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'Get notifications only for one job. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Stage Name or ID',
@@ -87,7 +87,7 @@ export class WorkableTrigger implements INodeType {
 						},
 						default: '',
 						description:
-							'Get notifications for specific stages. e.g. \'hired\'. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'Get notifications for specific stages. e.g. \'hired\'. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 				],
 			},

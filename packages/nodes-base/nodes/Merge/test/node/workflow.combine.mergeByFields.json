@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "9f880c6f-b5e0-4453-b1d7-550beb1febe8",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [700, 660]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "263d9c7f-32d4-4112-b271-73d09b73809a",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [900, 540]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "3defcf5a-ec5e-4d23-a1f6-a99b7362a241",
 			"name": "Code1",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [900, 780]
 		},
@@ -44,7 +44,7 @@
 			},
 			"id": "7120cd6f-29f3-4f5b-aa25-babebd6335d3",
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 140]
 		},
@@ -64,7 +64,7 @@
 			},
 			"id": "1d6973e5-0716-4d47-85ef-298d3f86bb9d",
 			"name": "Merge1",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 280]
 		},
@@ -84,7 +84,7 @@
 			},
 			"id": "dd75b8c0-21bf-460f-9920-644a467ed356",
 			"name": "Merge2",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 420]
 		},
@@ -104,7 +104,7 @@
 			},
 			"id": "3545877d-6e4f-437e-b91f-4c792d714e73",
 			"name": "Merge3",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 560]
 		},
@@ -124,7 +124,7 @@
 			},
 			"id": "4b6ac099-6e6f-4e91-bcfe-74d7524fad54",
 			"name": "Merge4",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 740]
 		},
@@ -144,7 +144,7 @@
 			},
 			"id": "fb4fef36-26ea-4fc0-b6e9-a4b2781c94fa",
 			"name": "Merge5",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 900]
 		},
@@ -164,7 +164,7 @@
 			},
 			"id": "0b4fbaaa-cf0b-4da5-b35f-da3f49409965",
 			"name": "Merge6",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 1040]
 		},
@@ -189,7 +189,7 @@
 			},
 			"id": "25489a7a-74c1-48d5-a03d-1bbd2aba2abe",
 			"name": "Merge7",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [1320, 1200]
 		}

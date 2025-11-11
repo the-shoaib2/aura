@@ -7,12 +7,12 @@
 			"parameters": {
 				"mode": "runOnceForAllItems",
 				"language": "javaScript",
-				"jsCode": "return [\n  { \"full_name\": \"Mr. Input 1\", \"email\": \"input1@n8n.io\" }, \n  { \"full_name\": \"Mr. Input 2\", \"email\": \"input2@n8n.io\" }\n]",
+				"jsCode": "return [\n  { \"full_name\": \"Mr. Input 1\", \"email\": \"input1@aura.io\" }, \n  { \"full_name\": \"Mr. Input 2\", \"email\": \"input2@aura.io\" }\n]",
 				"notice": ""
 			},
 			"id": "cb19a188-12ae-4d46-86df-4a2044ec3346",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-160, 480]
 		},
@@ -20,7 +20,7 @@
 			"parameters": { "notice": "", "model": "gpt-4o-mini", "options": {} },
 			"id": "c448b6b4-9e11-4044-96e5-f4138534ae52",
 			"name": "OpenAI Chat Model1",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [40, 700]
 		},
@@ -63,7 +63,7 @@
 			},
 			"id": "d8b40267-9397-45b6-8a64-ee7e8f9eb8a8",
 			"name": "Google Sheets1",
-			"type": "n8n-nodes-base.googleSheetsTool",
+			"type": "aura-nodes-base.googleSheetsTool",
 			"typeVersion": 4.5,
 			"position": [240, 700]
 		},
@@ -79,7 +79,7 @@
 			},
 			"id": "0d6c1bd7-cc91-4571-8fdb-c875a1af44c7",
 			"name": "Agent single list with multiple tool calls",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.7,
 			"position": [40, 480]
 		}

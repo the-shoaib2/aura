@@ -8,8 +8,8 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes } from 'workflow';
 
 import { mailchimpApiRequest } from './GenericFunctions';
 
@@ -84,7 +84,7 @@ export class MailchimpTrigger implements INodeType {
 				required: true,
 				default: '',
 				description:
-					'The list that is gonna fire the event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The list that is gonna fire the event. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				typeOptions: {
 					loadOptionsMethod: 'getLists',
 				},

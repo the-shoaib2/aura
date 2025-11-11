@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 export class ZammadBasicAuthApi implements ICredentialType {
 	name = 'zammadBasicAuthApi';
@@ -13,7 +13,7 @@ export class ZammadBasicAuthApi implements ICredentialType {
 			name: 'baseUrl',
 			type: 'string',
 			default: '',
-			placeholder: 'https://n8n-helpdesk.zammad.com',
+			placeholder: 'https://aura-helpdesk.zammad.com',
 			required: true,
 		},
 		{
@@ -21,7 +21,7 @@ export class ZammadBasicAuthApi implements ICredentialType {
 			name: 'username',
 			type: 'string',
 			default: '',
-			placeholder: 'helpdesk@n8n.io',
+			placeholder: 'helpdesk@aura.io',
 			required: true,
 		},
 		{

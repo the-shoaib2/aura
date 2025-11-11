@@ -293,7 +293,7 @@ endOfMonth.doc = {
 	hidden: true,
 	description: 'Transforms a date to the last possible moment that lies within the month.',
 	section: 'edit',
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-endOfMonth',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-endOfMonth',
 };
 
 isDst.doc = {
@@ -302,7 +302,7 @@ isDst.doc = {
 	hidden: true,
 	description: 'Checks if a Date is within Daylight Savings Time.',
 	section: 'query',
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-isDst',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-isDst',
 };
 
 isWeekend.doc = {
@@ -311,7 +311,7 @@ isWeekend.doc = {
 	hidden: true,
 	description: 'Checks if the Date falls on a Saturday or Sunday.',
 	section: 'query',
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-isWeekend',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-isWeekend',
 };
 
 beginningOf.doc = {
@@ -321,7 +321,7 @@ beginningOf.doc = {
 	hidden: true,
 	returnType: 'DateTime',
 	args: [{ name: 'unit?', type: 'DurationUnit' }],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-beginningOf',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-beginningOf',
 };
 
 extract.doc = {
@@ -344,7 +344,7 @@ extract.doc = {
 			type: 'string',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-extract',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-extract',
 };
 
 format.doc = {
@@ -380,7 +380,7 @@ format.doc = {
 			type: 'string',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-format',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-format',
 };
 
 isBetween.doc = {
@@ -412,7 +412,7 @@ isBetween.doc = {
 			type: 'string | DateTime',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-isBetween',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-isBetween',
 };
 
 isInLast.doc = {
@@ -425,7 +425,7 @@ isInLast.doc = {
 		{ name: 'n', type: 'number' },
 		{ name: 'unit?', type: 'DurationUnit' },
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-isInLast',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-isInLast',
 };
 
 toDateTime.doc = {
@@ -440,7 +440,7 @@ toDateTime.doc = {
 	],
 	returnType: 'DateTime',
 	hidden: true,
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-toDateTime',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-toDateTime',
 };
 
 minus.doc = {
@@ -474,7 +474,7 @@ minus.doc = {
 			type: 'string',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-minus',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-minus',
 };
 
 plus.doc = {
@@ -508,7 +508,7 @@ plus.doc = {
 			type: 'string',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-plus',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-plus',
 };
 
 diffTo.doc = {
@@ -543,7 +543,7 @@ diffTo.doc = {
 			type: 'string | string[]',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-diffTo',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-diffTo',
 };
 
 diffToNow.doc = {
@@ -571,7 +571,7 @@ diffToNow.doc = {
 			type: 'string | string[]',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/dates/#date-diffToNow',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/dates/#date-diffToNow',
 };
 
 isEmpty.doc = {
@@ -583,7 +583,7 @@ isEmpty.doc = {
 		{ example: 'dt = null\ndt.isEmpty()', evaluated: 'true' },
 	],
 	returnType: 'boolean',
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/arrays/#array-isEmpty',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/arrays/#array-isEmpty',
 };
 
 isNotEmpty.doc = {
@@ -595,7 +595,8 @@ isNotEmpty.doc = {
 		{ example: 'dt = null\ndt.isNotEmpty()', evaluated: 'false' },
 	],
 	returnType: 'boolean',
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/arrays/#array-isNotEmpty',
+	docURL:
+		'https://docs.aura.io/code/builtin/data-transformation-functions/arrays/#array-isNotEmpty',
 };
 
 export const dateExtensions: ExtensionMap = {

@@ -1,4 +1,4 @@
-import { mockLogger } from '@n8n/backend-test-utils';
+import { mockLogger } from '@aura/backend-test-utils';
 import {
 	GLOBAL_ADMIN_ROLE,
 	GLOBAL_MEMBER_ROLE,
@@ -8,10 +8,10 @@ import {
 	type TagRepository,
 	type User,
 	type Variables,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 
 import { ForbiddenError } from '@/errors/response-errors/forbidden.error';
 import type { EventService } from '@/events/event.service';
@@ -353,7 +353,7 @@ describe('getStatus', () => {
 					teamId: 'team1',
 					teamName: 'Team 1',
 				},
-				filename: '/mock/n8n/git/projects/project1.json',
+				filename: '/mock/aura/git/projects/project1.json',
 			},
 			withoutIcon: {
 				id: 'project2',
@@ -366,7 +366,7 @@ describe('getStatus', () => {
 					teamId: 'team2',
 					teamName: 'Team 2',
 				},
-				filename: '/mock/n8n/git/projects/project2.json',
+				filename: '/mock/aura/git/projects/project2.json',
 			},
 		};
 
@@ -794,7 +794,7 @@ describe('getStatus', () => {
 						teamId: 'local-project-1',
 						teamName: 'Local Project 1',
 					},
-					filename: '/mock/n8n/git/projects/local-project-1.json',
+					filename: '/mock/aura/git/projects/local-project-1.json',
 				},
 			];
 
@@ -961,7 +961,7 @@ describe('getStatus', () => {
 					name: 'Test Credential',
 					type: 'testApi',
 					data: {},
-					filename: '/mock/n8n/git/credentials/cred1.json',
+					filename: '/mock/aura/git/credentials/cred1.json',
 					...overrides,
 				}) as StatusExportableCredential;
 

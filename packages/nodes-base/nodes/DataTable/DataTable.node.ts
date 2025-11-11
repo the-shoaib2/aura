@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeType, INodeTypeDescription } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { router } from './actions/router';
 import * as row from './actions/row/Row.resource';

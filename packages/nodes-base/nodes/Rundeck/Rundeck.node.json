@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.rundeck",
+	"node": "aura-nodes-base.rundeck",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/rundeck/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/rundeck/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rundeck/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.rundeck/"
 			}
 		]
 	}

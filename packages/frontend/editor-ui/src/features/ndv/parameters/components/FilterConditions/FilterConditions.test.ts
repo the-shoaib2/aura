@@ -1,7 +1,7 @@
 import { createComponentRenderer, type RenderOptions } from '@/__tests__/render';
 import { SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
 import FilterConditions from './FilterConditions.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
@@ -10,7 +10,7 @@ import { getFilterOperator } from './utils';
 import get from 'lodash/get';
 import * as workFlowHelpers from '@/app/composables/useWorkflowHelpers';
 import { createTestNode, createTestNodeProperties } from '@/__tests__/mocks';
-import type { FilterTypeOptions, FilterValue } from 'n8n-workflow';
+import type { FilterTypeOptions, FilterValue } from 'workflow';
 
 const DEFAULT_SETUP = {
 	pinia: createTestingPinia({
@@ -24,7 +24,7 @@ const DEFAULT_SETUP = {
 			parameters: {},
 			id: 'f63efb2d-3cc5-4500-89f9-b39aab19baf5',
 			name: 'If',
-			type: 'n8n-nodes-base.if',
+			type: 'aura-nodes-base.if',
 			typeVersion: 2,
 			position: [1120, 380] as const,
 			credentials: {},

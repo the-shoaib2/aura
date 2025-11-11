@@ -1,6 +1,6 @@
-import type { INodePropertyTypeOptions, ResourceMapperTypeOptions } from 'n8n-workflow';
+import type { INodePropertyTypeOptions, ResourceMapperTypeOptions } from 'workflow';
 import { computed } from 'vue';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@aura/i18n';
 
 export function useNodeSpecificationValues(typeOptions: INodePropertyTypeOptions | undefined) {
 	const resourceMapperTypeOptions = computed<ResourceMapperTypeOptions | undefined>(() => {

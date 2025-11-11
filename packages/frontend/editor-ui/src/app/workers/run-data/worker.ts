@@ -2,7 +2,7 @@ import * as Comlink from 'comlink';
 import { databaseConfig } from '@/app/workers/run-data/db';
 import { initializeDatabase } from '@/app/workers/database';
 import type { Promiser, DbId } from '@sqlite.org/sqlite-wasm';
-import type { NodeExecuteAfterData } from '@n8n/api-types/push/execution';
+import type { NodeExecuteAfterData } from '@aura/api-types/push/execution';
 
 const state: {
 	initialized: boolean;

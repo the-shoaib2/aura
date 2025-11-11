@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.brevo",
+	"node": "aura-nodes-base.brevo",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing", "Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/brevo/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/brevo/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.brevo/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.brevo/"
 			}
 		]
 	},

@@ -7,7 +7,7 @@ import { useUIStore } from '@/app/stores/ui.store';
 import { WHATS_NEW_MODAL_KEY, VERSIONS_MODAL_KEY } from '@/app/constants';
 import { useVersionsStore } from '@/app/stores/versions.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import type { Version } from '@n8n/rest-api-client/api/versions';
+import type { Version } from '@aura/rest-api-client/api/versions';
 
 import WhatsNewModal from './WhatsNewModal.vue';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -51,7 +51,7 @@ const currentVersion: Version = {
 	nodes: [],
 	createdAt: '2025-06-24T00:00:00Z',
 	description: 'Latest version description',
-	documentationUrl: 'https://docs.n8n.io',
+	documentationUrl: 'https://docs.aura.io',
 	hasBreakingChange: false,
 	hasSecurityFix: false,
 	hasSecurityIssue: false,
@@ -78,7 +78,7 @@ describe('WhatsNewModal', () => {
 		versionsStore.whatsNew = {
 			createdAt: '2025-06-19T12:35:14.454Z',
 			updatedAt: null,
-			title: "What's New in n8n 1.100.0",
+			title: "What's New in aura 1.100.0",
 			calloutText:
 				'Convert large workflows into sub-workflows for better modularity and performance.',
 			footer: 'This release contains performance improvements and bug fixes.',
@@ -101,13 +101,13 @@ describe('WhatsNewModal', () => {
 						'2. Right-click to open the context menu and select ' +
 						'**Convert to sub-workflow**\n' +
 						'    - Or use the shortcut: `Alt + X`\n' +
-						'3. n8n will:\n' +
+						'3. aura will:\n' +
 						'    - Open a new tab containing the selected nodes\n' +
 						'    - Preserve all node parameters as-is\n' +
 						'    - Replace the selected nodes in the original workflow with a **Call My Sub-workflow** node\n\n' +
 						'_Note:_ You will need to manually adjust the field types in the Start and Return nodes in the new sub-workflow.\n\n' +
 						'This makes it easier to keep workflows modular, performant, and easier to maintain.\n\n' +
-						'Learn more about [sub-workflows](https://docs.n8n.io/flow-logic/subworkflows/).\n\n' +
+						'Learn more about [sub-workflows](https://docs.aura.io/flow-logic/subworkflows/).\n\n' +
 						'This release contains performance improvements and bug fixes.\n\n' +
 						'@[youtube](ZCuL2e4zC_4)\n\n' +
 						'Fusce malesuada diam eget tincidunt ultrices. Mauris quis mauris mollis, venenatis risus ut.\n\n' +
@@ -145,7 +145,7 @@ describe('WhatsNewModal', () => {
 		await waitFor(() => expect(getByTestId('whatsNew-modal')).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId('whats-new-item-1')).toBeInTheDocument());
 
-		expect(screen.getByText("What's New in n8n 1.100.0")).toBeInTheDocument();
+		expect(screen.getByText("What's New in aura 1.100.0")).toBeInTheDocument();
 		expect(getByTestId('whats-new-item-1')).toMatchSnapshot();
 		expect(queryByTestId('whats-new-modal-update-button')).not.toBeInTheDocument();
 		expect(queryByTestId('whats-new-modal-next-versions-link')).not.toBeInTheDocument();
@@ -159,7 +159,7 @@ describe('WhatsNewModal', () => {
 				nodes: [],
 				createdAt: '2025-06-24T00:00:00Z',
 				description: 'Next version description',
-				documentationUrl: 'https://docs.n8n.io',
+				documentationUrl: 'https://docs.aura.io',
 				hasBreakingChange: false,
 				hasSecurityFix: false,
 				hasSecurityIssue: false,

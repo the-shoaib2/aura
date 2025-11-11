@@ -1,4 +1,4 @@
-import { UserError } from 'n8n-workflow';
+import { UserError } from 'workflow';
 
 import type { TaskRunner } from '@/task-runners/task-broker/task-broker.service';
 

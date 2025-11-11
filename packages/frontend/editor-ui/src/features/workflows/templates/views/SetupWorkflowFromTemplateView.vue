@@ -6,9 +6,9 @@ import AppsRequiringCredsNotice from '../components/AppsRequiringCredsNotice.vue
 import SetupTemplateFormStep from '../components/SetupTemplateFormStep.vue';
 import TemplatesView from '@/features/workflows/templates/views/TemplatesView.vue';
 import { VIEWS } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nButton, N8nHeading, N8nLink, N8nLoading, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nHeading, N8nLink, N8nLoading, N8nTooltip } from '@aura/design-system';
 // Store
 const setupTemplateStore = useSetupTemplateStore();
 const i18n = useI18n();

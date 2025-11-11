@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import type { IExecutionDb } from '@n8n/db';
-import { ExecutionRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import type { IExecutionDb } from '@aura/db';
+import { ExecutionRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import pick from 'lodash/pick';
-import { ensureError, type ExecutionStatus, type IRun, type IWorkflowBase } from 'n8n-workflow';
+import { ensureError, type ExecutionStatus, type IRun, type IWorkflowBase } from 'workflow';
 
 import type { UpdateExecutionPayload } from '@/interfaces';
 import { ExecutionMetadataService } from '@/services/execution-metadata.service';

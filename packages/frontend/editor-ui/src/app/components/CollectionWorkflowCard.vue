@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { N8nCard, N8nLoading } from '@n8n/design-system';
+import { N8nCard, N8nLoading } from '@aura/design-system';
 
 defineProps<{
 	loading: boolean;

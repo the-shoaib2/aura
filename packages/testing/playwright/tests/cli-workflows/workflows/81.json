@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "85fb6aa2-9869-4db4-bd9a-daf1db2bf96e"
@@ -19,7 +19,7 @@
 				"limit": 1
 			},
 			"name": "Phantombuster",
-			"type": "n8n-nodes-base.phantombuster",
+			"type": "aura-nodes-base.phantombuster",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -36,7 +36,7 @@
 				"agentId": "={{$node[\"Phantombuster\"].json[\"id\"]}}"
 			},
 			"name": "Phantombuster1",
-			"type": "n8n-nodes-base.phantombuster",
+			"type": "aura-nodes-base.phantombuster",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -53,11 +53,11 @@
 				"resolveData": false,
 				"jsonParameters": true,
 				"additionalFields": {
-					"argumentsJson": "{\n\t\"urls\": [\n\t\t\"https://n8n.io/\"\n\t],\n\t\"timeToWait\": 5000,\n\t\"pagesPerLaunch\": 1,\n\t\"onlyGetOneEmail\": false\n}"
+					"argumentsJson": "{\n\t\"urls\": [\n\t\t\"https://aura.io/\"\n\t],\n\t\"timeToWait\": 5000,\n\t\"pagesPerLaunch\": 1,\n\t\"onlyGetOneEmail\": false\n}"
 				}
 			},
 			"name": "Phantombuster2",
-			"type": "n8n-nodes-base.phantombuster",
+			"type": "aura-nodes-base.phantombuster",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -78,7 +78,7 @@
 				}
 			},
 			"name": "Phantombuster3",
-			"type": "n8n-nodes-base.phantombuster",
+			"type": "aura-nodes-base.phantombuster",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {

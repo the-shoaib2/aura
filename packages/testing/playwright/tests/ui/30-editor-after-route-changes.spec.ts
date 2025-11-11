@@ -5,38 +5,38 @@ const NOTIFICATIONS = {
 };
 
 test.describe('Editor zoom should work after route changes', () => {
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.api.enableFeature('debugInEditor');
-		await n8n.api.enableFeature('workflowHistory');
+	test.beforeEach(async ({ aura }) => {
+		await aura.api.enableFeature('debugInEditor');
+		await aura.api.enableFeature('workflowHistory');
 
-		await n8n.workflowComposer.createWorkflowFromJsonFile(
+		await aura.workflowComposer.createWorkflowFromJsonFile(
 			'Lots_of_nodes.json',
 			'Lots of nodes test',
 		);
-		await n8n.notifications.waitForNotificationAndClose(NOTIFICATIONS.WORKFLOW_CREATED);
+		await aura.notifications.waitForNotificationAndClose(NOTIFICATIONS.WORKFLOW_CREATED);
 	});
 
 	test('should maintain zoom functionality after switching between Editor and Workflow history and Workflow list', async ({
-		n8n,
+		aura,
 	}) => {
-		const initialNodeCount = await n8n.canvas.getCanvasNodes().count();
+		const initialNodeCount = await aura.canvas.getCanvasNodes().count();
 		expect(initialNodeCount).toBeGreaterThan(0);
 
-		await n8n.canvasComposer.switchBetweenEditorAndHistory();
-		await n8n.canvasComposer.zoomInAndCheckNodes();
+		await aura.canvasComposer.switchBetweenEditorAndHistory();
+		await aura.canvasComposer.zoomInAndCheckNodes();
 
-		await n8n.canvasComposer.switchBetweenEditorAndHistory();
-		await n8n.canvasComposer.switchBetweenEditorAndHistory();
-		await n8n.canvasComposer.zoomInAndCheckNodes();
+		await aura.canvasComposer.switchBetweenEditorAndHistory();
+		await aura.canvasComposer.switchBetweenEditorAndHistory();
+		await aura.canvasComposer.zoomInAndCheckNodes();
 
-		await n8n.canvasComposer.switchBetweenEditorAndWorkflowList();
-		await n8n.canvasComposer.zoomInAndCheckNodes();
+		await aura.canvasComposer.switchBetweenEditorAndWorkflowList();
+		await aura.canvasComposer.zoomInAndCheckNodes();
 
-		await n8n.canvasComposer.switchBetweenEditorAndWorkflowList();
-		await n8n.canvasComposer.switchBetweenEditorAndWorkflowList();
-		await n8n.canvasComposer.zoomInAndCheckNodes();
+		await aura.canvasComposer.switchBetweenEditorAndWorkflowList();
+		await aura.canvasComposer.switchBetweenEditorAndWorkflowList();
+		await aura.canvasComposer.zoomInAndCheckNodes();
 
-		await n8n.canvasComposer.switchBetweenEditorAndHistory();
-		await n8n.canvasComposer.switchBetweenEditorAndWorkflowList();
+		await aura.canvasComposer.switchBetweenEditorAndHistory();
+		await aura.canvasComposer.switchBetweenEditorAndWorkflowList();
 	});
 });

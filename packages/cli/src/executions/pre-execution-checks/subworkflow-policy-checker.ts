@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { Project } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { type Workflow, type INode, type WorkflowSettings } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import type { Project } from '@aura/db';
+import { Service } from '@aura/di';
+import { type Workflow, type INode, type WorkflowSettings } from 'workflow';
 
 import { SubworkflowPolicyDenialError } from '@/errors/subworkflow-policy-denial.error';
 import { AccessService } from '@/services/access.service';

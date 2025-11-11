@@ -9,8 +9,8 @@ import {
 	UpdateDataTableDto,
 	UpdateDataTableRowDto,
 	UpsertDataTableRowDto,
-} from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
+} from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
 import {
 	Body,
 	Delete,
@@ -22,9 +22,9 @@ import {
 	ProjectScope,
 	Query,
 	RestController,
-} from '@n8n/decorators';
+} from '@aura/decorators';
 import { NextFunction, Response } from 'express';
-import { DataTableRowReturn } from 'n8n-workflow';
+import { DataTableRowReturn } from 'workflow';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 import { ConflictError } from '@/errors/response-errors/conflict.error';

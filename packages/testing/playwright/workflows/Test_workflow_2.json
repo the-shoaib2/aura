@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "624e0991-5dac-468b-b872-a9d35cb2c7d1",
 			"name": "On clicking 'execute'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [360, 260]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "48823b3a-ec82-4a05-84b8-24ac2747e648",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [580, 260]
 		}

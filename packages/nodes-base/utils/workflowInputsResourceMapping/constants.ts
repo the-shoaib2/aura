@@ -1,4 +1,4 @@
-import type { FieldType } from 'n8n-workflow';
+import type { FieldType } from 'workflow';
 
 export const INPUT_SOURCE = 'inputSource';
 export const WORKFLOW_INPUTS = 'workflowInputs';

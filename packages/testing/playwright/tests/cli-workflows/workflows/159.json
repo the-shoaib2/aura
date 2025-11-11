@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "35279fb2-20b3-4fb0-b959-7a34dfdd053f"
@@ -21,7 +21,7 @@
 				"additionalFields": {}
 			},
 			"name": "Tapfiliate",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"filters": {}
 			},
 			"name": "Tapfiliate1",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"affiliateId": "={{$node[\"Tapfiliate\"].json[\"id\"]}}"
 			},
 			"name": "Tapfiliate2",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -73,7 +73,7 @@
 				"affiliateId": "={{$node[\"Tapfiliate\"].json[\"id\"]}}"
 			},
 			"name": "Tapfiliate3",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [1850, 300],
 			"credentials": {
@@ -92,13 +92,13 @@
 					"metadataValues": [
 						{
 							"key": "source",
-							"value": "n8n"
+							"value": "aura"
 						}
 					]
 				}
 			},
 			"name": "Tapfiliate4",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [950, 400],
 			"credentials": {
@@ -115,10 +115,10 @@
 				"operation": "update",
 				"affiliateId": "={{$node[\"Tapfiliate\"].json[\"id\"]}}",
 				"key": "source",
-				"value": "n8n.io"
+				"value": "aura.io"
 			},
 			"name": "Tapfiliate5",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [1100, 400],
 			"credentials": {
@@ -137,7 +137,7 @@
 				"key": "source"
 			},
 			"name": "Tapfiliate6",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [1250, 400],
 			"credentials": {
@@ -156,7 +156,7 @@
 				"additionalFields": {}
 			},
 			"name": "Tapfiliate7",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [950, 200],
 			"credentials": {
@@ -175,7 +175,7 @@
 				"affiliateId": "={{$node[\"Tapfiliate\"].json[\"id\"]}}"
 			},
 			"name": "Tapfiliate8",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [1100, 200],
 			"credentials": {
@@ -194,7 +194,7 @@
 				"affiliateId": "={{$node[\"Tapfiliate\"].json[\"id\"]}}"
 			},
 			"name": "Tapfiliate9",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [1250, 200],
 			"credentials": {
@@ -213,7 +213,7 @@
 				"affiliateId": "={{$node[\"Tapfiliate\"].json[\"id\"]}}"
 			},
 			"name": "Tapfiliate10",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [1400, 200],
 			"credentials": {
@@ -233,7 +233,7 @@
 				"filters": {}
 			},
 			"name": "Tapfiliate11",
-			"type": "n8n-nodes-base.tapfiliate",
+			"type": "aura-nodes-base.tapfiliate",
 			"typeVersion": 1,
 			"position": [1550, 200],
 			"credentials": {
@@ -249,7 +249,7 @@
 				"mode": "wait"
 			},
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [1700, 300],
 			"id": "8465e4b1-c77d-4522-8f59-df64f4582255"

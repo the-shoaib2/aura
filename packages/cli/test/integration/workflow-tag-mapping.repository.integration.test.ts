@@ -1,6 +1,6 @@
-import { createWorkflow, testDb } from '@n8n/backend-test-utils';
-import { TagRepository, WorkflowTagMappingRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createWorkflow, testDb } from '@aura/backend-test-utils';
+import { TagRepository, WorkflowTagMappingRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 describe('WorkflowTagMappingRepository', () => {
 	let taggingRepository: WorkflowTagMappingRepository;

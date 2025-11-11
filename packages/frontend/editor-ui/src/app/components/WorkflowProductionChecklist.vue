@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, watch } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRouter } from 'vue-router';
 import { useEvaluationStore } from '@/features/ai/evaluation.ee/evaluation.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -23,7 +23,7 @@ import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/
 import { MCP_DOCS_PAGE_URL } from '@/features/ai/mcpAccess/mcp.constants';
 import { useMcp } from '@/features/ai/mcpAccess/composables/useMcp';
 
-import { N8nSuggestedActions } from '@n8n/design-system';
+import { N8nSuggestedActions } from '@aura/design-system';
 import { useSettingsStore } from '@/app/stores/settings.store';
 const props = defineProps<{
 	workflow: IWorkflowDb;

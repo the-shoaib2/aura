@@ -1,5 +1,5 @@
-import { isResourceLocatorValue } from 'n8n-workflow';
-import type { INodeProperties, NodeParameterValueType } from 'n8n-workflow';
+import { isResourceLocatorValue } from 'workflow';
+import type { INodeProperties, NodeParameterValueType } from 'workflow';
 import { isExpression } from './expressions';
 
 const validJsIdNameRegex = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/;

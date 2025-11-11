@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { TaskRunnersConfig } from '@n8n/config';
-import { OnShutdown } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import { sleep } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { TaskRunnersConfig } from '@aura/config';
+import { OnShutdown } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import { sleep } from 'workflow';
 import * as a from 'node:assert/strict';
 
 import { EventService } from '@/events/event.service';
@@ -19,7 +19,7 @@ import type { LocalTaskRequester } from './task-managers/local-task-requester';
 
 /**
  * Module responsible for loading and starting task runner. Task runner can be
- * run either internally (=launched by n8n as a child process) or externally
+ * run either internally (=launched by aura as a child process) or externally
  * (=launched by some other orchestrator)
  */
 @Service()

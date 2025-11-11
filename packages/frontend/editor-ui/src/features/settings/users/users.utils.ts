@@ -62,19 +62,19 @@ import {
 	PRODUCT_GOAL,
 	SECURITY_GOAL,
 } from './users.constants';
-import { ROLE } from '@n8n/api-types';
+import { ROLE } from '@aura/api-types';
 import type {
 	IPersonalizationSurveyAnswersV1,
 	IPersonalizationSurveyAnswersV2,
 	IPersonalizationSurveyAnswersV3,
 	IPersonalizationSurveyVersions,
 	IUser,
-} from '@n8n/rest-api-client/api/users';
+} from '@aura/rest-api-client/api/users';
 import type { ILogInStatus } from './users.types';
-import type { IPersonalizationSurveyAnswersV4 } from 'n8n-workflow';
+import type { IPersonalizationSurveyAnswersV4 } from 'workflow';
 
 /*
-	Utility functions used to handle users in n8n
+	Utility functions used to handle users in aura
 */
 
 function isPersonalizationSurveyV2OrLater(

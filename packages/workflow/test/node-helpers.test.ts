@@ -3388,7 +3388,7 @@ describe('NodeHelpers', () => {
 											},
 											default: '',
 											description:
-												'Name of the property. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
+												'Name of the property. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>.',
 										},
 										{
 											displayName: 'Value',
@@ -3684,7 +3684,7 @@ describe('NodeHelpers', () => {
 							workflowInputs: {},
 							inputOptions: {},
 						},
-						type: 'n8n-nodes-base.executeWorkflowTrigger',
+						type: 'aura-nodes-base.executeWorkflowTrigger',
 						typeVersion: 1.1,
 						position: [-140, -20],
 						id: '9abdbdac-5f32-4876-b4d5-895d8ca4cb00',
@@ -3800,7 +3800,7 @@ describe('NodeHelpers', () => {
 							workflowInputs: {},
 							inputOptions: {},
 						},
-						type: 'n8n-nodes-base.executeWorkflowTrigger',
+						type: 'aura-nodes-base.executeWorkflowTrigger',
 						typeVersion: 1.1,
 						position: [-140, -20],
 						id: '9abdbdac-5f32-4876-b4d5-895d8ca4cb00',
@@ -3904,7 +3904,7 @@ describe('NodeHelpers', () => {
 							workflowInputs: {},
 							inputOptions: {},
 						},
-						type: 'n8n-nodes-base.executeWorkflowTrigger',
+						type: 'aura-nodes-base.executeWorkflowTrigger',
 						typeVersion: 1.1,
 						position: [-140, -20],
 						id: '9abdbdac-5f32-4876-b4d5-895d8ca4cb00',
@@ -4023,7 +4023,7 @@ describe('NodeHelpers', () => {
 							workflowInputs: {},
 							inputOptions: {},
 						},
-						type: 'n8n-nodes-base.executeWorkflowTrigger',
+						type: 'aura-nodes-base.executeWorkflowTrigger',
 						typeVersion: 1.1,
 						position: [-140, -20],
 						id: '9abdbdac-5f32-4876-b4d5-895d8ca4cb00',
@@ -4141,7 +4141,7 @@ describe('NodeHelpers', () => {
 							workflowInputs: {},
 							inputOptions: {},
 						},
-						type: 'n8n-nodes-base.executeWorkflowTrigger',
+						type: 'aura-nodes-base.executeWorkflowTrigger',
 						typeVersion: 1.1,
 						position: [-140, -20],
 						id: '9abdbdac-5f32-4876-b4d5-895d8ca4cb00',
@@ -4171,7 +4171,7 @@ describe('NodeHelpers', () => {
 			id: '12345',
 			name: 'Test Node',
 			typeVersion: 1,
-			type: 'n8n-nodes-base.testNode',
+			type: 'aura-nodes-base.testNode',
 			position: [1, 1],
 			parameters: {},
 		};
@@ -4343,7 +4343,7 @@ describe('NodeHelpers', () => {
 					id: 'triggerNodeId',
 					name: 'TriggerNode',
 					position: [0, 0],
-					type: 'n8n-nodes-base.TriggerNode',
+					type: 'aura-nodes-base.TriggerNode',
 					typeVersion: 1,
 					parameters: {},
 				},
@@ -4366,7 +4366,7 @@ describe('NodeHelpers', () => {
 					id: 'mainOutputNodeId',
 					name: 'MainOutputNode',
 					position: [0, 0],
-					type: 'n8n-nodes-base.MainOutputNode',
+					type: 'aura-nodes-base.MainOutputNode',
 					typeVersion: 1,
 					parameters: {},
 				},
@@ -4389,7 +4389,7 @@ describe('NodeHelpers', () => {
 					id: 'nonExecutableNodeId',
 					name: 'NonExecutableNode',
 					position: [0, 0],
-					type: 'n8n-nodes-base.NonExecutableNode',
+					type: 'aura-nodes-base.NonExecutableNode',
 					typeVersion: 1,
 					parameters: {},
 				},
@@ -4412,7 +4412,7 @@ describe('NodeHelpers', () => {
 					id: 'mixedOutputNodeId',
 					name: 'MixedOutputNode',
 					position: [0, 0],
-					type: 'n8n-nodes-base.MixedOutputNode',
+					type: 'aura-nodes-base.MixedOutputNode',
 					typeVersion: 1,
 					parameters: {},
 				},
@@ -4435,7 +4435,7 @@ describe('NodeHelpers', () => {
 					id: 'aiToolOutputNodeId',
 					name: 'AiToolOutputNode',
 					position: [0, 0],
-					type: 'n8n-nodes-base.AiToolOutputNode',
+					type: 'aura-nodes-base.AiToolOutputNode',
 					typeVersion: 1,
 					parameters: {},
 				},
@@ -4458,7 +4458,7 @@ describe('NodeHelpers', () => {
 					id: 'dynamicAiToolNodeId',
 					name: 'DynamicAiToolNode',
 					position: [0, 0],
-					type: 'n8n-nodes-base.DynamicAiToolNode',
+					type: 'aura-nodes-base.DynamicAiToolNode',
 					typeVersion: 1,
 					parameters: {},
 				},
@@ -4498,7 +4498,7 @@ describe('NodeHelpers', () => {
 			id: '12345',
 			name: 'Test Node',
 			typeVersion: 1,
-			type: 'n8n-nodes-base.testNode',
+			type: 'aura-nodes-base.testNode',
 			position: [1, 1],
 			parameters: {},
 		};
@@ -5638,7 +5638,7 @@ describe('NodeHelpers', () => {
 		])(
 			'should return action-based name for Code node with %s language',
 			(language, expectedAction) => {
-				mockNodeTypeDescription.name = 'n8n-nodes-base.code';
+				mockNodeTypeDescription.name = 'aura-nodes-base.code';
 				mockNodeTypeDescription.properties = [
 					{
 						displayName: 'Language',
@@ -5683,7 +5683,7 @@ describe('NodeHelpers', () => {
 				displayName: '',
 				group: [],
 				description: '',
-				name: 'n8n-nodes-base.someTool',
+				name: 'aura-nodes-base.someTool',
 			};
 			const parameters = {};
 			const result = isTool(description, parameters);
@@ -5703,7 +5703,7 @@ describe('NodeHelpers', () => {
 				displayName: '',
 				group: [],
 				description: '',
-				name: 'n8n-nodes-base.someTool',
+				name: 'aura-nodes-base.someTool',
 			};
 			const parameters = {};
 			const result = isTool(description, parameters);
@@ -5723,7 +5723,7 @@ describe('NodeHelpers', () => {
 				displayName: '',
 				description: '',
 				group: [],
-				name: 'n8n-nodes-base.vectorStore',
+				name: 'aura-nodes-base.vectorStore',
 			};
 			const parameters = { mode: 'retrieve-as-tool' };
 			const result = isTool(description, parameters);
@@ -5743,7 +5743,7 @@ describe('NodeHelpers', () => {
 				displayName: '',
 				group: [],
 				description: '',
-				name: 'n8n-nodes-base.someTool',
+				name: 'aura-nodes-base.someTool',
 			};
 			const parameters = { mode: 'retrieve-as-tool' };
 			const result = isTool(description, parameters);

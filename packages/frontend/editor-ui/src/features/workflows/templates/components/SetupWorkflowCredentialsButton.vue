@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { computed, onBeforeUnmount, watch } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { SETUP_CREDENTIALS_MODAL_KEY } from '@/app/constants';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { doesNodeHaveAllCredentialsFilled } from '@/app/utils/nodes/nodeTransforms';
 
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 const workflowsStore = useWorkflowsStore();
 const nodeTypesStore = useNodeTypesStore();
 const uiStore = useUIStore();

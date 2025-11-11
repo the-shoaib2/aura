@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "trigger-id",
@@ -18,7 +18,7 @@
 				"database": "(default)",
 				"collection": "users"
 			},
-			"type": "n8n-nodes-base.googleFirebaseCloudFirestore",
+			"type": "aura-nodes-base.googleFirebaseCloudFirestore",
 			"typeVersion": 1.1,
 			"position": [200, 0],
 			"id": "cloudFirestore-getAll",

@@ -28,16 +28,16 @@ import {
 } from '@/app/constants';
 import { v4 as uuidv4 } from 'uuid';
 
-import { sublimeSearch } from '@n8n/utils/search/sublimeSearch';
-import { reRankSearchResults } from '@n8n/utils/search/reRankSearchResults';
+import { sublimeSearch } from '@aura/utils/search/sublimeSearch';
+import { reRankSearchResults } from '@aura/utils/search/reRankSearchResults';
 import type { NodeViewItemSection } from './views/viewsData';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 import sortBy from 'lodash/sortBy';
 import * as changeCase from 'change-case';
 
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { SEND_AND_WAIT_OPERATION } from 'n8n-workflow';
+import { SEND_AND_WAIT_OPERATION } from 'workflow';
 import type { NodeIconSource } from '@/app/utils/nodeIcon';
 import type { CommunityNodeDetails, ViewStack } from './composables/useViewStacks';
 import {

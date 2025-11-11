@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.raindrop",
+	"node": "aura-nodes-base.raindrop",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Productivity"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/raindrop/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/raindrop/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.raindrop/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.raindrop/"
 			}
 		]
 	}

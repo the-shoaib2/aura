@@ -13,8 +13,8 @@ import type {
 	INodeType,
 	INodeTypes,
 	ICredentialDataDecryptedObject,
-} from 'n8n-workflow';
-import { ApplicationError, ExpressionError, NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, ExpressionError, NodeConnectionTypes } from 'workflow';
 
 import type { ExecutionLifecycleHooks } from '@/execution-engine/execution-lifecycle-hooks';
 
@@ -176,7 +176,7 @@ describe('ExecuteContext', () => {
 		});
 
 		it('should handle expression errors on Set nodes (Ticket #PAY-684)', () => {
-			node.type = 'n8n-nodes-base.set';
+			node.type = 'aura-nodes-base.set';
 			node.continueOnFail = true;
 
 			expression.getParameterValue.mockImplementationOnce(() => {

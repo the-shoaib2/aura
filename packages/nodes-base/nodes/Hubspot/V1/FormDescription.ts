@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const formOperations: INodeProperties[] = [
 	{
@@ -49,7 +49,7 @@ export const formFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'The ID of the form you\'re sending data to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The ID of the form you\'re sending data to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Additional Fields',
@@ -213,7 +213,7 @@ export const formFields: INodeProperties[] = [
 										},
 										default: '',
 										description:
-											'The ID of the specific subscription type. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+											'The ID of the specific subscription type. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 									},
 									{
 										displayName: 'Value',
@@ -250,14 +250,14 @@ export const formFields: INodeProperties[] = [
 						},
 						default: '',
 						description:
-							'The ID of the specific subscription type that this forms indicates interest to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'The ID of the specific subscription type that this forms indicates interest to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Value',
 						name: 'value',
 						type: 'boolean',
 						default: false,
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+						// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 						description:
 							"This must be true when using the 'legitimateInterest' option, as it reflects the consent indicated by the visitor when submitting the form",
 					},
@@ -309,6 +309,6 @@ export const formFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'The ID of the form. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The ID of the form. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 ];

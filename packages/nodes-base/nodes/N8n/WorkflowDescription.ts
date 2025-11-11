@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import {
 	getCursorPaginator,
@@ -124,7 +124,7 @@ const createOperation: INodeProperties[] = [
 			},
 		},
 		description:
-			"A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href=\"https://docs.n8n.io/api/api-reference/#tag/workflow/paths/~1workflows/post\">documentation</a>.",
+			"A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href=\"https://docs.aura.io/api/api-reference/#tag/workflow/paths/~1workflows/post\">documentation</a>.",
 	},
 ];
 
@@ -349,7 +349,7 @@ const updateOperation: INodeProperties[] = [
 			},
 		},
 		description:
-			"A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href=\"https://docs.n8n.io/api/api-reference/#tag/workflow/paths/~1workflows~1%7bid%7d/put\">documentation</a>.",
+			"A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href=\"https://docs.aura.io/api/api-reference/#tag/workflow/paths/~1workflows~1%7bid%7d/put\">documentation</a>.",
 	},
 ];
 

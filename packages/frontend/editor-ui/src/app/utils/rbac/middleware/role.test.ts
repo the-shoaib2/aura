@@ -1,8 +1,8 @@
 import { roleMiddleware } from '@/app/utils/rbac/middleware/role';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@aura/rest-api-client/api/users';
 import type { RouteLocationNormalized } from 'vue-router';
-import { ROLE } from '@n8n/api-types';
+import { ROLE } from '@aura/api-types';
 import { VIEWS } from '@/app/constants';
 
 vi.mock('@/features/settings/users/users.store', () => ({

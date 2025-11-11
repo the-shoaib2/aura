@@ -5,7 +5,7 @@ import { useStyles } from '@/app/composables/useStyles';
 import { ref, watch } from 'vue';
 import { type ComponentExposed } from 'vue-component-type-helpers';
 
-import { N8nActionDropdown } from '@n8n/design-system';
+import { N8nActionDropdown } from '@aura/design-system';
 const contextMenu = useContextMenu();
 const { position, isOpen, actions, target } = contextMenu;
 const dropdown = ref<ComponentExposed<typeof N8nActionDropdown>>();

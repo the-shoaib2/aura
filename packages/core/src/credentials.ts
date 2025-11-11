@@ -1,7 +1,7 @@
-import { isObjectLiteral } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
-import type { ICredentialDataDecryptedObject, ICredentialsEncrypted } from 'n8n-workflow';
-import { ApplicationError, ICredentials, jsonParse } from 'n8n-workflow';
+import { isObjectLiteral } from '@aura/backend-common';
+import { Container } from '@aura/di';
+import type { ICredentialDataDecryptedObject, ICredentialsEncrypted } from 'workflow';
+import { ApplicationError, ICredentials, jsonParse } from 'workflow';
 import * as a from 'node:assert';
 
 import { CREDENTIAL_ERRORS } from '@/constants';

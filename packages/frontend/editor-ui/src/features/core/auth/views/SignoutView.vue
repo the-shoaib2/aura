@@ -3,7 +3,7 @@ import { VIEWS } from '@/app/constants';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useToast } from '@/app/composables/useToast';
 import { useRouter } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { onMounted } from 'vue';
 
 const usersStore = useUsersStore();

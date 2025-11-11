@@ -7,7 +7,7 @@ describe('Test SendGrid Node', () => {
 			.post(
 				'/mail/send',
 				(body: { reply_to_list?: [{ email: string }] }) =>
-					body?.reply_to_list?.[0]?.email === 'test-reply-to@n8n.io',
+					body?.reply_to_list?.[0]?.email === 'test-reply-to@aura.io',
 			)
 			.reply(202);
 

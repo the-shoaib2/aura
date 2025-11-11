@@ -3,7 +3,7 @@ import type {
 	LOGS_PANEL_STATE,
 } from '@/features/execution/logs/logs.constants';
 import type { INodeUi, LlmTokenUsageData } from '@/Interface';
-import type { IRunExecutionData, ITaskData, Workflow } from 'n8n-workflow';
+import type { IRunExecutionData, ITaskData, Workflow } from 'workflow';
 
 export type LogEntry = {
 	parent?: LogEntry;

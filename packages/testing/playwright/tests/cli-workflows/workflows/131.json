@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "b97b22de-c820-46c3-bd9a-9ccd77d9fb2f"
@@ -19,7 +19,7 @@
 				"additionalFields": {}
 			},
 			"name": "Line",
-			"type": "n8n-nodes-base.line",
+			"type": "aura-nodes-base.line",
 			"typeVersion": 1,
 			"position": [480, 300],
 			"credentials": {

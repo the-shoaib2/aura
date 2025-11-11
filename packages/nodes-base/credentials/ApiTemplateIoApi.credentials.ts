@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class ApiTemplateIoApi implements ICredentialType {
 	name = 'apiTemplateIoApi';

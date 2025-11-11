@@ -7,7 +7,7 @@ import type {
 } from '@/features/core/dataTable/dataTable.types';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { useToast } from '@/app/composables/useToast';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRouter } from 'vue-router';
 import { DATA_TABLE_VIEW, MIN_LOADING_TIME } from '@/features/core/dataTable/constants';
 import DataTableBreadcrumbs from '@/features/core/dataTable/components/DataTableBreadcrumbs.vue';
@@ -16,7 +16,7 @@ import DataTableTable from './components/dataGrid/DataTableTable.vue';
 import { useDebounce } from '@/app/composables/useDebounce';
 import AddColumnButton from './components/dataGrid/AddColumnButton.vue';
 
-import { N8nButton, N8nLoading, N8nSpinner, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nLoading, N8nSpinner, N8nText } from '@aura/design-system';
 type Props = {
 	id: string;
 	projectId: string;

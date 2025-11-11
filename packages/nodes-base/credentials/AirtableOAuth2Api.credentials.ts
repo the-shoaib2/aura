@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 const scopes = ['schema.bases:read', 'data.records:read', 'data.records:write'];
 

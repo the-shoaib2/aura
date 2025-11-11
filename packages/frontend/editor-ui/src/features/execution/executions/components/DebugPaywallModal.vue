@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import Modal from '@/app/components/Modal.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nButton, N8nLink, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nLink, N8nText } from '@aura/design-system';
 const props = defineProps<{
 	modalName: string;
 	data: { title: string; footerButtonAction: () => void };

@@ -1,4 +1,4 @@
-import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@aura/backend-test-utils';
 
 import { ActiveWorkflowManager } from '@/active-workflow-manager';
 
@@ -13,14 +13,14 @@ describe('Auth Middleware', () => {
 		endpointGroups: ['me', 'auth', 'owner', 'users', 'invitations'],
 	});
 
-	/** Routes requiring a valid `n8n-auth` cookie for a user, either owner or member. */
+	/** Routes requiring a valid `aura-auth` cookie for a user, either owner or member. */
 	const ROUTES_REQUIRING_AUTHENTICATION = [
 		['patch', '/me'],
 		['patch', '/me/password'],
 		['post', '/me/survey'],
 	] as const;
 
-	/** Routes requiring a valid `n8n-auth` cookie for an owner. */
+	/** Routes requiring a valid `aura-auth` cookie for an owner. */
 	const ROUTES_REQUIRING_AUTHORIZATION = [
 		['post', '/invitations'],
 		['delete', '/users/123'],

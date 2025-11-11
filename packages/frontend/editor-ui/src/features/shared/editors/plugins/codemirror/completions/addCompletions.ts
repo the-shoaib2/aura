@@ -5,7 +5,7 @@ import { datatypeCompletions } from './datatype.completions';
 import { dollarCompletions } from './dollar.completions';
 import { nonDollarCompletions } from './nonDollar.completions';
 
-export function n8nCompletionSources() {
+export function auraCompletionSources() {
 	return [
 		blankCompletions,
 		bracketAccessCompletions,

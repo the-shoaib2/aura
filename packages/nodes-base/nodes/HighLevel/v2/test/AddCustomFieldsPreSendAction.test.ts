@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteSingleFunctions, IHttpRequestOptions } from 'n8n-workflow';
+import type { IDataObject, IExecuteSingleFunctions, IHttpRequestOptions } from 'workflow';
 
 import { addCustomFieldsPreSendAction } from '../GenericFunctions';
 

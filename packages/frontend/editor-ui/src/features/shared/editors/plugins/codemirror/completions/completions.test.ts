@@ -15,7 +15,7 @@ import { mockProxy } from './__tests__/mock';
 import type { CompletionSource, CompletionResult } from '@codemirror/autocomplete';
 import { CompletionContext } from '@codemirror/autocomplete';
 import { EditorState } from '@codemirror/state';
-import { n8nLang } from '@/features/shared/editors/plugins/codemirror/n8nLang';
+import { auraLang } from '@/features/shared/editors/plugins/codemirror/auraLang';
 import { useExternalSecretsStore } from '@/features/integrations/externalSecrets.ee/externalSecrets.ee.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -637,19 +637,19 @@ describe('Resolution-based completions', () => {
 			);
 		});
 
-		test('should recommend extractEmail() for: {{ "string with test@n8n.io in it".| }}', () => {
+		test('should recommend extractEmail() for: {{ "string with test@aura.io in it".| }}', () => {
 			vi.spyOn(workflowHelpers, 'resolveParameter').mockReturnValueOnce(
-				'string with test@n8n.io in it',
+				'string with test@aura.io in it',
 			);
-			const options = completions('{{ "string with test@n8n.io in it".| }}');
+			const options = completions('{{ "string with test@aura.io in it".| }}');
 			expect(options?.[0]).toEqual(
 				expect.objectContaining({ label: 'extractEmail()', section: RECOMMENDED_SECTION }),
 			);
 		});
 
-		test('should recommend extractDomain(), isEmail() for: {{ "test@n8n.io".| }}', () => {
-			vi.spyOn(workflowHelpers, 'resolveParameter').mockReturnValueOnce('test@n8n.io');
-			const options = completions('{{ "test@n8n.io".| }}');
+		test('should recommend extractDomain(), isEmail() for: {{ "test@aura.io".| }}', () => {
+			vi.spyOn(workflowHelpers, 'resolveParameter').mockReturnValueOnce('test@aura.io');
+			const options = completions('{{ "test@aura.io".| }}');
 			expect(options?.[0]).toEqual(
 				expect.objectContaining({ label: 'extractDomain()', section: RECOMMENDED_SECTION }),
 			);
@@ -658,9 +658,9 @@ describe('Resolution-based completions', () => {
 			);
 		});
 
-		test('should recommend extractDomain(), extractUrlPath() for: {{ "https://n8n.io/pricing".| }}', () => {
-			vi.spyOn(workflowHelpers, 'resolveParameter').mockReturnValueOnce('https://n8n.io/pricing');
-			const options = completions('{{ "https://n8n.io/pricing".| }}');
+		test('should recommend extractDomain(), extractUrlPath() for: {{ "https://aura.io/pricing".| }}', () => {
+			vi.spyOn(workflowHelpers, 'resolveParameter').mockReturnValueOnce('https://aura.io/pricing');
+			const options = completions('{{ "https://aura.io/pricing".| }}');
 			expect(options?.[0]).toEqual(
 				expect.objectContaining({ label: 'extractDomain()', section: RECOMMENDED_SECTION }),
 			);
@@ -805,7 +805,7 @@ export function completions(docWithCursor: string, explicit = false) {
 	const state = EditorState.create({
 		doc,
 		selection: { anchor: cursorPosition },
-		extensions: [n8nLang()],
+		extensions: [auraLang()],
 	});
 
 	const context = new CompletionContext(state, cursorPosition, explicit);

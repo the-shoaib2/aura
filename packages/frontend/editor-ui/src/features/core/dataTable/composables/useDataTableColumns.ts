@@ -32,7 +32,7 @@ import {
 	getNumberColumnFilterOptions,
 	getBooleanColumnFilterOptions,
 } from '@/features/core/dataTable/utils/columnUtils';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { GRID_FILTER_CONFIG } from '@/features/core/dataTable/utils/filterMappings';
 
 export const useDataTableColumns = ({

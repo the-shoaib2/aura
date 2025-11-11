@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.boxTrigger",
+	"node": "aura-nodes-base.boxTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/box/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/box/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.boxtrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.boxtrigger/"
 			}
 		]
 	}

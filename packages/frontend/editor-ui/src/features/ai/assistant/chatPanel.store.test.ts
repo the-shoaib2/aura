@@ -15,9 +15,9 @@ import { ASSISTANT_ENABLED_VIEWS, BUILDER_ENABLED_VIEWS } from './constants';
 import { VIEWS } from '@/app/constants';
 import { reactive } from 'vue';
 import { mockedStore } from '@/__tests__/utils';
-import type { ICredentialType } from 'n8n-workflow';
+import type { ICredentialType } from 'workflow';
 import type { ChatRequest } from '@/features/ai/assistant/assistant.types';
-import type { ChatUI } from '@n8n/design-system/types/assistant';
+import type { ChatUI } from '@aura/design-system/types/assistant';
 
 // Mock vue-router
 const mockRoute = reactive({ name: VIEWS.WORKFLOW });
@@ -314,7 +314,7 @@ describe('chatPanel.store', () => {
 				node: {
 					id: 'node-1',
 					name: 'Test Node',
-					type: 'n8n-nodes-base.test',
+					type: 'aura-nodes-base.test',
 					typeVersion: 1,
 					position: [0, 0],
 					parameters: {},

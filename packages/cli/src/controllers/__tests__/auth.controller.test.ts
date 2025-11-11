@@ -1,9 +1,9 @@
-import type { LoginRequestDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { AuthenticatedRequest, User } from '@n8n/db';
-import { UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { LoginRequestDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { AuthenticatedRequest, User } from '@aura/db';
+import { UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import type { Response } from 'express';
 import { mock } from 'jest-mock-extended';
 

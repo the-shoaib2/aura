@@ -9,7 +9,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { shuffleArray } from '@utils/utilities';
 
@@ -71,7 +71,7 @@ export class Sort implements INodeType {
 								required: true,
 								default: '',
 								description: 'The field to sort by',
-								// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+								// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 								placeholder: 'e.g. id',
 								hint: ' Enter the field name as text',
 								requiresDataPath: 'single',

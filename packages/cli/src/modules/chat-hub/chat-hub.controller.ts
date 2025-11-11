@@ -10,9 +10,9 @@ import {
 	ChatMessageId,
 	ChatHubCreateAgentRequest,
 	ChatHubUpdateAgentRequest,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { AuthenticatedRequest } from '@n8n/db';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { AuthenticatedRequest } from '@aura/db';
 import {
 	RestController,
 	Post,
@@ -22,7 +22,7 @@ import {
 	Delete,
 	Param,
 	Patch,
-} from '@n8n/decorators';
+} from '@aura/decorators';
 import type { Response } from 'express';
 import { strict as assert } from 'node:assert';
 

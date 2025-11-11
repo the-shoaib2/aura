@@ -1,5 +1,5 @@
-import type { IDataObject, INode } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, INode } from 'workflow';
+import { NodeOperationError } from 'workflow';
 import pgPromise from 'pg-promise';
 
 import type { ColumnInfo } from '../../v2/helpers/interfaces';
@@ -24,7 +24,7 @@ const node: INode = {
 	id: '1',
 	name: 'Postgres node',
 	typeVersion: 2,
-	type: 'n8n-nodes-base.postgres',
+	type: 'aura-nodes-base.postgres',
 	position: [60, 760],
 	parameters: {
 		operation: 'executeQuery',
@@ -145,7 +145,7 @@ describe('Test PostgresV2, parsePostgresError', () => {
 	});
 
 	it('should update message with syntax error', () => {
-		// eslint-disable-next-line n8n-local-rules/no-unneeded-backticks
+		// eslint-disable-next-line aura-local-rules/no-unneeded-backticks
 		const errorMessage = String.raw`syntax error at or near "select"`;
 		const error = new Error();
 		error.message = errorMessage;

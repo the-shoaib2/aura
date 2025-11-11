@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { pushcutApiRequest } from './GenericFunctions';
 
@@ -15,7 +15,7 @@ export class Pushcut implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Pushcut',
 		name: 'pushcut',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:pushcut.png',
 		group: ['input'],
 		version: 1,
@@ -72,7 +72,7 @@ export class Pushcut implements INodeType {
 				name: 'notificationName',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getNotifications',
 				},
@@ -106,7 +106,7 @@ export class Pushcut implements INodeType {
 						},
 						default: [],
 						description:
-							'List of devices this notification is sent to. (default is all devices). Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'List of devices this notification is sent to. (default is all devices). Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Input',

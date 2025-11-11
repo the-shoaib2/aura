@@ -15,7 +15,7 @@
 			},
 			"id": "0c402bdc-7fa2-4fa1-96d6-f02853cfdaa1",
 			"name": "Telegram Message Trigger",
-			"type": "n8n-nodes-base.telegramTrigger",
+			"type": "aura-nodes-base.telegramTrigger",
 			"typeVersion": 1.2,
 			"position": [-192, 0],
 			"webhookId": "55acc711-c248-4ac9-b6cd-e295c2d33f4b",
@@ -29,7 +29,7 @@
 			},
 			"id": "30bef40d-efbe-4920-acad-ce9a42c0061c",
 			"name": "Memory",
-			"type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+			"type": "@aura/aura-nodes-langchain.memoryBufferWindow",
 			"typeVersion": 1.3,
 			"position": [752, 288]
 		},
@@ -39,7 +39,7 @@
 				"text": "={{ $json.output }}",
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1.2,
 			"position": [1056, 0],
 			"id": "7dea5c17-bfdb-4874-918b-a6583298efa2",
@@ -53,7 +53,7 @@
 				"fileId": "={{ $json.message.voice.file_id }}",
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1.2,
 			"position": [256, -96],
 			"id": "66219c83-6371-4cc6-ad43-57cee44f52da",
@@ -86,7 +86,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"typeVersion": 2.2,
 			"position": [32, 0],
 			"id": "3a1a7f7f-f122-438d-a0f2-1e80d1072dba",
@@ -98,7 +98,7 @@
 				"operation": "transcribe",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.openAi",
+			"type": "@aura/aura-nodes-langchain.openAi",
 			"typeVersion": 1.8,
 			"position": [480, -96],
 			"id": "6f314aef-7ff1-4211-8656-e2c1f8fea374",
@@ -119,7 +119,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [480, 96],
 			"id": "2e9b0ca3-2a0f-441d-89a0-28365c5ba3ef",
@@ -137,7 +137,7 @@
 			},
 			"id": "61f3b0a0-210a-4eaa-91b5-e381d5f56754",
 			"name": "Model",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [624, 288],
 			"credentials": {}
@@ -152,7 +152,7 @@
 			},
 			"id": "f958d2f6-6602-4443-bfae-ef628af09b84",
 			"name": "Assistant Agent",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 2.2,
 			"position": [704, 0]
 		},
@@ -163,7 +163,7 @@
 				"width": 464,
 				"color": 5
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [-736, -80],
 			"typeVersion": 1,
 			"id": "cd6f0a09-148c-46e3-9858-11645de3a802",

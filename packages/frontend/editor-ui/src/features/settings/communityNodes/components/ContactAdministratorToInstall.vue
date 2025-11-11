@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { N8nIcon, N8nText } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nIcon, N8nText } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import { computed, useCssModule } from 'vue';
 
 interface Props {

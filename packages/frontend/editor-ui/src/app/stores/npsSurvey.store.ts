@@ -8,13 +8,13 @@ import {
 	NPS_SURVEY_MODAL_KEY,
 	CONTACT_PROMPT_MODAL_KEY,
 } from '@/app/constants';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import type { IUserSettings, NpsSurveyState } from 'n8n-workflow';
+import { useRootStore } from '@aura/stores/useRootStore';
+import type { IUserSettings, NpsSurveyState } from 'workflow';
 import { useSettingsStore } from './settings.store';
-import { updateNpsSurveyState } from '@n8n/rest-api-client/api/npsSurvey';
-import type { N8nPrompts } from '@n8n/rest-api-client/api/prompts';
-import { getPromptsData } from '@n8n/rest-api-client/api/prompts';
-import { assert } from '@n8n/utils/assert';
+import { updateNpsSurveyState } from '@aura/rest-api-client/api/npsSurvey';
+import type { N8nPrompts } from '@aura/rest-api-client/api/prompts';
+import { getPromptsData } from '@aura/rest-api-client/api/prompts';
+import { assert } from '@aura/utils/assert';
 
 export const MAXIMUM_TIMES_TO_SHOW_SURVEY_IF_IGNORED = 3;
 

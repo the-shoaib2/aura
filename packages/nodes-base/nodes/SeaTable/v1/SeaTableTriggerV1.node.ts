@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	NodeConnectionTypes,
 	type INodeTypeBaseDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getColumns, rowFormatColumns, seaTableApiRequest, simplify } from './GenericFunctions';
 import type { ICtx, IRow, IRowResponse } from './Interfaces';
@@ -44,7 +44,7 @@ export class SeaTableTriggerV1 implements INodeType {
 					},
 					default: '',
 					description:
-						'The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Event',

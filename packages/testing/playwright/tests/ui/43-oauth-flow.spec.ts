@@ -1,11 +1,11 @@
 import { test, expect } from '../../fixtures/base';
 
 test.describe('OAuth Credentials', () => {
-	test('should create and connect with Google OAuth2', async ({ n8n }) => {
-		const projectId = await n8n.start.fromNewProjectBlankCanvas();
-		await n8n.navigate.toCredentials(projectId);
-		await n8n.credentials.emptyListCreateCredentialButton.click();
-		await n8n.credentials.createCredentialFromCredentialPicker(
+	test('should create and connect with Google OAuth2', async ({ aura }) => {
+		const projectId = await aura.start.fromNewProjectBlankCanvas();
+		await aura.navigate.toCredentials(projectId);
+		await aura.credentials.emptyListCreateCredentialButton.click();
+		await aura.credentials.createCredentialFromCredentialPicker(
 			'Google OAuth2 API',
 			{
 				clientId: 'test-key',
@@ -14,8 +14,8 @@ test.describe('OAuth Credentials', () => {
 			{ closeDialog: false },
 		);
 
-		const popupPromise = n8n.page.waitForEvent('popup');
-		await n8n.credentials.credentialModal.oauthConnectButton.click();
+		const popupPromise = aura.page.waitForEvent('popup');
+		await aura.credentials.credentialModal.oauthConnectButton.click();
 
 		const popup = await popupPromise;
 		const popupUrl = popup.url();
@@ -24,12 +24,12 @@ test.describe('OAuth Credentials', () => {
 
 		await popup.close();
 
-		await n8n.page.evaluate(() => {
+		await aura.page.evaluate(() => {
 			const channel = new BroadcastChannel('oauth-callback');
 			channel.postMessage('success');
 		});
 
-		await expect(n8n.credentials.credentialModal.oauthConnectSuccessBanner).toContainText(
+		await expect(aura.credentials.credentialModal.oauthConnectSuccessBanner).toContainText(
 			'Account connected',
 		);
 	});

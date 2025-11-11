@@ -2,7 +2,7 @@ import type { INodeUi } from '@/Interface';
 import useEnvironmentsStore from '@/features/settings/environments.ee/environments.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { ExpressionLocalResolveContext } from '@/app/types/expressions';
-import type { Workflow } from 'n8n-workflow';
+import type { Workflow } from 'workflow';
 import { computed, type ComputedRef } from 'vue';
 
 export function useExpressionResolveCtx(node: ComputedRef<INodeUi | null | undefined>) {

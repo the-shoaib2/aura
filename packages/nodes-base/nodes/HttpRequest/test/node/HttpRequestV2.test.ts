@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeTypeBaseDescription } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeTypeBaseDescription } from 'workflow';
 
 import { HttpRequestV2 } from '../../V2/HttpRequestV2.node';
 
@@ -31,7 +31,7 @@ describe('HttpRequestV2', () => {
 			getNodeParameter: jest.fn(),
 			getNode: jest.fn(() => {
 				return {
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					typeVersion: 2,
 				};
 			}),

@@ -5,7 +5,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { sms77ApiRequest } from './GenericFunctions';
 
@@ -168,7 +168,7 @@ export class Sms77 implements INodeType {
 						name: 'flash',
 						type: 'boolean',
 						default: false,
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+						// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 						description: "Send as flash message being displayed directly the receiver's display",
 					},
 					{

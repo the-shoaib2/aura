@@ -6,11 +6,11 @@ import {
 	Logger,
 	ModuleRegistry,
 	ModulesConfig,
-} from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { LICENSE_FEATURES } from '@n8n/constants';
-import { AuthRolesService, DbConnection } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { LICENSE_FEATURES } from '@aura/constants';
+import { AuthRolesService, DbConnection } from '@aura/db';
+import { Container } from '@aura/di';
 import {
 	BinaryDataConfig,
 	BinaryDataService,
@@ -18,8 +18,8 @@ import {
 	ObjectStoreService,
 	DataDeduplicationService,
 	ErrorReporter,
-} from 'n8n-core';
-import { ensureError, sleep, UnexpectedError, UserError } from 'n8n-workflow';
+} from 'aura-core';
+import { ensureError, sleep, UnexpectedError, UserError } from 'workflow';
 
 import type { AbstractServer } from '@/abstract-server';
 import { N8N_VERSION, N8N_RELEASE_DATE } from '@/constants';
@@ -85,7 +85,7 @@ export abstract class BaseCommand<F = never> {
 			serverType: this.instanceSettings.instanceType,
 			dsn: backendDsn,
 			environment,
-			release: `n8n@${N8N_VERSION}`,
+			release: `aura@${N8N_VERSION}`,
 			serverName: deploymentName,
 			releaseDate: N8N_RELEASE_DATE,
 			withEventLoopBlockDetection: true,

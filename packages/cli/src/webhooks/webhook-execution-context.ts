@@ -7,7 +7,7 @@ import type {
 	IExecuteData,
 	IWebhookDescription,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 
 /**
  * A helper class that holds the context for the webhook execution.

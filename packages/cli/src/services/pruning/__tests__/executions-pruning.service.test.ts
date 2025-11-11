@@ -1,8 +1,8 @@
-import { mockLogger } from '@n8n/backend-test-utils';
-import type { ExecutionsConfig } from '@n8n/config';
-import type { DbConnection } from '@n8n/db';
+import { mockLogger } from '@aura/backend-test-utils';
+import type { ExecutionsConfig } from '@aura/config';
+import type { DbConnection } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 
 import { ExecutionsPruningService } from '../executions-pruning.service';
 

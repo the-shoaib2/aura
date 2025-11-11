@@ -3,14 +3,14 @@ import type { IUpdateInformation } from '@/Interface';
 import InputTriple from '../InputTriple/InputTriple.vue';
 import ParameterInputFull from '../ParameterInputFull.vue';
 import ParameterIssues from '../ParameterIssues.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { DateTime } from 'luxon';
 import type {
 	FilterConditionValue,
 	FilterOptionsValue,
 	INodeProperties,
 	NodeParameterValue,
-} from 'n8n-workflow';
+} from 'workflow';
 import { computed, ref } from 'vue';
 import OperatorSelect from './OperatorSelect.vue';
 import { type FilterOperatorId } from './constants';
@@ -24,7 +24,7 @@ import {
 } from './utils';
 import { useDebounce } from '@/app/composables/useDebounce';
 
-import { N8nIcon, N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nIconButton, N8nTooltip } from '@aura/design-system';
 interface Props {
 	path: string;
 	condition: FilterConditionValue;

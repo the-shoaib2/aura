@@ -1,7 +1,7 @@
-import { BreakingChangeRecommendation } from '@n8n/api-types';
-import { WorkflowEntity } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { INode } from 'n8n-workflow';
+import { BreakingChangeRecommendation } from '@aura/api-types';
+import { WorkflowEntity } from '@aura/db';
+import { Service } from '@aura/di';
+import { INode } from 'workflow';
 
 import type {
 	BreakingChangeRuleMetadata,
@@ -36,7 +36,7 @@ export class ProcessEnvAccessRule implements IBreakingChangeWorkflowRule {
 
 		workflow.nodes.forEach((node) => {
 			// Check in Code nodes
-			if (node.type === 'n8n-nodes-base.code') {
+			if (node.type === 'aura-nodes-base.code') {
 				const code = typeof node.parameters?.code === 'string' ? node.parameters.code : undefined;
 				if (code && processEnvPattern.test(code)) {
 					affectedNodes.push({ nodeId: node.id, nodeName: node.name });
@@ -67,7 +67,7 @@ export class ProcessEnvAccessRule implements IBreakingChangeWorkflowRule {
 		return [
 			{
 				action: 'Remove process.env usage',
-				description: 'Replace process.env with environment variables configured in n8n',
+				description: 'Replace process.env with environment variables configured in aura',
 			},
 			{
 				action: 'Enable access if required',

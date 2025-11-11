@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [120, 1510],
 			"id": "05049327-2f4e-4009-94d1-13c946fdf5ba"
@@ -16,7 +16,7 @@
 		{
 			"parameters": {},
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [580, 300],
 			"id": "21ee0629-efde-4030-9a2e-6ffe5d135aab"
@@ -34,7 +34,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 220],
 			"id": "76be9855-6e08-4898-a92f-a715ccd2d9f6"
@@ -53,7 +53,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 370],
 			"id": "49c669ce-c9d0-44ff-aabe-fc8c43b6fa5b"
@@ -63,7 +63,7 @@
 				"functionCode": "testData= JSON.stringify([{value1:true},{value2:5}]);\n\nif(JSON.stringify(items.map(item => item.json)) !== testData){\n  throw new Error('Error in Merge node : append');\n}\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [780, 300],
 			"notesInFlow": true,
@@ -77,7 +77,7 @@
 				"propertyName2": "prop4"
 			},
 			"name": "Merge1",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [580, 580],
 			"id": "76c2f8bd-920e-46d5-8ccd-c1abb9f9b107"
@@ -100,7 +100,7 @@
 				"options": {}
 			},
 			"name": "Set2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 500],
 			"id": "80630a5a-6b50-4a96-8860-4ee0a44eb6d7"
@@ -123,7 +123,7 @@
 				"options": {}
 			},
 			"name": "Set3",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 650],
 			"id": "c711f26f-fa32-4d45-96df-64a94bda847f"
@@ -133,7 +133,7 @@
 				"functionCode": "testData= JSON.stringify({prop1:1,prop3:-1});\n\nif(JSON.stringify(items[0].json) !== testData){\n  throw new Error('Error in Merge node : keepKeyMatches');\n}\nreturn items;"
 			},
 			"name": "Function1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [780, 580],
 			"notesInFlow": true,
@@ -146,7 +146,7 @@
 				"join": "inner"
 			},
 			"name": "Merge2",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [600, 900],
 			"id": "fabcb606-0623-4637-aea2-02348c9f8395"
@@ -156,7 +156,7 @@
 				"functionCode": "testData= JSON.stringify([{title:'Input2item1'},{title:'Input2item2'},{title:'Input2item3'}]);\n\nif(JSON.stringify(items.map(item => item.json)) !== testData){\n  throw new Error('Error in Merge node : mergeByIndex: innerjoin');\n}\nreturn items;"
 			},
 			"name": "Function2",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [750, 900],
 			"notesInFlow": true,
@@ -168,7 +168,7 @@
 				"mode": "mergeByIndex"
 			},
 			"name": "Merge3",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [600, 750],
 			"id": "a027b711-4a82-4d5c-b181-ef9c9a8f4c96"
@@ -178,7 +178,7 @@
 				"functionCode": "testData= JSON.stringify([{title:'Input2item1'},{title:'Input2item2'},{title:'Input2item3'}]);\n\nif(JSON.stringify(items.map(item => item.json)) !== testData){\n  throw new Error('Error in Merge node : mergeByIndex: leftjoin');\n}\nreturn items;"
 			},
 			"name": "Function3",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [750, 750],
 			"notesInFlow": true,
@@ -191,7 +191,7 @@
 				"join": "outer"
 			},
 			"name": "Merge4",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [600, 1050],
 			"notesInFlow": false,
@@ -203,7 +203,7 @@
 				"functionCode": "testData= JSON.stringify([{title:'Input2item1'},{title:'Input2item2'},{title:'Input2item3'},{title:'Input2item4'}]);\n\nif(JSON.stringify(items.map(item => item.json)) !== testData){\n  throw new Error('Error in Merge node : mergeByIndex: outerjoin');\n}\nreturn items;"
 			},
 			"name": "Function4",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [750, 1050],
 			"notesInFlow": true,
@@ -217,7 +217,7 @@
 				"propertyName2": "prop4"
 			},
 			"name": "Merge5",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [580, 1380],
 			"id": "87c14aaa-fd17-4d7b-8c05-337033d054b0"
@@ -244,7 +244,7 @@
 				"options": {}
 			},
 			"name": "Set6",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 1440],
 			"id": "06f1417b-2461-4aa6-92fb-46749dbf07be"
@@ -254,7 +254,7 @@
 				"functionCode": "testData= JSON.stringify({prop1:1,prop3:-1});\n\nif(JSON.stringify(items[0].json) !== testData){\n  throw new Error('Error in Merge node : keepKeyMatches');\n}\nreturn items;"
 			},
 			"name": "Function5",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [750, 1380],
 			"notesInFlow": true,
@@ -280,7 +280,7 @@
 				"options": {}
 			},
 			"name": "Set7",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 1290],
 			"id": "d44ca83d-c757-49c1-b35a-1f95306c796e"
@@ -290,7 +290,7 @@
 				"functionCode": "testData= JSON.stringify({prop1:1,prop3:-1});\n\nif(JSON.stringify(items[0].json) !== testData){\n  throw new Error('Error in Merge node : keepKeyMatches');\n}\nreturn items;"
 			},
 			"name": "Function6",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [750, 1230],
 			"notesInFlow": true,
@@ -305,7 +305,7 @@
 				"overwrite": "blank"
 			},
 			"name": "Merge6",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [580, 1230],
 			"id": "ebf52dbc-51cb-4abf-a4ee-480e2c0f546c"
@@ -315,7 +315,7 @@
 				"functionCode": "testData= JSON.stringify({prop1:1,prop3:-1});\n\nif(JSON.stringify(items[0].json) !== testData){\n  throw new Error('Error in Merge node : keepKeyMatches');\n}\nreturn items;"
 			},
 			"name": "Function7",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [750, 1530],
 			"notesInFlow": true,
@@ -330,7 +330,7 @@
 				"overwrite": "undefined"
 			},
 			"name": "Merge7",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [580, 1530],
 			"id": "75a59075-beab-4a75-98b5-b6b267d3a096"
@@ -340,7 +340,7 @@
 				"mode": "multiplex"
 			},
 			"name": "Merge8",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [580, 1780],
 			"id": "690e5bee-e4cc-4179-bdf6-f38ffbcd271d"
@@ -363,7 +363,7 @@
 				"options": {}
 			},
 			"name": "Set8",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 1850],
 			"id": "65fb39a2-10c6-4ad1-866a-a7771ac9c1af"
@@ -373,7 +373,7 @@
 				"functionCode": "testData= JSON.stringify({prop1: 1,prop2: -1,prop3: 2,prop4: -4});\n\nif(JSON.stringify(items[0].json) !== testData){\n  throw new Error('Error in Merge node : multiplex');\n}\nreturn items;"
 			},
 			"name": "Function8",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [780, 1780],
 			"notesInFlow": true,
@@ -398,7 +398,7 @@
 				"options": {}
 			},
 			"name": "Set9",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 1700],
 			"id": "66c41d0d-cfb4-4422-94d6-3f2cf87eb5ae"
@@ -408,7 +408,7 @@
 				"mode": "passThrough"
 			},
 			"name": "Merge9",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [590, 2080],
 			"id": "449087b4-8aac-4294-a01a-af6475eb48c1"
@@ -431,7 +431,7 @@
 				"options": {}
 			},
 			"name": "Set10",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [440, 2150],
 			"id": "fe7a92b3-8f2a-408b-90df-e1b5fe647027"
@@ -441,7 +441,7 @@
 				"functionCode": "testData= JSON.stringify({prop1: 1,prop2: -1});\n\nif(JSON.stringify(items[0].json) !== testData){\n  throw new Error('Error in Merge node : passThrough');\n}\nreturn items;"
 			},
 			"name": "Function9",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [790, 2080],
 			"notesInFlow": true,
@@ -466,7 +466,7 @@
 				"options": {}
 			},
 			"name": "Set11",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [440, 2000],
 			"id": "48d50540-eb21-470a-9a32-5a57093ebf54"
@@ -478,7 +478,7 @@
 				"propertyName2": "prop3"
 			},
 			"name": "Merge10",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [600, 2380],
 			"id": "8fa6f5b0-9f8f-4ff4-b15e-feaef0f92c61"
@@ -501,7 +501,7 @@
 				"options": {}
 			},
 			"name": "Set12",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 2450],
 			"id": "acf521b5-df53-43ff-a046-80f656dbe90b"
@@ -524,7 +524,7 @@
 				"options": {}
 			},
 			"name": "Set13",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 2300],
 			"id": "0310f05a-f0e6-4383-aa2a-1602dc8979e2"
@@ -534,7 +534,7 @@
 				"functionCode": "testData= JSON.stringify({prop1: 1,prop2: -1});\n\nif(JSON.stringify(items[0].json) !== testData){\n  throw new Error('Error in Merge node : removeKeyMatches');\n}\nreturn items;"
 			},
 			"name": "Function10",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [800, 2380],
 			"notesInFlow": true,
@@ -546,7 +546,7 @@
 				"functionCode": "items = [{\n    json:{\n        title:'Input1item1'\n    }\n},{\n    json:{\n        title:'Input1item2'\n    }\n},{\n    json:{\n        title:'Input1item3'\n    }\n}]\nreturn items;"
 			},
 			"name": "Function11",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [430, 810],
 			"notesInFlow": true,
@@ -558,7 +558,7 @@
 				"functionCode": "items = [{\n    json:{\n        title:'Input2item1'\n    }\n},{\n    json:{\n        title:'Input2item2'\n    }\n},{\n    json:{\n        title:'Input2item3'\n    }\n},{\n    json:{\n        title:'Input2item4'\n    }\n}]\nreturn items;"
 			},
 			"name": "Function12",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [430, 960],
 			"notesInFlow": true,

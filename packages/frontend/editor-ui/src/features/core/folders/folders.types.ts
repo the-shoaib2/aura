@@ -1,6 +1,6 @@
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
-import type { ITag } from '@n8n/rest-api-client';
-import type { ProjectSharingData } from 'n8n-workflow';
+import type { PathItem } from '@aura/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import type { ITag } from '@aura/rest-api-client';
+import type { ProjectSharingData } from 'workflow';
 import type { BaseResource } from '@/Interface';
 
 export type DragTarget = {

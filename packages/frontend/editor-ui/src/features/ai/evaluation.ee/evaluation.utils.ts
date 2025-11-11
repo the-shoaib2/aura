@@ -1,4 +1,4 @@
-import type { JsonValue } from 'n8n-workflow';
+import type { JsonValue } from 'workflow';
 import type { TestCaseExecutionRecord, TestRunRecord } from './evaluation.api';
 import type { Column, Header } from './views/TestRunDetailView.vue';
 

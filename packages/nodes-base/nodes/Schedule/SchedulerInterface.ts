@@ -1,4 +1,4 @@
-import type { CronExpression } from 'n8n-workflow';
+import type { CronExpression } from 'workflow';
 
 export type IRecurrenceRule =
 	| { activated: false }

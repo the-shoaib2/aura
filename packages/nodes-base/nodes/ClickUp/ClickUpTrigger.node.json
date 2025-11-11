@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.clickUpTrigger",
+	"node": "aura-nodes-base.clickUpTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Productivity", "Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/clickup/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/clickup/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.clickuptrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.clickuptrigger/"
 			}
 		]
 	}

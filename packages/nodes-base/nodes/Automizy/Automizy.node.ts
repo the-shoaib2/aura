@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	type NodeExecutionWithMetadata,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { contactFields, contactOperations } from './ContactDescription';
 import { automizyApiRequest, automizyApiRequestAllItems } from './GenericFunctions';
@@ -18,7 +18,7 @@ export class Automizy implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Automizy',
 		name: 'automizy',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:automizy.png',
 		group: ['input'],
 		version: 1,
@@ -39,7 +39,7 @@ export class Automizy implements INodeType {
 		properties: [
 			{
 				displayName:
-					'This service may no longer exist and will be removed from n8n in a future release.',
+					'This service may no longer exist and will be removed from aura in a future release.',
 				name: 'deprecated',
 				type: 'notice',
 				default: '',

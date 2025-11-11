@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [220, 550],
 			"id": "994d0931-d8cf-46ec-80dd-afa0d22717a1"
@@ -19,7 +19,7 @@
 				"additionalFields": {}
 			},
 			"name": "Slack",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [460, 450],
 			"credentials": {
@@ -39,7 +39,7 @@
 				}
 			},
 			"name": "Slack1",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"otherOptions": {}
 			},
 			"name": "Slack13",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [420, 630],
 			"alwaysOutputData": true,
@@ -77,7 +77,7 @@
 				"timestamp": "={{$node[\"Slack13\"].json[\"message\"][\"ts\"]}}"
 			},
 			"name": "Slack14",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1060, 630],
 			"alwaysOutputData": true,
@@ -99,7 +99,7 @@
 				"attachments": []
 			},
 			"name": "Slack15",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1190, 630],
 			"alwaysOutputData": true,
@@ -121,7 +121,7 @@
 				"otherOptions": {}
 			},
 			"name": "Slack16",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1320, 630],
 			"alwaysOutputData": true,
@@ -140,7 +140,7 @@
 				"timestamp": "={{$node[\"Slack13\"].json[\"message\"][\"ts\"]}}"
 			},
 			"name": "Slack17",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1470, 630],
 			"alwaysOutputData": true,
@@ -160,7 +160,7 @@
 				"timestamp": "={{$node[\"Slack13\"].json[\"message\"][\"ts\"]}}"
 			},
 			"name": "Slack18",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [580, 700],
 			"alwaysOutputData": true,
@@ -180,7 +180,7 @@
 				"timestamp": "={{$node[\"Slack13\"].json[\"message\"][\"ts\"]}}"
 			},
 			"name": "Slack19",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [720, 700],
 			"alwaysOutputData": true,
@@ -201,7 +201,7 @@
 				"timestamp": "={{$node[\"Slack13\"].json[\"message\"][\"ts\"]}}"
 			},
 			"name": "Slack20",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [870, 700],
 			"alwaysOutputData": true,
@@ -220,7 +220,7 @@
 				"user": "={{$node[\"Slack13\"].json[\"message\"][\"user\"]}}"
 			},
 			"name": "Slack24",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [580, 850],
 			"alwaysOutputData": true,
@@ -238,7 +238,7 @@
 				"user": "={{$node[\"Slack13\"].json[\"message\"][\"user\"]}}"
 			},
 			"name": "Slack25",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [730, 850],
 			"alwaysOutputData": true,

@@ -247,7 +247,7 @@ export const getAllSubscribersResponseClassic = [
 export const getUpdateSubscriberResponseV2 = {
 	data: {
 		id: '139872142007207563',
-		email: 'user@n8n.io',
+		email: 'user@aura.io',
 		status: 'junk',
 		source: 'api',
 		sent: 0,
@@ -278,7 +278,7 @@ export const getUpdateSubscriberResponseV2 = {
 export const getCreateResponseV2 = {
 	data: {
 		id: '139872142007207563',
-		email: 'user@n8n.io',
+		email: 'user@aura.io',
 		status: 'junk',
 		source: 'api',
 		sent: 0,
@@ -309,7 +309,7 @@ export const getCreateResponseV2 = {
 export const getSubscriberResponseV2 = {
 	data: {
 		id: '139872142007207563',
-		email: 'user@n8n.io',
+		email: 'user@aura.io',
 		status: 'junk',
 		source: 'api',
 		sent: 0,
@@ -341,7 +341,7 @@ export const getAllSubscribersResponseV2 = {
 	data: [
 		{
 			id: '139872142007207563',
-			email: 'user@n8n.io',
+			email: 'user@aura.io',
 			status: 'junk',
 			source: 'api',
 			sent: 0,
@@ -369,7 +369,7 @@ export const getAllSubscribersResponseV2 = {
 		},
 		{
 			id: '139059851540038710',
-			email: 'nathan@n8n.io',
+			email: 'nathan@aura.io',
 			status: 'junk',
 			source: 'api',
 			sent: 0,

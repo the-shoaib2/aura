@@ -4,8 +4,8 @@ import type {
 	JsonObject,
 	IRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function apiTemplateIoApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions,
@@ -16,7 +16,7 @@ export async function apiTemplateIoApiRequest(
 ) {
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'aura',
 			Accept: 'application/json',
 		},
 		uri: `https://api.apitemplate.io/v1${endpoint}`,

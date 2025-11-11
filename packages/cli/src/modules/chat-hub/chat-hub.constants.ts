@@ -1,5 +1,5 @@
-import type { ChatHubLLMProvider } from '@n8n/api-types';
-import type { INodeTypeNameVersion } from 'n8n-workflow';
+import type { ChatHubLLMProvider } from '@aura/api-types';
+import type { INodeTypeNameVersion } from 'workflow';
 
 export const CONVERSATION_TITLE_GENERATION_PROMPT = `Generate a concise, descriptive title for this conversation based on the user's message.
 
@@ -13,15 +13,15 @@ Requirements:
 
 export const PROVIDER_NODE_TYPE_MAP: Record<ChatHubLLMProvider, INodeTypeNameVersion> = {
 	openai: {
-		name: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+		name: '@aura/aura-nodes-langchain.lmChatOpenAi',
 		version: 1.2,
 	},
 	anthropic: {
-		name: '@n8n/n8n-nodes-langchain.lmChatAnthropic',
+		name: '@aura/aura-nodes-langchain.lmChatAnthropic',
 		version: 1.3,
 	},
 	google: {
-		name: '@n8n/n8n-nodes-langchain.lmChatGoogleGemini',
+		name: '@aura/aura-nodes-langchain.lmChatGoogleGemini',
 		version: 1.2,
 	},
 };

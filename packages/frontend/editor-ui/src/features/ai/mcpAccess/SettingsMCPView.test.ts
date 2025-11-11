@@ -3,7 +3,7 @@ import SettingsMCPView from './SettingsMCPView.vue';
 import { vi } from 'vitest';
 import { mockedStore, waitAllPromises } from '@/__tests__/utils';
 import { createTestingPinia } from '@pinia/testing';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useMCPStore } from './mcp.store';

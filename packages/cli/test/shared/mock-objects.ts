@@ -3,9 +3,9 @@ import {
 	randomEmail,
 	randomName,
 	uniqueId,
-} from '@n8n/backend-test-utils';
-import { CredentialsEntity, Project, User } from '@n8n/db';
-import { randomInt } from 'n8n-workflow';
+} from '@aura/backend-test-utils';
+import { CredentialsEntity, Project, User } from '@aura/db';
+import { randomInt } from 'workflow';
 
 export const mockCredential = (): CredentialsEntity =>
 	Object.assign(new CredentialsEntity(), randomCredentialPayload());
@@ -22,5 +22,5 @@ export const mockProject = (): Project =>
 	Object.assign(new Project(), {
 		id: uniqueId(),
 		type: 'personal',
-		name: 'Nathan Fillion <nathan.fillion@n8n.io>',
+		name: 'Nathan Fillion <nathan.fillion@aura.io>',
 	});

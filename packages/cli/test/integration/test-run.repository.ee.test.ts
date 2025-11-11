@@ -1,7 +1,7 @@
-import { createWorkflow, testDb } from '@n8n/backend-test-utils';
-import { TestRunRepository } from '@n8n/db';
-import type { IWorkflowDb, WorkflowEntity } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createWorkflow, testDb } from '@aura/backend-test-utils';
+import { TestRunRepository } from '@aura/db';
+import type { IWorkflowDb, WorkflowEntity } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { createTestCaseExecution, createTestRun } from '@test-integration/db/evaluation';
 

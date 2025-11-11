@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { MAX_TAG_NAME_LENGTH } from '../../../tags.constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 import { ElCol, ElRow } from 'element-plus';
-import { N8nButton, N8nIcon, N8nInput } from '@n8n/design-system';
+import { N8nButton, N8nIcon, N8nInput } from '@aura/design-system';
 withDefaults(
 	defineProps<{
 		disabled: boolean;

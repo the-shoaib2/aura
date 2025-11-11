@@ -1,10 +1,5 @@
-import type { AuthenticatedRequest, ExecutionSummaries, ExecutionEntity } from '@n8n/db';
-import type {
-	AnnotationVote,
-	ExecutionStatus,
-	IDataObject,
-	WorkflowExecuteMode,
-} from 'n8n-workflow';
+import type { AuthenticatedRequest, ExecutionSummaries, ExecutionEntity } from '@aura/db';
+import type { AnnotationVote, ExecutionStatus, IDataObject, WorkflowExecuteMode } from 'workflow';
 
 export declare namespace ExecutionRequest {
 	namespace QueryParams {

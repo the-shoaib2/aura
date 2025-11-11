@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 
 const NODE_NAMES = {
 	PROCESS_THE_DATA: 'Process The Data',
@@ -25,7 +25,7 @@ const TIMEOUTS = {
  * Helper function to assert node execution states (success/running indicators)
  */
 async function assertNodeExecutionStates(
-	n8n: n8nPage,
+	aura: auraPage,
 	checks: Array<{
 		nodeName: string;
 		success?: 'visible' | 'hidden';
@@ -35,197 +35,197 @@ async function assertNodeExecutionStates(
 	for (const check of checks) {
 		if (check.success !== undefined) {
 			const assertion = check.success === 'visible' ? 'toBeVisible' : 'toBeHidden';
-			await expect(n8n.canvas.getNodeSuccessStatusIndicator(check.nodeName))[assertion]();
+			await expect(aura.canvas.getNodeSuccessStatusIndicator(check.nodeName))[assertion]();
 		}
 		if (check.running !== undefined) {
 			const assertion = check.running === 'visible' ? 'toBeVisible' : 'toBeHidden';
-			await expect(n8n.canvas.getNodeRunningStatusIndicator(check.nodeName))[assertion]();
+			await expect(aura.canvas.getNodeRunningStatusIndicator(check.nodeName))[assertion]();
 		}
 	}
 }
 
 test.describe('Execution', () => {
-	test('should test manual workflow', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Manual_wait_set.json');
+	test('should test manual workflow', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Manual_wait_set.json');
 
-		await expect(n8n.canvas.getExecuteWorkflowButton()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
+		await expect(aura.canvas.getExecuteWorkflowButton()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
 
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await expect(n8n.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeVisible();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
+		await expect(aura.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeVisible();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
 
-		await assertNodeExecutionStates(n8n, [
+		await assertNodeExecutionStates(aura, [
 			{ nodeName: 'Manual', success: 'visible' },
 			{ nodeName: 'Wait', success: 'hidden', running: 'visible' },
 			{ nodeName: 'Set', success: 'hidden' },
 		]);
 
-		await assertNodeExecutionStates(n8n, [
+		await assertNodeExecutionStates(aura, [
 			{ nodeName: 'Manual', success: 'visible' },
 			{ nodeName: 'Wait', success: 'visible' },
 			{ nodeName: 'Set', success: 'visible' },
 		]);
 
-		await expect(n8n.canvas.getNodeSuccessStatusIndicator('Wait')).toBeVisible({
+		await expect(aura.canvas.getNodeSuccessStatusIndicator('Wait')).toBeVisible({
 			timeout: TIMEOUTS.NODE_SUCCESS_WAIT,
 		});
 
-		await n8n.notifications.waitForNotificationAndClose(
+		await aura.notifications.waitForNotificationAndClose(
 			NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY,
 		);
 
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeVisible();
-		await n8n.canvas.clearExecutionData();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeVisible();
+		await aura.canvas.clearExecutionData();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
 	});
 
-	test('should test manual workflow stop', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Manual_wait_set.json');
+	test('should test manual workflow stop', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Manual_wait_set.json');
 
-		await expect(n8n.canvas.getExecuteWorkflowButton()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
+		await expect(aura.canvas.getExecuteWorkflowButton()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
 
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await expect(n8n.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeVisible();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
+		await expect(aura.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeVisible();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
 
-		await assertNodeExecutionStates(n8n, [
+		await assertNodeExecutionStates(aura, [
 			{ nodeName: 'Manual', success: 'visible' },
 			{ nodeName: 'Wait', running: 'visible' },
 		]);
 
-		await n8n.canvas.stopExecutionButton().click();
+		await aura.canvas.stopExecutionButton().click();
 
-		await n8n.notifications.waitForNotificationAndClose(NOTIFICATIONS.EXECUTION_STOPPED);
+		await aura.notifications.waitForNotificationAndClose(NOTIFICATIONS.EXECUTION_STOPPED);
 
-		await assertNodeExecutionStates(n8n, [
+		await assertNodeExecutionStates(aura, [
 			{ nodeName: 'Manual', success: 'visible' },
 			{ nodeName: 'Wait', running: 'hidden' },
 			{ nodeName: 'Set', success: 'hidden' },
 		]);
 
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeVisible();
-		await n8n.canvas.clearExecutionData();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeVisible();
+		await aura.canvas.clearExecutionData();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
 	});
 
-	test('should test webhook workflow', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Webhook_wait_set.json');
+	test('should test webhook workflow', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Webhook_wait_set.json');
 
-		await expect(n8n.canvas.getExecuteWorkflowButton()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
+		await expect(aura.canvas.getExecuteWorkflowButton()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
 
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await expect(n8n.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeVisible();
+		await expect(aura.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeVisible();
 
-		await n8n.canvas.openNode('Webhook');
+		await aura.canvas.openNode('Webhook');
 
-		await n8n.clipboard.grant();
-		await n8n.page.getByTestId('copy-input').click();
-		await n8n.ndv.clickBackToCanvasButton();
+		await aura.clipboard.grant();
+		await aura.page.getByTestId('copy-input').click();
+		await aura.ndv.clickBackToCanvasButton();
 
-		const webhookUrl = await n8n.clipboard.readText();
-		const response = await n8n.page.request.get(webhookUrl);
+		const webhookUrl = await aura.clipboard.readText();
+		const response = await aura.page.request.get(webhookUrl);
 		expect(response.status()).toBe(200);
 
-		await assertNodeExecutionStates(n8n, [
+		await assertNodeExecutionStates(aura, [
 			{ nodeName: 'Webhook', success: 'visible' },
 			{ nodeName: 'Wait', success: 'hidden', running: 'visible' },
 			{ nodeName: 'Set', success: 'hidden' },
 		]);
 
-		await expect(n8n.canvas.getNodeSuccessStatusIndicator('Wait')).toBeVisible({
+		await expect(aura.canvas.getNodeSuccessStatusIndicator('Wait')).toBeVisible({
 			timeout: TIMEOUTS.NODE_SUCCESS_WAIT,
 		});
-		await assertNodeExecutionStates(n8n, [
+		await assertNodeExecutionStates(aura, [
 			{ nodeName: 'Webhook', success: 'visible' },
 			{ nodeName: 'Wait', success: 'visible' },
 			{ nodeName: 'Set', success: 'visible' },
 		]);
 
-		await n8n.notifications.waitForNotificationAndClose(
+		await aura.notifications.waitForNotificationAndClose(
 			NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY,
 		);
 
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeVisible();
-		await n8n.canvas.clearExecutionData();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeVisible();
+		await aura.canvas.clearExecutionData();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
 	});
 
-	test('should execute workflow from specific trigger nodes independently', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Two_schedule_triggers.json');
+	test('should execute workflow from specific trigger nodes independently', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Two_schedule_triggers.json');
 
-		await n8n.canvas.clickZoomToFitButton();
-		await expect(n8n.canvas.getExecuteWorkflowButton('Trigger A')).toHaveCSS('opacity', '0');
-		await expect(n8n.canvas.getExecuteWorkflowButton('Trigger B')).toHaveCSS('opacity', '0');
+		await aura.canvas.clickZoomToFitButton();
+		await expect(aura.canvas.getExecuteWorkflowButton('Trigger A')).toHaveCSS('opacity', '0');
+		await expect(aura.canvas.getExecuteWorkflowButton('Trigger B')).toHaveCSS('opacity', '0');
 
-		await n8n.canvas.nodeByName('Trigger A').hover();
-		await expect(n8n.canvas.getExecuteWorkflowButton('Trigger A')).toHaveCSS('opacity', '1');
-		await expect(n8n.canvas.getExecuteWorkflowButton('Trigger B')).toHaveCSS('opacity', '0');
-		await n8n.canvas.clickExecuteWorkflowButton('Trigger A');
+		await aura.canvas.nodeByName('Trigger A').hover();
+		await expect(aura.canvas.getExecuteWorkflowButton('Trigger A')).toHaveCSS('opacity', '1');
+		await expect(aura.canvas.getExecuteWorkflowButton('Trigger B')).toHaveCSS('opacity', '0');
+		await aura.canvas.clickExecuteWorkflowButton('Trigger A');
 
-		await n8n.notifications.waitForNotificationAndClose(
+		await aura.notifications.waitForNotificationAndClose(
 			NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY,
 		);
-		await n8n.canvas.openNode('Edit Fields');
-		await expect(n8n.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('Trigger A');
+		await aura.canvas.openNode('Edit Fields');
+		await expect(aura.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('Trigger A');
 
-		await n8n.ndv.clickBackToCanvasButton();
-		await expect(n8n.ndv.getContainer()).toBeHidden();
+		await aura.ndv.clickBackToCanvasButton();
+		await expect(aura.ndv.getContainer()).toBeHidden();
 
-		await n8n.canvas.nodeByName('Trigger B').hover();
-		await expect(n8n.canvas.getExecuteWorkflowButton('Trigger A')).toHaveCSS('opacity', '0');
-		await expect(n8n.canvas.getExecuteWorkflowButton('Trigger B')).toHaveCSS('opacity', '1');
-		await n8n.canvas.clickExecuteWorkflowButton('Trigger B');
+		await aura.canvas.nodeByName('Trigger B').hover();
+		await expect(aura.canvas.getExecuteWorkflowButton('Trigger A')).toHaveCSS('opacity', '0');
+		await expect(aura.canvas.getExecuteWorkflowButton('Trigger B')).toHaveCSS('opacity', '1');
+		await aura.canvas.clickExecuteWorkflowButton('Trigger B');
 
-		await n8n.notifications.waitForNotificationAndClose(
+		await aura.notifications.waitForNotificationAndClose(
 			NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY,
 		);
-		await n8n.canvas.openNode('Edit Fields');
-		await expect(n8n.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('Trigger B');
+		await aura.canvas.openNode('Edit Fields');
+		await expect(aura.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('Trigger B');
 	});
 
 	test.describe('execution preview', () => {
-		test('when deleting the last execution, it should show empty state', async ({ n8n }) => {
-			await n8n.start.fromBlankCanvas();
-			await n8n.canvas.addInitialNodeToCanvas('Manual Trigger');
-			await n8n.canvas.clickExecuteWorkflowButton();
+		test('when deleting the last execution, it should show empty state', async ({ aura }) => {
+			await aura.start.fromBlankCanvas();
+			await aura.canvas.addInitialNodeToCanvas('Manual Trigger');
+			await aura.canvas.clickExecuteWorkflowButton();
 
-			await n8n.notifications.waitForNotification(NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY);
+			await aura.notifications.waitForNotification(NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY);
 
-			await n8n.canvas.openExecutions();
+			await aura.canvas.openExecutions();
 
-			await n8n.executions.deleteExecutionInPreview();
+			await aura.executions.deleteExecutionInPreview();
 
-			await expect(n8n.executions.getSuccessfulExecutionItems()).toHaveCount(0);
-			await n8n.notifications.waitForNotificationAndClose(NOTIFICATIONS.EXECUTION_DELETED);
+			await expect(aura.executions.getSuccessfulExecutionItems()).toHaveCount(0);
+			await aura.notifications.waitForNotificationAndClose(NOTIFICATIONS.EXECUTION_DELETED);
 		});
 	});
 
 	/**
 	 * @TODO New Canvas: Different classes for pinned states on edges and nodes
 	 */
-	// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+	// eslint-disable-next-line aura-local-rules/no-skipped-tests
 	test.describe.skip('connections should be colored differently for pinned data', () => {
 		test('when executing the workflow', async () => {
 			// Not yet migrated - waiting for New Canvas implementation
@@ -244,13 +244,13 @@ test.describe('Execution', () => {
 		});
 	});
 
-	test('should send proper payload for node rerun', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Multiple_trigger_node_rerun.json');
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeVisible();
+	test('should send proper payload for node rerun', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Multiple_trigger_node_rerun.json');
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeVisible();
 
-		const payload = await n8n.executionsComposer.executeNodeAndCapturePayload(
+		const payload = await aura.executionsComposer.executeNodeAndCapturePayload(
 			NODE_NAMES.PROCESS_THE_DATA,
 		);
 
@@ -263,11 +263,11 @@ test.describe('Execution', () => {
 		});
 	});
 
-	test('should send proper payload for manual node run', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Check_manual_node_run_for_pinned_and_rundata.json');
-		await n8n.canvas.clickZoomToFitButton();
+	test('should send proper payload for manual node run', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Check_manual_node_run_for_pinned_and_rundata.json');
+		await aura.canvas.clickZoomToFitButton();
 
-		const firstPayload = await n8n.executionsComposer.executeNodeAndCapturePayload(NODE_NAMES.IF);
+		const firstPayload = await aura.executionsComposer.executeNodeAndCapturePayload(NODE_NAMES.IF);
 
 		expect(firstPayload).not.toHaveProperty('runData');
 		expect(firstPayload).toHaveProperty('workflowData');
@@ -278,9 +278,9 @@ test.describe('Execution', () => {
 			[NODE_NAMES.WEBHOOK]: expect.anything(),
 		});
 
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeVisible();
 
-		const secondPayload = await n8n.executionsComposer.executeNodeAndCapturePayload(
+		const secondPayload = await aura.executionsComposer.executeNodeAndCapturePayload(
 			NODE_NAMES.NO_OP_2,
 		);
 
@@ -302,70 +302,70 @@ test.describe('Execution', () => {
 	});
 
 	test('should successfully execute partial executions with nodes attached to the second output', async ({
-		n8n,
+		aura,
 	}) => {
-		await n8n.start.fromImportedWorkflow('Test_Workflow_pairedItem_incomplete_manual_bug.json');
-		await n8n.canvas.clickZoomToFitButton();
+		await aura.start.fromImportedWorkflow('Test_Workflow_pairedItem_incomplete_manual_bug.json');
+		await aura.canvas.clickZoomToFitButton();
 
-		const workflowRunPromise = n8n.page.waitForRequest(
+		const workflowRunPromise = aura.page.waitForRequest(
 			(request) =>
 				request.url().includes('/rest/workflows/') &&
 				request.url().includes('/run') &&
 				request.method() === 'POST',
 		);
 
-		await n8n.canvas.clickExecuteWorkflowButton();
-		await n8n.canvas.executeNode(NODE_NAMES.TEST_EXPRESSION);
+		await aura.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.executeNode(NODE_NAMES.TEST_EXPRESSION);
 		await workflowRunPromise;
 
-		await expect(n8n.notifications.getErrorNotifications()).toHaveCount(0);
+		await expect(aura.notifications.getErrorNotifications()).toHaveCount(0);
 	});
 
-	test('should execute workflow partially up to the node that has issues', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow(
+	test('should execute workflow partially up to the node that has issues', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow(
 			'Test_workflow_partial_execution_with_missing_credentials.json',
 		);
 
-		const workflowRunPromise = n8n.page.waitForRequest(
+		const workflowRunPromise = aura.page.waitForRequest(
 			(request) =>
 				request.url().includes('/rest/workflows/') &&
 				request.url().includes('/run') &&
 				request.method() === 'POST',
 		);
 
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
 		await workflowRunPromise;
 
-		await assertNodeExecutionStates(n8n, [
+		await assertNodeExecutionStates(aura, [
 			{ nodeName: 'DebugHelper', success: 'visible' },
 			{ nodeName: 'Filter', success: 'visible' },
 		]);
 
-		await expect(n8n.notifications.getErrorNotifications()).toContainText(
+		await expect(aura.notifications.getErrorNotifications()).toContainText(
 			/Problem in node.*Telegram/,
 		);
 	});
 
 	test('Paired items should be correctly mapped after passed through the merge node with more than two inputs', async ({
-		n8n,
+		aura,
 	}) => {
-		await n8n.start.fromImportedWorkflow('merge_node_inputs_paired_items.json');
+		await aura.start.fromImportedWorkflow('merge_node_inputs_paired_items.json');
 
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await n8n.notifications.waitForNotificationAndClose(
+		await aura.notifications.waitForNotificationAndClose(
 			NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY,
 		);
 
-		await expect(n8n.canvas.getNodeSuccessStatusIndicator('Edit Fields')).toBeVisible();
+		await expect(aura.canvas.getNodeSuccessStatusIndicator('Edit Fields')).toBeVisible();
 
-		await n8n.canvas.openNode('Edit Fields');
-		await n8n.ndv.outputPanel.switchDisplayMode('json');
-		await expect(n8n.ndv.outputPanel.get()).toContainText('Branch 1 Value');
-		await expect(n8n.ndv.outputPanel.get()).toContainText('Branch 2 Value');
-		await expect(n8n.ndv.outputPanel.get()).toContainText('Branch 3 Value');
+		await aura.canvas.openNode('Edit Fields');
+		await aura.ndv.outputPanel.switchDisplayMode('json');
+		await expect(aura.ndv.outputPanel.get()).toContainText('Branch 1 Value');
+		await expect(aura.ndv.outputPanel.get()).toContainText('Branch 2 Value');
+		await expect(aura.ndv.outputPanel.get()).toContainText('Branch 3 Value');
 	});
 });

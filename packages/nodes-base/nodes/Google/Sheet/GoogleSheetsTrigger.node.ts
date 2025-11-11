@@ -5,8 +5,8 @@ import type {
 	INodeTypeDescription,
 	INodeProperties,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import {
 	arrayOfArraysToJson,
@@ -163,7 +163,7 @@ export class GoogleSheetsTrigger implements INodeType {
 				type: 'hidden',
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'OAuth2 (recommended)',
 						value: 'triggerOAuth2',
 					},
@@ -233,7 +233,7 @@ export class GoogleSheetsTrigger implements INodeType {
 						name: 'columnsToWatch',
 						type: 'multiOptions',
 						description:
-							'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+							'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsDependsOn: ['sheetName.value'],
 							loadOptionsMethod: 'getSheetHeaderRowAndSkipEmpty',

@@ -6,15 +6,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { Logger } from '@n8n/backend-common';
+import { Logger } from '@aura/backend-common';
 import type {
 	ClientOAuth2Options,
 	ClientOAuth2RequestObject,
 	ClientOAuth2TokenData,
 	OAuth2CredentialData,
-} from '@n8n/client-oauth2';
-import { ClientOAuth2 } from '@n8n/client-oauth2';
-import { Container } from '@n8n/di';
+} from '@aura/client-oauth2';
+import { ClientOAuth2 } from '@aura/client-oauth2';
+import { Container } from '@aura/di';
 import type { AxiosError, AxiosHeaders, AxiosRequestConfig, AxiosResponse } from 'axios';
 import axios from 'axios';
 import crypto, { createHmac } from 'crypto';
@@ -34,7 +34,7 @@ import {
 	jsonParse,
 	ApplicationError,
 	sleep,
-} from 'n8n-workflow';
+} from 'workflow';
 import type {
 	GenericValue,
 	IAdditionalCredentialOptions,
@@ -58,7 +58,7 @@ import type {
 	RequestHelperFunctions,
 	Workflow,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { Token } from 'oauth-1.0a';
 import clientOAuth1 from 'oauth-1.0a';
 import { stringify } from 'qs';
@@ -332,7 +332,7 @@ async function generateContentLengthHeader(config: AxiosRequestConfig) {
 /**
  * This function is a temporary implementation that translates all http requests
  * done via the request library to axios directly.
- * We are not using n8n's interface as it would an unnecessary step,
+ * We are not using aura's interface as it would an unnecessary step,
  * considering the `request` helper has been be deprecated and should be removed.
  * @deprecated This is only used by legacy request helpers, that are also deprecated
  */
@@ -712,9 +712,9 @@ export async function proxyRequestToAxios(
 	}
 }
 
-export function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): AxiosRequestConfig {
+export function convertN8nRequestToAxios(auraRequest: IHttpRequestOptions): AxiosRequestConfig {
 	// Destructure properties with the same name first.
-	const { headers, method, timeout, auth, proxy, url } = n8nRequest;
+	const { headers, method, timeout, auth, proxy, url } = auraRequest;
 
 	const axiosRequest: AxiosRequestConfig = {
 		headers: headers ?? {},
@@ -726,43 +726,43 @@ export function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): Axios
 		maxContentLength: Infinity,
 	} as AxiosRequestConfig;
 
-	axiosRequest.params = n8nRequest.qs;
+	axiosRequest.params = auraRequest.qs;
 
-	if (n8nRequest.abortSignal) {
-		axiosRequest.signal = n8nRequest.abortSignal;
+	if (auraRequest.abortSignal) {
+		axiosRequest.signal = auraRequest.abortSignal;
 	}
 
-	if (n8nRequest.baseURL !== undefined) {
-		axiosRequest.baseURL = n8nRequest.baseURL;
+	if (auraRequest.baseURL !== undefined) {
+		axiosRequest.baseURL = auraRequest.baseURL;
 	}
 
-	if (n8nRequest.disableFollowRedirect === true) {
+	if (auraRequest.disableFollowRedirect === true) {
 		axiosRequest.maxRedirects = 0;
 	}
 
-	if (n8nRequest.encoding !== undefined) {
-		axiosRequest.responseType = n8nRequest.encoding;
+	if (auraRequest.encoding !== undefined) {
+		axiosRequest.responseType = auraRequest.encoding;
 	}
 
-	const host = getHostFromRequestObject(n8nRequest);
+	const host = getHostFromRequestObject(auraRequest);
 	const agentOptions: AgentOptions = {};
 	if (host) {
 		agentOptions.servername = host;
 	}
-	if (n8nRequest.skipSslCertificateValidation === true) {
+	if (auraRequest.skipSslCertificateValidation === true) {
 		agentOptions.rejectUnauthorized = false;
 	}
 	setAxiosAgents(axiosRequest, agentOptions, proxy);
 
-	axiosRequest.beforeRedirect = getBeforeRedirectFn(agentOptions, axiosRequest, n8nRequest.proxy);
+	axiosRequest.beforeRedirect = getBeforeRedirectFn(agentOptions, axiosRequest, auraRequest.proxy);
 
-	if (n8nRequest.arrayFormat !== undefined) {
+	if (auraRequest.arrayFormat !== undefined) {
 		axiosRequest.paramsSerializer = (params) => {
-			return stringify(params, { arrayFormat: n8nRequest.arrayFormat });
+			return stringify(params, { arrayFormat: auraRequest.arrayFormat });
 		};
 	}
 
-	const { body } = n8nRequest;
+	const { body } = auraRequest;
 	if (body) {
 		// Let's add some useful header standards here.
 		const existingContentTypeHeaderKey = searchForHeader(axiosRequest, 'content-type');
@@ -781,7 +781,7 @@ export function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): Axios
 		} else if (
 			axiosRequest.headers?.[existingContentTypeHeaderKey] === 'application/x-www-form-urlencoded'
 		) {
-			axiosRequest.data = new URLSearchParams(n8nRequest.body as Record<string, string>);
+			axiosRequest.data = new URLSearchParams(auraRequest.body as Record<string, string>);
 		}
 		// if there is a body and it's empty (does not have properties),
 		// make sure not to send anything in it as some services fail when
@@ -791,7 +791,7 @@ export function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): Axios
 		}
 	}
 
-	if (n8nRequest.json) {
+	if (auraRequest.json) {
 		const key = searchForHeader(axiosRequest, 'accept');
 		// If key exists, then the user has set both accept
 		// header and the json flag. Header should take precedence.
@@ -809,11 +809,11 @@ export function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): Axios
 	if (!userAgentHeader) {
 		axiosRequest.headers = {
 			...axiosRequest.headers,
-			'User-Agent': 'n8n',
+			'User-Agent': 'aura',
 		};
 	}
 
-	if (n8nRequest.ignoreHttpStatusErrors) {
+	if (auraRequest.ignoreHttpStatusErrors) {
 		axiosRequest.validateStatus = () => true;
 	}
 

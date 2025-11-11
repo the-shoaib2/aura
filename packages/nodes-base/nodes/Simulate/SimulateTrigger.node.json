@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.simulateTrigger",
+	"node": "aura-nodes-base.simulateTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Core Nodes"],

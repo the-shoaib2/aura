@@ -1,4 +1,4 @@
-import { baseConfig } from '@n8n/eslint-config/base';
+import { baseConfig } from '@aura/eslint-config/base';
 import playwrightPlugin from 'eslint-plugin-playwright';
 
 export default [
@@ -22,7 +22,7 @@ export default [
 			'@typescript-eslint/no-unused-expressions': 'off',
 			'@typescript-eslint/no-use-before-define': 'off',
 			'@typescript-eslint/promise-function-async': 'off',
-			'n8n-local-rules/no-uncaught-json-parse': 'off',
+			'aura-local-rules/no-uncaught-json-parse': 'off',
 			'playwright/expect-expect': 'warn',
 			'playwright/max-nested-describe': 'warn',
 			'playwright/no-conditional-in-test': 'error',

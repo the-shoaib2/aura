@@ -9,7 +9,7 @@ defineProps<{
 	<div class="titled-list">
 		<p v-text="title" />
 		<ul>
-			<li v-for="item in items" :key="item" v-n8n-html="item" class="titled-list-item" />
+			<li v-for="item in items" :key="item" v-aura-html="item" class="titled-list-item" />
 		</ul>
 	</div>
 </template>

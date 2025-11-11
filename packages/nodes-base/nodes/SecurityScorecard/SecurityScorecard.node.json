@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.securityScorecard",
+	"node": "aura-nodes-base.securityScorecard",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Analytics"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/securityscorecard/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/securityscorecard/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.securityscorecard/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.securityscorecard/"
 			}
 		]
 	}

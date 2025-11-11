@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "32be2fcf-b143-442e-877f-96b51b0b5148"
@@ -26,7 +26,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [430, 300],
 			"id": "17c6fa30-1a0e-4d29-8c73-ef9357d5f877"
@@ -36,7 +36,7 @@
 				"functionCode": "testData =  JSON.stringify({\n  name: \"test\"\n});\n\nif(JSON.stringify($node['Set'].json)!==testData){\n  throw new Error('Error in Set node');\n}\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"notesInFlow": true,

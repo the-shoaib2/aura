@@ -1,5 +1,5 @@
-import { TaskRunnersConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { TaskRunnersConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import request from 'supertest';
 import type TestAgent from 'supertest/lib/agent';
 

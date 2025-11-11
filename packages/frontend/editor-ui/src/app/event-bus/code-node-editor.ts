@@ -1,4 +1,4 @@
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 
 export type HighlightLineEvent = number | 'last';
 

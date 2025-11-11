@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class SolarWindsObservabilityApi implements ICredentialType {
 	name = 'solarWindsObservabilityApi';

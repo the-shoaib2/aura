@@ -6,17 +6,17 @@ import {
 	randomCredentialPayloadWithOauthTokenData,
 	randomName,
 	testDb,
-} from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { Project, User, ListQueryDb } from '@n8n/db';
-import { CredentialsRepository, ProjectRepository, SharedCredentialsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { Project, User, ListQueryDb } from '@aura/db';
+import { CredentialsRepository, ProjectRepository, SharedCredentialsRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import type { Scope } from '@sentry/node';
 import * as a from 'assert';
 import { mock } from 'jest-mock-extended';
-import { Credentials } from 'n8n-core';
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
-import { randomString } from 'n8n-workflow';
+import { Credentials } from 'aura-core';
+import type { ICredentialDataDecryptedObject } from 'workflow';
+import { randomString } from 'workflow';
 
 import { CREDENTIAL_BLANKING_VALUE } from '@/constants';
 import { CredentialsService } from '@/credentials/credentials.service';

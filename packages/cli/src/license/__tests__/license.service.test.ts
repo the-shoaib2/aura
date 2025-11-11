@@ -1,6 +1,6 @@
-import type { LicenseState } from '@n8n/backend-common';
-import type { WorkflowRepository } from '@n8n/db';
-import type { TEntitlement } from '@n8n_io/license-sdk';
+import type { LicenseState } from '@aura/backend-common';
+import type { WorkflowRepository } from '@aura/db';
+import type { TEntitlement } from '@aura_io/license-sdk';
 import axios, { AxiosError } from 'axios';
 import { mock } from 'jest-mock-extended';
 
@@ -73,13 +73,16 @@ describe('LicenseService', () => {
 
 		it('should activate license with eulaUri', async () => {
 			license.activate.mockResolvedValueOnce();
-			await licenseService.activateLicense('activation-key', 'https://n8n.io/legal/eula/');
-			expect(license.activate).toHaveBeenCalledWith('activation-key', 'https://n8n.io/legal/eula/');
+			await licenseService.activateLicense('activation-key', 'https://aura.io/legal/eula/');
+			expect(license.activate).toHaveBeenCalledWith(
+				'activation-key',
+				'https://aura.io/legal/eula/',
+			);
 		});
 
 		it('should throw LicenseEulaRequiredError when EULA_REQUIRED error occurs', async () => {
 			const eulaError = new LicenseError('EULA_REQUIRED');
-			(eulaError as any).info = { eula: { uri: 'https://n8n.io/legal/eula/' } };
+			(eulaError as any).info = { eula: { uri: 'https://aura.io/legal/eula/' } };
 			license.activate.mockRejectedValueOnce(eulaError);
 
 			await expect(licenseService.activateLicense('activation-key')).rejects.toThrow(

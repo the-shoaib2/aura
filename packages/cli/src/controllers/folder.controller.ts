@@ -4,8 +4,8 @@ import {
 	ListFolderQueryDto,
 	TransferFolderBodyDto,
 	UpdateFolderDto,
-} from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
+} from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
 import {
 	Post,
 	RestController,
@@ -19,9 +19,9 @@ import {
 	Param,
 	Licensed,
 	Middleware,
-} from '@n8n/decorators';
+} from '@aura/decorators';
 import { NextFunction, Response } from 'express';
-import { UserError } from 'n8n-workflow';
+import { UserError } from 'workflow';
 
 import { FolderNotFoundError } from '@/errors/folder-not-found.error';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';

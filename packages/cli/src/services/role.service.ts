@@ -1,5 +1,5 @@
-import { CreateRoleDto, UpdateRoleDto } from '@n8n/api-types';
-import { LicenseState } from '@n8n/backend-common';
+import { CreateRoleDto, UpdateRoleDto } from '@aura/api-types';
+import { LicenseState } from '@aura/backend-common';
 import {
 	CredentialsEntity,
 	SharedCredentials,
@@ -13,14 +13,14 @@ import {
 	Scope as DBScope,
 	ScopeRepository,
 	GLOBAL_ADMIN_ROLE,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
+} from '@aura/db';
+import { Service } from '@aura/di';
 import type {
 	Scope,
 	Role as RoleDTO,
 	AssignableProjectRole,
 	RoleNamespace,
-} from '@n8n/permissions';
+} from '@aura/permissions';
 import {
 	combineScopes,
 	getAuthPrincipalScopes,
@@ -29,8 +29,8 @@ import {
 	PROJECT_ADMIN_ROLE_SLUG,
 	PROJECT_EDITOR_ROLE_SLUG,
 	PROJECT_VIEWER_ROLE_SLUG,
-} from '@n8n/permissions';
-import { UnexpectedError, UserError } from 'n8n-workflow';
+} from '@aura/permissions';
+import { UnexpectedError, UserError } from 'workflow';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 import { NotFoundError } from '@/errors/response-errors/not-found.error';
@@ -287,7 +287,7 @@ export class RoleService {
 
 	/**
 	 * Enhanced rolesWithScope function that combines static roles with database roles
-	 * This replaces the original rolesWithScope function from @n8n/permissions
+	 * This replaces the original rolesWithScope function from @aura/permissions
 	 */
 	async rolesWithScope(namespace: RoleNamespace, scopes: Scope | Scope[]): Promise<string[]> {
 		if (!Array.isArray(scopes)) {

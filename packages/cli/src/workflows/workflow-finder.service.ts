@@ -1,11 +1,11 @@
-import type { SharedWorkflow, User } from '@n8n/db';
-import { SharedWorkflowRepository, FolderRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { hasGlobalScope, type Scope } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { EntityManager, FindOptionsWhere } from '@n8n/typeorm';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In } from '@n8n/typeorm';
+import type { SharedWorkflow, User } from '@aura/db';
+import { SharedWorkflowRepository, FolderRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { hasGlobalScope, type Scope } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { EntityManager, FindOptionsWhere } from '@aura/typeorm';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In } from '@aura/typeorm';
 
 import { RoleService } from '@/services/role.service';
 

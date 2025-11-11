@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeApiError } from 'workflow';
 
 import { controlFields, controlOperations } from './ControlDescription';
 import { formulaFields, formulaOperations } from './FormulaDescription';

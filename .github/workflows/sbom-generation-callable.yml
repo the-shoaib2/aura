@@ -3,12 +3,12 @@ name: 'Release: Attach SBOM'
 on:
   workflow_call:
     inputs:
-      n8n_version:
-        description: 'N8N version to generate SBOM for'
+      aura_version:
+        description: 'aura version to generate SBOM for'
         required: true
         type: string
       release_tag_ref:
-        description: 'Git reference to checkout (e.g. n8n@1.2.3)'
+        description: 'Git reference to checkout (e.g. aura@1.2.3)'
         required: true
         type: string
     secrets:
@@ -17,12 +17,12 @@ on:
 
   workflow_dispatch:
     inputs:
-      n8n_version:
-        description: 'N8N version to generate SBOM for'
+      aura_version:
+        description: 'aura version to generate SBOM for'
         required: true
         type: string
       release_tag_ref:
-        description: 'Git reference to checkout (e.g. n8n@1.2.3)'
+        description: 'Git reference to checkout (e.g. aura@1.2.3)'
         required: true
         type: string
 

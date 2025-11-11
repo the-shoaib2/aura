@@ -14,8 +14,8 @@ import type {
 	IRunData,
 	ITaskData,
 	EngineRequest,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { ExecuteContext } from '../../execute-context';
 import { makeHandleToolInvocation } from '../get-input-connection-data';
@@ -869,7 +869,7 @@ describe('makeHandleToolInvocation', () => {
 
 		it('should respect waitBetweenTries limits (0-5000ms)', async () => {
 			const sleepWithAbortSpy = jest
-				.spyOn(require('n8n-workflow'), 'sleepWithAbort')
+				.spyOn(require('workflow'), 'sleepWithAbort')
 				.mockResolvedValue(undefined);
 
 			const connectedNode = mock<INode>({
@@ -944,7 +944,7 @@ describe('makeHandleToolInvocation', () => {
 
 		it('should handle abort signal during retry wait', async () => {
 			const sleepWithAbortSpy = jest
-				.spyOn(require('n8n-workflow'), 'sleepWithAbort')
+				.spyOn(require('workflow'), 'sleepWithAbort')
 				.mockRejectedValue(new Error('Execution was cancelled'));
 
 			const connectedNode = mock<INode>({
@@ -1019,7 +1019,7 @@ describe('makeHandleToolInvocation', () => {
 			});
 
 			const sleepWithAbortSpy = jest
-				.spyOn(require('n8n-workflow'), 'sleepWithAbort')
+				.spyOn(require('workflow'), 'sleepWithAbort')
 				.mockResolvedValue(undefined);
 
 			handleToolInvocation = makeHandleToolInvocation(
@@ -1061,7 +1061,7 @@ describe('makeHandleToolInvocation', () => {
 			});
 
 			const sleepWithAbortSpy = jest
-				.spyOn(require('n8n-workflow'), 'sleepWithAbort')
+				.spyOn(require('workflow'), 'sleepWithAbort')
 				.mockResolvedValue(undefined);
 
 			handleToolInvocation = makeHandleToolInvocation(

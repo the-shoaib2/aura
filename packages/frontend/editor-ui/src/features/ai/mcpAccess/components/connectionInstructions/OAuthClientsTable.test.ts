@@ -3,7 +3,7 @@ import OAuthClientsTable from './OAuthClientsTable.vue';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { createPinia, setActivePinia } from 'pinia';
 import userEvent from '@testing-library/user-event';
-import type { OAuthClientResponseDto } from '@n8n/api-types';
+import type { OAuthClientResponseDto } from '@aura/api-types';
 
 const renderComponent = createComponentRenderer(OAuthClientsTable);
 
@@ -40,7 +40,7 @@ describe('OAuthClientsTable', () => {
 				},
 			});
 
-			const loadingElements = container.querySelectorAll('.n8n-loading');
+			const loadingElements = container.querySelectorAll('.aura-loading');
 			expect(loadingElements.length).toBeGreaterThan(0);
 
 			expect(() => getByTestId('oauth-clients-data-table')).toThrow();

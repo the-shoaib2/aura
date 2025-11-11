@@ -1,7 +1,7 @@
-import { testDb, createWorkflow } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { WorkflowDependencyRepository, WorkflowDependencies } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { testDb, createWorkflow } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { WorkflowDependencyRepository, WorkflowDependencies } from '@aura/db';
+import { Container } from '@aura/di';
 
 const globalConfig = Container.get(GlobalConfig);
 
@@ -59,7 +59,7 @@ if (globalConfig.database.isLegacySqlite) {
 				});
 				dependencies.add({
 					dependencyType: 'nodeType',
-					dependencyKey: 'n8n-nodes-base.httpRequest',
+					dependencyKey: 'aura-nodes-base.httpRequest',
 					dependencyInfo: null,
 				});
 
@@ -92,7 +92,7 @@ if (globalConfig.database.isLegacySqlite) {
 					workflowId: workflow.id,
 					workflowVersionId: 1,
 					dependencyType: 'nodeType',
-					dependencyKey: 'n8n-nodes-base.httpRequest',
+					dependencyKey: 'aura-nodes-base.httpRequest',
 					dependencyInfo: null,
 					indexVersionId: 1,
 				});

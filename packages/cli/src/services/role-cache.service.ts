@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { Time } from '@n8n/constants';
-import { RoleRepository } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
-import { staticRolesWithScope, type Scope } from '@n8n/permissions';
+import { Logger } from '@aura/backend-common';
+import { Time } from '@aura/constants';
+import { RoleRepository } from '@aura/db';
+import { Container, Service } from '@aura/di';
+import { staticRolesWithScope, type Scope } from '@aura/permissions';
 
 import { CacheService } from './cache/cache.service';
 

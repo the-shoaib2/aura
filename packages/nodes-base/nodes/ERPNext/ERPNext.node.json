@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.erpNext",
+	"node": "aura-nodes-base.erpNext",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Finance & Accounting", "Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/erpnext/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/erpnext/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.erpnext/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.erpnext/"
 			}
 		]
 	}

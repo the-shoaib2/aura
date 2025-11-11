@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const lightOperations: INodeProperties[] = [
 	{
@@ -119,7 +119,7 @@ export const lightFields: INodeProperties[] = [
 		name: 'lightId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getLights',
 		},
@@ -144,7 +144,7 @@ export const lightFields: INodeProperties[] = [
 			},
 		},
 		default: true,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description: 'On/Off state of the light',
 	},
 	{

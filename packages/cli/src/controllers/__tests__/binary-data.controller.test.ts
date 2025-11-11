@@ -1,9 +1,9 @@
-import type { BinaryDataQueryDto, BinaryDataSignedQueryDto } from '@n8n/api-types';
+import type { BinaryDataQueryDto, BinaryDataSignedQueryDto } from '@aura/api-types';
 import type { Request, Response } from 'express';
 import { mock } from 'jest-mock-extended';
 import { JsonWebTokenError } from 'jsonwebtoken';
-import type { BinaryDataService } from 'n8n-core';
-import { FileNotFoundError } from 'n8n-core';
+import type { BinaryDataService } from 'aura-core';
+import { FileNotFoundError } from 'aura-core';
 import type { Readable } from 'node:stream';
 
 import { BinaryDataController } from '../binary-data.controller';

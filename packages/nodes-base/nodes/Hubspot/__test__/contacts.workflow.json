@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [400, -368],
 			"id": "9b86caa6-4892-4eff-b513-3391bbd36e11",
@@ -22,7 +22,7 @@
 					"listMemberships": true
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, -656],
 			"id": "ec2ae603-783d-4a3a-82b8-1a7049616df6",
@@ -43,7 +43,7 @@
 					"mode": "id"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, -1040],
 			"id": "b593dd98-8bd0-4a13-ac44-c732835c2354",
@@ -57,7 +57,7 @@
 		},
 		{
 			"parameters": {
-				"email": "elias@n8n.io",
+				"email": "elias@aura.io",
 				"additionalFields": {
 					"annualRevenue": 123,
 					"associatedCompanyId": "=123",
@@ -74,11 +74,11 @@
 					"firstName": "Elias",
 					"postalCode": "9000",
 					"websiteUrl": "example.com",
-					"workEmail": "elias@n8n.io"
+					"workEmail": "elias@aura.io"
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, -848],
 			"id": "29e2d75f-d62d-43ad-8162-75c4fa7dbc1d",
@@ -96,7 +96,7 @@
 				"limit": 2,
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, -464],
 			"id": "1abd78f0-cf23-44e5-8575-791de126a05a",
@@ -114,7 +114,7 @@
 				"limit": 2,
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, -272],
 			"id": "6c0a7374-7d37-4ff1-b66b-84d1e27cf1b8",
@@ -152,7 +152,7 @@
 									{
 										"propertyName": "=email",
 										"operator": "CONTAINS_TOKEN",
-										"value": "n8n.io"
+										"value": "aura.io"
 									}
 								]
 							}
@@ -163,7 +163,7 @@
 					"direction": "ASCENDING"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, -80],
 			"id": "5b28b56d-bc71-41db-a8ef-03a4c4827038",
@@ -181,7 +181,7 @@
 				"additionalFields": {},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, 128],
 			"id": "24dd6489-8372-43fb-877b-7bbfedbdaa9a",
@@ -219,7 +219,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [624, 320],
 			"id": "e857588e-3509-47dc-a43c-2889b3b07a01",

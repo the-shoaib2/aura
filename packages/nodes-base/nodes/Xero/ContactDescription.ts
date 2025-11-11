@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const contactOperations: INodeProperties[] = [
 	{
@@ -50,7 +50,7 @@ export const contactFields: INodeProperties[] = [
 		name: 'organizationId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getTenants',
 		},
@@ -309,7 +309,7 @@ export const contactFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The default purchases account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The default purchases account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Sales Default Account Code Name or ID',
@@ -320,7 +320,7 @@ export const contactFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The default sales account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The default sales account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Skype',
@@ -353,7 +353,7 @@ export const contactFields: INodeProperties[] = [
 		name: 'organizationId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getTenants',
 		},
@@ -387,7 +387,7 @@ export const contactFields: INodeProperties[] = [
 		name: 'organizationId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getTenants',
 		},
@@ -494,7 +494,7 @@ export const contactFields: INodeProperties[] = [
 		name: 'organizationId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getTenants',
 		},
@@ -759,7 +759,7 @@ export const contactFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The default purchases account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The default purchases account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Sales Default Account Code Name or ID',
@@ -770,7 +770,7 @@ export const contactFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The default sales account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The default sales account code for contacts. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Skype',

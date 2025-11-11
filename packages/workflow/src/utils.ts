@@ -1,4 +1,4 @@
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 import { parse as esprimaParse, Syntax } from 'esprima-next';
 import type { Node as SyntaxNode, ExpressionStatement } from 'esprima-next';
 import FormData from 'form-data';
@@ -399,11 +399,11 @@ export function isDomainAllowed(
 	}
 }
 
-const COMMUNITY_PACKAGE_NAME_REGEX = /^(?!@n8n\/)(@[\w.-]+\/)?n8n-nodes-(?!base\b)\b\w+/g;
+const COMMUNITY_PACKAGE_NAME_REGEX = /^(?!@aura\/)(@[\w.-]+\/)?aura-nodes-(?!base\b)\b\w+/g;
 
 export function isCommunityPackageName(packageName: string): boolean {
 	COMMUNITY_PACKAGE_NAME_REGEX.lastIndex = 0;
-	// Community packages names start with <@username/>n8n-nodes- not followed by word 'base'
+	// Community packages names start with <@username/>aura-nodes- not followed by word 'base'
 	const nameMatch = COMMUNITY_PACKAGE_NAME_REGEX.exec(packageName);
 
 	return !!nameMatch;

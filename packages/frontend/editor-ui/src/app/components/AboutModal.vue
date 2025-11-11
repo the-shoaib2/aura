@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import Modal from './Modal.vue';
 import { ABOUT_MODAL_KEY } from '../constants';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useToast } from '@/app/composables/useToast';
 import { useClipboard } from '@/app/composables/useClipboard';
 import { useDebugInfo } from '@/app/composables/useDebugInfo';
-import { useI18n } from '@n8n/i18n';
-import { getThirdPartyLicenses } from '@n8n/rest-api-client';
+import { useI18n } from '@aura/i18n';
+import { getThirdPartyLicenses } from '@aura/rest-api-client';
 
 import { ElCol, ElRow } from 'element-plus';
-import { N8nButton, N8nLink, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nLink, N8nText } from '@aura/design-system';
 const modalBus = createEventBus();
 const toast = useToast();
 const i18n = useI18n();
@@ -62,7 +62,7 @@ const copyDebugInfoToClipboard = async () => {
 			<div :class="$style.container">
 				<ElRow>
 					<ElCol :span="8" class="info-name">
-						<N8nText>{{ i18n.baseText('about.n8nVersion') }}</N8nText>
+						<N8nText>{{ i18n.baseText('about.auraVersion') }}</N8nText>
 					</ElCol>
 					<ElCol :span="16">
 						<N8nText>{{ rootStore.versionCli }}</N8nText>
@@ -73,7 +73,7 @@ const copyDebugInfoToClipboard = async () => {
 						<N8nText>{{ i18n.baseText('about.sourceCode') }}</N8nText>
 					</ElCol>
 					<ElCol :span="16">
-						<N8nLink to="https://github.com/n8n-io/n8n">https://github.com/n8n-io/n8n</N8nLink>
+						<N8nLink to="https://github.com/aura-io/aura">https://github.com/aura-io/aura</N8nLink>
 					</ElCol>
 				</ElRow>
 				<ElRow>
@@ -81,8 +81,8 @@ const copyDebugInfoToClipboard = async () => {
 						<N8nText>{{ i18n.baseText('about.license') }}</N8nText>
 					</ElCol>
 					<ElCol :span="16">
-						<N8nLink to="https://github.com/n8n-io/n8n/blob/master/LICENSE.md">
-							{{ i18n.baseText('about.n8nLicense') }}
+						<N8nLink to="https://github.com/aura-io/aura/blob/master/LICENSE.md">
+							{{ i18n.baseText('about.auraLicense') }}
 						</N8nLink>
 					</ElCol>
 				</ElRow>

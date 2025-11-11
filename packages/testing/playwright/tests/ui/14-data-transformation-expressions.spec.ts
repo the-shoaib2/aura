@@ -1,145 +1,145 @@
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 
 test.describe('Data transformation expressions', () => {
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.goHome();
+	test.beforeEach(async ({ aura }) => {
+		await aura.goHome();
 	});
 
-	async function addEditFields(n8n: n8nPage): Promise<void> {
-		await n8n.canvas.addNode('Edit Fields (Set)');
-		await n8n.ndv.getAssignmentCollectionAdd('assignments').click();
+	async function addEditFields(aura: auraPage): Promise<void> {
+		await aura.canvas.addNode('Edit Fields (Set)');
+		await aura.ndv.getAssignmentCollectionAdd('assignments').click();
 
 		// Switch assignment value to Expression mode
-		const assignmentValue = n8n.ndv.getAssignmentValue('assignments');
+		const assignmentValue = aura.ndv.getAssignmentValue('assignments');
 		await assignmentValue.locator('text=Expression').click();
 	}
 
-	test('$json + native string methods', async ({ n8n }) => {
-		await n8n.workflows.addResource.workflow();
+	test('$json + native string methods', async ({ aura }) => {
+		await aura.workflows.addResource.workflow();
 
-		await n8n.canvas.addNode('Schedule Trigger');
-		await n8n.ndv.setPinnedData([{ myStr: 'Monday' }]);
-		await n8n.ndv.close();
+		await aura.canvas.addNode('Schedule Trigger');
+		await aura.ndv.setPinnedData([{ myStr: 'Monday' }]);
+		await aura.ndv.close();
 
-		await addEditFields(n8n);
+		await addEditFields(aura);
 
 		const input = '{{$json.myStr.toLowerCase() + " is " + "today".toUpperCase()}}';
 		const output = 'monday is TODAY';
 
-		await n8n.ndv.clearExpressionEditor();
-		await n8n.ndv.typeInExpressionEditor(input);
-		await expect(n8n.ndv.getInlineExpressionEditorOutput()).toContainText(output);
+		await aura.ndv.clearExpressionEditor();
+		await aura.ndv.typeInExpressionEditor(input);
+		await expect(aura.ndv.getInlineExpressionEditorOutput()).toContainText(output);
 
 		// Execute and verify output
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getOutputDataContainer()).toBeVisible();
-		await expect(n8n.ndv.getOutputDataContainer()).toContainText(output);
+		await aura.ndv.execute();
+		await expect(aura.ndv.getOutputDataContainer()).toBeVisible();
+		await expect(aura.ndv.getOutputDataContainer()).toContainText(output);
 	});
 
-	test('$json + n8n string methods', async ({ n8n }) => {
-		await n8n.workflows.addResource.workflow();
+	test('$json + aura string methods', async ({ aura }) => {
+		await aura.workflows.addResource.workflow();
 
-		await n8n.canvas.addNode('Schedule Trigger');
-		await n8n.ndv.setPinnedData([{ myStr: 'hello@n8n.io is an email' }]);
-		await n8n.ndv.close();
+		await aura.canvas.addNode('Schedule Trigger');
+		await aura.ndv.setPinnedData([{ myStr: 'hello@aura.io is an email' }]);
+		await aura.ndv.close();
 
-		await addEditFields(n8n);
+		await addEditFields(aura);
 
 		const input = '{{$json.myStr.extractEmail() + " " + $json.myStr.isEmpty()}}';
-		const output = 'hello@n8n.io false';
+		const output = 'hello@aura.io false';
 
-		await n8n.ndv.clearExpressionEditor();
-		await n8n.ndv.typeInExpressionEditor(input);
-		await expect(n8n.ndv.getInlineExpressionEditorOutput()).toContainText(output);
+		await aura.ndv.clearExpressionEditor();
+		await aura.ndv.typeInExpressionEditor(input);
+		await expect(aura.ndv.getInlineExpressionEditorOutput()).toContainText(output);
 
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getOutputDataContainer()).toBeVisible();
-		await expect(n8n.ndv.getOutputDataContainer()).toContainText(output);
+		await aura.ndv.execute();
+		await expect(aura.ndv.getOutputDataContainer()).toBeVisible();
+		await expect(aura.ndv.getOutputDataContainer()).toContainText(output);
 	});
 
-	test('$json + native numeric methods', async ({ n8n }) => {
-		await n8n.workflows.addResource.workflow();
+	test('$json + native numeric methods', async ({ aura }) => {
+		await aura.workflows.addResource.workflow();
 
-		await n8n.canvas.addNode('Schedule Trigger');
-		await n8n.ndv.setPinnedData([{ myNum: 9.123 }]);
-		await n8n.ndv.close();
+		await aura.canvas.addNode('Schedule Trigger');
+		await aura.ndv.setPinnedData([{ myNum: 9.123 }]);
+		await aura.ndv.close();
 
-		await addEditFields(n8n);
+		await addEditFields(aura);
 
 		const input = '{{$json.myNum.toPrecision(3)}}';
 		const output = '9.12';
 
-		await n8n.ndv.clearExpressionEditor();
-		await n8n.ndv.typeInExpressionEditor(input);
-		await expect(n8n.ndv.getInlineExpressionEditorOutput()).toContainText(output);
+		await aura.ndv.clearExpressionEditor();
+		await aura.ndv.typeInExpressionEditor(input);
+		await expect(aura.ndv.getInlineExpressionEditorOutput()).toContainText(output);
 
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getOutputDataContainer()).toBeVisible();
-		await expect(n8n.ndv.getOutputDataContainer()).toContainText(output);
+		await aura.ndv.execute();
+		await expect(aura.ndv.getOutputDataContainer()).toBeVisible();
+		await expect(aura.ndv.getOutputDataContainer()).toContainText(output);
 	});
 
-	test('$json + n8n numeric methods', async ({ n8n }) => {
-		await n8n.workflows.addResource.workflow();
+	test('$json + aura numeric methods', async ({ aura }) => {
+		await aura.workflows.addResource.workflow();
 
-		await n8n.canvas.addNode('Schedule Trigger');
-		await n8n.ndv.setPinnedData([{ myStr: 'hello@n8n.io is an email' }]);
-		await n8n.ndv.close();
+		await aura.canvas.addNode('Schedule Trigger');
+		await aura.ndv.setPinnedData([{ myStr: 'hello@aura.io is an email' }]);
+		await aura.ndv.close();
 
-		await addEditFields(n8n);
+		await addEditFields(aura);
 
 		const input = '{{$json.myStr.extractEmail() + " " + $json.myStr.isEmpty()}}';
-		const output = 'hello@n8n.io false';
+		const output = 'hello@aura.io false';
 
-		await n8n.ndv.clearExpressionEditor();
-		await n8n.ndv.typeInExpressionEditor(input);
-		await expect(n8n.ndv.getInlineExpressionEditorOutput()).toContainText(output);
+		await aura.ndv.clearExpressionEditor();
+		await aura.ndv.typeInExpressionEditor(input);
+		await expect(aura.ndv.getInlineExpressionEditorOutput()).toContainText(output);
 
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getOutputDataContainer()).toBeVisible();
-		await expect(n8n.ndv.getOutputDataContainer()).toContainText(output);
+		await aura.ndv.execute();
+		await expect(aura.ndv.getOutputDataContainer()).toBeVisible();
+		await expect(aura.ndv.getOutputDataContainer()).toContainText(output);
 	});
 
-	test('$json + native array access', async ({ n8n }) => {
-		await n8n.workflows.addResource.workflow();
+	test('$json + native array access', async ({ aura }) => {
+		await aura.workflows.addResource.workflow();
 
-		await n8n.canvas.addNode('Schedule Trigger');
-		await n8n.ndv.setPinnedData([{ myArr: [1, 2, 3] }]);
-		await n8n.ndv.close();
+		await aura.canvas.addNode('Schedule Trigger');
+		await aura.ndv.setPinnedData([{ myArr: [1, 2, 3] }]);
+		await aura.ndv.close();
 
-		await addEditFields(n8n);
+		await addEditFields(aura);
 
 		const input = '{{$json.myArr.includes(1) + " " + $json.myArr[2]}}';
 		const output = 'true 3';
 
-		await n8n.ndv.clearExpressionEditor();
-		await n8n.ndv.typeInExpressionEditor(input);
-		await expect(n8n.ndv.getInlineExpressionEditorOutput()).toContainText(output);
+		await aura.ndv.clearExpressionEditor();
+		await aura.ndv.typeInExpressionEditor(input);
+		await expect(aura.ndv.getInlineExpressionEditorOutput()).toContainText(output);
 
-		await n8n.ndv.execute();
-		const valueElements = n8n.ndv.getOutputDataContainer().locator('[class*=value_]');
+		await aura.ndv.execute();
+		const valueElements = aura.ndv.getOutputDataContainer().locator('[class*=value_]');
 		await expect(valueElements).toBeVisible();
 		await expect(valueElements).toContainText(output);
 	});
 
-	test('$json + n8n array methods', async ({ n8n }) => {
-		await n8n.workflows.addResource.workflow();
+	test('$json + aura array methods', async ({ aura }) => {
+		await aura.workflows.addResource.workflow();
 
-		await n8n.canvas.addNode('Schedule Trigger');
-		await n8n.ndv.setPinnedData([{ myArr: [1, 2, 3] }]);
-		await n8n.ndv.close();
+		await aura.canvas.addNode('Schedule Trigger');
+		await aura.ndv.setPinnedData([{ myArr: [1, 2, 3] }]);
+		await aura.ndv.close();
 
-		await addEditFields(n8n);
+		await addEditFields(aura);
 
 		const input = '{{$json.myArr.first() + " " + $json.myArr.last()}}';
 		const output = '1 3';
 
-		await n8n.ndv.clearExpressionEditor();
-		await n8n.ndv.typeInExpressionEditor(input);
-		await expect(n8n.ndv.getInlineExpressionEditorOutput()).toContainText(output);
+		await aura.ndv.clearExpressionEditor();
+		await aura.ndv.typeInExpressionEditor(input);
+		await expect(aura.ndv.getInlineExpressionEditorOutput()).toContainText(output);
 
-		await n8n.ndv.execute();
-		const valueElements = n8n.ndv.getOutputDataContainer().locator('[class*=value_]');
+		await aura.ndv.execute();
+		const valueElements = aura.ndv.getOutputDataContainer().locator('[class*=value_]');
 		await expect(valueElements).toBeVisible();
 		await expect(valueElements).toContainText(output);
 	});

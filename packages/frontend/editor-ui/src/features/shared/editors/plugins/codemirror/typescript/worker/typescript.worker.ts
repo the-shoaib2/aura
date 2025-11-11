@@ -3,7 +3,7 @@ import type { LanguageServiceWorker, LanguageServiceWorkerInit } from '../types'
 import { indexedDbCache } from '@/app/plugins/cache';
 import { bufferChangeSets, fnPrefix } from './utils';
 
-import type { CodeExecutionMode } from 'n8n-workflow';
+import type { CodeExecutionMode } from 'workflow';
 
 import { pascalCase } from 'change-case';
 import { computed, reactive, ref, watch } from 'vue';
@@ -20,8 +20,8 @@ import { getHoverTooltip } from './hoverTooltip';
 import { getDiagnostics } from './linter';
 import { getUsedNodeNames } from './typescriptAst';
 
-import runOnceForAllItemsTypes from './type-declarations/n8n-once-for-all-items.d.ts?raw';
-import runOnceForEachItemTypes from './type-declarations/n8n-once-for-each-item.d.ts?raw';
+import runOnceForAllItemsTypes from './type-declarations/aura-once-for-all-items.d.ts?raw';
+import runOnceForEachItemTypes from './type-declarations/aura-once-for-each-item.d.ts?raw';
 import { loadTypes } from './npmTypesLoader';
 import { ChangeSet, Text } from '@codemirror/state';
 import { until } from '@vueuse/core';

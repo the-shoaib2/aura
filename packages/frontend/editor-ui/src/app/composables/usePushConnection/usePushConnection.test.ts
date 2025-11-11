@@ -3,8 +3,8 @@ import {
 	testWebhookReceived,
 	builderCreditsUpdated,
 } from '@/app/composables/usePushConnection/handlers';
-import type { TestWebhookReceived } from '@n8n/api-types/push/webhook';
-import type { BuilderCreditsPushMessage } from '@n8n/api-types/push/builder-credits';
+import type { TestWebhookReceived } from '@aura/api-types/push/webhook';
+import type { BuilderCreditsPushMessage } from '@aura/api-types/push/builder-credits';
 import { useRouter } from 'vue-router';
 import type { OnPushMessageHandler } from '@/app/stores/pushConnection.store';
 import { createPinia, setActivePinia } from 'pinia';

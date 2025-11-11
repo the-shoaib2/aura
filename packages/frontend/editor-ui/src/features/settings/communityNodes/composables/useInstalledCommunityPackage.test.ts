@@ -8,12 +8,12 @@ import { useInstalledCommunityPackage } from './useInstalledCommunityPackage';
 import { useCommunityNodesStore } from '../communityNodes.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import type { ExtendedPublicInstalledPackage } from '../communityNodes.utils';
-import type * as n8nWorkflow from 'n8n-workflow';
+import type * as auraWorkflow from 'workflow';
 
-vi.mock('n8n-workflow', async (importOriginal) => {
+vi.mock('workflow', async (importOriginal) => {
 	const original = await importOriginal();
 	return {
-		...(original as typeof n8nWorkflow),
+		...(original as typeof auraWorkflow),
 		isCommunityPackageName: vi.fn(),
 	};
 });
@@ -23,7 +23,7 @@ vi.mock('../communityNodes.utils', () => ({
 }));
 
 // Import mocked functions
-import { isCommunityPackageName } from 'n8n-workflow';
+import { isCommunityPackageName } from 'workflow';
 import { fetchInstalledPackageInfo } from '../communityNodes.utils';
 
 const mockIsCommunityPackageName = vi.mocked(isCommunityPackageName);
@@ -38,7 +38,7 @@ describe('useInstalledCommunityPackage', () => {
 	describe('computed properties', () => {
 		it('should handle nodeTypeName parsing correctly', () => {
 			mockIsCommunityPackageName.mockReturnValue(true);
-			const composable = useInstalledCommunityPackage('@test/n8n-nodes-test.TestNode');
+			const composable = useInstalledCommunityPackage('@test/aura-nodes-test.TestNode');
 			expect(composable.isCommunityNode.value).toBe(true);
 		});
 
@@ -50,19 +50,19 @@ describe('useInstalledCommunityPackage', () => {
 		it('should compute isCommunityNode correctly when nodeTypeName is provided and is community', () => {
 			mockIsCommunityPackageName.mockReturnValue(true);
 
-			const { isCommunityNode } = useInstalledCommunityPackage('@test/n8n-nodes-test.TestNode');
+			const { isCommunityNode } = useInstalledCommunityPackage('@test/aura-nodes-test.TestNode');
 
 			expect(isCommunityNode.value).toBe(true);
-			expect(mockIsCommunityPackageName).toHaveBeenCalledWith('@test/n8n-nodes-test.TestNode');
+			expect(mockIsCommunityPackageName).toHaveBeenCalledWith('@test/aura-nodes-test.TestNode');
 		});
 
 		it('should compute isCommunityNode as false when nodeTypeName is provided but not community', () => {
 			mockIsCommunityPackageName.mockReturnValue(false);
 
-			const { isCommunityNode } = useInstalledCommunityPackage('n8n-nodes-base.HttpRequest');
+			const { isCommunityNode } = useInstalledCommunityPackage('aura-nodes-base.HttpRequest');
 
 			expect(isCommunityNode.value).toBe(false);
-			expect(mockIsCommunityPackageName).toHaveBeenCalledWith('n8n-nodes-base.HttpRequest');
+			expect(mockIsCommunityPackageName).toHaveBeenCalledWith('aura-nodes-base.HttpRequest');
 		});
 
 		it('should compute isCommunityNode as false when nodeTypeName is undefined', () => {
@@ -78,7 +78,7 @@ describe('useInstalledCommunityPackage', () => {
 			mockIsCommunityPackageName.mockReturnValue(true);
 
 			const { isUpdateCheckAvailable } = useInstalledCommunityPackage(
-				'@test/n8n-nodes-test.TestNode',
+				'@test/aura-nodes-test.TestNode',
 			);
 
 			expect(isUpdateCheckAvailable.value).toBe(true);
@@ -90,7 +90,7 @@ describe('useInstalledCommunityPackage', () => {
 			mockIsCommunityPackageName.mockReturnValue(true);
 
 			const { isUpdateCheckAvailable } = useInstalledCommunityPackage(
-				'@test/n8n-nodes-test.TestNode',
+				'@test/aura-nodes-test.TestNode',
 			);
 
 			expect(isUpdateCheckAvailable.value).toBe(false);
@@ -101,7 +101,9 @@ describe('useInstalledCommunityPackage', () => {
 			usersStore.isInstanceOwner = true;
 			mockIsCommunityPackageName.mockReturnValue(false);
 
-			const { isUpdateCheckAvailable } = useInstalledCommunityPackage('n8n-nodes-base.HttpRequest');
+			const { isUpdateCheckAvailable } = useInstalledCommunityPackage(
+				'aura-nodes-base.HttpRequest',
+			);
 
 			expect(isUpdateCheckAvailable.value).toBe(false);
 		});
@@ -120,7 +122,7 @@ describe('useInstalledCommunityPackage', () => {
 		it('should return undefined when node is not a community node', async () => {
 			mockIsCommunityPackageName.mockReturnValue(false);
 
-			const { initInstalledPackage } = useInstalledCommunityPackage('n8n-nodes-base.HttpRequest');
+			const { initInstalledPackage } = useInstalledCommunityPackage('aura-nodes-base.HttpRequest');
 
 			const result = await initInstalledPackage();
 
@@ -130,7 +132,7 @@ describe('useInstalledCommunityPackage', () => {
 
 		it('should fetch and set installedPackage when conditions are met', async () => {
 			const mockPackage: ExtendedPublicInstalledPackage = {
-				packageName: '@test/n8n-nodes-test',
+				packageName: '@test/aura-nodes-test',
 				installedVersion: '1.0.0',
 				installedNodes: [],
 				createdAt: new Date(),
@@ -142,12 +144,12 @@ describe('useInstalledCommunityPackage', () => {
 			mockFetchInstalledPackageInfo.mockResolvedValue(mockPackage);
 
 			const { initInstalledPackage, installedPackage } = useInstalledCommunityPackage(
-				'@test/n8n-nodes-test.TestNode',
+				'@test/aura-nodes-test.TestNode',
 			);
 
 			const result = await initInstalledPackage();
 
-			expect(mockFetchInstalledPackageInfo).toHaveBeenCalledWith('@test/n8n-nodes-test');
+			expect(mockFetchInstalledPackageInfo).toHaveBeenCalledWith('@test/aura-nodes-test');
 			expect(result).toStrictEqual(mockPackage);
 			expect(installedPackage.value).toStrictEqual(mockPackage);
 		});
@@ -157,12 +159,12 @@ describe('useInstalledCommunityPackage', () => {
 			mockFetchInstalledPackageInfo.mockResolvedValue(undefined);
 
 			const { initInstalledPackage, installedPackage } = useInstalledCommunityPackage(
-				'@test/n8n-nodes-test.TestNode',
+				'@test/aura-nodes-test.TestNode',
 			);
 
 			const result = await initInstalledPackage();
 
-			expect(mockFetchInstalledPackageInfo).toHaveBeenCalledWith('@test/n8n-nodes-test');
+			expect(mockFetchInstalledPackageInfo).toHaveBeenCalledWith('@test/aura-nodes-test');
 			expect(result).toBeUndefined();
 			expect(installedPackage.value).toBeUndefined();
 		});
@@ -172,7 +174,7 @@ describe('useInstalledCommunityPackage', () => {
 		it('should call initInstalledPackage when installedPackages changes', async () => {
 			const communityNodesStore = mockedStore(useCommunityNodesStore);
 			const mockPackage: ExtendedPublicInstalledPackage = {
-				packageName: '@test/n8n-nodes-test',
+				packageName: '@test/aura-nodes-test',
 				installedVersion: '1.0.0',
 				installedNodes: [],
 				createdAt: new Date(),
@@ -184,16 +186,16 @@ describe('useInstalledCommunityPackage', () => {
 			mockFetchInstalledPackageInfo.mockResolvedValue(mockPackage);
 
 			// Initialize the composable
-			const { installedPackage } = useInstalledCommunityPackage('@test/n8n-nodes-test.TestNode');
+			const { installedPackage } = useInstalledCommunityPackage('@test/aura-nodes-test.TestNode');
 
 			// Simulate store change
 			communityNodesStore.installedPackages = {
-				'@test/n8n-nodes-test': mockPackage,
+				'@test/aura-nodes-test': mockPackage,
 			};
 
 			await nextTick();
 
-			expect(mockFetchInstalledPackageInfo).toHaveBeenCalledWith('@test/n8n-nodes-test');
+			expect(mockFetchInstalledPackageInfo).toHaveBeenCalledWith('@test/aura-nodes-test');
 			expect(installedPackage.value).toStrictEqual(mockPackage);
 		});
 
@@ -226,7 +228,7 @@ describe('useInstalledCommunityPackage', () => {
 			mockIsCommunityPackageName.mockReturnValue(true);
 
 			// Initialize the composable
-			useInstalledCommunityPackage('@test/n8n-nodes-test.TestNode');
+			useInstalledCommunityPackage('@test/aura-nodes-test.TestNode');
 
 			// Simulate store change with different package
 			const mockDifferentPackage: ExtendedPublicInstalledPackage = {
@@ -249,7 +251,7 @@ describe('useInstalledCommunityPackage', () => {
 
 	describe('return values', () => {
 		it('should return all expected properties and functions', () => {
-			const result = useInstalledCommunityPackage('@test/n8n-nodes-test.TestNode');
+			const result = useInstalledCommunityPackage('@test/aura-nodes-test.TestNode');
 
 			expect(result).toHaveProperty('installedPackage');
 			expect(result).toHaveProperty('isUpdateCheckAvailable');

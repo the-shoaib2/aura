@@ -3,7 +3,7 @@
 exports[`V1 Banner > should render banner 1`] = `
 <div>
   <div
-    class="n8n-callout callout warning onlyBottomBorder callout v1container"
+    class="aura-callout callout warning onlyBottomBorder callout v1container"
     data-test-id="banners-V1"
     role="alert"
   >
@@ -13,25 +13,25 @@ exports[`V1 Banner > should render banner 1`] = `
       <div
         class="icon"
       >
-        <n8n-icon-stub
+        <aura-icon-stub
           icon="info"
           size="medium"
           spin="false"
         />
       </div>
       <span
-        class="n8n-text size-small regular"
+        class="aura-text size-small regular"
       >
-        
-        
+
+
         <div
           class="mainContent keepSpace"
         >
-          
+
           <span>
-            n8n has been updated to version 1, introducing some breaking changes. Please consult the 
+            aura has been updated to version 1, introducing some breaking changes. Please consult the
             <a
-              href="https://docs.n8n.io/1-0-migration-checklist"
+              href="https://docs.aura.io/1-0-migration-checklist"
               target="_blank"
             >
               migration guide
@@ -39,22 +39,22 @@ exports[`V1 Banner > should render banner 1`] = `
              for more information.
           </span>
           <!--v-if-->
-          
+
         </div>
-        
-        
+
+
       </span>
-         
-      
-      
+
+
+
     </div>
-    
+
     <div
       class="trailingContent"
     >
-      
-      
-      <n8n-icon-stub
+
+
+      <aura-icon-stub
         class="clickable"
         data-test-id="banner-V1-close"
         icon="x"
@@ -63,7 +63,7 @@ exports[`V1 Banner > should render banner 1`] = `
         title="Dismiss"
       />
     </div>
-    
+
   </div>
 </div>
 `;
@@ -71,7 +71,7 @@ exports[`V1 Banner > should render banner 1`] = `
 exports[`V1 Banner > should render banner with dismiss call if user is owner 1`] = `
 <div>
   <div
-    class="n8n-callout callout warning onlyBottomBorder callout v1container"
+    class="aura-callout callout warning onlyBottomBorder callout v1container"
     data-test-id="banners-V1"
     role="alert"
   >
@@ -81,25 +81,25 @@ exports[`V1 Banner > should render banner with dismiss call if user is owner 1`]
       <div
         class="icon"
       >
-        <n8n-icon-stub
+        <aura-icon-stub
           icon="info"
           size="medium"
           spin="false"
         />
       </div>
       <span
-        class="n8n-text size-small regular"
+        class="aura-text size-small regular"
       >
-        
-        
+
+
         <div
           class="mainContent keepSpace"
         >
-          
+
           <span>
-            n8n has been updated to version 1, introducing some breaking changes. Please consult the 
+            aura has been updated to version 1, introducing some breaking changes. Please consult the
             <a
-              href="https://docs.n8n.io/1-0-migration-checklist"
+              href="https://docs.aura.io/1-0-migration-checklist"
               target="_blank"
             >
               migration guide
@@ -114,22 +114,22 @@ exports[`V1 Banner > should render banner with dismiss call if user is owner 1`]
               Don't show again
             </span>
           </a>
-          
+
         </div>
-        
-        
+
+
       </span>
-         
-      
-      
+
+
+
     </div>
-    
+
     <div
       class="trailingContent"
     >
-      
-      
-      <n8n-icon-stub
+
+
+      <aura-icon-stub
         class="clickable"
         data-test-id="banner-V1-close"
         icon="x"
@@ -138,7 +138,7 @@ exports[`V1 Banner > should render banner with dismiss call if user is owner 1`]
         title="Dismiss"
       />
     </div>
-    
+
   </div>
 </div>
 `;

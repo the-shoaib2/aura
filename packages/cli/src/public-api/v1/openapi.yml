@@ -1,18 +1,18 @@
 ---
 openapi: 3.0.0
 info:
-  title: n8n Public API
-  description: n8n Public API
-  termsOfService: https://n8n.io/legal/#terms
+  title: aura Public API
+  description: aura Public API
+  termsOfService: https://aura.io/legal/#terms
   contact:
-    email: hello@n8n.io
+    email: hello@aura.io
   license:
     name: Sustainable Use License
-    url: https://github.com/n8n-io/n8n/blob/master/LICENSE.md
+    url: https://github.com/aura-io/aura/blob/master/LICENSE.md
   version: 1.1.1
 externalDocs:
-  description: n8n API documentation
-  url: https://docs.n8n.io/api/
+  description: aura API documentation
+  url: https://docs.aura.io/api/
 servers:
   - url: /api/v1
 tags:

@@ -1,5 +1,5 @@
-import type { PushMessage, WorkerStatus } from '@n8n/api-types';
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { PushMessage, WorkerStatus } from '@aura/api-types';
+import type { IWorkflowBase } from 'workflow';
 
 export type PubSubCommandMap = {
 	// #region Lifecycle

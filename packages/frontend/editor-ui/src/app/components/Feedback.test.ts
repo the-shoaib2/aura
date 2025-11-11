@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/vue';
 import Feedback from '@/app/components/Feedback.vue';
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@aura/i18n', () => ({
 	useI18n: () => ({
 		baseText: (key: string) => key,
 	}),

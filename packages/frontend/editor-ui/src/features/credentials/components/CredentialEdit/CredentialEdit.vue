@@ -13,8 +13,8 @@ import type {
 	INodeParameters,
 	INodeProperties,
 	ITelemetryTrackProperties,
-} from 'n8n-workflow';
-import { NodeHelpers } from 'n8n-workflow';
+} from 'workflow';
+import { NodeHelpers } from 'workflow';
 
 import CredentialConfig from './CredentialConfig.vue';
 import CredentialInfo from './CredentialInfo.vue';
@@ -37,15 +37,15 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { Project, ProjectSharingData } from '@/features/collaboration/projects/projects.types';
-import { getResourcePermissions } from '@n8n/permissions';
-import { assert } from '@n8n/utils/assert';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { getResourcePermissions } from '@aura/permissions';
+import { assert } from '@aura/utils/assert';
+import { createEventBus } from '@aura/utils/event-bus';
 
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { sendUserEvent, type DynamicNotification } from '@n8n/rest-api-client/api/cloudPlans';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { sendUserEvent, type DynamicNotification } from '@aura/rest-api-client/api/cloudPlans';
 import { isExpression, isTestableExpression } from '@/app/utils/expressions';
 import {
 	getNodeAuthOptions,
@@ -53,7 +53,7 @@ import {
 	updateNodeAuthType,
 } from '@/app/utils/nodeTypesUtils';
 import { isCredentialModalState, isValidCredentialResponse } from '@/app/utils/typeGuards';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useElementSize } from '@vueuse/core';
 import { useRouter } from 'vue-router';
 
@@ -63,7 +63,7 @@ import {
 	N8nMenuItem,
 	N8nText,
 	type IMenuItem,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 
 type Props = {

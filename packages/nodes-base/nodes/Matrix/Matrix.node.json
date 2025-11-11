@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.matrix",
+	"node": "aura-nodes-base.matrix",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/matrix/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/matrix/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.matrix/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.matrix/"
 			}
 		],
 		"generic": [
 			{
-				"label": "How to host virtual coffee breaks with n8n",
+				"label": "How to host virtual coffee breaks with aura",
 				"icon": "☕️",
-				"url": "https://n8n.io/blog/how-to-host-virtual-coffee-breaks-with-n8n/"
+				"url": "https://aura.io/blog/how-to-host-virtual-coffee-breaks-with-aura/"
 			}
 		]
 	}

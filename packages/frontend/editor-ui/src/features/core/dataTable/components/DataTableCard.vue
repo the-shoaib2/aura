@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import type { DataTable } from '@/features/core/dataTable/dataTable.types';
 import { DATA_TABLE_DETAILS } from '@/features/core/dataTable/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed } from 'vue';
 import DataTableActions from '@/features/core/dataTable/components/DataTableActions.vue';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import TimeAgo from '@/app/components/TimeAgo.vue';
 
-import { N8nBadge, N8nCard, N8nIcon, N8nLink, N8nText } from '@n8n/design-system';
+import { N8nBadge, N8nCard, N8nIcon, N8nLink, N8nText } from '@aura/design-system';
 type Props = {
 	dataTable: DataTable;
 	readOnly?: boolean;

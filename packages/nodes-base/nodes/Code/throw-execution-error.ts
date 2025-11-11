@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'workflow';
 
 import { isWrappableError, WrappedExecutionError } from './errors/WrappedExecutionError';
 

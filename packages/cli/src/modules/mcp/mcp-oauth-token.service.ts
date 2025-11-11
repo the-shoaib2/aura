@@ -1,10 +1,10 @@
 import { AuthInfo } from '@modelcontextprotocol/sdk/server/auth/types';
 import { OAuthTokens } from '@modelcontextprotocol/sdk/shared/auth';
-import { Logger } from '@n8n/backend-common';
-import { Time } from '@n8n/constants';
-import { User, UserRepository, withTransaction } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { MoreThanOrEqual } from '@n8n/typeorm';
+import { Logger } from '@aura/backend-common';
+import { Time } from '@aura/constants';
+import { User, UserRepository, withTransaction } from '@aura/db';
+import { Service } from '@aura/di';
+import { MoreThanOrEqual } from '@aura/typeorm';
 import { randomBytes, randomUUID } from 'node:crypto';
 
 import { JwtService } from '@/services/jwt.service';

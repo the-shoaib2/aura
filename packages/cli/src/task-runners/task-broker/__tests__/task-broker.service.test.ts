@@ -1,9 +1,9 @@
-import type { Logger } from '@n8n/backend-common';
-import type { TaskRunnersConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import type { RunnerMessage, TaskResultData } from '@n8n/task-runner';
+import type { Logger } from '@aura/backend-common';
+import type { TaskRunnersConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import type { RunnerMessage, TaskResultData } from '@aura/task-runner';
 import { mock } from 'jest-mock-extended';
-import { ApplicationError, type INodeTypeBaseDescription } from 'n8n-workflow';
+import { ApplicationError, type INodeTypeBaseDescription } from 'workflow';
 
 import type { TaskRunnerLifecycleEvents } from '@/task-runners/task-runner-lifecycle-events';
 
@@ -599,7 +599,7 @@ describe('TaskBroker', () => {
 			const requestId = 'request1';
 			const requestParams = [
 				{
-					name: 'n8n-nodes-base.someNode',
+					name: 'aura-nodes-base.someNode',
 					version: 1,
 				},
 			];

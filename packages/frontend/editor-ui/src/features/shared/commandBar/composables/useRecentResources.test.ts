@@ -15,10 +15,10 @@ vi.mock('@vueuse/core', async (importOriginal) => {
 	return {
 		...(actual as object),
 		useLocalStorage: vi.fn((key: string, defaultValue: unknown) => {
-			if (key === 'n8n-recent-workflows') {
+			if (key === 'aura-recent-workflows') {
 				return recentWorkflowsRef;
 			}
-			if (key === 'n8n-recent-nodes') {
+			if (key === 'aura-recent-nodes') {
 				return recentNodesRef;
 			}
 			return ref(defaultValue);
@@ -50,7 +50,7 @@ vi.mock('vue-router', async (importOriginal) => {
 	};
 });
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,
@@ -74,10 +74,10 @@ describe('useRecentResources', () => {
 		Object.defineProperty(mockWorkflowsStore, 'findNodeByPartialId', {
 			value: vi.fn((nodeId: string) => {
 				if (nodeId === 'node-1') {
-					return { id: 'node-1', name: 'Test Node 1', type: 'n8n-nodes-base.httpRequest' };
+					return { id: 'node-1', name: 'Test Node 1', type: 'aura-nodes-base.httpRequest' };
 				}
 				if (nodeId === 'node-2') {
-					return { id: 'node-2', name: 'Test Node 2', type: 'n8n-nodes-base.slack' };
+					return { id: 'node-2', name: 'Test Node 2', type: 'aura-nodes-base.slack' };
 				}
 				return null;
 			}),

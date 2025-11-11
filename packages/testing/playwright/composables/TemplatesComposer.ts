@@ -1,12 +1,12 @@
 import { expect } from '@playwright/test';
 
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 /**
  * A class for user interactions with templates that go across multiple pages.
  */
 export class TemplatesComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Navigates to templates page, waits for loading to complete,
@@ -14,16 +14,16 @@ export class TemplatesComposer {
 	 * @returns Promise that resolves when the template has been imported
 	 */
 	async importFirstTemplate(): Promise<void> {
-		await this.n8n.navigate.toTemplates();
-		await expect(this.n8n.templates.getSkeletonLoader()).toBeHidden();
-		await expect(this.n8n.templates.getFirstTemplateCard()).toBeVisible();
-		await expect(this.n8n.templates.getTemplatesLoadingContainer()).toBeHidden();
+		await this.aura.navigate.toTemplates();
+		await expect(this.aura.templates.getSkeletonLoader()).toBeHidden();
+		await expect(this.aura.templates.getFirstTemplateCard()).toBeVisible();
+		await expect(this.aura.templates.getTemplatesLoadingContainer()).toBeHidden();
 
-		await this.n8n.templates.clickFirstTemplateCard();
-		await expect(this.n8n.templates.getUseTemplateButton()).toBeVisible();
+		await this.aura.templates.clickFirstTemplateCard();
+		await expect(this.aura.templates.getUseTemplateButton()).toBeVisible();
 
-		await this.n8n.templates.clickUseTemplateButton();
-		await expect(this.n8n.page).toHaveURL(/\/workflow\/new/);
+		await this.aura.templates.clickUseTemplateButton();
+		await expect(this.aura.page).toHaveURL(/\/workflow\/new/);
 	}
 
 	/**
@@ -32,11 +32,11 @@ export class TemplatesComposer {
 	 * @param appName - The name of the app (e.g. 'Shopify', 'X (Formerly Twitter)')
 	 */
 	async fillDummyCredentialForApp(appName: string): Promise<void> {
-		await this.n8n.templateCredentialSetup.openCredentialCreation(appName);
-		await this.n8n.templateCredentialSetup.credentialModal.getCredentialName().click();
-		await this.n8n.templateCredentialSetup.credentialModal.getNameInput().fill('test');
-		await this.n8n.templateCredentialSetup.credentialModal.save();
-		await this.n8n.templateCredentialSetup.credentialModal.close();
+		await this.aura.templateCredentialSetup.openCredentialCreation(appName);
+		await this.aura.templateCredentialSetup.credentialModal.getCredentialName().click();
+		await this.aura.templateCredentialSetup.credentialModal.getNameInput().fill('test');
+		await this.aura.templateCredentialSetup.credentialModal.save();
+		await this.aura.templateCredentialSetup.credentialModal.close();
 	}
 
 	/**
@@ -45,6 +45,6 @@ export class TemplatesComposer {
 	 */
 	async fillDummyCredentialForAppWithConfirm(appName: string): Promise<void> {
 		await this.fillDummyCredentialForApp(appName);
-		await this.n8n.templateCredentialSetup.dismissMessageBox();
+		await this.aura.templateCredentialSetup.dismissMessageBox();
 	}
 }

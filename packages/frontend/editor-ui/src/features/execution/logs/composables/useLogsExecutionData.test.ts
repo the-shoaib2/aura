@@ -12,7 +12,7 @@ import {
 	createTestWorkflow,
 	createTestWorkflowExecutionResponse,
 } from '@/__tests__/mocks';
-import type { IRunExecutionData } from 'n8n-workflow';
+import type { IRunExecutionData } from 'workflow';
 import { stringify } from 'flatted';
 import { useToast } from '@/app/composables/useToast';
 import {

@@ -7,7 +7,7 @@ import {
 	type INodeTypeBaseDescription,
 	type INodeTypeDescription,
 	type IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	appendAttributionToForm,
@@ -32,14 +32,14 @@ const useWorkflowTimezone: INodeProperties = {
 };
 
 const descriptionV2: INodeTypeDescription = {
-	displayName: 'n8n Form Trigger',
+	displayName: 'aura Form Trigger',
 	name: 'formTrigger',
 	icon: 'file:form.svg',
 	group: ['trigger'],
 	// since trigger and node are sharing descriptions and logic we need to sync the versions
 	// and keep them aligned in both nodes
 	version: [2, 2.1, 2.2, 2.3],
-	description: 'Generate webforms in n8n and pass their responses to the workflow',
+	description: 'Generate webforms in aura and pass their responses to the workflow',
 	defaults: {
 		name: 'On form submission',
 	},
@@ -72,7 +72,7 @@ const descriptionV2: INodeTypeDescription = {
 	triggerPanel: formTriggerPanel,
 	credentials: [
 		{
-			// eslint-disable-next-line n8n-nodes-base/node-class-description-credentials-name-unsuffixed
+			// eslint-disable-next-line aura-nodes-base/node-class-description-credentials-name-unsuffixed
 			name: 'httpBasicAuth',
 			required: true,
 			displayOptions: {

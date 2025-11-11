@@ -8,78 +8,78 @@ import type { EventMessageRunner } from './event-message-runner';
 import type { EventMessageWorkflow } from './event-message-workflow';
 
 export const eventNamesAiNodes = [
-	'n8n.ai.memory.get.messages',
-	'n8n.ai.memory.added.message',
-	'n8n.ai.output.parser.parsed',
-	'n8n.ai.retriever.get.relevant.documents',
-	'n8n.ai.embeddings.embedded.document',
-	'n8n.ai.embeddings.embedded.query',
-	'n8n.ai.document.processed',
-	'n8n.ai.text.splitter.split',
-	'n8n.ai.tool.called',
-	'n8n.ai.vector.store.searched',
-	'n8n.ai.llm.generated',
-	'n8n.ai.llm.error',
-	'n8n.ai.vector.store.populated',
-	'n8n.ai.vector.store.updated',
+	'aura.ai.memory.get.messages',
+	'aura.ai.memory.added.message',
+	'aura.ai.output.parser.parsed',
+	'aura.ai.retriever.get.relevant.documents',
+	'aura.ai.embeddings.embedded.document',
+	'aura.ai.embeddings.embedded.query',
+	'aura.ai.document.processed',
+	'aura.ai.text.splitter.split',
+	'aura.ai.tool.called',
+	'aura.ai.vector.store.searched',
+	'aura.ai.llm.generated',
+	'aura.ai.llm.error',
+	'aura.ai.vector.store.populated',
+	'aura.ai.vector.store.updated',
 ] as const;
 
 export type EventNamesAiNodesType = (typeof eventNamesAiNodes)[number];
 
 export const eventNamesRunner = [
-	'n8n.runner.task.requested',
-	'n8n.runner.response.received',
+	'aura.runner.task.requested',
+	'aura.runner.response.received',
 ] as const;
 
 export type EventNamesRunnerType = (typeof eventNamesRunner)[number];
 
 export const eventNamesQueue = [
-	'n8n.queue.job.enqueued',
-	'n8n.queue.job.dequeued',
-	'n8n.queue.job.completed',
-	'n8n.queue.job.failed',
-	'n8n.queue.job.stalled',
+	'aura.queue.job.enqueued',
+	'aura.queue.job.dequeued',
+	'aura.queue.job.completed',
+	'aura.queue.job.failed',
+	'aura.queue.job.stalled',
 ] as const;
 
 export type EventNamesQueueType = (typeof eventNamesQueue)[number];
 
 export const eventNamesWorkflow = [
-	'n8n.workflow.started',
-	'n8n.workflow.success',
-	'n8n.workflow.failed',
+	'aura.workflow.started',
+	'aura.workflow.success',
+	'aura.workflow.failed',
 ] as const;
-export const eventNamesGeneric = ['n8n.worker.started', 'n8n.worker.stopped'] as const;
-export const eventNamesNode = ['n8n.node.started', 'n8n.node.finished'] as const;
+export const eventNamesGeneric = ['aura.worker.started', 'aura.worker.stopped'] as const;
+export const eventNamesNode = ['aura.node.started', 'aura.node.finished'] as const;
 export const eventNamesExecution = [
-	'n8n.execution.throttled',
-	'n8n.execution.started-during-bootup',
+	'aura.execution.throttled',
+	'aura.execution.started-during-bootup',
 ] as const;
 export const eventNamesAudit = [
-	'n8n.audit.user.login.success',
-	'n8n.audit.user.login.failed',
-	'n8n.audit.user.signedup',
-	'n8n.audit.user.updated',
-	'n8n.audit.user.deleted',
-	'n8n.audit.user.invited',
-	'n8n.audit.user.invitation.accepted',
-	'n8n.audit.user.reinvited',
-	'n8n.audit.user.email.failed',
-	'n8n.audit.user.reset.requested',
-	'n8n.audit.user.reset',
-	'n8n.audit.user.credentials.created',
-	'n8n.audit.user.credentials.shared',
-	'n8n.audit.user.credentials.updated',
-	'n8n.audit.user.credentials.deleted',
-	'n8n.audit.user.api.created',
-	'n8n.audit.user.api.deleted',
-	'n8n.audit.package.installed',
-	'n8n.audit.package.updated',
-	'n8n.audit.package.deleted',
-	'n8n.audit.workflow.created',
-	'n8n.audit.workflow.deleted',
-	'n8n.audit.workflow.updated',
-	'n8n.audit.workflow.archived',
-	'n8n.audit.workflow.unarchived',
+	'aura.audit.user.login.success',
+	'aura.audit.user.login.failed',
+	'aura.audit.user.signedup',
+	'aura.audit.user.updated',
+	'aura.audit.user.deleted',
+	'aura.audit.user.invited',
+	'aura.audit.user.invitation.accepted',
+	'aura.audit.user.reinvited',
+	'aura.audit.user.email.failed',
+	'aura.audit.user.reset.requested',
+	'aura.audit.user.reset',
+	'aura.audit.user.credentials.created',
+	'aura.audit.user.credentials.shared',
+	'aura.audit.user.credentials.updated',
+	'aura.audit.user.credentials.deleted',
+	'aura.audit.user.api.created',
+	'aura.audit.user.api.deleted',
+	'aura.audit.package.installed',
+	'aura.audit.package.updated',
+	'aura.audit.package.deleted',
+	'aura.audit.workflow.created',
+	'aura.audit.workflow.deleted',
+	'aura.audit.workflow.updated',
+	'aura.audit.workflow.archived',
+	'aura.audit.workflow.unarchived',
 ] as const;
 
 export type EventNamesWorkflowType = (typeof eventNamesWorkflow)[number];
@@ -97,7 +97,7 @@ export type EventNamesTypes =
 	| EventNamesAiNodesType
 	| EventNamesRunnerType
 	| EventNamesQueueType
-	| 'n8n.destination.test';
+	| 'aura.destination.test';
 
 export const eventNamesAll = [
 	...eventNamesAudit,

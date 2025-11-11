@@ -13,7 +13,7 @@ import {
 	AI_TRANSFORM_JS_CODE,
 	AI_TRANSFORM_NODE_TYPE,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -24,16 +24,16 @@ import { nodeViewEventBus } from '@/app/event-bus';
 import { usePinnedData } from '@/app/composables/usePinnedData';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import { useRouter } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import type { ButtonSize, IUpdateInformation } from '@/Interface';
 import { generateCodeForAiTransform } from '@/features/ndv/parameters/utils/buttonParameter.utils';
 import { needsAgentInput } from '@/app/utils/nodes/nodeTransforms';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { ButtonType } from '@n8n/design-system';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import type { ButtonType } from '@aura/design-system';
+import { type IconName } from '@aura/design-system/components/N8nIcon/icons';
 
-import { N8nButton, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nTooltip } from '@aura/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 const NODE_TEST_STEP_POPUP_COUNT_KEY = 'N8N_NODE_TEST_STEP_POPUP_COUNT';
 const MAX_POPUP_COUNT = 10;

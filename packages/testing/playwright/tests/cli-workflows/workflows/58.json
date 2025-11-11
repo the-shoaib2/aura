@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "1756bcfd-e673-45a5-abd8-9ee7b59e6a5c"
@@ -21,7 +21,7 @@
 				"options": {}
 			},
 			"name": "Todoist",
-			"type": "n8n-nodes-base.todoist",
+			"type": "aura-nodes-base.todoist",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"taskId": "={{$node[\"Todoist\"].json[\"id\"]}}"
 			},
 			"name": "Todoist1",
-			"type": "n8n-nodes-base.todoist",
+			"type": "aura-nodes-base.todoist",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -55,7 +55,7 @@
 				"taskId": "={{$node[\"Todoist\"].json[\"id\"]}}"
 			},
 			"name": "Todoist2",
-			"type": "n8n-nodes-base.todoist",
+			"type": "aura-nodes-base.todoist",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -72,7 +72,7 @@
 				"taskId": "={{$node[\"Todoist\"].json[\"id\"]}}"
 			},
 			"name": "Todoist3",
-			"type": "n8n-nodes-base.todoist",
+			"type": "aura-nodes-base.todoist",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -89,7 +89,7 @@
 				"taskId": "={{$node[\"Todoist\"].json[\"id\"]}}"
 			},
 			"name": "Todoist4",
-			"type": "n8n-nodes-base.todoist",
+			"type": "aura-nodes-base.todoist",
 			"typeVersion": 1,
 			"position": [1200, 300],
 			"credentials": {
@@ -107,7 +107,7 @@
 				"filters": {}
 			},
 			"name": "Todoist5",
-			"type": "n8n-nodes-base.todoist",
+			"type": "aura-nodes-base.todoist",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {

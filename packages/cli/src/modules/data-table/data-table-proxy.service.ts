@@ -1,6 +1,6 @@
-import type { DataTableListOptions } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { Service } from '@n8n/di';
+import type { DataTableListOptions } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { Service } from '@aura/di';
 import {
 	AddDataTableColumnOptions,
 	CreateDataTableOptions,
@@ -20,17 +20,17 @@ import {
 	UpdateDataTableRowOptions,
 	UpsertDataTableRowOptions,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DataTableService } from './data-table.service';
 
 import { OwnershipService } from '@/services/ownership.service';
 
 const ALLOWED_NODES = [
-	'n8n-nodes-base.dataTable',
-	'n8n-nodes-base.dataTableTool',
-	'n8n-nodes-base.evaluationTrigger',
-	'n8n-nodes-base.evaluation',
+	'aura-nodes-base.dataTable',
+	'aura-nodes-base.dataTableTool',
+	'aura-nodes-base.evaluationTrigger',
+	'aura-nodes-base.evaluation',
 ] as const;
 
 type AllowedNode = (typeof ALLOWED_NODES)[number];

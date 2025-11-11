@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [180, 300],
 			"id": "50ba36ae-2d60-4030-8b52-19900aa73d75"
@@ -21,7 +21,7 @@
 				}
 			},
 			"name": "Hubspot",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [370, 230],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"filters": {}
 			},
 			"name": "Hubspot1",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [650, 230],
 			"credentials": {
@@ -57,7 +57,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot2",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1250, 230],
 			"credentials": {
@@ -78,7 +78,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot3",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [780, 230],
 			"notesInFlow": false,
@@ -100,7 +100,7 @@
 				}
 			},
 			"name": "Hubspot4",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [500, 230],
 			"notesInFlow": false,
@@ -120,7 +120,7 @@
 				"filters": {}
 			},
 			"name": "Hubspot5",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [930, 230],
 			"notesInFlow": false,
@@ -139,7 +139,7 @@
 				"dealId": "={{$json[\"dealId\"]}}"
 			},
 			"name": "Hubspot6",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1380, 230],
 			"notesInFlow": false,
@@ -159,7 +159,7 @@
 				"filters": {}
 			},
 			"name": "Hubspot7",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1100, 230],
 			"notesInFlow": false,
@@ -181,7 +181,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot8",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [370, 400],
 			"notesInFlow": false,
@@ -202,7 +202,7 @@
 				"updateFields": {}
 			},
 			"name": "Hubspot9",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [530, 400],
 			"notesInFlow": false,
@@ -223,7 +223,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot10",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [680, 400],
 			"notesInFlow": false,
@@ -244,7 +244,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot11",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [830, 400],
 			"notesInFlow": false,
@@ -264,7 +264,7 @@
 				"ticketId": "={{$json[\"objectId\"]}}"
 			},
 			"name": "Hubspot12",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [990, 400],
 			"notesInFlow": false,

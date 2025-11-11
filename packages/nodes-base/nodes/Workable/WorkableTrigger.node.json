@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.workableTrigger",
+	"node": "aura-nodes-base.workableTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/workable/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/workable/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.workabletrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.workabletrigger/"
 			}
 		]
 	}

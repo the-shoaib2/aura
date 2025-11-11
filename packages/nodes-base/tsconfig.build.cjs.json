@@ -1,5 +1,5 @@
 {
-	"extends": ["./tsconfig.json", "@n8n/typescript-config/modern/tsconfig.cjs.json"],
+	"extends": ["./tsconfig.json", "@aura/typescript-config/modern/tsconfig.cjs.json"],
 	"compilerOptions": {
 		"outDir": "dist",
 		"module": "commonjs",

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const memberOperations: INodeProperties[] = [
 	{
@@ -62,7 +62,7 @@ export const memberFields: INodeProperties[] = [
 		name: 'workspaceId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getWorkspaces',
 		},
@@ -97,7 +97,7 @@ export const memberFields: INodeProperties[] = [
 		name: 'workspaceId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getWorkspaces',
 		},
@@ -134,7 +134,7 @@ export const memberFields: INodeProperties[] = [
 			},
 		},
 		default: false,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description:
 			'By default, the response just includes the reference of the identity. When set to true the identities will be resolved automatically.',
 	},
@@ -147,7 +147,7 @@ export const memberFields: INodeProperties[] = [
 		name: 'workspaceId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getWorkspaces',
 		},
@@ -202,7 +202,7 @@ export const memberFields: INodeProperties[] = [
 			},
 		},
 		default: false,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description:
 			'By default, the response just includes the reference of the identity. When set to true the identities will be resolved automatically.',
 	},
@@ -253,7 +253,7 @@ export const memberFields: INodeProperties[] = [
 		name: 'workspaceId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getWorkspaces',
 		},
@@ -394,7 +394,7 @@ export const memberFields: INodeProperties[] = [
 		name: 'workspaceId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getWorkspaces',
 		},
@@ -524,7 +524,7 @@ export const memberFields: INodeProperties[] = [
 		name: 'workspaceId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getWorkspaces',
 		},

@@ -4,17 +4,17 @@ import {
 	randomInvalidPassword,
 	randomName,
 	randomValidPassword,
-} from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
 import {
 	GLOBAL_ADMIN_ROLE,
 	GLOBAL_MEMBER_ROLE,
 	ProjectRelationRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
-import { Not } from '@n8n/typeorm';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
+import { Not } from '@aura/typeorm';
 
 import {
 	assertReturnedUserProps,

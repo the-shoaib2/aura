@@ -1,7 +1,7 @@
 {
 	"extends": [
-		"@n8n/typescript-config/tsconfig.common.json",
-		"@n8n/typescript-config/tsconfig.backend.json"
+		"@aura/typescript-config/tsconfig.common.json",
+		"@aura/typescript-config/tsconfig.backend.json"
 	],
 	"compilerOptions": {
 		"outDir": "dist",

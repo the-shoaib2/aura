@@ -4,7 +4,7 @@ import type {
 	INodeProperties,
 	IExecuteFunctions,
 	NodeApiError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { updateDisplayOptions, wrapData } from '../../../../../utils/utilities';
 import { processAirtableError, removeIgnored } from '../../helpers/utils';

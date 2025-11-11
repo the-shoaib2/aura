@@ -1,4 +1,4 @@
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 
 import { createMockExecuteFunction } from './node/helpers';
 import { SESSION_MODE } from '../actions/common/fields';

@@ -4,5 +4,5 @@ export const profileResponse = {
 	weight: 168,
 	height: 80,
 	biological_sex: 'male',
-	email: 'nathan@n8n.io',
+	email: 'nathan@aura.io',
 };

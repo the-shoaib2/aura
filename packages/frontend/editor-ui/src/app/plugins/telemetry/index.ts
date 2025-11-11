@@ -1,6 +1,6 @@
 import type { Plugin } from 'vue';
-import type { ITelemetrySettings } from '@n8n/api-types';
-import type { ITelemetryTrackProperties, IDataObject } from 'n8n-workflow';
+import type { ITelemetrySettings } from '@aura/api-types';
+import type { ITelemetryTrackProperties, IDataObject } from 'workflow';
 import type { RouteLocation } from 'vue-router';
 
 import type { IUpdateInformation } from '@/Interface';
@@ -11,7 +11,7 @@ import {
 	SLACK_NODE_TYPE,
 	TELEGRAM_NODE_TYPE,
 } from '@/app/constants';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -73,7 +73,7 @@ export class Telemetry {
 		};
 
 		if (settingsStore.isCloudDeployment) {
-			traits.user_cloud_id = settingsStore.settings?.n8nMetadata?.userId ?? '';
+			traits.user_cloud_id = settingsStore.settings?.auraMetadata?.userId ?? '';
 		}
 		if (userId) {
 			this.rudderStack?.identify(
@@ -193,7 +193,7 @@ export class Telemetry {
 			};
 			const changeName = changeNameMap[nodeType] || APPEND_ATTRIBUTION_DEFAULT_PATH;
 			if (change.name === changeName) {
-				this.track('User toggled n8n reference option', {
+				this.track('User toggled aura reference option', {
 					node: nodeType,
 					toValue: change.value,
 				});
@@ -242,7 +242,7 @@ export class Telemetry {
 
 			script.type = 'text/javascript';
 			script.async = !0;
-			script.src = 'https://cdn-rs.n8n.io/v1/ra.min.js';
+			script.src = 'https://cdn-rs.aura.io/v1/ra.min.js';
 
 			const element: Element = document.getElementsByTagName('script')[0];
 

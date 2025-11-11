@@ -1,7 +1,7 @@
-import { createWorkflow, testDb, mockInstance } from '@n8n/backend-test-utils';
-import { WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { Workflow } from 'n8n-workflow';
+import { createWorkflow, testDb, mockInstance } from '@aura/backend-test-utils';
+import { WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { Workflow } from 'workflow';
 
 import { NodeTypes } from '@/node-types';
 import { WorkflowStaticDataService } from '@/workflows/workflow-static-data.service';

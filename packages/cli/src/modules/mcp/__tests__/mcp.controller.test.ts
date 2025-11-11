@@ -1,6 +1,6 @@
-import { Logger } from '@n8n/backend-common';
-import { type AuthenticatedRequest } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { type AuthenticatedRequest } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock, mockDeep } from 'jest-mock-extended';
 
 // eslint-disable-next-line import-x/order

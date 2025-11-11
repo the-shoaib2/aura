@@ -8,12 +8,12 @@ import {
 	linkUserToProject,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { Project, User } from '@n8n/db';
-import { FolderRepository, ProjectRepository, WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { ProjectRole } from '@n8n/permissions';
-import { PROJECT_EDITOR_ROLE_SLUG, PROJECT_VIEWER_ROLE_SLUG } from '@n8n/permissions';
+} from '@aura/backend-test-utils';
+import type { Project, User } from '@aura/db';
+import { FolderRepository, ProjectRepository, WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import type { ProjectRole } from '@aura/permissions';
+import { PROJECT_EDITOR_ROLE_SLUG, PROJECT_VIEWER_ROLE_SLUG } from '@aura/permissions';
 import {
 	createCredentials,
 	getCredentialSharings,
@@ -24,7 +24,7 @@ import {
 import { createFolder } from '@test-integration/db/folders';
 import { createTag } from '@test-integration/db/tags';
 import { DateTime } from 'luxon';
-import { ApplicationError, PROJECT_ROOT } from 'n8n-workflow';
+import { ApplicationError, PROJECT_ROOT } from 'workflow';
 
 import { createOwner, createMember, createUser, createAdmin } from '../shared/db/users';
 import type { SuperAgentTest } from '../shared/types';
@@ -392,7 +392,7 @@ describe('GET /projects/:projectId/folders/:folderId/credentials', () => {
 					nodes: [
 						{
 							parameters: {},
-							type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+							type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 							typeVersion: 1.2,
 							position: [0, 0],
 							id: faker.string.uuid(),
@@ -484,7 +484,7 @@ describe('GET /projects/:projectId/folders/:folderId/credentials', () => {
 					nodes: [
 						{
 							parameters: {},
-							type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+							type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 							typeVersion: 1.2,
 							position: [0, 0],
 							id: faker.string.uuid(),

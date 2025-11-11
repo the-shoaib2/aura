@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [290, 420],
 			"id": "d407a858-2b0d-47c9-8004-c2aa1c1debb5"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Clockify",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [500, 250],
 			"credentials": {
@@ -41,7 +41,7 @@
 				}
 			},
 			"name": "Clockify1",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [650, 250],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"projectId": "={{$node[\"Clockify\"].json[\"id\"]}}"
 			},
 			"name": "Clockify2",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [800, 250],
 			"credentials": {
@@ -78,7 +78,7 @@
 				"additionalFields": {}
 			},
 			"name": "Clockify3",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [950, 250],
 			"credentials": {
@@ -96,7 +96,7 @@
 				"projectId": "={{$node[\"Clockify\"].json[\"id\"]}}"
 			},
 			"name": "Clockify4",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [1100, 250],
 			"notesInFlow": true,
@@ -117,7 +117,7 @@
 				"name": "=TestTag{{$evaluateExpression(Math.random())}}"
 			},
 			"name": "Clockify5",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [500, 400],
 			"credentials": {
@@ -139,7 +139,7 @@
 				}
 			},
 			"name": "Clockify6",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [830, 400],
 			"credentials": {
@@ -159,7 +159,7 @@
 				"additionalFields": {}
 			},
 			"name": "Clockify7",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [980, 400],
 			"credentials": {
@@ -178,7 +178,7 @@
 				"tagId": "={{$node[\"Clockify5\"].json[\"id\"]}}"
 			},
 			"name": "Clockify8",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [1130, 400],
 			"credentials": {
@@ -197,7 +197,7 @@
 				"additionalFields": {}
 			},
 			"name": "Clockify9",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [500, 560],
 			"credentials": {
@@ -219,7 +219,7 @@
 				}
 			},
 			"name": "Clockify10",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [650, 560],
 			"credentials": {
@@ -239,7 +239,7 @@
 				"additionalFields": {}
 			},
 			"name": "Clockify11",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [800, 560],
 			"credentials": {
@@ -258,7 +258,7 @@
 				"timeEntryId": "={{$node[\"Clockify9\"].json[\"id\"]}}"
 			},
 			"name": "Clockify12",
-			"type": "n8n-nodes-base.clockify",
+			"type": "aura-nodes-base.clockify",
 			"typeVersion": 1,
 			"position": [950, 560],
 			"credentials": {
@@ -274,7 +274,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [660, 400],
 			"typeVersion": 1,
 			"id": "be2fd4bd-f014-48b8-9e52-f18cc6595477"

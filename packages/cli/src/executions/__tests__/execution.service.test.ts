@@ -1,9 +1,9 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { IExecutionResponse, ExecutionRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { IExecutionResponse, ExecutionRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import { ManualExecutionCancelledError, WorkflowOperationError } from 'n8n-workflow';
+import { ManualExecutionCancelledError, WorkflowOperationError } from 'workflow';
 
 import type { ActiveExecutions } from '@/active-executions';
 import type { ConcurrencyControlService } from '@/concurrency/concurrency-control.service';

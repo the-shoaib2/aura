@@ -1,4 +1,4 @@
-import { Service as Utility } from '@n8n/di';
+import { Service as Utility } from '@aura/di';
 import { compare, hash } from 'bcryptjs';
 
 const SALT_ROUNDS = 10;

@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { dataLocationOnSheet, outputFormatting } from './commonDescription';
 import type { GoogleSheet } from '../../helpers/GoogleSheet';
@@ -43,7 +43,7 @@ export const readFilter: INodeProperties = {
 			name: 'values',
 			values: [
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 					displayName: 'Column',
 					name: 'lookupColumn',
 					type: 'options',
@@ -53,7 +53,7 @@ export const readFilter: INodeProperties = {
 					},
 					default: '',
 					description:
-						'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+						'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				},
 				{
 					displayName: 'Value',

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "570ac713-7639-4d31-aed5-d813b6cb3f32"
@@ -20,7 +20,7 @@
 				"columns": "id,name"
 			},
 			"name": "Stackby",
-			"type": "n8n-nodes-base.stackby",
+			"type": "aura-nodes-base.stackby",
 			"typeVersion": 1,
 			"position": [570, 300],
 			"credentials": {
@@ -50,7 +50,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"id": "31ebc435-4f59-42a7-813d-6d98eb59449e"
@@ -63,7 +63,7 @@
 				"id": "={{$node[\"Stackby\"].json[\"rowId\"]}}"
 			},
 			"name": "Stackby1",
-			"type": "n8n-nodes-base.stackby",
+			"type": "aura-nodes-base.stackby",
 			"typeVersion": 1,
 			"position": [720, 300],
 			"credentials": {
@@ -84,7 +84,7 @@
 				}
 			},
 			"name": "Stackby2",
-			"type": "n8n-nodes-base.stackby",
+			"type": "aura-nodes-base.stackby",
 			"typeVersion": 1,
 			"position": [880, 300],
 			"credentials": {
@@ -104,7 +104,7 @@
 				"id": "={{$node[\"Stackby\"].json[\"rowId\"]}}"
 			},
 			"name": "Stackby3",
-			"type": "n8n-nodes-base.stackby",
+			"type": "aura-nodes-base.stackby",
 			"typeVersion": 1,
 			"position": [1030, 300],
 			"executeOnce": true,

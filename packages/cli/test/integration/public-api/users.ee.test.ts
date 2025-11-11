@@ -3,8 +3,8 @@ import {
 	linkUserToProject,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import { GLOBAL_MEMBER_ROLE, type User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import { GLOBAL_MEMBER_ROLE, type User } from '@aura/db';
 import { v4 as uuid } from 'uuid';
 import validator from 'validator';
 

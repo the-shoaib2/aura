@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [210, 580],
 			"id": "3ae6a472-ef2b-4e70-b1b8-34f11865656a"
@@ -22,7 +22,7 @@
 				"additionalFields": {}
 			},
 			"name": "Sentry.io",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [420, 300],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"organizationSlug": "={{$node[\"Sentry.io\"].json[\"slug\"]}}"
 			},
 			"name": "Sentry.io1",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [610, 300],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"additionalFields": {}
 			},
 			"name": "Sentry.io2",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [980, 300],
 			"credentials": {
@@ -73,12 +73,12 @@
 			"parameters": {
 				"resource": "team",
 				"operation": "create",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"name": "=Team{{Date.now()}}",
 				"additionalFields": {}
 			},
 			"name": "Sentry.io3",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [420, 140],
 			"credentials": {
@@ -92,11 +92,11 @@
 		{
 			"parameters": {
 				"resource": "team",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"teamSlug": "={{$node[\"Sentry.io3\"].json[\"slug\"]}}"
 			},
 			"name": "Sentry.io4",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [580, 140],
 			"credentials": {
@@ -111,11 +111,11 @@
 			"parameters": {
 				"resource": "team",
 				"operation": "getAll",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"limit": 1
 			},
 			"name": "Sentry.io5",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [930, 140],
 			"credentials": {
@@ -133,7 +133,7 @@
 				"limit": 1
 			},
 			"name": "Sentry.io6",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [590, 470],
 			"credentials": {
@@ -147,11 +147,11 @@
 		{
 			"parameters": {
 				"resource": "project",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"projectSlug": "={{$node[\"Sentry.io22\"].json[\"slug\"]}}"
 			},
 			"name": "Sentry.io7",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [780, 470],
 			"credentials": {
@@ -168,7 +168,7 @@
 				"issueId": "={{$json[\"id\"]}}"
 			},
 			"name": "Sentry.io8",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [610, 630],
 			"credentials": {
@@ -183,13 +183,13 @@
 			"parameters": {
 				"resource": "issue",
 				"operation": "getAll",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"projectSlug": "javascript",
 				"limit": 1,
 				"additionalFields": {}
 			},
 			"name": "Sentry.io9",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [430, 630],
 			"credentials": {
@@ -210,7 +210,7 @@
 				}
 			},
 			"name": "Sentry.io10",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [780, 630],
 			"credentials": {
@@ -224,13 +224,13 @@
 		{
 			"parameters": {
 				"operation": "getAll",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"projectSlug": "javascript",
 				"full": false,
 				"limit": 1
 			},
 			"name": "Sentry.io11",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [430, 780],
 			"credentials": {
@@ -243,12 +243,12 @@
 		},
 		{
 			"parameters": {
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"projectSlug": "javascript",
 				"eventId": "={{$json[\"id\"]}}"
 			},
 			"name": "Sentry.io12",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [610, 780],
 			"credentials": {
@@ -263,14 +263,14 @@
 			"parameters": {
 				"resource": "release",
 				"operation": "create",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"version": "={{Date.now().toString()}}",
-				"url": "http://n8n.io",
+				"url": "http://aura.io",
 				"projects": "={{[$node[\"Sentry.io22\"].json[\"slug\"]]}}",
 				"additionalFields": {}
 			},
 			"name": "Sentry.io13",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [1100, 530],
 			"credentials": {
@@ -284,11 +284,11 @@
 		{
 			"parameters": {
 				"resource": "release",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"version": "={{$node[\"Sentry.io13\"].json[\"shortVersion\"]}}"
 			},
 			"name": "Sentry.io14",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [1260, 530],
 			"credentials": {
@@ -303,12 +303,12 @@
 			"parameters": {
 				"resource": "release",
 				"operation": "getAll",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"limit": 1,
 				"additionalFields": {}
 			},
 			"name": "Sentry.io15",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [1440, 530],
 			"credentials": {
@@ -323,12 +323,12 @@
 			"parameters": {
 				"resource": "team",
 				"operation": "update",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"teamSlug": "={{$node[\"Sentry.io3\"].json[\"slug\"]}}",
 				"updateFields": {}
 			},
 			"name": "Sentry.io16",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [750, 140],
 			"credentials": {
@@ -343,11 +343,11 @@
 			"parameters": {
 				"resource": "team",
 				"operation": "delete",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"teamSlug": "={{$node[\"Sentry.io3\"].json[\"slug\"]}}"
 			},
 			"name": "Sentry.io17",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [1100, 140],
 			"credentials": {
@@ -366,7 +366,7 @@
 				"updateFields": {}
 			},
 			"name": "Sentry.io18",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [790, 300],
 			"credentials": {
@@ -381,12 +381,12 @@
 			"parameters": {
 				"resource": "project",
 				"operation": "update",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"projectSlug": "={{$node[\"Sentry.io6\"].json[\"slug\"]}}",
 				"updateFields": {}
 			},
 			"name": "Sentry.io19",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [950, 470],
 			"credentials": {
@@ -401,12 +401,12 @@
 			"parameters": {
 				"resource": "release",
 				"operation": "update",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"version": "={{$node[\"Sentry.io13\"].json[\"shortVersion\"]}}",
 				"updateFields": {}
 			},
 			"name": "Sentry.io20",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [1600, 530],
 			"credentials": {
@@ -421,11 +421,11 @@
 			"parameters": {
 				"resource": "release",
 				"operation": "delete",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"version": "={{$node[\"Sentry.io13\"].json[\"shortVersion\"]}}"
 			},
 			"name": "Sentry.io21",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [1750, 530],
 			"credentials": {
@@ -440,13 +440,13 @@
 			"parameters": {
 				"resource": "project",
 				"operation": "create",
-				"organizationSlug": "n8n-iq",
-				"teamSlug": "n8nteam",
+				"organizationSlug": "aura-iq",
+				"teamSlug": "aurateam",
 				"name": "=ProjectTest{{Date.now()}}",
 				"additionalFields": {}
 			},
 			"name": "Sentry.io22",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [430, 470],
 			"credentials": {
@@ -461,11 +461,11 @@
 			"parameters": {
 				"resource": "project",
 				"operation": "delete",
-				"organizationSlug": "n8n-iq",
+				"organizationSlug": "aura-iq",
 				"projectSlug": "={{$node[\"Sentry.io22\"].json[\"slug\"]}}"
 			},
 			"name": "Sentry.io23",
-			"type": "n8n-nodes-base.sentryIo",
+			"type": "aura-nodes-base.sentryIo",
 			"typeVersion": 1,
 			"position": [1900, 480],
 			"credentials": {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
-import { N8nText } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nText } from '@aura/design-system';
 const {
 	dataCount,
 	unfilteredDataCount,

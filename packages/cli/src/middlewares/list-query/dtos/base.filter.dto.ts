@@ -1,7 +1,7 @@
-import { isObjectLiteral } from '@n8n/backend-common';
+import { isObjectLiteral } from '@aura/backend-common';
 import { plainToInstance, instanceToPlain } from 'class-transformer';
 import { validate } from 'class-validator';
-import { jsonParse, UnexpectedError } from 'n8n-workflow';
+import { jsonParse, UnexpectedError } from 'workflow';
 
 export class BaseFilter {
 	protected static async toFilter(rawFilter: string, Filter: typeof BaseFilter) {

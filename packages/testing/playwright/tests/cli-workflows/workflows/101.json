@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "38b2e8c3-ddfe-4ef3-85d0-ddab8e8732db"
@@ -25,7 +25,7 @@
 				}
 			},
 			"name": "Rename Keys",
-			"type": "n8n-nodes-base.renameKeys",
+			"type": "aura-nodes-base.renameKeys",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"id": "d4b5cdcd-3bd7-46aa-ab34-f986411cfc43"
@@ -47,7 +47,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"id": "0c816bc3-19b1-41f2-ac7a-ea5f2448bac2"
@@ -57,7 +57,7 @@
 				"functionCode": "testData = JSON.stringify(\n{\nname: \"test\",\nRenamed: \"name\"\n}\n)\nif(JSON.stringify($node['Rename Keys'].json) !== testData){\n  throw new Error('Error in rename keys node');\n}\n\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"id": "95ab4a10-c3f3-4bad-8792-4a8dab012672"

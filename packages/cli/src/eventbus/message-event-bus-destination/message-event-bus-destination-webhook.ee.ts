@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import axios from 'axios';
 import type { AxiosRequestConfig, Method } from 'axios';
 import { Agent as HTTPSAgent } from 'https';
-import { ExternalSecretsProxy } from 'n8n-core';
-import { jsonParse, MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+import { ExternalSecretsProxy } from 'aura-core';
+import { jsonParse, MessageEventBusDestinationTypeNames } from 'workflow';
 import type {
 	MessageEventBusDestinationOptions,
 	MessageEventBusDestinationWebhookParameterItem,
 	MessageEventBusDestinationWebhookParameterOptions,
 	IWorkflowExecuteAdditionalData,
 	MessageEventBusDestinationWebhookOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { CredentialsHelper } from '@/credentials-helper';
 

@@ -3,8 +3,8 @@ import {
 	FROM_AI_AUTO_GENERATED_MARKER,
 	type NodeParameterValueType,
 	type NodePropertyTypes,
-} from 'n8n-workflow';
-import { i18n } from '@n8n/i18n';
+} from 'workflow';
+import { i18n } from '@aura/i18n';
 import type { INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
@@ -47,10 +47,10 @@ function sanitizeFromAiParameterName(s: string) {
 
 // nodeName | [nodeName, highestUnsupportedVersion]
 const NODE_DENYLIST = [
-	'@n8n/n8n-nodes-langchain.toolCode',
-	'@n8n/n8n-nodes-langchain.toolHttpRequest',
-	'@n8n/n8n-nodes-langchain.mcpClientTool',
-	['@n8n/n8n-nodes-langchain.toolWorkflow', 1.2],
+	'@aura/aura-nodes-langchain.toolCode',
+	'@aura/aura-nodes-langchain.toolHttpRequest',
+	'@aura/aura-nodes-langchain.mcpClientTool',
+	['@aura/aura-nodes-langchain.toolWorkflow', 1.2],
 ] as const;
 
 const PATH_DENYLIST = [

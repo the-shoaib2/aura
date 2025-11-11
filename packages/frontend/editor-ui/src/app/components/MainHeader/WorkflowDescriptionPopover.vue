@@ -7,14 +7,14 @@ import {
 	N8nInputLabel,
 	N8nPopoverReka,
 	N8nTooltip,
-} from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+} from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useToast } from '@/app/composables/useToast';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { WEBHOOK_NODE_TYPE } from 'n8n-workflow';
+import { WEBHOOK_NODE_TYPE } from 'workflow';
 
 type Props = {
 	workflowId: string;

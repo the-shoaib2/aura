@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	INodeExecutionData,
-	INodeProperties,
-	IExecuteFunctions,
-} from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData, INodeProperties, IExecuteFunctions } from 'workflow';
 
 import { updateDisplayOptions, wrapData } from '../../../../../utils/utilities';
 import { webflowApiRequest } from '../../../GenericFunctions';
@@ -19,7 +14,7 @@ const properties: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the site containing the collection whose items to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the site containing the collection whose items to operate on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Collection Name or ID',
@@ -32,7 +27,7 @@ const properties: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the collection whose items to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the collection whose items to operate on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Item ID',

@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { fireEvent, waitFor } from '@testing-library/vue';
 import Assignment from './Assignment.vue';
 import { defaultSettings } from '@/__tests__/defaults';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import merge from 'lodash/merge';
 import * as useResolvedExpression from '@/app/composables/useResolvedExpression';
 

@@ -1,11 +1,11 @@
-/* eslint-disable n8n-nodes-base/node-filename-against-convention */
+/* eslint-disable aura-nodes-base/node-filename-against-convention */
 import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import * as createEvent from './createEvent.operation';
 

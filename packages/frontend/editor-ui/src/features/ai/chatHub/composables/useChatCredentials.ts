@@ -5,7 +5,7 @@ import {
 	chatHubProviderSchema,
 	PROVIDER_CREDENTIAL_TYPE_MAP,
 	type ChatHubProvider,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import { useLocalStorage } from '@vueuse/core';
 import { computed, onMounted, ref } from 'vue';
 
@@ -37,7 +37,7 @@ export function useChatCredentials(userId: string) {
 	const autoSelectCredentials = computed<CredentialsMap>(() =>
 		Object.fromEntries(
 			chatHubProviderSchema.options.map((provider) => {
-				if (provider === 'n8n' || provider === 'custom-agent') {
+				if (provider === 'aura' || provider === 'custom-agent') {
 					return [provider, null];
 				}
 

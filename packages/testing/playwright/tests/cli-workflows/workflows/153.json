@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "0e6c4d13-c106-4581-890c-ff9d76f686b5"
@@ -18,7 +18,7 @@
 				"function": "arn:aws:lambda:us-east-1:589875339869:function:test-helloworld"
 			},
 			"name": "AWS Lambda",
-			"type": "n8n-nodes-base.awsLambda",
+			"type": "aura-nodes-base.awsLambda",
 			"typeVersion": 1,
 			"position": [450, 200],
 			"credentials": {
@@ -35,7 +35,7 @@
 				"payload": "{\n  \"name\": \"nodeqa\"\n}"
 			},
 			"name": "AWS Lambda1",
-			"type": "n8n-nodes-base.awsLambda",
+			"type": "aura-nodes-base.awsLambda",
 			"typeVersion": 1,
 			"position": [450, 360],
 			"credentials": {

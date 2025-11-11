@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { ApiKey } from '@n8n/api-types';
+import type { ApiKey } from '@aura/api-types';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import {
 	N8nButton,
 	N8nInfoAccordion,
@@ -11,7 +11,7 @@ import {
 	N8nMarkdown,
 	N8nNotice,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import ConnectionParameter from '@/features/ai/mcpAccess/components/connectionInstructions/ConnectionParameter.vue';
 
 type Props = {
@@ -34,7 +34,7 @@ const connectionString = computed(() => {
 	return `
 {
   "mcpServers": {
-    "n8n-mcp": {
+    "aura-mcp": {
       "command": "npx",
       "args": [
         "-y",
@@ -178,7 +178,7 @@ const apiKeyText = computed(() => {
 		align-items: center;
 		gap: var(--spacing--2xs);
 
-		:global(.n8n-loading) div {
+		:global(.aura-loading) div {
 			height: 32px;
 			width: 300px;
 			margin: 0;
@@ -231,7 +231,7 @@ const apiKeyText = computed(() => {
 	padding: 0 var(--spacing--lg);
 	margin-bottom: var(--spacing--sm);
 
-	:global(.n8n-markdown) {
+	:global(.aura-markdown) {
 		width: 100%;
 	}
 	code {

@@ -1,19 +1,19 @@
 {
-  "name": "@n8n/n8n-extension-insights",
+  "name": "@aura/aura-extension-insights",
   "version": "0.10.0",
   "type": "module",
   "files": [
     "dist",
-    "n8n.manifest.json",
+    "aura.manifest.json",
     "LICENSE",
     "README.md"
   ],
-  "main": "./n8n.manifest.json",
-  "module": "./n8n.manifest.json",
+  "main": "./aura.manifest.json",
+  "module": "./aura.manifest.json",
   "exports": {
     ".": {
-      "import": "./n8n.manifest.json",
-      "require": "./n8n.manifest.json"
+      "import": "./aura.manifest.json",
+      "require": "./aura.manifest.json"
     },
     "./backend": {
       "types": "./dist/backend/index.d.ts",
@@ -45,11 +45,11 @@
     "vue-router": "catalog:frontend"
   },
   "dependencies": {
-    "@n8n/extension-sdk": "workspace:*"
+    "@aura/extension-sdk": "workspace:*"
   },
   "devDependencies": {
-    "@n8n/stylelint-config": "workspace:*",
-    "@n8n/typescript-config": "workspace:*",
+    "@aura/stylelint-config": "workspace:*",
+    "@aura/typescript-config": "workspace:*",
     "@vitejs/plugin-vue": "catalog:frontend",
     "@vue/tsconfig": "catalog:frontend",
     "tsdown": "catalog:",

@@ -1,5 +1,5 @@
-import type { INodeTypeBaseDescription, IVersionedNodeType } from 'n8n-workflow';
-import { VersionedNodeType } from 'n8n-workflow';
+import type { INodeTypeBaseDescription, IVersionedNodeType } from 'workflow';
+import { VersionedNodeType } from 'workflow';
 
 import { WebflowTriggerV1 } from './V1/WebflowTriggerV1.node';
 import { WebflowTriggerV2 } from './V2/WebflowTriggerV2.node';

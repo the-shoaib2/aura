@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.baserow",
+	"node": "aura-nodes-base.baserow",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/baserow/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/baserow/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.baserow/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.baserow/"
 			}
 		],
 		"generic": []

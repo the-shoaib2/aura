@@ -2,12 +2,12 @@ import { describe, expect, vi } from 'vitest';
 
 import userEvent from '@testing-library/user-event';
 import { faker } from '@faker-js/faker';
-import type { ExecutionSummary, AnnotationVote } from 'n8n-workflow';
+import type { ExecutionSummary, AnnotationVote } from 'workflow';
 import WorkflowExecutionAnnotationTags from './WorkflowExecutionAnnotationTags.ee.vue';
 import { EnterpriseEditionFeature } from '@/app/constants';
 import { createComponentRenderer } from '@/__tests__/render';
 import { createTestingPinia } from '@pinia/testing';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { nextTick } from 'vue';
 
 const showError = vi.fn();

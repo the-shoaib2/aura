@@ -10,7 +10,7 @@
 			},
 			"id": "ec188f16-b2c5-44e3-bd83-259a94f15c94",
 			"name": "Webhook",
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 1,
 			"webhookId": "a59a3be7-6d43-47e7-951d-86b8172c2006"
 		}

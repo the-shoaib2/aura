@@ -1,9 +1,9 @@
-import { LoginRequestDto, ResolveSignupTokenQueryDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import type { User, PublicUser } from '@n8n/db';
-import { UserRepository, AuthenticatedRequest, GLOBAL_OWNER_ROLE } from '@n8n/db';
-import { Body, Get, Post, Query, RestController } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { LoginRequestDto, ResolveSignupTokenQueryDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import type { User, PublicUser } from '@aura/db';
+import { UserRepository, AuthenticatedRequest, GLOBAL_OWNER_ROLE } from '@aura/db';
+import { Body, Get, Post, Query, RestController } from '@aura/decorators';
+import { Container } from '@aura/di';
 import { isEmail } from 'class-validator';
 import { Response } from 'express';
 

@@ -1,17 +1,17 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
 import {
 	ProjectRelationRepository,
 	ProjectRepository,
 	WorkflowRepository,
 	UserRepository,
-} from '@n8n/db';
-import { OnShutdown } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+} from '@aura/db';
+import { OnShutdown } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import type RudderStack from '@rudderstack/rudder-sdk-node';
 import axios from 'axios';
-import { ErrorReporter, InstanceSettings } from 'n8n-core';
-import type { ITelemetryTrackProperties } from 'n8n-workflow';
+import { ErrorReporter, InstanceSettings } from 'aura-core';
+import type { ITelemetryTrackProperties } from 'workflow';
 
 import { LOWEST_SHUTDOWN_PRIORITY, N8N_VERSION } from '@/constants';
 import type { IExecutionTrackProperties } from '@/interfaces';
@@ -184,7 +184,7 @@ export class Telemetry {
 			if (
 				!properties.success &&
 				properties.is_manual &&
-				properties.error_node_type?.startsWith('n8n-nodes-base')
+				properties.error_node_type?.startsWith('aura-nodes-base')
 			) {
 				this.track('Workflow execution errored', properties);
 			}

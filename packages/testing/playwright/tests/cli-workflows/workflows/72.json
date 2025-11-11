@@ -8,18 +8,18 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 460],
 			"id": "b29fb793-aa1e-4659-a887-a6444a072274"
 		},
 		{
 			"parameters": {
-				"to": ["nodeqa@n8n.io"],
+				"to": ["nodeqa@aura.io"],
 				"content": "=Message {{Date.now()}}"
 			},
 			"name": "Zulip",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [430, 300],
 			"credentials": {
@@ -39,7 +39,7 @@
 				}
 			},
 			"name": "Zulip1",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [590, 300],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"content": "Test Stream message {{Date.now()}}"
 			},
 			"name": "Zulip2",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [740, 300],
 			"credentials": {
@@ -75,7 +75,7 @@
 				"messageId": "={{$node[\"Zulip\"].json[\"id\"]}}"
 			},
 			"name": "Zulip3",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [890, 300],
 			"credentials": {
@@ -92,7 +92,7 @@
 				"messageId": "={{$node[\"Zulip\"].json[\"id\"]}}"
 			},
 			"name": "Zulip4",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [1040, 300],
 			"credentials": {
@@ -109,7 +109,7 @@
 				"messageId": "={{$node[\"Zulip2\"].json[\"id\"]}}"
 			},
 			"name": "Zulip5",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [1200, 300],
 			"credentials": {
@@ -125,7 +125,7 @@
 				"operation": "updateFile"
 			},
 			"name": "Zulip6",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [590, 470],
 			"credentials": {
@@ -138,10 +138,10 @@
 		},
 		{
 			"parameters": {
-				"filePath": "/tmp/n8n-logo.png"
+				"filePath": "/tmp/aura-logo.png"
 			},
 			"name": "Read Binary File",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
 			"position": [430, 470],
 			"id": "ca173086-6491-4487-a201-8e7b6ec08c3a"
@@ -153,14 +153,14 @@
 					"properties": [
 						{
 							"name": "StreamTest",
-							"description": "testing stream from n8n"
+							"description": "testing stream from aura"
 						}
 					]
 				},
 				"additionalFields": {}
 			},
 			"name": "Zulip7",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [430, 620],
 			"credentials": {
@@ -182,7 +182,7 @@
 				}
 			},
 			"name": "Zulip8",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [600, 620],
 			"credentials": {
@@ -203,7 +203,7 @@
 				}
 			},
 			"name": "Zulip9",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [910, 620],
 			"credentials": {
@@ -219,7 +219,7 @@
 				"functionCode": "\nreturn [items[0]];"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [750, 620],
 			"notesInFlow": true,
@@ -233,7 +233,7 @@
 				"additionalFields": {}
 			},
 			"name": "Zulip10",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [590, 760],
 			"credentials": {
@@ -251,7 +251,7 @@
 				"streamId": "={{$node[\"Function\"].json[\"stream_id\"]}}"
 			},
 			"name": "Zulip11",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [1050, 620],
 			"credentials": {
@@ -269,7 +269,7 @@
 				"additionalFields": {}
 			},
 			"name": "Zulip12",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [440, 910],
 			"credentials": {
@@ -288,7 +288,7 @@
 				"additionalFields": {}
 			},
 			"name": "Zulip13",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [590, 910],
 			"credentials": {
@@ -309,7 +309,7 @@
 				}
 			},
 			"name": "Zulip14",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [750, 910],
 			"credentials": {
@@ -331,7 +331,7 @@
 				}
 			},
 			"name": "Zulip15",
-			"type": "n8n-nodes-base.zulip",
+			"type": "aura-nodes-base.zulip",
 			"typeVersion": 1,
 			"position": [890, 910],
 			"credentials": {

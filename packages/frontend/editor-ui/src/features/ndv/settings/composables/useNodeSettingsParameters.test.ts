@@ -8,7 +8,7 @@ import * as nodeHelpers from '@/app/composables/useNodeHelpers';
 import * as workflowHelpers from '@/app/composables/useWorkflowHelpers';
 import * as nodeSettingsUtils from '@/features/ndv/shared/ndv.utils';
 import * as nodeTypesUtils from '@/app/utils/nodeTypesUtils';
-import type { INodeProperties, INodeTypeDescription } from 'n8n-workflow';
+import type { INodeProperties, INodeTypeDescription } from 'workflow';
 import type { MockedStore } from '@/__tests__/utils';
 import { mockedStore } from '@/__tests__/utils';
 import type { INodeUi } from '@/Interface';
@@ -206,7 +206,7 @@ describe('useNodeSettingsParameters', () => {
 				name: 'Node1',
 				position: [0, 0],
 				typeVersion: 1,
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				parameters: nodeParameters,
 			};
 
@@ -241,7 +241,7 @@ describe('useNodeSettingsParameters', () => {
 				name: 'Node1',
 				position: [0, 0],
 				typeVersion: 1,
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				parameters: nodeParameters,
 			};
 
@@ -275,7 +275,7 @@ describe('useNodeSettingsParameters', () => {
 				name: 'Node1',
 				position: [0, 0],
 				typeVersion: 1,
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				parameters: nodeParameters,
 			};
 

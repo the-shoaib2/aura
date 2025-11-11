@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import type { IUpdateInformation } from '@/Interface';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { isValueExpression as isValueExpressionUtil } from '@/app/utils/nodeTypesUtils';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import type {
 	INodeParameterResourceLocator,
 	INodeProperties,
 	IParameterLabel,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import { computed, ref } from 'vue';
 import ParameterInputWrapper from './ParameterInputWrapper.vue';
 import ParameterOptions from './ParameterOptions.vue';
 import { useUIStore } from '@/app/stores/ui.store';
 import { storeToRefs } from 'pinia';
 
-import { N8nInputLabel, N8nLink, N8nText } from '@n8n/design-system';
+import { N8nInputLabel, N8nLink, N8nText } from '@aura/design-system';
 type Props = {
 	parameter: INodeProperties;
 	value: NodeParameterValueType;

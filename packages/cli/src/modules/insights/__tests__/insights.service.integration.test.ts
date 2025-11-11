@@ -1,19 +1,19 @@
-import type { LicenseState } from '@n8n/backend-common';
+import type { LicenseState } from '@aura/backend-common';
 import {
 	createTeamProject,
 	createWorkflow,
 	mockLogger,
 	testDb,
 	testModules,
-} from '@n8n/backend-test-utils';
-import type { IWorkflowDb, Project, WorkflowEntity } from '@n8n/db';
-import type { WorkflowExecuteAfterContext } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import type { IWorkflowDb, Project, WorkflowEntity } from '@aura/db';
+import type { WorkflowExecuteAfterContext } from '@aura/decorators';
+import { Container } from '@aura/di';
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
 import { DateTime } from 'luxon';
-import type { InstanceSettings } from 'n8n-core';
-import { UserError, type IRun } from 'n8n-workflow';
+import type { InstanceSettings } from 'aura-core';
+import { UserError, type IRun } from 'workflow';
 
 import {
 	createCompactedInsightsEvent,

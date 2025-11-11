@@ -1,19 +1,19 @@
 import type { CurrentsFixtures, CurrentsWorkerFixtures } from '@currents/playwright';
 import { fixtures as currentsFixtures } from '@currents/playwright';
 import { test as base, expect, request } from '@playwright/test';
-import type { N8NStack } from 'n8n-containers/n8n-test-container-creation';
-import { createN8NStack } from 'n8n-containers/n8n-test-container-creation';
-import { ContainerTestHelpers } from 'n8n-containers/n8n-test-container-helpers';
+import type { N8NStack } from 'aura-containers/aura-test-container-creation';
+import { createN8NStack } from 'aura-containers/aura-test-container-creation';
+import { ContainerTestHelpers } from 'aura-containers/aura-test-container-helpers';
 
 import { setupDefaultInterceptors } from '../config/intercepts';
-import { n8nPage } from '../pages/n8nPage';
+import { auraPage } from '../pages/auraPage';
 import { ApiHelpers } from '../services/api-helper';
 import { ProxyServer } from '../services/proxy-server';
 import { TestError, type TestRequirements } from '../Types';
 import { setupTestRequirements } from '../utils/requirements';
 
 type TestFixtures = {
-	n8n: n8nPage;
+	aura: auraPage;
 	api: ApiHelpers;
 	baseURL: string;
 	setupRequirements: (requirements: TestRequirements) => Promise<void>;
@@ -21,10 +21,10 @@ type TestFixtures = {
 };
 
 type WorkerFixtures = {
-	n8nUrl: string;
+	auraUrl: string;
 	dbSetup: undefined;
 	chaos: ContainerTestHelpers;
-	n8nContainer: N8NStack;
+	auraContainer: N8NStack;
 	containerConfig: ContainerConfig;
 	addContainerCapability: ContainerConfig;
 };
@@ -47,8 +47,8 @@ interface ContainerConfig {
 }
 
 /**
- * Extended Playwright test with n8n-specific fixtures.
- * Supports both external n8n instances (via N8N_BASE_URL) and containerized testing.
+ * Extended Playwright test with aura-specific fixtures.
+ * Supports both external aura instances (via N8N_BASE_URL) and containerized testing.
  * Provides tag-driven authentication and database management.
  */
 export const test = base.extend<
@@ -89,8 +89,8 @@ export const test = base.extend<
 		{ scope: 'worker', box: true },
 	],
 
-	// Create a new n8n container if N8N_BASE_URL is not set, otherwise use the existing n8n instance
-	n8nContainer: [
+	// Create a new aura container if N8N_BASE_URL is not set, otherwise use the existing aura instance
+	auraContainer: [
 		async ({ containerConfig }, use) => {
 			const envBaseURL = process.env.N8N_BASE_URL;
 
@@ -110,10 +110,10 @@ export const test = base.extend<
 		{ scope: 'worker', box: true },
 	],
 
-	// Set the n8n URL for based on the N8N_BASE_URL environment variable or the n8n container
-	n8nUrl: [
-		async ({ n8nContainer }, use) => {
-			const envBaseURL = process.env.N8N_BASE_URL ?? n8nContainer?.baseUrl;
+	// Set the aura URL for based on the N8N_BASE_URL environment variable or the aura container
+	auraUrl: [
+		async ({ auraContainer }, use) => {
+			const envBaseURL = process.env.N8N_BASE_URL ?? auraContainer?.baseUrl;
 			await use(envBaseURL);
 		},
 		{ scope: 'worker' },
@@ -121,10 +121,10 @@ export const test = base.extend<
 
 	// Reset the database for the new container
 	dbSetup: [
-		async ({ n8nUrl, n8nContainer }, use) => {
-			if (n8nContainer) {
+		async ({ auraUrl, auraContainer }, use) => {
+			if (auraContainer) {
 				console.log('Resetting database for new container');
-				const apiContext = await request.newContext({ baseURL: n8nUrl });
+				const apiContext = await request.newContext({ baseURL: auraUrl });
 				const api = new ApiHelpers(apiContext);
 				await api.resetDatabase();
 				await apiContext.dispose();
@@ -134,33 +134,33 @@ export const test = base.extend<
 		{ scope: 'worker' },
 	],
 
-	// Create container test helpers for the n8n container.
+	// Create container test helpers for the aura container.
 	chaos: [
-		async ({ n8nContainer }, use) => {
+		async ({ auraContainer }, use) => {
 			if (process.env.N8N_BASE_URL) {
 				throw new TestError(
 					'Chaos testing is not supported when using N8N_BASE_URL environment variable. Remove N8N_BASE_URL to use containerized testing.',
 				);
 			}
-			const helpers = new ContainerTestHelpers(n8nContainer.containers);
+			const helpers = new ContainerTestHelpers(auraContainer.containers);
 			await use(helpers);
 		},
 		{ scope: 'worker' },
 	],
 
-	baseURL: async ({ n8nUrl, dbSetup }, use) => {
+	baseURL: async ({ auraUrl, dbSetup }, use) => {
 		void dbSetup; // Ensure dbSetup runs first
-		await use(n8nUrl);
+		await use(auraUrl);
 	},
 
-	n8n: async ({ context }, use, testInfo) => {
+	aura: async ({ context }, use, testInfo) => {
 		await setupDefaultInterceptors(context);
 		const page = await context.newPage();
-		const n8nInstance = new n8nPage(page);
-		await n8nInstance.api.setupFromTags(testInfo.tags);
+		const auraInstance = new auraPage(page);
+		await auraInstance.api.setupFromTags(testInfo.tags);
 		// Enable project features for the tests, this is used in several tests, but is never disabled in tests, so we can have it on by default
-		await n8nInstance.start.withProjectFeatures();
-		await use(n8nInstance);
+		await auraInstance.start.withProjectFeatures();
+		await use(auraInstance);
 	},
 
 	// This is a completely isolated API context for tests that don't need the browser
@@ -172,23 +172,23 @@ export const test = base.extend<
 		await context.dispose();
 	},
 
-	setupRequirements: async ({ n8n, context }, use) => {
+	setupRequirements: async ({ aura, context }, use) => {
 		const setupFunction = async (requirements: TestRequirements): Promise<void> => {
-			await setupTestRequirements(n8n, context, requirements);
+			await setupTestRequirements(aura, context, requirements);
 		};
 
 		await use(setupFunction);
 	},
 
-	proxyServer: async ({ n8nContainer }, use) => {
-		// n8nContainer is "null" if running tests in "local" mode
-		if (!n8nContainer) {
+	proxyServer: async ({ auraContainer }, use) => {
+		// auraContainer is "null" if running tests in "local" mode
+		if (!auraContainer) {
 			throw new TestError(
 				'Testing with Proxy server is not supported when using N8N_BASE_URL environment variable. Remove N8N_BASE_URL to use containerized testing.',
 			);
 		}
 
-		const proxyServerContainer = n8nContainer.containers.find((container) =>
+		const proxyServerContainer = auraContainer.containers.find((container) =>
 			container.getName().endsWith('proxyserver'),
 		);
 
@@ -209,9 +209,9 @@ export { expect };
 
 /*
 Dependency Graph:
-Worker Scope: containerConfig → n8nContainer → [n8nUrl, chaos] → dbSetup
+Worker Scope: containerConfig → auraContainer → [auraUrl, chaos] → dbSetup
 Test Scope:
-  - UI Stream: dbSetup → baseURL → context → page → n8n
+  - UI Stream: dbSetup → baseURL → context → page → aura
   - API Stream: dbSetup → baseURL → api
 Note: baseURL depends on dbSetup to ensure database is ready before tests run
 Both streams are independent after baseURL, allowing for pure API tests or combined UI+API tests

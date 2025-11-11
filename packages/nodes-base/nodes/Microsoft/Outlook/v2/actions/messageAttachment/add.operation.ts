@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError } from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 

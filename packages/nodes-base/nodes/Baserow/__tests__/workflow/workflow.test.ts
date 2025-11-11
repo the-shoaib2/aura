@@ -13,7 +13,7 @@ describe('Baserow > Workflows', () => {
 	const credentials = {
 		baserowApi: {
 			host: 'https://api.baserow.io',
-			username: 'nathan@n8n.io',
+			username: 'nathan@aura.io',
 			password: 'fake-password',
 		},
 	};
@@ -24,7 +24,7 @@ describe('Baserow > Workflows', () => {
 			// Baserow > Get Token
 			mock
 				.persist()
-				.post('/api/user/token-auth/', { username: 'nathan@n8n.io', password: 'fake-password' })
+				.post('/api/user/token-auth/', { username: 'nathan@aura.io', password: 'fake-password' })
 				.reply(200, {
 					token: 'fake-jwt-token',
 				});

@@ -1,16 +1,16 @@
 import { TEST_WEBHOOK_TIMEOUT } from '@/constants';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Service } from '@aura/di';
 import type express from 'express';
-import { InstanceSettings } from 'n8n-core';
-import { WebhookPathTakenError, Workflow } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { WebhookPathTakenError, Workflow } from 'workflow';
 import type {
 	IWebhookData,
 	IWorkflowExecuteAdditionalData,
 	IHttpRequestMethods,
 	IRunData,
 	IWorkflowBase,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { authAllowlistedNodes } from './constants';
 import { sanitizeWebhookRequest } from './webhook-request-sanitizer';
@@ -37,7 +37,7 @@ import type { WorkflowRequest } from '@/workflows/workflow.request';
 
 /**
  * Service for handling the execution of webhooks of manual executions
- * that use the [Test URL](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/#webhook-urls).
+ * that use the [Test URL](https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.webhook/#webhook-urls).
  */
 @Service()
 export class TestWebhooks implements IWebhookManager {
@@ -484,7 +484,7 @@ export class TestWebhooks implements IWebhookManager {
 
 	/**
 	 * Convert a `IWorkflowBase` interface (e.g. `WorkflowEntity`) to a temporary
-	 * `Workflow` from `n8n-workflow`.
+	 * `Workflow` from `workflow`.
 	 */
 	toWorkflow(workflowEntity: IWorkflowBase) {
 		return new Workflow({

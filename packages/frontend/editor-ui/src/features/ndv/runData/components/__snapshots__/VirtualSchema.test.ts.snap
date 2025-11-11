@@ -12,15 +12,15 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
       data-test-id="draggable"
       data-v-414a3fc7=""
     >
-      
+
       <div
         class="full-height scroller"
         data-v-414a3fc7=""
         min-item-size="38"
       >
-        
-        
-        
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -37,7 +37,7 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -48,14 +48,14 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
             <node-icon-stub
               class="icon"
               data-v-fb014c00=""
-              node-type="n8n-nodes-base.set"
+              node-type="aura-nodes-base.set"
               size="12"
             />
             <div
               class="title"
               data-v-fb014c00=""
             >
-              Set2 
+              Set2
               <!--v-if-->
             </div>
             <!--v-if-->
@@ -71,39 +71,39 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
             data-test-id="schema-preview-warning"
             data-v-fb014c00=""
           >
-            
-            Usually outputs the following fields. 
-            
+
+            Usually outputs the following fields.
+
             <button
               bold=""
               data-v-fb014c00=""
               size="small"
             >
-              
+
               Execute the node
-              
+
             </button>
-            
-             to see the actual ones. 
-            
+
+             to see the actual ones.
+
             <button
               bold=""
               data-v-fb014c00=""
               size="small"
-              to="https://docs.n8n.io/data/schema-preview/"
+              to="https://docs.aura.io/data/schema-preview/"
             >
-              
+
               Learn more
-              
+
             </button>
-            
-            
+
+
           </div>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -119,7 +119,7 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -133,14 +133,14 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
             data-name="account"
             data-nest-level="1"
             data-node-name="Set2"
-            data-node-type="n8n-nodes-base.set"
+            data-node-type="aura-nodes-base.set"
             data-path=".account"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.account }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -151,12 +151,12 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 account
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -168,10 +168,10 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -191,14 +191,14 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
             data-name="id"
             data-nest-level="2"
             data-node-name="Set2"
-            data-node-type="n8n-nodes-base.set"
+            data-node-type="aura-nodes-base.set"
             data-path=".account.id"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.account.id }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -209,12 +209,12 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 id
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -223,20 +223,20 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
-              
+
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
-        
-        <n8n-icon-stub
+
+
+
+
+
+        <aura-icon-stub
           class="icon el-tooltip__trigger el-tooltip__trigger"
           data-v-414a3fc7=""
           icon="ellipsis"
@@ -245,11 +245,11 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
         />
         <!--teleport start-->
         <!--teleport end-->
-        
-        
-        
-        
-        
+
+
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -266,7 +266,7 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon collapsed"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -279,7 +279,7 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
               class="title"
               data-v-fb014c00=""
             >
-              Variables and context 
+              Variables and context
               <!--v-if-->
             </div>
             <!--v-if-->
@@ -287,11 +287,11 @@ exports[`VirtualSchema.vue > renders preview schema when enabled and available 1
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
+
+
+
       </div>
-      
+
       <!--teleport start-->
       <!--teleport end-->
     </div>
@@ -309,7 +309,7 @@ exports[`VirtualSchema.vue > renders previous nodes schema for AI tools 1`] = `
     class="toggle"
     data-v-fb014c00=""
   >
-    <n8n-icon-stub
+    <aura-icon-stub
       class="collapse-icon"
       data-v-fb014c00=""
       icon="chevron-down"
@@ -320,14 +320,14 @@ exports[`VirtualSchema.vue > renders previous nodes schema for AI tools 1`] = `
   <node-icon-stub
     class="icon"
     data-v-fb014c00=""
-    node-type="n8n-nodes-base.if"
+    node-type="aura-nodes-base.if"
     size="12"
   />
   <div
     class="title"
     data-v-fb014c00=""
   >
-    If 
+    If
     <!--v-if-->
   </div>
   <!--v-if-->
@@ -353,15 +353,15 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
       data-test-id="draggable"
       data-v-414a3fc7=""
     >
-      
+
       <div
         class="full-height scroller"
         data-v-414a3fc7=""
         min-item-size="38"
       >
-        
-        
-        
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -378,7 +378,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -389,17 +389,17 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             <node-icon-stub
               class="icon icon-trigger"
               data-v-fb014c00=""
-              node-type="n8n-nodes-base.manualTrigger"
+              node-type="aura-nodes-base.manualTrigger"
               size="12"
             />
             <div
               class="title"
               data-v-fb014c00=""
             >
-              Manual Trigger 
+              Manual Trigger
               <!--v-if-->
             </div>
-            <n8n-icon-stub
+            <aura-icon-stub
               class="trigger-icon"
               data-v-fb014c00=""
               icon="bolt-filled"
@@ -416,10 +416,10 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -435,7 +435,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -449,14 +449,14 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             data-name="empty"
             data-nest-level="1"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path=".empty"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.empty }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -467,12 +467,12 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 empty
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -484,10 +484,10 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -503,7 +503,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -517,14 +517,14 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             data-name="emptyArray"
             data-nest-level="1"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path=".emptyArray"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.emptyArray }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="list"
@@ -535,12 +535,12 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 emptyArray
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -552,10 +552,10 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -571,7 +571,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -585,14 +585,14 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             data-name="nested"
             data-nest-level="1"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path=".nested"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.nested }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="list"
@@ -603,12 +603,12 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 nested
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -620,10 +620,10 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -639,7 +639,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -653,14 +653,14 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             data-name="nested[0]"
             data-nest-level="2"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path=".nested[0]"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.nested[0] }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -671,12 +671,12 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 nested[0]
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -688,10 +688,10 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -707,7 +707,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -721,14 +721,14 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             data-name="empty"
             data-nest-level="3"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path=".nested[0].empty"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.nested[0].empty }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -739,12 +739,12 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 empty
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -756,10 +756,10 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -775,7 +775,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -789,14 +789,14 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             data-name="emptyArray"
             data-nest-level="3"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path=".nested[0].emptyArray"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.nested[0].emptyArray }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="list"
@@ -807,12 +807,12 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 emptyArray
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -824,10 +824,10 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -844,7 +844,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon collapsed"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -857,7 +857,7 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
               class="title"
               data-v-fb014c00=""
             >
-              Variables and context 
+              Variables and context
               <!--v-if-->
             </div>
             <!--v-if-->
@@ -865,11 +865,11 @@ exports[`VirtualSchema.vue > renders schema for empty objects and arrays 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
+
+
+
       </div>
-      
+
       <!--teleport start-->
       <!--teleport end-->
     </div>
@@ -889,15 +889,15 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
       data-test-id="draggable"
       data-v-414a3fc7=""
     >
-      
+
       <div
         class="full-height scroller"
         data-v-414a3fc7=""
         min-item-size="38"
       >
-        
-        
-        
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -922,7 +922,7 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-v-a135e02d=""
             data-value="{{ name }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -933,12 +933,12 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 name
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -947,18 +947,18 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               John
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -983,7 +983,7 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-v-a135e02d=""
             data-value="{{ age }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="hash"
@@ -994,12 +994,12 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 age
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1008,18 +1008,18 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               22
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1035,7 +1035,7 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -1054,7 +1054,7 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-v-a135e02d=""
             data-value="{{ hobbies }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="list"
@@ -1065,12 +1065,12 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 hobbies
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1082,10 +1082,10 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1110,7 +1110,7 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-v-a135e02d=""
             data-value="{{ hobbies[0] }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -1121,12 +1121,12 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 hobbies[0]
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1135,18 +1135,18 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               surfing
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1171,7 +1171,7 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-v-a135e02d=""
             data-value="{{ hobbies[1] }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -1182,12 +1182,12 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 hobbies[1]
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1196,19 +1196,19 @@ exports[`VirtualSchema.vue > renders schema in output pane 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               traveling
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
+
+
+
       </div>
-      
+
       <!--teleport start-->
       <!--teleport end-->
     </div>
@@ -1228,15 +1228,15 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
       data-test-id="draggable"
       data-v-414a3fc7=""
     >
-      
+
       <div
         class="full-height scroller"
         data-v-414a3fc7=""
         min-item-size="38"
       >
-        
-        
-        
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -1253,7 +1253,7 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -1264,17 +1264,17 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             <node-icon-stub
               class="icon icon-trigger"
               data-v-fb014c00=""
-              node-type="n8n-nodes-base.manualTrigger"
+              node-type="aura-nodes-base.manualTrigger"
               size="12"
             />
             <div
               class="title"
               data-v-fb014c00=""
             >
-              Manual Trigger 
+              Manual Trigger
               <!--v-if-->
             </div>
-            <n8n-icon-stub
+            <aura-icon-stub
               class="trigger-icon"
               data-v-fb014c00=""
               icon="bolt-filled"
@@ -1291,10 +1291,10 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1310,7 +1310,7 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -1324,14 +1324,14 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             data-name="hello world"
             data-nest-level="1"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path="['hello world']"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json['hello world'] }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="list"
@@ -1342,12 +1342,12 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 hello world
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1359,10 +1359,10 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1378,7 +1378,7 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -1392,14 +1392,14 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             data-name="hello world[0]"
             data-nest-level="2"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path="['hello world'][0]"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json['hello world'][0] }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -1410,12 +1410,12 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 hello world[0]
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1427,10 +1427,10 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1446,7 +1446,7 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -1460,14 +1460,14 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             data-name="test"
             data-nest-level="3"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path="['hello world'][0].test"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json['hello world'][0].test }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -1478,12 +1478,12 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 test
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1495,10 +1495,10 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1518,14 +1518,14 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             data-name="more to think about"
             data-nest-level="4"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path="['hello world'][0].test['more to think about']"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json['hello world'][0].test['more to think about'] }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="hash"
@@ -1536,12 +1536,12 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 more to think about
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1550,18 +1550,18 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               1
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1581,14 +1581,14 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             data-name="test.how"
             data-nest-level="3"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path="['hello world'][0]['test.how']"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json['hello world'][0]['test.how'] }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -1599,12 +1599,12 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 test.how
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1613,18 +1613,18 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               ignore
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -1641,7 +1641,7 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon collapsed"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -1652,14 +1652,14 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
             <node-icon-stub
               class="icon"
               data-v-fb014c00=""
-              node-type="n8n-nodes-base.set"
+              node-type="aura-nodes-base.set"
               size="12"
             />
             <div
               class="title"
               data-v-fb014c00=""
             >
-              Set2 
+              Set2
               <!--v-if-->
             </div>
             <!--v-if-->
@@ -1667,10 +1667,10 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -1687,7 +1687,7 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon collapsed"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -1700,7 +1700,7 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
               class="title"
               data-v-fb014c00=""
             >
-              Variables and context 
+              Variables and context
               <!--v-if-->
             </div>
             <!--v-if-->
@@ -1708,11 +1708,11 @@ exports[`VirtualSchema.vue > renders schema with spaces and dots 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
+
+
+
       </div>
-      
+
       <!--teleport start-->
       <!--teleport end-->
     </div>
@@ -1732,15 +1732,15 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
       data-test-id="draggable"
       data-v-414a3fc7=""
     >
-      
+
       <div
         class="full-height scroller"
         data-v-414a3fc7=""
         min-item-size="38"
       >
-        
-        
-        
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -1757,7 +1757,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon collapsed"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -1768,17 +1768,17 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             <node-icon-stub
               class="icon icon-trigger"
               data-v-fb014c00=""
-              node-type="n8n-nodes-base.manualTrigger"
+              node-type="aura-nodes-base.manualTrigger"
               size="12"
             />
             <div
               class="title"
               data-v-fb014c00=""
             >
-              Manual Trigger 
+              Manual Trigger
               <!--v-if-->
             </div>
-            <n8n-icon-stub
+            <aura-icon-stub
               class="trigger-icon"
               data-v-fb014c00=""
               icon="bolt-filled"
@@ -1789,10 +1789,10 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -1809,7 +1809,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -1822,7 +1822,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="title"
               data-v-fb014c00=""
             >
-              Variables and context 
+              Variables and context
               <!--v-if-->
             </div>
             <!--v-if-->
@@ -1830,10 +1830,10 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1858,7 +1858,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $now }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -1869,12 +1869,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 $now
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1883,18 +1883,18 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               2025-01-01T00:00:00.000+00:00
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1919,7 +1919,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $today }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -1930,12 +1930,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 $today
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -1944,18 +1944,18 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               2025-01-01T00:00:00.000+00:00
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -1980,7 +1980,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $vars }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -1991,16 +1991,16 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 $vars
               </span>
-              
+
             </span>
           </div>
-          
-          <n8n-icon-stub
+
+          <aura-icon-stub
             class="locked-icon el-tooltip__trigger el-tooltip__trigger"
             data-v-a135e02d=""
             icon="lock"
@@ -2009,7 +2009,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
           />
           <!--teleport start-->
           <!--teleport end-->
-          
+
           <span
             class="content text"
             data-test-id="run-data-schema-item-value"
@@ -2018,10 +2018,10 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2037,7 +2037,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -2056,7 +2056,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $execution }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -2067,12 +2067,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 $execution
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2084,10 +2084,10 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2112,7 +2112,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $execution.id }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -2123,12 +2123,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 id
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2137,18 +2137,18 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               [filled at execution time]
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2173,7 +2173,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $execution.mode }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -2184,12 +2184,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 mode
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2198,18 +2198,18 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               test
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2234,7 +2234,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $execution.resumeUrl }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -2245,12 +2245,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 resumeUrl
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2259,18 +2259,18 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               The URL for resuming a 'Wait' node
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2286,7 +2286,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="toggle"
               data-v-a135e02d=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-a135e02d=""
                 icon="chevron-down"
@@ -2305,7 +2305,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $workflow }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="box"
@@ -2316,12 +2316,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 $workflow
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2333,10 +2333,10 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             <span />
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2361,7 +2361,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $workflow.id }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -2372,12 +2372,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 id
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2386,18 +2386,18 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               123
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2422,7 +2422,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $workflow.name }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -2433,12 +2433,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 name
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2447,18 +2447,18 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               Test Workflow
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2483,7 +2483,7 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-v-a135e02d=""
             data-value="{{ $workflow.active }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="square-check"
@@ -2494,12 +2494,12 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
               class="content title"
               data-v-a135e02d=""
             >
-              
+
               <span>
                 <!--v-if-->
                 active
               </span>
-              
+
             </span>
           </div>
           <!--v-if-->
@@ -2508,19 +2508,19 @@ exports[`VirtualSchema.vue > renders variables and context section 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
+
             <span>
               <!--v-if-->
               true
             </span>
-            
+
           </span>
         </div>
-        
-        
-        
+
+
+
       </div>
-      
+
       <!--teleport start-->
       <!--teleport end-->
     </div>
@@ -2540,15 +2540,15 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
       data-test-id="draggable"
       data-v-414a3fc7=""
     >
-      
+
       <div
         class="full-height scroller"
         data-v-414a3fc7=""
         min-item-size="38"
       >
-        
-        
-        
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -2565,7 +2565,7 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -2576,17 +2576,17 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
             <node-icon-stub
               class="icon icon-trigger"
               data-v-fb014c00=""
-              node-type="n8n-nodes-base.manualTrigger"
+              node-type="aura-nodes-base.manualTrigger"
               size="12"
             />
             <div
               class="title"
               data-v-fb014c00=""
             >
-              Manual Trigger 
+              Manual Trigger
               <!--v-if-->
             </div>
-            <n8n-icon-stub
+            <aura-icon-stub
               class="trigger-icon"
               data-v-fb014c00=""
               icon="bolt-filled"
@@ -2603,10 +2603,10 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2626,14 +2626,14 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
             data-name="name"
             data-nest-level="1"
             data-node-name="Manual Trigger"
-            data-node-type="n8n-nodes-base.manualTrigger"
+            data-node-type="aura-nodes-base.manualTrigger"
             data-path=".name"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $json.name }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -2644,13 +2644,13 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
               class="title"
               data-v-a135e02d=""
             >
-              
-              
+
+
               <span>
                 name
               </span>
-              
-              
+
+
             </span>
           </div>
           <!--v-if-->
@@ -2659,19 +2659,19 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
-            
+
+
             <mark>
               John
             </mark>
-            
-            
+
+
           </span>
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-header-wrapper"
           data-v-414a3fc7=""
@@ -2688,7 +2688,7 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
               class="toggle"
               data-v-fb014c00=""
             >
-              <n8n-icon-stub
+              <aura-icon-stub
                 class="collapse-icon"
                 data-v-fb014c00=""
                 icon="chevron-down"
@@ -2699,14 +2699,14 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
             <node-icon-stub
               class="icon"
               data-v-fb014c00=""
-              node-type="n8n-nodes-base.set"
+              node-type="aura-nodes-base.set"
               size="12"
             />
             <div
               class="title"
               data-v-fb014c00=""
             >
-              Set2 
+              Set2
               <!--v-if-->
             </div>
             <!--v-if-->
@@ -2720,10 +2720,10 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
           </div>
           <!--v-if-->
         </div>
-        
-        
-        
-        
+
+
+
+
         <div
           class="schema-item draggable"
           data-test-id="run-data-schema-item"
@@ -2743,14 +2743,14 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
             data-name="name"
             data-nest-level="1"
             data-node-name="Set2"
-            data-node-type="n8n-nodes-base.set"
+            data-node-type="aura-nodes-base.set"
             data-path=".name"
             data-target="mappable"
             data-test-id="run-data-schema-node-name"
             data-v-a135e02d=""
             data-value="{{ $('Set2').item.json.name }}"
           >
-            <n8n-icon-stub
+            <aura-icon-stub
               class="type-icon"
               data-v-a135e02d=""
               icon="type"
@@ -2761,13 +2761,13 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
               class="title"
               data-v-a135e02d=""
             >
-              
-              
+
+
               <span>
                 name
               </span>
-              
-              
+
+
             </span>
           </div>
           <!--v-if-->
@@ -2776,20 +2776,20 @@ exports[`VirtualSchema.vue > should expand all nodes when searching 1`] = `
             data-test-id="run-data-schema-item-value"
             data-v-a135e02d=""
           >
-            
-            
+
+
             <mark>
               John
             </mark>
-            
-            
+
+
           </span>
         </div>
-        
-        
-        
+
+
+
       </div>
-      
+
       <!--teleport start-->
       <!--teleport end-->
     </div>

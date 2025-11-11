@@ -1,4 +1,4 @@
-import { ApplicationError, type ErrorLevel } from '@n8n/errors';
+import { ApplicationError, type ErrorLevel } from '@aura/errors';
 import type { INode } from '../interfaces';
 
 interface TriggerCloseErrorOptions extends ErrorOptions {

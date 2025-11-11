@@ -1,13 +1,13 @@
-import { inTest, Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { User } from '@n8n/db';
-import { UserRepository } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
-import { AssignableProjectRole } from '@n8n/permissions';
+import { inTest, Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import type { User } from '@aura/db';
+import { UserRepository } from '@aura/db';
+import { Container, Service } from '@aura/di';
+import { AssignableProjectRole } from '@aura/permissions';
 import { existsSync } from 'fs';
 import { readFile } from 'fs/promises';
 import Handlebars from 'handlebars';
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { IWorkflowBase } from 'workflow';
 import { join as pathJoin } from 'path';
 
 import type { InviteEmailData, PasswordResetData, SendEmailResult } from './interfaces';
@@ -60,7 +60,7 @@ export class UserManagementMailer {
 		const template = await this.getTemplate('user-invited');
 		return await this.mailer.sendMail({
 			emailRecipients: inviteEmailData.email,
-			subject: 'You have been invited to n8n',
+			subject: 'You have been invited to aura',
 			body: template({ ...this.basePayload, ...inviteEmailData }),
 		});
 	}
@@ -71,7 +71,7 @@ export class UserManagementMailer {
 		const template = await this.getTemplate('password-reset-requested');
 		return await this.mailer.sendMail({
 			emailRecipients: passwordResetData.email,
-			subject: 'n8n password reset',
+			subject: 'aura password reset',
 			body: template({ ...this.basePayload, ...passwordResetData }),
 		});
 	}
@@ -158,7 +158,7 @@ export class UserManagementMailer {
 				workflowName: workflow.name,
 				workflowUrl: `${baseUrl}/workflow/${workflow.id}`,
 			}),
-			subjectBuilder: () => `${sharer.firstName} has shared an n8n workflow with you`,
+			subjectBuilder: () => `${sharer.firstName} has shared an aura workflow with you`,
 			messageType: 'Workflow shared',
 		});
 	}
@@ -183,7 +183,7 @@ export class UserManagementMailer {
 				credentialsName,
 				credentialsListUrl: `${baseUrl}/home/credentials`,
 			}),
-			subjectBuilder: () => `${sharer.firstName} has shared an n8n credential with you`,
+			subjectBuilder: () => `${sharer.firstName} has shared an aura credential with you`,
 			messageType: 'Credentials shared',
 		});
 	}

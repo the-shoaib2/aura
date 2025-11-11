@@ -1,5 +1,5 @@
-import { Container } from '@n8n/di';
-import type { INode } from 'n8n-workflow';
+import { Container } from '@aura/di';
+import type { INode } from 'workflow';
 import { createReadStream } from 'node:fs';
 import { access as fsAccess, realpath as fsRealpath } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -46,7 +46,7 @@ describe('isFilePathBlocked', () => {
 	});
 
 	it('should return true for restricted paths', async () => {
-		const restrictedPath = instanceSettings.n8nFolder;
+		const restrictedPath = instanceSettings.auraFolder;
 		expect(await isFilePathBlocked(restrictedPath)).toBe(true);
 	});
 
@@ -76,13 +76,13 @@ describe('isFilePathBlocked', () => {
 
 	it('should return false when BLOCK_FILE_ACCESS_TO_N8N_FILES is false', async () => {
 		process.env[BLOCK_FILE_ACCESS_TO_N8N_FILES] = 'false';
-		const restrictedPath = instanceSettings.n8nFolder;
+		const restrictedPath = instanceSettings.auraFolder;
 		expect(await isFilePathBlocked(restrictedPath)).toBe(false);
 	});
 
 	it('should return true when path is in allowed paths but still restricted', async () => {
 		process.env[RESTRICT_FILE_ACCESS_TO] = '/some/allowed/path';
-		const restrictedPath = instanceSettings.n8nFolder;
+		const restrictedPath = instanceSettings.auraFolder;
 		expect(await isFilePathBlocked(restrictedPath)).toBe(true);
 	});
 
@@ -121,13 +121,13 @@ describe('isFilePathBlocked', () => {
 		expect(await isFilePathBlocked(pwResetPath)).toBe(true);
 	});
 
-	it('should block access to n8n files if restrict and block are set', async () => {
+	it('should block access to aura files if restrict and block are set', async () => {
 		const homeVarName = process.platform === 'win32' ? 'USERPROFILE' : 'HOME';
 		const userHome = process.env.N8N_USER_FOLDER ?? process.env[homeVarName] ?? process.cwd();
 
 		process.env[RESTRICT_FILE_ACCESS_TO] = userHome;
 		process.env[BLOCK_FILE_ACCESS_TO_N8N_FILES] = 'true';
-		const restrictedPath = instanceSettings.n8nFolder;
+		const restrictedPath = instanceSettings.auraFolder;
 		expect(await isFilePathBlocked(restrictedPath)).toBe(true);
 	});
 
@@ -147,7 +147,7 @@ describe('isFilePathBlocked', () => {
 
 		process.env[RESTRICT_FILE_ACCESS_TO] = userHome;
 		process.env[BLOCK_FILE_ACCESS_TO_N8N_FILES] = 'true';
-		const restrictedPath = join(userHome, '.n8n_x');
+		const restrictedPath = join(userHome, '.aura_x');
 		expect(await isFilePathBlocked(restrictedPath)).toBe(false);
 	});
 
@@ -197,7 +197,7 @@ describe('getFileSystemHelperFunctions', () => {
 
 	describe('getStoragePath', () => {
 		it('returns correct path', () => {
-			const expectedPath = join(instanceSettings.n8nFolder, `storage/${node.type}`);
+			const expectedPath = join(instanceSettings.auraFolder, `storage/${node.type}`);
 			expect(helperFunctions.getStoragePath()).toBe(expectedPath);
 		});
 	});
@@ -250,7 +250,7 @@ describe('getFileSystemHelperFunctions', () => {
 
 			await expect(
 				helperFunctions.writeContentToFile(
-					instanceSettings.n8nFolder + '/test.txt',
+					instanceSettings.auraFolder + '/test.txt',
 					'content',
 					'w',
 				),

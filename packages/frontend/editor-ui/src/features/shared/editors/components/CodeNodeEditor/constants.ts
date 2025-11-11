@@ -1,6 +1,6 @@
 import { STICKY_NODE_TYPE } from '@/app/constants';
 import type { Diagnostic } from '@codemirror/lint';
-import type { CodeExecutionMode } from 'n8n-workflow';
+import type { CodeExecutionMode } from 'workflow';
 import type { CodeNodeLanguageOption } from './CodeNodeEditor.vue';
 
 export const NODE_TYPES_EXCLUDED_FROM_AUTOCOMPLETION = [STICKY_NODE_TYPE];

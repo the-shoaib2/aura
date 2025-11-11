@@ -3,7 +3,7 @@ import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
 import { waitFor } from '@testing-library/vue';
 import { useRouter } from 'vue-router';
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 import { createProjectListItem } from '@/features/collaboration/projects/__tests__/utils';
 import type { MockedStore } from '@/__tests__/utils';
 import { mockedStore, getDropdownItems } from '@/__tests__/utils';
@@ -45,12 +45,12 @@ vi.mock('@/app/composables/useWorkflowSaving', () => {
 		}),
 	};
 });
-vi.mock('@n8n/permissions', () => ({
+vi.mock('@aura/permissions', () => ({
 	getResourcePermissions: () => ({
 		workflow: { share: true },
 	}),
 }));
-vi.mock('@n8n/utils/event-bus', () => ({
+vi.mock('@aura/utils/event-bus', () => ({
 	createEventBus: () => ({
 		emit: vi.fn(),
 	}),

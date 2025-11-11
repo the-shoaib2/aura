@@ -1,9 +1,9 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { FolderRepository, type TagEntity, TagRepository, type User } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { hasGlobalScope } from '@n8n/permissions';
-import { UserError } from 'n8n-workflow';
+import type { SourceControlledFile } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { FolderRepository, type TagEntity, TagRepository, type User } from '@aura/db';
+import { Service } from '@aura/di';
+import { hasGlobalScope } from '@aura/permissions';
+import { UserError } from 'workflow';
 
 import { ForbiddenError } from '@/errors/response-errors/forbidden.error';
 import { EventService } from '@/events/event.service';

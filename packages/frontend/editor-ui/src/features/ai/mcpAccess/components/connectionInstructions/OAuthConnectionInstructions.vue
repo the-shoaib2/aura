@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { OAuthClientResponseDto } from '@n8n/api-types';
+import type { OAuthClientResponseDto } from '@aura/api-types';
 import ConnectionParameter from '@/features/ai/mcpAccess/components/connectionInstructions/ConnectionParameter.vue';
 import OAuthClientsTable from '@/features/ai/mcpAccess/components/connectionInstructions/OAuthClientsTable.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 type Props = {
 	serverUrl: string;
@@ -82,7 +82,7 @@ const onRevokeClientAccess = (client: OAuthClientResponseDto) => {
 		align-items: center;
 		gap: var(--spacing--2xs);
 
-		:global(.n8n-loading) div {
+		:global(.aura-loading) div {
 			height: 32px;
 			width: 300px;
 			margin: 0;

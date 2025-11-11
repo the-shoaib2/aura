@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties, INodePropertyOptions, Icon } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties, INodePropertyOptions, Icon } from 'workflow';
 
 const algorithms: INodePropertyOptions[] = [
 	{
@@ -55,9 +55,9 @@ const algorithms: INodePropertyOptions[] = [
 	},
 ];
 
-// eslint-disable-next-line n8n-nodes-base/cred-class-name-unsuffixed
+// eslint-disable-next-line aura-nodes-base/cred-class-name-unsuffixed
 export class JwtAuth implements ICredentialType {
-	// eslint-disable-next-line n8n-nodes-base/cred-class-field-name-unsuffixed
+	// eslint-disable-next-line aura-nodes-base/cred-class-field-name-unsuffixed
 	name = 'jwtAuth';
 
 	displayName = 'JWT Auth';

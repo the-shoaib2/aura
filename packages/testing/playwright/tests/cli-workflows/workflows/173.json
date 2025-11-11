@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "5651ff0c-3724-4194-8070-66f3737a0762"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "GetResponse",
-			"type": "n8n-nodes-base.getResponse",
+			"type": "aura-nodes-base.getResponse",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -44,7 +44,7 @@
 				}
 			},
 			"name": "GetResponse1",
-			"type": "n8n-nodes-base.getResponse",
+			"type": "aura-nodes-base.getResponse",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -61,7 +61,7 @@
 				"options": {}
 			},
 			"name": "GetResponse2",
-			"type": "n8n-nodes-base.getResponse",
+			"type": "aura-nodes-base.getResponse",
 			"typeVersion": 1,
 			"position": [1100, 300],
 			"credentials": {
@@ -82,7 +82,7 @@
 				}
 			},
 			"name": "GetResponse3",
-			"type": "n8n-nodes-base.getResponse",
+			"type": "aura-nodes-base.getResponse",
 			"typeVersion": 1,
 			"position": [1300, 300],
 			"credentials": {
@@ -100,7 +100,7 @@
 				"options": {}
 			},
 			"name": "GetResponse4",
-			"type": "n8n-nodes-base.getResponse",
+			"type": "aura-nodes-base.getResponse",
 			"typeVersion": 1,
 			"position": [1500, 300],
 			"credentials": {
@@ -116,7 +116,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(1000);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 1 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [700, 300],
 			"typeVersion": 1,
 			"id": "994c0e7a-3a6d-4cdd-8fa6-f62d67f15a70"

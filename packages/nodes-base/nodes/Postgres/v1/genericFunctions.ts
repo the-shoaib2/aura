@@ -1,5 +1,5 @@
-import { ApplicationError } from '@n8n/errors';
-import type { IExecuteFunctions, IDataObject, INodeExecutionData, JsonObject } from 'n8n-workflow';
+import { ApplicationError } from '@aura/errors';
+import type { IExecuteFunctions, IDataObject, INodeExecutionData, JsonObject } from 'workflow';
 import type pgPromise from 'pg-promise';
 import type pg from 'pg-promise/typescript/pg-subset';
 
@@ -540,7 +540,7 @@ export async function pgUpdate(
 		const where =
 			' WHERE ' +
 			updateKeys
-				// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+				// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 				.map((entry) => pgp.as.name(entry.name) + ' = ${' + entry.prop + '}')
 				.join(' AND ');
 		if (mode === 'transaction') {
@@ -670,7 +670,7 @@ export async function pgUpdateV2(
 		const where =
 			' WHERE ' +
 			updateKeys
-				// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+				// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 				.map((entry) => pgp.as.name(entry.name) + ' = ${' + entry.prop + '}')
 				.join(' AND ');
 		if (mode === 'transaction') {

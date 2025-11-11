@@ -1,10 +1,10 @@
-import * as n8nWorkflow from 'n8n-workflow';
+import * as auraWorkflow from 'workflow';
 
 import { intervalToRecurrence, recurrenceCheck, toCronExpression } from '../GenericFunctions';
 import type { IRecurrenceRule } from '../SchedulerInterface';
 
 describe('toCronExpression', () => {
-	Object.defineProperty(n8nWorkflow, 'randomInt', {
+	Object.defineProperty(auraWorkflow, 'randomInt', {
 		value: (min: number, max: number) => Math.floor((min + max) / 2),
 	});
 

@@ -4,7 +4,7 @@ import InsightsSummary from '@/features/execution/insights/components/InsightsSu
 import { useProjectPages } from '@/features/collaboration/projects/composables/useProjectPages';
 import { useInsightsStore } from '@/features/execution/insights/insights.store';
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
@@ -23,7 +23,7 @@ import { useToast } from '@/app/composables/useToast';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 
-import { N8nActionBox } from '@n8n/design-system';
+import { N8nActionBox } from '@aura/design-system';
 import ResourcesListLayout from '@/app/components/layouts/ResourcesListLayout.vue';
 
 const i18n = useI18n();

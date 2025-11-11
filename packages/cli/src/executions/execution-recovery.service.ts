@@ -1,11 +1,11 @@
-import { Logger } from '@n8n/backend-common';
-import type { IExecutionResponse } from '@n8n/db';
-import { ExecutionRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import type { IExecutionResponse } from '@aura/db';
+import { ExecutionRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import type { DateTime } from 'luxon';
-import { InstanceSettings } from 'n8n-core';
-import { sleep } from 'n8n-workflow';
-import type { IRun, ITaskData } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { sleep } from 'workflow';
+import type { IRun, ITaskData } from 'workflow';
 
 import { ARTIFICIAL_TASK_DATA } from '@/constants';
 import { NodeCrashedError } from '@/errors/node-crashed.error';
@@ -90,7 +90,7 @@ export class ExecutionRecoveryService {
 
 		for (const node of execution.workflowData.nodes) {
 			const nodeStartedMessage = nodeMessages.find(
-				(m) => m.payload.nodeName === node.name && m.eventName === 'n8n.node.started',
+				(m) => m.payload.nodeName === node.name && m.eventName === 'aura.node.started',
 			);
 
 			if (!nodeStartedMessage) continue;
@@ -100,7 +100,7 @@ export class ExecutionRecoveryService {
 			if (nodeHasRunData) continue; // when saving execution progress
 
 			const nodeFinishedMessage = nodeMessages.find(
-				(m) => m.payload.nodeName === node.name && m.eventName === 'n8n.node.finished',
+				(m) => m.payload.nodeName === node.name && m.eventName === 'aura.node.finished',
 			);
 
 			const taskData: ITaskData = {
@@ -156,9 +156,9 @@ export class ExecutionRecoveryService {
 			workflowMessages: EventMessageTypes[];
 		}>(
 			(acc, cur) => {
-				if (cur.eventName.startsWith('n8n.node.')) {
+				if (cur.eventName.startsWith('aura.node.')) {
 					acc.nodeMessages.push(cur);
-				} else if (cur.eventName.startsWith('n8n.workflow.')) {
+				} else if (cur.eventName.startsWith('aura.workflow.')) {
 					acc.workflowMessages.push(cur);
 				}
 
@@ -172,14 +172,14 @@ export class ExecutionRecoveryService {
 		if (timestamp) return timestamp.toJSDate();
 
 		const WORKFLOW_END_EVENTS = new Set([
-			'n8n.workflow.success',
-			'n8n.workflow.crashed',
-			'n8n.workflow.failed',
+			'aura.workflow.success',
+			'aura.workflow.crashed',
+			'aura.workflow.failed',
 		]);
 
 		return (
 			messages.find((m) => WORKFLOW_END_EVENTS.has(m.eventName)) ??
-			messages.find((m) => m.eventName === 'n8n.workflow.started')
+			messages.find((m) => m.eventName === 'aura.workflow.started')
 		)?.ts.toJSDate();
 	}
 

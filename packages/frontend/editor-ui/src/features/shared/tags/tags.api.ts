@@ -1,7 +1,7 @@
-import type { ITag } from '@n8n/rest-api-client/api/tags';
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
-import type { CreateOrUpdateTagRequestDto, RetrieveTagQueryDto } from '@n8n/api-types';
+import type { ITag } from '@aura/rest-api-client/api/tags';
+import type { IRestApiContext } from '@aura/rest-api-client';
+import { makeRestApiRequest } from '@aura/rest-api-client';
+import type { CreateOrUpdateTagRequestDto, RetrieveTagQueryDto } from '@aura/api-types';
 
 type TagsApiEndpoint = '/tags' | '/annotation-tags';
 

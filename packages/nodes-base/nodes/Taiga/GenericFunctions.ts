@@ -9,8 +9,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError } from 'workflow';
 import type { LoadedResource, Resource } from './types';
 
 export async function getAuthorization(

@@ -1,6 +1,6 @@
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { PopOutWindowKey } from '@/app/constants';
-import { useProvideTooltipAppendTo } from '@n8n/design-system/composables/useTooltipAppendTo';
+import { useProvideTooltipAppendTo } from '@aura/design-system/composables/useTooltipAppendTo';
 import {
 	computed,
 	type ComputedRef,

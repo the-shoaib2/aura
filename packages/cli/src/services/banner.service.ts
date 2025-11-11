@@ -1,7 +1,7 @@
-import type { BannerName } from '@n8n/api-types';
-import { SettingsRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
+import type { BannerName } from '@aura/api-types';
+import { SettingsRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
 
 import config from '@/config';
 

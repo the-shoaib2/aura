@@ -1,5 +1,5 @@
 import { mock } from 'vitest-mock-extended';
-import type { IWorkflowTemplateNode } from '@n8n/rest-api-client/api/templates';
+import type { IWorkflowTemplateNode } from '@aura/rest-api-client/api/templates';
 import { keyFromCredentialTypeAndName } from '../utils/templateTransforms';
 import type { IWorkflowTemplateNodeWithCredentials } from '../utils/templateTransforms';
 import type { CredentialUsages } from '../templates.types';
@@ -18,7 +18,7 @@ describe('useCredentialSetupState', () => {
 		Twitter: {
 			id: 'twitter',
 			name: 'Twitter',
-			type: 'n8n-nodes-base.twitter',
+			type: 'aura-nodes-base.twitter',
 			position: [720, -220],
 			parameters: {
 				text: '=Hey there, my design is now on a new product ✨\nVisit my {{$json["vendor"]}} shop to get this cool{{$json["title"]}} (and check out more {{$json["product_type"]}}) 🛍️',
@@ -50,7 +50,7 @@ describe('useCredentialSetupState', () => {
 						key: 'twitterOAuth1Api-twitter',
 						credentialName: 'twitter',
 						credentialType: 'twitterOAuth1Api',
-						nodeTypeName: 'n8n-nodes-base.twitter',
+						nodeTypeName: 'aura-nodes-base.twitter',
 						usedBy: [nodesByName.Twitter],
 					},
 				}),
@@ -61,14 +61,14 @@ describe('useCredentialSetupState', () => {
 			const [node1, node2] = [
 				mock<IWorkflowTemplateNode>({
 					id: 'twitter',
-					type: 'n8n-nodes-base.twitter',
+					type: 'aura-nodes-base.twitter',
 					credentials: {
 						twitterOAuth1Api: 'credential',
 					},
 				}) as IWorkflowTemplateNodeWithCredentials,
 				mock<IWorkflowTemplateNode>({
 					id: 'telegram',
-					type: 'n8n-nodes-base.telegram',
+					type: 'aura-nodes-base.telegram',
 					credentials: {
 						telegramApi: 'credential',
 					},
@@ -92,14 +92,14 @@ describe('useCredentialSetupState', () => {
 						key: 'twitterOAuth1Api-credential',
 						credentialName: 'credential',
 						credentialType: 'twitterOAuth1Api',
-						nodeTypeName: 'n8n-nodes-base.twitter',
+						nodeTypeName: 'aura-nodes-base.twitter',
 						usedBy: [node1],
 					},
 					'telegramApi-credential': {
 						key: 'telegramApi-credential',
 						credentialName: 'credential',
 						credentialType: 'telegramApi',
-						nodeTypeName: 'n8n-nodes-base.telegram',
+						nodeTypeName: 'aura-nodes-base.telegram',
 						usedBy: [node2],
 					},
 				}),
@@ -119,7 +119,7 @@ describe('useCredentialSetupState', () => {
 					key: keyFromCredentialTypeAndName('twitterOAuth1Api', 'twitter'),
 					credentialName: 'twitter',
 					credentialType: 'twitterOAuth1Api',
-					nodeTypeName: 'n8n-nodes-base.twitter',
+					nodeTypeName: 'aura-nodes-base.twitter',
 					usedBy: [nodesByName.Twitter],
 				},
 			];
@@ -134,7 +134,7 @@ describe('useCredentialSetupState', () => {
 							key: 'twitterOAuth1Api-twitter',
 							credentialName: 'twitter',
 							credentialType: 'twitterOAuth1Api',
-							nodeTypeName: 'n8n-nodes-base.twitter',
+							nodeTypeName: 'aura-nodes-base.twitter',
 							usedBy: [nodesByName.Twitter],
 						},
 					],

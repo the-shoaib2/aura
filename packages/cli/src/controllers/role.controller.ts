@@ -1,6 +1,6 @@
-import { CreateRoleDto, RoleGetQueryDto, RoleListQueryDto, UpdateRoleDto } from '@n8n/api-types';
-import { LICENSE_FEATURES } from '@n8n/constants';
-import { AuthenticatedRequest } from '@n8n/db';
+import { CreateRoleDto, RoleGetQueryDto, RoleListQueryDto, UpdateRoleDto } from '@aura/api-types';
+import { LICENSE_FEATURES } from '@aura/constants';
+import { AuthenticatedRequest } from '@aura/db';
 import {
 	Body,
 	Delete,
@@ -12,8 +12,8 @@ import {
 	Post,
 	Query,
 	RestController,
-} from '@n8n/decorators';
-import { Role as RoleDTO } from '@n8n/permissions';
+} from '@aura/decorators';
+import { Role as RoleDTO } from '@aura/permissions';
 
 import { RoleService } from '@/services/role.service';
 

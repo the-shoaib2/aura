@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 650],
 			"id": "b6204c57-404f-4c53-acc1-a9c9f2e698f5"
@@ -18,7 +18,7 @@
 				"profileId": 16154361
 			},
 			"name": "Wise",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [650, 200],
 			"id": "b5851401-b389-4093-9ac2-4f3006f0d21c",
@@ -34,7 +34,7 @@
 				"operation": "getCurrencies"
 			},
 			"name": "Wise1",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [800, 200],
 			"id": "f0ae63de-1ea4-4ab7-9e72-27aad926e330",
@@ -57,7 +57,7 @@
 				}
 			},
 			"name": "Wise2",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [500, 200],
 			"id": "519dda48-ddf1-403b-8dd0-9d91d503f2bb",
@@ -76,7 +76,7 @@
 				"additionalFields": {}
 			},
 			"name": "Wise3",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [500, 350],
 			"id": "ea08c815-9107-41b5-a5af-e2f45b251423",
@@ -94,7 +94,7 @@
 				"profileId": 16154361
 			},
 			"name": "Wise4",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [500, 500],
 			"id": "8565eca9-04f5-4c9c-be56-8e3e424e907f",
@@ -111,7 +111,7 @@
 				"limit": 1
 			},
 			"name": "Wise5",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [500, 650],
 			"id": "4e57ca88-b2a7-4459-a0c7-09c71da2162b",
@@ -133,7 +133,7 @@
 				"targetCurrency": "EUR"
 			},
 			"name": "Wise6",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [500, 800],
 			"id": "0d28f340-cf11-4c34-922e-e82336dfed81",
@@ -150,7 +150,7 @@
 				"quoteId": "={{$node[\"Wise6\"].json[\"id\"]}}"
 			},
 			"name": "Wise7",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [640, 800],
 			"id": "463946cf-45f9-4499-af29-ca3f7ea4f149",
@@ -171,7 +171,7 @@
 				"additionalFields": {}
 			},
 			"name": "Wise8",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [800, 850],
 			"id": "7adccbb0-f2c0-433c-a80d-5ce191e71ec6",
@@ -188,7 +188,7 @@
 				"transferId": "={{$node[\"Wise8\"].json[\"id\"]}}"
 			},
 			"name": "Wise9",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [950, 850],
 			"id": "6f34d46a-b8a9-462c-912f-a9de39b43aba",
@@ -208,7 +208,7 @@
 				"filters": {}
 			},
 			"name": "Wise10",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [1100, 850],
 			"executeOnce": false,
@@ -227,7 +227,7 @@
 				"operation": "getAll"
 			},
 			"name": "Wise12",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [650, 500],
 			"id": "a33da4e1-d27c-4f69-9ce0-0734dbce5df7",
@@ -246,7 +246,7 @@
 				"transferId": "={{$node[\"Wise8\"].json[\"id\"]}}"
 			},
 			"name": "Wise13",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [1250, 850],
 			"id": "093d0ca7-9888-4fb1-9734-bc3bf746ce73",
@@ -269,7 +269,7 @@
 				"targetCurrency": "EUR"
 			},
 			"name": "Wise14",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [500, 1000],
 			"id": "52b98874-8d52-4e6f-bd45-808afaa13e20",
@@ -290,7 +290,7 @@
 				"additionalFields": {}
 			},
 			"name": "Wise16",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [650, 1050],
 			"id": "e3d1a7a9-db38-4786-a21a-400182843da5",
@@ -308,7 +308,7 @@
 				"transferId": "={{$node[\"Wise16\"].json[\"id\"]}}"
 			},
 			"name": "Wise15",
-			"type": "n8n-nodes-base.wise",
+			"type": "aura-nodes-base.wise",
 			"typeVersion": 1,
 			"position": [800, 1050],
 			"id": "18f10919-83ea-48e0-8df0-19b0ebb2673f",

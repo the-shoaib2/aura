@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "cb687f80-1046-40f3-bddb-78a67623b70e"
@@ -20,7 +20,7 @@
 				"options": {}
 			},
 			"name": "AWS Transcribe",
-			"type": "n8n-nodes-base.awsTranscribe",
+			"type": "aura-nodes-base.awsTranscribe",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"simple": false
 			},
 			"name": "AWS Transcribe1",
-			"type": "n8n-nodes-base.awsTranscribe",
+			"type": "aura-nodes-base.awsTranscribe",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"filters": {}
 			},
 			"name": "AWS Transcribe2",
-			"type": "n8n-nodes-base.awsTranscribe",
+			"type": "aura-nodes-base.awsTranscribe",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -73,7 +73,7 @@
 				"transcriptionJobName": "={{$node[\"Set job name\"].json[\"job_name\"]}}"
 			},
 			"name": "AWS Transcribe3",
-			"type": "n8n-nodes-base.awsTranscribe",
+			"type": "aura-nodes-base.awsTranscribe",
 			"typeVersion": 1,
 			"position": [1150, 300],
 			"credentials": {
@@ -97,7 +97,7 @@
 				"options": {}
 			},
 			"name": "Set job name",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"id": "e96a125a-10fb-4d1a-869e-3e31467b1bb6"
@@ -107,7 +107,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(30000);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 30 seconds",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1000, 300],
 			"typeVersion": 1,
 			"id": "93a0b1db-6bda-4e6d-9797-6a3957cf05d0"

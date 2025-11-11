@@ -166,7 +166,7 @@ describe('CommunityPlusEnrollmentModal', () => {
 
 		usersStore.currentUser = {
 			id: '1',
-			email: 'test@n8n.io',
+			email: 'test@aura.io',
 			isDefaultUser: false,
 			isPending: false,
 			mfaEnabled: false,
@@ -182,7 +182,7 @@ describe('CommunityPlusEnrollmentModal', () => {
 
 		const { getByRole } = renderComponent({ props });
 		const emailInput = getByRole('textbox');
-		expect(emailInput).toHaveValue('test@n8n.io');
+		expect(emailInput).toHaveValue('test@aura.io');
 	});
 
 	it('should not throw error if no close callback provided', async () => {

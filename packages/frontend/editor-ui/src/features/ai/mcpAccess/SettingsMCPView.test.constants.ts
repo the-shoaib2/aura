@@ -45,7 +45,7 @@ export const MCP_WORKFLOWS: WorkflowListItem[] = [
 		homeProject: {
 			id: 'personal',
 			type: 'personal',
-			name: 'User<user@n8n.io>',
+			name: 'User<user@aura.io>',
 			icon: {
 				type: 'icon',
 				value: 'user',

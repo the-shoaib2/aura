@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useClipboard } from '@/app/composables/useClipboard';
 import { useToast } from '@/app/composables/useToast';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import type {
 	IDataObject,
 	INodeProperties,
@@ -16,11 +16,11 @@ import type {
 	NodeApiError,
 	NodeError,
 	NodeOperationError,
-} from 'n8n-workflow';
-import { isCommunityPackageName } from 'n8n-workflow';
+} from 'workflow';
+import { isCommunityPackageName } from 'workflow';
 import { sanitizeHtml } from '@/app/utils/htmlUtils';
 import { MAX_DISPLAY_DATA_SIZE, NEW_ASSISTANT_SESSION_MODAL, VIEWS } from '@/app/constants';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import { useChatPanelStore } from '@/features/ai/assistant/chatPanel.store';
 import { useAssistantStore } from '@/features/ai/assistant/assistant.store';
 import type { ChatRequest } from '@/features/ai/assistant/assistant.types';
@@ -32,7 +32,7 @@ import {
 	N8nIcon,
 	N8nIconButton,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 
 type Props = {
 	// TODO: .node can be undefined
@@ -81,11 +81,11 @@ const parameters = computed<INodeProperties[]>(() => {
 	return nodeType.properties;
 });
 
-const n8nVersion = computed(() => {
+const auraVersion = computed(() => {
 	const baseUrl = rootStore.urlBaseEditor;
 	let instanceType = 'Self Hosted';
 
-	if (baseUrl.includes('n8n.cloud')) {
+	if (baseUrl.includes('aura.cloud')) {
 		instanceType = 'Cloud';
 	}
 
@@ -332,55 +332,55 @@ function copyErrorDetails() {
 
 	errorInfo.errorDetails = errorDetails;
 
-	//add n8n details
-	const n8nDetails: IDataObject = {};
+	//add aura details
+	const auraDetails: IDataObject = {};
 
 	if (error.node) {
-		n8nDetails.nodeName = error.node.name;
-		n8nDetails.nodeType = error.node.type;
-		n8nDetails.nodeVersion = error.node.typeVersion;
+		auraDetails.nodeName = error.node.name;
+		auraDetails.nodeType = error.node.type;
+		auraDetails.nodeVersion = error.node.typeVersion;
 
 		if (error.node?.parameters?.resource) {
-			n8nDetails.resource = error.node.parameters.resource;
+			auraDetails.resource = error.node.parameters.resource;
 		}
 		if (error?.node?.parameters?.operation) {
-			n8nDetails.operation = error.node.parameters.operation;
+			auraDetails.operation = error.node.parameters.operation;
 		}
 	}
 
 	if (error.context) {
 		if (error.context.itemIndex !== undefined) {
-			n8nDetails.itemIndex = error.context.itemIndex;
+			auraDetails.itemIndex = error.context.itemIndex;
 		}
 
 		if (error.context.runIndex !== undefined) {
-			n8nDetails.runIndex = error.context.runIndex;
+			auraDetails.runIndex = error.context.runIndex;
 		}
 
 		if (error.context.parameter !== undefined) {
-			n8nDetails.parameter = error.context.parameter;
+			auraDetails.parameter = error.context.parameter;
 		}
 
 		if (error.context.causeDetailed) {
-			n8nDetails.causeDetailed = error.context.causeDetailed;
+			auraDetails.causeDetailed = error.context.causeDetailed;
 		}
 	}
 
 	if (error.timestamp) {
-		n8nDetails.time = new Date(error.timestamp).toLocaleString();
+		auraDetails.time = new Date(error.timestamp).toLocaleString();
 	}
 
-	n8nDetails.n8nVersion = n8nVersion.value;
+	auraDetails.auraVersion = auraVersion.value;
 
-	n8nDetails.binaryDataMode = rootStore.binaryDataMode;
+	auraDetails.binaryDataMode = rootStore.binaryDataMode;
 
 	if (error.cause) {
-		n8nDetails.cause = error.cause;
+		auraDetails.cause = error.cause;
 	}
 
-	n8nDetails.stackTrace = error.stack?.split('\n');
+	auraDetails.stackTrace = error.stack?.split('\n');
 
-	errorInfo.n8nDetails = n8nDetails;
+	errorInfo.auraDetails = auraDetails;
 
 	void clipboard.copy(JSON.stringify(errorInfo, null, 2));
 	copySuccess();
@@ -466,7 +466,7 @@ async function onAskAssistantClick() {
 			</div>
 			<div
 				v-if="(error.description || error.context?.descriptionKey) && !isSubNodeError"
-				v-n8n-html="getErrorDescription()"
+				v-aura-html="getErrorDescription()"
 				data-test-id="node-error-description"
 				class="node-error-view__header-description"
 			></div>
@@ -642,10 +642,10 @@ async function onAskAssistantClick() {
 
 						<div class="node-error-view__details-row">
 							<p class="node-error-view__details-label">
-								{{ i18n.baseText('nodeErrorView.details.n8nVersion') }}
+								{{ i18n.baseText('nodeErrorView.details.auraVersion') }}
 							</p>
 							<p class="node-error-view__details-value">
-								<code>{{ n8nVersion }}</code>
+								<code>{{ auraVersion }}</code>
 							</p>
 						</div>
 

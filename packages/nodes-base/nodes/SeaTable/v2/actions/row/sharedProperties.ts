@@ -1,8 +1,8 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const sharedProperties: INodeProperties[] = [
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Table Name',
 		name: 'tableName',
 		type: 'options',
@@ -13,7 +13,7 @@ export const sharedProperties: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		displayOptions: {
 			show: {
 				resource: ['row'],
@@ -21,12 +21,12 @@ export const sharedProperties: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Row ID',
 		name: 'rowId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		required: true,
 		typeOptions: {
 			loadOptionsDependsOn: ['tableName'],

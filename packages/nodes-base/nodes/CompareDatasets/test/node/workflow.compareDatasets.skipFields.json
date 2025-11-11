@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "eb18dcd4-3251-493f-ae3f-d4a89b16cee8",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [400, 800]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "77327bfe-a4a8-49b8-a237-2f264536e5e3",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [660, 640]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "8ea09201-1ed6-4f9c-afb4-1261142a74a3",
 			"name": "Code1",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [660, 920]
 		},
@@ -43,7 +43,7 @@
 			},
 			"id": "750c4213-42e0-4e66-96b0-24dcb82d3d67",
 			"name": "Any skipped",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [1020, 220]
 		},
@@ -63,7 +63,7 @@
 			},
 			"id": "2912ebdb-ddb8-4c53-a357-66e8b20ff947",
 			"name": "skip whole object",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [1020, 420]
 		},
@@ -83,7 +83,7 @@
 			},
 			"id": "9ea72e2e-f062-4ae7-bfb1-9266848d0f3c",
 			"name": "skip each key",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [1020, 620]
 		},
@@ -103,7 +103,7 @@
 			},
 			"id": "fca0048b-a493-4ca4-861b-2ca8216fbfba",
 			"name": "skipped contain contry",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [1040, 1060]
 		},
@@ -123,7 +123,7 @@
 			},
 			"id": "498b2f65-1117-4ff2-acde-a51049fd9b89",
 			"name": "skip object and key",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [1040, 860],
 			"continueOnFail": true
@@ -144,7 +144,7 @@
 			},
 			"id": "77ad3a73-8683-41ed-9040-cef1a2895704",
 			"name": "skip includes age and contry",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [1040, 1260]
 		},
@@ -154,7 +154,7 @@
 			},
 			"id": "be74368b-6d04-43ae-ad01-e2efbd2758c3",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1340, 240]
 		},
@@ -164,7 +164,7 @@
 			},
 			"id": "4cb1a37a-ce93-4a3e-b613-8ae9e8265718",
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1340, 380]
 		},
@@ -174,7 +174,7 @@
 			},
 			"id": "ab00a0a0-34be-4a65-a1de-8f69db895b76",
 			"name": "Set2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1340, 520]
 		},
@@ -184,7 +184,7 @@
 			},
 			"id": "b23e2bf9-9a4b-4f87-a21f-cd24c56af3c1",
 			"name": "Set3",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1340, 660]
 		},
@@ -194,7 +194,7 @@
 			},
 			"id": "2cf57ec3-72c4-43e2-ad28-6755b19cc8f3",
 			"name": "Set4",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1340, 800]
 		},
@@ -204,7 +204,7 @@
 			},
 			"id": "fdf62bd3-5e54-43cd-b70e-be159aa1722f",
 			"name": "Set5",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1340, 940]
 		}

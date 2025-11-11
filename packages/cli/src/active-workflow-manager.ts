@@ -4,12 +4,12 @@ import {
 	WORKFLOW_REACTIVATE_INITIAL_TIMEOUT,
 	WORKFLOW_REACTIVATE_MAX_TIMEOUT,
 } from '@/constants';
-import { Logger } from '@n8n/backend-common';
-import { WorkflowsConfig } from '@n8n/config';
-import type { WorkflowEntity, IWorkflowDb } from '@n8n/db';
-import { WorkflowRepository } from '@n8n/db';
-import { OnLeaderStepdown, OnLeaderTakeover, OnPubSubEvent, OnShutdown } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { WorkflowsConfig } from '@aura/config';
+import type { WorkflowEntity, IWorkflowDb } from '@aura/db';
+import { WorkflowRepository } from '@aura/db';
+import { OnLeaderStepdown, OnLeaderTakeover, OnPubSubEvent, OnShutdown } from '@aura/decorators';
+import { Service } from '@aura/di';
 import chunk from 'lodash/chunk';
 import {
 	ActiveWorkflows,
@@ -19,7 +19,7 @@ import {
 	TriggerContext,
 	type IGetExecutePollFunctions,
 	type IGetExecuteTriggerFunctions,
-} from 'n8n-core';
+} from 'aura-core';
 import type {
 	ExecutionError,
 	IDeferredPromise,
@@ -33,14 +33,14 @@ import type {
 	WorkflowExecuteMode,
 	INodeType,
 	WorkflowId,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	Workflow,
 	WorkflowActivationError,
 	WebhookPathTakenError,
 	UnexpectedError,
 	ensureError,
-} from 'n8n-workflow';
+} from 'workflow';
 import { strict } from 'node:assert';
 
 import { ActivationErrorsService } from '@/activation-errors.service';
@@ -199,7 +199,7 @@ export class ActiveWorkflowManager {
 					['init', 'leadershipChange'].includes(activation) &&
 					error.name === 'QueryFailedError'
 				) {
-					// n8n does not remove the registered webhooks on exit.
+					// aura does not remove the registered webhooks on exit.
 					// This means that further initializations will always fail
 					// when inserting to database. This is why we ignore this error
 					// as it's expected to happen.
@@ -281,7 +281,7 @@ export class ActiveWorkflowManager {
 	}
 
 	/**
-	 * Return poll function which gets the global functions from n8n-core
+	 * Return poll function which gets the global functions from aura-core
 	 * and overwrites the emit to be able to start it in subprocess
 	 */
 	getExecutePollFunctions(
@@ -332,7 +332,7 @@ export class ActiveWorkflowManager {
 	}
 
 	/**
-	 * Return trigger function which gets the global functions from n8n-core
+	 * Return trigger function which gets the global functions from aura-core
 	 * and overwrites the emit to be able to start it in subprocess
 	 */
 	getExecuteTriggerFunctions(
@@ -850,7 +850,7 @@ export class ActiveWorkflowManager {
 	 * @param {string} workflowId The id of the workflow to deactivate
 	 */
 	// TODO: this should happen in a transaction
-	// maybe, see: https://github.com/n8n-io/n8n/pull/8904#discussion_r1530150510
+	// maybe, see: https://github.com/aura-io/aura/pull/8904#discussion_r1530150510
 	async remove(workflowId: WorkflowId) {
 		if (this.instanceSettings.isMultiMain) {
 			try {

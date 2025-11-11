@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { splitTextBySearch } from '@/app/utils/stringUtils';
-import type { GenericValue } from 'n8n-workflow';
+import type { GenericValue } from 'workflow';
 import { computed } from 'vue';
 
 const props = defineProps<{

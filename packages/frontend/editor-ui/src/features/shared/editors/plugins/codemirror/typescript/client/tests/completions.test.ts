@@ -1,7 +1,7 @@
 import { matchText } from '../completions';
 import { CompletionContext } from '@codemirror/autocomplete';
 import { EditorState } from '@codemirror/state';
-import { n8nLang } from '@/features/shared/editors/plugins/codemirror/n8nLang';
+import { auraLang } from '@/features/shared/editors/plugins/codemirror/auraLang';
 
 describe('matchText', () => {
 	afterEach(() => {
@@ -26,7 +26,7 @@ describe('matchText', () => {
 		const state = EditorState.create({
 			doc: node.replace('|', ''),
 			selection: { anchor: cursorPosition },
-			extensions: [n8nLang()],
+			extensions: [auraLang()],
 		});
 		const context = new CompletionContext(state, cursorPosition, false);
 

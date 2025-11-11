@@ -1,4 +1,4 @@
-import type { ListQueryDb } from '@n8n/db';
+import type { ListQueryDb } from '@aura/db';
 import {
 	GLOBAL_OWNER_ROLE,
 	Project,
@@ -8,8 +8,8 @@ import {
 	UserRepository,
 	Role,
 	Scope,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
+} from '@aura/db';
+import { Service } from '@aura/di';
 
 import { CacheService } from '@/services/cache/cache.service';
 

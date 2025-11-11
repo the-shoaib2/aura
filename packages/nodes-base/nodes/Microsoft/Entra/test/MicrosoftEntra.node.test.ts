@@ -1,6 +1,6 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import type { ILoadOptionsFunctions, WorkflowTestData } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, WorkflowTestData } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { microsoftEntraApiResponse, microsoftEntraNodeResponse } from './mocks';
 import { MicrosoftEntra } from '../MicrosoftEntra.node';
@@ -27,7 +27,7 @@ describe('Microsoft Entra Node', () => {
 						nodes: [
 							{
 								parameters: {},
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								typeVersion: 1,
 								position: [0, 0],
 								id: '1307e408-a8a5-464e-b858-494953e2f43b',
@@ -46,7 +46,7 @@ describe('Microsoft Entra Node', () => {
 									output: 'raw',
 									requestOptions: {},
 								},
-								type: 'n8n-nodes-base.microsoftEntra',
+								type: 'aura-nodes-base.microsoftEntra',
 								typeVersion: 1,
 								position: [220, 0],
 								id: '3429f7f2-dfca-4b72-8913-43a582e96e66',

@@ -1,14 +1,14 @@
 import { screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
-import type { ProjectRole, AllRolesMap } from '@n8n/permissions';
-import type { ActionDropdownItem } from '@n8n/design-system';
+import type { ProjectRole, AllRolesMap } from '@aura/permissions';
+import type { ActionDropdownItem } from '@aura/design-system';
 import ProjectMembersRoleCell from './ProjectMembersRoleCell.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import type { ProjectMemberData } from '../projects.types';
 
 // Mock N8nActionDropdown and other design system components
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

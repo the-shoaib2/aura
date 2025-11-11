@@ -2,17 +2,13 @@
 import { computed, onBeforeMount, watch } from 'vue';
 
 import { getAppNameFromCredType } from '@/app/utils/nodeTypesUtils';
-import type {
-	ICredentialDataDecryptedObject,
-	ICredentialType,
-	INodeProperties,
-} from 'n8n-workflow';
-import { isCommunityPackageName } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject, ICredentialType, INodeProperties } from 'workflow';
+import { isCommunityPackageName } from 'workflow';
 
 import type { IUpdateInformation } from '@/Interface';
 import AuthTypeSelector from './AuthTypeSelector.vue';
 import EnterpriseEdition from '@/app/components/EnterpriseEdition.ee.vue';
-import { useI18n, addCredentialTranslation } from '@n8n/i18n';
+import { useI18n, addCredentialTranslation } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import {
 	BUILTIN_CREDENTIALS_DOCS_URL,
@@ -20,10 +16,10 @@ import {
 	EnterpriseEditionFeature,
 	NEW_ASSISTANT_SESSION_MODAL,
 } from '@/app/constants';
-import type { PermissionsRecord } from '@n8n/permissions';
+import type { PermissionsRecord } from '@aura/permissions';
 import { useCredentialsStore } from '../../credentials.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import Banner from '@/app/components/Banner.vue';
@@ -42,7 +38,7 @@ import {
 	N8nLink,
 	N8nNotice,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 
 type Props = {
 	mode: string;
@@ -95,7 +91,7 @@ onBeforeMount(async () => {
 
 	if (rootStore.defaultLocale === 'en') return;
 
-	const key = `n8n-nodes-base.credentials.${props.credentialType.name}`;
+	const key = `aura-nodes-base.credentials.${props.credentialType.name}`;
 
 	if (i18n.exists(key)) return;
 
@@ -147,7 +143,7 @@ const documentationUrl = computed(() => {
 	}
 
 	if (url.hostname === DOCS_DOMAIN) {
-		url.searchParams.set('utm_source', 'n8n_app');
+		url.searchParams.set('utm_source', 'aura_app');
 		url.searchParams.set('utm_medium', 'credential_settings');
 		url.searchParams.set('utm_campaign', 'create_new_credentials_modal');
 	}

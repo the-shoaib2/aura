@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "953c7b03-6474-482f-84d8-1f38d7183bd3"
@@ -18,7 +18,7 @@
 				"resource": "user"
 			},
 			"name": "Raindrop",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [460, 230],
 			"credentials": {
@@ -38,7 +38,7 @@
 				}
 			},
 			"name": "Raindrop1",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [460, 380],
 			"credentials": {
@@ -54,7 +54,7 @@
 				"collectionId": "={{$node[\"Raindrop1\"].json[\"_id\"]}}"
 			},
 			"name": "Raindrop2",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [600, 380],
 			"credentials": {
@@ -74,7 +74,7 @@
 				}
 			},
 			"name": "Raindrop3",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [750, 380],
 			"credentials": {
@@ -91,7 +91,7 @@
 				"limit": 1
 			},
 			"name": "Raindrop4",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [900, 380],
 			"credentials": {
@@ -108,7 +108,7 @@
 				"collectionId": "={{$node[\"Raindrop1\"].json[\"_id\"]}}"
 			},
 			"name": "Raindrop5",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [2100, 370],
 			"credentials": {
@@ -124,14 +124,14 @@
 				"resource": "bookmark",
 				"operation": "create",
 				"collectionId": "={{$node[\"Raindrop1\"].json[\"_id\"]}}",
-				"link": "https://n8n.io/",
+				"link": "https://aura.io/",
 				"additionalFields": {
-					"tags": "n8n,automation,worfklow,test",
+					"tags": "aura,automation,worfklow,test",
 					"title": "=Bookmark{{Date.now()}}"
 				}
 			},
 			"name": "Raindrop6",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [1050, 500],
 			"credentials": {
@@ -148,7 +148,7 @@
 				"bookmarkId": "={{$node[\"Raindrop6\"].json[\"_id\"]}}"
 			},
 			"name": "Raindrop7",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [1200, 500],
 			"credentials": {
@@ -169,7 +169,7 @@
 				}
 			},
 			"name": "Raindrop8",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [1350, 500],
 			"credentials": {
@@ -188,7 +188,7 @@
 				"limit": 1
 			},
 			"name": "Raindrop9",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [1500, 500],
 			"credentials": {
@@ -206,7 +206,7 @@
 				"bookmarkId": "={{$node[\"Raindrop6\"].json[\"_id\"]}}"
 			},
 			"name": "Raindrop10",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [1950, 500],
 			"credentials": {
@@ -225,7 +225,7 @@
 				"filters": {}
 			},
 			"name": "Raindrop11",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [1650, 650],
 			"credentials": {
@@ -244,7 +244,7 @@
 				"additionalFields": {}
 			},
 			"name": "Raindrop12",
-			"type": "n8n-nodes-base.raindrop",
+			"type": "aura-nodes-base.raindrop",
 			"typeVersion": 1,
 			"position": [1800, 650],
 			"credentials": {

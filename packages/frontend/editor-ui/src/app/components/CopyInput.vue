@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 
-import { N8nInputLabel } from '@n8n/design-system';
+import { N8nInputLabel } from '@aura/design-system';
 type Props = {
 	label?: string;
 	hint?: string;
@@ -89,7 +89,7 @@ function copy() {
 	font-weight: var(--font-weight--regular);
 
 	&:hover {
-		/* stylelint-disable-next-line @n8n/css-var-naming */
+		/* stylelint-disable-next-line @aura/css-var-naming */
 		--display-copy-button: flex;
 		width: 100%;
 	}
@@ -119,7 +119,7 @@ function copy() {
 }
 
 .copyButton {
-	/* stylelint-disable-next-line @n8n/css-var-naming */
+	/* stylelint-disable-next-line @aura/css-var-naming */
 	display: var(--display-copy-button, none);
 	position: absolute;
 	top: 0;

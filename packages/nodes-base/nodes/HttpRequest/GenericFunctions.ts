@@ -11,7 +11,7 @@ import {
 	type INodeProperties,
 	type IOAuth2Options,
 	type IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { SecureContextOptions } from 'tls';
 
 import type { HttpSslAuthCredentials } from './interfaces';

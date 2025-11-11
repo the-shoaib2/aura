@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.formIoTrigger",
+	"node": "aura-nodes-base.formIoTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/formiotrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/formiotrigger/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.formiotrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.formiotrigger/"
 			}
 		]
 	}

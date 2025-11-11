@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "trigger-id",
@@ -37,7 +37,7 @@
 				"limit": 10,
 				"simple": true
 			},
-			"type": "n8n-nodes-base.googleAnalytics",
+			"type": "aura-nodes-base.googleAnalytics",
 			"typeVersion": 2,
 			"position": [200, 0],
 			"id": "ga4-report-node",

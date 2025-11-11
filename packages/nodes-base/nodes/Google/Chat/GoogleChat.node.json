@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.googleChat",
+	"node": "aura-nodes-base.googleChat",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "HITL"],
@@ -9,12 +9,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/google/service-account/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/google/service-account/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlechat/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.googlechat/"
 			}
 		]
 	},

@@ -1,4 +1,4 @@
-import type { IExecuteSingleFunctions, IHttpRequestOptions } from 'n8n-workflow';
+import type { IExecuteSingleFunctions, IHttpRequestOptions } from 'workflow';
 
 import { addLocationIdPreSendAction } from '../GenericFunctions';
 

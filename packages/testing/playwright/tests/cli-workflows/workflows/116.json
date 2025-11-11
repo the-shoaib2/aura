@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "96a1cf58-f3dc-46ea-a07a-5202bffee113"
@@ -22,7 +22,7 @@
 				"additionalFields": {}
 			},
 			"name": "Ghost",
-			"type": "n8n-nodes-base.ghost",
+			"type": "aura-nodes-base.ghost",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -43,7 +43,7 @@
 				}
 			},
 			"name": "Ghost1",
-			"type": "n8n-nodes-base.ghost",
+			"type": "aura-nodes-base.ghost",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -62,7 +62,7 @@
 				"options": {}
 			},
 			"name": "Ghost2",
-			"type": "n8n-nodes-base.ghost",
+			"type": "aura-nodes-base.ghost",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -81,7 +81,7 @@
 				"options": {}
 			},
 			"name": "Ghost3",
-			"type": "n8n-nodes-base.ghost",
+			"type": "aura-nodes-base.ghost",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"credentials": {
@@ -99,7 +99,7 @@
 				"options": {}
 			},
 			"name": "Ghost4",
-			"type": "n8n-nodes-base.ghost",
+			"type": "aura-nodes-base.ghost",
 			"typeVersion": 1,
 			"position": [1150, 450],
 			"credentials": {
@@ -117,7 +117,7 @@
 				"options": {}
 			},
 			"name": "Ghost5",
-			"type": "n8n-nodes-base.ghost",
+			"type": "aura-nodes-base.ghost",
 			"typeVersion": 1,
 			"position": [1300, 450],
 			"credentials": {
@@ -135,7 +135,7 @@
 				"postId": "={{$node[\"Ghost\"].json[\"id\"]}}"
 			},
 			"name": "Ghost6",
-			"type": "n8n-nodes-base.ghost",
+			"type": "aura-nodes-base.ghost",
 			"typeVersion": 1,
 			"position": [1450, 300],
 			"credentials": {

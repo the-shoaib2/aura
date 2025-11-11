@@ -1,4 +1,4 @@
-import type { User } from '@n8n/api-types';
+import type { User } from '@aura/api-types';
 import { customAlphabet } from 'nanoid';
 
 import type { ApiHelpers } from './api-helper';
@@ -16,8 +16,8 @@ export interface TestUser {
 }
 
 /**
- * Creates test users via n8n's invitation API.
- * Note: Using this with n8n.api will affect browser cookies. Use with the isolated api fixture instead unless you want to overwrite the existing user
+ * Creates test users via aura's invitation API.
+ * Note: Using this with aura.api will affect browser cookies. Use with the isolated api fixture instead unless you want to overwrite the existing user
  */
 export class UserApiHelper {
 	constructor(private api: ApiHelpers) {}

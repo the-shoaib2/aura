@@ -1,4 +1,4 @@
-import { NodeConnectionTypes, type INode, type IRunData } from 'n8n-workflow';
+import { NodeConnectionTypes, type INode, type IRunData } from 'workflow';
 
 import type { DirectedGraph } from './directed-graph';
 

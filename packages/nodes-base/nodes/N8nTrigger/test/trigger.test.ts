@@ -1,11 +1,11 @@
 import { N8nTrigger } from '../N8nTrigger.node';
 
 describe('N8nTrigger', () => {
-	let n8nTrigger: N8nTrigger;
+	let auraTrigger: N8nTrigger;
 	let mockTriggerFunctions: any;
 
 	beforeEach(() => {
-		n8nTrigger = new N8nTrigger();
+		auraTrigger = new N8nTrigger();
 
 		// Mock trigger functions
 		mockTriggerFunctions = {
@@ -24,7 +24,7 @@ describe('N8nTrigger', () => {
 			mockTriggerFunctions.getNodeParameter.mockReturnValue(['activate']);
 			mockTriggerFunctions.getActivationMode.mockReturnValue('activate');
 
-			await n8nTrigger.trigger.call(mockTriggerFunctions);
+			await auraTrigger.trigger.call(mockTriggerFunctions);
 
 			expect(mockTriggerFunctions.emit).toHaveBeenCalledWith([
 				[
@@ -41,13 +41,13 @@ describe('N8nTrigger', () => {
 			mockTriggerFunctions.getNodeParameter.mockReturnValue(['update']);
 			mockTriggerFunctions.getActivationMode.mockReturnValue('activate');
 
-			await n8nTrigger.trigger.call(mockTriggerFunctions);
+			await auraTrigger.trigger.call(mockTriggerFunctions);
 
 			expect(mockTriggerFunctions.emit).not.toHaveBeenCalled();
 		});
 
 		it('should return manual trigger function', async () => {
-			const result = await n8nTrigger.trigger.call(mockTriggerFunctions);
+			const result = await auraTrigger.trigger.call(mockTriggerFunctions);
 
 			expect(result).toHaveProperty('manualTriggerFunction');
 			expect(typeof result.manualTriggerFunction).toBe('function');
@@ -57,7 +57,7 @@ describe('N8nTrigger', () => {
 			mockTriggerFunctions.getNodeParameter.mockReturnValue(['init']);
 			mockTriggerFunctions.getActivationMode.mockReturnValue('init');
 
-			await n8nTrigger.trigger.call(mockTriggerFunctions);
+			await auraTrigger.trigger.call(mockTriggerFunctions);
 
 			expect(mockTriggerFunctions.emit).toHaveBeenCalledWith([
 				[
@@ -74,7 +74,7 @@ describe('N8nTrigger', () => {
 			mockTriggerFunctions.getNodeParameter.mockReturnValue(['update']);
 			mockTriggerFunctions.getActivationMode.mockReturnValue('update');
 
-			await n8nTrigger.trigger.call(mockTriggerFunctions);
+			await auraTrigger.trigger.call(mockTriggerFunctions);
 
 			expect(mockTriggerFunctions.emit).toHaveBeenCalledWith([
 				[
@@ -90,16 +90,16 @@ describe('N8nTrigger', () => {
 
 	describe('description', () => {
 		it('should have correct properties', () => {
-			expect(n8nTrigger.description).toMatchObject({
-				displayName: 'n8n Trigger',
-				name: 'n8nTrigger',
+			expect(auraTrigger.description).toMatchObject({
+				displayName: 'aura Trigger',
+				name: 'auraTrigger',
 				group: ['trigger'],
 				version: 1,
 			});
 		});
 
 		it('should have required properties configuration', () => {
-			const eventsProperty = n8nTrigger.description.properties.find((p) => p.name === 'events');
+			const eventsProperty = auraTrigger.description.properties.find((p) => p.name === 'events');
 			expect(eventsProperty).toBeDefined();
 			expect(eventsProperty?.required).toBe(true);
 			expect(eventsProperty?.type).toBe('multiOptions');

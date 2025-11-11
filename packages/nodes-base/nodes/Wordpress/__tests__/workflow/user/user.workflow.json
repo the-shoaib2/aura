@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 300],
 			"id": "15748f86-cdf3-4dad-aa75-a27442073de8",
@@ -20,7 +20,7 @@
 				"password": "fake-password",
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [220, 0],
 			"id": "f5058499-b6c5-42e3-8912-53de6124f811",
@@ -34,7 +34,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 0],
 			"id": "ffcae931-d165-41a0-b49d-12afbfa73238",
@@ -49,7 +49,7 @@
 					"context": "view"
 				}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [220, 200],
 			"id": "707abdd8-4976-45c4-a1ec-aac08cdcf530",
@@ -63,7 +63,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 200],
 			"id": "ca7f1e89-6b2b-4c96-8a43-ef758a39cfa1",
@@ -78,7 +78,7 @@
 					"orderBy": "id"
 				}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [220, 400],
 			"id": "2a2ac1a3-a163-49cc-8974-eb81b87d2aee",
@@ -92,7 +92,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 400],
 			"id": "1b4ccb5b-e3e5-4741-b533-2274501971c1",
@@ -110,7 +110,7 @@
 					"nickname": "newuser"
 				}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [220, 600],
 			"id": "8d000d21-c5c6-421a-b11d-193813adf35f",
@@ -124,7 +124,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 600],
 			"id": "60e0f507-00ab-42f0-81af-47692bc508c9",

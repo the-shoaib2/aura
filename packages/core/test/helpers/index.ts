@@ -12,8 +12,8 @@ import type {
 	NodeLoadingDetails,
 	WorkflowTestData,
 	INodeTypeData,
-} from 'n8n-workflow';
-import { ApplicationError, NodeHelpers } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, NodeHelpers } from 'workflow';
 import path from 'path';
 
 import { UnrecognizedNodeTypeError } from '@/errors';
@@ -97,9 +97,9 @@ export function getNodeTypes(testData: WorkflowTestData[] | WorkflowTestData) {
 	);
 
 	for (const nodeName of nodeNames) {
-		const loadInfo = knownNodes[nodeName.replace('n8n-nodes-base.', '')];
+		const loadInfo = knownNodes[nodeName.replace('aura-nodes-base.', '')];
 		if (!loadInfo) {
-			throw new UnrecognizedNodeTypeError('n8n-nodes-base', nodeName);
+			throw new UnrecognizedNodeTypeError('aura-nodes-base', nodeName);
 		}
 		const sourcePath = loadInfo.sourcePath.replace(/^dist\//, './').replace(/\.js$/, '.ts');
 		const nodeSourcePath = path.join(BASE_DIR, 'nodes-base', sourcePath);

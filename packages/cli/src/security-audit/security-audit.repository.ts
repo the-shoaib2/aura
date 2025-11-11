@@ -1,6 +1,6 @@
-import { Service } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { DataSource, Repository } from '@n8n/typeorm';
+import { Service } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { DataSource, Repository } from '@aura/typeorm';
 
 import { InstalledPackages } from '@/modules/community-packages/installed-packages.entity';
 

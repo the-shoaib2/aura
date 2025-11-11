@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [260, 300],
 			"id": "f3928b9a-a76a-4b22-8c13-3eeb6ffc5dab"
@@ -21,7 +21,7 @@
 				"sourceRepository": "https://github.com/nodemationqa/nodeQA"
 			},
 			"name": "Git",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [550, 250],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"repositoryPath": "/tmp/nodeQA"
 			},
 			"name": "Git1",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [700, 250],
 			"notes": "CAP_RESULTS_LENGTH=1\nKEEP_ONLY_PROPERTIES=_file",
@@ -49,13 +49,13 @@
 				"operation": "addConfig",
 				"repositoryPath": "/tmp/nodeQA",
 				"key": "user.email",
-				"value": "nodeqa@n8n.io",
+				"value": "nodeqa@aura.io",
 				"options": {
 					"mode": "set"
 				}
 			},
 			"name": "Git2",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [850, 250],
 			"id": "815b5424-cbc3-4f29-9f12-81e7538bb925"
@@ -67,7 +67,7 @@
 				"pathsToAdd": "/tmp/nodeQA/gitnode_added_file.md"
 			},
 			"name": "Git3",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [550, 450],
 			"id": "d2110a10-424a-48ef-9bfa-5b6eb541f96c"
@@ -78,7 +78,7 @@
 				"repositoryPath": "/tmp/nodeQA"
 			},
 			"name": "Git4",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [700, 450],
 			"id": "317691ba-e08a-4fcb-bb2d-771d14a13eb4"
@@ -91,7 +91,7 @@
 				"options": {}
 			},
 			"name": "Git5",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [850, 450],
 			"id": "4ab79985-9685-4c47-b4c4-2f859ce036c0"
@@ -103,7 +103,7 @@
 				"options": {}
 			},
 			"name": "Git6",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [1000, 450],
 			"id": "7ed13447-be70-41e3-b054-4107b175d5a8"
@@ -119,7 +119,7 @@
 				}
 			},
 			"name": "Git7",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [1000, 250],
 			"id": "8dabf47e-ba7c-460d-a2de-a4f54f5211e1"
@@ -131,7 +131,7 @@
 				"name": "=GitNode-tag-{{Date.now()}}"
 			},
 			"name": "Git8",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [1150, 450],
 			"id": "f4317e1d-694d-4d62-9b60-de9ef0e94418"
@@ -142,7 +142,7 @@
 				"repositoryPath": "/tmp/nodeQA"
 			},
 			"name": "Git9",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [550, 650],
 			"disabled": true,
@@ -155,7 +155,7 @@
 				"options": {}
 			},
 			"name": "Git10",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [700, 650],
 			"disabled": true,
@@ -167,7 +167,7 @@
 				"repositoryPath": "/tmp/nodeQA"
 			},
 			"name": "Git11",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [850, 650],
 			"disabled": true,
@@ -179,7 +179,7 @@
 				"repositoryPath": "/tmp/nodeQA"
 			},
 			"name": "Git12",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [1000, 650],
 			"id": "e042e225-b5b6-4882-b879-d11d103c7004"
@@ -190,7 +190,7 @@
 				"repositoryPath": "/tmp/nodeQA"
 			},
 			"name": "Git13",
-			"type": "n8n-nodes-base.git",
+			"type": "aura-nodes-base.git",
 			"typeVersion": 1,
 			"position": [1150, 650],
 			"disabled": true,
@@ -201,7 +201,7 @@
 				"command": "if [ -d \"/tmp/nodeQA\" ]; then rm -Rf /tmp/nodeQA; fi"
 			},
 			"name": "Delete existing dir",
-			"type": "n8n-nodes-base.executeCommand",
+			"type": "aura-nodes-base.executeCommand",
 			"typeVersion": 1,
 			"position": [400, 250],
 			"id": "312b664a-f6b4-4419-aae4-455930d7ca05"
@@ -211,7 +211,7 @@
 				"command": "=echo \"File added to repo at {{(new Date).toUTCString()}} using Git node\" > /tmp/nodeQA/gitnode_added_file.md"
 			},
 			"name": "Add file to dir",
-			"type": "n8n-nodes-base.executeCommand",
+			"type": "aura-nodes-base.executeCommand",
 			"typeVersion": 1,
 			"position": [1150, 250],
 			"id": "a5ad152a-056e-4d4e-81f8-626209e7cfb8"

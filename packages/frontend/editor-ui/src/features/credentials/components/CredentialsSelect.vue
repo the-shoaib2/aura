@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 import { computed, ref } from 'vue';
 import ScopesNotice from './ScopesNotice.vue';
 import NodeCredentials from './NodeCredentials.vue';
 import { useCredentialsStore } from '../credentials.store';
 import type { INodeUi, INodeUpdatePropertiesInformation } from '@/Interface';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nOption, N8nSelect } from '@n8n/design-system';
+import { N8nOption, N8nSelect } from '@aura/design-system';
 type Props = {
 	activeCredentialType: string;
 	parameter: INodeProperties;

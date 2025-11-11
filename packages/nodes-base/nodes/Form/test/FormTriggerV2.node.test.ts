@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import { NodeOperationError, type INode } from 'n8n-workflow';
+import { NodeOperationError, type INode } from 'workflow';
 
 import { testVersionedWebhookTriggerNode } from '@test/nodes/TriggerHelpers';
 
@@ -105,8 +105,8 @@ describe('FormTrigger', () => {
 			],
 			formSubmittedText: 'Your response has been recorded',
 			formTitle: 'Test Form',
-			n8nWebsiteLink:
-				'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger&utm_campaign=instanceId',
+			auraWebsiteLink:
+				'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger&utm_campaign=instanceId',
 			testRun: true,
 			useResponseData: false,
 		});
@@ -200,7 +200,7 @@ describe('FormTrigger', () => {
 					childNodes: [
 						{
 							name: 'Test Respond To Webhook',
-							type: 'n8n-nodes-base.respondToWebhook',
+							type: 'aura-nodes-base.respondToWebhook',
 							typeVersion: 1,
 							disabled: false,
 						},

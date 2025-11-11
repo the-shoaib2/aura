@@ -1,6 +1,6 @@
-import type { ChatUI } from '@n8n/design-system/types/assistant';
+import type { ChatUI } from '@aura/design-system/types/assistant';
 import type { ChatRequest } from '../assistant.types';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { isTextMessage, isWorkflowUpdatedMessage, isToolMessage } from '../assistant.types';
 
 export interface MessageProcessingResult {

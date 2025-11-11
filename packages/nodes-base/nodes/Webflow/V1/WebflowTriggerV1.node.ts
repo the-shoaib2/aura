@@ -7,7 +7,7 @@ import {
 	type IWebhookResponseData,
 	type INodeTypeBaseDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getSites, webflowApiRequest } from '../GenericFunctions';
 
@@ -84,7 +84,7 @@ export class WebflowTriggerV1 implements INodeType {
 						loadOptionsMethod: 'getSites',
 					},
 					description:
-						'Site that will trigger the events. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'Site that will trigger the events. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Event',

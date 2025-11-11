@@ -4,8 +4,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError } from 'workflow';
 
 export interface RundeckCredentials {
 	url: string;

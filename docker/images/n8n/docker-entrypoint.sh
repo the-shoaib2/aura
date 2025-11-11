@@ -8,8 +8,8 @@ fi
 
 if [ "$#" -gt 0 ]; then
   # Got started with arguments
-  exec n8n "$@"
+  exec aura "$@"
 else
   # Got started without arguments
-  exec n8n
+  exec aura
 fi

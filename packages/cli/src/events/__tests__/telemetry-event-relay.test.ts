@@ -1,6 +1,6 @@
 import type { NodeTypes } from '@/node-types';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
 import {
 	type CredentialsEntity,
 	type CredentialsRepository,
@@ -10,9 +10,9 @@ import {
 	type WorkflowEntity,
 	type WorkflowRepository,
 	GLOBAL_OWNER_ROLE,
-} from '@n8n/db';
+} from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import { type BinaryDataConfig, InstanceSettings } from 'n8n-core';
+import { type BinaryDataConfig, InstanceSettings } from 'aura-core';
 import {
 	type INode,
 	type INodesGraphResult,
@@ -20,7 +20,7 @@ import {
 	type IWorkflowBase,
 	NodeApiError,
 	TelemetryHelpers,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { N8N_VERSION } from '@/constants';
 import { EventService } from '@/events/event.service';
@@ -65,7 +65,7 @@ describe('TelemetryEventRelay', () => {
 		mode: 'default',
 		availableModes: ['default', 'filesystem', 's3'],
 	});
-	const instanceSettings = mockInstance(InstanceSettings, { isDocker: false, n8nFolder: '/test' });
+	const instanceSettings = mockInstance(InstanceSettings, { isDocker: false, auraFolder: '/test' });
 	const workflowRepository = mock<WorkflowRepository>();
 	const nodeTypes = mock<NodeTypes>();
 	const sharedWorkflowRepository = mock<SharedWorkflowRepository>();
@@ -446,8 +446,8 @@ describe('TelemetryEventRelay', () => {
 					lastName: 'Doe',
 					role: { slug: GLOBAL_OWNER_ROLE.slug },
 				},
-				inputString: 'n8n-nodes-package',
-				packageName: 'n8n-nodes-package',
+				inputString: 'aura-nodes-package',
+				packageName: 'aura-nodes-package',
 				success: true,
 				packageVersion: '1.0.0',
 				packageNodeNames: ['CustomNode1', 'CustomNode2'],
@@ -459,8 +459,8 @@ describe('TelemetryEventRelay', () => {
 
 			expect(telemetry.track).toHaveBeenCalledWith('cnr package install finished', {
 				user_id: 'user123',
-				input_string: 'n8n-nodes-package',
-				package_name: 'n8n-nodes-package',
+				input_string: 'aura-nodes-package',
+				package_name: 'aura-nodes-package',
 				success: true,
 				package_version: '1.0.0',
 				package_node_names: ['CustomNode1', 'CustomNode2'],
@@ -479,7 +479,7 @@ describe('TelemetryEventRelay', () => {
 					lastName: 'Doe',
 					role: { slug: GLOBAL_OWNER_ROLE.slug },
 				},
-				packageName: 'n8n-nodes-package',
+				packageName: 'aura-nodes-package',
 				packageVersionCurrent: '1.0.0',
 				packageVersionNew: '1.1.0',
 				packageNodeNames: ['CustomNode1', 'CustomNode2'],
@@ -491,7 +491,7 @@ describe('TelemetryEventRelay', () => {
 
 			expect(telemetry.track).toHaveBeenCalledWith('cnr package updated', {
 				user_id: 'user123',
-				package_name: 'n8n-nodes-package',
+				package_name: 'aura-nodes-package',
 				package_version_current: '1.0.0',
 				package_version_new: '1.1.0',
 				package_node_names: ['CustomNode1', 'CustomNode2'],
@@ -509,7 +509,7 @@ describe('TelemetryEventRelay', () => {
 					lastName: 'Doe',
 					role: { slug: GLOBAL_OWNER_ROLE.slug },
 				},
-				packageName: 'n8n-nodes-package',
+				packageName: 'aura-nodes-package',
 				packageVersion: '1.0.0',
 				packageNodeNames: ['CustomNode1', 'CustomNode2'],
 				packageAuthor: 'John Smith',
@@ -520,7 +520,7 @@ describe('TelemetryEventRelay', () => {
 
 			expect(telemetry.track).toHaveBeenCalledWith('cnr package deleted', {
 				user_id: 'user123',
-				package_name: 'n8n-nodes-package',
+				package_name: 'aura-nodes-package',
 				package_version: '1.0.0',
 				package_node_names: ['CustomNode1', 'CustomNode2'],
 				package_author: 'John Smith',
@@ -971,7 +971,7 @@ describe('TelemetryEventRelay', () => {
 				userId: 'user123',
 				answers: {
 					version: 'v4',
-					personalization_survey_n8n_version: '1.0.0',
+					personalization_survey_aura_version: '1.0.0',
 					personalization_survey_submitted_at: '2021-10-01T00:00:00.000Z',
 					companySize: '1-10',
 				},
@@ -982,7 +982,7 @@ describe('TelemetryEventRelay', () => {
 			expect(telemetry.track).toHaveBeenCalledWith('User responded to personalization questions', {
 				user_id: 'user123',
 				version: 'v4',
-				personalization_survey_n8n_version: '1.0.0',
+				personalization_survey_aura_version: '1.0.0',
 				personalization_survey_submitted_at: '2021-10-01T00:00:00.000Z',
 				company_size: '1-10',
 			});
@@ -1055,8 +1055,8 @@ describe('TelemetryEventRelay', () => {
 						metrics_category_routes: false,
 						metrics_enabled: true,
 					},
-					n8n_binary_data_mode: 'default',
-					n8n_deployment_type: 'default',
+					aura_binary_data_mode: 'default',
+					aura_deployment_type: 'default',
 					saml_enabled: false,
 					smtp_set_up: true,
 					system_info: {
@@ -1219,7 +1219,7 @@ describe('TelemetryEventRelay', () => {
 				{
 					id: 'node1',
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					parameters: {},
 					typeVersion: 1,
 					position: [100, 200],
@@ -1296,7 +1296,7 @@ describe('TelemetryEventRelay', () => {
 								id: '1',
 								typeVersion: 1,
 								name: 'Jira',
-								type: 'n8n-nodes-base.jira',
+								type: 'aura-nodes-base.jira',
 								parameters: {},
 								position: [100, 200],
 							},
@@ -1330,7 +1330,7 @@ describe('TelemetryEventRelay', () => {
 			jest
 				.spyOn(TelemetryHelpers, 'getNodeTypeForName')
 				.mockImplementation(
-					() => ({ type: 'n8n-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
+					() => ({ type: 'aura-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
 				);
 
 			const event: RelayEventMap['workflow-post-execute'] = {
@@ -1354,10 +1354,10 @@ describe('TelemetryEventRelay', () => {
 					executionStatus: 'error',
 					sharing_role: 'sharee',
 					error_message: 'Error message',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					error_node_id: '1',
 					node_id: '1',
-					node_type: 'n8n-nodes-base.jira',
+					node_type: 'aura-nodes-base.jira',
 					is_managed: false,
 					credential_type: null,
 					node_graph_string: JSON.stringify(nodeGraph.nodeGraph),
@@ -1372,7 +1372,7 @@ describe('TelemetryEventRelay', () => {
 					execution_mode: 'manual',
 					version_cli: N8N_VERSION,
 					error_message: 'Error message',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					node_graph_string: JSON.stringify(nodeGraph.nodeGraph),
 					error_node_id: '1',
 				}),
@@ -1398,7 +1398,7 @@ describe('TelemetryEventRelay', () => {
 								id: '1',
 								typeVersion: 1,
 								name: 'Jira',
-								type: 'n8n-nodes-base.jira',
+								type: 'aura-nodes-base.jira',
 								parameters: {},
 								position: [100, 200],
 							},
@@ -1432,7 +1432,7 @@ describe('TelemetryEventRelay', () => {
 			jest
 				.spyOn(TelemetryHelpers, 'getNodeTypeForName')
 				.mockImplementation(
-					() => ({ type: 'n8n-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
+					() => ({ type: 'aura-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
 				);
 
 			const event: RelayEventMap['workflow-post-execute'] = {
@@ -1456,10 +1456,10 @@ describe('TelemetryEventRelay', () => {
 					executionStatus: 'canceled',
 					sharing_role: 'owner',
 					error_message: 'Error message canceled',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					error_node_id: '1',
 					node_id: '1',
-					node_type: 'n8n-nodes-base.jira',
+					node_type: 'aura-nodes-base.jira',
 					node_graph_string: JSON.stringify(nodeGraph.nodeGraph),
 				}),
 			);
@@ -1472,7 +1472,7 @@ describe('TelemetryEventRelay', () => {
 					execution_mode: 'manual',
 					version_cli: N8N_VERSION,
 					error_message: 'Error message canceled',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					node_graph_string: JSON.stringify(nodeGraph.nodeGraph),
 					error_node_id: '1',
 				}),
@@ -1503,7 +1503,7 @@ describe('TelemetryEventRelay', () => {
 								id: '1',
 								typeVersion: 1,
 								name: 'Jira',
-								type: 'n8n-nodes-base.jira',
+								type: 'aura-nodes-base.jira',
 								parameters: {},
 								position: [100, 200],
 							},
@@ -1538,7 +1538,7 @@ describe('TelemetryEventRelay', () => {
 			jest
 				.spyOn(TelemetryHelpers, 'getNodeTypeForName')
 				.mockImplementation(
-					() => ({ type: 'n8n-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
+					() => ({ type: 'aura-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
 				);
 
 			const event: RelayEventMap['workflow-post-execute'] = {
@@ -1562,7 +1562,7 @@ describe('TelemetryEventRelay', () => {
 					executionStatus: 'error',
 					sharing_role: 'owner',
 					error_message: 'Error message',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					error_node_id: '1',
 					node_graph_string: JSON.stringify(nodeGraph.nodeGraph),
 				}),
@@ -1576,7 +1576,7 @@ describe('TelemetryEventRelay', () => {
 					execution_mode: 'manual',
 					version_cli: N8N_VERSION,
 					error_message: 'Error message',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					node_graph_string: JSON.stringify(nodeGraph.nodeGraph),
 					error_node_id: '1',
 				}),
@@ -1608,7 +1608,7 @@ describe('TelemetryEventRelay', () => {
 								id: '1',
 								typeVersion: 1,
 								name: 'Jira',
-								type: 'n8n-nodes-base.jira',
+								type: 'aura-nodes-base.jira',
 								parameters: {},
 								position: [100, 200],
 							},
@@ -1642,7 +1642,7 @@ describe('TelemetryEventRelay', () => {
 			jest
 				.spyOn(TelemetryHelpers, 'getNodeTypeForName')
 				.mockImplementation(
-					() => ({ type: 'n8n-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
+					() => ({ type: 'aura-nodes-base.jira', version: 1, name: 'Jira' }) as unknown as INode,
 				);
 
 			const event: RelayEventMap['workflow-post-execute'] = {
@@ -1670,10 +1670,10 @@ describe('TelemetryEventRelay', () => {
 					executionStatus: 'error',
 					sharing_role: 'sharee',
 					error_message: 'Error message',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					error_node_id: '1',
 					node_id: '1',
-					node_type: 'n8n-nodes-base.jira',
+					node_type: 'aura-nodes-base.jira',
 
 					is_managed: true,
 					credential_type: 'openAiApi',
@@ -1689,7 +1689,7 @@ describe('TelemetryEventRelay', () => {
 					execution_mode: 'manual',
 					version_cli: N8N_VERSION,
 					error_message: 'Error message',
-					error_node_type: 'n8n-nodes-base.jira',
+					error_node_type: 'aura-nodes-base.jira',
 					node_graph_string: JSON.stringify(nodeGraph.nodeGraph),
 					error_node_id: '1',
 				}),
@@ -1721,7 +1721,7 @@ describe('TelemetryEventRelay', () => {
 								id: '1',
 								typeVersion: 1,
 								name: 'OpenAI',
-								type: 'n8n-nodes-base.openAi',
+								type: 'aura-nodes-base.openAi',
 								parameters: {},
 								position: [100, 200],
 							},

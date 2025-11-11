@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { AuthRolesService, Role, RoleRepository, Scope, ScopeRepository } from '@n8n/db';
-import { ALL_SCOPES, ALL_ROLES, scopeInformation } from '@n8n/permissions';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import { AuthRolesService, Role, RoleRepository, Scope, ScopeRepository } from '@aura/db';
+import { ALL_SCOPES, ALL_ROLES, scopeInformation } from '@aura/permissions';
 
 describe('AuthRolesService', () => {
 	const logger = mockInstance(Logger);

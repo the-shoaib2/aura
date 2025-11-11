@@ -1,4 +1,4 @@
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 
 import type { IEmail } from '@utils/sendAndWait/interfaces';
 

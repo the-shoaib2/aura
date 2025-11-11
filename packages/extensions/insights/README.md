@@ -1,1 +1,1 @@
-# @n8n/n8n-extension-insights
+# @aura/aura-extension-insights

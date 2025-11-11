@@ -1,6 +1,6 @@
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useUIStore } from './ui.store';
 import { useUsersStore } from '@/features/settings/users/users.store';

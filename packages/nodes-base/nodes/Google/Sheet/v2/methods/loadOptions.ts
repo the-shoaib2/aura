@@ -1,5 +1,5 @@
-import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { GoogleSheet } from '../helpers/GoogleSheet';
 import type { ResourceLocator } from '../helpers/GoogleSheets.types';

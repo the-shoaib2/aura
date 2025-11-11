@@ -2,7 +2,7 @@ import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 import { CompletionContext } from '@codemirror/autocomplete';
 import { EditorState } from '@codemirror/state';
-import { n8nLang } from '@/features/shared/editors/plugins/codemirror/n8nLang';
+import { auraLang } from '@/features/shared/editors/plugins/codemirror/auraLang';
 import { useItemFieldCompletions } from '@/features/shared/editors/components/CodeNodeEditor/completions/itemField.completions';
 
 describe('itemFieldCompletions', () => {
@@ -19,7 +19,7 @@ describe('itemFieldCompletions', () => {
 			const state = EditorState.create({
 				doc: doc.replace('|', ''),
 				selection: { anchor: cursorPosition },
-				extensions: [n8nLang()],
+				extensions: [auraLang()],
 			});
 			context = new CompletionContext(state, cursorPosition, true);
 
@@ -40,7 +40,7 @@ describe('itemFieldCompletions', () => {
 			const state = EditorState.create({
 				doc: doc.replace('|', ''),
 				selection: { anchor: cursorPosition },
-				extensions: [n8nLang()],
+				extensions: [auraLang()],
 			});
 			context = new CompletionContext(state, cursorPosition, true);
 
@@ -58,7 +58,7 @@ describe('itemFieldCompletions', () => {
 			const state = EditorState.create({
 				doc: doc.replace('|', ''),
 				selection: { anchor: cursorPosition },
-				extensions: [n8nLang()],
+				extensions: [auraLang()],
 			});
 			context = new CompletionContext(state, cursorPosition, true);
 
@@ -75,7 +75,7 @@ describe('itemFieldCompletions', () => {
 			const state = EditorState.create({
 				doc: doc.replace('|', ''),
 				selection: { anchor: cursorPosition },
-				extensions: [n8nLang()],
+				extensions: [auraLang()],
 			});
 			context = new CompletionContext(state, cursorPosition, true);
 
@@ -93,7 +93,7 @@ describe('itemFieldCompletions', () => {
 			const state = EditorState.create({
 				doc: doc.replace('|', ''),
 				selection: { anchor: cursorPosition },
-				extensions: [n8nLang()],
+				extensions: [auraLang()],
 			});
 			context = new CompletionContext(state, cursorPosition, true);
 

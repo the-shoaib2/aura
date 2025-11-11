@@ -3,10 +3,10 @@ import DraggableTarget from '@/app/components/DraggableTarget.vue';
 import InlineExpressionEditorOutput from '../InlineExpressionEditor/InlineExpressionEditorOutput.vue';
 import { useExpressionEditor } from '../../composables/useExpressionEditor';
 import { codeNodeEditorEventBus } from '@/app/event-bus';
-import { n8nCompletionSources } from '../../plugins/codemirror/completions/addCompletions';
+import { auraCompletionSources } from '../../plugins/codemirror/completions/addCompletions';
 import { dropInExpressionEditor, mappingDropCursor } from '../../plugins/codemirror/dragAndDrop';
 import { editorKeymap } from '../../plugins/codemirror/keymap';
-import { n8nAutocompletion } from '../../plugins/codemirror/n8nLang';
+import { auraAutocompletion } from '../../plugins/codemirror/auraLang';
 import { history } from '@codemirror/commands';
 import { bracketMatching, foldGutter, indentOnInput, LanguageSupport } from '@codemirror/language';
 import { Prec, type Line } from '@codemirror/state';
@@ -29,7 +29,7 @@ import {
 	SQLite,
 	StandardSQL,
 	keywordCompletionSource,
-} from '@n8n/codemirror-lang-sql';
+} from '@aura/codemirror-lang-sql';
 import { onClickOutside } from '@vueuse/core';
 import { computed, onBeforeUnmount, onMounted, ref, toRaw, watch } from 'vue';
 import { codeEditorTheme } from '../CodeNodeEditor/theme';
@@ -85,7 +85,7 @@ const extensions = computed(() => {
 			dialect.sqlLanguage.data.of({
 				autocomplete: keywordCompletionSource(dialect, true),
 			}),
-			n8nCompletionSources().map((source) => dialect.language.data.of(source)),
+			auraCompletionSources().map((source) => dialect.language.data.of(source)),
 		]);
 	}
 
@@ -106,7 +106,7 @@ const extensions = computed(() => {
 		return baseExtensions.concat([
 			history(),
 			Prec.highest(keymap.of(editorKeymap)),
-			n8nAutocompletion(),
+			auraAutocompletion(),
 			indentOnInput(),
 			highlightActiveLine(),
 			highlightActiveLineGutter(),

@@ -4,11 +4,11 @@ import type {
 	IUserManagementSettings,
 	IVersionNotificationSettings,
 	Role,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import type { ILogInStatus } from '@/features/settings/users/users.types';
 import type { IUsedCredential } from '@/features/credentials/credentials.types';
-import type { Scope } from '@n8n/permissions';
-import type { NodeCreatorTag } from '@n8n/design-system';
+import type { Scope } from '@aura/permissions';
+import type { NodeCreatorTag } from '@aura/design-system';
 import type {
 	GenericValue,
 	IConnections,
@@ -32,16 +32,16 @@ import type {
 	ITaskData,
 	ISourceData,
 	PublicInstalledPackage,
-} from 'n8n-workflow';
-import type { Version } from '@n8n/rest-api-client/api/versions';
-import type { Cloud, InstanceUsage } from '@n8n/rest-api-client/api/cloudPlans';
+} from 'workflow';
+import type { Version } from '@aura/rest-api-client/api/versions';
+import type { Cloud, InstanceUsage } from '@aura/rest-api-client/api/cloudPlans';
 import type {
 	WorkflowMetadata,
 	WorkflowData,
 	WorkflowDataCreate,
 	WorkflowDataUpdate,
-} from '@n8n/rest-api-client/api/workflows';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
+} from '@aura/rest-api-client/api/workflows';
+import type { ITag } from '@aura/rest-api-client/api/tags';
 
 import type {
 	AI_NODE_CREATOR_VIEW,
@@ -55,14 +55,14 @@ import type { CREDENTIAL_EDIT_MODAL_KEY } from '@/features/credentials/credentia
 import type { BulkCommand, Undoable } from '@/app/models/history';
 
 import type { ProjectSharingData } from '@/features/collaboration/projects/projects.types';
-import type { IconName } from '@n8n/design-system/src/components/N8nIcon/icons';
+import type { IconName } from '@aura/design-system/src/components/N8nIcon/icons';
 import type {
 	BaseFolderItem,
 	FolderListItem,
 	ResourceParentFolder,
 } from '@/features/core/folders/folders.types';
 
-export * from '@n8n/design-system/types';
+export * from '@aura/design-system/types';
 
 declare global {
 	interface Window {
@@ -821,7 +821,7 @@ export type CloudUpdateLinkSourceType =
 	| 'custom-data-filter'
 	| 'workflow_sharing'
 	| 'credential_sharing'
-	| 'settings-n8n-api'
+	| 'settings-aura-api'
 	| 'audit-logs'
 	| 'ldap'
 	| 'log-streaming'

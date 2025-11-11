@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CredentialIcon from '@/features/credentials/components/CredentialIcon.vue';
-import { type ChatModelDto, PROVIDER_CREDENTIAL_TYPE_MAP } from '@n8n/api-types';
-import { N8nAvatar, N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { type ChatModelDto, PROVIDER_CREDENTIAL_TYPE_MAP } from '@aura/api-types';
+import { N8nAvatar, N8nIcon, N8nTooltip } from '@aura/design-system';
 
 defineProps<{
 	agent: ChatModelDto | null;
@@ -19,7 +19,7 @@ defineProps<{
 			:size="size === 'lg' ? 'xxlarge' : size === 'sm' ? 'large' : 'xlarge'"
 		/>
 		<N8nAvatar
-			v-else-if="agent.model.provider === 'custom-agent' || agent.model.provider === 'n8n'"
+			v-else-if="agent.model.provider === 'custom-agent' || agent.model.provider === 'aura'"
 			:first-name="agent.name"
 			:size="size === 'lg' ? 'medium' : size === 'sm' ? 'xxsmall' : 'xsmall'"
 		/>

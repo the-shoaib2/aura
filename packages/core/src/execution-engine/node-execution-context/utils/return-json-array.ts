@@ -1,7 +1,7 @@
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'workflow';
 
 /**
- * Takes generic input data and brings it into the json format n8n uses.
+ * Takes generic input data and brings it into the json format aura uses.
  *
  * @param {(IDataObject | IDataObject[])} jsonData
  */

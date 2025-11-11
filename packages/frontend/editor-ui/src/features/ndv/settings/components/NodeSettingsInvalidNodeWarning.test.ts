@@ -8,7 +8,7 @@ import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.s
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import type { CommunityNodeType } from '@n8n/api-types';
+import type { CommunityNodeType } from '@aura/api-types';
 import type { TestingPinia } from '@pinia/testing';
 import { createTestingPinia } from '@pinia/testing';
 import { waitFor } from '@testing-library/vue';
@@ -57,7 +57,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 	describe('Owner permissions', () => {
 		it('should show install button when user is owner', async () => {
 			mockUseUsersStore.isInstanceOwner = true;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 			const { getByTestId } = renderComponent(NodeSettingsInvalidNodeWarning, {
 				props: {
 					node,
@@ -70,7 +70,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 
 		it('should show ContactAdministratorToInstall when user is not owner', async () => {
 			mockUseUsersStore.isInstanceOwner = false;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 			const { getByText } = renderComponent(NodeSettingsInvalidNodeWarning, {
 				props: {
 					node,
@@ -91,7 +91,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 				({
 					isOfficialNode: true,
 				}) as CommunityNodeType;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 			const mockOpenNodeCreatorWithNode = vi.fn();
 			mockUseNodeCreatorStore.openNodeCreatorWithNode = mockOpenNodeCreatorWithNode;
 
@@ -114,7 +114,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 				({
 					isOfficialNode: false,
 				}) as CommunityNodeType;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 
 			const { getByTestId } = renderComponent(NodeSettingsInvalidNodeWarning, {
 				props: {
@@ -127,7 +127,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 			viewDetailsButton.click();
 
 			expect(mockWindowOpen).toHaveBeenCalledWith(
-				'https://www.npmjs.com/package/n8n-nodes-test',
+				'https://www.npmjs.com/package/aura-nodes-test',
 				'_blank',
 			);
 		});
@@ -140,7 +140,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 				({
 					isOfficialNode: true,
 				}) as CommunityNodeType;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 			mockInstallNode.mockResolvedValue({ success: true });
 
 			const { getByTestId } = renderComponent(NodeSettingsInvalidNodeWarning, {
@@ -155,8 +155,8 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 
 			expect(mockInstallNode).toHaveBeenCalledWith({
 				type: 'verified',
-				packageName: 'n8n-nodes-test',
-				nodeType: 'n8n-nodes-test.testNode',
+				packageName: 'aura-nodes-test',
+				nodeType: 'aura-nodes-test.testNode',
 			});
 		});
 
@@ -166,7 +166,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 				({
 					isOfficialNode: true,
 				}) as CommunityNodeType;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test-preview.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test-preview.testNode' });
 			mockInstallNode.mockResolvedValue({ success: true });
 
 			const { getByTestId } = renderComponent(NodeSettingsInvalidNodeWarning, {
@@ -181,8 +181,8 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 
 			expect(mockInstallNode).toHaveBeenCalledWith({
 				type: 'verified',
-				packageName: 'n8n-nodes-test',
-				nodeType: 'n8n-nodes-test-preview.testNode',
+				packageName: 'aura-nodes-test',
+				nodeType: 'aura-nodes-test-preview.testNode',
 			});
 		});
 
@@ -192,7 +192,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 				({
 					isOfficialNode: false,
 				}) as CommunityNodeType;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 			const mockOpenModalWithData = vi.fn();
 			mockUseUIStore.openModalWithData = mockOpenModalWithData;
 
@@ -209,10 +209,10 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 			expect(mockOpenModalWithData).toHaveBeenCalledWith({
 				name: 'communityPackageInstall',
 				data: {
-					packageName: 'n8n-nodes-test',
+					packageName: 'aura-nodes-test',
 					disableInput: true,
 					hideSuggestion: true,
-					nodeType: 'n8n-nodes-test.testNode',
+					nodeType: 'aura-nodes-test.testNode',
 				},
 			});
 		});
@@ -225,7 +225,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 				({
 					isOfficialNode: true,
 				}) as CommunityNodeType;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 			const mockUnsetActiveNodeName = vi.fn();
 			mockUseNDVStore.unsetActiveNodeName = mockUnsetActiveNodeName;
 
@@ -237,7 +237,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 			});
 
 			mockUseNodeTypesStore.nodeTypes = {
-				'n8n-nodes-test.testNode': {
+				'aura-nodes-test.testNode': {
 					description: {
 						name: 'Test Node',
 					},
@@ -257,7 +257,7 @@ describe('NodeSettingsInvalidNodeWarning', () => {
 				({
 					isOfficialNode: true,
 				}) as CommunityNodeType;
-			const node = mockNode({ name: 'Test Node', type: 'n8n-nodes-test.testNode' });
+			const node = mockNode({ name: 'Test Node', type: 'aura-nodes-test.testNode' });
 			const mockUnsetActiveNodeName = vi.fn();
 			mockUseNDVStore.unsetActiveNodeName = mockUnsetActiveNodeName;
 

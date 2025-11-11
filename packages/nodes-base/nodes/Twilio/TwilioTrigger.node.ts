@@ -5,7 +5,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookResponseData,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { twilioTriggerApiRequest } from './GenericFunctions';
 
@@ -121,7 +121,7 @@ export class TwilioTrigger implements INodeType {
 				const allowedUpdates = this.getNodeParameter('updates') as string[];
 
 				const bodySink = {
-					Description: 'Sink created by n8n Twilio Trigger Node.',
+					Description: 'Sink created by aura Twilio Trigger Node.',
 					SinkConfiguration: `{	"destination": "${webhookUrl}",	"method": "POST"	}`,
 					SinkType: 'webhook',
 				};
@@ -131,7 +131,7 @@ export class TwilioTrigger implements INodeType {
 				workflowData.sinkId = sink.sid;
 
 				const body = {
-					Description: 'Subscription created by n8n Twilio Trigger Node.',
+					Description: 'Subscription created by aura Twilio Trigger Node.',
 					Types: `{ "type": "${allowedUpdates[0]}" }`,
 					SinkSid: sink.sid,
 				};

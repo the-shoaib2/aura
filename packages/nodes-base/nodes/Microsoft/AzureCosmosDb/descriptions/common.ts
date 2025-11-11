@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { HeaderConstants } from '../helpers/constants';
 import { untilContainerSelected } from '../helpers/utils';

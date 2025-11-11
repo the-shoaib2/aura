@@ -1,4 +1,4 @@
-@use '@n8n/design-system/css/mixins' as mixins;
+@use '@aura/design-system/css/mixins' as mixins;
 
 /**
  * Resizer
@@ -54,7 +54,7 @@
 		fill: var(--color--foreground--shade-1);
 	}
 
-	.minimap-node-n8n-nodes-base-stickyNote {
+	.minimap-node-aura-nodes-base-stickyNote {
 		fill: var(--color--foreground--shade-1);
 		opacity: 0.2;
 	}

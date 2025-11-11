@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const imageOperations: INodeProperties[] = [
 	{
@@ -49,7 +49,7 @@ export const imageFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'The template ID you want to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The template ID you want to use. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Additional Fields',
@@ -134,7 +134,7 @@ export const imageFields: INodeProperties[] = [
 						},
 						default: '',
 						description:
-							'The name of the item you want to change. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'The name of the item you want to change. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Text',

@@ -1,6 +1,6 @@
-import { ListDataTableQueryDto } from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Get, GlobalScope, Query, RestController } from '@n8n/decorators';
+import { ListDataTableQueryDto } from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
+import { Get, GlobalScope, Query, RestController } from '@aura/decorators';
 
 import { DataTableAggregateService } from './data-table-aggregate.service';
 import { DataTableService } from './data-table.service';

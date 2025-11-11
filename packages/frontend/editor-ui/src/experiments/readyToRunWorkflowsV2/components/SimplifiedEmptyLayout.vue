@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { N8nCard, N8nHeading, N8nText, N8nIcon } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nCard, N8nHeading, N8nText, N8nIcon } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 import { useProjectPages } from '@/features/collaboration/projects/composables/useProjectPages';
 import { useToast } from '@/app/composables/useToast';
 import { useReadyToRunWorkflowsV2Store } from '../stores/readyToRunWorkflowsV2.store';
-import type { IUser } from 'n8n-workflow';
+import type { IUser } from 'workflow';
 
 const route = useRoute();
 const i18n = useI18n();

@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.seaTable",
+	"node": "aura-nodes-base.seaTable",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/seatable/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/seatable/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.seatable/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.seatable/"
 			}
 		]
 	}

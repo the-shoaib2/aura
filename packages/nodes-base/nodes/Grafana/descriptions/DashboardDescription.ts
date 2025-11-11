@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const dashboardOperations: INodeProperties[] = [
 	{
@@ -81,7 +81,7 @@ export const dashboardFields: INodeProperties[] = [
 				type: 'options',
 				default: '',
 				description:
-					'Folder to create the dashboard in - if the folder is unspecified, the dashboard will be saved to the General folder. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Folder to create the dashboard in - if the folder is unspecified, the dashboard will be saved to the General folder. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				typeOptions: {
 					loadOptionsMethod: 'getFolders',
 				},
@@ -219,7 +219,7 @@ export const dashboardFields: INodeProperties[] = [
 				type: 'options',
 				default: '',
 				description:
-					'Folder to move the dashboard into - if the folder is unspecified, the dashboard will be saved to the General folder. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Folder to move the dashboard into - if the folder is unspecified, the dashboard will be saved to the General folder. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				typeOptions: {
 					loadOptionsMethod: 'getFolders',
 				},

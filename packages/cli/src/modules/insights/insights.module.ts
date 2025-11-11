@@ -1,7 +1,7 @@
-import type { ModuleInterface } from '@n8n/decorators';
-import { BackendModule, OnShutdown } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
+import type { ModuleInterface } from '@aura/decorators';
+import { BackendModule, OnShutdown } from '@aura/decorators';
+import { Container } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
 
 @BackendModule({ name: 'insights' })
 export class InsightsModule implements ModuleInterface {

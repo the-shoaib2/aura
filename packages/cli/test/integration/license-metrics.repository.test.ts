@@ -1,6 +1,6 @@
-import { createManyWorkflows, testDb } from '@n8n/backend-test-utils';
-import { StatisticsNames, LicenseMetricsRepository, WorkflowStatisticsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createManyWorkflows, testDb } from '@aura/backend-test-utils';
+import { StatisticsNames, LicenseMetricsRepository, WorkflowStatisticsRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { createManyCredentials } from './shared/db/credentials';
 import { createAdmin, createMember, createOwner, createUser } from './shared/db/users';

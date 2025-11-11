@@ -1,6 +1,6 @@
 import { mockDeep } from 'jest-mock-extended';
-import type { IDataObject, INode, IPollFunctions } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IDataObject, INode, IPollFunctions } from 'workflow';
+import { NodeApiError } from 'workflow';
 import { getPollResponse } from '../../trigger/GenericFunctions';
 
 jest.mock('../../v2/helpers/utils', () => ({
@@ -30,7 +30,7 @@ describe('Microsoft Outlook Trigger GenericFunctions', () => {
 		mockNode = {
 			id: 'test-node',
 			name: 'Test Outlook Trigger Node',
-			type: 'n8n-nodes-base.microsoftOutlookTrigger',
+			type: 'aura-nodes-base.microsoftOutlookTrigger',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},

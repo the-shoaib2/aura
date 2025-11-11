@@ -1,5 +1,5 @@
 import type { DateTime } from 'luxon';
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'workflow';
 import type * as oracleDBTypes from 'oracledb';
 
 export type QueryMode = 'single' | 'transaction' | 'independently';
@@ -59,7 +59,7 @@ export type OracleDBNodeOptions = {
 	maxRows?: number;
 	prefetchRows?: number;
 
-	// n8n options
+	// aura options
 	largeNumbersOutputAsString?: boolean; // bigInt
 	outputColumns?: string[];
 	stmtBatching?: QueryMode;

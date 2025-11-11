@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-1340, 1160],
 			"id": "b406074d-3ceb-4e2d-9b80-2edfc28e474f",
@@ -13,7 +13,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, -240],
 			"id": "1efde9e7-42ef-4768-b839-bf12db612238",
@@ -23,7 +23,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 1) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, -240],
 			"id": "23496ea1-efc9-4ed0-b1b2-b6cce126e85f",
@@ -37,7 +37,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 2) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, -40],
 			"id": "4e26b167-7c8d-4429-b512-5f740d999dd5",
@@ -51,7 +51,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, -40],
 			"id": "00349f2d-158f-428e-9d2a-120abc84b054",
@@ -61,7 +61,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 160],
 			"id": "fe52c115-b4a0-4cd7-a674-3e50c67b7a8b",
@@ -71,7 +71,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 3) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 160],
 			"id": "481422a1-2f5a-4779-98d5-a79b797a49c7",
@@ -85,7 +85,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 360],
 			"id": "85835f42-5168-42c7-88c4-222dc961e0f7",
@@ -95,7 +95,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 4) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 360],
 			"id": "2e7e4fe3-0b86-4aba-9f0d-d5c27e50d9ff",
@@ -109,7 +109,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 560],
 			"id": "325c34f5-57b9-41be-85f8-2baf9e6a635a",
@@ -119,7 +119,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 1) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 560],
 			"id": "7cfe8e6d-d10e-469e-9437-8942e67a9f8e",
@@ -133,7 +133,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 2) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 760],
 			"id": "266e33fa-43cd-47fb-9ab6-4b97cb9c4e90",
@@ -147,7 +147,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 760],
 			"id": "cf07ee5d-4324-490f-a6f8-bdce7bff5e61",
@@ -157,7 +157,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 960],
 			"id": "048c2afe-472d-4a95-9960-340577fa3873",
@@ -167,7 +167,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 3) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 960],
 			"id": "ea5e6a55-215b-44c5-9b8d-8fab9f37be8a",
@@ -181,7 +181,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 1160],
 			"id": "a5d9252a-8859-4faf-b237-2cbdef8a90d9",
@@ -191,7 +191,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 4) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 1160],
 			"id": "500109e7-b67f-4b84-a894-85967f3ef05b",
@@ -205,7 +205,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 1360],
 			"id": "8f35bd4a-acff-4349-a94d-fe5c3c09ca2e",
@@ -215,7 +215,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 1) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 1360],
 			"id": "b56d9fdf-6069-4a05-a160-013675bcbe26",
@@ -229,7 +229,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 1560],
 			"id": "acb0baee-416b-4688-8475-47a80a02c2e3",
@@ -239,7 +239,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 2) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 1560],
 			"id": "102f6929-9979-4aea-ba80-4f723a33e93b",
@@ -253,7 +253,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 1760],
 			"id": "92a72005-4d11-46ca-a750-3245b7857af5",
@@ -263,7 +263,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 1960],
 			"id": "400bc501-d027-4f9d-b5f1-e51eec20258e",
@@ -273,7 +273,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 2) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 1960],
 			"id": "92c4fc2a-5fff-4de9-afd6-d6fd9558718a",
@@ -287,7 +287,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 1) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 1760],
 			"id": "5bad0503-34e6-44fd-b661-6edfa2e1140f",
@@ -301,7 +301,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 2160],
 			"id": "20544912-6307-4de6-956b-c46ad0d8284b",
@@ -311,7 +311,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 2360],
 			"id": "99cbdd44-78e5-4339-9597-bc14a5a93706",
@@ -321,7 +321,7 @@
 			"parameters": {
 				"jsCode": "$execution.customData.set('count', '1')\nreturn [{}]"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1120, 2560],
 			"id": "4a653394-dca7-4777-8257-4c397247d2f9",
@@ -331,7 +331,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 1) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 2160],
 			"id": "a753e381-1d69-46fd-8bd7-0899a3b6c12e",
@@ -344,7 +344,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 2) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 2360],
 			"id": "556ee460-b807-4e82-95ea-135903ed1457",
@@ -357,7 +357,7 @@
 			"parameters": {
 				"jsCode": "const count = +$execution.customData.get('count')\n$execution.customData.set('count', `${count + 1}`)\n\nif (count === 3) {\n  return { success: true, count }\n}\n\nthrow new Error('simulated error, count = ' + count)"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-900, 2560],
 			"id": "b143b146-61c7-4762-ada5-6b5f2681cd58",

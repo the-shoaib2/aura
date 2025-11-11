@@ -5,8 +5,8 @@ import {
 	randomCredentialPayload,
 	mockInstance,
 	testDb,
-} from '@n8n/backend-test-utils';
-import type { Project, User, Role } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { Project, User, Role } from '@aura/db';
 
 import { UserManagementMailer } from '@/user-management/email';
 
@@ -193,7 +193,7 @@ describe('Custom Role Functionality Tests', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -267,7 +267,7 @@ describe('Custom Role Functionality Tests', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -343,7 +343,7 @@ describe('Custom Role Functionality Tests', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -422,7 +422,7 @@ describe('Custom Role Functionality Tests', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -499,7 +499,7 @@ describe('Custom Role Functionality Tests', () => {
 
 			// Test that delete-only role cannot actually delete due to system constraints
 			// Delete-only roles without read permissions cannot delete workflows
-			// because n8n requires reading the workflow to validate deletion
+			// because aura requires reading the workflow to validate deletion
 			await member3Agent.delete(`/workflows/${workflow.id}`).expect(400);
 
 			// Skip creation test due to system constraints with delete-only roles
@@ -520,7 +520,7 @@ describe('Custom Role Functionality Tests', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -568,7 +568,7 @@ describe('Custom Role Functionality Tests', () => {
 						id: 'node-start',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -585,7 +585,7 @@ describe('Custom Role Functionality Tests', () => {
 							},
 						},
 						name: 'Set',
-						type: 'n8n-nodes-base.set',
+						type: 'aura-nodes-base.set',
 						typeVersion: 1,
 						position: [460, 300],
 					},
@@ -652,7 +652,7 @@ describe('Custom Role Functionality Tests', () => {
 							id: 'uuid-1234',
 							parameters: {},
 							name: 'Start',
-							type: 'n8n-nodes-base.start',
+							type: 'aura-nodes-base.start',
 							typeVersion: 1,
 							position: [240, 300],
 						},
@@ -716,7 +716,7 @@ describe('Custom Role Functionality Tests', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},

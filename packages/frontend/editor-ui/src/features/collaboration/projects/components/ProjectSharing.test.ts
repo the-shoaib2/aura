@@ -4,7 +4,7 @@ import { createComponentRenderer } from '@/__tests__/render';
 import { getDropdownItems, getSelectedDropdownValue } from '@/__tests__/utils';
 import { createProjectListItem, createProjectSharingData } from '../__tests__/utils';
 import ProjectSharing from './ProjectSharing.vue';
-import type { AllRolesMap } from '@n8n/permissions';
+import type { AllRolesMap } from '@aura/permissions';
 
 const renderComponent = createComponentRenderer(ProjectSharing);
 

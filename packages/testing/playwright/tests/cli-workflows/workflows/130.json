@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "d1be5d3e-3071-482a-a8d0-6cd3e1784efd"
@@ -21,7 +21,7 @@
 				"additionalFields": {}
 			},
 			"name": "Wekan",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [490, 280],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"boardId": "={{$node[\"Wekan\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan1",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [650, 280],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"limit": 1
 			},
 			"name": "Wekan2",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [800, 280],
 			"credentials": {
@@ -76,7 +76,7 @@
 				"boardId": "={{$node[\"Wekan\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan3",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [3500, 260],
 			"credentials": {
@@ -94,7 +94,7 @@
 				"title": "=List{{Date.now()}}"
 			},
 			"name": "Wekan4",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [950, 400],
 			"credentials": {
@@ -113,7 +113,7 @@
 				"listId": "={{$node[\"Wekan4\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan5",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [1100, 400],
 			"credentials": {
@@ -132,7 +132,7 @@
 				"limit": 1
 			},
 			"name": "Wekan6",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [1250, 400],
 			"credentials": {
@@ -151,7 +151,7 @@
 				"listId": "={{$node[\"Wekan4\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan7",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [3350, 400],
 			"credentials": {
@@ -172,7 +172,7 @@
 				"additionalFields": {}
 			},
 			"name": "Wekan8",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [1400, 500],
 			"credentials": {
@@ -194,7 +194,7 @@
 				}
 			},
 			"name": "Wekan9",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [1550, 500],
 			"credentials": {
@@ -213,7 +213,7 @@
 				"cardId": "={{$node[\"Wekan8\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan10",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [1700, 500],
 			"credentials": {
@@ -233,7 +233,7 @@
 				"limit": 1
 			},
 			"name": "Wekan11",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [1850, 500],
 			"credentials": {
@@ -252,7 +252,7 @@
 				"cardId": "={{$node[\"Wekan8\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan12",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [3220, 500],
 			"credentials": {
@@ -273,7 +273,7 @@
 				"comment": "=CardComment{{Date.now()}}"
 			},
 			"name": "Wekan13",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2000, 650],
 			"credentials": {
@@ -294,7 +294,7 @@
 				"commentId": "={{$node[\"Wekan13\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan14",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2150, 650],
 			"credentials": {
@@ -315,7 +315,7 @@
 				"limit": 1
 			},
 			"name": "Wekan15",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2300, 650],
 			"credentials": {
@@ -336,7 +336,7 @@
 				"commentId": "={{$node[\"Wekan13\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan16",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2450, 650],
 			"credentials": {
@@ -358,7 +358,7 @@
 				"items": ["=ChecklistItem{{Date.now()}}"]
 			},
 			"name": "Wekan17",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2000, 350],
 			"credentials": {
@@ -379,7 +379,7 @@
 				"checklistId": "={{$node[\"Wekan17\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan18",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2150, 350],
 			"credentials": {
@@ -399,7 +399,7 @@
 				"limit": 1
 			},
 			"name": "Wekan19",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2300, 350],
 			"credentials": {
@@ -420,7 +420,7 @@
 				"checklistId": "={{$node[\"Wekan17\"].json[\"_id\"]}}"
 			},
 			"name": "Wekan20",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2900, 350],
 			"credentials": {
@@ -442,7 +442,7 @@
 				"checklistItemId": "={{$node[\"Wekan18\"].json[\"items\"][0][\"_id\"]}}"
 			},
 			"name": "Wekan21",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2450, 450],
 			"credentials": {
@@ -467,7 +467,7 @@
 				}
 			},
 			"name": "Wekan22",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2600, 450],
 			"credentials": {
@@ -489,7 +489,7 @@
 				"checklistItemId": "={{$node[\"Wekan18\"].json[\"items\"][0][\"_id\"]}}"
 			},
 			"name": "Wekan23",
-			"type": "n8n-nodes-base.wekan",
+			"type": "aura-nodes-base.wekan",
 			"typeVersion": 1,
 			"position": [2750, 450],
 			"credentials": {
@@ -505,7 +505,7 @@
 				"mode": "wait"
 			},
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [3050, 500],
 			"id": "a72e478c-ae36-4775-9568-494f34ea4edc"

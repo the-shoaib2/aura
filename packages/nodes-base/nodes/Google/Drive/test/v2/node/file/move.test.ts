@@ -1,4 +1,4 @@
-import type { IHttpRequestMethods } from 'n8n-workflow';
+import type { IHttpRequestMethods } from 'workflow';
 
 import * as move from '../../../../v2/actions/file/move.operation';
 import * as transport from '../../../../v2/transport';

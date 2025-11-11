@@ -1,8 +1,8 @@
-import type { ProcessedData } from '@n8n/db';
-import { ProcessedDataRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { ProcessedData } from '@aura/db';
+import { ProcessedDataRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { createHash } from 'crypto';
-import { tryToParseDateTime } from 'n8n-workflow';
+import { tryToParseDateTime } from 'workflow';
 import type {
 	IProcessedDataEntries,
 	IProcessedDataLatest,
@@ -13,7 +13,7 @@ import type {
 	DeduplicationScope,
 	DeduplicationItemTypes,
 	DeduplicationMode,
-} from 'n8n-workflow';
+} from 'workflow';
 import * as assert from 'node:assert/strict';
 
 import { DeduplicationError } from '@/errors/deduplication.error';

@@ -1,4 +1,4 @@
-import type { WorkflowDataCreate } from '@n8n/rest-api-client';
+import type { WorkflowDataCreate } from '@aura/rest-api-client';
 
 export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 	name: 'AI Agent workflow',
@@ -9,7 +9,7 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 				url: 'https://www.theverge.com/rss/index.xml',
 				options: {},
 			},
-			type: 'n8n-nodes-base.rssFeedReadTool',
+			type: 'aura-nodes-base.rssFeedReadTool',
 			typeVersion: 1.2,
 			position: [288, 160],
 			id: '6160830b-4f20-437c-b1a2-586bffe62d66',
@@ -21,7 +21,7 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 				url: '=https://feeds.bbci.co.uk/news/world/rss.xml',
 				options: {},
 			},
-			type: 'n8n-nodes-base.rssFeedReadTool',
+			type: 'aura-nodes-base.rssFeedReadTool',
 			typeVersion: 1.2,
 			position: [416, 160],
 			id: '4f8ae14c-8c6a-4cf8-b51b-99af6bd23ed1',
@@ -36,14 +36,14 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 				},
 				options: {},
 			},
-			type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+			type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 			typeVersion: 1.2,
 			position: [32, 160],
 			id: '95986360-8ca1-4b8a-af7e-f101e89e3654',
 			name: 'OpenAI Model',
 			notesInFlow: true,
 			credentials: {},
-			notes: 'Free n8n credits ',
+			notes: 'Free aura credits ',
 		},
 		{
 			parameters: {
@@ -51,7 +51,7 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 				text: '=Summarize world news and tech news from the last 24 hours. \nSkip your comments. \nThe titles should be "World news:" and "Tech news:" \nLimit to 10 bullet points. \nToday is {{ $today }}',
 				options: {},
 			},
-			type: '@n8n/n8n-nodes-langchain.agent',
+			type: '@aura/aura-nodes-langchain.agent',
 			typeVersion: 2.2,
 			position: [32, -64],
 			id: 'd36975bc-d51f-472f-a51f-f6c745b29a8d',
@@ -67,7 +67,7 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 				width: 352,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-832, -128],
 			id: '13abc1af-da4a-427d-8cc4-e260dff43307',
@@ -76,12 +76,12 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 		{
 			parameters: {
 				content:
-					'[![Learn to use an AI Agent in your workflow](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/thumb_2e91cdcea1.png)](https://www.youtube.com/watch?v=cMyOkQ4N-5M "Watch on YouTube")\n',
+					'[![Learn to use an AI Agent in your workflow](https://auraiostorageaccount.blob.core.windows.net/auraio-strapi-blobs-prod/assets/thumb_2e91cdcea1.png)](https://www.youtube.com/watch?v=cMyOkQ4N-5M "Watch on YouTube")\n',
 				height: 208,
 				width: 352,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-832, 160],
 			id: 'e0e15104-1954-43b9-b748-0ff8441f6aeb',
@@ -101,7 +101,7 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 				},
 				options: {},
 			},
-			type: 'n8n-nodes-base.set',
+			type: 'aura-nodes-base.set',
 			typeVersion: 3.4,
 			position: [464, -64],
 			id: 'bef94b0a-b2aa-42f6-85bb-2e23f530d799',
@@ -111,7 +111,7 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 		},
 		{
 			parameters: {},
-			type: 'n8n-nodes-base.manualTrigger',
+			type: 'aura-nodes-base.manualTrigger',
 			typeVersion: 1,
 			position: [-256, -64],
 			id: '55cb3e43-b73c-48cb-b420-dd618de68a58',
@@ -124,7 +124,7 @@ export const READY_TO_RUN_WORKFLOW_V4: WorkflowDataCreate = {
 				message: '={{ $json.output }}',
 				options: {},
 			},
-			type: 'n8n-nodes-base.gmail',
+			type: 'aura-nodes-base.gmail',
 			typeVersion: 2.1,
 			position: [768, -64],
 			id: 'e74f8dac-d766-4f4d-91f3-36604a2d4e7a',

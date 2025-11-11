@@ -4,11 +4,11 @@ import {
 	createWorkflow,
 	testDb,
 	testModules,
-} from '@n8n/backend-test-utils';
-import type { Project, WorkflowEntity, IWorkflowDb, SharedWorkflowRepository } from '@n8n/db';
-import type { WorkflowExecuteAfterContext } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-import { In } from '@n8n/typeorm';
+} from '@aura/backend-test-utils';
+import type { Project, WorkflowEntity, IWorkflowDb, SharedWorkflowRepository } from '@aura/db';
+import type { WorkflowExecuteAfterContext } from '@aura/decorators';
+import { Container } from '@aura/di';
+import { In } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
 import { DateTime } from 'luxon';
 import {
@@ -16,7 +16,7 @@ import {
 	type ExecutionStatus,
 	type IRun,
 	type WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { TypeUnit } from '@/modules/insights/database/entities/insights-shared';
 import { InsightsMetadataRepository } from '@/modules/insights/database/repositories/insights-metadata.repository';

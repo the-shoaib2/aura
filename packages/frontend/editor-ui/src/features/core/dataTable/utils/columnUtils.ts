@@ -8,7 +8,7 @@ import type {
 } from 'ag-grid-community';
 import type { Ref } from 'vue';
 import { DateTime } from 'luxon';
-import type { I18nClass } from '@n8n/i18n';
+import type { I18nClass } from '@aura/i18n';
 import type { DataTableColumn, DataTableRow } from '@/features/core/dataTable/dataTable.types';
 import {
 	ADD_ROW_ROW_ID,

@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import type { ILoadOptionsFunctions } from 'n8n-workflow';
+import type { ILoadOptionsFunctions } from 'workflow';
 
 import type { ColumnInfo } from '../../v2/helpers/interfaces';
 import { getEnums, getEnumValues, getTableSchema } from '../../v2/helpers/utils';

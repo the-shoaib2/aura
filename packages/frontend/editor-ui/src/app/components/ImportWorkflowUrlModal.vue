@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import Modal from '@/app/components/Modal.vue';
 import { ref, computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useUIStore } from '@/app/stores/ui.store';
 import { nodeViewEventBus } from '@/app/event-bus';
 import { VALID_WORKFLOW_IMPORT_URL_REGEX, IMPORT_WORKFLOW_URL_MODAL_KEY } from '@/app/constants';
 
-import { N8nButton, N8nInput } from '@n8n/design-system';
+import { N8nButton, N8nInput } from '@aura/design-system';
 const i18n = useI18n();
 const uiStore = useUIStore();
 

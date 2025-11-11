@@ -1,5 +1,5 @@
-import { NodeVM, makeResolverFromLegacyOptions, type Resolver } from '@n8n/vm2';
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import { NodeVM, makeResolverFromLegacyOptions, type Resolver } from '@aura/vm2';
+import type { IExecuteFunctions, INodeExecutionData } from 'workflow';
 
 import { ExecutionError } from './ExecutionError';
 import {

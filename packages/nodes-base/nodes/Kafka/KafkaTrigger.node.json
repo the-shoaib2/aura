@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.kafkaTrigger",
+	"node": "aura-nodes-base.kafkaTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/kafka/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/kafka/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.kafkatrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.kafkatrigger/"
 			}
 		]
 	}

@@ -10,8 +10,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeApiError } from 'workflow';
 
 import {
 	getGoogleAnalyticsDomainsArray,
@@ -171,7 +171,7 @@ export class Mandrill implements INodeType {
 				options: [],
 				required: true,
 				description:
-					'The template you want to send. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The template you want to send. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'From Email',

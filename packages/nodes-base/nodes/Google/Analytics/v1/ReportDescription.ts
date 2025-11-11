@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const reportOperations: INodeProperties[] = [
 	{
@@ -41,7 +41,7 @@ export const reportFields: INodeProperties[] = [
 		},
 		placeholder: '123456',
 		description:
-			'The View ID of Google Analytics. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The View ID of Google Analytics. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Return All',
@@ -153,7 +153,7 @@ export const reportFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'Name of the dimension to fetch, for example ga:browser. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'Name of the dimension to fetch, for example ga:browser. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 						],
 					},
@@ -183,7 +183,7 @@ export const reportFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'Name of the dimension to filter by. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'Name of the dimension to filter by. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							// https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet#Operator
 							{

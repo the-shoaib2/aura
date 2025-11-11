@@ -6,8 +6,8 @@ import type {
 	WorkflowExecuteMode,
 	IWorkflowDataProxyAdditionalKeys,
 	IWebhookDescription,
-} from 'n8n-workflow';
-import { NodeHelpers } from 'n8n-workflow';
+} from 'workflow';
+import { NodeHelpers } from 'workflow';
 
 /** Returns the full webhook description of the webhook with the given name */
 export function getWebhookDescription(

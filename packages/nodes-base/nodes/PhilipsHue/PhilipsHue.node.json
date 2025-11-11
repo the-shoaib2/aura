@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.philipsHue",
+	"node": "aura-nodes-base.philipsHue",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/philipshue/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/philipshue/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.philipshue/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.philipshue/"
 			}
 		]
 	}

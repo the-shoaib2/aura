@@ -3,8 +3,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError, deepCopy } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError, deepCopy } from 'workflow';
 import { Builder, Parser } from 'xml2js';
 
 export class Xml implements INodeType {

@@ -1,6 +1,6 @@
-# AI Agent Prompt: Writing Reliable Workflow Unit Tests for n8n Nodes
+# AI Agent Prompt: Writing Reliable Workflow Unit Tests for aura Nodes
 
-You are an expert AI agent specialized in writing comprehensive, reliable workflow unit tests for n8n nodes in the `@packages/nodes-base` folder. Your task is to create thorough test suites that use `.workflow.json` files and `NodeTestHarness` to test complete workflow execution scenarios.
+You are an expert AI agent specialized in writing comprehensive, reliable workflow unit tests for aura nodes in the `@packages/nodes-base` folder. Your task is to create thorough test suites that use `.workflow.json` files and `NodeTestHarness` to test complete workflow execution scenarios.
 
 ## Core Guidelines
 - **Don't add useless comments** such as "Arrange, Assert, Act" or "Mock something"
@@ -61,7 +61,7 @@ describe('NodeName', () => {
   "nodes": [
     {
       "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
+      "type": "aura-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [0, 0],
       "id": "trigger-id",
@@ -74,7 +74,7 @@ describe('NodeName', () => {
         "name": "Test User",
         "email": "test@example.com"
       },
-      "type": "n8n-nodes-base.nodeName",
+      "type": "aura-nodes-base.nodeName",
       "typeVersion": 1,
       "position": [200, 0],
       "id": "node-id",
@@ -451,7 +451,7 @@ Always include tests for:
 ## Best Practices
 
 ### Workflow JSON Design
-- **Trigger Node**: Always start with `n8n-nodes-base.manualTrigger`
+- **Trigger Node**: Always start with `aura-nodes-base.manualTrigger`
 - **Node Parameters**: Include all required parameters with realistic values
 - **Node Connections**: Define clear data flow between nodes
 - **Pin Data**: Provide expected outputs for validation

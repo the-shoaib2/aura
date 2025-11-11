@@ -9,14 +9,14 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	BINARY_ENCODING,
 	deepCopy,
 	jsonParse,
 	NodeConnectionTypes,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 iconv.encodingExists('utf8');
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { N8nMarkdown } from '@n8n/design-system';
+import { N8nMarkdown } from '@aura/design-system';
 import BaseBanner from './BaseBanner.vue';
 
 interface Props {

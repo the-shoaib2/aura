@@ -13,7 +13,7 @@
 			},
 			"id": "e130434b-6283-473c-a61d-fbbe26b63acb",
 			"name": "OpenAI Chat Model1",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1380, 720],
 			"credentials": {
@@ -27,7 +27,7 @@
 			"parameters": {},
 			"id": "b712a9c6-575e-4026-a6a0-83590c959267",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [1180, 560]
 		},
@@ -37,7 +37,7 @@
 			},
 			"id": "6db310a2-11ca-4097-92cb-ec9a6a6da51e",
 			"name": "Structured Output Parser1",
-			"type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+			"type": "@aura/aura-nodes-langchain.outputParserStructured",
 			"typeVersion": 1.2,
 			"position": [1540, 720]
 		},
@@ -49,7 +49,7 @@
 			},
 			"id": "2a8ca922-5da0-4065-b999-640fd678b0d3",
 			"name": "Open AI Chat - Output Parsing",
-			"type": "@n8n/n8n-nodes-langchain.chainLlm",
+			"type": "@aura/aura-nodes-langchain.chainLlm",
 			"typeVersion": 1.5,
 			"position": [1360, 560]
 		}

@@ -1,10 +1,10 @@
-import { Command } from '@n8n/decorators';
+import { Command } from '@aura/decorators';
 import { z } from 'zod';
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 
 import { BaseCommand } from '../base-command';
 import { ExportService } from '@/services/export.service';
-import { safeJoinPath } from '@n8n/backend-common';
+import { safeJoinPath } from '@aura/backend-common';
 
 const flagsSchema = z.object({
 	outputDir: z

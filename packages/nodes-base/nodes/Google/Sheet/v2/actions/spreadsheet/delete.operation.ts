@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'workflow';
 
 import { wrapData } from '../../../../../../utils/utilities';
 import { GOOGLE_DRIVE_FILE_URL_REGEX } from '../../../../constants';

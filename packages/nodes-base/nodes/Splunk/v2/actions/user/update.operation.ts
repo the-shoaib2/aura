@@ -1,4 +1,4 @@
-import type { INodeProperties, IExecuteFunctions, IDataObject } from 'n8n-workflow';
+import type { INodeProperties, IExecuteFunctions, IDataObject } from 'workflow';
 
 import { updateDisplayOptions } from '../../../../../utils/utilities';
 import { userRLC } from '../../helpers/descriptions';
@@ -40,7 +40,7 @@ const properties: INodeProperties[] = [
 				name: 'roles',
 				type: 'multiOptions',
 				description:
-					'Comma-separated list of roles to assign to the user. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Comma-separated list of roles to assign to the user. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				default: [],
 				typeOptions: {
 					loadOptionsMethod: 'getRoles',

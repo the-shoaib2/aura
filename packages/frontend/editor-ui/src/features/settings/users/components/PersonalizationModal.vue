@@ -84,19 +84,19 @@ import { COMMUNITY_PLUS_ENROLLMENT_MODAL } from '@/features/settings/usage/usage
 import { useToast } from '@/app/composables/useToast';
 import Modal from '@/app/components/Modal.vue';
 import type { IFormInputs } from '@/Interface';
-import type { IPersonalizationLatestVersion } from '@n8n/rest-api-client/api/users';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import type { IPersonalizationLatestVersion } from '@aura/rest-api-client/api/users';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useUsersStore } from '../users.store';
-import { createFormEventBus } from '@n8n/design-system/utils';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createFormEventBus } from '@aura/design-system/utils';
+import { createEventBus } from '@aura/utils/event-bus';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { useUIStore } from '@/app/stores/ui.store';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 
-import { N8nButton, N8nFormInputs } from '@n8n/design-system';
+import { N8nButton, N8nFormInputs } from '@aura/design-system';
 const SURVEY_VERSION = 'v4';
 
 const externalHooks = useExternalHooks();
@@ -588,7 +588,7 @@ const onSubmit = async (values: object) => {
 			...values,
 			version: SURVEY_VERSION,
 			personalization_survey_submitted_at: new Date().toISOString(),
-			personalization_survey_n8n_version: rootStore.versionCli,
+			personalization_survey_aura_version: rootStore.versionCli,
 		};
 
 		await externalHooks.run('personalizationModal.onSubmit', completedSurvey);

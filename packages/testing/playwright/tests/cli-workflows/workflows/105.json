@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "6ad9a76c-8bd9-4a23-98ad-12e9f913fb9d"
@@ -18,7 +18,7 @@
 				"fileName": "/tmp/test_write_binary_file.txt"
 			},
 			"name": "Write Binary File",
-			"type": "n8n-nodes-base.writeBinaryFile",
+			"type": "aura-nodes-base.writeBinaryFile",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"notesInFlow": true,
@@ -30,7 +30,7 @@
 				"filePath": "/tmp/test_write_binary_file.txt"
 			},
 			"name": "Read Binary File",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"notesInFlow": true,
@@ -42,7 +42,7 @@
 				"functionCode": "items = [\n{\njson:{},\nbinary: {\n\tdata: {\n\t\tdata: 'VGVzdCBXcml0ZSBCaW5hcnkgRmlsZSBub2Rl',\n\t\tfileExtension: 'txt', \n\t\tfileName: 'file.txt', \n\t}\n}\n}\n\n];\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [460, 300],
 			"notesInFlow": true,
@@ -54,7 +54,7 @@
 				"functionCode": "testData ='VGVzdCBXcml0ZSBCaW5hcnkgRmlsZSBub2Rl';\n\nif(items[0].binary.data.data !== testData){\n  throw new Error('Error in Write Binary File node');\n}\nreturn items;"
 			},
 			"name": "Function1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [1020, 300],
 			"notesInFlow": true,

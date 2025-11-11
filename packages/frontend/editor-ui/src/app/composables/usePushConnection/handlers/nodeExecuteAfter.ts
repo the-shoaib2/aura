@@ -1,9 +1,9 @@
-import type { NodeExecuteAfter } from '@n8n/api-types/push/execution';
+import type { NodeExecuteAfter } from '@aura/api-types/push/execution';
 import { useAssistantStore } from '@/features/ai/assistant/assistant.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { INodeExecutionData, ITaskData } from 'n8n-workflow';
-import { TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'n8n-workflow';
-import type { PushPayload } from '@n8n/api-types';
+import type { INodeExecutionData, ITaskData } from 'workflow';
+import { TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'workflow';
+import type { PushPayload } from '@aura/api-types';
 import { isValidNodeConnectionType } from '@/app/utils/typeGuards';
 import type { WorkflowState } from '@/app/composables/useWorkflowState';
 

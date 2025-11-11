@@ -1,4 +1,4 @@
-import type { IExecutePaginationFunctions } from 'n8n-workflow';
+import type { IExecutePaginationFunctions } from 'workflow';
 
 import { highLevelApiPagination } from '../GenericFunctions';
 

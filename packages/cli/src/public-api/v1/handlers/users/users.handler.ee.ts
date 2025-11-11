@@ -1,7 +1,7 @@
-import { InviteUsersRequestDto, RoleChangeRequestDto } from '@n8n/api-types';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { ProjectRelationRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { InviteUsersRequestDto, RoleChangeRequestDto } from '@aura/api-types';
+import type { AuthenticatedRequest } from '@aura/db';
+import { ProjectRelationRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import type express from 'express';
 import type { Response } from 'express';
 

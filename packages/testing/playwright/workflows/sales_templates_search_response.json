@@ -14,7 +14,7 @@
 				{
 					"id": 7,
 					"icon": "file:airtable.svg",
-					"name": "n8n-nodes-base.airtable",
+					"name": "aura-nodes-base.airtable",
 					"defaults": {
 						"name": "Airtable"
 					},
@@ -34,7 +34,7 @@
 				{
 					"id": 11,
 					"icon": "file:amqp.png",
-					"name": "n8n-nodes-base.amqpTrigger",
+					"name": "aura-nodes-base.amqpTrigger",
 					"defaults": {
 						"name": "AMQP Trigger"
 					},
@@ -58,7 +58,7 @@
 				{
 					"id": 13,
 					"icon": "file:asana.svg",
-					"name": "n8n-nodes-base.asanaTrigger",
+					"name": "aura-nodes-base.asanaTrigger",
 					"defaults": {
 						"name": "Asana Trigger"
 					},
@@ -78,7 +78,7 @@
 				{
 					"id": 15,
 					"icon": "file:affinity.png",
-					"name": "n8n-nodes-base.affinity",
+					"name": "aura-nodes-base.affinity",
 					"defaults": {
 						"name": "Affinity"
 					},
@@ -98,7 +98,7 @@
 				{
 					"id": 19,
 					"icon": "file:autopilot.svg",
-					"name": "n8n-nodes-base.autopilotTrigger",
+					"name": "aura-nodes-base.autopilotTrigger",
 					"defaults": {
 						"name": "Autopilot Trigger"
 					},
@@ -118,7 +118,7 @@
 				{
 					"id": 20,
 					"icon": "file:lambda.svg",
-					"name": "n8n-nodes-base.awsLambda",
+					"name": "aura-nodes-base.awsLambda",
 					"defaults": {
 						"name": "AWS Lambda"
 					},
@@ -138,7 +138,7 @@
 				{
 					"id": 31,
 					"icon": "file:bitwarden.svg",
-					"name": "n8n-nodes-base.bitwarden",
+					"name": "aura-nodes-base.bitwarden",
 					"defaults": {
 						"name": "Bitwarden"
 					},
@@ -158,7 +158,7 @@
 				{
 					"id": 42,
 					"icon": "file:clickup.svg",
-					"name": "n8n-nodes-base.clickUpTrigger",
+					"name": "aura-nodes-base.clickUpTrigger",
 					"defaults": {
 						"name": "ClickUp Trigger"
 					},
@@ -182,7 +182,7 @@
 				{
 					"id": 46,
 					"icon": "fa:file-archive",
-					"name": "n8n-nodes-base.compression",
+					"name": "aura-nodes-base.compression",
 					"defaults": {
 						"name": "Compression",
 						"color": "#408000"
@@ -207,7 +207,7 @@
 				{
 					"id": 62,
 					"icon": "file:discord.svg",
-					"name": "n8n-nodes-base.discord",
+					"name": "aura-nodes-base.discord",
 					"defaults": {
 						"name": "Discord"
 					},
@@ -227,7 +227,7 @@
 				{
 					"id": 114,
 					"icon": "file:helpScout.svg",
-					"name": "n8n-nodes-base.helpScoutTrigger",
+					"name": "aura-nodes-base.helpScoutTrigger",
 					"defaults": {
 						"name": "HelpScout Trigger"
 					},
@@ -259,7 +259,7 @@
 				{
 					"id": 7,
 					"icon": "file:airtable.svg",
-					"name": "n8n-nodes-base.airtable",
+					"name": "aura-nodes-base.airtable",
 					"defaults": {
 						"name": "Airtable"
 					},
@@ -279,7 +279,7 @@
 				{
 					"id": 14,
 					"icon": "file:apiTemplateIo.svg",
-					"name": "n8n-nodes-base.apiTemplateIo",
+					"name": "aura-nodes-base.apiTemplateIo",
 					"defaults": {
 						"name": "APITemplate.io"
 					},
@@ -299,7 +299,7 @@
 				{
 					"id": 20,
 					"icon": "file:lambda.svg",
-					"name": "n8n-nodes-base.awsLambda",
+					"name": "aura-nodes-base.awsLambda",
 					"defaults": {
 						"name": "AWS Lambda"
 					},
@@ -319,7 +319,7 @@
 				{
 					"id": 38,
 					"icon": "file:chargebee.png",
-					"name": "n8n-nodes-base.chargebeeTrigger",
+					"name": "aura-nodes-base.chargebeeTrigger",
 					"defaults": {
 						"name": "Chargebee Trigger"
 					},
@@ -339,7 +339,7 @@
 				{
 					"id": 76,
 					"icon": "fa:sign-in-alt",
-					"name": "n8n-nodes-base.executeWorkflow",
+					"name": "aura-nodes-base.executeWorkflow",
 					"defaults": {
 						"name": "Execute Workflow",
 						"color": "#ff6d5a"
@@ -372,7 +372,7 @@
 				{
 					"id": 14,
 					"icon": "file:apiTemplateIo.svg",
-					"name": "n8n-nodes-base.apiTemplateIo",
+					"name": "aura-nodes-base.apiTemplateIo",
 					"defaults": {
 						"name": "APITemplate.io"
 					},
@@ -392,7 +392,7 @@
 				{
 					"id": 20,
 					"icon": "file:lambda.svg",
-					"name": "n8n-nodes-base.awsLambda",
+					"name": "aura-nodes-base.awsLambda",
 					"defaults": {
 						"name": "AWS Lambda"
 					},
@@ -412,7 +412,7 @@
 				{
 					"id": 24,
 					"icon": "file:ses.svg",
-					"name": "n8n-nodes-base.awsSes",
+					"name": "aura-nodes-base.awsSes",
 					"defaults": {
 						"name": "AWS SES"
 					},
@@ -436,7 +436,7 @@
 				{
 					"id": 38,
 					"icon": "file:chargebee.png",
-					"name": "n8n-nodes-base.chargebeeTrigger",
+					"name": "aura-nodes-base.chargebeeTrigger",
 					"defaults": {
 						"name": "Chargebee Trigger"
 					},
@@ -456,7 +456,7 @@
 				{
 					"id": 42,
 					"icon": "file:clickup.svg",
-					"name": "n8n-nodes-base.clickUpTrigger",
+					"name": "aura-nodes-base.clickUpTrigger",
 					"defaults": {
 						"name": "ClickUp Trigger"
 					},
@@ -480,7 +480,7 @@
 				{
 					"id": 47,
 					"icon": "file:coda.svg",
-					"name": "n8n-nodes-base.coda",
+					"name": "aura-nodes-base.coda",
 					"defaults": {
 						"name": "Coda"
 					},
@@ -500,7 +500,7 @@
 				{
 					"id": 112,
 					"icon": "file:harvest.png",
-					"name": "n8n-nodes-base.harvest",
+					"name": "aura-nodes-base.harvest",
 					"defaults": {
 						"name": "Harvest"
 					},
@@ -520,7 +520,7 @@
 				{
 					"id": 126,
 					"icon": "file:invoiceNinja.svg",
-					"name": "n8n-nodes-base.invoiceNinjaTrigger",
+					"name": "aura-nodes-base.invoiceNinjaTrigger",
 					"defaults": {
 						"name": "Invoice Ninja Trigger"
 					},
@@ -552,7 +552,7 @@
 				{
 					"id": 20,
 					"icon": "file:lambda.svg",
-					"name": "n8n-nodes-base.awsLambda",
+					"name": "aura-nodes-base.awsLambda",
 					"defaults": {
 						"name": "AWS Lambda"
 					},
@@ -572,7 +572,7 @@
 				{
 					"id": 38,
 					"icon": "file:chargebee.png",
-					"name": "n8n-nodes-base.chargebeeTrigger",
+					"name": "aura-nodes-base.chargebeeTrigger",
 					"defaults": {
 						"name": "Chargebee Trigger"
 					},
@@ -592,7 +592,7 @@
 				{
 					"id": 43,
 					"icon": "file:clockify.svg",
-					"name": "n8n-nodes-base.clockifyTrigger",
+					"name": "aura-nodes-base.clockifyTrigger",
 					"defaults": {
 						"name": "Clockify Trigger"
 					},
@@ -616,7 +616,7 @@
 				{
 					"id": 71,
 					"icon": "file:emelia.svg",
-					"name": "n8n-nodes-base.emelia",
+					"name": "aura-nodes-base.emelia",
 					"defaults": {
 						"name": "Emelia"
 					},
@@ -640,7 +640,7 @@
 				{
 					"id": 107,
 					"icon": "file:gotify.png",
-					"name": "n8n-nodes-base.gotify",
+					"name": "aura-nodes-base.gotify",
 					"defaults": {
 						"name": "Gotify"
 					},
@@ -660,7 +660,7 @@
 				{
 					"id": 225,
 					"icon": "file:strapi.svg",
-					"name": "n8n-nodes-base.strapi",
+					"name": "aura-nodes-base.strapi",
 					"defaults": {
 						"name": "Strapi"
 					},
@@ -696,7 +696,7 @@
 				{
 					"id": 7,
 					"icon": "file:airtable.svg",
-					"name": "n8n-nodes-base.airtable",
+					"name": "aura-nodes-base.airtable",
 					"defaults": {
 						"name": "Airtable"
 					},
@@ -716,7 +716,7 @@
 				{
 					"id": 14,
 					"icon": "file:apiTemplateIo.svg",
-					"name": "n8n-nodes-base.apiTemplateIo",
+					"name": "aura-nodes-base.apiTemplateIo",
 					"defaults": {
 						"name": "APITemplate.io"
 					},
@@ -736,7 +736,7 @@
 				{
 					"id": 18,
 					"icon": "file:autopilot.svg",
-					"name": "n8n-nodes-base.autopilot",
+					"name": "aura-nodes-base.autopilot",
 					"defaults": {
 						"name": "Autopilot"
 					},
@@ -756,7 +756,7 @@
 				{
 					"id": 20,
 					"icon": "file:lambda.svg",
-					"name": "n8n-nodes-base.awsLambda",
+					"name": "aura-nodes-base.awsLambda",
 					"defaults": {
 						"name": "AWS Lambda"
 					},
@@ -776,7 +776,7 @@
 				{
 					"id": 26,
 					"icon": "file:sns.svg",
-					"name": "n8n-nodes-base.awsSnsTrigger",
+					"name": "aura-nodes-base.awsSnsTrigger",
 					"defaults": {
 						"name": "AWS SNS Trigger"
 					},
@@ -800,7 +800,7 @@
 				{
 					"id": 38,
 					"icon": "file:chargebee.png",
-					"name": "n8n-nodes-base.chargebeeTrigger",
+					"name": "aura-nodes-base.chargebeeTrigger",
 					"defaults": {
 						"name": "Chargebee Trigger"
 					},
@@ -820,7 +820,7 @@
 				{
 					"id": 40,
 					"icon": "file:clearbit.svg",
-					"name": "n8n-nodes-base.clearbit",
+					"name": "aura-nodes-base.clearbit",
 					"defaults": {
 						"name": "Clearbit"
 					},
@@ -840,7 +840,7 @@
 				{
 					"id": 221,
 					"icon": "file:stackby.png",
-					"name": "n8n-nodes-base.stackby",
+					"name": "aura-nodes-base.stackby",
 					"defaults": {
 						"name": "Stackby"
 					},
@@ -860,7 +860,7 @@
 				{
 					"id": 312,
 					"icon": "file:perspective.svg",
-					"name": "n8n-nodes-base.googlePerspective",
+					"name": "aura-nodes-base.googlePerspective",
 					"defaults": {
 						"name": "Google Perspective"
 					},
@@ -896,7 +896,7 @@
 				{
 					"id": 303,
 					"icon": "file:notion.svg",
-					"name": "n8n-nodes-base.notionTrigger",
+					"name": "aura-nodes-base.notionTrigger",
 					"defaults": {
 						"name": "Notion Trigger"
 					},
@@ -928,7 +928,7 @@
 				{
 					"id": 10,
 					"icon": "file:amqp.png",
-					"name": "n8n-nodes-base.amqp",
+					"name": "aura-nodes-base.amqp",
 					"defaults": {
 						"name": "AMQP Sender"
 					},
@@ -952,7 +952,7 @@
 				{
 					"id": 14,
 					"icon": "file:apiTemplateIo.svg",
-					"name": "n8n-nodes-base.apiTemplateIo",
+					"name": "aura-nodes-base.apiTemplateIo",
 					"defaults": {
 						"name": "APITemplate.io"
 					},
@@ -972,7 +972,7 @@
 				{
 					"id": 25,
 					"icon": "file:sns.svg",
-					"name": "n8n-nodes-base.awsSns",
+					"name": "aura-nodes-base.awsSns",
 					"defaults": {
 						"name": "AWS SNS"
 					},
@@ -1008,7 +1008,7 @@
 				{
 					"id": 20,
 					"icon": "file:lambda.svg",
-					"name": "n8n-nodes-base.awsLambda",
+					"name": "aura-nodes-base.awsLambda",
 					"defaults": {
 						"name": "AWS Lambda"
 					},
@@ -1028,7 +1028,7 @@
 				{
 					"id": 38,
 					"icon": "file:chargebee.png",
-					"name": "n8n-nodes-base.chargebeeTrigger",
+					"name": "aura-nodes-base.chargebeeTrigger",
 					"defaults": {
 						"name": "Chargebee Trigger"
 					},
@@ -1048,7 +1048,7 @@
 				{
 					"id": 40,
 					"icon": "file:clearbit.svg",
-					"name": "n8n-nodes-base.clearbit",
+					"name": "aura-nodes-base.clearbit",
 					"defaults": {
 						"name": "Clearbit"
 					},
@@ -1068,7 +1068,7 @@
 				{
 					"id": 76,
 					"icon": "fa:sign-in-alt",
-					"name": "n8n-nodes-base.executeWorkflow",
+					"name": "aura-nodes-base.executeWorkflow",
 					"defaults": {
 						"name": "Execute Workflow",
 						"color": "#ff6d5a"
@@ -1089,7 +1089,7 @@
 				{
 					"id": 112,
 					"icon": "file:harvest.png",
-					"name": "n8n-nodes-base.harvest",
+					"name": "aura-nodes-base.harvest",
 					"defaults": {
 						"name": "Harvest"
 					},
@@ -1109,7 +1109,7 @@
 				{
 					"id": 303,
 					"icon": "file:notion.svg",
-					"name": "n8n-nodes-base.notionTrigger",
+					"name": "aura-nodes-base.notionTrigger",
 					"defaults": {
 						"name": "Notion Trigger"
 					},
@@ -1141,7 +1141,7 @@
 				{
 					"id": 28,
 					"icon": "file:beeminder.png",
-					"name": "n8n-nodes-base.beeminder",
+					"name": "aura-nodes-base.beeminder",
 					"defaults": {
 						"name": "Beeminder"
 					},
@@ -1161,7 +1161,7 @@
 				{
 					"id": 40,
 					"icon": "file:clearbit.svg",
-					"name": "n8n-nodes-base.clearbit",
+					"name": "aura-nodes-base.clearbit",
 					"defaults": {
 						"name": "Clearbit"
 					},
@@ -1181,7 +1181,7 @@
 				{
 					"id": 221,
 					"icon": "file:stackby.png",
-					"name": "n8n-nodes-base.stackby",
+					"name": "aura-nodes-base.stackby",
 					"defaults": {
 						"name": "Stackby"
 					},
@@ -1213,7 +1213,7 @@
 				{
 					"id": 49,
 					"icon": "file:contentful.png",
-					"name": "n8n-nodes-base.contentful",
+					"name": "aura-nodes-base.contentful",
 					"defaults": {
 						"name": "Contentful"
 					},
@@ -1237,7 +1237,7 @@
 				{
 					"id": 107,
 					"icon": "file:gotify.png",
-					"name": "n8n-nodes-base.gotify",
+					"name": "aura-nodes-base.gotify",
 					"defaults": {
 						"name": "Gotify"
 					},
@@ -1257,7 +1257,7 @@
 				{
 					"id": 325,
 					"icon": "file:dropcontact.svg",
-					"name": "n8n-nodes-base.dropcontact",
+					"name": "aura-nodes-base.dropcontact",
 					"defaults": {
 						"name": "Dropcontact"
 					},

@@ -1,7 +1,7 @@
 import { getDockerImageFromEnv } from './docker-image';
 
 // Custom error class for when the Docker image is not found locally/remotely
-// This can happen when using the "n8nio/n8n:local" image, which is not available on Docker Hub
+// This can happen when using the "auraio/aura:local" image, which is not available on Docker Hub
 // This image is available after running `pnpm build:docker` at the root of the repository
 export class DockerImageNotFoundError extends Error {
 	constructor(containerName: string, originalError?: Error) {
@@ -15,7 +15,7 @@ To fix this, you can either:
   2. Use a different image by setting: N8N_DOCKER_IMAGE=<image-tag>
 
 Example with different image:
-  N8N_DOCKER_IMAGE=n8nio/n8n:latest npm run stack`;
+  N8N_DOCKER_IMAGE=auraio/aura:latest npm run stack`;
 
 		super(message);
 		this.name = 'DockerImageNotFoundError';

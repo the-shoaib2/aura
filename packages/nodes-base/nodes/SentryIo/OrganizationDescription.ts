@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const organizationOperations: INodeProperties[] = [
 	{
@@ -125,7 +125,7 @@ export const organizationFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the organization the team should be created for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the organization the team should be created for. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 
 	/* -------------------------------------------------------------------------- */
@@ -202,7 +202,7 @@ export const organizationFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the organization to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the organization to update. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Update Fields',

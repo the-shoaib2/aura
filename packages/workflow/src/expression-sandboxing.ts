@@ -1,4 +1,4 @@
-import { type ASTAfterHook, astBuilders as b, astVisit } from '@n8n/tournament';
+import { type ASTAfterHook, astBuilders as b, astVisit } from '@aura/tournament';
 
 import { ExpressionError } from './errors';
 import { isSafeObjectProperty } from './utils';

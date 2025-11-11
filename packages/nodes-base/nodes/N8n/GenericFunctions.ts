@@ -12,8 +12,8 @@ import type {
 	IRequestOptions,
 	JsonObject,
 	PreSendAction,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError } from 'workflow';
 
 /**
  * A custom API request function to be used with the resourceLocator lookup queries.
@@ -32,7 +32,7 @@ export async function apiRequest(
 		baseUrl: string;
 	};
 
-	const credentials = await this.getCredentials<N8nApiCredentials>('n8nApi');
+	const credentials = await this.getCredentials<N8nApiCredentials>('auraApi');
 	const baseUrl = credentials.baseUrl;
 
 	const options: IRequestOptions = {
@@ -44,7 +44,7 @@ export async function apiRequest(
 	};
 
 	try {
-		return await this.helpers.requestWithAuthentication.call(this, 'n8nApi', options);
+		return await this.helpers.requestWithAuthentication.call(this, 'auraApi', options);
 	} catch (error) {
 		if (error instanceof NodeApiError) {
 			throw error;
@@ -77,7 +77,7 @@ export async function apiRequestAllItems(
 }
 
 /**
- * Get a cursor-based paginator to use with n8n 'getAll' type endpoints.
+ * Get a cursor-based paginator to use with aura 'getAll' type endpoints.
  *
  * It will look up a 'nextCursor' in the response and if the node has
  * 'returnAll' set to true, will consecutively include it as the 'cursor' query

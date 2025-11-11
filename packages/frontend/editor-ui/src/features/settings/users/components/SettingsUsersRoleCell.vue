@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue';
-import { ROLE, type Role, type UsersList } from '@n8n/api-types';
+import { ROLE, type Role, type UsersList } from '@aura/api-types';
 import { ElRadio } from 'element-plus';
-import { N8nActionDropdown, N8nIcon, N8nText, type ActionDropdownItem } from '@n8n/design-system';
+import { N8nActionDropdown, N8nIcon, N8nText, type ActionDropdownItem } from '@aura/design-system';
 const props = defineProps<{
 	data: UsersList['items'][number];
 	roles: Record<Role, { label: string; desc: string }>;

@@ -8,8 +8,8 @@ import {
 	N8nMenuItem,
 	N8nPopoverReka,
 	N8nText,
-} from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+} from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 

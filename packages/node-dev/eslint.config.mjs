@@ -1,5 +1,5 @@
 import { defineConfig } from 'eslint/config';
-import { baseConfig } from '@n8n/eslint-config/base';
+import { baseConfig } from '@aura/eslint-config/base';
 
 export default defineConfig(baseConfig, {
 	rules: {

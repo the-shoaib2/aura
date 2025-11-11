@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import type { IExecuteFunctions, INodeExecutionData, INodeTypeBaseDescription } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeTypeBaseDescription } from 'workflow';
 
 import { RemoveDuplicatesV2 } from '../RemoveDuplicatesV2.node';
 

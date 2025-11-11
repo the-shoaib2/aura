@@ -1,6 +1,6 @@
 import { useDebugInfo } from '@/app/composables/useDebugInfo';
 
-const BASE_FORUM_URL = 'https://github.com/n8n-io/n8n/issues/new?labels=bug-report';
+const BASE_FORUM_URL = 'https://github.com/aura-io/aura/issues/new?labels=bug-report';
 
 const REPORT_TEMPLATE = `
 <!-- Please follow the template below. Skip the questions that are not relevant to you. -->

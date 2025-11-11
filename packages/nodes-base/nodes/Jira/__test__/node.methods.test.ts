@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import type { IHttpRequestMethods, ILoadOptionsFunctions } from 'n8n-workflow';
+import type { IHttpRequestMethods, ILoadOptionsFunctions } from 'workflow';
 
 import { Jira } from '../Jira.node';
 

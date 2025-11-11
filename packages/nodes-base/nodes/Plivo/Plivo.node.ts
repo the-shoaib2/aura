@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { callFields, callOperations } from './CallDescription';
 import { plivoApiRequest } from './GenericFunctions';
@@ -45,7 +45,7 @@ export class Plivo implements INodeType {
 						value: 'call',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-resource-with-plural-option
+						// eslint-disable-next-line aura-nodes-base/node-param-resource-with-plural-option
 						name: 'MMS',
 						value: 'mms',
 					},

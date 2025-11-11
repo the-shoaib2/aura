@@ -5,7 +5,7 @@ import type {
 	ICredentialType,
 	IHttpRequestHelper,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class Auth0ManagementApi implements ICredentialType {
 	name = 'auth0ManagementApi';

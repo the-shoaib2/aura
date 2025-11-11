@@ -10,7 +10,7 @@ import type { Locator } from '@playwright/test';
  * }
  *
  * // Usage in a test
- * await n8n.example.runDataPanel.getRunSelector().click();
+ * await aura.example.runDataPanel.getRunSelector().click();
  */
 export class RunDataPanel {
 	constructor(private root: Locator) {}

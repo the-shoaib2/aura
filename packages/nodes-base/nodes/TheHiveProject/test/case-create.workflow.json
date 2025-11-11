@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "manual-trigger",
@@ -19,13 +19,13 @@
 						"title": "Test Case",
 						"description": "Test case description",
 						"severity": 2,
-						"tags": "test,n8n",
+						"tags": "test,aura",
 						"tlp": 2,
 						"pap": 2
 					}
 				}
 			},
-			"type": "n8n-nodes-base.theHiveProject",
+			"type": "aura-nodes-base.theHiveProject",
 			"typeVersion": 1,
 			"position": [200, 0],
 			"id": "thehive-node",
@@ -48,7 +48,7 @@
 					"description": "Test case description",
 					"severity": 2,
 					"status": "Open",
-					"tags": ["test", "n8n"],
+					"tags": ["test", "aura"],
 					"tlp": 2,
 					"pap": 2,
 					"createdAt": 1698753600000,

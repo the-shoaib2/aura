@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { N8nIconButton } from '@n8n/design-system';
+import { N8nIconButton } from '@aura/design-system';
 
 defineProps<{ isExpanded: boolean }>();
 

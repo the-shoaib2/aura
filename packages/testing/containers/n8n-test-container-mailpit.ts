@@ -1,7 +1,7 @@
 import type { StartedNetwork, StartedTestContainer } from 'testcontainers';
 import { GenericContainer, Wait } from 'testcontainers';
 
-import { createSilentLogConsumer } from './n8n-test-container-utils';
+import { createSilentLogConsumer } from './aura-test-container-utils';
 
 type MailpitAddress = {
 	Address: string;
@@ -72,7 +72,7 @@ export function getMailpitEnvironment(
 		N8N_SMTP_HOST: hostname,
 		N8N_SMTP_PORT: String(smtpPort),
 		N8N_SMTP_SSL: 'false',
-		N8N_SMTP_SENDER: 'test@n8n.local',
+		N8N_SMTP_SENDER: 'test@aura.local',
 	};
 }
 

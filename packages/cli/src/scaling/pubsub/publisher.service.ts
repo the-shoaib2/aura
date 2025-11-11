@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { ExecutionsConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { ExecutionsConfig } from '@aura/config';
+import { Service } from '@aura/di';
 import type { Redis as SingleNodeClient, Cluster as MultiNodeClient } from 'ioredis';
-import { InstanceSettings } from 'n8n-core';
-import type { LogMetadata } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import type { LogMetadata } from 'workflow';
 
 import { RedisClientService } from '@/services/redis-client.service';
 
@@ -30,7 +30,7 @@ export class Publisher {
 
 		this.logger = this.logger.scoped(['scaling', 'pubsub']);
 
-		this.client = this.redisClientService.createClient({ type: 'publisher(n8n)' });
+		this.client = this.redisClientService.createClient({ type: 'publisher(aura)' });
 	}
 
 	getClient() {
@@ -46,13 +46,13 @@ export class Publisher {
 
 	// #region Publishing
 
-	/** Publish a command into the `n8n.commands` channel. */
+	/** Publish a command into the `aura.commands` channel. */
 	async publishCommand(msg: PubSub.Command) {
 		// @TODO: Once this class is only ever used in scaling mode, remove next line.
 		if (this.executionsConfig.mode !== 'queue') return;
 
 		await this.client.publish(
-			'n8n.commands',
+			'aura.commands',
 			JSON.stringify({
 				...msg,
 				senderId: this.instanceSettings.hostId,
@@ -63,7 +63,7 @@ export class Publisher {
 
 		let msgName = msg.command;
 
-		const metadata: LogMetadata = { msg: msg.command, channel: 'n8n.commands' };
+		const metadata: LogMetadata = { msg: msg.command, channel: 'aura.commands' };
 
 		if (msg.command === 'relay-execution-lifecycle-event') {
 			const { data, type } = msg.payload;
@@ -75,9 +75,9 @@ export class Publisher {
 		this.logger.debug(`Published pubsub msg: ${msgName}`, metadata);
 	}
 
-	/** Publish a response to a command into the `n8n.worker-response` channel. */
+	/** Publish a response to a command into the `aura.worker-response` channel. */
 	async publishWorkerResponse(msg: PubSub.WorkerResponse) {
-		await this.client.publish('n8n.worker-response', JSON.stringify(msg));
+		await this.client.publish('aura.worker-response', JSON.stringify(msg));
 
 		this.logger.debug(`Published ${msg.response} to worker response channel`);
 	}

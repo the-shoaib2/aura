@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "077f1a05-32d1-4a9e-abd9-9ef4a1bcfe02",
@@ -14,7 +14,7 @@
 				"promptType": "define",
 				"text": "Hey"
 			},
-			"type": "@n8n/n8n-nodes-langchain.chainLlm",
+			"type": "@aura/aura-nodes-langchain.chainLlm",
 			"typeVersion": 1.5,
 			"position": [200, 0],
 			"id": "5c3f329d-6481-41c5-9747-e9fd53815ca6",
@@ -26,7 +26,7 @@
 				"model": "=gpt-4o-mini123",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [280, 220],
 			"id": "00cb1410-f04f-4b2b-b42e-f2c275ba0b4a",

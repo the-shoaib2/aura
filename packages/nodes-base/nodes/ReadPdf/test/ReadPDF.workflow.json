@@ -2,14 +2,14 @@
 	"nodes": [
 		{
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"parameters": {},
 			"position": [660, 580]
 		},
 		{
 			"name": "Read sample.pdf",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
 			"parameters": {
 				"filePath": "C:\\Test\\sample.pdf"
@@ -18,7 +18,7 @@
 		},
 		{
 			"name": "Read PDF",
-			"type": "n8n-nodes-base.readPDF",
+			"type": "aura-nodes-base.readPDF",
 			"typeVersion": 1,
 			"parameters": {},
 			"position": [1100, 580]

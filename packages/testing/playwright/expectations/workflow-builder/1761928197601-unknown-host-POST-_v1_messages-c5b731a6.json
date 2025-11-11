@@ -38,7 +38,7 @@
 				"content": [
 					{
 						"type": "text",
-						"text": "I'm ready to help you build n8n workflows! 👋\n\nYou can ask me to:\n- **Create new workflows** from scratch (e.g., \"Build a workflow that sends daily weather reports via email\")\n- **Modify existing workflows** by adding, updating, or removing nodes\n- **Connect APIs and services** together\n- **Add automation logic** like conditions, loops, and data transformations\n- **Set up AI-powered workflows** with agents, tools, and language models\n\nWhat would you like to build today?"
+						"text": "I'm ready to help you build aura workflows! 👋\n\nYou can ask me to:\n- **Create new workflows** from scratch (e.g., \"Build a workflow that sends daily weather reports via email\")\n- **Modify existing workflows** by adding, updating, or removing nodes\n- **Connect APIs and services** together\n- **Add automation logic** like conditions, loops, and data transformations\n- **Set up AI-powered workflows** with agents, tools, and language models\n\nWhat would you like to build today?"
 					}
 				],
 				"stop_reason": "end_turn",

@@ -1,4 +1,4 @@
-import type { ExecutionStatus, INodeConnections, NodeConnectionType } from 'n8n-workflow';
+import type { ExecutionStatus, INodeConnections, NodeConnectionType } from 'workflow';
 import type {
 	DefaultEdge,
 	Node,
@@ -10,7 +10,7 @@ import type {
 import type { INodeUi } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import type { ComputedRef, Ref } from 'vue';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
 import type { CanvasLayoutSource } from '@/features/workflows/canvas/composables/useCanvasLayout';
 import type { NodeIconSource } from '@/app/utils/nodeIcon';
 
@@ -43,9 +43,9 @@ export interface CanvasElementPortWithRenderData extends CanvasConnectionPort {
 
 export const enum CanvasNodeRenderType {
 	Default = 'default',
-	StickyNote = 'n8n-nodes-base.stickyNote',
-	AddNodes = 'n8n-nodes-internal.addNodes',
-	ChoicePrompt = 'n8n-nodes-internal.choicePrompt',
+	StickyNote = 'aura-nodes-base.stickyNote',
+	AddNodes = 'aura-nodes-internal.addNodes',
+	ChoicePrompt = 'aura-nodes-internal.choicePrompt',
 }
 
 export type CanvasNodeDefaultRenderLabelSize = 'small' | 'medium' | 'large';

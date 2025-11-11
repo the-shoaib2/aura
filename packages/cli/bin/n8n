@@ -20,7 +20,7 @@ const {
 } = require('../package.json');
 if (!satisfies(nodeVersion, supportedNodeVersions)) {
 	console.error(`
-Your Node.js version ${nodeVersion} is currently not supported by n8n.
+Your Node.js version ${nodeVersion} is currently not supported by aura.
 Please use a Node.js version that satisfies the following version range: ${supportedNodeVersions}
 `);
 	process.exit(1);
@@ -41,7 +41,7 @@ if (process.env.E2E_TESTS !== 'true') {
 }
 
 // Load config early to ensure `N8N_CONFIG_FILES` values are populated into `GlobalConfig`
-// _before_ typeorm entities in `@n8n/db` are loaded, as typeorm entity decorators rely on
+// _before_ typeorm entities in `@aura/db` are loaded, as typeorm entity decorators rely on
 // `GlobalConfig.database.type` to decide on column types and timestamp syntax.
 require('../dist/config');
 
@@ -58,7 +58,7 @@ if (process.env.NODEJS_PREFER_IPV4 === 'true') {
 require('net').setDefaultAutoSelectFamily?.(false);
 
 (async () => {
-	const { Container } = await import('@n8n/di');
+	const { Container } = await import('@aura/di');
 	const { CommandRegistry } = await import('../dist/command-registry.js');
 	await Container.get(CommandRegistry).execute();
 })();

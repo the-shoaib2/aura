@@ -1,9 +1,9 @@
-import { Get, RestController } from '@n8n/decorators';
+import { Get, RestController } from '@aura/decorators';
 import type { AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 import { createHmac } from 'crypto';
 import { Response } from 'express';
-import { ensureError, jsonStringify } from 'n8n-workflow';
+import { ensureError, jsonStringify } from 'workflow';
 import type { RequestOptions } from 'oauth-1.0a';
 import clientOAuth1 from 'oauth-1.0a';
 

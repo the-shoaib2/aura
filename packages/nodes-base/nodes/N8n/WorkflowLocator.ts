@@ -1,4 +1,4 @@
-import type { ILoadOptionsFunctions, INodeListSearchResult, INodeProperties } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, INodeListSearchResult, INodeProperties } from 'workflow';
 
 import { apiRequestAllItems } from './GenericFunctions';
 
@@ -73,7 +73,7 @@ export const workflowIdLocator: INodeProperties = {
 			displayName: 'By URL',
 			name: 'url',
 			type: 'string',
-			placeholder: 'https://myinstance.app.n8n.cloud/workflow/1',
+			placeholder: 'https://myinstance.app.aura.cloud/workflow/1',
 			validation: [
 				{
 					type: 'regex',

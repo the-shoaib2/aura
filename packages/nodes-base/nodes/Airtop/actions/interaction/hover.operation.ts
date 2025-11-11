@@ -1,8 +1,4 @@
-import {
-	type IExecuteFunctions,
-	type INodeExecutionData,
-	type INodeProperties,
-} from 'n8n-workflow';
+import { type IExecuteFunctions, type INodeExecutionData, type INodeProperties } from 'workflow';
 
 import { constructInteractionRequest } from './helpers';
 import {

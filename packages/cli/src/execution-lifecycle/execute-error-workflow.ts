@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import type { IRun, IWorkflowBase, WorkflowExecuteMode } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import type { IRun, IWorkflowBase, WorkflowExecuteMode } from 'workflow';
 
 import type { IWorkflowErrorData } from '@/interfaces';
 import { OwnershipService } from '@/services/ownership.service';

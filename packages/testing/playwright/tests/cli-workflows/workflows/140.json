@@ -8,20 +8,20 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "61c01ddf-4360-4d4f-8bf3-7bb5499147b3"
 		},
 		{
 			"parameters": {
-				"fromEmail": "nodeqa@n8n.io",
+				"fromEmail": "nodeqa@aura.io",
 				"toEmail": "node8qa@gmail.com",
 				"subject": "=Mailgun{{Date.now()}}",
 				"text": "=Test text {{(new Date).toUTCString()}}"
 			},
 			"name": "Mailgun",
-			"type": "n8n-nodes-base.mailgun",
+			"type": "aura-nodes-base.mailgun",
 			"typeVersion": 1,
 			"position": [470, 300],
 			"credentials": {

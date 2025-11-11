@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "8c3c86be-d507-41b2-835b-9b49c1c34dc1"
@@ -24,7 +24,7 @@
 				"options": {}
 			},
 			"name": "Google Sheets",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [440, 200],
 			"credentials": {
@@ -46,7 +46,7 @@
 				}
 			},
 			"name": "Google Sheets1",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [610, 360],
 			"credentials": {
@@ -68,7 +68,7 @@
 				}
 			},
 			"name": "Google Sheets2",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [1200, 360],
 			"credentials": {
@@ -99,7 +99,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [1050, 360],
 			"typeVersion": 1,
 			"alwaysOutputData": false,
@@ -115,7 +115,7 @@
 				"options": {}
 			},
 			"name": "Google Sheets3",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [770, 360],
 			"credentials": {
@@ -137,7 +137,7 @@
 				"options": {}
 			},
 			"name": "Google Sheets4",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [910, 360],
 			"alwaysOutputData": true,
@@ -157,7 +157,7 @@
 				"range": "A2:C50"
 			},
 			"name": "Google Sheets5",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [1500, 360],
 			"credentials": {
@@ -184,7 +184,7 @@
 				}
 			},
 			"name": "Google Sheets6",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [1350, 360],
 			"credentials": {
@@ -200,7 +200,7 @@
 				"functionCode": "items = [\n    {\n        json:{\n            id: Math.round(Math.random()*1000),\n            name: 'test1'\n        }   \n    },\n    {\n        json:{\n            id: Math.round(Math.random()*1000),\n            name: 'test2'\n        }   \n    }\n]\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [440, 360],
 			"notesInFlow": true,
@@ -223,7 +223,7 @@
 				}
 			},
 			"name": "Google Sheets7",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [600, 200],
 			"credentials": {
@@ -242,7 +242,7 @@
 				"id": "={{$node[\"Google Sheets7\"].json[\"sheetId\"]}}"
 			},
 			"name": "Google Sheets8",
-			"type": "n8n-nodes-base.googleSheets",
+			"type": "aura-nodes-base.googleSheets",
 			"typeVersion": 1,
 			"position": [750, 200],
 			"credentials": {

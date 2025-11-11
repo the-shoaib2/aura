@@ -2,10 +2,10 @@
 import type { TestCaseExecutionRecord } from '../evaluation.api';
 import type { TestTableColumn } from '../components/shared/TestTableBase.vue';
 import TestTableBase from '../components/shared/TestTableBase.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { VIEWS } from '@/app/constants';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import { useEvaluationStore } from '../evaluation.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { convertToDisplayDate } from '@/app/utils/formatters/dateFormatter';
@@ -24,7 +24,7 @@ import {
 	N8nTableHeaderControlsButton,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import {
 	applyCachedSortOrder,
 	applyCachedVisibility,

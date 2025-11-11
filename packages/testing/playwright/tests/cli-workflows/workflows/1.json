@@ -8,18 +8,18 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "0d0e09b1-87e5-4c64-acf5-9a7da0718775"
 		},
 		{
 			"parameters": {
-				"text": "=Hello from n8n testing framework {{$evaluateExpression(Math.random())}}",
+				"text": "=Hello from aura testing framework {{$evaluateExpression(Math.random())}}",
 				"additionalFields": {}
 			},
 			"name": "Twitter",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"additionalFields": {}
 			},
 			"name": "Twitter1",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -55,7 +55,7 @@
 				"additionalFields": {}
 			},
 			"name": "Twitter2",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -72,7 +72,7 @@
 				"tweetId": "={{$node[\"Twitter\"].json[\"id_str\"]}}"
 			},
 			"name": "Twitter3",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -86,12 +86,12 @@
 		{
 			"parameters": {
 				"operation": "search",
-				"searchText": "@n8n_io",
+				"searchText": "@aura_io",
 				"limit": 1,
 				"additionalFields": {}
 			},
 			"name": "Twitter4",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"credentials": {

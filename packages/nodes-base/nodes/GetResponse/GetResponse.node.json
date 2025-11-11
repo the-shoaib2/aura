@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.getResponse",
+	"node": "aura-nodes-base.getResponse",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/getresponse/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/getresponse/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.getresponse/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.getresponse/"
 			}
 		]
 	}

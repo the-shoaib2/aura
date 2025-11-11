@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import type { NodeIconSource } from '@/app/utils/nodeIcon';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 import {
 	N8nIcon,
@@ -10,7 +10,7 @@ import {
 	N8nLink,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const props = defineProps<{
 	nodeName: string;
 	nodeTypeName: string;

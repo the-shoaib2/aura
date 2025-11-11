@@ -1,6 +1,6 @@
-/* eslint-disable n8n-nodes-base/node-execute-block-wrong-error-thrown */
-import { NodesConfig, TaskRunnersConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+/* eslint-disable aura-nodes-base/node-execute-block-wrong-error-thrown */
+import { NodesConfig, TaskRunnersConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import set from 'lodash/set';
 import {
 	NodeConnectionTypes,
@@ -11,7 +11,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 type CodeNodeLanguageOption = CodeNodeEditorLanguage | 'pythonNative';
 

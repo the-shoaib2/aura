@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 
 // Example of using helper functions inside a test
 test.describe('Debug mode', () => {
@@ -17,98 +17,102 @@ test.describe('Debug mode', () => {
 		DATA_NOT_IMPORTED: "Some execution data wasn't imported",
 	};
 
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.api.enableFeature('debugInEditor');
-		await n8n.goHome();
+	test.beforeEach(async ({ aura }) => {
+		await aura.api.enableFeature('debugInEditor');
+		await aura.goHome();
 	});
 
 	// Helper function to create basic workflow
-	async function createBasicWorkflow(n8n: n8nPage, url = URLS.FAILING) {
-		await n8n.workflows.addResource.workflow();
-		await n8n.canvas.addNode('Manual Trigger');
-		await n8n.canvas.addNode('HTTP Request');
-		await n8n.ndv.fillParameterInput('URL', url);
-		await n8n.ndv.close();
-		await n8n.canvas.clickSaveWorkflowButton();
-		await n8n.notifications.waitForNotificationAndClose(NOTIFICATIONS.WORKFLOW_CREATED);
+	async function createBasicWorkflow(aura: auraPage, url = URLS.FAILING) {
+		await aura.workflows.addResource.workflow();
+		await aura.canvas.addNode('Manual Trigger');
+		await aura.canvas.addNode('HTTP Request');
+		await aura.ndv.fillParameterInput('URL', url);
+		await aura.ndv.close();
+		await aura.canvas.clickSaveWorkflowButton();
+		await aura.notifications.waitForNotificationAndClose(NOTIFICATIONS.WORKFLOW_CREATED);
 	}
 
 	// Helper function to import execution for debugging
-	async function importExecutionForDebugging(n8n: n8nPage) {
-		await n8n.canvas.clickExecutionsTab();
-		await n8n.executions.clickDebugInEditorButton();
-		await n8n.notifications.waitForNotificationAndClose(NOTIFICATIONS.EXECUTION_IMPORTED);
+	async function importExecutionForDebugging(aura: auraPage) {
+		await aura.canvas.clickExecutionsTab();
+		await aura.executions.clickDebugInEditorButton();
+		await aura.notifications.waitForNotificationAndClose(NOTIFICATIONS.EXECUTION_IMPORTED);
 	}
 
-	test('should enter debug mode for failed executions', async ({ n8n }) => {
-		await createBasicWorkflow(n8n, URLS.FAILING);
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.PROBLEM_IN_NODE);
-		await importExecutionForDebugging(n8n);
-		expect(n8n.page.url()).toContain('/debug');
+	test('should enter debug mode for failed executions', async ({ aura }) => {
+		await createBasicWorkflow(aura, URLS.FAILING);
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(
+			NOTIFICATIONS.PROBLEM_IN_NODE,
+		);
+		await importExecutionForDebugging(aura);
+		expect(aura.page.url()).toContain('/debug');
 	});
 
-	test('should exit debug mode after successful execution', async ({ n8n }) => {
-		await createBasicWorkflow(n8n, URLS.FAILING);
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.PROBLEM_IN_NODE);
-		await importExecutionForDebugging(n8n);
+	test('should exit debug mode after successful execution', async ({ aura }) => {
+		await createBasicWorkflow(aura, URLS.FAILING);
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(
+			NOTIFICATIONS.PROBLEM_IN_NODE,
+		);
+		await importExecutionForDebugging(aura);
 
-		await n8n.canvas.openNode('HTTP Request');
-		await n8n.ndv.fillParameterInput('URL', URLS.SUCCESS);
-		await n8n.ndv.close();
-		await n8n.canvas.clickSaveWorkflowButton();
+		await aura.canvas.openNode('HTTP Request');
+		await aura.ndv.fillParameterInput('URL', URLS.SUCCESS);
+		await aura.ndv.close();
+		await aura.canvas.clickSaveWorkflowButton();
 
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
-		expect(n8n.page.url()).not.toContain('/debug');
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
+		expect(aura.page.url()).not.toContain('/debug');
 	});
 
-	test('should handle pinned data conflicts during execution import', async ({ n8n }) => {
-		await createBasicWorkflow(n8n, URLS.SUCCESS);
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
-		await n8n.canvasComposer.pinNodeData('HTTP Request');
+	test('should handle pinned data conflicts during execution import', async ({ aura }) => {
+		await createBasicWorkflow(aura, URLS.SUCCESS);
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
+		await aura.canvasComposer.pinNodeData('HTTP Request');
 
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification('Successful');
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification('Successful');
 
 		// Go to executions and try to copy execution to editor
-		await n8n.canvas.clickExecutionsTab();
-		await n8n.executions.clickLastExecutionItem();
-		await n8n.executions.clickCopyToEditorButton();
+		await aura.canvas.clickExecutionsTab();
+		await aura.executions.clickLastExecutionItem();
+		await aura.executions.clickCopyToEditorButton();
 
 		// Test CANCEL dialog
-		await n8n.executions.handlePinnedNodesConfirmation('Cancel');
+		await aura.executions.handlePinnedNodesConfirmation('Cancel');
 
 		// Try again and CONFIRM
-		await n8n.executions.clickLastExecutionItem();
-		await n8n.executions.clickCopyToEditorButton();
-		await n8n.executions.handlePinnedNodesConfirmation('Unpin');
+		await aura.executions.clickLastExecutionItem();
+		await aura.executions.clickCopyToEditorButton();
+		await aura.executions.handlePinnedNodesConfirmation('Unpin');
 
-		expect(n8n.page.url()).toContain('/debug');
+		expect(aura.page.url()).toContain('/debug');
 
 		// Verify pinned status
-		const pinnedNodeNames = await n8n.canvas.getPinnedNodeNames();
+		const pinnedNodeNames = await aura.canvas.getPinnedNodeNames();
 		expect(pinnedNodeNames).not.toContain('HTTP Request');
 		expect(pinnedNodeNames).toContain('When clicking ‘Execute workflow’');
 	});
 
-	test('should show error for pinned data mismatch', async ({ n8n }) => {
+	test('should show error for pinned data mismatch', async ({ aura }) => {
 		// Create workflow, execute, and pin data
-		await createBasicWorkflow(n8n, URLS.SUCCESS);
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
+		await createBasicWorkflow(aura, URLS.SUCCESS);
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
 
-		await n8n.canvasComposer.pinNodeData('HTTP Request');
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
+		await aura.canvasComposer.pinNodeData('HTTP Request');
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.SUCCESSFUL);
 
 		// Delete node to create mismatch
-		await n8n.canvas.deleteNodeByName('HTTP Request');
+		await aura.canvas.deleteNodeByName('HTTP Request');
 
 		// Try to copy execution and verify error
-		await attemptCopyToEditor(n8n);
-		await n8n.notifications.waitForNotificationAndClose(NOTIFICATIONS.DATA_NOT_IMPORTED);
-		expect(n8n.page.url()).toContain('/debug');
+		await attemptCopyToEditor(aura);
+		await aura.notifications.waitForNotificationAndClose(NOTIFICATIONS.DATA_NOT_IMPORTED);
+		expect(aura.page.url()).toContain('/debug');
 	});
 
-	async function attemptCopyToEditor(n8n: n8nPage) {
-		await n8n.canvas.clickExecutionsTab();
-		await n8n.executions.clickLastExecutionItem();
-		await n8n.executions.clickCopyToEditorButton();
+	async function attemptCopyToEditor(aura: auraPage) {
+		await aura.canvas.clickExecutionsTab();
+		await aura.executions.clickLastExecutionItem();
+		await aura.executions.clickCopyToEditorButton();
 	}
 });

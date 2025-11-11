@@ -1,5 +1,5 @@
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import type { Router } from 'express';
 import express from 'express';
 import type { HttpError } from 'express-openapi-validator/dist/framework/types';
@@ -19,7 +19,7 @@ async function createApiRouter(
 	handlersDirectory: string,
 	publicApiEndpoint: string,
 ): Promise<Router> {
-	const n8nPath = Container.get(GlobalConfig).path;
+	const auraPath = Container.get(GlobalConfig).path;
 	const swaggerDocument = YAML.load(openApiSpecPath) as JsonObject;
 	// add the server depending on the config so the user can interact with the API
 	// from the Swagger UI
@@ -40,8 +40,8 @@ async function createApiRouter(
 			serveFiles(swaggerDocument),
 			setup(swaggerDocument, {
 				customCss: swaggerThemeCss,
-				customSiteTitle: 'n8n Public API UI',
-				customfavIcon: `${n8nPath}favicon.ico`,
+				customSiteTitle: 'aura Public API UI',
+				customfavIcon: `${auraPath}favicon.ico`,
 			}),
 		);
 	}

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "a8373e79-8b14-48ae-9baf-79db4bf1a92a"
@@ -21,7 +21,7 @@
 				}
 			},
 			"name": "Drift ",
-			"type": "n8n-nodes-base.drift",
+			"type": "aura-nodes-base.drift",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -41,7 +41,7 @@
 				}
 			},
 			"name": "Drift 1",
-			"type": "n8n-nodes-base.drift",
+			"type": "aura-nodes-base.drift",
 			"typeVersion": 1,
 			"position": [640, 300],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"contactId": "={{$node[\"Drift \"].json[\"id\"]}}"
 			},
 			"name": "Drift 2",
-			"type": "n8n-nodes-base.drift",
+			"type": "aura-nodes-base.drift",
 			"typeVersion": 1,
 			"position": [790, 300],
 			"credentials": {
@@ -75,7 +75,7 @@
 				"contactId": "={{$node[\"Drift \"].json[\"id\"]}}"
 			},
 			"name": "Drift 3",
-			"type": "n8n-nodes-base.drift",
+			"type": "aura-nodes-base.drift",
 			"typeVersion": 1,
 			"position": [940, 300],
 			"credentials": {

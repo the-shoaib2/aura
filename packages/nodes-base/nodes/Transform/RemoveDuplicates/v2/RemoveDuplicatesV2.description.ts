@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 const operationOptions = [
 	{
 		name: 'Remove Items Repeated Within Current Input',

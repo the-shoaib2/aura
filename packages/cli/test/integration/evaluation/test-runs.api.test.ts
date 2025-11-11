@@ -1,14 +1,14 @@
-import { createWorkflow, testDb } from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
+import { createWorkflow, testDb } from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
 import {
 	GLOBAL_MEMBER_ROLE,
 	GLOBAL_OWNER_ROLE,
 	ProjectRepository,
 	TestRunRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { mockInstance } from 'n8n-core/test/utils';
-import type { IWorkflowBase } from 'n8n-workflow';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { mockInstance } from 'aura-core/test/utils';
+import type { IWorkflowBase } from 'workflow';
 
 import { TestRunnerService } from '@/evaluation.ee/test-runner/test-runner.service.ee';
 import { createTestRun, createTestCaseExecution } from '@test-integration/db/evaluation';

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import * as create from './create.operation';
 import * as deleteJob from './deleteJob.operation';

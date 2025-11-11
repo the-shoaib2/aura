@@ -27,7 +27,7 @@ describe('webhookRequestSanitizer', () => {
 	describe('when cookie is present in header', () => {
 		it('should remove cookie from cookie header', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-auth=abc123; other-cookie=value; another-cookie=test',
+				cookie: 'aura-auth=abc123; other-cookie=value; another-cookie=test',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -37,7 +37,7 @@ describe('webhookRequestSanitizer', () => {
 
 		it('should remove cookie when it is the only cookie', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-auth=abc123',
+				cookie: 'aura-auth=abc123',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -47,7 +47,7 @@ describe('webhookRequestSanitizer', () => {
 
 		it('should remove cookie when it is the last cookie', () => {
 			mockRequest.headers = {
-				cookie: 'other-cookie=value; n8n-auth=abc123',
+				cookie: 'other-cookie=value; aura-auth=abc123',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -57,7 +57,7 @@ describe('webhookRequestSanitizer', () => {
 
 		it('should remove cookie when it is in the middle', () => {
 			mockRequest.headers = {
-				cookie: 'first-cookie=value1; n8n-auth=abc123; last-cookie=value2',
+				cookie: 'first-cookie=value1; aura-auth=abc123; last-cookie=value2',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -65,9 +65,9 @@ describe('webhookRequestSanitizer', () => {
 			expect(mockRequest.headers.cookie).toBe('first-cookie=value1; last-cookie=value2');
 		});
 
-		it('should handle multiple n8n-auth cookies', () => {
+		it('should handle multiple aura-auth cookies', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-auth=abc123; other-cookie=value; n8n-auth=def456',
+				cookie: 'aura-auth=abc123; other-cookie=value; aura-auth=def456',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -77,7 +77,7 @@ describe('webhookRequestSanitizer', () => {
 
 		it('should handle whitespace around cookies', () => {
 			mockRequest.headers = {
-				cookie: '  n8n-auth=abc123  ;  other-cookie=value  ',
+				cookie: '  aura-auth=abc123  ;  other-cookie=value  ',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -85,19 +85,19 @@ describe('webhookRequestSanitizer', () => {
 			expect(mockRequest.headers.cookie).toBe('other-cookie=value');
 		});
 
-		it('should not remove cookies that start with n8n-auth but are not exact match', () => {
+		it('should not remove cookies that start with aura-auth but are not exact match', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-auth-extra=value; other-cookie=value',
+				cookie: 'aura-auth-extra=value; other-cookie=value',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
 
-			expect(mockRequest.headers.cookie).toBe('n8n-auth-extra=value; other-cookie=value');
+			expect(mockRequest.headers.cookie).toBe('aura-auth-extra=value; other-cookie=value');
 		});
 	});
 
 	describe('when cookie is not present in header', () => {
-		it('should not modify cookie header when n8n-auth is not present', () => {
+		it('should not modify cookie header when aura-auth is not present', () => {
 			const originalCookie = 'other-cookie=value; another-cookie=test';
 			mockRequest.headers = {
 				cookie: originalCookie,
@@ -120,9 +120,9 @@ describe('webhookRequestSanitizer', () => {
 	});
 
 	describe('when cookie is present in parsed cookies', () => {
-		it('should remove n8n-auth from parsed cookies object', () => {
+		it('should remove aura-auth from parsed cookies object', () => {
 			mockRequest.cookies = {
-				'n8n-auth': 'abc123',
+				'aura-auth': 'abc123',
 				'other-cookie': 'value',
 			};
 
@@ -133,9 +133,9 @@ describe('webhookRequestSanitizer', () => {
 			});
 		});
 
-		it('should handle when n8n-auth is the only cookie in parsed cookies', () => {
+		it('should handle when aura-auth is the only cookie in parsed cookies', () => {
 			mockRequest.cookies = {
-				'n8n-auth': 'abc123',
+				'aura-auth': 'abc123',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -143,7 +143,7 @@ describe('webhookRequestSanitizer', () => {
 			expect(mockRequest.cookies).toEqual({});
 		});
 
-		it('should not modify other cookies when n8n-auth is not present in parsed cookies', () => {
+		it('should not modify other cookies when aura-auth is not present in parsed cookies', () => {
 			const originalCookies = {
 				'other-cookie': 'value',
 				'another-cookie': 'test',
@@ -156,13 +156,13 @@ describe('webhookRequestSanitizer', () => {
 		});
 	});
 
-	describe('when both header and parsed cookies contain n8n-auth', () => {
-		it('should remove n8n-auth from both header and parsed cookies', () => {
+	describe('when both header and parsed cookies contain aura-auth', () => {
+		it('should remove aura-auth from both header and parsed cookies', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-auth=abc123; other-cookie=value',
+				cookie: 'aura-auth=abc123; other-cookie=value',
 			};
 			mockRequest.cookies = {
-				'n8n-auth': 'abc123',
+				'aura-auth': 'abc123',
 				'other-cookie': 'value',
 			};
 
@@ -208,7 +208,7 @@ describe('webhookRequestSanitizer', () => {
 
 		it('should handle malformed cookies without equals sign', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-auth; other-cookie=value',
+				cookie: 'aura-auth; other-cookie=value',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -217,10 +217,10 @@ describe('webhookRequestSanitizer', () => {
 		});
 	});
 
-	describe('when n8n-browserId is present in header', () => {
-		it('should remove n8n-browserId from cookie header', () => {
+	describe('when aura-browserId is present in header', () => {
+		it('should remove aura-browserId from cookie header', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-browserId=abc123; other-cookie=value',
+				cookie: 'aura-browserId=abc123; other-cookie=value',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -228,9 +228,9 @@ describe('webhookRequestSanitizer', () => {
 			expect(mockRequest.headers.cookie).toBe('other-cookie=value');
 		});
 
-		it('should remove n8n-browserId from parsed cookies', () => {
+		it('should remove aura-browserId from parsed cookies', () => {
 			mockRequest.cookies = {
-				'n8n-browserId': 'abc123',
+				'aura-browserId': 'abc123',
 				'other-cookie': 'value',
 			};
 
@@ -241,9 +241,9 @@ describe('webhookRequestSanitizer', () => {
 			});
 		});
 
-		it('should remove both n8n-auth and n8n-browserId from cookie header', () => {
+		it('should remove both aura-auth and aura-browserId from cookie header', () => {
 			mockRequest.headers = {
-				cookie: 'n8n-auth=abc123; n8n-browserId=def456; other-cookie=value',
+				cookie: 'aura-auth=abc123; aura-browserId=def456; other-cookie=value',
 			};
 
 			sanitizeWebhookRequest(mockRequest);
@@ -251,10 +251,10 @@ describe('webhookRequestSanitizer', () => {
 			expect(mockRequest.headers.cookie).toBe('other-cookie=value');
 		});
 
-		it('should remove both n8n-auth and n8n-browserId from parsed cookies', () => {
+		it('should remove both aura-auth and aura-browserId from parsed cookies', () => {
 			mockRequest.cookies = {
-				'n8n-auth': 'abc123',
-				'n8n-browserId': 'def456',
+				'aura-auth': 'abc123',
+				'aura-browserId': 'def456',
 				'other-cookie': 'value',
 			};
 

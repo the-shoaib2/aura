@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [200, 300],
 			"id": "92f57774-0f92-4eaf-89e9-e8c33dd21cfe"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "LinkedIn",
-			"type": "n8n-nodes-base.linkedIn",
+			"type": "aura-nodes-base.linkedIn",
 			"typeVersion": 1,
 			"position": [550, 200],
 			"credentials": {
@@ -46,7 +46,7 @@
 				}
 			},
 			"name": "LinkedIn1",
-			"type": "n8n-nodes-base.linkedIn",
+			"type": "aura-nodes-base.linkedIn",
 			"typeVersion": 1,
 			"position": [560, 350],
 			"credentials": {
@@ -59,10 +59,10 @@
 		},
 		{
 			"parameters": {
-				"filePath": "/tmp/n8n-logo.png"
+				"filePath": "/tmp/aura-logo.png"
 			},
 			"name": "Read Binary File",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
 			"position": [420, 350],
 			"id": "e80c32c0-f983-46cd-becc-e030b93732c7"

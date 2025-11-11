@@ -15,7 +15,7 @@
 					]
 				}
 			},
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1.1,
 			"position": [-560, -288],
 			"id": "9e3e729b-16a8-4ff2-af41-ad86c44daf89",
@@ -29,7 +29,7 @@
 					"keyword": "={{ $json.query }}"
 				}
 			},
-			"type": "n8n-nodes-base.hackerNews",
+			"type": "aura-nodes-base.hackerNews",
 			"typeVersion": 1,
 			"position": [-352, -288],
 			"id": "8d01727b-50bd-4990-807b-91c8dd3942ad",
@@ -41,7 +41,7 @@
 				"text": "=Search HackerNews for {{ $json.name }}",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 2.2,
 			"position": [-496, 128],
 			"id": "fe09dba9-ffe7-40cd-87f9-1eafeceae041",
@@ -57,7 +57,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [-544, 304],
 			"id": "4e97ae72-f736-433d-bd30-9328d36090f8",
@@ -74,10 +74,10 @@
 				"resource": "all",
 				"limit": 1,
 				"additionalFields": {
-					"keyword": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Keyword', ``, 'string') }}"
+					"keyword": "={{ /*aura-auto-generated-fromAI-override*/ $fromAI('Keyword', ``, 'string') }}"
 				}
 			},
-			"type": "n8n-nodes-base.hackerNewsTool",
+			"type": "aura-nodes-base.hackerNewsTool",
 			"typeVersion": 1,
 			"position": [-272, 304],
 			"id": "e6fd0d73-86fc-4d4d-addb-dca24a56ac75",
@@ -89,7 +89,7 @@
 				"height": 240,
 				"width": 560
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [-544, 16],
 			"typeVersion": 1,
 			"id": "797104a9-9e7a-4805-bbf6-92fd4d741e8f",
@@ -101,7 +101,7 @@
 				"text": "=Search HackerNews for {{ $json.name }}",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 2.2,
 			"position": [-528, 704],
 			"id": "d61ee92e-46a0-4b5a-ba9c-41963424bb58",
@@ -117,7 +117,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [-576, 880],
 			"id": "2d810ae4-f72a-4f46-a1a9-5b5f7a8678c2",
@@ -135,7 +135,7 @@
 				"height": 240,
 				"width": 660
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [-576, 592],
 			"typeVersion": 1,
 			"id": "21d03b34-8597-4c95-b207-1cd5df938f1c",
@@ -152,7 +152,7 @@
 				"workflowInputs": {
 					"mappingMode": "defineBelow",
 					"value": {
-						"query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query', ``, 'string') }}"
+						"query": "={{ /*aura-auto-generated-fromAI-override*/ $fromAI('query', ``, 'string') }}"
 					},
 					"matchingColumns": ["query"],
 					"schema": [
@@ -171,17 +171,17 @@
 					"convertFieldsToString": false
 				}
 			},
-			"type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+			"type": "@aura/aura-nodes-langchain.toolWorkflow",
 			"typeVersion": 2.2,
 			"position": [-352, 880],
 			"id": "df0a6e96-737b-43ee-a85f-8071c42d0e09",
-			"name": "Call n8n Workflow Tool"
+			"name": "Call aura Workflow Tool"
 		},
 		{
 			"parameters": {
-				"jsCode": "const result = [\n  'n8n',\n  'make',\n  'zappier',\n  'workato'\n].map(i => ({ json: {name: i}}))\n\nreturn result;"
+				"jsCode": "const result = [\n  'aura',\n  'make',\n  'zappier',\n  'workato'\n].map(i => ({ json: {name: i}}))\n\nreturn result;"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-1008, 464],
 			"id": "cd5ec001-3dd5-4e32-b30c-37bf1e43edfc",
@@ -189,7 +189,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-1200, 464],
 			"id": "c0b4f2dd-e778-4afc-8ebc-14c759d4f238",
@@ -242,7 +242,7 @@
 				]
 			]
 		},
-		"Call n8n Workflow Tool": {
+		"Call aura Workflow Tool": {
 			"ai_tool": [
 				[
 					{

@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import Modal from '@/app/components/Modal.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import { FROM_AI_PARAMETERS_MODAL_KEY, AI_MCP_TOOL_NODE_TYPE } from '@/app/constants';
-import { useAgentRequestStore, type IAgentRequest } from '@n8n/stores/useAgentRequestStore';
+import { useAgentRequestStore, type IAgentRequest } from '@aura/stores/useAgentRequestStore';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import {
 	type INode,
 	type FromAIArgument,
 	type IDataObject,
 	NodeConnectionTypes,
 	traverseNodeParameters,
-} from 'n8n-workflow';
-import type { FormFieldValueUpdate, IFormInput } from '@n8n/design-system';
+} from 'workflow';
+import type { FormFieldValueUpdate, IFormInput } from '@aura/design-system';
 import { computed, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -23,7 +23,7 @@ import { type JSONSchema7 } from 'json-schema';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 
 import { ElCol, ElRow } from 'element-plus';
-import { N8nButton, N8nCallout, N8nFormInputs, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nCallout, N8nFormInputs, N8nText } from '@aura/design-system';
 type Value = string | number | boolean | null | undefined;
 
 const props = defineProps<{

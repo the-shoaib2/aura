@@ -11,8 +11,8 @@ import type {
 	IN8nHttpFullResponse,
 	INodeExecutionData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function gongApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions,

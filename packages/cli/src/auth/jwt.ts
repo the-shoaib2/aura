@@ -1,5 +1,5 @@
-import type { User } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { User } from '@aura/db';
+import { Container } from '@aura/di';
 import type { Response } from 'express';
 
 import { AuthService } from './auth.service';

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const certificateRequestOperations: INodeProperties[] = [
 	{
@@ -44,7 +44,7 @@ export const certificateRequestFields: INodeProperties[] = [
 		name: 'applicationId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getApplications',
 		},
@@ -61,7 +61,7 @@ export const certificateRequestFields: INodeProperties[] = [
 		name: 'certificateIssuingTemplateId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getCertificateIssuingTemplates',
 			loadOptionsDependsOn: ['applicationId'],
@@ -98,7 +98,7 @@ export const certificateRequestFields: INodeProperties[] = [
 			},
 		},
 		type: 'string',
-		default: 'n8n.io',
+		default: 'aura.io',
 		description: 'The Common Name field for the certificate Subject (CN)',
 	},
 	// Optional...
@@ -257,7 +257,7 @@ export const certificateRequestFields: INodeProperties[] = [
 								displayName: 'Name',
 								name: 'name',
 								type: 'string',
-								default: 'community.n8n.io',
+								default: 'community.aura.io',
 								description:
 									'The SAN friendly name that corresponds to the Type or TypeName parameter. For example, if a TypeName is IPAddress, the Name value is a valid IP address.',
 							},

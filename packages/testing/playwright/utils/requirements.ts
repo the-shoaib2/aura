@@ -1,11 +1,11 @@
 import type { BrowserContext } from '@playwright/test';
 
 import { setContextSettings } from '../config/intercepts';
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 import { TestError, type TestRequirements } from '../Types';
 
 export async function setupTestRequirements(
-	n8n: n8nPage,
+	aura: auraPage,
 	context: BrowserContext,
 	requirements: TestRequirements,
 ): Promise<void> {
@@ -29,9 +29,9 @@ export async function setupTestRequirements(
 	if (requirements.config?.features) {
 		for (const [feature, enabled] of Object.entries(requirements.config.features)) {
 			if (enabled) {
-				await n8n.api.enableFeature(feature);
+				await aura.api.enableFeature(feature);
 			} else {
-				await n8n.api.disableFeature(feature);
+				await aura.api.disableFeature(feature);
 			}
 		}
 	}
@@ -39,7 +39,7 @@ export async function setupTestRequirements(
 	// 3. Setup API intercepts
 	if (requirements.intercepts) {
 		for (const config of Object.values(requirements.intercepts)) {
-			await n8n.page.route(config.url, async (route) => {
+			await aura.page.route(config.url, async (route) => {
 				await route.fulfill({
 					status: config.status ?? 200,
 					contentType: config.contentType ?? 'application/json',
@@ -59,10 +59,10 @@ export async function setupTestRequirements(
 
 		for (const [name, workflowData] of entries) {
 			try {
-				// Import workflow using the n8n page object
-				await n8n.goHome();
-				await n8n.workflows.addResource.workflow();
-				await n8n.canvas.importWorkflow(name, workflowData);
+				// Import workflow using the aura page object
+				await aura.goHome();
+				await aura.workflows.addResource.workflow();
+				await aura.canvas.importWorkflow(name, workflowData);
 			} catch (error) {
 				throw new TestError(`Failed to create workflow ${name}: ${String(error)}`);
 			}

@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.shopifyTrigger",
+	"node": "aura-nodes-base.shopifyTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Sales"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/shopify/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/shopify/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.shopifytrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.shopifytrigger/"
 			}
 		],
 		"generic": [
 			{
 				"label": "6 e-commerce workflows to power up your Shopify s",
 				"icon": "store",
-				"url": "https://n8n.io/blog/no-code-ecommerce-workflow-automations/"
+				"url": "https://aura.io/blog/no-code-ecommerce-workflow-automations/"
 			}
 		]
 	}

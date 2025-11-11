@@ -9,7 +9,7 @@ import type {
 	IWebhookFunctions,
 	MultiPartFormData,
 	NodeTypeAndVersion,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	formWebhook,
@@ -79,7 +79,7 @@ describe('FormTrigger, sanitizeHtml', () => {
 				expected: '<video><source></source></video>',
 			},
 			{
-				html: "<iframe srcdoc=\"<script>fetch('https://YOURDOMAIN.app.n8n.cloud/webhook/pepe?id='+localStorage.getItem('n8n-browserId'))</script>\"></iframe>",
+				html: "<iframe srcdoc=\"<script>fetch('https://YOURDOMAIN.app.aura.cloud/webhook/pepe?id='+localStorage.getItem('aura-browserId'))</script>\"></iframe>",
 				expected:
 					'<iframe referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen; autoplay; encrypted-media"></iframe>',
 			},
@@ -472,8 +472,8 @@ describe('FormTrigger, formWebhook', () => {
 			],
 			formSubmittedText: 'Your response has been recorded',
 			formTitle: 'Test Form',
-			n8nWebsiteLink:
-				'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger&utm_campaign=instanceId',
+			auraWebsiteLink:
+				'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger&utm_campaign=instanceId',
 			testRun: true,
 			useResponseData: false,
 		});
@@ -518,8 +518,8 @@ describe('FormTrigger, formWebhook', () => {
 				],
 				formSubmittedText: 'Your response has been recorded',
 				formTitle: 'Test Form',
-				n8nWebsiteLink:
-					'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger&utm_campaign=instanceId',
+				auraWebsiteLink:
+					'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger&utm_campaign=instanceId',
 				testRun: true,
 				useResponseData: false,
 			});
@@ -628,8 +628,8 @@ describe('FormTrigger, prepareFormData', () => {
 			formDescription: 'This is a test form',
 			formDescriptionMetadata: 'This is a test form',
 			formSubmittedText: 'Thank you for your submission',
-			n8nWebsiteLink:
-				'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger&utm_campaign=test-instance',
+			auraWebsiteLink:
+				'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger&utm_campaign=test-instance',
 			formFields: [
 				{
 					id: 'field-0',
@@ -729,7 +729,7 @@ describe('FormTrigger, prepareFormData', () => {
 			formDescription: 'This is a test form',
 			formDescriptionMetadata: 'This is a test form',
 			formSubmittedText: 'Your response has been recorded',
-			n8nWebsiteLink: 'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger',
+			auraWebsiteLink: 'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger',
 			formFields: [
 				{
 					id: 'field-0',
@@ -1315,7 +1315,7 @@ describe('prepareFormReturnItem', () => {
 			copyBinaryFile: jest.fn().mockResolvedValue({}),
 		}),
 	});
-	const formNode = mock<INode>({ type: 'n8n-nodes-base.formTrigger' });
+	const formNode = mock<INode>({ type: 'aura-nodes-base.formTrigger' });
 
 	beforeEach(() => {
 		jest.clearAllMocks();
@@ -1641,7 +1641,7 @@ describe('FormTrigger, isFormConnected', () => {
 	it('should return false if Wait node is connected but resume parameter is not form', async () => {
 		const result = isFormConnected([
 			mock<NodeTypeAndVersion>({
-				type: 'n8n-nodes-base.wait',
+				type: 'aura-nodes-base.wait',
 				parameters: {
 					resume: 'timeInterval',
 				},
@@ -1652,7 +1652,7 @@ describe('FormTrigger, isFormConnected', () => {
 	it('should return true if Wait node is connected and resume parameter is form', async () => {
 		const result = isFormConnected([
 			mock<NodeTypeAndVersion>({
-				type: 'n8n-nodes-base.wait',
+				type: 'aura-nodes-base.wait',
 				parameters: {
 					resume: 'form',
 				},
@@ -1663,7 +1663,7 @@ describe('FormTrigger, isFormConnected', () => {
 	it('should return true if Form node is connected', async () => {
 		const result = isFormConnected([
 			mock<NodeTypeAndVersion>({
-				type: 'n8n-nodes-base.form',
+				type: 'aura-nodes-base.form',
 			}),
 		]);
 		expect(result).toBe(true);
@@ -1699,7 +1699,7 @@ describe('validateResponseModeConfiguration', () => {
 			typeVersion: 2.1,
 		} as INode);
 		webhookFunctions.getChildNodes.mockReturnValue([
-			{ type: 'n8n-nodes-base.respondToWebhook' } as NodeTypeAndVersion,
+			{ type: 'aura-nodes-base.respondToWebhook' } as NodeTypeAndVersion,
 		]);
 
 		expect(() => validateResponseModeConfiguration(webhookFunctions)).toThrow(
@@ -1710,11 +1710,11 @@ describe('validateResponseModeConfiguration', () => {
 	test('throws error if "Respond to Webhook" node is connected, version >= 2.2', () => {
 		webhookFunctions.getNodeParameter.mockReturnValue('responseNode');
 		webhookFunctions.getChildNodes.mockReturnValue([
-			{ type: 'n8n-nodes-base.respondToWebhook' } as NodeTypeAndVersion,
+			{ type: 'aura-nodes-base.respondToWebhook' } as NodeTypeAndVersion,
 		]);
 
 		expect(() => validateResponseModeConfiguration(webhookFunctions)).toThrow(
-			'The "Respond to Webhook" node is not supported in workflows initiated by the "n8n Form Trigger"',
+			'The "Respond to Webhook" node is not supported in workflows initiated by the "aura Form Trigger"',
 		);
 	});
 

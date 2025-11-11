@@ -9,7 +9,7 @@ import {
 	type LogDetailsPanelState,
 } from '@/features/execution/logs/logs.types';
 import NodeIcon from '@/app/components/NodeIcon.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import LogsViewNodeName from '@/features/execution/logs/components/LogsViewNodeName.vue';
 import { computed, useTemplateRef } from 'vue';
@@ -22,7 +22,7 @@ import { LOG_DETAILS_PANEL_STATE } from '@/features/execution/logs/logs.constant
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useExperimentalNdvStore } from '@/features/workflows/canvas/experimental/experimentalNdv.store';
 
-import { N8nButton, N8nResizeWrapper, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nResizeWrapper, N8nText } from '@aura/design-system';
 const MIN_IO_PANEL_WIDTH = 200;
 
 const {

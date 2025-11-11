@@ -1,6 +1,6 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { SettingsRepository, WorkflowEntity } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import { SettingsRepository, WorkflowEntity } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import {
 	BinaryDataConfig,
@@ -8,15 +8,15 @@ import {
 	InstanceSettings,
 	UnrecognizedNodeTypeError,
 	type DirectoryLoader,
-} from 'n8n-core';
-import { Ftp } from 'n8n-nodes-base/credentials/Ftp.credentials';
-import { GithubApi } from 'n8n-nodes-base/credentials/GithubApi.credentials';
-import { Cron } from 'n8n-nodes-base/nodes/Cron/Cron.node';
-import { FormTrigger } from 'n8n-nodes-base/nodes/Form/FormTrigger.node';
-import { ScheduleTrigger } from 'n8n-nodes-base/nodes/Schedule/ScheduleTrigger.node';
-import { Set } from 'n8n-nodes-base/nodes/Set/Set.node';
-import { Start } from 'n8n-nodes-base/nodes/Start/Start.node';
-import type { INodeTypeData, INode } from 'n8n-workflow';
+} from 'aura-core';
+import { Ftp } from 'aura-nodes-base/credentials/Ftp.credentials';
+import { GithubApi } from 'aura-nodes-base/credentials/GithubApi.credentials';
+import { Cron } from 'aura-nodes-base/nodes/Cron/Cron.node';
+import { FormTrigger } from 'aura-nodes-base/nodes/Form/FormTrigger.node';
+import { ScheduleTrigger } from 'aura-nodes-base/nodes/Schedule/ScheduleTrigger.node';
+import { Set } from 'aura-nodes-base/nodes/Set/Set.node';
+import { Start } from 'aura-nodes-base/nodes/Start/Start.node';
+import type { INodeTypeData, INode } from 'workflow';
 import type request from 'supertest';
 import { v4 as uuid } from 'uuid';
 
@@ -70,23 +70,23 @@ export async function initCredentialsTypes(): Promise<void> {
  */
 export async function initNodeTypes(customNodes?: INodeTypeData) {
 	const defaultNodes: INodeTypeData = {
-		'n8n-nodes-base.start': {
+		'aura-nodes-base.start': {
 			type: new Start(),
 			sourcePath: '',
 		},
-		'n8n-nodes-base.cron': {
+		'aura-nodes-base.cron': {
 			type: new Cron(),
 			sourcePath: '',
 		},
-		'n8n-nodes-base.set': {
+		'aura-nodes-base.set': {
 			type: new Set(),
 			sourcePath: '',
 		},
-		'n8n-nodes-base.scheduleTrigger': {
+		'aura-nodes-base.scheduleTrigger': {
 			type: new ScheduleTrigger(),
 			sourcePath: '',
 		},
-		'n8n-nodes-base.formTrigger': {
+		'aura-nodes-base.formTrigger': {
 			type: new FormTrigger(),
 			sourcePath: '',
 		},
@@ -96,13 +96,13 @@ export async function initNodeTypes(customNodes?: INodeTypeData) {
 	const nodes = customNodes ?? defaultNodes;
 	const loader = mock<DirectoryLoader>();
 	loader.getNode.mockImplementation((nodeType) => {
-		const node = nodes[`n8n-nodes-base.${nodeType}`];
-		if (!node) throw new UnrecognizedNodeTypeError('n8n-nodes-base', nodeType);
+		const node = nodes[`aura-nodes-base.${nodeType}`];
+		if (!node) throw new UnrecognizedNodeTypeError('aura-nodes-base', nodeType);
 		return node;
 	});
 
 	const loadNodesAndCredentials = Container.get(LoadNodesAndCredentials);
-	loadNodesAndCredentials.loaders = { 'n8n-nodes-base': loader };
+	loadNodesAndCredentials.loaders = { 'aura-nodes-base': loader };
 	loadNodesAndCredentials.loaded.nodes = nodes;
 }
 
@@ -180,7 +180,7 @@ export function makeWorkflow(options?: {
 	const node: INode = {
 		id: uuid(),
 		name: 'Cron',
-		type: 'n8n-nodes-base.cron',
+		type: 'aura-nodes-base.cron',
 		parameters: {},
 		typeVersion: 1,
 		position: [740, 240],

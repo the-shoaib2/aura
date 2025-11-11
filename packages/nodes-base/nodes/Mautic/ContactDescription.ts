@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const contactOperations: INodeProperties[] = [
 	{
@@ -127,7 +127,7 @@ export const contactFields: INodeProperties[] = [
 		name: 'company',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getCompanies',
 		},
@@ -293,7 +293,7 @@ export const contactFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Field Value',
@@ -378,7 +378,7 @@ export const contactFields: INodeProperties[] = [
 				name: 'stage',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getStages',
 				},
@@ -389,7 +389,7 @@ export const contactFields: INodeProperties[] = [
 				name: 'tags',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getTags',
 				},
@@ -625,7 +625,7 @@ export const contactFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Field Value',
@@ -770,7 +770,7 @@ export const contactFields: INodeProperties[] = [
 				name: 'company',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getCompanies',
 				},
@@ -818,7 +818,7 @@ export const contactFields: INodeProperties[] = [
 				name: 'stage',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				displayOptions: {
 					show: {
 						'/jsonParameters': [false],
@@ -834,7 +834,7 @@ export const contactFields: INodeProperties[] = [
 				name: 'tags',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				displayOptions: {
 					show: {
 						'/jsonParameters': [false],
@@ -1261,7 +1261,7 @@ export const contactFields: INodeProperties[] = [
 				name: 'rawData',
 				type: 'boolean',
 				default: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'By default only the data of the fields get returned. If this options gets set the RAW response with all data gets returned.',
 			},
@@ -1275,7 +1275,7 @@ export const contactFields: INodeProperties[] = [
 		name: 'campaignEmailId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		required: true,
 		displayOptions: {
 			show: {

@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'workflow';
 import type { AwsAssumeRoleCredentialsType, AWSRegion } from './types';
 
 global.fetch = jest.fn();
@@ -629,7 +629,7 @@ describe('assumeRole', () => {
 			expect(mockFetch).toHaveBeenCalledWith(
 				'https://sts.us-east-1.amazonaws.com',
 				expect.objectContaining({
-					body: expect.stringContaining('RoleSessionName=n8n-session'),
+					body: expect.stringContaining('RoleSessionName=aura-session'),
 				}),
 			);
 		});

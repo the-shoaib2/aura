@@ -1,8 +1,8 @@
-import type { CreateDataTableColumnDto } from '@n8n/api-types';
-import { randomName } from '@n8n/backend-test-utils';
-import type { Project } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { DataTableRows } from 'n8n-workflow';
+import type { CreateDataTableColumnDto } from '@aura/api-types';
+import { randomName } from '@aura/backend-test-utils';
+import type { Project } from '@aura/db';
+import { Container } from '@aura/di';
+import type { DataTableRows } from 'workflow';
 
 import { DataTableColumnRepository } from '@/modules/data-table/data-table-column.repository';
 import { DataTableRowsRepository } from '@/modules/data-table/data-table-rows.repository';

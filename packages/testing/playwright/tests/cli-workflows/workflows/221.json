@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "3524ea35-2975-49aa-8a25-0980af2d16ff"
@@ -39,7 +39,7 @@
 				}
 			},
 			"name": "Copper",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [500, 130],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"companyId": "={{$node[\"Copper\"].json[\"id\"]}}"
 			},
 			"name": "Copper1",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [650, 130],
 			"credentials": {
@@ -85,7 +85,7 @@
 				}
 			},
 			"name": "Copper2",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [800, 130],
 			"credentials": {
@@ -105,7 +105,7 @@
 				}
 			},
 			"name": "Copper3",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [950, 130],
 			"credentials": {
@@ -122,7 +122,7 @@
 				"companyId": "={{$node[\"Copper\"].json[\"id\"]}}"
 			},
 			"name": "Copper4",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1100, 130],
 			"credentials": {
@@ -139,7 +139,7 @@
 				"limit": 1
 			},
 			"name": "Copper5",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [650, 440],
 			"credentials": {
@@ -159,7 +159,7 @@
 				}
 			},
 			"name": "Copper6",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [500, 290],
 			"credentials": {
@@ -177,7 +177,7 @@
 				"personId": "={{$node[\"Copper6\"].json[\"id\"]}}"
 			},
 			"name": "Copper7",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [750, 290],
 			"credentials": {
@@ -198,7 +198,7 @@
 				}
 			},
 			"name": "Copper8",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [900, 290],
 			"credentials": {
@@ -217,7 +217,7 @@
 				"filterFields": {}
 			},
 			"name": "Copper9",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1050, 290],
 			"credentials": {
@@ -235,7 +235,7 @@
 				"personId": "={{$node[\"Copper6\"].json[\"id\"]}}"
 			},
 			"name": "Copper10",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1200, 290],
 			"credentials": {
@@ -256,7 +256,7 @@
 				}
 			},
 			"name": "Copper11",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [500, 590],
 			"credentials": {
@@ -274,7 +274,7 @@
 				"projectId": "={{$node[\"Copper11\"].json[\"id\"]}}"
 			},
 			"name": "Copper12",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [650, 590],
 			"credentials": {
@@ -297,7 +297,7 @@
 				}
 			},
 			"name": "Copper13",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [800, 590],
 			"credentials": {
@@ -316,7 +316,7 @@
 				"filterFields": {}
 			},
 			"name": "Copper14",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [950, 590],
 			"credentials": {
@@ -334,7 +334,7 @@
 				"projectId": "={{$node[\"Copper11\"].json[\"id\"]}}"
 			},
 			"name": "Copper15",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1100, 590],
 			"credentials": {
@@ -356,7 +356,7 @@
 				}
 			},
 			"name": "Copper16",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [500, 740],
 			"credentials": {
@@ -374,7 +374,7 @@
 				"taskId": "={{$node[\"Copper16\"].json[\"id\"]}}"
 			},
 			"name": "Copper17",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [650, 740],
 			"credentials": {
@@ -398,7 +398,7 @@
 				}
 			},
 			"name": "Copper18",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [800, 740],
 			"credentials": {
@@ -419,7 +419,7 @@
 				}
 			},
 			"name": "Copper19",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [950, 740],
 			"credentials": {
@@ -437,7 +437,7 @@
 				"taskId": "={{$node[\"Copper16\"].json[\"id\"]}}"
 			},
 			"name": "Copper20",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1100, 740],
 			"credentials": {
@@ -454,7 +454,7 @@
 				"limit": 1
 			},
 			"name": "Copper21",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [500, -10],
 			"credentials": {
@@ -473,7 +473,7 @@
 				"primaryContactId": "={{$node[\"Copper6\"].json[\"id\"]}}"
 			},
 			"name": "Copper22",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [800, 440],
 			"credentials": {
@@ -491,7 +491,7 @@
 				"opportunityId": "={{$node[\"Copper22\"].json[\"id\"]}}"
 			},
 			"name": "Copper23",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [950, 440],
 			"credentials": {
@@ -512,7 +512,7 @@
 				}
 			},
 			"name": "Copper24",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1100, 440],
 			"credentials": {
@@ -531,7 +531,7 @@
 				"filterFields": {}
 			},
 			"name": "Copper25",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1250, 440],
 			"credentials": {
@@ -549,7 +549,7 @@
 				"opportunityId": "={{$node[\"Copper22\"].json[\"id\"]}}"
 			},
 			"name": "Copper26",
-			"type": "n8n-nodes-base.copper",
+			"type": "aura-nodes-base.copper",
 			"typeVersion": 1,
 			"position": [1400, 440],
 			"credentials": {

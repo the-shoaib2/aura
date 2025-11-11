@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "524988a0-a07b-4aca-8284-22aa6f951ca0"
@@ -20,7 +20,7 @@
 				"label": "=testField{{$evaluateExpression(Math.random())}}"
 			},
 			"name": "ConvertKit",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [450, 240],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"limit": 1
 			},
 			"name": "ConvertKit1",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [600, 240],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"label": "UpdatedTestField"
 			},
 			"name": "ConvertKit2",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [750, 240],
 			"credentials": {
@@ -74,7 +74,7 @@
 				"id": "={{$node[\"ConvertKit\"].json[\"id\"]}}"
 			},
 			"name": "ConvertKit3",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [900, 240],
 			"credentials": {
@@ -90,7 +90,7 @@
 				"operation": "getAll"
 			},
 			"name": "ConvertKit4",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [450, 400],
 			"credentials": {
@@ -108,7 +108,7 @@
 				"additionalFields": {}
 			},
 			"name": "ConvertKit5",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [600, 400],
 			"credentials": {
@@ -127,7 +127,7 @@
 				"additionalFields": {}
 			},
 			"name": "ConvertKit6",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [1490, 400],
 			"credentials": {
@@ -144,7 +144,7 @@
 				"name": "=tag{{Date.now()}}"
 			},
 			"name": "ConvertKit7",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [750, 490],
 			"credentials": {
@@ -162,7 +162,7 @@
 				"limit": 1
 			},
 			"name": "ConvertKit8",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [890, 490],
 			"credentials": {
@@ -182,7 +182,7 @@
 				"additionalFields": {}
 			},
 			"name": "ConvertKit9",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [1050, 550],
 			"credentials": {
@@ -201,7 +201,7 @@
 				"additionalFields": {}
 			},
 			"name": "ConvertKit10",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [1200, 550],
 			"alwaysOutputData": true,
@@ -221,7 +221,7 @@
 				"email": "={{$node[\"ConvertKit5\"].json[\"subscriber\"][\"email_address\"]}}"
 			},
 			"name": "ConvertKit11",
-			"type": "n8n-nodes-base.convertKit",
+			"type": "aura-nodes-base.convertKit",
 			"typeVersion": 1,
 			"position": [1350, 550],
 			"credentials": {

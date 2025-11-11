@@ -8,18 +8,18 @@
 			"parameters": {},
 			"id": "5e2ef15b-2c6c-412f-a9da-515b5211386e",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [420, 100]
 		},
 		{
 			"parameters": {
-				"endpoint": "https://api.n8n.io/graphql",
+				"endpoint": "https://api.aura.io/graphql",
 				"requestFormat": "json",
 				"query": "query {\n  nodes(pagination: { limit: 1 }) {\n    data {\n      id\n      attributes {\n        name\n        displayName\n        description\n        group\n        codex\n        createdAt\n      }\n    }\n  }\n}"
 			},
 			"name": "Fetch Request Format JSON",
-			"type": "n8n-nodes-base.graphql",
+			"type": "aura-nodes-base.graphql",
 			"typeVersion": 1,
 			"position": [700, 140],
 			"id": "e1c750a0-8d6c-4e81-8111-3218e1e6e69f"
@@ -48,7 +48,7 @@
 								{
 									"id": "1",
 									"attributes": {
-										"name": "n8n-nodes-base.activeCampaign",
+										"name": "aura-nodes-base.activeCampaign",
 										"displayName": "ActiveCampaign",
 										"description": "Create and edit data in ActiveCampaign",
 										"group": "[\"transform\"]",
@@ -58,12 +58,12 @@
 												"resources": {
 													"primaryDocumentation": [
 														{
-															"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.activecampaign/"
+															"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.activecampaign/"
 														}
 													],
 													"credentialDocumentation": [
 														{
-															"url": "https://docs.n8n.io/integrations/builtin/credentials/activecampaign/"
+															"url": "https://docs.aura.io/integrations/builtin/credentials/activecampaign/"
 														}
 													]
 												},

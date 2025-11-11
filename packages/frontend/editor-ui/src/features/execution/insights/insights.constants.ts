@@ -1,4 +1,4 @@
-import type { InsightsSummaryType } from '@n8n/api-types';
+import type { InsightsSummaryType } from '@aura/api-types';
 import dateformat from 'dateformat';
 
 export const INSIGHT_TYPES = {

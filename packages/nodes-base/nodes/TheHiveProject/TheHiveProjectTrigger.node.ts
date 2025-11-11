@@ -7,7 +7,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookResponseData,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class TheHiveProjectTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -33,7 +33,7 @@ export class TheHiveProjectTrigger implements INodeType {
 		properties: [
 			{
 				displayName:
-					'You must set up the webhook in TheHive — instructions <a href="https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehive5trigger/#configure-a-webhook-in-thehive" target="_blank">here</a>',
+					'You must set up the webhook in TheHive — instructions <a href="https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.thehive5trigger/#configure-a-webhook-in-thehive" target="_blank">here</a>',
 				name: 'notice',
 				type: 'notice',
 				default: '',
@@ -45,7 +45,7 @@ export class TheHiveProjectTrigger implements INodeType {
 				default: [],
 				required: true,
 				description: 'Events types',
-				// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
+				// eslint-disable-next-line aura-nodes-base/node-param-multi-options-type-unsorted-items
 				options: [
 					{
 						name: '*',

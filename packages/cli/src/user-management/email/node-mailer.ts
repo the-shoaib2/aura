@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Service } from '@aura/di';
 import pick from 'lodash/pick';
-import { ErrorReporter } from 'n8n-core';
+import { ErrorReporter } from 'aura-core';
 import path from 'node:path';
 import type { Transporter } from 'nodemailer';
 import { createTransport } from 'nodemailer';
@@ -55,9 +55,9 @@ export class NodeMailer {
 				html: mailData.body,
 				attachments: [
 					{
-						cid: 'n8n-logo',
-						filename: 'n8n-logo.png',
-						path: path.resolve(__dirname, 'templates/n8n-logo.png'),
+						cid: 'aura-logo',
+						filename: 'aura-logo.png',
+						path: path.resolve(__dirname, 'templates/aura-logo.png'),
 						contentDisposition: 'inline',
 					},
 				],

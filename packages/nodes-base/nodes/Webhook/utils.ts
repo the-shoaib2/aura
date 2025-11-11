@@ -1,12 +1,12 @@
 import basicAuth from 'basic-auth';
 import jwt from 'jsonwebtoken';
-import { WorkflowConfigurationError } from 'n8n-workflow';
+import { WorkflowConfigurationError } from 'workflow';
 import type {
 	IWebhookFunctions,
 	INodeExecutionData,
 	IDataObject,
 	ICredentialDataDecryptedObject,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { WebhookAuthorizationError } from './error';
 import { formatPrivateKey } from '../../utils/utilities';
@@ -152,7 +152,7 @@ export const checkResponseModeConfiguration = (context: IWebhookFunctions) => {
 	const connectedNodes = context.getChildNodes(context.getNode().name);
 
 	const isRespondToWebhookConnected = connectedNodes.some(
-		(node) => node.type === 'n8n-nodes-base.respondToWebhook',
+		(node) => node.type === 'aura-nodes-base.respondToWebhook',
 	);
 
 	if (!isRespondToWebhookConnected && responseMode === 'responseNode') {

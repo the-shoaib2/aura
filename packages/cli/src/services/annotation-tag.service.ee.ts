@@ -1,6 +1,6 @@
-import type { AnnotationTagEntity } from '@n8n/db';
-import { AnnotationTagRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import type { AnnotationTagEntity } from '@aura/db';
+import { AnnotationTagRepository } from '@aura/db';
+import { Service } from '@aura/di';
 
 import { validateEntity } from '@/generic-helpers';
 

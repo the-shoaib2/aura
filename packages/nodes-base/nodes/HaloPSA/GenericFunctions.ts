@@ -9,8 +9,8 @@ import type {
 	IPollFunctions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 // Interfaces and Types -------------------------------------------------------------
 interface IHaloPSATokens {
@@ -73,7 +73,7 @@ export async function haloPSAApiRequest(
 		let options: IRequestOptions = {
 			headers: {
 				Authorization: `Bearer ${accessToken}`,
-				'User-Agent': 'https://n8n.io',
+				'User-Agent': 'https://aura.io',
 				Connection: 'keep-alive',
 				Accept: '*/*',
 				'Accept-Encoding': 'gzip, deflate, br',

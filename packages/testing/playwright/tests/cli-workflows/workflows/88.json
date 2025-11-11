@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "d98ebf73-d4b9-4f3c-8959-09921d971af4"
@@ -16,14 +16,14 @@
 		{
 			"parameters": {
 				"resource": "connection",
-				"service": "n8n",
+				"service": "aura",
 				"externalid": "=account{{Date.now()}}",
 				"name": "=AccountName{{Date.now()}}",
-				"logoUrl": "https://n8n.io/_nuxt/img/df5be1c.png",
-				"linkUrl": "https://n8n.io"
+				"logoUrl": "https://aura.io/_nuxt/img/df5be1c.png",
+				"linkUrl": "https://aura.io"
 			},
 			"name": "ActiveCampaign",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -43,7 +43,7 @@
 				"additionalFields": {}
 			},
 			"name": "ActiveCampaign1",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [600, 350],
 			"credentials": {
@@ -64,7 +64,7 @@
 				}
 			},
 			"name": "ActiveCampaign2",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1930, 350],
 			"credentials": {
@@ -82,7 +82,7 @@
 				"ecommerceCustomerId": "={{$node[\"ActiveCampaign1\"].json[\"ecomCustomer\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign3",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [2080, 350],
 			"credentials": {
@@ -100,7 +100,7 @@
 				"limit": 1
 			},
 			"name": "ActiveCampaign4",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [2230, 350],
 			"credentials": {
@@ -118,7 +118,7 @@
 				"ecommerceCustomerId": "={{$node[\"ActiveCampaign1\"].json[\"ecomCustomer\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign5",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [2700, 350],
 			"credentials": {
@@ -136,7 +136,7 @@
 				"connectionId": "={{$node[\"ActiveCampaign\"].json[\"connection\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign6",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [2960, 310],
 			"credentials": {
@@ -168,7 +168,7 @@
 				"additionalFields": {}
 			},
 			"name": "ActiveCampaign7",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [750, 500],
 			"credentials": {
@@ -189,7 +189,7 @@
 				}
 			},
 			"name": "ActiveCampaign8",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1330, 500],
 			"credentials": {
@@ -207,7 +207,7 @@
 				"orderId": "={{$node[\"ActiveCampaign7\"].json[\"ecomOrder\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign9",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1480, 500],
 			"credentials": {
@@ -225,7 +225,7 @@
 				"limit": 1
 			},
 			"name": "ActiveCampaign10",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1630, 500],
 			"credentials": {
@@ -243,7 +243,7 @@
 				"orderId": "={{$node[\"ActiveCampaign7\"].json[\"ecomOrder\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign11",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1780, 500],
 			"credentials": {
@@ -261,7 +261,7 @@
 				"procuctId": "={{$node[\"ActiveCampaign7\"].json[\"ecomOrderProducts\"][0][\"id\"]}}"
 			},
 			"name": "ActiveCampaign12",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [900, 630],
 			"alwaysOutputData": true,
@@ -280,7 +280,7 @@
 				"orderId": "={{$node[\"ActiveCampaign7\"].json[\"ecomOrder\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign13",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1050, 630],
 			"credentials": {
@@ -297,7 +297,7 @@
 				"limit": 1
 			},
 			"name": "ActiveCampaign14",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1200, 630],
 			"alwaysOutputData": true,
@@ -318,7 +318,7 @@
 				}
 			},
 			"name": "ActiveCampaign15",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [2400, 200],
 			"credentials": {
@@ -335,7 +335,7 @@
 				"contactId": "={{$node[\"ActiveCampaign15\"].json[\"id\"]}}"
 			},
 			"name": "ActiveCampaign16",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [2550, 200],
 			"credentials": {

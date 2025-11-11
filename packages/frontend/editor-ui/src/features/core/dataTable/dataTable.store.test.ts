@@ -1,6 +1,6 @@
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { faker } from '@faker-js/faker';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { createPinia, setActivePinia } from 'pinia';
 import * as dataTableApi from '@/features/core/dataTable/dataTable.api';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';

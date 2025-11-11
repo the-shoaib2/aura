@@ -4,7 +4,7 @@ import {
 	type INodeExecutionData,
 	NodeOperationError,
 	type ResourceMapperField,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { cellFormat, handlingExtraData, useAppendOption } from './commonDescription';
 import type { GoogleSheet } from '../../helpers/GoogleSheet';
@@ -100,7 +100,7 @@ export const description: SheetProperties = [
 						name: 'fieldId',
 						type: 'options',
 						description:
-							'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+							'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsDependsOn: ['sheetName.value'],
 							loadOptionsMethod: 'getSheetHeaderRowAndSkipEmpty',

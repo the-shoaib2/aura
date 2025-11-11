@@ -3,8 +3,8 @@ import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { useToast } from '@/app/composables/useToast';
 import type { WorkflowListItem } from '@/Interface';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { useI18n } from '@n8n/i18n';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { useI18n } from '@aura/i18n';
 import { computed, onMounted, ref } from 'vue';
 import { useMCPStore } from '@/features/ai/mcpAccess/mcp.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
@@ -12,9 +12,9 @@ import MCPConnectionInstructions from '@/features/ai/mcpAccess/components/MCPCon
 import { LOADING_INDICATOR_TIMEOUT } from '@/features/ai/mcpAccess/mcp.constants';
 import WorkflowsTable from '@/features/ai/mcpAccess/components/WorkflowsTable.vue';
 import McpAccessToggle from '@/features/ai/mcpAccess/components/McpAccessToggle.vue';
-import { N8nHeading } from '@n8n/design-system';
+import { N8nHeading } from '@aura/design-system';
 import { useMcp } from '@/features/ai/mcpAccess/composables/useMcp';
-import type { OAuthClientResponseDto } from '@n8n/api-types';
+import type { OAuthClientResponseDto } from '@aura/api-types';
 
 const i18n = useI18n();
 const toast = useToast();

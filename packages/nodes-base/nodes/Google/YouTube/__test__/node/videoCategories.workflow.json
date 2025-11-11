@@ -2,7 +2,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "31e68280-caac-4297-bb03-ca6d548b459e",
@@ -14,7 +14,7 @@
 				"regionCode": "GB",
 				"limit": 3
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [220, 0],
 			"id": "790afd1a-f8b5-4bc1-b839-9658ee112890",
@@ -28,7 +28,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 0],
 			"id": "84ef4be3-8c98-449f-ba1e-b08d1492435e",

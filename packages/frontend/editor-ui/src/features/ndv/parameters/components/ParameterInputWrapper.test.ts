@@ -1,7 +1,7 @@
 import { renderComponent } from '@/__tests__/render';
 import { createTestingPinia } from '@pinia/testing';
 import ParameterInputWrapper from './ParameterInputWrapper.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
 import { waitFor } from '@testing-library/vue';
 import { createTestNodeProperties } from '@/__tests__/mocks';

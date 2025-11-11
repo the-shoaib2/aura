@@ -1,4 +1,4 @@
-import type { CurrentUserResponse } from '@n8n/rest-api-client/api/users';
+import type { CurrentUserResponse } from '@aura/rest-api-client/api/users';
 import { useUsersStore } from './users.store';
 import { createPinia, setActivePinia } from 'pinia';
 
@@ -12,7 +12,7 @@ const { loginCurrentUser, inviteUsers, login, logout } = vi.hoisted(() => {
 	};
 });
 
-vi.mock('@n8n/rest-api-client/api/users', () => ({
+vi.mock('@aura/rest-api-client/api/users', () => ({
 	loginCurrentUser,
 	login,
 	logout,
@@ -22,7 +22,7 @@ vi.mock('./invitation.api', () => ({
 	inviteUsers,
 }));
 
-vi.mock('@n8n/stores/useRootStore', () => ({
+vi.mock('@aura/stores/useRootStore', () => ({
 	useRootStore: vi.fn(() => ({
 		instanceId: 'test-instance-id',
 	})),
@@ -66,16 +66,16 @@ describe('users.store', () => {
 
 			inviteUsers.mockResolvedValueOnce([
 				{
-					user: { id: 'random-id', email: 'test@n8n.io', emailSent: true, role: 'global:member' },
+					user: { id: 'random-id', email: 'test@aura.io', emailSent: true, role: 'global:member' },
 				},
 			]);
 
-			await usersStore.inviteUsers([{ email: 'test@n8n.io', role: 'global:member' }]);
+			await usersStore.inviteUsers([{ email: 'test@aura.io', role: 'global:member' }]);
 
 			expect(usersStore.allUsers[0]).toMatchObject(
 				expect.objectContaining({
 					id: 'random-id',
-					email: 'test@n8n.io',
+					email: 'test@aura.io',
 					role: 'global:member',
 					isPending: true,
 					isDefaultUser: false,
@@ -193,7 +193,7 @@ describe('users.store', () => {
 			usersStore.registerLoginHook(successHook);
 
 			await usersStore.loginWithCreds({
-				emailOrLdapLoginId: 'test@n8n.io',
+				emailOrLdapLoginId: 'test@aura.io',
 				password: 'test-password',
 			});
 

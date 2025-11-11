@@ -7,7 +7,7 @@ export const COMMUNITY_NODES_INSTALLATION_DOCS_URL = `https://${DOCS_DOMAIN}/int
 export const COMMUNITY_NODES_RISKS_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/community-nodes/risks/`;
 export const COMMUNITY_NODES_BLOCKLIST_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/community-nodes/blocklist/`;
 export const NPM_KEYWORD_SEARCH_URL =
-	'https://www.npmjs.com/search?q=keywords%3An8n-community-node-package';
+	'https://www.npmjs.com/search?q=keywords%3Aaura-community-node-package';
 
 export const COMMUNITY_PACKAGE_MANAGE_ACTIONS = {
 	UNINSTALL: 'uninstall',

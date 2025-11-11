@@ -1,4 +1,4 @@
-import type { ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, INodePropertyOptions } from 'workflow';
 
 export async function getNodeTypes(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
 	const types = this.getKnownNodeTypes() as {
@@ -11,7 +11,7 @@ export async function getNodeTypes(this: ILoadOptionsFunctions): Promise<INodePr
 
 	let typeNames = Object.keys(types);
 
-	if (this.getNode().type === 'n8n-nodes-base.simulateTrigger') {
+	if (this.getNode().type === 'aura-nodes-base.simulateTrigger') {
 		typeNames = typeNames.filter((type) => type.toLowerCase().includes('trigger'));
 	}
 

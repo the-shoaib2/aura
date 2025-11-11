@@ -3,7 +3,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getSites, getCollections, getFields } from '../GenericFunctions';
 import { router } from './actions/router';

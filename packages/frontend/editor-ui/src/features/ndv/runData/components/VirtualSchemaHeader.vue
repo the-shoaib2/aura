@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
-import { type INodeTypeDescription } from 'n8n-workflow';
-import { useI18n } from '@n8n/i18n';
+import { type INodeTypeDescription } from 'workflow';
+import { useI18n } from '@aura/i18n';
 import { SCHEMA_PREVIEW_DOCS_URL } from '@/app/constants';
 
-import { N8nIcon, N8nLink } from '@n8n/design-system';
+import { N8nIcon, N8nLink } from '@aura/design-system';
 import { I18nT } from 'vue-i18n';
 const props = defineProps<{
 	title: string;

@@ -8,7 +8,7 @@
 		<meta property="og:description" content="{{formDescriptionMetadata}}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="/static/og_image.png" />
-		<link rel='icon' type='image/png' href='https://n8n.io/favicon.ico' />
+		<link rel='icon' type='image/png' href='https://aura.io/favicon.ico' />
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<title>{{formTitle}}</title>
 		<style>
@@ -123,17 +123,17 @@
 				margin-bottom: var(--margin-bottom-card);
 			}
 
-			.n8n-link {
+			.aura-link {
 				padding-bottom: var(--padding-container-top);
 			}
-			.n8n-link a {
+			.aura-link a {
 				color: var(--color-link);
 				font-weight: 600;
 				font-size: var(--font-size-link);
 				text-decoration: none;
 			}
 
-			.n8n-link svg {
+			.aura-link svg {
 				display: inline-block;
 				vertical-align: middle;
 			}
@@ -480,7 +480,7 @@
 					<hr>
 				{{/if}}
 
-				<form class='card' action='#' method='POST' name='n8n-form' id='n8n-form' novalidate>
+				<form class='card' action='#' method='POST' name='aura-form' id='aura-form' novalidate>
 					<div class='form-header'>
 						<h1>{{formTitle}}</h1>
 						<p style="white-space: pre-line">{{{formDescription}}} </p>
@@ -632,8 +632,8 @@
 
 				{{#if appendAttribution}}
 					<hr>
-					<div class='n8n-link'>
-						<a href={{n8nWebsiteLink}} target='_blank'>
+					<div class='aura-link'>
+						<a href={{auraWebsiteLink}} target='_blank'>
 							Form automated with
 							<svg
 								width='73'
@@ -769,7 +769,7 @@
 				return true;
 			}
 
-			const form = document.querySelector('#n8n-form');
+			const form = document.querySelector('#aura-form');
 
 			document.querySelectorAll("input[type=number]").forEach(function (element) {
 				element.addEventListener("wheel", function(event) {
@@ -876,7 +876,7 @@
 				if (!interval) return;
 
 				try {
-					const response = await fetch(`${formWaitingUrl ?? window.location.href}/n8n-execution-status`);
+					const response = await fetch(`${formWaitingUrl ?? window.location.href}/aura-execution-status`);
 					const text = (await response.text()).trim();
 
 					if (text === "form-waiting") {

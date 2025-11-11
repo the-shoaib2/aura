@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 export class GetResponseOAuth2Api implements ICredentialType {
 	name = 'getResponseOAuth2Api';

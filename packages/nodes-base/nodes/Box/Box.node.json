@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.box",
+	"node": "aura-nodes-base.box",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/box/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/box/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.box/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.box/"
 			}
 		]
 	}

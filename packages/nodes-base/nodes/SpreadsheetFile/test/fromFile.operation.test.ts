@@ -1,6 +1,6 @@
 import { mockDeep } from 'jest-mock-extended';
-import type { IBinaryData, IExecuteFunctions, INode, INodeExecutionData } from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+import type { IBinaryData, IExecuteFunctions, INode, INodeExecutionData } from 'workflow';
+import { BINARY_ENCODING, NodeOperationError } from 'workflow';
 import { Readable } from 'stream';
 
 jest.mock('xlsx', () => ({
@@ -78,7 +78,7 @@ describe('fromFile.operation - xlsx parsing logic', () => {
 		mockExecuteFunctions.helpers.assertBinaryData.mockReturnValue(mockBinaryDataInMemory);
 		mockExecuteFunctions.getNode.mockReturnValue({
 			name: 'SpreadsheetFile',
-			type: 'n8n-nodes-base.spreadsheetFile',
+			type: 'aura-nodes-base.spreadsheetFile',
 			id: 'test-node-id',
 		} as INode);
 		mockExecuteFunctions.continueOnFail.mockReturnValue(false);
@@ -706,7 +706,7 @@ describe('fromFile.operation - xlsx parsing logic', () => {
 			mockExecuteFunctions.helpers.assertBinaryData.mockReturnValue(mockBinaryDataCSV);
 			mockExecuteFunctions.getNode.mockReturnValue({
 				name: 'SpreadsheetFile',
-				type: 'n8n-nodes-base.spreadsheetFile',
+				type: 'aura-nodes-base.spreadsheetFile',
 				id: 'test-node-id',
 			} as INode);
 			mockExecuteFunctions.continueOnFail.mockReturnValue(false);

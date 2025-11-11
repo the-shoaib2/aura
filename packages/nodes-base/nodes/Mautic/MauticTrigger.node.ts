@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookResponseData,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 import { parse as urlParse } from 'url';
 
 import { mauticApiRequest } from './GenericFunctions';
@@ -76,7 +76,7 @@ export class MauticTrigger implements INodeType {
 				name: 'events',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				required: true,
 				typeOptions: {
 					loadOptionsMethod: 'getEvents',
@@ -147,8 +147,8 @@ export class MauticTrigger implements INodeType {
 				const eventsOrder = this.getNodeParameter('eventsOrder', 0) as string;
 				const urlParts = urlParse(webhookUrl);
 				const body: IDataObject = {
-					name: `n8n-webhook:${urlParts.path}`,
-					description: 'n8n webhook',
+					name: `aura-webhook:${urlParts.path}`,
+					description: 'aura webhook',
 					webhookUrl,
 					triggers: events,
 					eventsOrderbyDir: eventsOrder,

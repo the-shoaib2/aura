@@ -95,11 +95,11 @@ describe('ForgotMyPasswordView', () => {
 		await userEvent.tab();
 		expect(document.activeElement).toBe(emailInput);
 
-		await userEvent.type(emailInput, 'test@n8n.io');
+		await userEvent.type(emailInput, 'test@aura.io');
 		await userEvent.click(submitButton);
 
 		expect(usersStore.sendForgotPasswordEmail).toHaveBeenCalledWith({
-			email: 'test@n8n.io',
+			email: 'test@aura.io',
 		});
 
 		expect(toast.showMessage).toHaveBeenCalledWith(
@@ -121,11 +121,11 @@ describe('ForgotMyPasswordView', () => {
 		const emailInput = getByRole('textbox');
 		const submitButton = getByRole('button');
 
-		await userEvent.type(emailInput, 'test@n8n.io');
+		await userEvent.type(emailInput, 'test@aura.io');
 		await userEvent.click(submitButton);
 
 		expect(usersStore.sendForgotPasswordEmail).toHaveBeenCalledWith({
-			email: 'test@n8n.io',
+			email: 'test@aura.io',
 		});
 
 		expect(toast.showMessage).toHaveBeenCalledWith(

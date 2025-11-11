@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "2003127c-05c1-4e8d-a123-f50582b324d0"
@@ -19,7 +19,7 @@
 				"chatId": "@FixedChannel123"
 			},
 			"name": "Telegram",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [500, 200],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"description": "=UpdatedDescription{{Date.now()}}"
 			},
 			"name": "Telegram1",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [650, 200],
 			"credentials": {
@@ -57,7 +57,7 @@
 				"title": "=Title{{Date.now()}}"
 			},
 			"name": "Telegram2",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [800, 200],
 			"credentials": {
@@ -76,7 +76,7 @@
 				"userId": "1757347499"
 			},
 			"name": "Telegram3",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [950, 200],
 			"credentials": {
@@ -94,7 +94,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram4",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [490, 400],
 			"credentials": {
@@ -114,7 +114,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram5",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [650, 400],
 			"credentials": {
@@ -133,7 +133,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram6",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [800, 400],
 			"credentials": {
@@ -151,7 +151,7 @@
 				"messageId": "={{$node[\"Telegram4\"].json[\"result\"][\"message_id\"]}}"
 			},
 			"name": "Telegram7",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [950, 400],
 			"credentials": {
@@ -166,11 +166,11 @@
 			"parameters": {
 				"operation": "sendPhoto",
 				"chatId": "@FixedChannel123",
-				"file": "https://n8n.io/_nuxt/img/df5be1c.png",
+				"file": "https://aura.io/_nuxt/img/df5be1c.png",
 				"additionalFields": {}
 			},
 			"name": "Telegram8",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [1100, 400],
 			"credentials": {
@@ -189,7 +189,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram9",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [1250, 400],
 			"credentials": {
@@ -206,7 +206,7 @@
 				"fileId": "={{$node[\"Telegram8\"].json[\"result\"][\"photo\"][0][\"file_id\"]}}"
 			},
 			"name": "Telegram10",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [1250, 600],
 			"credentials": {
@@ -224,11 +224,11 @@
 				"media": {
 					"media": [
 						{
-							"media": "https://n8n.io/_nuxt/img/df5be1c.png",
+							"media": "https://aura.io/_nuxt/img/df5be1c.png",
 							"additionalFields": {}
 						},
 						{
-							"media": "https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot.png",
+							"media": "https://raw.githubusercontent.com/aura-io/aura/master/assets/aura-screenshot.png",
 							"additionalFields": {}
 						}
 					]
@@ -236,7 +236,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram11",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [1400, 400],
 			"credentials": {
@@ -254,7 +254,7 @@
 				"action": "find_location"
 			},
 			"name": "Telegram12",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [1550, 400],
 			"credentials": {
@@ -274,7 +274,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram13",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [1700, 400],
 			"credentials": {
@@ -293,7 +293,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram14",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [1850, 400],
 			"credentials": {
@@ -312,7 +312,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram15",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [2000, 400],
 			"credentials": {
@@ -331,7 +331,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram16",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [2150, 400],
 			"credentials": {
@@ -350,7 +350,7 @@
 				"additionalFields": {}
 			},
 			"name": "Telegram17",
-			"type": "n8n-nodes-base.telegram",
+			"type": "aura-nodes-base.telegram",
 			"typeVersion": 1,
 			"position": [2300, 400],
 			"credentials": {

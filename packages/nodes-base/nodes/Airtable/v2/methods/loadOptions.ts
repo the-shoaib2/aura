@@ -1,5 +1,5 @@
-import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { apiRequest } from '../transport';
 
@@ -45,7 +45,7 @@ export async function getColumnsWithRecordId(
 	const returnData = await getColumns.call(this);
 	return [
 		{
-			// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased-id, n8n-nodes-base/node-param-display-name-miscased
+			// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased-id, aura-nodes-base/node-param-display-name-miscased
 			name: 'id',
 			value: 'id' as string,
 			description: 'Type: primaryFieldId',

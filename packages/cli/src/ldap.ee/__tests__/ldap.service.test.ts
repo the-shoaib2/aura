@@ -1,14 +1,14 @@
-import { mockLogger, mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { LDAP_FEATURE_NAME, type LdapConfig } from '@n8n/constants';
-import type { Settings } from '@n8n/db';
-import { AuthIdentityRepository, SettingsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { QueryFailedError } from '@n8n/typeorm';
+import { mockLogger, mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { LDAP_FEATURE_NAME, type LdapConfig } from '@aura/constants';
+import type { Settings } from '@aura/db';
+import { AuthIdentityRepository, SettingsRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { QueryFailedError } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
 import { Client } from 'ldapts';
-import type { Cipher } from 'n8n-core';
-import { randomString } from 'n8n-workflow';
+import type { Cipher } from 'aura-core';
+import { randomString } from 'workflow';
 
 import config from '@/config';
 import type { EventService } from '@/events/event.service';
@@ -47,8 +47,8 @@ jest.mock('../helpers.ee', () => ({
 	resolveEntryBinaryAttributes: jest.fn(),
 }));
 
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow', () => ({
+	...jest.requireActual('workflow'),
 	randomString: jest.fn(),
 }));
 

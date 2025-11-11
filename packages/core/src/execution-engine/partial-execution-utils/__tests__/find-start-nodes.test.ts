@@ -9,7 +9,7 @@
 // XX denotes that the node is disabled
 // PD denotes that the node has pinned data
 
-import { type IPinData, type IRunData } from 'n8n-workflow';
+import { type IPinData, type IRunData } from 'workflow';
 
 import { createNodeData, toITaskData } from './helpers';
 import { DirectedGraph } from '../directed-graph';
@@ -489,7 +489,7 @@ describe('findStartNodes', () => {
 		test('if the last run of loop node has no data (null) on the done output, then the loop is the start node', () => {
 			// ARRANGE
 			const trigger = createNodeData({ name: 'trigger' });
-			const loop = createNodeData({ name: 'loop', type: 'n8n-nodes-base.splitInBatches' });
+			const loop = createNodeData({ name: 'loop', type: 'aura-nodes-base.splitInBatches' });
 			const inLoop = createNodeData({ name: 'inLoop' });
 			const afterLoop = createNodeData({ name: 'afterLoop' });
 			const graph = new DirectedGraph()
@@ -536,7 +536,7 @@ describe('findStartNodes', () => {
 		test('if the last run of loop node has no data (empty array) on the done output, then the loop is the start  node', () => {
 			// ARRANGE
 			const trigger = createNodeData({ name: 'trigger' });
-			const loop = createNodeData({ name: 'loop', type: 'n8n-nodes-base.splitInBatches' });
+			const loop = createNodeData({ name: 'loop', type: 'aura-nodes-base.splitInBatches' });
 			const inLoop = createNodeData({ name: 'inLoop' });
 			const afterLoop = createNodeData({ name: 'afterLoop' });
 			const graph = new DirectedGraph()
@@ -591,7 +591,7 @@ describe('findStartNodes', () => {
 		test('if the loop has data on the done output in the last run it does not become a start node', () => {
 			// ARRANGE
 			const trigger = createNodeData({ name: 'trigger' });
-			const loop = createNodeData({ name: 'loop', type: 'n8n-nodes-base.splitInBatches' });
+			const loop = createNodeData({ name: 'loop', type: 'aura-nodes-base.splitInBatches' });
 			const inLoop = createNodeData({ name: 'inLoop' });
 			const afterLoop = createNodeData({ name: 'afterLoop' });
 			const graph = new DirectedGraph()

@@ -130,7 +130,7 @@ describe('useWorkflowState', () => {
 				parameters: {},
 				id: '554c7ff4-7ee2-407c-8931-e34234c5056a',
 				name: nodeName,
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				position: [680, 180],
 				typeVersion: 3.4,
 			});
@@ -154,7 +154,7 @@ describe('useWorkflowState', () => {
 				parameters: {},
 				id: nodeId,
 				name: nodeName,
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				position: [680, 180],
 				typeVersion: 3.4,
 			});

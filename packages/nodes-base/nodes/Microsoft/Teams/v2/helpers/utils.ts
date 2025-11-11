@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, ILoadOptionsFunctions, INodeListSearchItems } from 'n8n-workflow';
+import type { IExecuteFunctions, ILoadOptionsFunctions, INodeListSearchItems } from 'workflow';
 
 export function prepareMessage(
 	this: IExecuteFunctions | ILoadOptionsFunctions,
@@ -9,11 +9,11 @@ export function prepareMessage(
 ) {
 	if (includeLinkToWorkflow) {
 		const { id } = this.getWorkflow();
-		const link = `${this.getInstanceBaseUrl()}workflow/${id}?utm_source=n8n-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
-			'n8n-nodes-base.microsoftTeams',
+		const link = `${this.getInstanceBaseUrl()}workflow/${id}?utm_source=aura-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
+			'aura-nodes-base.microsoftTeams',
 		)}${instanceId ? '_' + instanceId : ''}`;
 		contentType = 'html';
-		message = `${message}<br><br><em> Powered by <a href="${link}">this n8n workflow</a> </em>`;
+		message = `${message}<br><br><em> Powered by <a href="${link}">this aura workflow</a> </em>`;
 	}
 
 	return {

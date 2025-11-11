@@ -1,7 +1,7 @@
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { ResolvableState } from '@/app/types/expressions';
-import { ExpressionError, ExpressionParser, isExpression, type Result } from 'n8n-workflow';
+import { ExpressionError, ExpressionParser, isExpression, type Result } from 'workflow';
 
 export { isExpression };
 

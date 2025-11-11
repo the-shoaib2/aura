@@ -5,7 +5,7 @@ import type {
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 /**
  * Make an API request to Twake
@@ -24,7 +24,7 @@ export async function twakeApiRequest(
 		method,
 		body,
 		qs: query,
-		uri: uri || `https://plugins.twake.app/plugins/n8n${resource}`,
+		uri: uri || `https://plugins.twake.app/plugins/aura${resource}`,
 		json: true,
 	};
 

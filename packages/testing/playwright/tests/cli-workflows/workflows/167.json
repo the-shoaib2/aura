@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "30b651f9-2126-4c0c-9574-2c52f2ebddc0"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "Freshdesk",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -41,7 +41,7 @@
 				"contactId": "={{$node[\"Freshdesk\"].json[\"id\"]}}"
 			},
 			"name": "Freshdesk1",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -63,7 +63,7 @@
 				}
 			},
 			"name": "Freshdesk2",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -83,7 +83,7 @@
 				}
 			},
 			"name": "Freshdesk3",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [950, 300],
 			"credentials": {
@@ -101,7 +101,7 @@
 				"contactId": "={{$node[\"Freshdesk\"].json[\"id\"]}}"
 			},
 			"name": "Freshdesk4",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [1850, 300],
 			"credentials": {
@@ -128,7 +128,7 @@
 				}
 			},
 			"name": "Freshdesk5",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [1100, 400],
 			"credentials": {
@@ -145,7 +145,7 @@
 				"ticketId": "={{$node[\"Freshdesk5\"].json[\"id\"]}}"
 			},
 			"name": "Freshdesk6",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [1250, 400],
 			"credentials": {
@@ -163,7 +163,7 @@
 				"options": {}
 			},
 			"name": "Freshdesk7",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [1400, 400],
 			"credentials": {
@@ -184,7 +184,7 @@
 				}
 			},
 			"name": "Freshdesk8",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [1550, 400],
 			"credentials": {
@@ -201,7 +201,7 @@
 				"ticketId": "={{$node[\"Freshdesk5\"].json[\"id\"]}}"
 			},
 			"name": "Freshdesk9",
-			"type": "n8n-nodes-base.freshdesk",
+			"type": "aura-nodes-base.freshdesk",
 			"typeVersion": 1,
 			"position": [1700, 400],
 			"credentials": {

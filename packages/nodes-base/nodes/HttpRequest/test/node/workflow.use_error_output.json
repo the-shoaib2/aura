@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "6707decf-7ae3-46f1-8603-b0fe4844f240",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [16, 560]
 		},
@@ -13,7 +13,7 @@
 			"parameters": {},
 			"id": "09b63a84-789d-4a31-b546-849ba47ed689",
 			"name": "Success path",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [464, 272]
 		},
@@ -28,7 +28,7 @@
 			},
 			"id": "c6841eb1-7913-4c8d-8c9d-b88a908125ed",
 			"name": "Invalid JSON Body",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 4.2,
 			"position": [240, 368],
 			"alwaysOutputData": false,
@@ -38,7 +38,7 @@
 			"parameters": {},
 			"id": "21750b7e-c18a-43a5-a068-f8aa85d1cadf",
 			"name": "Success path1",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [464, 656]
 		},
@@ -55,7 +55,7 @@
 			},
 			"id": "ae2891f0-1968-4f57-a1a0-87d6f6dab57d",
 			"name": "Invalid JSON Response",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 4.2,
 			"position": [240, 752],
 			"alwaysOutputData": false,
@@ -65,7 +65,7 @@
 			"parameters": {},
 			"id": "baa75f00-e0dd-40b2-b718-1e8311549a05",
 			"name": "Request body error",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [464, 464]
 		},
@@ -73,7 +73,7 @@
 			"parameters": {},
 			"id": "4733c47f-38c8-44a8-9d77-d9e733777cbf",
 			"name": "Response body error",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [464, 848]
 		}

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "22efcecd-6cad-42b4-9571-123444740429"
@@ -19,7 +19,7 @@
 				"columns": "temperature,location,time"
 			},
 			"name": "TimescaleDB",
-			"type": "n8n-nodes-base.timescaleDb",
+			"type": "aura-nodes-base.timescaleDb",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -36,7 +36,7 @@
 					"string": [
 						{
 							"name": "location",
-							"value": "n8n"
+							"value": "aura"
 						},
 						{
 							"name": "time",
@@ -53,7 +53,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"id": "834fa03b-7027-435b-acb0-21ca690a6252"
@@ -66,7 +66,7 @@
 				"columns": "location"
 			},
 			"name": "TimescaleDB1",
-			"type": "n8n-nodes-base.timescaleDb",
+			"type": "aura-nodes-base.timescaleDb",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"credentials": {
@@ -83,7 +83,7 @@
 				"query": "=SELECT *\nFROM conditions\nWHERE time='{{$node[\"Set\"].json[\"time\"]}}'"
 			},
 			"name": "TimescaleDB2",
-			"type": "n8n-nodes-base.timescaleDb",
+			"type": "aura-nodes-base.timescaleDb",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"notesInFlow": true,
@@ -102,7 +102,7 @@
 					"string": [
 						{
 							"name": "location",
-							"value": "updatedn8n"
+							"value": "updatedaura"
 						}
 					],
 					"number": []
@@ -110,7 +110,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"id": "344e4ad6-aba8-4792-b846-508e61592a38"
@@ -121,7 +121,7 @@
 				"query": "DELETE FROM conditions;"
 			},
 			"name": "TimescaleDB3",
-			"type": "n8n-nodes-base.timescaleDb",
+			"type": "aura-nodes-base.timescaleDb",
 			"typeVersion": 1,
 			"position": [1150, 300],
 			"credentials": {

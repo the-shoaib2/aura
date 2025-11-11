@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "CommonJS",
+		"moduleResolution": "Node"
+	}
+}
+{
+	"compilerOptions": {
+		"composite": true,
+		"module": "umd",
+		"moduleResolution": "node",
+		"verbatimModuleSyntax": false,
+		"resolveJsonModule": false
+	}
+}

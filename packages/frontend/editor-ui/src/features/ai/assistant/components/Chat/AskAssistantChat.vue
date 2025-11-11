@@ -2,7 +2,7 @@
 import { useAssistantStore } from '@/features/ai/assistant/assistant.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { computed, ref } from 'vue';
-import { N8nAskAssistantChat } from '@n8n/design-system';
+import { N8nAskAssistantChat } from '@aura/design-system';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 
@@ -15,7 +15,7 @@ const workflowState = injectWorkflowState();
 const usersStore = useUsersStore();
 const telemetry = useTelemetry();
 
-const n8nChatRef = ref<InstanceType<typeof N8nAskAssistantChat>>();
+const auraChatRef = ref<InstanceType<typeof N8nAskAssistantChat>>();
 
 const user = computed(() => ({
 	firstName: usersStore.currentUser?.firstName ?? '',
@@ -63,7 +63,7 @@ async function undoCodeDiff(index: number) {
 
 defineExpose({
 	focusInput: () => {
-		n8nChatRef.value?.focusInput();
+		auraChatRef.value?.focusInput();
 	},
 });
 </script>
@@ -71,7 +71,7 @@ defineExpose({
 <template>
 	<div data-test-id="ask-assistant-chat" tabindex="0" class="wrapper" @keydown.stop>
 		<N8nAskAssistantChat
-			ref="n8nChatRef"
+			ref="auraChatRef"
 			:user="user"
 			:messages="assistantStore.chatMessages"
 			:streaming="assistantStore.streaming"

@@ -15,7 +15,7 @@ export const useCanvasStore = defineStore('canvas', () => {
 		nodes.value.filter(
 			(node) =>
 				node.type.includes('langchain') ||
-				(node.type === 'n8n-nodes-base.evaluation' && node.parameters?.operation === 'setMetrics'),
+				(node.type === 'aura-nodes-base.evaluation' && node.parameters?.operation === 'setMetrics'),
 		),
 	);
 	const hasRangeSelection = ref(false);

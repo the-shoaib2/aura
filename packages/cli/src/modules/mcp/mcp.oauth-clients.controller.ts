@@ -2,10 +2,10 @@ import {
 	DeleteOAuthClientResponseDto,
 	ListOAuthClientsResponseDto,
 	OAuthClientResponseDto,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Delete, Get, GlobalScope, Param, RestController } from '@n8n/decorators';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { AuthenticatedRequest } from '@aura/db';
+import { Delete, Get, GlobalScope, Param, RestController } from '@aura/decorators';
 import type { Response } from 'express';
 
 import { NotFoundError } from '@/errors/response-errors/not-found.error';

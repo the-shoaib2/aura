@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import type { Response } from 'express';
-import { Workflow, CHAT_TRIGGER_NODE_TYPE } from 'n8n-workflow';
-import type { INode, IWebhookData, IHttpRequestMethods } from 'n8n-workflow';
+import { Workflow, CHAT_TRIGGER_NODE_TYPE } from 'workflow';
+import type { INode, IWebhookData, IHttpRequestMethods } from 'workflow';
 
 import { authAllowlistedNodes } from './constants';
 import { sanitizeWebhookRequest } from './webhook-request-sanitizer';
@@ -25,7 +25,7 @@ import { WorkflowStaticDataService } from '@/workflows/workflow-static-data.serv
 /**
  * Service for handling the execution of live webhooks, i.e. webhooks
  * that belong to activated workflows and use the production URL
- * (https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/#webhook-urls)
+ * (https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.webhook/#webhook-urls)
  */
 @Service()
 export class LiveWebhooks implements IWebhookManager {

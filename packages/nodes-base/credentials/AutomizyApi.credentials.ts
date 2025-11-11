@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 export class AutomizyApi implements ICredentialType {
 	name = 'automizyApi';
@@ -10,7 +10,7 @@ export class AutomizyApi implements ICredentialType {
 	properties: INodeProperties[] = [
 		{
 			displayName:
-				'This service may no longer exist and will be removed from n8n in a future release.',
+				'This service may no longer exist and will be removed from aura in a future release.',
 			name: 'deprecated',
 			type: 'notice',
 			default: '',

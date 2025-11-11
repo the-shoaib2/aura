@@ -18,7 +18,7 @@ First, build the editor-ui with coverage enabled:
 
 ```bash
 # From the project root
-pnpm --filter n8n-editor-ui build:coverage
+pnpm --filter aura-editor-ui build:coverage
 ```
 
 This will:
@@ -86,7 +86,7 @@ The HTML report will show you:
 
 If you see "No coverage files found":
 
-1. Ensure you built with coverage: `pnpm --filter n8n-editor-ui build:coverage`
+1. Ensure you built with coverage: `pnpm --filter aura-editor-ui build:coverage`
 2. Run tests with coverage enabled: `COVERAGE_ENABLED=true pnpm test:ui`
 3. Check that coverage files exist in the expected locations
 
@@ -125,9 +125,9 @@ For automated coverage reporting:
 # Example GitHub Actions step
 - name: Generate Coverage Report
   run: |
-    pnpm --filter n8n-editor-ui build:coverage
-    pnpm --filter n8n-playwright test:ui:coverage
-    pnpm --filter n8n-playwright coverage:report
+    pnpm --filter aura-editor-ui build:coverage
+    pnpm --filter aura-playwright test:ui:coverage
+    pnpm --filter aura-playwright coverage:report
   env:
     COVERAGE_ENABLED: true
 ```

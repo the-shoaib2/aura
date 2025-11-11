@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-600, 340],
 			"id": "c72f4b22-a803-4b57-9edb-bde633a39f8e",
@@ -19,7 +19,7 @@
 					"includeSpamTrash": true
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [-380, 40],
 			"id": "2b668b97-4b65-4484-9f35-9f147e3db2d1",
@@ -37,7 +37,7 @@
 				"resource": "message",
 				"subject": "Test Subject",
 				"message": "Test Message",
-				"toList": ["test_to@n8n.io"],
+				"toList": ["test_to@aura.io"],
 				"additionalFields": {
 					"attachmentsUi": {
 						"attachmentsBinary": [
@@ -46,11 +46,11 @@
 							}
 						]
 					},
-					"bccList": ["test_bcc@n8n.io"],
-					"ccList": ["test_cc@n8n.io"]
+					"bccList": ["test_bcc@aura.io"],
+					"ccList": ["test_cc@aura.io"]
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [60, 640],
 			"id": "45dbeae7-d365-4f50-987f-e9b43aaa84aa",
@@ -69,7 +69,7 @@
 				"operation": "delete",
 				"messageId": "test"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [-380, 240],
 			"id": "0bad13bc-b34d-4f40-a709-854bf4a264a3",
@@ -89,7 +89,7 @@
 				"messageId": "test",
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [-380, 440],
 			"id": "14123413-ba9c-4226-9013-2166e42a1adc",
@@ -107,7 +107,7 @@
 				"operation": "toJson",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [-160, 640],
 			"id": "a8ff6f8b-b23c-4d5a-b926-f0d8f8bdd34d",
@@ -127,7 +127,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [-380, 640],
 			"id": "03736be9-7d2e-4a06-9911-b9cde3862a83",

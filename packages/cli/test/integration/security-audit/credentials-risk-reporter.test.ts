@@ -1,13 +1,13 @@
-import { testDb } from '@n8n/backend-test-utils';
-import type { SecurityConfig } from '@n8n/config';
+import { testDb } from '@aura/backend-test-utils';
+import type { SecurityConfig } from '@aura/config';
 import {
 	generateNanoId,
 	CredentialsRepository,
 	ExecutionDataRepository,
 	ExecutionRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import { v4 as uuid } from 'uuid';
 
@@ -55,7 +55,7 @@ test('should report credentials not in any use', async () => {
 			{
 				id: uuid(),
 				name: 'My Node',
-				type: 'n8n-nodes-base.slack',
+				type: 'aura-nodes-base.slack',
 				typeVersion: 1,
 				position: [0, 0] as [number, number],
 			},
@@ -102,7 +102,7 @@ test('should report credentials not in active use', async () => {
 			{
 				id: uuid(),
 				name: 'My Node',
-				type: 'n8n-nodes-base.slack',
+				type: 'aura-nodes-base.slack',
 				typeVersion: 1,
 				position: [0, 0] as [number, number],
 			},
@@ -146,7 +146,7 @@ test('should report credential in not recently executed workflow', async () => {
 			{
 				id: uuid(),
 				name: 'My Node',
-				type: 'n8n-nodes-base.slack',
+				type: 'aura-nodes-base.slack',
 				typeVersion: 1,
 				position: [0, 0] as [number, number],
 				credentials: {
@@ -215,7 +215,7 @@ test('should not report credentials in recently executed workflow', async () => 
 			{
 				id: uuid(),
 				name: 'My Node',
-				type: 'n8n-nodes-base.slack',
+				type: 'aura-nodes-base.slack',
 				typeVersion: 1,
 				position: [0, 0] as [number, number],
 				credentials: {

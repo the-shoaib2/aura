@@ -2,7 +2,7 @@ export { BaseError, type BaseErrorOptions } from './base/base.error';
 export { OperationalError, type OperationalErrorOptions } from './base/operational.error';
 export { UnexpectedError, type UnexpectedErrorOptions } from './base/unexpected.error';
 export { UserError, type UserErrorOptions } from './base/user.error';
-export { ApplicationError } from '@n8n/errors';
+export { ApplicationError } from '@aura/errors';
 export { ExpressionError } from './expression.error';
 export {
 	ExecutionCancelledError,

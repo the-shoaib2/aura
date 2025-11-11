@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.emelia",
+	"node": "aura-nodes-base.emelia",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/emelia/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/emelia/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.emelia/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.emelia/"
 			}
 		]
 	}

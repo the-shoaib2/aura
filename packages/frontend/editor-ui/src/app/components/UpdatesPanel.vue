@@ -4,10 +4,10 @@ import TimeAgo from './TimeAgo.vue';
 import VersionCard from './VersionCard.vue';
 import { VERSIONS_MODAL_KEY } from '../constants';
 import { useVersionsStore } from '@/app/stores/versions.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 
-import { N8nButton, N8nIcon } from '@n8n/design-system';
+import { N8nButton, N8nIcon } from '@aura/design-system';
 const versionsStore = useVersionsStore();
 const pageRedirectionHelper = usePageRedirectionHelper();
 

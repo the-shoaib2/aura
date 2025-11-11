@@ -207,7 +207,7 @@ describe('Mistral AI Node', () => {
 		afterAll(() => mistralAiNock.done());
 
 		new NodeTestHarness({
-			additionalPackagePaths: [path.join(__dirname, '../../../../@n8n/nodes-langchain')],
+			additionalPackagePaths: [path.join(__dirname, '../../../../@aura/nodes-langchain')],
 		}).setupTests({
 			credentials,
 			workflowFiles: ['workflow.json'],

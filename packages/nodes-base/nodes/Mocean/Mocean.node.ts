@@ -9,8 +9,8 @@ import type {
 	INodeTypeDescription,
 	JsonObject,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { moceanApiRequest } from './GenericFunctions';
 

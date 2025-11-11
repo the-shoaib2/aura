@@ -6,8 +6,8 @@ import type {
 	JsonObject,
 	IRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function openThesaurusApiRequest(
 	this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions,
@@ -22,7 +22,7 @@ export async function openThesaurusApiRequest(
 	try {
 		let options = {
 			headers: {
-				'User-Agent': 'https://n8n.io',
+				'User-Agent': 'https://aura.io',
 			},
 			method,
 			qs,

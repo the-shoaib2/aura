@@ -3,7 +3,7 @@ import {
 	type IExecuteFunctions,
 	type INodeExecutionData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DEFAULT_DOWNLOAD_TIMEOUT_SECONDS } from '../../constants';
 import { validateSessionId, waitForSessionEvent } from '../../GenericFunctions';

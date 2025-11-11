@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.summarize",
+	"node": "aura-nodes-base.summarize",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "",
@@ -7,7 +7,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.summarize/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.summarize/"
 			}
 		],
 		"generic": []

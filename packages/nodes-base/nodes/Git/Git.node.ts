@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, assertParamIsBoolean, assertParamIsString } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, assertParamIsBoolean, assertParamIsString } from 'workflow';
 import type { LogOptions, SimpleGit, SimpleGitOptions } from 'simple-git';
 import simpleGit from 'simple-git';
 import { URL } from 'url';
@@ -20,8 +20,8 @@ import {
 	switchBranchFields,
 	tagFields,
 } from './descriptions';
-import { Container } from '@n8n/di';
-import { DeploymentConfig, SecurityConfig } from '@n8n/config';
+import { Container } from '@aura/di';
+import { DeploymentConfig, SecurityConfig } from '@aura/config';
 
 export class Git implements INodeType {
 	description: INodeTypeDescription = {
@@ -310,7 +310,7 @@ export class Git implements INodeType {
 				const git: SimpleGit = simpleGit(gitOptions)
 					// Tell git not to ask for any information via the terminal like for
 					// example the username. As nobody will be able to answer it would
-					// n8n keep on waiting forever.
+					// aura keep on waiting forever.
 					.env('GIT_TERMINAL_PROMPT', '0');
 
 				if (operation === 'add') {

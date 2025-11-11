@@ -2,7 +2,7 @@
 import { MAIN_HEADER_TABS } from '@/app/constants';
 import type { ITabBarItem } from '@/Interface';
 
-import { N8nRadioButtons } from '@n8n/design-system';
+import { N8nRadioButtons } from '@aura/design-system';
 withDefaults(
 	defineProps<{
 		items: ITabBarItem[];

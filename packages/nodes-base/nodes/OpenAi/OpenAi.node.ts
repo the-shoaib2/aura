@@ -1,5 +1,5 @@
-import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { INodeType, INodeTypeDescription } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { chatFields, chatOperations } from './ChatDescription';
 import { imageFields, imageOperations } from './ImageDescription';

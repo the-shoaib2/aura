@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [260, 390],
 			"id": "92fcb1c3-e481-4350-910b-99de6956a87d"
@@ -22,7 +22,7 @@
 				}
 			},
 			"name": "Contentful",
-			"type": "n8n-nodes-base.contentful",
+			"type": "aura-nodes-base.contentful",
 			"typeVersion": 1,
 			"position": [550, 250],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"additionalFields": {}
 			},
 			"name": "Contentful1",
-			"type": "n8n-nodes-base.contentful",
+			"type": "aura-nodes-base.contentful",
 			"typeVersion": 1,
 			"position": [550, 420],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"additionalFields": {}
 			},
 			"name": "Contentful2",
-			"type": "n8n-nodes-base.contentful",
+			"type": "aura-nodes-base.contentful",
 			"typeVersion": 1,
 			"position": [550, 570],
 			"credentials": {
@@ -76,7 +76,7 @@
 				"assetId": "5UvpPFo279OoVXHLRXqlo9"
 			},
 			"name": "Contentful3",
-			"type": "n8n-nodes-base.contentful",
+			"type": "aura-nodes-base.contentful",
 			"typeVersion": 1,
 			"position": [700, 570],
 			"credentials": {
@@ -93,7 +93,7 @@
 				"entryId": "={{$node[\"Contentful\"].json[\"author\"][\"sys\"][\"id\"]}}"
 			},
 			"name": "Contentful4",
-			"type": "n8n-nodes-base.contentful",
+			"type": "aura-nodes-base.contentful",
 			"typeVersion": 1,
 			"position": [700, 250],
 			"credentials": {
@@ -111,7 +111,7 @@
 				"limit": 1
 			},
 			"name": "Contentful5",
-			"type": "n8n-nodes-base.contentful",
+			"type": "aura-nodes-base.contentful",
 			"typeVersion": 1,
 			"position": [550, 100],
 			"credentials": {
@@ -127,7 +127,7 @@
 				"resource": "space"
 			},
 			"name": "Contentful6",
-			"type": "n8n-nodes-base.contentful",
+			"type": "aura-nodes-base.contentful",
 			"typeVersion": 1,
 			"position": [550, 730],
 			"credentials": {

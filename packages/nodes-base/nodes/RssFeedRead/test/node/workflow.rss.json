@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "448372da-bc2d-4952-8d16-4b3384cd3c3d",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-112, -176]
 		},
@@ -16,7 +16,7 @@
 			},
 			"id": "13b7f0a0-db25-4ff3-9e61-4748f6910860",
 			"name": "RSS Read",
-			"type": "n8n-nodes-base.rssFeedRead",
+			"type": "aura-nodes-base.rssFeedRead",
 			"typeVersion": 1,
 			"position": [96, -176]
 		},
@@ -25,7 +25,7 @@
 				"url": "https://fake-rss-feed.com/feed",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.rssFeedRead",
+			"type": "aura-nodes-base.rssFeedRead",
 			"typeVersion": 1.2,
 			"position": [96, 16],
 			"id": "ec469874-0ca2-457e-9204-77417d08ef90",
@@ -38,7 +38,7 @@
 					"customFields": "custom"
 				}
 			},
-			"type": "n8n-nodes-base.rssFeedRead",
+			"type": "aura-nodes-base.rssFeedRead",
 			"typeVersion": 1.2,
 			"position": [96, 176],
 			"id": "6b9593c7-22e0-4ed6-a2ca-bd48aecdfc59",

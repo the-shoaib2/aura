@@ -16,11 +16,11 @@ describe('TriggerPanel.vue', () => {
 		workflowsStore = mockedStore(useWorkflowsStore);
 		workflowsStore.workflowName = 'Test Workflow';
 		workflowsStore.workflowId = '1';
-		const node = createTestNode({ id: '0', name: 'Webhook', type: 'n8n-nodes-base.webhook' });
+		const node = createTestNode({ id: '0', name: 'Webhook', type: 'aura-nodes-base.webhook' });
 		workflowsStore.getNodeByName.mockReturnValue(node);
 		nodeTypesStore = mockedStore(useNodeTypesStore);
 		const nodeTypeDescription = mockNodeTypeDescription({
-			name: 'n8n-nodes-base.webhook',
+			name: 'aura-nodes-base.webhook',
 			displayName: 'Webhook',
 			webhooks: [{ name: 'default', httpMethod: 'POST', path: 'webhook' }],
 		});

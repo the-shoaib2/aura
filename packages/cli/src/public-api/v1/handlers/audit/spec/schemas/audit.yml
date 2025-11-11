@@ -32,7 +32,7 @@ properties:
                   workflowName: 'My Workflow',
                   nodeId: 51eb5852-ce0b-4806-b4ff-e41322a4041a,
                   nodeName: 'MySQL',
-                  nodeType: n8n-nodes-base.mySql,
+                  nodeType: aura-nodes-base.mySql,
                 },
               ],
           },
@@ -56,7 +56,7 @@ properties:
                   workflowName: 'My Workflow',
                   nodeId: 51eb5852-ce0b-4806-b4ff-e41322a4041a,
                   nodeName: 'Ready Binary file',
-                  nodeType: n8n-nodes-base.readBinaryFile,
+                  nodeType: aura-nodes-base.readBinaryFile,
                 },
               ],
           },
@@ -69,15 +69,15 @@ properties:
         [
           {
             title: Community nodes,
-            description: This node is sourced from the community. Community nodes are not vetted by the n8n team and have full access to the host system.,
-            recommendation: Consider reviewing the source code in any community nodes installed in this n8n instance,
+            description: This node is sourced from the community. Community nodes are not vetted by the aura team and have full access to the host system.,
+            recommendation: Consider reviewing the source code in any community nodes installed in this aura instance,
             and uninstalling any community nodes no longer used.,
             location:
               [
                 {
                   kind: community,
-                  nodeType: n8n-nodes-test.test,
-                  packageUrl: https://www.npmjs.com/package/n8n-nodes-test,
+                  nodeType: aura-nodes-test.test,
+                  packageUrl: https://www.npmjs.com/package/aura-nodes-test,
                 },
               ],
           },
@@ -97,8 +97,8 @@ properties:
               [
                 {
                   kind: community,
-                  nodeType: n8n-nodes-test.test,
-                  packageUrl: https://www.npmjs.com/package/n8n-nodes-test,
+                  nodeType: aura-nodes-test.test,
+                  packageUrl: https://www.npmjs.com/package/aura-nodes-test,
                 },
               ],
           },

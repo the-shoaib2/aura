@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useBecomeTemplateCreatorStore } from './becomeTemplateCreatorStore';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nButton, N8nIcon } from '@n8n/design-system';
+import { N8nButton, N8nIcon } from '@aura/design-system';
 const i18n = useI18n();
 const store = useBecomeTemplateCreatorStore();
 const telemetry = useTelemetry();
@@ -39,7 +39,7 @@ const onClick = () => {
 			size="xmini"
 			type="secondary"
 			element="a"
-			href="https://creators.n8n.io/hub"
+			href="https://creators.aura.io/hub"
 			target="_blank"
 			@click="onClick"
 		/>

@@ -1,0 +1,74 @@
+services:
+  mockapi:
+    image: wiremock/wiremock:3.9.1
+    ports:
+      - '8088:8080'
+    volumes:
+      - ${MOCK_API_DATA_PATH}/mappings:/home/wiremock/mappings
+
+  postgres:
+    image: postgres:16.4
+    restart: always
+    user: root:root
+    environment:
+      - POSTGRES_DB=aura
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ${RUN_DIR}/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  aura:
+    image: ghcr.io/aura-io/aura:${N8N_VERSION:-latest}
+    user: root:root
+    environment:
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_USER_FOLDER=/aura
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PASSWORD=password
+      # Task Runner config
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_RUNNERS_MODE=external
+      - N8N_RUNNERS_BROKER_LISTEN_ADDRESS=0.0.0.0
+      - N8N_RUNNERS_AUTH_TOKEN=test
+      - N8N_NATIVE_PYTHON_RUNNER=true
+    ports:
+      - 5678:5678
+    volumes:
+      - ${RUN_DIR}/aura:/aura
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mockapi:
+        condition: service_started
+    healthcheck:
+      test: ['CMD-SHELL', 'wget --spider -q http://aura:5678/healthz || exit 1']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  runners:
+    image: ghcr.io/aura-io/runners:${N8N_VERSION:-latest}
+    environment:
+      - N8N_RUNNERS_TASK_BROKER_URI=http://aura:5679
+      - N8N_RUNNERS_AUTH_TOKEN=test
+    depends_on:
+      aura:
+        condition: service_healthy
+
+  benchmark:
+    image: ghcr.io/aura-io/aura-benchmark:${N8N_BENCHMARK_VERSION:-latest}
+    depends_on:
+      aura:
+        condition: service_healthy
+    environment:
+      - N8N_BASE_URL=http://aura:5678
+      - K6_API_TOKEN=${K6_API_TOKEN}
+      - BENCHMARK_RESULT_WEBHOOK_URL=${BENCHMARK_RESULT_WEBHOOK_URL}
+      - BENCHMARK_RESULT_WEBHOOK_AUTH_HEADER=${BENCHMARK_RESULT_WEBHOOK_AUTH_HEADER}

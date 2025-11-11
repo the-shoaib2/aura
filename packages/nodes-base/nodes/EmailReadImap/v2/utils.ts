@@ -4,7 +4,7 @@ import {
 	type Message,
 	type MessagePart,
 	type SearchCriteria,
-} from '@n8n/imap';
+} from '@aura/imap';
 import find from 'lodash/find';
 import { simpleParser, type Source as ParserSource } from 'mailparser';
 import {
@@ -14,7 +14,7 @@ import {
 	type ITriggerFunctions,
 	NodeOperationError,
 	type IBinaryKeyData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 async function parseRawEmail(
 	this: ITriggerFunctions,

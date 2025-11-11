@@ -14,10 +14,10 @@ import {
 	N8nHeading,
 	N8nIcon,
 	N8nText,
-} from '@n8n/design-system';
-import type { TableHeader } from '@n8n/design-system/components/N8nDataTableServer';
-import { useI18n } from '@n8n/i18n';
-import type { Role } from '@n8n/permissions';
+} from '@aura/design-system';
+import type { TableHeader } from '@aura/design-system/components/N8nDataTableServer';
+import { useI18n } from '@aura/i18n';
+import type { Role } from '@aura/permissions';
 import dateformat from 'dateformat';
 import { ref, useCssModule } from 'vue';
 import { useRouter } from 'vue-router';

@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "test-trigger-node-id",
 			"name": "When clicking 'Execute workflow'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0]
 		},
@@ -23,7 +23,7 @@
 			},
 			"id": "test-mandrill-node-id",
 			"name": "Mandrill",
-			"type": "n8n-nodes-base.mandrill",
+			"type": "aura-nodes-base.mandrill",
 			"typeVersion": 1,
 			"position": [220, 0],
 			"credentials": {

@@ -14,7 +14,7 @@
 			},
 			"id": "45a1f508-8bdc-4a59-8245-b910beddac70",
 			"name": "OpenAI Chat Model2",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1440, 640],
 			"credentials": {
@@ -28,7 +28,7 @@
 			"parameters": {},
 			"id": "b1cb6eaf-16f0-4f57-b09d-6893e5c52570",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [620, 500]
 		},
@@ -38,7 +38,7 @@
 			},
 			"id": "33936a84-0d38-4fee-9811-7dc020970e73",
 			"name": "Set Article",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [1040, 500]
 		},
@@ -58,7 +58,7 @@
 			},
 			"id": "0b869175-1a99-4a50-a29b-79aefb30159f",
 			"name": "Set Baseline",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [840, 500]
 		},
@@ -71,7 +71,7 @@
 			},
 			"id": "57d75d06-da61-4a0a-a917-b076cd1e291e",
 			"name": "OpenAI Chat Model9",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1760, 660],
 			"credentials": {
@@ -94,7 +94,7 @@
 			},
 			"id": "eec9288f-1e8e-4331-9ee6-e57fa207be5b",
 			"name": "Summary - Simple - Refine",
-			"type": "@n8n/n8n-nodes-langchain.chainSummarization",
+			"type": "@aura/aura-nodes-langchain.chainSummarization",
 			"typeVersion": 2,
 			"position": [1420, 500]
 		},
@@ -129,7 +129,7 @@
 			},
 			"id": "2102e067-5b8a-44aa-9362-4db63fac06c2",
 			"name": "Evaluate to Baseline4",
-			"type": "@n8n/n8n-nodes-langchain.code",
+			"type": "@aura/aura-nodes-langchain.code",
 			"typeVersion": 1,
 			"position": [1740, 500]
 		}

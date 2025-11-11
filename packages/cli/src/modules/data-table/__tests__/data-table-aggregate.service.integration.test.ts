@@ -1,4 +1,4 @@
-import { createTeamProject, testDb, testModules } from '@n8n/backend-test-utils';
+import { createTeamProject, testDb, testModules } from '@aura/backend-test-utils';
 import {
 	type Role,
 	GLOBAL_MEMBER_ROLE,
@@ -8,9 +8,9 @@ import {
 	type User,
 	PROJECT_ADMIN_ROLE,
 	GLOBAL_ADMIN_ROLE,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { EntityManager } from '@n8n/typeorm';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import type { EntityManager } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
 
 import { createUser } from '@test-integration/db/users';

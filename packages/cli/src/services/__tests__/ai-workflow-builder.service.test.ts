@@ -1,9 +1,9 @@
-import { AiWorkflowBuilderService } from '@n8n/ai-workflow-builder';
-import type { Logger } from '@n8n/backend-common';
-import type { GlobalConfig } from '@n8n/config';
-import { AiAssistantClient } from '@n8n_io/ai-assistant-sdk';
+import { AiWorkflowBuilderService } from '@aura/ai-workflow-builder';
+import type { Logger } from '@aura/backend-common';
+import type { GlobalConfig } from '@aura/config';
+import { AiAssistantClient } from '@aura_io/ai-assistant-sdk';
 import { mock } from 'jest-mock-extended';
-import type { IUser, INodeTypeDescription } from 'n8n-workflow';
+import type { IUser, INodeTypeDescription } from 'workflow';
 
 import type { License } from '@/license';
 import type { Push } from '@/push';
@@ -11,8 +11,8 @@ import { WorkflowBuilderService } from '@/services/ai-workflow-builder.service';
 import type { UrlService } from '@/services/url.service';
 import type { LoadNodesAndCredentials } from '@/load-nodes-and-credentials';
 
-jest.mock('@n8n/ai-workflow-builder');
-jest.mock('@n8n_io/ai-assistant-sdk');
+jest.mock('@aura/ai-workflow-builder');
+jest.mock('@aura_io/ai-assistant-sdk');
 
 const MockedAiWorkflowBuilderService = AiWorkflowBuilderService as jest.MockedClass<
 	typeof AiWorkflowBuilderService
@@ -140,7 +140,7 @@ describe('WorkflowBuilderService', () => {
 				licenseCert: 'test-cert',
 				consumerId: 'test-consumer-id',
 				baseUrl: 'https://ai-assistant.test.com',
-				n8nVersion: expect.any(String),
+				auraVersion: expect.any(String),
 			});
 
 			expect(MockedAiWorkflowBuilderService).toHaveBeenCalledWith(

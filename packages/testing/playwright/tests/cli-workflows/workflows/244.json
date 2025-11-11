@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "e01e31b1-1114-4384-b88d-522337a0010b",
 			"name": "Execute Workflow Trigger",
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1,
 			"position": [200, 800]
 		},
@@ -69,7 +69,7 @@
 			},
 			"id": "a8741e96-bff4-463c-9dd0-ffba5b9877b3",
 			"name": "Switch",
-			"type": "n8n-nodes-base.switch",
+			"type": "aura-nodes-base.switch",
 			"typeVersion": 3,
 			"position": [420, 800]
 		},
@@ -89,7 +89,7 @@
 			},
 			"id": "d35195a4-f609-467d-9cca-b659e5f76c2b",
 			"name": "Get Weather",
-			"type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+			"type": "@aura/aura-nodes-langchain.toolWorkflow",
 			"typeVersion": 1,
 			"position": [620, 620]
 		},
@@ -109,7 +109,7 @@
 			},
 			"id": "8214ad91-530b-49a1-874b-42d31d1d9e87",
 			"name": "Get Events",
-			"type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+			"type": "@aura/aura-nodes-langchain.toolWorkflow",
 			"typeVersion": 1,
 			"position": [720, 620]
 		},
@@ -129,7 +129,7 @@
 			},
 			"id": "cdb19b9d-9665-4b66-bda7-1b4f8191dad0",
 			"name": "Edit Fields4",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [700, 760]
 		},
@@ -149,7 +149,7 @@
 			},
 			"id": "44e58855-7ff7-4f80-9092-f6ed72274874",
 			"name": "Edit Fields5",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [700, 920]
 		},
@@ -162,7 +162,7 @@
 			},
 			"id": "2fecb46d-8bff-4884-9e73-bd787a6b1ece",
 			"name": "OpenAI Chat Model4",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [480, 620],
 			"credentials": {
@@ -195,7 +195,7 @@
 			},
 			"id": "32628916-d991-459a-8ad6-07396f0c629e",
 			"name": "Edit Fields6",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [840, 460]
 		},
@@ -208,7 +208,7 @@
 			},
 			"id": "367e796c-9c91-42a6-9585-bb9f19c2969a",
 			"name": "AI Agent4",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.5,
 			"position": [460, 460]
 		},
@@ -216,7 +216,7 @@
 			"parameters": {},
 			"id": "84833733-c87b-442c-9be1-26315056a205",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [200, 460]
 		}

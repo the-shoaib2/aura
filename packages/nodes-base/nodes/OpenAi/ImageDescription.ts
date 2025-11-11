@@ -1,4 +1,4 @@
-import type { INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import type { INodeExecutionData, INodeProperties } from 'workflow';
 
 import { sendErrorPostReceive } from './GenericFunctions';
 

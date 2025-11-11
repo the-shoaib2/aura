@@ -57,7 +57,7 @@ const randFirstName = (): string => getRandomName(FIRST_NAMES);
 const randLastName = (): string => getRandomName(LAST_NAMES);
 
 export const INSTANCE_OWNER_CREDENTIALS: UserCredentials = {
-	email: 'nathan@n8n.io',
+	email: 'nathan@aura.io',
 	password: DEFAULT_USER_PASSWORD,
 	firstName: randFirstName(),
 	lastName: randLastName(),
@@ -67,7 +67,7 @@ export const INSTANCE_OWNER_CREDENTIALS: UserCredentials = {
 };
 
 export const INSTANCE_ADMIN_CREDENTIALS: UserCredentials = {
-	email: 'admin@n8n.io',
+	email: 'admin@aura.io',
 	password: DEFAULT_USER_PASSWORD,
 	firstName: randFirstName(),
 	lastName: randLastName(),
@@ -75,13 +75,13 @@ export const INSTANCE_ADMIN_CREDENTIALS: UserCredentials = {
 
 export const INSTANCE_MEMBER_CREDENTIALS: UserCredentials[] = [
 	{
-		email: 'member@n8n.io',
+		email: 'member@aura.io',
 		password: DEFAULT_USER_PASSWORD,
 		firstName: randFirstName(),
 		lastName: randLastName(),
 	},
 	{
-		email: 'member2@n8n.io',
+		email: 'member2@aura.io',
 		password: DEFAULT_USER_PASSWORD,
 		firstName: randFirstName(),
 		lastName: randLastName(),

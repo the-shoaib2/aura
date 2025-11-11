@@ -1,12 +1,12 @@
 {
-	"name": "n8n",
+	"name": "aura",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "n8n",
+	"service": "aura",
 	"workspaceFolder": "/workspaces",
 	"mounts": [
 		"type=bind,source=${localWorkspaceFolder},target=/workspaces,consistency=cached",
 		"type=bind,source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,consistency=cached",
-		"type=bind,source=${localEnv:HOME}/.n8n,target=/home/node/.n8n,consistency=cached"
+		"type=bind,source=${localEnv:HOME}/.aura,target=/home/node/.aura,consistency=cached"
 	],
 	"forwardPorts": [8080, 5678],
 	"postCreateCommand": "corepack prepare --activate && pnpm install",

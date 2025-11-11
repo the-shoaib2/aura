@@ -1,18 +1,18 @@
 import { expect } from '@playwright/test';
 
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 export class CanvasComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Pin the data on a node. Then close the node.
 	 * @param nodeName - The name of the node to pin the data on.
 	 */
 	async pinNodeData(nodeName: string) {
-		await this.n8n.canvas.openNode(nodeName);
-		await this.n8n.ndv.togglePinData();
-		await this.n8n.ndv.close();
+		await this.aura.canvas.openNode(nodeName);
+		await this.aura.ndv.togglePinData();
+		await this.aura.ndv.close();
 	}
 
 	/**
@@ -20,23 +20,23 @@ export class CanvasComposer {
 	 * @param nodeName - The node to execute
 	 */
 	async executeNodeAndWaitForToast(nodeName: string): Promise<void> {
-		await this.n8n.canvas.executeNode(nodeName);
-		await this.n8n.notifications.waitForNotificationAndClose('Node executed successfully');
+		await this.aura.canvas.executeNode(nodeName);
+		await this.aura.notifications.waitForNotificationAndClose('Node executed successfully');
 	}
 
 	/**
 	 * Copy selected nodes and verify success toast
 	 */
 	async copySelectedNodesWithToast(): Promise<void> {
-		await this.n8n.canvas.copyNodes();
-		await this.n8n.notifications.waitForNotificationAndClose('Copied to clipboard');
+		await this.aura.canvas.copyNodes();
+		await this.aura.notifications.waitForNotificationAndClose('Copied to clipboard');
 	}
 
 	/**
 	 * Select all nodes and copy them
 	 */
 	async selectAllAndCopy(): Promise<void> {
-		await this.n8n.canvas.selectAll();
+		await this.aura.canvas.selectAll();
 		await this.copySelectedNodesWithToast();
 	}
 
@@ -49,10 +49,10 @@ export class CanvasComposer {
 		nodes: Array<{ credentials?: Record<string, unknown> }>;
 		meta?: Record<string, unknown>;
 	}> {
-		await this.n8n.clipboard.grant();
-		await this.n8n.canvas.selectAll();
-		await this.n8n.canvas.copyNodes();
-		const workflowJSON = await this.n8n.clipboard.readText();
+		await this.aura.clipboard.grant();
+		await this.aura.canvas.selectAll();
+		await this.aura.canvas.copyNodes();
+		const workflowJSON = await this.aura.clipboard.readText();
 		return JSON.parse(workflowJSON);
 	}
 
@@ -60,30 +60,30 @@ export class CanvasComposer {
 	 * Switch between editor and workflow history and back
 	 */
 	async switchBetweenEditorAndHistory(): Promise<void> {
-		await this.n8n.page.getByTestId('workflow-history-button').click();
-		await this.n8n.page.getByTestId('workflow-history-close-button').click();
-		await this.n8n.page.waitForLoadState();
-		await expect(this.n8n.canvas.getCanvasNodes().first()).toBeVisible();
-		await expect(this.n8n.canvas.getCanvasNodes().last()).toBeVisible();
+		await this.aura.page.getByTestId('workflow-history-button').click();
+		await this.aura.page.getByTestId('workflow-history-close-button').click();
+		await this.aura.page.waitForLoadState();
+		await expect(this.aura.canvas.getCanvasNodes().first()).toBeVisible();
+		await expect(this.aura.canvas.getCanvasNodes().last()).toBeVisible();
 	}
 
 	/**
 	 * Switch between editor and workflow list and back
 	 */
 	async switchBetweenEditorAndWorkflowList(): Promise<void> {
-		await this.n8n.page.getByTestId('menu-item').first().click();
-		await this.n8n.workflows.cards.getWorkflows().first().click();
-		await expect(this.n8n.canvas.getCanvasNodes().first()).toBeVisible();
-		await expect(this.n8n.canvas.getCanvasNodes().last()).toBeVisible();
+		await this.aura.page.getByTestId('menu-item').first().click();
+		await this.aura.workflows.cards.getWorkflows().first().click();
+		await expect(this.aura.canvas.getCanvasNodes().first()).toBeVisible();
+		await expect(this.aura.canvas.getCanvasNodes().last()).toBeVisible();
 	}
 
 	/**
 	 * Zoom in and validate that zoom functionality works
 	 */
 	async zoomInAndCheckNodes(): Promise<void> {
-		await this.n8n.canvas.getCanvasNodes().first().waitFor();
+		await this.aura.canvas.getCanvasNodes().first().waitFor();
 
-		const initialNodeSize = await this.n8n.page.evaluate(() => {
+		const initialNodeSize = await this.aura.page.evaluate(() => {
 			const firstNode = document.querySelector('[data-test-id="canvas-node"]');
 			if (!firstNode) {
 				throw new Error('Canvas node not found during initial measurement');
@@ -92,10 +92,10 @@ export class CanvasComposer {
 		});
 
 		for (let i = 0; i < 4; i++) {
-			await this.n8n.canvas.clickZoomInButton();
+			await this.aura.canvas.clickZoomInButton();
 		}
 
-		const finalNodeSize = await this.n8n.page.evaluate(() => {
+		const finalNodeSize = await this.aura.page.evaluate(() => {
 			const firstNode = document.querySelector('[data-test-id="canvas-node"]');
 			if (!firstNode) {
 				throw new Error('Canvas node not found during final measurement');
@@ -122,7 +122,7 @@ export class CanvasComposer {
 	 * @param delayMs - Delay in milliseconds (default: 2000)
 	 */
 	async delayWorkflowLoad(workflowId: string, delayMs: number = 2000): Promise<void> {
-		await this.n8n.page.route(`**/rest/workflows/${workflowId}`, async (route) => {
+		await this.aura.page.route(`**/rest/workflows/${workflowId}`, async (route) => {
 			if (route.request().method() === 'GET') {
 				await new Promise((resolve) => setTimeout(resolve, delayMs));
 			}
@@ -137,7 +137,7 @@ export class CanvasComposer {
 	 * @param workflowId - The workflow ID to stop delaying
 	 */
 	async undelayWorkflowLoad(workflowId: string): Promise<void> {
-		await this.n8n.page.unroute(`**/rest/workflows/${workflowId}`);
+		await this.aura.page.unroute(`**/rest/workflows/${workflowId}`);
 	}
 
 	/**
@@ -146,19 +146,19 @@ export class CanvasComposer {
 	 * @param newName - The new name for the node
 	 */
 	async renameNodeViaShortcut(oldName: string, newName: string): Promise<void> {
-		await this.n8n.canvas.nodeByName(oldName).click();
-		await this.n8n.page.keyboard.press('F2');
-		await expect(this.n8n.canvas.getRenamePrompt()).toBeVisible();
-		await this.n8n.page.keyboard.type(newName);
-		await this.n8n.page.keyboard.press('Enter');
+		await this.aura.canvas.nodeByName(oldName).click();
+		await this.aura.page.keyboard.press('F2');
+		await expect(this.aura.canvas.getRenamePrompt()).toBeVisible();
+		await this.aura.page.keyboard.type(newName);
+		await this.aura.page.keyboard.press('Enter');
 	}
 
 	/**
 	 * Reload the page and wait for canvas to be ready
 	 */
 	async reloadAndWaitForCanvas(): Promise<void> {
-		await this.n8n.page.reload();
-		await expect(this.n8n.canvas.getNodeViewLoader()).toBeHidden();
-		await expect(this.n8n.canvas.getLoadingMask()).toBeHidden();
+		await this.aura.page.reload();
+		await expect(this.aura.canvas.getNodeViewLoader()).toBeHidden();
+		await expect(this.aura.canvas.getLoadingMask()).toBeHidden();
 	}
 }

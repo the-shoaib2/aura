@@ -12,7 +12,7 @@ import { RunDataPanel } from './RunDataPanel';
  * }
  *
  * // Usage in a test
- * await expect(n8n.example.logsPage.getLogEntries()).toHaveCount(2);
+ * await expect(aura.example.logsPage.getLogEntries()).toHaveCount(2);
  */
 export class LogsPanel {
 	readonly inputPanel = new RunDataPanel(this.root.getByTestId('log-details-input'));

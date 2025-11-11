@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "7f66f905-8236-4fe4-922b-8a7ab6921f26"
@@ -20,7 +20,7 @@
 				"message": "=SMS-TEST-{{Date.now()}}"
 			},
 			"name": "Mocean",
-			"type": "n8n-nodes-base.mocean",
+			"type": "aura-nodes-base.mocean",
 			"typeVersion": 1,
 			"position": [500, 200],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"message": "=SMS{{Date.now()}}"
 			},
 			"name": "Mocean1",
-			"type": "n8n-nodes-base.mocean",
+			"type": "aura-nodes-base.mocean",
 			"typeVersion": 1,
 			"position": [500, 350],
 			"credentials": {

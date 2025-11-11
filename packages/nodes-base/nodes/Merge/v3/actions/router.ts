@@ -1,4 +1,4 @@
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 
 import * as mode from './mode';
 import type { MergeType } from './node.type';

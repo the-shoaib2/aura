@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "a7c6c0bc-acbc-49bd-8ec8-5075e638d0b9",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [280, 880]
 		},
@@ -19,7 +19,7 @@
 			},
 			"id": "6b758d00-fd86-465e-abc6-9a4d97a611a9",
 			"name": "Set Article",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [700, 880]
 		},
@@ -32,7 +32,7 @@
 			},
 			"id": "d3f2e53d-c5dd-42b8-b10f-2b2fa2f37ef6",
 			"name": "OpenAI Chat Model4",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1140, 1020],
 			"credentials": {
@@ -51,7 +51,7 @@
 			},
 			"id": "418a75ed-c4aa-46a1-96d9-f2a3f9c55ab9",
 			"name": "OpenAI Chat Model5",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1500, 1020],
 			"credentials": {
@@ -68,7 +68,7 @@
 			},
 			"id": "99c931ba-5d76-443a-bd26-1115b4e59474",
 			"name": "Convert to File",
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [900, 880]
 		},
@@ -88,7 +88,7 @@
 			},
 			"id": "1c363506-92cd-40d2-b7bd-8245a532cd27",
 			"name": "Set Baseline",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [500, 880]
 		},
@@ -101,7 +101,7 @@
 			},
 			"id": "9d6d0cac-034e-42ed-90fb-d9c2cfe0166f",
 			"name": "Summary - Simple - Map - Binary",
-			"type": "@n8n/n8n-nodes-langchain.chainSummarization",
+			"type": "@aura/aura-nodes-langchain.chainSummarization",
 			"typeVersion": 2,
 			"position": [1120, 880]
 		},
@@ -136,7 +136,7 @@
 			},
 			"id": "f7e12c5f-6445-4924-8fc7-c426d21549ed",
 			"name": "Evaluate to Baseline",
-			"type": "@n8n/n8n-nodes-langchain.code",
+			"type": "@aura/aura-nodes-langchain.code",
 			"typeVersion": 1,
 			"position": [1480, 880]
 		}

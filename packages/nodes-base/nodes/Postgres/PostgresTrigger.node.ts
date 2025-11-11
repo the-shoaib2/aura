@@ -6,7 +6,7 @@ import {
 	type ITriggerFunctions,
 	type ITriggerResponse,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	pgTriggerFunction,
@@ -132,7 +132,7 @@ export class PostgresTrigger implements INodeType {
 				type: 'string',
 				default: '',
 				required: true,
-				placeholder: 'e.g. n8n_channel',
+				placeholder: 'e.g. aura_channel',
 				description: 'Name of the channel to listen to',
 				displayOptions: {
 					show: {
@@ -181,7 +181,7 @@ export class PostgresTrigger implements INodeType {
 						displayName: 'Channel Name',
 						name: 'channelName',
 						type: 'string',
-						placeholder: 'e.g. n8n_channel',
+						placeholder: 'e.g. aura_channel',
 						description: 'Name of the channel to listen to',
 						default: '',
 					},
@@ -191,7 +191,7 @@ export class PostgresTrigger implements INodeType {
 						name: 'functionName',
 						type: 'string',
 						description: 'Name of the function to create',
-						placeholder: 'e.g. n8n_trigger_function()',
+						placeholder: 'e.g. aura_trigger_function()',
 						default: '',
 					},
 					{
@@ -206,7 +206,7 @@ export class PostgresTrigger implements INodeType {
 						name: 'triggerName',
 						type: 'string',
 						description: 'Name of the trigger to create',
-						placeholder: 'e.g. n8n_trigger',
+						placeholder: 'e.g. aura_trigger',
 						default: '',
 					},
 				],
@@ -326,7 +326,7 @@ export class PostgresTrigger implements INodeType {
 
 		connection.client.on('notification', onNotification);
 
-		// The "closeFunction" function gets called by n8n whenever
+		// The "closeFunction" function gets called by aura whenever
 		// the workflow gets deactivated and can so clean up.
 		const closeFunction = async () => {
 			await cleanUpDb();

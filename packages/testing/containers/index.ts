@@ -1,15 +1,15 @@
 /**
- * n8n Test Containers
+ * aura Test Containers
  *
- * This package provides container management utilities for n8n testing.
+ * This package provides container management utilities for aura testing.
  */
 
-export { createN8NStack } from './n8n-test-container-creation';
-export type { N8NConfig, N8NStack } from './n8n-test-container-creation';
+export { createN8NStack } from './aura-test-container-creation';
+export type { N8NConfig, N8NStack } from './aura-test-container-creation';
 
 export * from './performance-plans';
 
-export { ContainerTestHelpers } from './n8n-test-container-helpers';
+export { ContainerTestHelpers } from './aura-test-container-helpers';
 export {
 	setupMailpit,
 	getMailpitEnvironment,
@@ -19,4 +19,4 @@ export {
 	mailpitWaitForMessage,
 	type MailpitMessage,
 	type MailpitQuery,
-} from './n8n-test-container-mailpit';
+} from './aura-test-container-mailpit';

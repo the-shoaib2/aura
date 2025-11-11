@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.mqtt",
+	"node": "aura-nodes-base.mqtt",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/mqtt/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/mqtt/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mqtt/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.mqtt/"
 			}
 		]
 	}

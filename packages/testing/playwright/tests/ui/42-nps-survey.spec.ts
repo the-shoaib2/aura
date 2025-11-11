@@ -41,8 +41,8 @@ const getNpsTestRequirements: TestRequirements = {
 };
 
 test.describe('NPS Survey', () => {
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.page.route('**/rest/login', async (route) => {
+	test.beforeEach(async ({ aura }) => {
+		await aura.page.route('**/rest/login', async (route) => {
 			const response = await route.fetch();
 			const originalJson = await response.json();
 
@@ -65,80 +65,80 @@ test.describe('NPS Survey', () => {
 			});
 		});
 
-		await n8n.goHome();
+		await aura.goHome();
 	});
 
 	test('shows nps survey to recently activated user and can submit feedback', async ({
-		n8n,
+		aura,
 		setupRequirements,
 	}) => {
 		await setupRequirements(getNpsTestRequirements);
-		await n8n.canvas.visitWithTimestamp(NOW);
-		await n8n.canvas.clickSaveWorkflowButton();
+		await aura.canvas.visitWithTimestamp(NOW);
+		await aura.canvas.clickSaveWorkflowButton();
 
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeVisible();
-		expect(await n8n.npsSurvey.getRatingButtonCount()).toBe(11);
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeVisible();
+		expect(await aura.npsSurvey.getRatingButtonCount()).toBe(11);
 
-		await n8n.npsSurvey.clickRating(0);
-		await n8n.npsSurvey.fillFeedback('n8n is the best');
-		await n8n.npsSurvey.clickSubmitButton();
+		await aura.npsSurvey.clickRating(0);
+		await aura.npsSurvey.fillFeedback('aura is the best');
+		await aura.npsSurvey.clickSubmitButton();
 
-		await n8n.canvas.visitWithTimestamp(NOW + ONE_DAY);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await aura.canvas.visitWithTimestamp(NOW + ONE_DAY);
+		await aura.canvas.clickSaveWorkflowButton();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + ABOUT_SIX_MONTHS);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeVisible();
+		await aura.canvas.visitWithTimestamp(NOW + ABOUT_SIX_MONTHS);
+		await aura.canvas.clickSaveWorkflowButton();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeVisible();
 	});
 
 	test('allows user to ignore survey 3 times before stopping to show until 6 months later', async ({
-		n8n,
+		aura,
 		setupRequirements,
 	}) => {
 		await setupRequirements(getNpsTestRequirements);
-		await n8n.canvas.visitWithTimestamp(NOW);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await n8n.notifications.quickCloseAll();
+		await aura.canvas.visitWithTimestamp(NOW);
+		await aura.canvas.clickSaveWorkflowButton();
+		await aura.notifications.quickCloseAll();
 
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeVisible();
-		await n8n.npsSurvey.closeSurvey();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeVisible();
+		await aura.npsSurvey.closeSurvey();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + ONE_DAY);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await aura.canvas.visitWithTimestamp(NOW + ONE_DAY);
+		await aura.canvas.clickSaveWorkflowButton();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + SEVEN_DAYS + 10000);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await n8n.notifications.quickCloseAll();
+		await aura.canvas.visitWithTimestamp(NOW + SEVEN_DAYS + 10000);
+		await aura.canvas.clickSaveWorkflowButton();
+		await aura.notifications.quickCloseAll();
 
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeVisible();
-		await n8n.npsSurvey.closeSurvey();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeVisible();
+		await aura.npsSurvey.closeSurvey();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + SEVEN_DAYS + 10000);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await aura.canvas.visitWithTimestamp(NOW + SEVEN_DAYS + 10000);
+		await aura.canvas.clickSaveWorkflowButton();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 2 + ONE_DAY);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await n8n.notifications.quickCloseAll();
+		await aura.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 2 + ONE_DAY);
+		await aura.canvas.clickSaveWorkflowButton();
+		await aura.notifications.quickCloseAll();
 
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeVisible();
-		await n8n.npsSurvey.closeSurvey();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeVisible();
+		await aura.npsSurvey.closeSurvey();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 2 + ONE_DAY * 2);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await aura.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 2 + ONE_DAY * 2);
+		await aura.canvas.clickSaveWorkflowButton();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 3 + ONE_DAY * 3);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeHidden();
+		await aura.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 3 + ONE_DAY * 3);
+		await aura.canvas.clickSaveWorkflowButton();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeHidden();
 
-		await n8n.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 3 + ABOUT_SIX_MONTHS);
-		await n8n.canvas.clickSaveWorkflowButton();
-		await expect(n8n.npsSurvey.getNpsSurveyModal()).toBeVisible();
+		await aura.canvas.visitWithTimestamp(NOW + (SEVEN_DAYS + 10000) * 3 + ABOUT_SIX_MONTHS);
+		await aura.canvas.clickSaveWorkflowButton();
+		await expect(aura.npsSurvey.getNpsSurveyModal()).toBeVisible();
 	});
 });

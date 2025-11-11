@@ -2,7 +2,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [320, 1980],
 			"id": "ca093a4e-81cb-445a-980c-dcdacbb1cc36",
@@ -13,7 +13,7 @@
 				"filters": {},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [540, 1780],
 			"id": "a36477d2-f98b-48b9-a392-0f615527a7e6",
@@ -30,7 +30,7 @@
 				"operation": "get",
 				"channelId": "UCabc123def456ghi789jkl"
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [540, 1980],
 			"id": "afcfc3bb-a16a-4890-a4b3-692f843b9103",
@@ -56,7 +56,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [540, 2180],
 			"id": "3a5f1c72-7dd1-4a76-958f-b9ecf7f8afbe",
@@ -70,7 +70,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [760, 1780],
 			"id": "0ef3bfeb-6772-4eae-b4f6-5a8a05678861",
@@ -78,7 +78,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [760, 1980],
 			"id": "9af6133d-2a77-4245-83a7-1fb137997f3a",
@@ -86,7 +86,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [760, 2180],
 			"id": "0d316d95-7e49-4497-a31c-9e56b1a7fda3",

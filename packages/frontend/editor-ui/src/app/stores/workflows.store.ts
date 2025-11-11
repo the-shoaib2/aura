@@ -10,7 +10,7 @@ import {
 	START_NODE_TYPE,
 	WAIT_NODE_TYPE,
 } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import type {
 	INodeMetadata,
 	INodeUi,
@@ -28,12 +28,12 @@ import type {
 	IExecutionFlattedResponse,
 } from '@/features/execution/executions/executions.types';
 import type { IUsedCredential } from '@/features/credentials/credentials.types';
-import type { IWorkflowTemplateNode } from '@n8n/rest-api-client/api/templates';
+import type { IWorkflowTemplateNode } from '@aura/rest-api-client/api/templates';
 import type {
 	WorkflowMetadata,
 	WorkflowDataCreate,
 	WorkflowDataUpdate,
-} from '@n8n/rest-api-client/api/workflows';
+} from '@aura/rest-api-client/api/workflows';
 import { defineStore } from 'pinia';
 import type {
 	IConnection,
@@ -53,22 +53,22 @@ import type {
 	IWorkflowSettings,
 	INodeType,
 	ITaskStartedData,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	deepCopy,
 	NodeConnectionTypes,
 	SEND_AND_WAIT_OPERATION,
 	Workflow,
 	TelemetryHelpers,
-} from 'n8n-workflow';
-import * as workflowUtils from 'n8n-workflow/common';
+} from 'workflow';
+import * as workflowUtils from 'workflow/common';
 
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import * as workflowsApi from '@/app/api/workflows';
 import { useUIStore } from '@/app/stores/ui.store';
 import { dataPinningEventBus } from '@/app/event-bus';
 import { isJsonKeyObject, isEmpty, stringSizeInBytes, isPresent } from '@/app/utils/typesUtils';
-import { makeRestApiRequest, ResponseError } from '@n8n/rest-api-client';
+import { makeRestApiRequest, ResponseError } from '@aura/rest-api-client';
 import {
 	unflattenExecutionData,
 	findTriggerNodeToAutoSelect,
@@ -77,22 +77,22 @@ import {
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { getCredentialOnlyNodeTypeName } from '@/app/utils/credentialOnlyNodes';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 
 import { computed, ref, watch } from 'vue';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
-import type { PushPayload } from '@n8n/api-types';
+import type { PushPayload } from '@aura/api-types';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { useSettingsStore } from './settings.store';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { updateCurrentUserSettings } from '@n8n/rest-api-client/api/users';
-import type { NodeExecuteBefore } from '@n8n/api-types/push/execution';
+import { updateCurrentUserSettings } from '@aura/rest-api-client/api/users';
+import type { NodeExecuteBefore } from '@aura/api-types/push/execution';
 import { isChatNode } from '@/app/utils/aiUtils';
 import { snapPositionToGrid } from '@/app/utils/nodeViewUtils';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 
 const defaults: Omit<IWorkflowDb, 'id'> & { settings: NonNullable<IWorkflowDb['settings']> } = {
 	name: '',

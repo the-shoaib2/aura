@@ -13,7 +13,7 @@ export const sendLocaleUpdate = (server: any, file: string): void => {
 	const locale = extractLocale(file);
 	server.ws.send({
 		type: 'custom',
-		event: 'n8n:locale-update',
+		event: 'aura:locale-update',
 		data: { locales: locale ? [locale] : [], file },
 	});
 };

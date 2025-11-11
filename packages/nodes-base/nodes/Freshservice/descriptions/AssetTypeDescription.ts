@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const assetTypeOperations: INodeProperties[] = [
 	{
@@ -87,7 +87,7 @@ export const assetTypeFields: INodeProperties[] = [
 				displayName: 'Parent Asset Type Name or ID',
 				name: 'parent_asset_type_id',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				type: 'options',
 				default: '',
 				typeOptions: {

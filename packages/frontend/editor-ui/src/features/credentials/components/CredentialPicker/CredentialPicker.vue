@@ -2,12 +2,12 @@
 import { computed, ref } from 'vue';
 import { listenForModalChanges, useUIStore } from '@/app/stores/ui.store';
 import { listenForCredentialChanges, useCredentialsStore } from '../../credentials.store';
-import { assert } from '@n8n/utils/assert';
+import { assert } from '@aura/utils/assert';
 import CredentialsDropdown from './CredentialsDropdown.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { CREDENTIAL_EDIT_MODAL_KEY } from '../../credentials.constants';
 
-import { N8nButton, N8nIconButton } from '@n8n/design-system';
+import { N8nButton, N8nIconButton } from '@aura/design-system';
 const props = defineProps<{
 	appName: string;
 	credentialType: string;

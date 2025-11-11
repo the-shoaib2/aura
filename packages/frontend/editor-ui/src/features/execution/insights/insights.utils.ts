@@ -1,5 +1,5 @@
-import { useI18n } from '@n8n/i18n';
-import type { InsightsSummary, InsightsSummaryType } from '@n8n/api-types';
+import { useI18n } from '@aura/i18n';
+import type { InsightsSummary, InsightsSummaryType } from '@aura/api-types';
 import type { InsightsSummaryDisplay } from '@/features/execution/insights/insights.types';
 import {
 	INSIGHTS_SUMMARY_ORDER,

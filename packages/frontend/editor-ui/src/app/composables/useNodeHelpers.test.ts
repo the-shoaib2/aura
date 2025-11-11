@@ -1,12 +1,6 @@
 import { setActivePinia } from 'pinia';
-import type {
-	ExecutionStatus,
-	IRunData,
-	INode,
-	INodeTypeDescription,
-	Workflow,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeHelpers } from 'n8n-workflow';
+import type { ExecutionStatus, IRunData, INode, INodeTypeDescription, Workflow } from 'workflow';
+import { NodeConnectionTypes, NodeHelpers } from 'workflow';
 import { createTestingPinia } from '@pinia/testing';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { createTestNode, createMockEnterpriseSettings } from '@/__tests__/mocks';
@@ -69,7 +63,7 @@ describe('useNodeHelpers()', () => {
 			const node: INodeUi = {
 				id: 'node-id',
 				name: 'Code',
-				type: 'n8n-nodes-base.code',
+				type: 'aura-nodes-base.code',
 				typeVersion: 1,
 				position: [0, 0],
 				parameters: {},
@@ -97,7 +91,7 @@ describe('useNodeHelpers()', () => {
 			const node: INodeUi = {
 				id: 'node-id',
 				name: 'Code',
-				type: 'n8n-nodes-base.code',
+				type: 'aura-nodes-base.code',
 				typeVersion: 1,
 				position: [0, 0],
 				parameters: {},
@@ -124,7 +118,7 @@ describe('useNodeHelpers()', () => {
 			const node: INodeUi = {
 				id: 'node-id',
 				name: 'Code',
-				type: 'n8n-nodes-base.code',
+				type: 'aura-nodes-base.code',
 				typeVersion: 1,
 				position: [0, 0],
 				parameters: {},
@@ -151,7 +145,7 @@ describe('useNodeHelpers()', () => {
 			const triggerNode: INodeUi = {
 				id: 'node-id',
 				name: 'Manual Trigger',
-				type: 'n8n-nodes-base.manualTrigger',
+				type: 'aura-nodes-base.manualTrigger',
 				typeVersion: 1,
 				position: [0, 0],
 				parameters: {},
@@ -178,7 +172,7 @@ describe('useNodeHelpers()', () => {
 			const toolNode: INodeUi = {
 				id: 'node-id',
 				name: 'Tool Node',
-				type: 'n8n-nodes-base.ai-tool',
+				type: 'aura-nodes-base.ai-tool',
 				typeVersion: 1,
 				position: [0, 0],
 				parameters: {},
@@ -205,7 +199,7 @@ describe('useNodeHelpers()', () => {
 			const node: INodeUi = {
 				id: 'node-id',
 				name: 'Code',
-				type: 'n8n-nodes-base.code',
+				type: 'aura-nodes-base.code',
 				typeVersion: 1,
 				position: [0, 0],
 				parameters: {},
@@ -580,29 +574,29 @@ describe('useNodeHelpers()', () => {
 		});
 
 		test('should determine based on node parameters if it would be executed once', () => {
-			expect(isSingleExecution('n8n-nodes-base.code', {})).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.code', { mode: 'runOnceForEachItem' })).toEqual(
+			expect(isSingleExecution('aura-nodes-base.code', {})).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.code', { mode: 'runOnceForEachItem' })).toEqual(
 				false,
 			);
-			expect(isSingleExecution('n8n-nodes-base.executeWorkflow', {})).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.executeWorkflow', { mode: 'each' })).toEqual(false);
-			expect(isSingleExecution('n8n-nodes-base.crateDb', {})).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.crateDb', { operation: 'update' })).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.timescaleDb', {})).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.timescaleDb', { operation: 'update' })).toEqual(
+			expect(isSingleExecution('aura-nodes-base.executeWorkflow', {})).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.executeWorkflow', { mode: 'each' })).toEqual(false);
+			expect(isSingleExecution('aura-nodes-base.crateDb', {})).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.crateDb', { operation: 'update' })).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.timescaleDb', {})).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.timescaleDb', { operation: 'update' })).toEqual(
 				true,
 			);
-			expect(isSingleExecution('n8n-nodes-base.microsoftSql', {})).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.microsoftSql', { operation: 'update' })).toEqual(
+			expect(isSingleExecution('aura-nodes-base.microsoftSql', {})).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.microsoftSql', { operation: 'update' })).toEqual(
 				true,
 			);
-			expect(isSingleExecution('n8n-nodes-base.microsoftSql', { operation: 'delete' })).toEqual(
+			expect(isSingleExecution('aura-nodes-base.microsoftSql', { operation: 'delete' })).toEqual(
 				true,
 			);
-			expect(isSingleExecution('n8n-nodes-base.questDb', {})).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.mongoDb', { operation: 'insert' })).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.mongoDb', { operation: 'update' })).toEqual(true);
-			expect(isSingleExecution('n8n-nodes-base.redis', {})).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.questDb', {})).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.mongoDb', { operation: 'insert' })).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.mongoDb', { operation: 'update' })).toEqual(true);
+			expect(isSingleExecution('aura-nodes-base.redis', {})).toEqual(true);
 		});
 	});
 

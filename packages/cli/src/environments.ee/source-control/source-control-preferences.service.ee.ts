@@ -1,11 +1,11 @@
-import { Logger } from '@n8n/backend-common';
-import { SettingsRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { SettingsRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import type { ValidationError } from 'class-validator';
 import { validate } from 'class-validator';
 import { rm as fsRm } from 'fs/promises';
-import { Cipher, InstanceSettings } from 'n8n-core';
-import { jsonParse, UnexpectedError } from 'n8n-workflow';
+import { Cipher, InstanceSettings } from 'aura-core';
+import { jsonParse, UnexpectedError } from 'workflow';
 import { writeFile, readFile } from 'node:fs/promises';
 import path from 'path';
 
@@ -37,8 +37,8 @@ export class SourceControlPreferencesService {
 		private readonly settingsRepository: SettingsRepository,
 		private readonly sourceControlConfig: SourceControlConfig,
 	) {
-		this.sshFolder = path.join(instanceSettings.n8nFolder, SOURCE_CONTROL_SSH_FOLDER);
-		this.gitFolder = path.join(instanceSettings.n8nFolder, SOURCE_CONTROL_GIT_FOLDER);
+		this.sshFolder = path.join(instanceSettings.auraFolder, SOURCE_CONTROL_SSH_FOLDER);
+		this.gitFolder = path.join(instanceSettings.auraFolder, SOURCE_CONTROL_GIT_FOLDER);
 		this.sshKeyName = path.join(this.sshFolder, SOURCE_CONTROL_SSH_KEY_NAME);
 	}
 
@@ -138,7 +138,7 @@ export class SourceControlPreferencesService {
 	async getPrivateKeyPath() {
 		const dbPrivateKey = await this.getPrivateKeyFromDatabase();
 
-		const tempFilePath = path.join(this.instanceSettings.n8nFolder, 'ssh_private_key_temp');
+		const tempFilePath = path.join(this.instanceSettings.auraFolder, 'ssh_private_key_temp');
 
 		// Ensure proper line endings (LF only) for SSH keys, especially on Windows
 		const normalizedKey = dbPrivateKey.replace(/\r\n/g, '\n').replace(/\r/g, '\n');

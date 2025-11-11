@@ -68,7 +68,7 @@ describe('SigninView', () => {
 		await userEvent.tab();
 		expect(document.activeElement).toBe(emailInput);
 
-		await userEvent.type(emailInput, 'test@n8n.io');
+		await userEvent.type(emailInput, 'test@aura.io');
 		await userEvent.type(passwordInput, 'password');
 
 		await userEvent.click(submitButton);
@@ -95,7 +95,7 @@ describe('SigninView', () => {
 		await signInWithValidUser();
 
 		expect(usersStore.loginWithCreds).toHaveBeenCalledWith({
-			emailOrLdapLoginId: 'test@n8n.io',
+			emailOrLdapLoginId: 'test@aura.io',
 			password: 'password',
 			mfaCode: undefined,
 			mfaRecoveryCode: undefined,
@@ -109,7 +109,7 @@ describe('SigninView', () => {
 	});
 
 	describe('when redirect query parameter is set', () => {
-		const ORIGIN_URL = 'https://n8n.local';
+		const ORIGIN_URL = 'https://aura.local';
 		let route: ReturnType<typeof useRoute>;
 
 		beforeEach(() => {
@@ -127,7 +127,7 @@ describe('SigninView', () => {
 
 		it('should redirect to homepage with router if redirect url does not contain the origin domain', async () => {
 			vi.spyOn(route, 'query', 'get').mockReturnValue({
-				redirect: 'https://n8n.local.evil.com',
+				redirect: 'https://aura.local.evil.com',
 			});
 
 			const hrefSpy = vi.spyOn(window.location, 'href', 'set');
@@ -152,7 +152,7 @@ describe('SigninView', () => {
 		});
 
 		it('should redirect to given route if redirect url contains the origin domain', async () => {
-			const validRedirectUrl = 'https://n8n.local/valid-redirect';
+			const validRedirectUrl = 'https://aura.local/valid-redirect';
 			vi.spyOn(route, 'query', 'get').mockReturnValue({
 				redirect: validRedirectUrl,
 			});

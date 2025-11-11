@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const calendarOperations: INodeProperties[] = [
 	{
@@ -368,7 +368,7 @@ const getFreeSlotsProperties: INodeProperties[] = [
 				name: 'enableLookBusy',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description: 'Apply Look Busy to the slots',
 				routing: {
 					send: {

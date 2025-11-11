@@ -1,4 +1,4 @@
-import type { INodeProperties, IWebhookDescription } from 'n8n-workflow';
+import type { INodeProperties, IWebhookDescription } from 'workflow';
 
 export const sendAndWaitWebhooksDescription: IWebhookDescription[] = [
 	{

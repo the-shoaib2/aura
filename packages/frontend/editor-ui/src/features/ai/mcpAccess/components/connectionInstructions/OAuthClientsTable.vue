@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
-import type { OAuthClientResponseDto } from '@n8n/api-types';
+import { useI18n } from '@aura/i18n';
+import type { OAuthClientResponseDto } from '@aura/api-types';
 import type { UserAction } from '@/Interface';
 import {
 	N8nActionBox,
@@ -11,9 +11,9 @@ import {
 	N8nLoading,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import { ref } from 'vue';
-import type { TableHeader } from '@n8n/design-system/components/N8nDataTableServer';
+import type { TableHeader } from '@aura/design-system/components/N8nDataTableServer';
 import TimeAgo from '@/app/components/TimeAgo.vue';
 
 const i18n = useI18n();

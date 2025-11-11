@@ -2,13 +2,13 @@ import { createTestingPinia } from '@pinia/testing';
 import { screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
-import { ROLE, type Role, type UsersList } from '@n8n/api-types';
-import { type ActionDropdownItem } from '@n8n/design-system';
+import { ROLE, type Role, type UsersList } from '@aura/api-types';
+import { type ActionDropdownItem } from '@aura/design-system';
 import SettingsUsersRoleCell from './SettingsUsersRoleCell.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 
 // Mock N8nActionDropdown to simplify testing
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

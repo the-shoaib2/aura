@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 import type oracledb from 'oracledb';
 
 import { getResolvables, updateDisplayOptions } from '@utils/utilities';
@@ -27,7 +22,7 @@ const properties: INodeProperties[] = [
 		noDataExpression: true,
 		required: true,
 		description:
-			"The SQL statement to execute. You can use n8n expressions and positional parameters like :1, :2, :3, or named parameters like :name, :ID, etc to refer to the 'Bind Variable Placeholder Values' set in options below.",
+			"The SQL statement to execute. You can use aura expressions and positional parameters like :1, :2, :3, or named parameters like :name, :ID, etc to refer to the 'Bind Variable Placeholder Values' set in options below.",
 		typeOptions: {
 			editor: 'sqlEditor',
 			sqlDialect: 'OracleDB',

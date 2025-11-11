@@ -1,5 +1,5 @@
-import { NodeOperationError } from 'n8n-workflow';
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import { NodeOperationError } from 'workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { preparePairedItemDataArray, updateDisplayOptions } from '@utils/utilities';
 
@@ -41,7 +41,7 @@ export const properties: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Use Data of Input',
 		name: 'useDataOfInput',
 		type: 'options',
@@ -56,7 +56,7 @@ export const properties: INodeProperties[] = [
 			loadOptionsMethod: 'getInputs',
 			loadOptionsDependsOn: ['numberInputs'],
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 		description: 'The number of the input to use data of',
 		validateType: 'number',
 	},

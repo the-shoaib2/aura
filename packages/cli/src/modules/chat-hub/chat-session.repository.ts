@@ -1,6 +1,6 @@
-import { withTransaction } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { DataSource, EntityManager, Repository } from '@n8n/typeorm';
+import { withTransaction } from '@aura/db';
+import { Service } from '@aura/di';
+import { DataSource, EntityManager, Repository } from '@aura/typeorm';
 
 import { ChatHubSession } from './chat-hub-session.entity';
 

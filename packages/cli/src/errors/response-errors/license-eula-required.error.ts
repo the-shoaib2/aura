@@ -10,7 +10,7 @@ import { ResponseError } from './abstract/response.error';
  * @example
  * ```typescript
  * throw new LicenseEulaRequiredError('License activation requires EULA acceptance', {
- *   eulaUrl: 'https://n8n.io/legal/eula/'
+ *   eulaUrl: 'https://aura.io/legal/eula/'
  * });
  * ```
  */

@@ -1,6 +1,6 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { useEvaluationStore } from './evaluation.store'; // Adjust the import path as necessary
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useAnnotationTagsStore } from '@/features/shared/tags/tags.store';
 import type { TestRunRecord } from './evaluation.api';
 import { mockedStore } from '@/__tests__/utils';
@@ -19,7 +19,7 @@ vi.mock('./evaluation.api', () => ({
 	deleteTestRun,
 }));
 
-vi.mock('@n8n/stores/useRootStore', () => ({
+vi.mock('@aura/stores/useRootStore', () => ({
 	useRootStore: vi.fn(() => ({
 		restApiContext: { instanceId: 'test-instance-id' },
 	})),

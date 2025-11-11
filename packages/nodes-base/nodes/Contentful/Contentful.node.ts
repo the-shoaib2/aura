@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import * as AssetDescription from './AssetDescription';
 import * as ContentTypeDescription from './ContentTypeDescription';
@@ -19,7 +19,7 @@ export class Contentful implements INodeType {
 		displayName: 'Contentful',
 		name: 'contentful',
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:contentful.png',
 		group: ['input'],
 		version: 1,

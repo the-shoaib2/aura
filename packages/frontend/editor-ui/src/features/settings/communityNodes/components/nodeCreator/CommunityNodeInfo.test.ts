@@ -18,7 +18,7 @@ vi.mock('./utils', () => ({
 const defaultUseInstalledCommunityPackage = {
 	installedPackage: ref({
 		installedVersion: '1.0.0',
-		packageName: 'n8n-nodes-test',
+		packageName: 'aura-nodes-test',
 		unverifiedUpdate: false,
 	}) as ComputedRef<ExtendedPublicInstalledPackage>,
 	isUpdateCheckAvailable: ref(false),
@@ -57,15 +57,15 @@ describe('CommunityNodeInfo', () => {
 		communityNodeDetails: {
 			description: 'Other node description',
 			installed: false,
-			key: 'n8n-nodes-preview-test.OtherNode',
+			key: 'aura-nodes-preview-test.OtherNode',
 			nodeIcon: undefined,
-			packageName: 'n8n-nodes-test',
+			packageName: 'aura-nodes-test',
 			title: 'Other Node',
 		},
 		hasSearch: false,
 		items: [
 			{
-				key: 'n8n-nodes-preview-test.OtherNode',
+				key: 'aura-nodes-preview-test.OtherNode',
 				properties: {
 					defaults: {
 						name: 'OtherNode',
@@ -73,12 +73,12 @@ describe('CommunityNodeInfo', () => {
 					description: 'Other node description',
 					displayName: 'Other Node',
 					group: ['transform'],
-					name: 'n8n-nodes-preview-test.OtherNode',
+					name: 'aura-nodes-preview-test.OtherNode',
 					outputs: ['main'],
 				},
 				subcategory: '*',
 				type: 'node',
-				uuid: 'n8n-nodes-preview-test.OtherNode-32f238f0-2b05-47ce-b43d-7fab6d7ba3cb',
+				uuid: 'aura-nodes-preview-test.OtherNode-32f238f0-2b05-47ce-b43d-7fab6d7ba3cb',
 			},
 		],
 		mode: 'community-node',
@@ -119,7 +119,7 @@ describe('CommunityNodeInfo', () => {
 			...defaultUseInstalledCommunityPackage,
 			installedPackage: ref({
 				installedVersion: '1.0.0',
-				packageName: 'n8n-nodes-test',
+				packageName: 'aura-nodes-test',
 				unverifiedUpdate: false,
 			}) as ComputedRef<ExtendedPublicInstalledPackage>,
 		});
@@ -161,7 +161,7 @@ describe('CommunityNodeInfo', () => {
 			isUpdateCheckAvailable: ref(true) as ComputedRef<boolean>,
 			installedPackage: ref({
 				installedVersion: '0.0.9',
-				packageName: 'n8n-nodes-test',
+				packageName: 'aura-nodes-test',
 				updateAvailable: '1.0.1',
 				unverifiedUpdate: false,
 			}) as ComputedRef<ExtendedPublicInstalledPackage>,
@@ -178,7 +178,7 @@ describe('CommunityNodeInfo', () => {
 		expect(wrapper.getByTestId('number-of-downloads').textContent).toEqual('9,999 Downloads');
 		expect(wrapper.getByTestId('publisher-name').textContent).toEqual('Published by contributor');
 		expect(
-			wrapper.getByTestId('update-available').querySelector('.n8n-text')?.textContent?.trim(),
+			wrapper.getByTestId('update-available').querySelector('.aura-text')?.textContent?.trim(),
 		).toEqual('A new node package version is available');
 	});
 
@@ -206,7 +206,7 @@ describe('CommunityNodeInfo', () => {
 			...defaultUseInstalledCommunityPackage,
 			installedPackage: ref({
 				installedVersion: '0.0.9',
-				packageName: 'n8n-nodes-test',
+				packageName: 'aura-nodes-test',
 				updateAvailable: '1.0.1',
 				unverifiedUpdate: true,
 			}) as ComputedRef<ExtendedPublicInstalledPackage>,

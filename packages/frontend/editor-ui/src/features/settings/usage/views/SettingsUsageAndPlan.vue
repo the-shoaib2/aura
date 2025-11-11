@@ -4,14 +4,14 @@ import { useRoute, useRouter } from 'vue-router';
 import type { UsageTelemetry } from '../usage.store';
 import { useUsageStore } from '../usage.store';
 import { telemetry } from '@/app/plugins/telemetry';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@aura/i18n';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useToast } from '@/app/composables/useToast';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { hasPermission } from '@/app/utils/rbac/permissions';
 import { COMMUNITY_PLUS_ENROLLMENT_MODAL } from '../usage.constants';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { I18nT } from 'vue-i18n';
 
@@ -25,7 +25,7 @@ import {
 	N8nNotice,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import EulaAcceptanceModal from '../components/EulaAcceptanceModal.vue';
 
 const usageStore = useUsageStore();

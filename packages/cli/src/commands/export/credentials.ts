@@ -1,10 +1,10 @@
-import type { ICredentialsDb } from '@n8n/db';
-import { CredentialsRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import type { ICredentialsDb } from '@aura/db';
+import { CredentialsRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import fs from 'fs';
-import { Credentials } from 'n8n-core';
-import { UserError } from 'n8n-workflow';
+import { Credentials } from 'aura-core';
+import { UserError } from 'workflow';
 import path from 'path';
 import z from 'zod';
 

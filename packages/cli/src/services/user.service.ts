@@ -1,11 +1,11 @@
-import type { RoleChangeRequestDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import type { PublicUser } from '@n8n/db';
-import { User, UserRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { getGlobalScopes, type AssignableGlobalRole } from '@n8n/permissions';
-import type { IUserSettings } from 'n8n-workflow';
-import { UnexpectedError } from 'n8n-workflow';
+import type { RoleChangeRequestDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import type { PublicUser } from '@aura/db';
+import { User, UserRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { getGlobalScopes, type AssignableGlobalRole } from '@aura/permissions';
+import type { IUserSettings } from 'workflow';
+import { UnexpectedError } from 'workflow';
 
 import { InternalServerError } from '@/errors/response-errors/internal-server.error';
 import { EventService } from '@/events/event.service';
@@ -17,7 +17,7 @@ import { UserManagementMailer } from '@/user-management/email';
 
 import { PublicApiKeyService } from './public-api-key.service';
 import { RoleService } from './role.service';
-import { GlobalConfig } from '@n8n/config';
+import { GlobalConfig } from '@aura/config';
 
 @Service()
 export class UserService {

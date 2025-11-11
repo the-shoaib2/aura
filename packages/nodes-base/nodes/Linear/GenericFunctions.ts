@@ -8,8 +8,8 @@ import type {
 	IHookFunctions,
 	IWebhookFunctions,
 	IHttpRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import { query } from './Queries';
 

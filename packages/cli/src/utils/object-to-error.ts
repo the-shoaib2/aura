@@ -1,6 +1,6 @@
-import { isObjectLiteral } from '@n8n/backend-common';
-import { NodeOperationError } from 'n8n-workflow';
-import type { Workflow } from 'n8n-workflow';
+import { isObjectLiteral } from '@aura/backend-common';
+import { NodeOperationError } from 'workflow';
+import type { Workflow } from 'workflow';
 
 /**
  * Optional properties that should be propagated from an error object to the new Error instance.

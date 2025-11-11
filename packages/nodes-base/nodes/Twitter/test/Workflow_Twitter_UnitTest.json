@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "91cdc3d3-9cf7-4fe0-b74c-b17e0c8b404d",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-420, 80]
 		},
@@ -16,7 +16,7 @@
 			},
 			"id": "4ee34d07-db6c-413b-95f3-932182770044",
 			"name": "Twitter1",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 2,
 			"position": [-140, 260],
 			"credentials": {
@@ -38,7 +38,7 @@
 			},
 			"id": "ceca5fb1-f4b7-4dbe-9505-61793bffd87a",
 			"name": "Twitter3",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 2,
 			"position": [240, 80],
 			"credentials": {
@@ -61,7 +61,7 @@
 			},
 			"id": "ce49286a-04bb-4f59-bae5-ef64a1bca2b0",
 			"name": "Twitter2",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 2,
 			"position": [40, 80],
 			"credentials": {
@@ -79,7 +79,7 @@
 			},
 			"id": "370e20de-dca6-48ab-aa24-47fb326bad77",
 			"name": "Twitter",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 2,
 			"position": [-140, 80],
 			"credentials": {
@@ -100,13 +100,13 @@
 				},
 				"user": {
 					"__rl": true,
-					"value": "n8n_io",
+					"value": "aura_io",
 					"mode": "username"
 				}
 			},
 			"id": "ea1c13af-80b8-41d4-8591-e16b8e7be84b",
 			"name": "Twitter7",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 2,
 			"position": [-140, 640],
 			"credentials": {
@@ -126,7 +126,7 @@
 			},
 			"id": "216b3061-a52b-4d64-9ed8-9cc6940f6efa",
 			"name": "Twitter5",
-			"type": "n8n-nodes-base.twitter",
+			"type": "aura-nodes-base.twitter",
 			"typeVersion": 2,
 			"position": [-140, 440],
 			"credentials": {
@@ -142,7 +142,7 @@
 			{
 				"json": {
 					"id": "1285192200213626880",
-					"name": "Integration-n8n",
+					"name": "Integration-aura",
 					"username": "IntegrationN8n"
 				}
 			}

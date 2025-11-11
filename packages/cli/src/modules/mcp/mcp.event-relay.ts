@@ -1,6 +1,6 @@
-import { Logger } from '@n8n/backend-common';
-import { WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
 
 import { EventService } from '@/events/event.service';
 import { EventRelay } from '@/events/relays/event-relay';

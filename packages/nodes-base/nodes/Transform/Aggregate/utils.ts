@@ -1,4 +1,4 @@
-import type { IBinaryData, INodeExecutionData } from 'n8n-workflow';
+import type { IBinaryData, INodeExecutionData } from 'workflow';
 
 type PartialBinaryData = Omit<IBinaryData, 'data'>;
 const isBinaryUniqueSetup = () => {

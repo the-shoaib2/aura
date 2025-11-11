@@ -1,9 +1,9 @@
 import { N8N_VERSION } from '@/constants';
-import type { LicenseState, Logger, ModuleRegistry } from '@n8n/backend-common';
-import type { GlobalConfig, SecurityConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import type { LicenseState, Logger, ModuleRegistry } from '@aura/backend-common';
+import type { GlobalConfig, SecurityConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import type { BinaryDataConfig, InstanceSettings } from 'n8n-core';
+import type { BinaryDataConfig, InstanceSettings } from 'aura-core';
 
 import type { CredentialTypes } from '@/credential-types';
 import type { CredentialsOverwrites } from '@/credentials-overwrites';

@@ -1,11 +1,11 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { User, WorkflowEntity } from '@n8n/db';
-import { WorkflowRepository, DbConnection, AuthRolesService } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { type SelectQueryBuilder } from '@n8n/typeorm';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { User, WorkflowEntity } from '@aura/db';
+import { WorkflowRepository, DbConnection, AuthRolesService } from '@aura/db';
+import { Container } from '@aura/di';
+import { type SelectQueryBuilder } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
-import type { IRun } from 'n8n-workflow';
+import type { IRun } from 'workflow';
 
 import { ActiveExecutions } from '@/active-executions';
 import { DeprecationService } from '@/deprecation/deprecation.service';
@@ -46,7 +46,7 @@ test('should start a task runner when task runners are enabled', async () => {
 
 	const workflow = mock<WorkflowEntity>({
 		id: '123',
-		nodes: [{ type: 'n8n-nodes-base.manualTrigger' }],
+		nodes: [{ type: 'aura-nodes-base.manualTrigger' }],
 	});
 
 	const run = mock<IRun>({ data: { resultData: { error: undefined } } });

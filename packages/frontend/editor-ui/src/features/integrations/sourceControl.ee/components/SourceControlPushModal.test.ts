@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 import { createComponentRenderer } from '@/__tests__/render';
 import SourceControlPushModal from './SourceControlPushModal.vue';
 import { createTestingPinia } from '@pinia/testing';
-import { createEventBus } from '@n8n/utils/event-bus';
-import type { SourceControlledFile } from '@n8n/api-types';
+import { createEventBus } from '@aura/utils/event-bus';
+import type { SourceControlledFile } from '@aura/api-types';
 import { useSourceControlStore } from '../sourceControl.store';
 import { mockedStore } from '@/__tests__/utils';
 import { VIEWS } from '@/app/constants';
@@ -179,7 +179,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/gTbbBkkYTnNyX1jD.json',
+				file: '/home/user/.aura/git/workflows/gTbbBkkYTnNyX1jD.json',
 				updatedAt: '2024-09-20T10:31:40.000Z',
 			},
 			{
@@ -189,7 +189,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+				file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 				updatedAt: '2024-09-20T14:42:51.968Z',
 			},
 		];
@@ -300,7 +300,7 @@ describe('SourceControlPushModal', () => {
 				status: 'modified',
 				location: 'local',
 				conflict: false,
-				file: '/Users/raul/.n8n/git/tags.json',
+				file: '/Users/raul/.aura/git/tags.json',
 				updatedAt: '2024-12-04T11:29:22.095Z',
 			},
 			{
@@ -310,7 +310,7 @@ describe('SourceControlPushModal', () => {
 				status: 'modified',
 				location: 'local',
 				conflict: false,
-				file: '/Users/raul/.n8n/git/folders.json',
+				file: '/Users/raul/.aura/git/folders.json',
 				updatedAt: '2024-12-04T11:29:22.095Z',
 			},
 			{
@@ -384,7 +384,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/gTbbBkkYTnNyX1jD.json',
+				file: '/home/user/.aura/git/workflows/gTbbBkkYTnNyX1jD.json',
 				updatedAt: '2024-09-20T10:31:40.000Z',
 			},
 			{
@@ -394,7 +394,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+				file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 				updatedAt: '2024-09-20T14:42:51.968Z',
 			},
 		];
@@ -444,7 +444,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/workflow-1.json',
+				file: '/home/user/.aura/git/workflows/workflow-1.json',
 				updatedAt: '2024-09-20T10:30:00.000Z',
 			},
 			{
@@ -454,7 +454,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/credentials/cred-1.json',
+				file: '/home/user/.aura/git/credentials/cred-1.json',
 				updatedAt: '2024-09-20T10:31:40.000Z',
 			},
 			{
@@ -464,7 +464,7 @@ describe('SourceControlPushModal', () => {
 				status: 'modified',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/credentials/cred-2.json',
+				file: '/home/user/.aura/git/credentials/cred-2.json',
 				updatedAt: '2024-09-20T14:42:51.968Z',
 			},
 		];
@@ -520,7 +520,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/gTbbBkkYTnNyX1jD.json',
+				file: '/home/user/.aura/git/workflows/gTbbBkkYTnNyX1jD.json',
 				updatedAt: '2024-09-20T10:31:40.000Z',
 			},
 			{
@@ -530,7 +530,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+				file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 				updatedAt: '2024-09-20T14:42:51.968Z',
 			},
 			{
@@ -540,7 +540,7 @@ describe('SourceControlPushModal', () => {
 				status: 'created',
 				location: 'local',
 				conflict: false,
-				file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+				file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 				updatedAt: '2024-09-20T14:42:51.968Z',
 			},
 		];
@@ -590,7 +590,7 @@ describe('SourceControlPushModal', () => {
 					status: 'created',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/gTbbBkkYTnNyX1jD.json',
+					file: '/home/user/.aura/git/workflows/gTbbBkkYTnNyX1jD.json',
 					updatedAt: '2024-09-20T10:31:40.000Z',
 				},
 				{
@@ -600,7 +600,7 @@ describe('SourceControlPushModal', () => {
 					status: 'created',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+					file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 					updatedAt: '2024-09-20T14:42:51.968Z',
 				},
 			];
@@ -644,7 +644,7 @@ describe('SourceControlPushModal', () => {
 					status: 'created',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/gTbbBkkYTnNyX1jD.json',
+					file: '/home/user/.aura/git/workflows/gTbbBkkYTnNyX1jD.json',
 					updatedAt: '2024-09-20T10:31:40.000Z',
 				},
 				{
@@ -654,7 +654,7 @@ describe('SourceControlPushModal', () => {
 					status: 'modified',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+					file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 					updatedAt: '2024-09-20T14:42:51.968Z',
 				},
 			];
@@ -721,7 +721,7 @@ describe('SourceControlPushModal', () => {
 					status: 'created',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/gTbbBkkYTnNyX1jD.json',
+					file: '/home/user/.aura/git/workflows/gTbbBkkYTnNyX1jD.json',
 					updatedAt: '2024-09-20T10:31:40.000Z',
 					owner: {
 						type: projects[0].type,
@@ -736,7 +736,7 @@ describe('SourceControlPushModal', () => {
 					status: 'created',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+					file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 					updatedAt: '2024-09-20T14:42:51.968Z',
 					owner: {
 						type: projects[1].type,
@@ -805,7 +805,7 @@ describe('SourceControlPushModal', () => {
 					status: 'modified',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/JIGKevgZagmJAnM6.json',
+					file: '/home/user/.aura/git/workflows/JIGKevgZagmJAnM6.json',
 					updatedAt: '2024-09-20T14:42:51.968Z',
 				},
 			];
@@ -965,7 +965,7 @@ describe('SourceControlPushModal', () => {
 					status: 'created',
 					location: 'local',
 					conflict: false,
-					file: '/home/user/.n8n/git/workflows/gTbbBkkYTnNyX1jD.json',
+					file: '/home/user/.aura/git/workflows/gTbbBkkYTnNyX1jD.json',
 					updatedAt: '2024-09-20T10:31:40.000Z',
 				},
 			];

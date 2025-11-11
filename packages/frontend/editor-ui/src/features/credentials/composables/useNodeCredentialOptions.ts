@@ -13,7 +13,7 @@ import {
 	type INodeCredentialDescription,
 	type INodeTypeDescription,
 	type NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import { computed, unref, type ComputedRef, type MaybeRef } from 'vue';
 
 export interface CredentialDropdownOption extends ICredentialsResponse {

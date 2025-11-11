@@ -12,13 +12,13 @@ import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/
 import { useFoldersStore } from '@/features/core/folders/folders.store';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
-import * as permissionsModule from '@n8n/permissions';
+import * as permissionsModule from '@aura/permissions';
 
 vi.mock('lodash/debounce', () => ({
 	default: (fn: (...args: unknown[]) => unknown) => fn,
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,
@@ -43,7 +43,7 @@ vi.mock('@/features/shared/nodeCreator/composables/useActionsGeneration', () => 
 	}),
 }));
 
-vi.mock('@n8n/permissions', async (importOriginal) => ({
+vi.mock('@aura/permissions', async (importOriginal) => ({
 	...(await importOriginal()),
 	getResourcePermissions: vi.fn(() => ({
 		workflow: {
@@ -102,7 +102,7 @@ describe('useWorkflowNavigationCommands', () => {
 
 		mockNodeTypesStore = useNodeTypesStore();
 		Object.defineProperty(mockNodeTypesStore, 'allNodeTypes', {
-			value: [{ name: 'n8n-nodes-base.httpRequest', displayName: 'http request' }],
+			value: [{ name: 'aura-nodes-base.httpRequest', displayName: 'http request' }],
 		});
 		Object.defineProperty(mockNodeTypesStore, 'getNodeType', {
 			value: vi.fn((name: string) => ({ name, displayName: 'http request' })),
@@ -142,7 +142,7 @@ describe('useWorkflowNavigationCommands', () => {
 				.mockImplementation(
 					async (params: { query?: string; nodeTypes?: string[]; tags?: string[] }) => {
 						if (params.nodeTypes && params.nodeTypes.length > 0) {
-							return [{ ...allWorkflows[0], nodes: [{ type: 'n8n-nodes-base.httpRequest' }] }];
+							return [{ ...allWorkflows[0], nodes: [{ type: 'aura-nodes-base.httpRequest' }] }];
 						}
 						if (params.tags && params.tags.length > 0) {
 							return [allWorkflows[0]];

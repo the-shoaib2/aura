@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { flowApiRequest } from './GenericFunctions';
 
@@ -138,7 +138,7 @@ export class FlowTrigger implements INodeType {
 					body = {
 						organization_id: credentials.organizationId as number,
 						integration_webhook: {
-							name: 'n8n-trigger',
+							name: 'aura-trigger',
 							url: webhookUrl,
 							resource_type: resource,
 							resource_id: parseInt(resourceId, 10),

@@ -1,8 +1,8 @@
-import { WorkflowRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-import type { IWorkflowBase, IWorkflowExecutionDataProcess } from 'n8n-workflow';
-import { ExecutionBaseError, UnexpectedError, UserError } from 'n8n-workflow';
+import { WorkflowRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
+import type { IWorkflowBase, IWorkflowExecutionDataProcess } from 'workflow';
+import { ExecutionBaseError, UnexpectedError, UserError } from 'workflow';
 import { z } from 'zod';
 
 import { ActiveExecutions } from '@/active-executions';

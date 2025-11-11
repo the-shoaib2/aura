@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths-ignore:
-      - packages/@n8n/task-runner-python/**
+      - packages/@aura/task-runner-python/**
 
 jobs:
   build-github:

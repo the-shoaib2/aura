@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "e4175f5f-af4e-4fe5-b5e4-c7a00de9330c"
@@ -20,7 +20,7 @@
 				"columns": "test,random"
 			},
 			"name": "Strapi",
-			"type": "n8n-nodes-base.strapi",
+			"type": "aura-nodes-base.strapi",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -50,7 +50,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"id": "f4431416-b2cf-49d9-b61f-8629fb40f97b"
@@ -61,7 +61,7 @@
 				"entryId": "={{$node[\"Strapi\"].json[\"id\"]}}"
 			},
 			"name": "Strapi1",
-			"type": "n8n-nodes-base.strapi",
+			"type": "aura-nodes-base.strapi",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -80,7 +80,7 @@
 				"options": {}
 			},
 			"name": "Strapi2",
-			"type": "n8n-nodes-base.strapi",
+			"type": "aura-nodes-base.strapi",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -98,7 +98,7 @@
 				"columns": "test"
 			},
 			"name": "Strapi3",
-			"type": "n8n-nodes-base.strapi",
+			"type": "aura-nodes-base.strapi",
 			"typeVersion": 1,
 			"position": [1150, 300],
 			"credentials": {
@@ -129,7 +129,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"id": "bcff9dc4-914a-4494-b08f-321f541511d2"
@@ -141,7 +141,7 @@
 				"entryId": "={{$node[\"Strapi\"].json[\"id\"]}}"
 			},
 			"name": "Strapi4",
-			"type": "n8n-nodes-base.strapi",
+			"type": "aura-nodes-base.strapi",
 			"typeVersion": 1,
 			"position": [1290, 300],
 			"credentials": {

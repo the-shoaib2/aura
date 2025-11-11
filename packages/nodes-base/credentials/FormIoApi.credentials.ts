@@ -6,7 +6,7 @@ import type {
 	IHttpRequestHelper,
 	IHttpRequestOptions,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class FormIoApi implements ICredentialType {
 	name = 'formIoApi';

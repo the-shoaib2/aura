@@ -2,7 +2,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 200],
 			"id": "31e68280-caac-4297-bb03-ca6d548b459e",
@@ -16,7 +16,7 @@
 				"limit": 3,
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [220, -100],
 			"id": "790afd1a-f8b5-4bc1-b839-9658ee112890",
@@ -30,7 +30,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, -100],
 			"id": "84ef4be3-8c98-449f-ba1e-b08d1492435e",
@@ -43,7 +43,7 @@
 				"playlistItemId": "fakePlaylistItemId1",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [220, 100],
 			"id": "e3c6f615-7fc1-48cd-a365-25ba425eb62a",
@@ -57,7 +57,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 100],
 			"id": "2bf72f15-3ca8-4ceb-a558-0fc7426ef564",
@@ -70,7 +70,7 @@
 				"videoId": "FAKEVIDID1",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [220, 300],
 			"id": "1a84eae4-fd43-445c-8c2b-c5846c1fa427",
@@ -84,7 +84,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 300],
 			"id": "91cef9b3-843d-4ae9-b946-f2bc705cc528",
@@ -97,7 +97,7 @@
 				"playlistItemId": "UExWUDRtV2RxbGFhNWlwZEJRWXZVaFgyNk9RTENJRlV2cS41NkI0NEY2RDEwNTU3Q0M2",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [220, 500],
 			"id": "829b494e-2a4e-4ec5-a3e2-2dabeed9ea0b",
@@ -111,7 +111,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [440, 500],
 			"id": "3195a72c-b8bd-4d85-ba37-d24df23b1761",

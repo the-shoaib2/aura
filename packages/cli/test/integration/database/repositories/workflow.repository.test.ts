@@ -3,12 +3,12 @@ import {
 	createWorkflow,
 	getAllWorkflows,
 	testDb,
-} from '@n8n/backend-test-utils';
-import { WorkflowRepository, WorkflowDependencyRepository, WorkflowDependencies } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import { WorkflowRepository, WorkflowDependencyRepository, WorkflowDependencies } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { createTestRun } from '../../shared/db/evaluation';
-import { GlobalConfig } from '@n8n/config';
+import { GlobalConfig } from '@aura/config';
 
 describe('WorkflowRepository', () => {
 	beforeAll(async () => {
@@ -220,7 +220,7 @@ describe('WorkflowRepository', () => {
 				const dependencies3 = new WorkflowDependencies(workflow3.id, 15);
 				dependencies3.add({
 					dependencyType: 'nodeType',
-					dependencyKey: 'n8n-nodes-base.httpRequest',
+					dependencyKey: 'aura-nodes-base.httpRequest',
 					dependencyInfo: null,
 				});
 				await workflowDependencyRepository.updateDependenciesForWorkflow(

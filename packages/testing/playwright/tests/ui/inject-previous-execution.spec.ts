@@ -6,63 +6,63 @@ const NOTIFICATIONS = {
 };
 
 test.describe('Inject previous execution', () => {
-	test('can map keys from previous execution', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('NDV-debug-generate-data.json');
+	test('can map keys from previous execution', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('NDV-debug-generate-data.json');
 
-		await expect(n8n.canvas.getExecuteWorkflowButton()).toBeVisible();
+		await expect(aura.canvas.getExecuteWorkflowButton()).toBeVisible();
 
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await expect(n8n.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeVisible();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
+		await expect(aura.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeVisible();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
 
-		await n8n.notifications.waitForNotificationAndClose(
+		await aura.notifications.waitForNotificationAndClose(
 			NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY,
 		);
 
-		await n8n.page.reload();
+		await aura.page.reload();
 
-		await n8n.canvas.clickNodePlusEndpoint('DebugHelper');
-		await expect(n8n.canvas.nodeCreatorSearchBar()).toBeVisible();
-		await n8n.canvas.fillNodeCreatorSearchBar(EDIT_FIELDS_SET_NODE_NAME);
-		await n8n.canvas.clickNodeCreatorItemName(EDIT_FIELDS_SET_NODE_NAME);
-		await n8n.page.keyboard.press('Escape');
+		await aura.canvas.clickNodePlusEndpoint('DebugHelper');
+		await expect(aura.canvas.nodeCreatorSearchBar()).toBeVisible();
+		await aura.canvas.fillNodeCreatorSearchBar(EDIT_FIELDS_SET_NODE_NAME);
+		await aura.canvas.clickNodeCreatorItemName(EDIT_FIELDS_SET_NODE_NAME);
+		await aura.page.keyboard.press('Escape');
 
-		await n8n.canvas.openNode('Edit Fields');
+		await aura.canvas.openNode('Edit Fields');
 
-		expect(await n8n.ndv.getInputPanel().innerText()).toContain(
+		expect(await aura.ndv.getInputPanel().innerText()).toContain(
 			'The fields below come from the last successful execution.',
 		);
 
-		await expect(n8n.ndv.inputPanel.getSchemaItemText('id')).toBeVisible();
-		await expect(n8n.ndv.inputPanel.getSchemaItemText('firstName')).toBeVisible();
+		await expect(aura.ndv.inputPanel.getSchemaItemText('id')).toBeVisible();
+		await expect(aura.ndv.inputPanel.getSchemaItemText('firstName')).toBeVisible();
 	});
 
-	test('can pin data from previous execution', async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('NDV-debug-generate-data.json');
+	test('can pin data from previous execution', async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('NDV-debug-generate-data.json');
 
-		await expect(n8n.canvas.getExecuteWorkflowButton()).toBeVisible();
+		await expect(aura.canvas.getExecuteWorkflowButton()).toBeVisible();
 
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await expect(n8n.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
-		await expect(n8n.canvas.clearExecutionDataButton()).toBeHidden();
-		await expect(n8n.canvas.stopExecutionButton()).toBeVisible();
-		await expect(n8n.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
+		await expect(aura.canvas.getExecuteWorkflowButtonSpinner()).toBeVisible();
+		await expect(aura.canvas.clearExecutionDataButton()).toBeHidden();
+		await expect(aura.canvas.stopExecutionButton()).toBeVisible();
+		await expect(aura.canvas.stopExecutionWaitingForWebhookButton()).toBeHidden();
 
-		await n8n.notifications.waitForNotificationAndClose(
+		await aura.notifications.waitForNotificationAndClose(
 			NOTIFICATIONS.WORKFLOW_EXECUTED_SUCCESSFULLY,
 		);
 
-		await n8n.page.reload();
-		await n8n.canvas.openNode('DebugHelper');
+		await aura.page.reload();
+		await aura.canvas.openNode('DebugHelper');
 
-		await n8n.ndv.getEditPinnedDataButton().click();
-		const editor = n8n.ndv.outputPanel.get().locator('[contenteditable="true"]');
+		await aura.ndv.getEditPinnedDataButton().click();
+		const editor = aura.ndv.outputPanel.get().locator('[contenteditable="true"]');
 		await expect(editor).toContainText('"password":');
 		await expect(editor).toContainText('"uid":');
 	});

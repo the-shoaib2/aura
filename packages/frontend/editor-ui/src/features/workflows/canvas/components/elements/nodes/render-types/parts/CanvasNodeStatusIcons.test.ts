@@ -157,7 +157,7 @@ describe('CanvasNodeStatusIcons', () => {
 			global: {
 				provide: {
 					...createCanvasProvide(),
-					...createCanvasNodeProvide({ data: { type: 'n8n-nodes-test.testNode' } }),
+					...createCanvasNodeProvide({ data: { type: 'aura-nodes-test.testNode' } }),
 				},
 			},
 		});
@@ -173,7 +173,7 @@ describe('CanvasNodeStatusIcons', () => {
 			global: {
 				provide: {
 					...createCanvasProvide(),
-					...createCanvasNodeProvide({ data: { type: 'n8n-nodes-test.testNode' } }),
+					...createCanvasNodeProvide({ data: { type: 'aura-nodes-test.testNode' } }),
 				},
 			},
 		});

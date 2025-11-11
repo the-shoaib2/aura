@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.msg91",
+	"node": "aura-nodes-base.msg91",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/msg91/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/msg91/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.msg91/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.msg91/"
 			}
 		]
 	}

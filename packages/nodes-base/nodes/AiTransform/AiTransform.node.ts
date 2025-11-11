@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	AI_TRANSFORM_CODE_GENERATED_FOR_PROMPT,
 	AI_TRANSFORM_JS_CODE,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { JavaScriptSandbox } from '../Code/JavaScriptSandbox';
 import { getSandboxContext } from '../Code/Sandbox';

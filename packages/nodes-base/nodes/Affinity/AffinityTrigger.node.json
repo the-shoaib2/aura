@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.affinityTrigger",
+	"node": "aura-nodes-base.affinityTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Sales"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/affinity/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/affinity/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.affinitytrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.affinitytrigger/"
 			}
 		]
 	}

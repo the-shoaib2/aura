@@ -10,7 +10,7 @@ import type {
 	IUsedCredential,
 } from '@/features/credentials/credentials.types';
 import type { IWorkflowDb } from '@/Interface';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
 import { useProjectsStore } from '../projects.store';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -22,10 +22,10 @@ import {
 	ResourceType,
 	splitName,
 } from '../projects.utils';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { sortByProperty } from '@n8n/utils/sort/sortByProperty';
-import { truncate } from '@n8n/utils/string/truncate';
+import { useI18n } from '@aura/i18n';
+import type { EventBus } from '@aura/utils/event-bus';
+import { sortByProperty } from '@aura/utils/sort/sortByProperty';
+import { truncate } from '@aura/utils/string/truncate';
 import { computed, h, onMounted, ref } from 'vue';
 import { I18nT } from 'vue-i18n';
 import { useRouter } from 'vue-router';
@@ -39,7 +39,7 @@ import {
 	N8nSelect,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const props = defineProps<{
 	modalName: string;
 	data: {

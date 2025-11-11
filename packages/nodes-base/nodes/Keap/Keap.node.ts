@@ -1,6 +1,6 @@
 import { capitalCase, pascalCase } from 'change-case';
 import moment from 'moment-timezone';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import type {
 	IDataObject,
 	IExecuteFunctions,
@@ -9,7 +9,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { companyFields, companyOperations } from './CompanyDescription';
 import type { ICompany } from './CompanyInterface';
@@ -39,7 +39,7 @@ export class Keap implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Keap',
 		name: 'keap',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:keap.png',
 		group: ['input'],
 		version: 1,

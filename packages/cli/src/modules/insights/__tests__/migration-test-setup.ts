@@ -1,4 +1,4 @@
-import type { TestMigrationContext } from '@n8n/backend-test-utils';
+import type { TestMigrationContext } from '@aura/backend-test-utils';
 
 /**
  * Test values for BIGINT migration validation.

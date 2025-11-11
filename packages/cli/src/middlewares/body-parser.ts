@@ -1,8 +1,8 @@
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import type { Request, RequestHandler } from 'express';
-import { parseIncomingMessage } from 'n8n-core';
-import { jsonParse } from 'n8n-workflow';
+import { parseIncomingMessage } from 'aura-core';
+import { jsonParse } from 'workflow';
 import { parse as parseQueryString } from 'querystring';
 import getRawBody from 'raw-body';
 import { type Readable } from 'stream';

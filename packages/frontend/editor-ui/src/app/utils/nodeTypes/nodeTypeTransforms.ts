@@ -1,4 +1,4 @@
-import { type INodeTypeDescription } from 'n8n-workflow';
+import { type INodeTypeDescription } from 'workflow';
 import type { NodeTypesByTypeNameAndVersion } from '@/Interface';
 import { DEFAULT_NODETYPE_VERSION } from '@/app/constants';
 import type { NodeTypesStore } from '@/app/stores/nodeTypes.store';

@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 
@@ -19,7 +14,7 @@ const properties: INodeProperties[] = [
 		default: '',
 		required: true,
 		description:
-			'ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		typeOptions: {
 			loadOptionsMethod: 'loadCaseAttachments',
 			loadOptionsDependsOn: ['caseId.value'],

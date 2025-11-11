@@ -8,19 +8,19 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "71b4c90c-bc69-40af-ae0d-4148c869e90f"
 		},
 		{
 			"parameters": {
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"limit": 1,
 				"filters": {}
 			},
 			"name": "Hunter",
-			"type": "n8n-nodes-base.hunter",
+			"type": "aura-nodes-base.hunter",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -34,12 +34,12 @@
 		{
 			"parameters": {
 				"operation": "emailFinder",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"firstname": "hosting",
 				"lastname": "test"
 			},
 			"name": "Hunter1",
-			"type": "n8n-nodes-base.hunter",
+			"type": "aura-nodes-base.hunter",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -53,10 +53,10 @@
 		{
 			"parameters": {
 				"operation": "emailVerifier",
-				"email": "nodeqa@n8n.io"
+				"email": "nodeqa@aura.io"
 			},
 			"name": "Hunter2",
-			"type": "n8n-nodes-base.hunter",
+			"type": "aura-nodes-base.hunter",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {

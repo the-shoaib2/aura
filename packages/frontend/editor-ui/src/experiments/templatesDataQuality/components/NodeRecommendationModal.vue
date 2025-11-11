@@ -2,13 +2,13 @@
 import Modal from '@/app/components/Modal.vue';
 import { EXPERIMENT_TEMPLATES_DATA_QUALITY_KEY, TEMPLATES_URLS } from '@/app/constants';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { ITemplatesWorkflowFull } from '@n8n/rest-api-client';
+import type { ITemplatesWorkflowFull } from '@aura/rest-api-client';
 import { onMounted, ref } from 'vue';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useTemplatesDataQualityStore } from '../stores/templatesDataQuality.store';
 import TemplateCard from './TemplateCard.vue';
-import { useI18n } from '@n8n/i18n';
-import { N8nLink, N8nSpinner, N8nText } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nLink, N8nSpinner, N8nText } from '@aura/design-system';
 
 const uiStore = useUIStore();
 const locale = useI18n();

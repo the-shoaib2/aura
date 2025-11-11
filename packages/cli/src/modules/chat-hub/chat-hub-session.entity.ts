@@ -1,5 +1,5 @@
-import { ChatHubProvider } from '@n8n/api-types';
-import { WithTimestamps, DateTimeColumn, User, CredentialsEntity, WorkflowEntity } from '@n8n/db';
+import { ChatHubProvider } from '@aura/api-types';
+import { WithTimestamps, DateTimeColumn, User, CredentialsEntity, WorkflowEntity } from '@aura/db';
 import {
 	Column,
 	Entity,
@@ -8,7 +8,7 @@ import {
 	JoinColumn,
 	type Relation,
 	PrimaryGeneratedColumn,
-} from '@n8n/typeorm';
+} from '@aura/typeorm';
 
 import type { ChatHubMessage } from './chat-hub-message.entity';
 
@@ -58,7 +58,7 @@ export class ChatHubSession extends WithTimestamps {
 	credential?: Relation<CredentialsEntity> | null;
 
 	/*
-	 * Enum value of the LLM provider to use, e.g. 'openai', 'anthropic', 'google', 'n8n' (if applicable).
+	 * Enum value of the LLM provider to use, e.g. 'openai', 'anthropic', 'google', 'aura' (if applicable).
 	 */
 	@Column({ type: 'varchar', length: 16, nullable: true })
 	provider: ChatHubProvider | null;
@@ -70,13 +70,13 @@ export class ChatHubSession extends WithTimestamps {
 	model: string | null;
 
 	/*
-	 * ID of the custom n8n agent workflow to use (if applicable)
+	 * ID of the custom aura agent workflow to use (if applicable)
 	 */
 	@Column({ type: 'varchar', length: 36, nullable: true })
 	workflowId: string | null;
 
 	/**
-	 * Custom n8n agent workflow to use (if applicable)
+	 * Custom aura agent workflow to use (if applicable)
 	 */
 	@ManyToOne('WorkflowEntity', { onDelete: 'SET NULL', nullable: true })
 	@JoinColumn({ name: 'workflowId' })

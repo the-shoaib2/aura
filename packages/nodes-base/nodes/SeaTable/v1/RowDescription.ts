@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const rowOperations: INodeProperties[] = [
 	{
@@ -49,7 +49,7 @@ export const rowFields: INodeProperties[] = [
 	// ----------------------------------
 
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Table Name',
 		name: 'tableName',
 		type: 'options',
@@ -64,12 +64,12 @@ export const rowFields: INodeProperties[] = [
 			},
 		},
 		default: '',
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 		description:
-			'The name of SeaTable table to access. Choose from the list, or specify the name using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
+			'The name of SeaTable table to access. Choose from the list, or specify the name using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>.',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Table ID',
 		name: 'tableId',
 		type: 'options',
@@ -86,7 +86,7 @@ export const rowFields: INodeProperties[] = [
 		default: '',
 
 		description:
-			'The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 
 	// ----------------------------------
@@ -161,13 +161,13 @@ export const rowFields: INodeProperties[] = [
 				name: 'columnValues',
 				values: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 						displayName: 'Column Name',
 						name: 'columnName',
 						type: 'options',
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+						// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 						description:
-							'Choose from the list, or specify the name using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+							'Choose from the list, or specify the name using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsDependsOn: ['table'],
 							loadOptionsMethod: 'getTableUpdateAbleColumns',
@@ -266,13 +266,13 @@ export const rowFields: INodeProperties[] = [
 		},
 		options: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 				displayName: 'View Name',
 				name: 'view_name',
 				type: 'options',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 				description:
-					'Choose from the list, or specify an View Name using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+					'Choose from the list, or specify an View Name using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getViews',
 				},
@@ -318,7 +318,7 @@ export const rowFields: INodeProperties[] = [
 				description: 'The direction of the sort, ascending (asc) or descending (desc)',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 				displayName: 'Order By Column',
 				name: 'order_by',
 				type: 'options',
@@ -326,9 +326,9 @@ export const rowFields: INodeProperties[] = [
 					loadOptionsMethod: 'getAllSortableColumns',
 				},
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 				description:
-					'Choose from the list, or specify a Column using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+					'Choose from the list, or specify a Column using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>',
 			},
 		],
 	},

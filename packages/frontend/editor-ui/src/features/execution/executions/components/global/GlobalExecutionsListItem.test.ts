@@ -1,6 +1,6 @@
 import { vi } from 'vitest';
 import { fireEvent } from '@testing-library/vue';
-import { WAIT_INDEFINITELY, type ExecutionSummary } from 'n8n-workflow';
+import { WAIT_INDEFINITELY, type ExecutionSummary } from 'workflow';
 import GlobalExecutionsListItem from './GlobalExecutionsListItem.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import { DateTime } from 'luxon';

@@ -46,7 +46,7 @@ const ITEM_TO_DATA_ACCESSORS = [
 	/^item/,
 ];
 
-const SPLIT_OUT_NODE_TYPE = 'n8n-nodes-base.splitOut';
+const SPLIT_OUT_NODE_TYPE = 'aura-nodes-base.splitOut';
 
 // These we safely can convert to a normal argument
 const ITEM_ACCESSORS = ['params', 'isExecuted'];

@@ -1,6 +1,6 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
 import { mock, mockDeep } from 'jest-mock-extended';
-import type { ILoadOptionsFunctions, INode } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, INode } from 'workflow';
 import nock from 'nock';
 
 import { Mandrill } from '../Mandrill.node';

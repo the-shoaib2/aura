@@ -1,7 +1,7 @@
 /**
- * Get the Docker image to use for the n8n container
+ * Get the Docker image to use for the aura container
  */
-export function getDockerImageFromEnv(defaultImage = 'n8nio/n8n:local') {
+export function getDockerImageFromEnv(defaultImage = 'auraio/aura:local') {
 	const configuredImage = process.env.N8N_DOCKER_IMAGE;
 	if (!configuredImage) {
 		return defaultImage;
@@ -10,21 +10,21 @@ export function getDockerImageFromEnv(defaultImage = 'n8nio/n8n:local') {
 	const hasImageOrg = configuredImage.includes('/');
 	const hasImageTag = configuredImage.includes(':');
 
-	// Full image reference with org and tag (e.g., "n8nio/n8n:beta")
+	// Full image reference with org and tag (e.g., "auraio/aura:beta")
 	if (hasImageOrg && hasImageTag) {
 		return configuredImage;
 	}
 
-	// Image with org but no tag (e.g., "n8nio/n8n")
+	// Image with org but no tag (e.g., "auraio/aura")
 	if (hasImageOrg) {
 		return configuredImage;
 	}
 
-	// Image with tag provided (e.g., "n8n:beta")
+	// Image with tag provided (e.g., "aura:beta")
 	if (hasImageTag) {
-		return `n8nio/${configuredImage}`;
+		return `auraio/${configuredImage}`;
 	}
 
 	// Only tag name (e.g., "beta", "1.0.0")
-	return `n8nio/n8n:${configuredImage}`;
+	return `auraio/aura:${configuredImage}`;
 }

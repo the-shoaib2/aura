@@ -1,6 +1,6 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { User, WorkflowEntity, ListQueryDb, WorkflowFolderUnionFull } from '@n8n/db';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import type { User, WorkflowEntity, ListQueryDb, WorkflowFolderUnionFull } from '@aura/db';
 import {
 	SharedWorkflow,
 	ExecutionRepository,
@@ -8,18 +8,18 @@ import {
 	WorkflowTagMappingRepository,
 	SharedWorkflowRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import type { Scope } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { EntityManager } from '@n8n/typeorm';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In } from '@n8n/typeorm';
-import type { QueryDeepPartialEntity } from '@n8n/typeorm/query-builder/QueryPartialEntity';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import type { Scope } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { EntityManager } from '@aura/typeorm';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In } from '@aura/typeorm';
+import type { QueryDeepPartialEntity } from '@aura/typeorm/query-builder/QueryPartialEntity';
 import omit from 'lodash/omit';
 import pick from 'lodash/pick';
-import { BinaryDataService } from 'n8n-core';
-import { NodeApiError, PROJECT_ROOT } from 'n8n-workflow';
+import { BinaryDataService } from 'aura-core';
+import { NodeApiError, PROJECT_ROOT } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { ActiveWorkflowManager } from '@/active-workflow-manager';

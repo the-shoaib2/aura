@@ -1,12 +1,12 @@
-import type { CredentialPayload } from '@n8n/backend-test-utils';
+import type { CredentialPayload } from '@aura/backend-test-utils';
 import {
 	createTeamProject,
 	getProjectByNameOrFail,
 	createWorkflow,
 	randomName,
 	testDb,
-} from '@n8n/backend-test-utils';
-import type { TagEntity, Variables } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { TagEntity, Variables } from '@aura/db';
 import {
 	ApiKeyRepository,
 	CredentialsRepository,
@@ -14,10 +14,10 @@ import {
 	TagRepository,
 	SharedCredentialsRepository,
 	SharedWorkflowRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { getOwnerOnlyApiKeyScopes } from '@n8n/permissions';
-import { randomString } from 'n8n-workflow';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { getOwnerOnlyApiKeyScopes } from '@aura/permissions';
+import { randomString } from 'workflow';
 import validator from 'validator';
 
 import { affixRoleToSaveCredential, createCredentials } from '@test-integration/db/credentials';
@@ -1255,7 +1255,7 @@ describe('Public API endpoints with feat:apiKeyScopes enabled', () => {
 								id: 'uuid-1234',
 								parameters: {},
 								name: 'Start',
-								type: 'n8n-nodes-base.start',
+								type: 'aura-nodes-base.start',
 								typeVersion: 1,
 								position: [240, 300],
 							},
@@ -1326,7 +1326,7 @@ describe('Public API endpoints with feat:apiKeyScopes enabled', () => {
 								id: 'uuid-1234',
 								parameters: {},
 								name: 'Start',
-								type: 'n8n-nodes-base.start',
+								type: 'aura-nodes-base.start',
 								typeVersion: 1,
 								position: [240, 300],
 							},
@@ -1531,7 +1531,7 @@ describe('Public API endpoints with feat:apiKeyScopes enabled', () => {
 								id: 'uuid-1234',
 								parameters: {},
 								name: 'Start',
-								type: 'n8n-nodes-base.start',
+								type: 'aura-nodes-base.start',
 								typeVersion: 1,
 								position: [240, 300],
 							},
@@ -1539,7 +1539,7 @@ describe('Public API endpoints with feat:apiKeyScopes enabled', () => {
 								id: 'uuid-1234',
 								parameters: {},
 								name: 'Cron',
-								type: 'n8n-nodes-base.cron',
+								type: 'aura-nodes-base.cron',
 								typeVersion: 1,
 								position: [400, 300],
 							},
@@ -1612,7 +1612,7 @@ describe('Public API endpoints with feat:apiKeyScopes enabled', () => {
 								id: 'uuid-1234',
 								parameters: {},
 								name: 'Start',
-								type: 'n8n-nodes-base.start',
+								type: 'aura-nodes-base.start',
 								typeVersion: 1,
 								position: [240, 300],
 							},
@@ -1620,7 +1620,7 @@ describe('Public API endpoints with feat:apiKeyScopes enabled', () => {
 								id: 'uuid-1234',
 								parameters: {},
 								name: 'Cron',
-								type: 'n8n-nodes-base.cron',
+								type: 'aura-nodes-base.cron',
 								typeVersion: 1,
 								position: [400, 300],
 							},

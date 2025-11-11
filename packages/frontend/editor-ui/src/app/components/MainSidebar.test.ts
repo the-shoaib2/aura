@@ -9,7 +9,7 @@ import { useUIStore } from '@/app/stores/ui.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { useVersionsStore } from '@/app/stores/versions.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import type { Version } from '@n8n/rest-api-client/api/versions';
+import type { Version } from '@aura/rest-api-client/api/versions';
 
 vi.mock('vue-router', () => ({
 	useRouter: () => ({}),
@@ -29,7 +29,7 @@ const mockVersion: Version = {
 	nodes: [],
 	createdAt: '2025-01-01T00:00:00Z',
 	description: 'Test version',
-	documentationUrl: 'https://docs.n8n.io',
+	documentationUrl: 'https://docs.aura.io',
 	hasBreakingChange: false,
 	hasSecurityFix: false,
 	hasSecurityIssue: false,

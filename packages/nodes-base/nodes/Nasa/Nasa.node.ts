@@ -5,8 +5,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { nasaApiRequest, nasaApiRequestAllItems } from './GenericFunctions';
 
@@ -14,7 +14,7 @@ export class Nasa implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'NASA',
 		name: 'nasa',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:nasa.png',
 		group: ['transform'],
 		version: 1,
@@ -566,7 +566,7 @@ export class Nasa implements INodeType {
 					},
 				},
 				default: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'By default just the URL of the image is returned. When set to true the image will be downloaded.',
 			},

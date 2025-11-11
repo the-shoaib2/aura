@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router';
 import { createTestingPinia } from '@pinia/testing';
 import merge from 'lodash/merge';
 import SamlOnboarding from './SamlOnboarding.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { SETTINGS_STORE_DEFAULT_STATE, waitAllPromises } from '@/__tests__/utils';
 import { createComponentRenderer } from '@/__tests__/render';
 import { useUsersStore } from '@/features/settings/users/users.store';

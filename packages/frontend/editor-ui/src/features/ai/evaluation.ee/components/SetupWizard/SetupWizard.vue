@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { ref, computed } from 'vue';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useEvaluationStore } from '../../evaluation.store';
@@ -10,7 +10,7 @@ import { useUsageStore } from '@/features/settings/usage/usage.store';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { I18nT } from 'vue-i18n';
 
-import { N8nButton, N8nCallout, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nCallout, N8nText } from '@aura/design-system';
 defineEmits<{
 	runTest: [];
 }>();

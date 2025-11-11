@@ -8,7 +8,7 @@ import {
 	type ChatHubConversationModel,
 	type EnrichedStructuredChunk,
 	type ChatHubProvider,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import { z } from 'zod';
 
 export interface UserMessage {
@@ -69,7 +69,7 @@ export interface GroupedConversations {
 
 export interface ChatAgentFilter {
 	sortBy: 'updatedAt' | 'createdAt';
-	provider: 'custom-agent' | 'n8n' | '';
+	provider: 'custom-agent' | 'aura' | '';
 	search: string;
 }
 

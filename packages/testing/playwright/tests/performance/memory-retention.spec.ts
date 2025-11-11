@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 import { attachMetric, pollMemoryMetric } from '../../utils/performance-helper';
 
 test.use({
@@ -21,40 +21,40 @@ test.describe('Memory Leak Detection', () => {
 	 * Define the memory-consuming action to test.
 	 * This function can be easily modified to test different features.
 	 */
-	async function performMemoryAction(n8n: n8nPage) {
+	async function performMemoryAction(aura: auraPage) {
 		// Example 1: AI Workflow Builder
 		// Enable AI workflow feature
-		await n8n.api.setEnvFeatureFlags({ '026_easy_ai_workflow': 'variant' });
+		await aura.api.setEnvFeatureFlags({ '026_easy_ai_workflow': 'variant' });
 
-		await n8n.navigate.toWorkflows();
-		await expect(n8n.workflows.getEasyAiWorkflowCard()).toBeVisible({ timeout: 10000 });
-		await n8n.workflows.clickEasyAiWorkflowCard();
+		await aura.navigate.toWorkflows();
+		await expect(aura.workflows.getEasyAiWorkflowCard()).toBeVisible({ timeout: 10000 });
+		await aura.workflows.clickEasyAiWorkflowCard();
 
 		// Wait for AI workflow builder to fully load
-		await n8n.page.waitForLoadState();
-		await expect(n8n.canvas.sticky.getStickies().first()).toBeVisible({ timeout: 10000 });
+		await aura.page.waitForLoadState();
+		await expect(aura.canvas.sticky.getStickies().first()).toBeVisible({ timeout: 10000 });
 
 		await new Promise((resolve) => setTimeout(resolve, 5000));
 	}
 
-	test('Memory should be released after actions', async ({ n8nContainer, n8n }, testInfo) => {
+	test('Memory should be released after actions', async ({ auraContainer, aura }, testInfo) => {
 		// Let container stabilize
 		await new Promise((resolve) => setTimeout(resolve, CONTAINER_STABILIZATION_TIME));
 
 		// Get baseline memory (average over 10 seconds for accuracy)
 		const baselineMemoryMB =
-			(await pollMemoryMetric(n8nContainer.baseUrl, BASELINE_POLL_DURATION, 1000)) / 1024 / 1024;
+			(await pollMemoryMetric(auraContainer.baseUrl, BASELINE_POLL_DURATION, 1000)) / 1024 / 1024;
 
 		// Perform the memory-consuming action
-		await performMemoryAction(n8n);
-		await n8n.page.goto('/home/workflows');
+		await performMemoryAction(aura);
+		await aura.page.goto('/home/workflows');
 
 		// Give time for garbage collection
 		await new Promise((resolve) => setTimeout(resolve, 5000));
 
 		// Measure final memory (average over 30 seconds for stability)
 		const finalMemoryMB =
-			(await pollMemoryMetric(n8nContainer.baseUrl, FINAL_POLL_DURATION, 1000)) / 1024 / 1024;
+			(await pollMemoryMetric(auraContainer.baseUrl, FINAL_POLL_DURATION, 1000)) / 1024 / 1024;
 
 		// Calculate retention percentage - How much memory is retained after the action
 		const memoryRetainedMB = finalMemoryMB - baselineMemoryMB;

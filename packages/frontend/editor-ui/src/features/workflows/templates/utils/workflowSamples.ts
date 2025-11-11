@@ -1,4 +1,4 @@
-import { ApplicationError, type INodeTypeNameVersion } from 'n8n-workflow';
+import { ApplicationError, type INodeTypeNameVersion } from 'workflow';
 import type { WorkflowDataWithTemplateId } from '@/Interface';
 import { isWorkflowDataWithTemplateId } from './typeGuards';
 /* eslint-disable import-x/extensions */
@@ -78,7 +78,7 @@ export const getPrebuiltAgents = (): SampleTemplate[] => {
 			template: getWorkflowJson(voiceAssistantAgentJson),
 			nodes: [
 				{
-					name: 'n8n-nodes-base.telegram',
+					name: 'aura-nodes-base.telegram',
 					version: 1.2,
 				},
 			],
@@ -90,7 +90,7 @@ export const getPrebuiltAgents = (): SampleTemplate[] => {
 			template: getWorkflowJson(emailTriageAgentWithGmailJson),
 			nodes: [
 				{
-					name: 'n8n-nodes-base.gmail',
+					name: 'aura-nodes-base.gmail',
 					version: 2.1,
 				},
 			],
@@ -102,7 +102,7 @@ export const getPrebuiltAgents = (): SampleTemplate[] => {
 			template: getWorkflowJson(knowledgeStoreAgentWithGoogleDriveJson),
 			nodes: [
 				{
-					name: 'n8n-nodes-base.googleDrive',
+					name: 'aura-nodes-base.googleDrive',
 					version: 3,
 				},
 			],
@@ -114,7 +114,7 @@ export const getPrebuiltAgents = (): SampleTemplate[] => {
 			template: getWorkflowJson(calendarAgentJson),
 			nodes: [
 				{
-					name: 'n8n-nodes-base.googleCalendar',
+					name: 'aura-nodes-base.googleCalendar',
 					version: 1.3,
 				},
 			],
@@ -126,7 +126,7 @@ export const getPrebuiltAgents = (): SampleTemplate[] => {
 			template: getWorkflowJson(taskManagementAgentWithGoogleSheetsJson),
 			nodes: [
 				{
-					name: 'n8n-nodes-base.googleSheets',
+					name: 'aura-nodes-base.googleSheets',
 					version: 4.7,
 				},
 			],
@@ -137,7 +137,7 @@ export const getPrebuiltAgents = (): SampleTemplate[] => {
 			template: getWorkflowJson(jokeAgentWithHttpToolJson),
 			nodes: [
 				{
-					name: 'n8n-nodes-base.httpRequest',
+					name: 'aura-nodes-base.httpRequest',
 					version: 4.2,
 				},
 			],
@@ -157,14 +157,14 @@ export const getTutorialTemplates = (): SampleTemplate[] => {
 		{
 			name: 'JSON basics',
 			description:
-				'Designed to teach you the absolute basics of JSON (JavaScript Object Notation) and, more importantly, how to use it within n8n.',
+				'Designed to teach you the absolute basics of JSON (JavaScript Object Notation) and, more importantly, how to use it within aura.',
 			template: getWorkflowJson(jsonBasicsJson),
 			nodes: [],
 		},
 		{
 			name: 'Expressions',
 			description:
-				'Step-by-step tutorial designed to teach you the most important skill in n8n: using expressions to access and manipulate data.',
+				'Step-by-step tutorial designed to teach you the most important skill in aura: using expressions to access and manipulate data.',
 			template: getWorkflowJson(expressionsTutorialJson),
 			nodes: [],
 		},
@@ -178,7 +178,7 @@ export const getTutorialTemplates = (): SampleTemplate[] => {
 		{
 			name: 'API fundamentals',
 			description:
-				'Hands-on tutorial designed to demystify what an API is and how it works, right inside your n8n canvas.',
+				'Hands-on tutorial designed to demystify what an API is and how it works, right inside your aura canvas.',
 			template: getWorkflowJson(apiFundamentalsJson),
 			nodes: [],
 		},

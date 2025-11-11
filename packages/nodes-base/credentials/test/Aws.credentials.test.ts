@@ -1,5 +1,5 @@
 import { sign, type Request } from 'aws4';
-import type { IHttpRequestOptions } from 'n8n-workflow';
+import type { IHttpRequestOptions } from 'workflow';
 
 import { Aws } from '../Aws.credentials';
 import type { AwsIamCredentialsType } from '../common/aws/types';
@@ -27,7 +27,7 @@ describe('Aws Credential', () => {
 		expect(aws.icon).toEqual({ light: 'file:icons/AWS.svg', dark: 'file:icons/AWS.dark.svg' });
 		expect(aws.properties.length).toBeGreaterThan(0);
 		expect(aws.test.request.baseURL).toBe(
-			// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+			// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 			'={{$credentials.region.startsWith("cn-") ? `https://sts.${$credentials.region}.amazonaws.com.cn` : `https://sts.${$credentials.region}.amazonaws.com`}}',
 		);
 		expect(aws.test.request.url).toBe('?Action=GetCallerIdentity&Version=2011-06-15');

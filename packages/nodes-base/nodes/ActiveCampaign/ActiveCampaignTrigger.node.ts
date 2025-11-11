@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { activeCampaignApiRequest, activeCampaignApiRequestAllItems } from './GenericFunctions';
 
@@ -45,7 +45,7 @@ export class ActiveCampaignTrigger implements INodeType {
 				name: 'events',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getEvents',
 				},
@@ -132,7 +132,7 @@ export class ActiveCampaignTrigger implements INodeType {
 				const sources = this.getNodeParameter('sources', '') as string[];
 				const body: IDataObject = {
 					webhook: {
-						name: `n8n-webhook:${webhookUrl}`,
+						name: `aura-webhook:${webhookUrl}`,
 						url: webhookUrl,
 						events,
 						sources,

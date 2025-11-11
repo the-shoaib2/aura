@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "9468a1d9-c07c-4001-804d-f308db6f79a3"
@@ -19,7 +19,7 @@
 				"additionalFields": {}
 			},
 			"name": "Disqus",
-			"type": "n8n-nodes-base.disqus",
+			"type": "aura-nodes-base.disqus",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -40,7 +40,7 @@
 				}
 			},
 			"name": "Disqus1",
-			"type": "n8n-nodes-base.disqus",
+			"type": "aura-nodes-base.disqus",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -61,7 +61,7 @@
 				}
 			},
 			"name": "Disqus2",
-			"type": "n8n-nodes-base.disqus",
+			"type": "aura-nodes-base.disqus",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -82,7 +82,7 @@
 				}
 			},
 			"name": "Disqus3",
-			"type": "n8n-nodes-base.disqus",
+			"type": "aura-nodes-base.disqus",
 			"typeVersion": 1,
 			"position": [950, 300],
 			"credentials": {

@@ -1,5 +1,5 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
-import { nodeConfig } from '@n8n/eslint-config/node';
+import { nodeConfig } from '@aura/eslint-config/node';
 
 export default defineConfig(
 	nodeConfig,
@@ -33,7 +33,7 @@ export default defineConfig(
 			'prefer-const': 'warn',
 			'import-x/no-duplicates': 'warn',
 			'import-x/no-default-export': 'warn',
-			'n8n-local-rules/no-uncaught-json-parse': 'warn',
+			'aura-local-rules/no-uncaught-json-parse': 'warn',
 			'@typescript-eslint/no-unsafe-assignment': 'warn',
 			'@typescript-eslint/no-unsafe-argument': 'warn',
 			'@typescript-eslint/no-unsafe-call': 'warn',

@@ -16,26 +16,26 @@ exports[`InputPanel > should render 1`] = `
         class="title"
         data-v-5b5900d0=""
       >
-        
+
         <div
           class="titleSection"
         >
           <span
-            class="n8n-text text-light size-medium bold title title"
+            class="aura-text text-light size-medium bold title title"
           >
-            
+
             Input
-            
+
           </span>
           <div
-            class="n8n-radio-buttons radioGroup"
+            class="aura-radio-buttons radioGroup"
             data-test-id="input-panel-mode"
             role="radiogroup"
           >
-            
+
             <label
               aria-checked="true"
-              class="n8n-radio-button container hoverable"
+              class="aura-radio-button container hoverable"
               role="radio"
               tabindex="-1"
             >
@@ -43,14 +43,14 @@ exports[`InputPanel > should render 1`] = `
                 class="button active medium"
                 data-test-id="radio-button-mapping"
               >
-                
+
                 Mapping
-                
+
               </div>
             </label>
             <label
               aria-checked="false"
-              class="n8n-radio-button container hoverable"
+              class="aura-radio-button container hoverable"
               role="radio"
               tabindex="-1"
             >
@@ -58,15 +58,15 @@ exports[`InputPanel > should render 1`] = `
                 class="button medium"
                 data-test-id="radio-button-debugging"
               >
-                
+
                 From AI
-                
+
               </div>
             </label>
-            
+
           </div>
         </div>
-        
+
       </div>
       <div
         class="displayModes"
@@ -76,15 +76,15 @@ exports[`InputPanel > should render 1`] = `
         <!---->
         <!--v-if-->
         <div
-          class="n8n-radio-buttons radioGroup"
+          class="aura-radio-buttons radioGroup"
           data-test-id="ndv-run-data-display-mode"
           data-v-5b5900d0=""
           role="radiogroup"
         >
-          
+
           <label
             aria-checked="true"
-            class="n8n-radio-button container hoverable"
+            class="aura-radio-button container hoverable"
             role="radio"
             tabindex="-1"
           >
@@ -92,14 +92,14 @@ exports[`InputPanel > should render 1`] = `
               class="button active medium"
               data-test-id="radio-button-schema"
             >
-              
+
               Schema
-              
+
             </div>
           </label>
           <label
             aria-checked="false"
-            class="n8n-radio-button container hoverable"
+            class="aura-radio-button container hoverable"
             role="radio"
             tabindex="-1"
           >
@@ -107,14 +107,14 @@ exports[`InputPanel > should render 1`] = `
               class="button medium"
               data-test-id="radio-button-table"
             >
-              
+
               Table
-              
+
             </div>
           </label>
           <label
             aria-checked="false"
-            class="n8n-radio-button container hoverable"
+            class="aura-radio-button container hoverable"
             role="radio"
             tabindex="-1"
           >
@@ -122,12 +122,12 @@ exports[`InputPanel > should render 1`] = `
               class="button medium"
               data-test-id="radio-button-json"
             >
-              
+
               JSON
-              
+
             </div>
           </label>
-          
+
         </div>
         <!--v-if-->
         <!--v-if-->
@@ -158,8 +158,8 @@ exports[`InputPanel > should render 1`] = `
           </button>
         </div>
       </div>
-      
-      
+
+
     </div>
     <div
       data-v-5b5900d0=""
@@ -169,8 +169,8 @@ exports[`InputPanel > should render 1`] = `
       <!--v-if-->
       <!--v-if-->
       <!--v-if-->
-      
-      
+
+
       <!--v-if-->
     </div>
     <div
@@ -194,7 +194,7 @@ exports[`InputPanel > should render 1`] = `
     >
       <div
         aria-hidden="true"
-        class="n8n-block-ui uiBlocker"
+        class="aura-block-ui uiBlocker"
         data-v-1a77a378=""
         role="dialog"
         style="display: none;"

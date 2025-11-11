@@ -13,10 +13,10 @@ import {
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { N8nIcon, N8nLink, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nLink, N8nTooltip } from '@aura/design-system';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useTemplatesDataQualityStore } from '@/experiments/templatesDataQuality/stores/templatesDataQuality.store';
 const nodeCreatorStore = useNodeCreatorStore();

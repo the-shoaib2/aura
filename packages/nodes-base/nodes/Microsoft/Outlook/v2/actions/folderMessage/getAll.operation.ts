@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 
@@ -143,17 +138,17 @@ export const properties: INodeProperties[] = [
 								hint: 'Filter messages by whether they have been read or not',
 								options: [
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Unread and read messages',
 										value: 'both',
 									},
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Unread messages only',
 										value: 'unread',
 									},
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Read messages only',
 										value: 'read',
 									},

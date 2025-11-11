@@ -34,7 +34,7 @@ import type {
 	RelatedExecution,
 	IExecuteFunctions,
 	IDataObject,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	ApplicationError,
 	createDeferredPromise,
@@ -43,7 +43,7 @@ import {
 	NodeHelpers,
 	NodeOperationError,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 import assert from 'node:assert';
 
 import * as Helpers from '@test/helpers';
@@ -202,7 +202,7 @@ describe('WorkflowExecute', () => {
 
 		test("don't run hooks for siblings of the destination node", async () => {
 			// ARRANGE
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1' });
 			const node2 = createNodeData({ name: 'node2' });
 			const workflowInstance = new DirectedGraph()
@@ -241,7 +241,7 @@ describe('WorkflowExecute', () => {
 
 		test("don't run hooks if a node does not have input data", async () => {
 			// ARRANGE
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const workflowInstance = new DirectedGraph()
 				.addNodes(trigger)
 				.toWorkflow({ name: '', active: false, nodeTypes, settings: { executionOrder } });
@@ -279,7 +279,7 @@ describe('WorkflowExecute', () => {
 
 		test("don't run hooks for siblings of the destination node", async () => {
 			// ARRANGE
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1' });
 			const node2 = createNodeData({ name: 'node2' });
 			const workflowInstance = new DirectedGraph()
@@ -318,7 +318,7 @@ describe('WorkflowExecute', () => {
 
 		test("don't run hooks if a node does not have input data", async () => {
 			// ARRANGE
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const workflowInstance = new DirectedGraph()
 				.addNodes(trigger)
 				.toWorkflow({ name: '', active: false, nodeTypes, settings: { executionOrder } });
@@ -420,7 +420,7 @@ describe('WorkflowExecute', () => {
 			const additionalData = Helpers.WorkflowExecuteAdditionalData(waitPromise);
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1' });
 			const node2 = createNodeData({ name: 'node2' });
 			const workflow = new DirectedGraph()
@@ -473,7 +473,7 @@ describe('WorkflowExecute', () => {
 				'recreateNodeExecutionStack',
 			);
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const set1 = createNodeData({ name: 'set1' });
 			const set2 = createNodeData({ name: 'set2' });
 			const merge = createNodeData({ name: 'merge' });
@@ -528,7 +528,7 @@ describe('WorkflowExecute', () => {
 			const additionalData = Helpers.WorkflowExecuteAdditionalData(waitPromise);
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1', disabled: true });
 			const node2 = createNodeData({ name: 'node2' });
 			const workflow = new DirectedGraph()
@@ -587,8 +587,8 @@ describe('WorkflowExecute', () => {
 			const additionalData = Helpers.WorkflowExecuteAdditionalData(waitPromise);
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
-			const loop = createNodeData({ name: 'loop', type: 'n8n-nodes-base.splitInBatches' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
+			const loop = createNodeData({ name: 'loop', type: 'aura-nodes-base.splitInBatches' });
 			const inLoop = createNodeData({ name: 'inLoop' });
 			const afterLoop = createNodeData({ name: 'afterLoop' });
 			const workflow = new DirectedGraph()
@@ -649,7 +649,7 @@ describe('WorkflowExecute', () => {
 			const additionalData = Helpers.WorkflowExecuteAdditionalData(waitPromise);
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1' });
 			const node2 = createNodeData({ name: 'node2' });
 			const workflow = new DirectedGraph()
@@ -709,7 +709,7 @@ describe('WorkflowExecute', () => {
 			const additionalData = Helpers.WorkflowExecuteAdditionalData(waitPromise);
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const destination = createNodeData({ name: 'destination' });
 			const dirtyNode = createNodeData({ name: 'dirtyNode' });
 			const workflow = new DirectedGraph()
@@ -809,8 +809,8 @@ describe('WorkflowExecute', () => {
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 			const nodeTypes = Helpers.NodeTypes();
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
-			const tool = createNodeData({ name: 'tool', type: 'n8n-nodes-base.toolTest' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
+			const tool = createNodeData({ name: 'tool', type: 'aura-nodes-base.toolTest' });
 			const agentNode = createNodeData({ name: 'agent' });
 
 			const workflow = new DirectedGraph()
@@ -833,7 +833,7 @@ describe('WorkflowExecute', () => {
 			const expectedToolExecutor: INode = {
 				name: 'PartialExecutionToolExecutor',
 				disabled: false,
-				type: '@n8n/n8n-nodes-langchain.toolExecutor',
+				type: '@aura/aura-nodes-langchain.toolExecutor',
 				parameters: {
 					query: {},
 					toolName: '',
@@ -885,7 +885,7 @@ describe('WorkflowExecute', () => {
 
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1' });
 			const node2 = createNodeData({ name: 'node2' });
 			const workflow = new DirectedGraph()
@@ -936,7 +936,7 @@ describe('WorkflowExecute', () => {
 
 			const workflowExecute = new WorkflowExecute(additionalData, 'manual');
 
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1' });
 			const workflow = new DirectedGraph()
 				.addNodes(trigger, node1)
@@ -2571,7 +2571,7 @@ describe('WorkflowExecute', () => {
 
 		test('should set status to canceled when execution timeout is reached', async () => {
 			// Arrange - create a workflow with multiple nodes
-			const trigger = createNodeData({ name: 'trigger', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger = createNodeData({ name: 'trigger', type: 'aura-nodes-base.manualTrigger' });
 			const node1 = createNodeData({ name: 'node1' });
 			const node2 = createNodeData({ name: 'node2' });
 

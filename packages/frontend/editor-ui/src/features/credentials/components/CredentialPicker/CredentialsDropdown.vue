@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nOption, N8nSelect, N8nText } from '@n8n/design-system';
+import { N8nOption, N8nSelect, N8nText } from '@aura/design-system';
 export type CredentialOption = {
 	id: string;
 	name: string;

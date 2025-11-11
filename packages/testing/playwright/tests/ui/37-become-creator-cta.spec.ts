@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/base';
 import type { TestRequirements } from '../../Types';
 
 test.describe('Become creator CTA', () => {
-	test('should not show the CTA if user is not eligible', async ({ n8n, setupRequirements }) => {
+	test('should not show the CTA if user is not eligible', async ({ aura, setupRequirements }) => {
 		const notEligibleRequirements: TestRequirements = {
 			intercepts: {
 				cta: {
@@ -13,12 +13,12 @@ test.describe('Become creator CTA', () => {
 		};
 
 		await setupRequirements(notEligibleRequirements);
-		await n8n.goHome();
+		await aura.goHome();
 
-		await expect(n8n.becomeCreatorCTA.getBecomeTemplateCreatorCta()).toBeHidden();
+		await expect(aura.becomeCreatorCTA.getBecomeTemplateCreatorCta()).toBeHidden();
 	});
 
-	test('should show the CTA if the user is eligible', async ({ n8n, setupRequirements }) => {
+	test('should show the CTA if the user is eligible', async ({ aura, setupRequirements }) => {
 		const eligibleRequirements: TestRequirements = {
 			intercepts: {
 				cta: {
@@ -29,13 +29,13 @@ test.describe('Become creator CTA', () => {
 		};
 
 		await setupRequirements(eligibleRequirements);
-		await n8n.goHome();
-		await n8n.sideBar.expand();
+		await aura.goHome();
+		await aura.sideBar.expand();
 
-		await expect(n8n.becomeCreatorCTA.getBecomeTemplateCreatorCta()).toBeVisible();
+		await expect(aura.becomeCreatorCTA.getBecomeTemplateCreatorCta()).toBeVisible();
 
-		await n8n.becomeCreatorCTA.closeBecomeTemplateCreatorCta();
+		await aura.becomeCreatorCTA.closeBecomeTemplateCreatorCta();
 
-		await expect(n8n.becomeCreatorCTA.getBecomeTemplateCreatorCta()).toBeHidden();
+		await expect(aura.becomeCreatorCTA.getBecomeTemplateCreatorCta()).toBeHidden();
 	});
 });

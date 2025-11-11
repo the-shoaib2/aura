@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "a26bf258-8876-4142-9a6c-37ac7426e7c9"
@@ -21,7 +21,7 @@
 				"purpose": "Testing"
 			},
 			"name": "Slack3",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [730, 230],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"topic": "QA"
 			},
 			"name": "Slack4",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [870, 230],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"additionalFields": {}
 			},
 			"name": "Slack5",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1020, 230],
 			"credentials": {
@@ -78,7 +78,7 @@
 				"filters": {}
 			},
 			"name": "Slack6",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1650, 230],
 			"credentials": {
@@ -98,7 +98,7 @@
 				"filters": {}
 			},
 			"name": "Slack7",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1820, 230],
 			"credentials": {
@@ -117,7 +117,7 @@
 				"name": "=renamed{{$node[\"Slack2\"].json[\"name\"]}}"
 			},
 			"name": "Slack9",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [580, 230],
 			"credentials": {
@@ -136,7 +136,7 @@
 				"filters": {}
 			},
 			"name": "Slack11",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [590, 390],
 			"credentials": {
@@ -154,7 +154,7 @@
 				"fileId": "={{$node[\"Slack10\"].json[\"id\"]}}"
 			},
 			"name": "Slack12",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [740, 390],
 			"alwaysOutputData": true,
@@ -174,7 +174,7 @@
 				"limit": 1
 			},
 			"name": "Slack8",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [2120, 230],
 			"credentials": {
@@ -194,7 +194,7 @@
 				}
 			},
 			"name": "Slack2",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [440, 230],
 			"credentials": {
@@ -214,7 +214,7 @@
 				}
 			},
 			"name": "Slack10",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [440, 390],
 			"credentials": {
@@ -234,7 +234,7 @@
 				}
 			},
 			"name": "Slack23",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [840, 560],
 			"alwaysOutputData": true,
@@ -253,7 +253,7 @@
 				"limit": 1
 			},
 			"name": "Slack22",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [690, 560],
 			"alwaysOutputData": true,
@@ -273,7 +273,7 @@
 				}
 			},
 			"name": "Slack21",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [550, 560],
 			"alwaysOutputData": true,
@@ -292,7 +292,7 @@
 				"channelId": "={{$node[\"Slack2\"].json[\"id\"]}}"
 			},
 			"name": "Slack",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [2250, 230],
 			"credentials": {
@@ -311,7 +311,7 @@
 				"userIds": ["U01N08LEY9M"]
 			},
 			"name": "Slack13",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1160, 230],
 			"credentials": {
@@ -329,7 +329,7 @@
 				"channelId": "={{$node[\"Slack2\"].json[\"id\"]}}"
 			},
 			"name": "Slack16",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1500, 230],
 			"credentials": {
@@ -349,7 +349,7 @@
 				"filters": {}
 			},
 			"name": "Slack18",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1960, 230],
 			"credentials": {
@@ -367,7 +367,7 @@
 				"channelId": "={{$node[\"Slack2\"].json[\"id\"]}}"
 			},
 			"name": "Slack17",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [1330, 230],
 			"credentials": {
@@ -385,7 +385,7 @@
 				"channelId": "={{$node[\"Slack2\"].json[\"id\"]}}"
 			},
 			"name": "Slack1",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [2540, 230],
 			"credentials": {
@@ -403,7 +403,7 @@
 				"channelId": "={{$node[\"Slack2\"].json[\"id\"]}}"
 			},
 			"name": "Slack14",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [2400, 230],
 			"credentials": {
@@ -423,7 +423,7 @@
 				}
 			},
 			"name": "Slack24",
-			"type": "n8n-nodes-base.slack",
+			"type": "aura-nodes-base.slack",
 			"typeVersion": 1,
 			"position": [400, 560],
 			"alwaysOutputData": true,

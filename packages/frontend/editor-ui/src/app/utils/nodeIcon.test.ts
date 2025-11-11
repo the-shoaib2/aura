@@ -1,7 +1,7 @@
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { removePreviewToken } from '@/features/shared/nodeCreator/nodeCreator.utils';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'workflow';
 import { mock } from 'vitest-mock-extended';
 import {
 	getBadgeIconUrl,
@@ -12,7 +12,7 @@ import {
 } from './nodeIcon';
 import { getThemedValue } from './nodeTypesUtils';
 
-vi.mock('@n8n/stores/useRootStore', () => ({
+vi.mock('@aura/stores/useRootStore', () => ({
 	useRootStore: vi.fn(() => ({
 		baseUrl: 'https://example.com/',
 	})),

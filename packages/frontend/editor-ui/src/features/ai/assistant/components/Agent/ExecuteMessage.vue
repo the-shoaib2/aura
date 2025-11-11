@@ -4,7 +4,7 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed, onBeforeUnmount, onMounted, ref, watch, type WatchStopHandle } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -13,7 +13,7 @@ import CanvasRunWorkflowButton from '@/features/workflows/canvas/components/elem
 import { useLogsStore } from '@/app/stores/logs.store';
 import { isChatNode } from '@/app/utils/aiUtils';
 import { useToast } from '@/app/composables/useToast';
-import { N8nTooltip } from '@n8n/design-system';
+import { N8nTooltip } from '@aura/design-system';
 import { nextTick } from 'vue';
 import { useBuilderStore } from '@/features/ai/assistant/builder.store';
 import type { WorkflowValidationIssue } from '@/Interface';

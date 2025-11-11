@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import type { User } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import type { User } from '@aura/db';
+import { Service } from '@aura/di';
 import { execSync } from 'child_process';
-import { UnexpectedError } from 'n8n-workflow';
+import { UnexpectedError } from 'workflow';
 import path from 'path';
 import type {
 	CommitResult,
@@ -31,10 +31,10 @@ import type { SourceControlPreferences } from './types/source-control-preference
  * Service for interacting with locally cloned git repositories.
  *
  * For local development:
- * Keep in mind that when running n8n locally using a pnpm dev script,
+ * Keep in mind that when running aura locally using a pnpm dev script,
  * the git credentials on your machine will be picked up by the git client
  * used in this service.
- * See the README for the environments feature for instructions to run n8n in a docker container.
+ * See the README for the environments feature for instructions to run aura in a docker container.
  */
 @Service()
 export class SourceControlGitService {

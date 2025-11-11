@@ -1,7 +1,7 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GLOBAL_OWNER_ROLE, type User } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { SourceControlledFile } from '@aura/api-types';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GLOBAL_OWNER_ROLE, type User } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { SourceControlPreferencesService } from '@/environments.ee/source-control/source-control-preferences.service.ee';
 import { SourceControlService } from '@/environments.ee/source-control/source-control.service.ee';
@@ -54,7 +54,7 @@ describe('GET /sourceControl/preferences', () => {
 					status: 'modified',
 					location: 'local',
 					conflict: true,
-					file: '/Users/michael/.n8n/git/workflows/haQetoXq9GxHSkft.json',
+					file: '/Users/michael/.aura/git/workflows/haQetoXq9GxHSkft.json',
 					updatedAt: '2023-07-14T11:24:41.000Z',
 				},
 			] as SourceControlledFile[];

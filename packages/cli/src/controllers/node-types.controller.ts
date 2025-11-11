@@ -1,9 +1,9 @@
-import { GlobalConfig } from '@n8n/config';
-import { Post, RestController } from '@n8n/decorators';
+import { GlobalConfig } from '@aura/config';
+import { Post, RestController } from '@aura/decorators';
 import { Request } from 'express';
 import { readFile } from 'fs/promises';
 import get from 'lodash/get';
-import type { INodeTypeDescription, INodeTypeNameVersion } from 'n8n-workflow';
+import type { INodeTypeDescription, INodeTypeNameVersion } from 'workflow';
 
 import { NodeTypes } from '@/node-types';
 

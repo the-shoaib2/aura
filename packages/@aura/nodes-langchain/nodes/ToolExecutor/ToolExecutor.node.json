@@ -1,0 +1,17 @@
+{
+	"node": "aura-nodes-base.toolExecutor",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"details": "Can execute tools by simulating an agent function call with a given query.",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.editimage/"
+			}
+		]
+	},
+	"subcategories": {
+		"Core Nodes": ["Helpers"]
+	}
+}

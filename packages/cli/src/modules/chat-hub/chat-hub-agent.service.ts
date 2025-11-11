@@ -1,7 +1,7 @@
-import { ChatModelsResponse } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import type { User } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { ChatModelsResponse } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import type { User } from '@aura/db';
+import { Service } from '@aura/di';
 import { v4 as uuidv4 } from 'uuid';
 
 import { NotFoundError } from '@/errors/response-errors/not-found.error';

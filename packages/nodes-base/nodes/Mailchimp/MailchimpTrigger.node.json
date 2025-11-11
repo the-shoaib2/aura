@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.mailchimpTrigger",
+	"node": "aura-nodes-base.mailchimpTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing", "Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/mailchimp/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/mailchimp/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.mailchimptrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.mailchimptrigger/"
 			}
 		]
 	}

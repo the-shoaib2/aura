@@ -1,5 +1,5 @@
 import { VALID_EMAIL_REGEX } from '@/app/constants';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 import { useEnvironmentsStore } from '@/features/settings/environments.ee/environments.store';
 import { useExternalSecretsStore } from '@/features/integrations/externalSecrets.ee/externalSecrets.ee.store';
 
@@ -11,8 +11,8 @@ import type {
 } from '@codemirror/autocomplete';
 import uniqBy from 'lodash/uniqBy';
 import { DateTime } from 'luxon';
-import type { DocMetadata, IDataObject, NativeDoc } from 'n8n-workflow';
-import { Expression, ExpressionExtensions, NativeMethods, validateFieldType } from 'n8n-workflow';
+import type { DocMetadata, IDataObject, NativeDoc } from 'workflow';
+import { Expression, ExpressionExtensions, NativeMethods, validateFieldType } from 'workflow';
 import {
 	ARRAY_NUMBER_ONLY_METHODS,
 	ARRAY_RECOMMENDED_OPTIONS,
@@ -742,7 +742,7 @@ export const variablesOptions = () => {
 					name: variable.key,
 					returnType: 'string',
 					description: getDescription(!variable.project, isOverridden, variable.project?.name),
-					docURL: 'https://docs.n8n.io/code/variables/',
+					docURL: 'https://docs.aura.io/code/variables/',
 				},
 				type: isOverridden ? 'strikethrough' : undefined,
 			});
@@ -756,7 +756,7 @@ export const responseOptions = () => {
 		{
 			name: 'statusCode',
 			returnType: 'number',
-			docURL: 'https://docs.n8n.io/code/builtin/http-node-variables/',
+			docURL: 'https://docs.aura.io/code/builtin/http-node-variables/',
 			description: i18n.baseText('codeNodeEditor.completer.$response.statusCode'),
 		},
 		{
@@ -767,13 +767,13 @@ export const responseOptions = () => {
 		{
 			name: 'headers',
 			returnType: 'Object',
-			docURL: 'https://docs.n8n.io/code/builtin/http-node-variables/',
+			docURL: 'https://docs.aura.io/code/builtin/http-node-variables/',
 			description: i18n.baseText('codeNodeEditor.completer.$response.headers'),
 		},
 		{
 			name: 'body',
 			returnType: 'Object',
-			docURL: 'https://docs.n8n.io/code/builtin/http-node-variables/',
+			docURL: 'https://docs.aura.io/code/builtin/http-node-variables/',
 			description: i18n.baseText('codeNodeEditor.completer.$response.body'),
 		},
 	].map((doc) => createCompletionOption({ name: doc.name, doc }));
@@ -795,19 +795,19 @@ export const executionOptions = () => {
 		{
 			name: 'resumeUrl',
 			returnType: 'string',
-			docURL: 'https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/',
+			docURL: 'https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/',
 			description: i18n.baseText('codeNodeEditor.completer.$execution.resumeUrl'),
 		},
 		{
 			name: 'resumeFormUrl',
 			returnType: 'string',
-			docURL: 'https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/',
+			docURL: 'https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/',
 			description: i18n.baseText('codeNodeEditor.completer.$execution.resumeFormUrl'),
 		},
 		{
 			name: 'customData',
 			returnType: 'CustomData',
-			docURL: 'https://docs.n8n.io/workflows/executions/custom-executions-data/',
+			docURL: 'https://docs.aura.io/workflows/executions/custom-executions-data/',
 			description: i18n.baseText('codeNodeEditor.completer.$execution.customData'),
 		},
 	].map((doc) => createCompletionOption({ name: doc.name, doc }));
@@ -818,7 +818,7 @@ export const customDataOptions = () => {
 		{
 			name: 'get',
 			returnType: 'any',
-			docURL: 'https://docs.n8n.io/workflows/executions/custom-executions-data/',
+			docURL: 'https://docs.aura.io/workflows/executions/custom-executions-data/',
 			args: [
 				{
 					name: 'key',
@@ -854,7 +854,7 @@ export const customDataOptions = () => {
 					type: 'any',
 				},
 			],
-			docURL: 'https://docs.n8n.io/workflows/executions/custom-executions-data/',
+			docURL: 'https://docs.aura.io/workflows/executions/custom-executions-data/',
 			description: i18n.baseText('codeNodeEditor.completer.$execution.customData.set'),
 			examples: [
 				{
@@ -868,7 +868,7 @@ export const customDataOptions = () => {
 		{
 			name: 'getAll',
 			returnType: 'Object',
-			docURL: 'https://docs.n8n.io/workflows/executions/custom-executions-data/',
+			docURL: 'https://docs.aura.io/workflows/executions/custom-executions-data/',
 			description: i18n.baseText('codeNodeEditor.completer.$execution.customData.getAll'),
 			examples: [
 				{
@@ -889,7 +889,7 @@ export const customDataOptions = () => {
 					type: 'object',
 				},
 			],
-			docURL: 'https://docs.n8n.io/workflows/executions/custom-executions-data/',
+			docURL: 'https://docs.aura.io/workflows/executions/custom-executions-data/',
 			description: i18n.baseText('codeNodeEditor.completer.$execution.customData.setAll'),
 			examples: [
 				{ example: '$execution.customData.setAll({ user_email: "me@example.com", id: 1234 })' },
@@ -921,7 +921,7 @@ export const nodeRefOptions = (base: string) => {
 			doc: {
 				name: 'item',
 				returnType: 'Item',
-				docURL: 'https://docs.n8n.io/data/data-mapping/data-item-linking/',
+				docURL: 'https://docs.aura.io/data/data-mapping/data-item-linking/',
 				description: i18n.baseText('codeNodeEditor.completer.selector.item'),
 			},
 		},
@@ -953,7 +953,7 @@ export const nodeRefOptions = (base: string) => {
 						type: 'number',
 					},
 				],
-				docURL: 'https://docs.n8n.io/data/data-mapping/data-item-linking/',
+				docURL: 'https://docs.aura.io/data/data-mapping/data-item-linking/',
 				description: i18n.baseText('codeNodeEditor.completer.selector.itemMatching'),
 			},
 			isFunction: true,
@@ -1019,7 +1019,7 @@ export const inputOptions = (base: string) => {
 			doc: {
 				name: 'item',
 				returnType: 'Item',
-				docURL: 'https://docs.n8n.io/data/data-mapping/data-item-linking/',
+				docURL: 'https://docs.aura.io/data/data-mapping/data-item-linking/',
 				description: i18n.baseText('codeNodeEditor.completer.selector.item'),
 			},
 		},
@@ -1093,13 +1093,13 @@ export const itemOptions = () => {
 		{
 			name: 'json',
 			returnType: 'Object',
-			docURL: 'https://docs.n8n.io/data/data-structure/',
+			docURL: 'https://docs.aura.io/data/data-structure/',
 			description: i18n.baseText('codeNodeEditor.completer.item.json'),
 		},
 		{
 			name: 'binary',
 			returnType: 'Object',
-			docURL: 'https://docs.n8n.io/data/data-structure/',
+			docURL: 'https://docs.aura.io/data/data-structure/',
 			description: i18n.baseText('codeNodeEditor.completer.item.binary'),
 		},
 	].map((doc) => createCompletionOption({ name: doc.name, doc }));

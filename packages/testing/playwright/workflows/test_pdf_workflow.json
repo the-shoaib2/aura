@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "1285fa02-e091-4bd3-89cf-c7e6c174ff49",
 			"name": "Manual Trigger",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [460, -120]
 		},
@@ -22,7 +22,7 @@
 			},
 			"id": "9c8b960d-e7c8-4116-97d4-4f5ca9872898",
 			"name": "Download PDF",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 4.2,
 			"position": [680, -120]
 		},
@@ -31,7 +31,7 @@
 				"operation": "pdf",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.extractFromFile",
+			"type": "aura-nodes-base.extractFromFile",
 			"typeVersion": 1,
 			"position": [1340, -120],
 			"id": "5757782b-7029-44d6-b87e-5f9b5910f1b7",
@@ -43,7 +43,7 @@
 				"fileName": "/tmp/downloaded-sample.pdf",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.readWriteFile",
+			"type": "aura-nodes-base.readWriteFile",
 			"typeVersion": 1,
 			"position": [900, -120],
 			"id": "2bc250b7-6f9f-4888-a229-beced5821b1b",
@@ -54,7 +54,7 @@
 				"fileSelector": "/tmp/downloaded-sample.pdf",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.readWriteFile",
+			"type": "aura-nodes-base.readWriteFile",
 			"typeVersion": 1,
 			"position": [1120, -120],
 			"id": "e3402ffd-b322-4442-b0d1-18bb19a9a319",

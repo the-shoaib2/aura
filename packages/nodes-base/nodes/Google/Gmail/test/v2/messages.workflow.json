@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "765640dd-529f-4319-a435-a1b5411cf761",
@@ -15,7 +15,7 @@
 				"limit": 2,
 				"filters": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, -600],
 			"id": "51f7694c-0d4c-4f84-9e4f-8a8fe8db18c9",
@@ -47,7 +47,7 @@
 					"downloadAttachments": true
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, -400],
 			"id": "2ea8db65-5e60-47dc-bdca-1981bee1b63e",
@@ -62,7 +62,7 @@
 		},
 		{
 			"parameters": {
-				"sendTo": "test@n8n.io",
+				"sendTo": "test@aura.io",
 				"subject": "Test Subject",
 				"message": "Test Message",
 				"options": {
@@ -70,14 +70,14 @@
 					"attachmentsUi": {
 						"attachmentsBinary": [{}, {}]
 					},
-					"bccList": "test-bcc@n8n.io",
-					"ccList": "test-cc@n8n.io",
+					"bccList": "test-bcc@aura.io",
+					"ccList": "test-cc@aura.io",
 					"senderName": "Test Sender",
-					"replyTo": "test-reply-to@n8n.io",
+					"replyTo": "test-reply-to@aura.io",
 					"replyToSenderOnly": true
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [1060, 1380],
 			"id": "da96a339-2df5-465f-a253-5302160ef921",
@@ -93,11 +93,11 @@
 		{
 			"parameters": {
 				"operation": "sendAndWait",
-				"sendTo": "test@n8n.io",
+				"sendTo": "test@aura.io",
 				"subject": "Test Subject",
 				"message": "Test Message"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, 1580],
 			"id": "b12181b3-a98d-44ba-bb71-a22ce4e4c663",
@@ -116,7 +116,7 @@
 				"messageId": "test",
 				"labelIds": ["CHAT"]
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, -220],
 			"id": "2f83b7ac-3e7a-466d-b269-88928da60d3a",
@@ -134,7 +134,7 @@
 				"operation": "delete",
 				"messageId": "test"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, 180],
 			"id": "aba867fa-bf92-4ba9-b96f-c0f74d37c144",
@@ -152,7 +152,7 @@
 				"operation": "get",
 				"messageId": "test"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, 380],
 			"id": "029494b2-caf2-4a1e-b496-1ab3ac96987a",
@@ -172,7 +172,7 @@
 				"simple": false,
 				"options": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, 580],
 			"id": "86a77799-6d7b-4dd6-9afa-be3cd64e82df",
@@ -190,7 +190,7 @@
 				"operation": "markAsRead",
 				"messageId": "test"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, 760],
 			"id": "aedc33d9-cc57-4bc1-8811-8aa5fe02a363",
@@ -208,7 +208,7 @@
 				"operation": "markAsUnread",
 				"messageId": "test"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, 980],
 			"id": "a463ad5e-3fac-40c9-b9bf-0705d28aa68d",
@@ -227,7 +227,7 @@
 				"messageId": "test",
 				"labelIds": ["CHAT"]
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, -20],
 			"id": "97996089-0116-4c86-b24c-5848661efc9c",
@@ -247,12 +247,12 @@
 				"message": "Test reply",
 				"options": {
 					"appendAttribution": false,
-					"bccList": "test-bcc@n8n.io",
+					"bccList": "test-bcc@aura.io",
 					"senderName": "Test Sender Name",
 					"replyToSenderOnly": false
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [780, 1200],
 			"id": "aa43df3d-5de3-4663-9211-401e3040a4de",
@@ -270,7 +270,7 @@
 				"operation": "toJson",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [920, 1380],
 			"id": "6820a547-12dc-4146-8483-a43adf695b40",
@@ -290,7 +290,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [780, 1380],
 			"id": "72bd5e27-dd43-48ad-be97-634caf883dd5",

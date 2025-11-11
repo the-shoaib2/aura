@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useCredentialsStore } from '../credentials.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useUIStore } from '@/app/stores/ui.store';
 import { getThemedValue } from '@/app/utils/nodeTypesUtils';
-import type { ICredentialType } from 'n8n-workflow';
+import type { ICredentialType } from 'workflow';
 import { computed } from 'vue';
-import { N8nNodeIcon } from '@n8n/design-system';
+import { N8nNodeIcon } from '@aura/design-system';
 
 const props = defineProps<{
 	credentialTypeName: string | null;

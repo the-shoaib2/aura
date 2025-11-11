@@ -3,10 +3,10 @@ import {
 	initDbUpToMigration,
 	runSingleMigration,
 	testModules,
-} from '@n8n/backend-test-utils';
-import { DbConnection } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { DataSource } from '@n8n/typeorm';
+} from '@aura/backend-test-utils';
+import { DbConnection } from '@aura/db';
+import { Container } from '@aura/di';
+import { DataSource } from '@aura/typeorm';
 
 import { BOUNDARY_TEST_VALUES, insertPreMigrationPeriodData } from './migration-test-setup';
 

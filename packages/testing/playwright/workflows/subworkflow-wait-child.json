@@ -5,7 +5,7 @@
 			"parameters": {
 				"inputSource": "passthrough"
 			},
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1.1,
 			"position": [0, 0],
 			"id": "e3fa278e-1cb1-48fb-88e4-301c7d04d22c",
@@ -15,7 +15,7 @@
 			"parameters": {
 				"amount": 120
 			},
-			"type": "n8n-nodes-base.wait",
+			"type": "aura-nodes-base.wait",
 			"typeVersion": 1.1,
 			"position": [224, 0],
 			"id": "1d7ee221-49ac-4744-970e-3ba78220b455",

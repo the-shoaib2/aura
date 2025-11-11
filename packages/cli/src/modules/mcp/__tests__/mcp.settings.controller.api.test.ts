@@ -1,6 +1,6 @@
-import { testDb } from '@n8n/backend-test-utils';
-import { ApiKeyRepository, type User } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { testDb } from '@aura/backend-test-utils';
+import { ApiKeyRepository, type User } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { createMember, createOwner, createUser } from '@test-integration/db/users';
 import { setupTestServer } from '@test-integration/utils';

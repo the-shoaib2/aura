@@ -6,15 +6,15 @@ import {
 	INSIGHTS_UNIT_IMPACT_MAPPING,
 } from '@/features/execution/insights/insights.constants';
 import type { InsightsSummaryDisplay } from '@/features/execution/insights/insights.types';
-import type { InsightsDateRange, InsightsSummary } from '@n8n/api-types';
-import { useI18n } from '@n8n/i18n';
-import { smartDecimal } from '@n8n/utils/number/smartDecimal';
+import type { InsightsDateRange, InsightsSummary } from '@aura/api-types';
+import { useI18n } from '@aura/i18n';
+import { smartDecimal } from '@aura/utils/number/smartDecimal';
 import { computed, useCssModule } from 'vue';
 import { I18nT } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import { getTimeRangeLabels } from '../insights.utils';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 const props = defineProps<{
 	summary: InsightsSummaryDisplay;
 	timeRange: InsightsDateRange['key'];

@@ -1,5 +1,5 @@
-import { SettingsRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { SettingsRepository } from '@aura/db';
+import { Service } from '@aura/di';
 
 const KEY = 'chat.access.enabled';
 

@@ -1,4 +1,4 @@
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 import type { CompletionContext, CompletionResult } from '@codemirror/autocomplete';
 import { prefixMatch } from './utils';
 import { createInfoBoxRenderer } from './infoBoxRenderer';

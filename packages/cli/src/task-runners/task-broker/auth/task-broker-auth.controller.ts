@@ -1,4 +1,4 @@
-import { Service } from '@n8n/di';
+import { Service } from '@aura/di';
 import type { NextFunction, Response } from 'express';
 
 import type { AuthlessRequest } from '@/requests';

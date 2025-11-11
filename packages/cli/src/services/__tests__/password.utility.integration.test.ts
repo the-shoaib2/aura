@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 
 import { PasswordUtility } from '@/services/password.utility';
 

@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "be5a39ea-04bf-49a3-969f-47d4a9496f08",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-340, 280]
 		},
@@ -16,7 +16,7 @@
 			},
 			"id": "98d30bbe-cbdd-4313-933e-804cdf322860",
 			"name": "Create Subscriber",
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 1,
 			"position": [-140, 40],
 			"credentials": {
@@ -28,7 +28,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [80, 40],
 			"id": "93aa764f-5101-4961-9b51-9fa92f746337",
@@ -36,7 +36,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [80, 220],
 			"id": "4dccb059-c4f6-4eae-b68a-5c5c36d0b8d4",
@@ -47,7 +47,7 @@
 				"operation": "get",
 				"subscriberId": "demo@mailerlite.com"
 			},
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 1,
 			"position": [-140, 220],
 			"id": "82115adf-edf4-4ce4-9109-3ade129294d1",
@@ -67,7 +67,7 @@
 					"type": "active"
 				}
 			},
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 1,
 			"position": [-140, 420],
 			"id": "fae9c6bd-1bd1-4ee8-865d-283b7edb6004",
@@ -81,7 +81,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [80, 420],
 			"id": "45937d69-3956-434d-b955-a67d77d43d57",
@@ -93,7 +93,7 @@
 				"limit": 1,
 				"filters": {}
 			},
-			"type": "n8n-nodes-base.mailerLite",
+			"type": "aura-nodes-base.mailerLite",
 			"typeVersion": 1,
 			"position": [-180, 680],
 			"id": "6491d933-0929-44bd-89cf-977823dde650",
@@ -107,7 +107,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [40, 680],
 			"id": "6e35d6e1-1ce3-4410-8558-a5d573676d8a",

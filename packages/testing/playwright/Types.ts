@@ -1,4 +1,4 @@
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 
 export class TestError extends Error {
 	constructor(message: string) {
@@ -35,7 +35,7 @@ export class TestError extends Error {
  *     }
  *   },
  *   storage: {
- *     'n8n-telemetry': '{"enabled": true}'
+ *     'aura-telemetry': '{"enabled": true}'
  *   }
  * };
  * ```
@@ -103,8 +103,8 @@ export interface TestRequirements {
 	 * @example
 	 * ```typescript
 	 * storage: {
-	 *   'n8n-telemetry': '{"enabled": true}',
-	 *   'n8n-instance-id': 'test-instance-id'
+	 *   'aura-telemetry': '{"enabled": true}',
+	 *   'aura-instance-id': 'test-instance-id'
 	 * }
 	 * ```
 	 */

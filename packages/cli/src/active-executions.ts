@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { ExecutionsConfig } from '@n8n/config';
-import type { CreateExecutionPayload, IExecutionDb } from '@n8n/db';
-import { ExecutionRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { ExecutionsConfig } from '@aura/config';
+import type { CreateExecutionPayload, IExecutionDb } from '@aura/db';
+import { ExecutionRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import type {
 	IDeferredPromise,
 	IExecuteResponsePromiseData,
@@ -10,13 +10,13 @@ import type {
 	ExecutionStatus,
 	IWorkflowExecutionDataProcess,
 	StructuredChunk,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	createDeferredPromise,
 	ExecutionCancelledError,
 	sleep,
 	SystemShutdownExecutionCancelledError,
-} from 'n8n-workflow';
+} from 'workflow';
 import { strict as assert } from 'node:assert';
 import type PCancelable from 'p-cancelable';
 

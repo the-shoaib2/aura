@@ -1,7 +1,7 @@
-import { ICredentialType, NodePropertyTypes, INodeProperties } from 'n8n-workflow';
+import { ICredentialType, NodePropertyTypes, INodeProperties } from 'workflow';
 
 export class ClassNameReplace implements ICredentialType {
-	name = 'N8nNameReplace';
+	name = 'auraNameReplace';
 
 	displayName = 'DisplayNameReplace';
 

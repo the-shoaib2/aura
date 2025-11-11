@@ -1,4 +1,4 @@
-import type { PublicInstalledPackage } from 'n8n-workflow';
+import type { PublicInstalledPackage } from 'workflow';
 
 export interface CommunityPackageMap {
 	[name: string]: PublicInstalledPackage;

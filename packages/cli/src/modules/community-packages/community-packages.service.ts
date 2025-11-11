@@ -1,11 +1,11 @@
-import { Logger } from '@n8n/backend-common';
-import { LICENSE_FEATURES } from '@n8n/constants';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { LICENSE_FEATURES } from '@aura/constants';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Service } from '@aura/di';
 import axios from 'axios';
-import type { PackageDirectoryLoader } from 'n8n-core';
-import { InstanceSettings } from 'n8n-core';
-import { jsonParse, UnexpectedError, UserError, type PublicInstalledPackage } from 'n8n-workflow';
+import type { PackageDirectoryLoader } from 'aura-core';
+import { InstanceSettings } from 'aura-core';
+import { jsonParse, UnexpectedError, UserError, type PublicInstalledPackage } from 'workflow';
 import { exec } from 'node:child_process';
 import { access, constants, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -179,8 +179,8 @@ export class CommunityPackagesService {
 				[NPM_DISK_INSUFFICIENT_SPACE]: DISK_IS_FULL,
 			};
 
-			Object.entries(map).forEach(([npmMessage, n8nMessage]) => {
-				if (errorMessage.includes(npmMessage)) throw new UnexpectedError(n8nMessage);
+			Object.entries(map).forEach(([npmMessage, auraMessage]) => {
+				if (errorMessage.includes(npmMessage)) throw new UnexpectedError(auraMessage);
 			});
 
 			this.logger.warn('npm command failed', { errorMessage });
@@ -237,7 +237,7 @@ export class CommunityPackagesService {
 	}
 
 	async checkNpmPackageStatus(packageName: string) {
-		const N8N_BACKEND_SERVICE_URL = 'https://api.n8n.io/api/package';
+		const N8N_BACKEND_SERVICE_URL = 'https://api.aura.io/api/package';
 
 		try {
 			const response = await axios.post<CommunityPackages.PackageStatusCheck>(
@@ -323,11 +323,11 @@ export class CommunityPackagesService {
 				this.logger.info('Packages reinstalled successfully. Resuming regular initialization.');
 				await this.loadNodesAndCredentials.postProcessLoaders();
 			} catch (error) {
-				this.logger.error('n8n was unable to install the missing packages.');
+				this.logger.error('aura was unable to install the missing packages.');
 			}
 		} else {
 			this.logger.warn(
-				'n8n detected that some packages are missing. For more information, visit https://docs.n8n.io/integrations/community-nodes/troubleshooting/',
+				'aura detected that some packages are missing. For more information, visit https://docs.aura.io/integrations/community-nodes/troubleshooting/',
 			);
 		}
 

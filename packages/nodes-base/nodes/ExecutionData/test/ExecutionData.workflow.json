@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [60, -240],
 			"id": "03be3862-c311-48d8-8898-2ffac5fe65b7",
@@ -20,7 +20,7 @@
 					]
 				}
 			},
-			"type": "n8n-nodes-base.executionData",
+			"type": "aura-nodes-base.executionData",
 			"typeVersion": 1,
 			"position": [480, -240],
 			"id": "60d009ae-0101-48bd-a0b5-f8d548b22b5d",
@@ -40,7 +40,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [280, -240],
 			"id": "32447090-1a29-45ab-b967-a80b7222bce4",
@@ -48,7 +48,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [720, -240],
 			"id": "59e3fc3b-de67-4b2e-9489-a0918c45fc5c",

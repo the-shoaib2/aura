@@ -1,5 +1,5 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { Project, Variables } from '@n8n/db';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { Project, Variables } from '@aura/db';
 
 import { VariablesService } from '@/environments.ee/variables/variables.service.ee';
 import { OwnershipService } from '@/services/ownership.service';

@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	type IHttpRequestMethods,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { contactFields, contactOperations } from './ContactDescription';
 import { contactJourneyFields, contactJourneyOperations } from './ContactJourneyDescription';

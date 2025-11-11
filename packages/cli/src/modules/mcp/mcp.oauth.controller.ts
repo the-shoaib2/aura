@@ -2,8 +2,8 @@ import { authorizationHandler } from '@modelcontextprotocol/sdk/server/auth/hand
 import { clientRegistrationHandler } from '@modelcontextprotocol/sdk/server/auth/handlers/register.js';
 import { revocationHandler } from '@modelcontextprotocol/sdk/server/auth/handlers/revoke.js';
 import { tokenHandler } from '@modelcontextprotocol/sdk/server/auth/handlers/token.js';
-import { Get, RootLevelController, StaticRouterMetadata } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { Get, RootLevelController, StaticRouterMetadata } from '@aura/decorators';
+import { Container } from '@aura/di';
 import type { Response, Request, Router } from 'express';
 
 import { UrlService } from '@/services/url.service';

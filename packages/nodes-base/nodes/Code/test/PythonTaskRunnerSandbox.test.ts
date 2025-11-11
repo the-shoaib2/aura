@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import type { IExecuteFunctions } from 'n8n-workflow';
-import { createResultOk, createResultError } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
+import { createResultOk, createResultError } from 'workflow';
 
 import { PythonTaskRunnerSandbox } from '../PythonTaskRunnerSandbox';
 
@@ -24,7 +24,7 @@ const createMockExecuteFunctions = (inputData: any[] = []) => {
 	executeFunctions.getNode.mockReturnValue({
 		id: 'node-id',
 		name: 'Code',
-		type: 'n8n-nodes-base.code',
+		type: 'aura-nodes-base.code',
 		typeVersion: 1,
 		position: [0, 0],
 		parameters: {},

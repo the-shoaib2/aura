@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "f26332f3-c61a-4843-94bd-64a73ad161ff",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [860, 340]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "fae0c907-e2bf-4ecf-82be-f9caa209f925",
 			"name": "Init Data",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1080, 340]
 		},
@@ -55,7 +55,7 @@
 			},
 			"id": "f7990edd-2c0f-42e6-b3ce-74c7df02b6a4",
 			"name": "If",
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"typeVersion": 2,
 			"position": [1300, 340]
 		},
@@ -63,7 +63,7 @@
 			"parameters": {},
 			"id": "850d48f5-0689-4cab-b30c-30e179577c82",
 			"name": "NoOp1",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1540, 200]
 		},
@@ -83,7 +83,7 @@
 			},
 			"id": "91d93c3a-a557-465e-812b-266d6277b279",
 			"name": "Test Expression",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1540, 440]
 		}

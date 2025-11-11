@@ -1,10 +1,10 @@
-import { inTest, Logger } from '@n8n/backend-common';
-import { InstanceSettingsConfig } from '@n8n/config';
-import type { InstanceRole, InstanceType } from '@n8n/constants';
-import { Memoized } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { inTest, Logger } from '@aura/backend-common';
+import { InstanceSettingsConfig } from '@aura/config';
+import type { InstanceRole, InstanceType } from '@aura/constants';
+import { Memoized } from '@aura/decorators';
+import { Service } from '@aura/di';
 import { createHash, randomBytes } from 'crypto';
-import { ApplicationError, jsonParse, ALPHABET, toResult } from 'n8n-workflow';
+import { ApplicationError, jsonParse, ALPHABET, toResult } from 'workflow';
 import { customAlphabet } from 'nanoid';
 import { chmodSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
@@ -26,26 +26,26 @@ type Settings = ReadOnlySettings & WritableSettings;
 
 @Service()
 export class InstanceSettings {
-	/** The path to the n8n folder in which all n8n related data gets saved */
-	readonly n8nFolder = this.config.n8nFolder;
+	/** The path to the aura folder in which all aura related data gets saved */
+	readonly auraFolder = this.config.auraFolder;
 
 	/** The path to the folder where all generated static assets are copied to */
-	readonly staticCacheDir = path.join(this.config.userHome, '.cache/n8n/public');
+	readonly staticCacheDir = path.join(this.config.userHome, '.cache/aura/public');
 
 	/** The path to the folder containing custom nodes and credentials */
-	readonly customExtensionDir = path.join(this.n8nFolder, 'custom');
+	readonly customExtensionDir = path.join(this.auraFolder, 'custom');
 
 	/** The path to the folder containing installed nodes (like community nodes) */
-	readonly nodesDownloadDir = path.join(this.n8nFolder, 'nodes');
+	readonly nodesDownloadDir = path.join(this.auraFolder, 'nodes');
 
-	private readonly settingsFile = path.join(this.n8nFolder, 'config');
+	private readonly settingsFile = path.join(this.auraFolder, 'config');
 
 	readonly enforceSettingsFilePermissions = this.loadEnforceSettingsFilePermissionsFlag();
 
 	private settings: Settings;
 
 	/**
-	 * Fixed ID of this n8n instance, for telemetry.
+	 * Fixed ID of this aura instance, for telemetry.
 	 * Derived from encryption key. Do not confuse with `hostId`.
 	 *
 	 * @example '258fce876abf5ea60eb86a2e777e5e190ff8f3e36b5b37aafec6636c31d4d1f9'
@@ -80,7 +80,7 @@ export class InstanceSettings {
 	instanceRole: InstanceRole = 'unset';
 
 	/**
-	 * ID of this n8n instance. Hostname-based when in Docker, or nanoID-based
+	 * ID of this aura instance. Hostname-based when in Docker, or nanoID-based
 	 * otherwise (resets on restart). Do not confuse with `instanceId`.
 	 *
 	 * @example 'main-bnxa1riryKUNHtln' (local)
@@ -181,7 +181,7 @@ export class InstanceSettings {
 			this.ensureSettingsFilePermissions();
 
 			const settings = jsonParse<Settings>(content, {
-				errorMessage: `Error parsing n8n-config file "${this.settingsFile}". It does not seem to be valid JSON.`,
+				errorMessage: `Error parsing aura-config file "${this.settingsFile}". It does not seem to be valid JSON.`,
 			});
 
 			if (!inTest) this.logger.debug(`User settings loaded from: ${this.settingsFile}`);
@@ -190,7 +190,7 @@ export class InstanceSettings {
 
 			if (encryptionKeyFromEnv && encryptionKey !== encryptionKeyFromEnv) {
 				throw new ApplicationError(
-					`Mismatching encryption keys. The encryption key in the settings file ${this.settingsFile} does not match the N8N_ENCRYPTION_KEY env var. Please make sure both keys match. More information: https://docs.n8n.io/hosting/environment-variables/configuration-methods/#encryption-key`,
+					`Mismatching encryption keys. The encryption key in the settings file ${this.settingsFile} does not match the N8N_ENCRYPTION_KEY env var. Please make sure both keys match. More information: https://docs.aura.io/hosting/environment-variables/configuration-methods/#encryption-key`,
 				);
 			}
 
@@ -209,7 +209,7 @@ export class InstanceSettings {
 			}
 		}
 
-		mkdirSync(this.n8nFolder, { recursive: true });
+		mkdirSync(this.auraFolder, { recursive: true });
 
 		const encryptionKey = encryptionKeyFromEnv ?? randomBytes(24).toString('base64');
 
@@ -302,7 +302,7 @@ export class InstanceSettings {
 		// If the permissions are incorrect and the flag is not set, log a warning
 		if (!this.enforceSettingsFilePermissions.isSet) {
 			this.logger.warn(
-				`Permissions 0${permissionsResult.result.toString(8)} for n8n settings file ${this.settingsFile} are too wide. This is ignored for now, but in the future n8n will attempt to change the permissions automatically. To automatically enforce correct permissions now set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true (recommended), or turn this check off set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false.`,
+				`Permissions 0${permissionsResult.result.toString(8)} for aura settings file ${this.settingsFile} are too wide. This is ignored for now, but in the future aura will attempt to change the permissions automatically. To automatically enforce correct permissions now set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true (recommended), or turn this check off set N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false.`,
 			);
 			// The default is false so we skip the enforcement for now
 			return;
@@ -310,7 +310,7 @@ export class InstanceSettings {
 
 		if (this.enforceSettingsFilePermissions.enforce) {
 			this.logger.warn(
-				`Permissions 0${permissionsResult.result.toString(8)} for n8n settings file ${this.settingsFile} are too wide. Changing permissions to 0600..`,
+				`Permissions 0${permissionsResult.result.toString(8)} for aura settings file ${this.settingsFile} are too wide. Changing permissions to 0600..`,
 			);
 			const chmodResult = toResult(() => chmodSync(this.settingsFile, 0o600));
 			if (!chmodResult.ok) {

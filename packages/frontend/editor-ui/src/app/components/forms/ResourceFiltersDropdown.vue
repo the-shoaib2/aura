@@ -6,9 +6,9 @@ import { useProjectsStore } from '@/features/collaboration/projects/projects.sto
 import type { ProjectSharingData } from '@/features/collaboration/projects/projects.types';
 import ProjectSharing from '@/features/collaboration/projects/components/ProjectSharing.vue';
 import type { BaseFilters } from '@/Interface';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nBadge, N8nButton, N8nInputLabel, N8nLink, N8nPopover } from '@n8n/design-system';
+import { N8nBadge, N8nButton, N8nInputLabel, N8nLink, N8nPopover } from '@aura/design-system';
 type IResourceFiltersType = Record<string, boolean | string | string[]>;
 
 const props = withDefaults(

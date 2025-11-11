@@ -14,7 +14,7 @@
 			},
 			"id": "982999e9-1191-4c74-8292-9f43d19a602b",
 			"name": "Azure OpenAI Chat Model",
-			"type": "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatAzureOpenAi",
 			"typeVersion": 1,
 			"position": [700, 600],
 			"credentials": {
@@ -31,7 +31,7 @@
 			},
 			"id": "6684c985-3943-4099-a7b1-c8cc51f3d9f8",
 			"name": "Azure OpenAI Chat",
-			"type": "@n8n/n8n-nodes-langchain.chainLlm",
+			"type": "@aura/aura-nodes-langchain.chainLlm",
 			"typeVersion": 1.5,
 			"position": [680, 460]
 		},
@@ -39,7 +39,7 @@
 			"parameters": {},
 			"id": "fa8334bf-da22-4d69-b3f4-97b62c278158",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [460, 460]
 		}

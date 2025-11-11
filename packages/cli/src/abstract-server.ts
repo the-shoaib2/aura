@@ -1,8 +1,8 @@
-import { inTest, inDevelopment, Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { DbConnection } from '@n8n/db';
-import { OnShutdown } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import { inTest, inDevelopment, Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { DbConnection } from '@aura/db';
+import { OnShutdown } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import compression from 'compression';
 import express from 'express';
 import { engine as expressHandlebars } from 'express-handlebars';
@@ -141,7 +141,7 @@ export abstract class AbstractServer {
 		this.app.use((_req, res, next) => {
 			if (connectionState.connected) {
 				if (connectionState.migrated) next();
-				else res.send('n8n is starting up. Please wait');
+				else res.send('aura is starting up. Please wait');
 			} else sendErrorResponse(res, new ServiceUnavailableError('Database is not ready!'));
 		});
 	}
@@ -170,7 +170,7 @@ export abstract class AbstractServer {
 			if (error.code === 'EADDRINUSE') {
 				// EADDRINUSE is thrown when the port is already in use
 				this.logger.error(
-					`n8n's port ${port} is already in use. Do you have another instance of n8n running already?`,
+					`aura's port ${port} is already in use. Do you have another instance of aura running already?`,
 				);
 			} else if (error.code === 'EACCES') {
 				// EACCES is thrown when the process is not allowed to use the port
@@ -178,21 +178,21 @@ export abstract class AbstractServer {
 				// or when the port is reserved by the system, for example Windows reserves random ports
 				// for NAT for Hyper-V and other virtualization software.
 				this.logger.error(
-					`n8n does not have permission to use port ${port}. Please run n8n with a different port.`,
+					`aura does not have permission to use port ${port}. Please run aura with a different port.`,
 				);
 			} else if (error.code === 'EAFNOSUPPORT') {
 				// EAFNOSUPPORT is thrown when the address is not available
 				this.logger.error(
-					`n8n's address '${address}' is not available. Please run n8n with a different address, provide correct address in the environment variables N8N_LISTEN_ADDRESS and/or N8N_WORKER_SERVER_ADDRESS.`,
+					`aura's address '${address}' is not available. Please run aura with a different address, provide correct address in the environment variables N8N_LISTEN_ADDRESS and/or N8N_WORKER_SERVER_ADDRESS.`,
 				);
 			} else {
 				// Other errors are unexpected and should be logged
-				this.logger.error('n8n webserver failed, exiting', {
+				this.logger.error('aura webserver failed, exiting', {
 					message: error.message,
 					code: error.code,
 				});
 			}
-			// we always exit on error, so that n8n does not run in an inconsistent state
+			// we always exit on error, so that aura does not run in an inconsistent state
 			process.exit(1);
 		});
 
@@ -202,7 +202,7 @@ export abstract class AbstractServer {
 
 		await this.setupHealthCheck();
 
-		this.logger.info(`n8n ready on ${address}, port ${port}`);
+		this.logger.info(`aura ready on ${address}, port ${port}`);
 	}
 
 	async start(): Promise<void> {
@@ -286,7 +286,7 @@ export abstract class AbstractServer {
 				this.logger.info(`Locale: ${defaultLocale}`);
 			}
 
-			await this.externalHooks.run('n8n.ready', [this, config]);
+			await this.externalHooks.run('aura.ready', [this, config]);
 		}
 	}
 

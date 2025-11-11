@@ -1,4 +1,4 @@
-import { type ResizeData } from '@n8n/design-system';
+import { type ResizeData } from '@aura/design-system';
 import { useResizablePanel } from './useResizablePanel';
 import { v4 as uuid } from 'uuid';
 import { nextTick } from 'vue';

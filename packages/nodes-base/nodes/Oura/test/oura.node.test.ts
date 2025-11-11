@@ -5,7 +5,7 @@ import type {
 	ILoadOptionsFunctions,
 	IHttpRequestMethods,
 	INode,
-} from 'n8n-workflow';
+} from 'workflow';
 import nock from 'nock';
 
 import { profileResponse } from './apiResponses';
@@ -14,7 +14,7 @@ import { ouraApiRequest } from '../GenericFunctions';
 const node: INode = {
 	id: '2cdb46cf-b561-4537-a982-b8d26dd7718b',
 	name: 'Oura',
-	type: 'n8n-nodes-base.oura',
+	type: 'aura-nodes-base.oura',
 	typeVersion: 1,
 	position: [0, 0],
 	parameters: {

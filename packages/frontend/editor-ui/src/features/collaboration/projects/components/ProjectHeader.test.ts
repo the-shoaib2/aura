@@ -16,7 +16,7 @@ import { useProjectPages } from '@/features/collaboration/projects/composables/u
 import { useUIStore } from '@/app/stores/ui.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { mock } from 'vitest-mock-extended';
-import type { IUser } from '@n8n/rest-api-client';
+import type { IUser } from '@aura/rest-api-client';
 
 const mockPush = vi.fn();
 vi.mock('vue-router', async () => {

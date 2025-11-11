@@ -4,7 +4,7 @@ import { CompletionContext, insertCompletionText } from '@codemirror/autocomplet
 import { javascriptLanguage } from '@codemirror/lang-javascript';
 import { EditorState } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
-import { NodeConnectionTypes, type IConnections } from 'n8n-workflow';
+import { NodeConnectionTypes, type IConnections } from 'workflow';
 import type { MockInstance } from 'vitest';
 import {
 	autocompletableNodeNames,
@@ -193,7 +193,7 @@ describe('completion utils', () => {
 		it('should return false for keys with forward slashes', () => {
 			expect(
 				isAllowedInDotNotation(
-					'applications/n8n/available-to-users/google-cloud-geocoding-api-key',
+					'applications/aura/available-to-users/google-cloud-geocoding-api-key',
 				),
 			).toBe(false);
 			expect(isAllowedInDotNotation('path/to/secret')).toBe(false);

@@ -15,8 +15,8 @@ import type {
 	WebhookType,
 	Workflow,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
-import { ApplicationError, createDeferredPromise } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, createDeferredPromise } from 'workflow';
 
 import { NodeExecutionContext } from './node-execution-context';
 import { copyBinaryFile, getBinaryHelperFunctions } from './utils/binary-helper-functions';

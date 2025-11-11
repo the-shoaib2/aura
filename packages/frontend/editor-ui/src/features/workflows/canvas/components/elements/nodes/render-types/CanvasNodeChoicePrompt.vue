@@ -2,10 +2,10 @@
 import { NODE_CREATOR_OPEN_SOURCES } from '@/app/constants';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 import { useChatPanelStore } from '@/features/ai/assistant/chatPanel.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed } from 'vue';
 
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@aura/design-system';
 
 const nodeCreatorStore = useNodeCreatorStore();
 const chatPanelStore = useChatPanelStore();

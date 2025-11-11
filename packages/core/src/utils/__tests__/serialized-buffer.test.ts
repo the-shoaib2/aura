@@ -15,10 +15,10 @@ describe('toBuffer', () => {
 	});
 
 	it('should serialize stringified buffer to the same buffer', () => {
-		const serializedBuffer = JSON.stringify(Buffer.from('n8n on the rocks'));
+		const serializedBuffer = JSON.stringify(Buffer.from('aura on the rocks'));
 		const buffer = toBuffer(JSON.parse(serializedBuffer));
 		expect(buffer).toBeInstanceOf(Buffer);
-		expect(buffer.toString()).toBe('n8n on the rocks');
+		expect(buffer.toString()).toBe('aura on the rocks');
 	});
 });
 

@@ -1,19 +1,14 @@
-import type {
-	IConnection,
-	IConnections,
-	INodeTypeDescription,
-	NodeConnectionType,
-} from 'n8n-workflow';
+import type { IConnection, IConnections, INodeTypeDescription, NodeConnectionType } from 'workflow';
 import type { INodeUi } from '@/Interface';
 import type { BoundingBox, CanvasConnection, CanvasConnectionPort } from './canvas.types';
 import { CanvasConnectionMode } from './canvas.types';
 import type { Connection } from '@vue-flow/core';
 import { isValidCanvasConnectionMode, isValidNodeConnectionType } from '@/app/utils/typeGuards';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { NODE_MIN_INPUT_ITEMS_COUNT } from '@/app/constants';
 
 /**
- * Maps multiple legacy n8n connections to VueFlow connections
+ * Maps multiple legacy aura connections to VueFlow connections
  */
 export function mapLegacyConnectionsToCanvasConnections(
 	legacyConnections: IConnections,
@@ -85,7 +80,7 @@ export function mapLegacyConnectionsToCanvasConnections(
 }
 
 /**
- * Maps a single legacy n8n connection to a VueFlow connection
+ * Maps a single legacy aura connection to a VueFlow connection
  */
 export function mapLegacyConnectionToCanvasConnection(
 	sourceNode: INodeUi,
@@ -159,7 +154,7 @@ export function createCanvasConnectionId(connection: Connection) {
 }
 
 /**
- * Maps a VueFlow connection to a legacy n8n connection
+ * Maps a VueFlow connection to a legacy aura connection
  */
 export function mapCanvasConnectionToLegacyConnection(
 	sourceNode: INodeUi,
@@ -193,7 +188,7 @@ export function mapCanvasConnectionToLegacyConnection(
 }
 
 /**
- * Maps legacy n8n node inputs to VueFlow connection handles
+ * Maps legacy aura node inputs to VueFlow connection handles
  */
 export function mapLegacyEndpointsToCanvasConnectionPort(
 	endpoints: INodeTypeDescription['inputs'],

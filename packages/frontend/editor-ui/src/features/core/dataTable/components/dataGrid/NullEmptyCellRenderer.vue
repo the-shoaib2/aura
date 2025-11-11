@@ -7,11 +7,11 @@ const props = defineProps<{
 </script>
 
 <template>
-	<span class="n8n-empty-value">{{ props.params.value }}</span>
+	<span class="aura-empty-value">{{ props.params.value }}</span>
 </template>
 
 <style lang="scss">
-.n8n-empty-value {
+.aura-empty-value {
 	font-style: italic;
 	color: var(--color--text);
 }

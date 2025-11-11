@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import BaseBanner from './BaseBanner.vue';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@aura/i18n';
 import { useCloudPlanStore } from '@/app/stores/cloudPlan.store';
 import { computed } from 'vue';
 import type { CloudPlanAndUsageData } from '@/Interface';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 
-import { N8nBadge, N8nButton, N8nText } from '@n8n/design-system';
+import { N8nBadge, N8nButton, N8nText } from '@aura/design-system';
 const PROGRESS_BAR_MINIMUM_THRESHOLD = 8;
 
 const cloudPlanStore = useCloudPlanStore();

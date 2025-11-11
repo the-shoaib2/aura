@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon';
-import { NodeOperationError, type IExecuteFunctions } from 'n8n-workflow';
+import { NodeOperationError, type IExecuteFunctions } from 'workflow';
 
 import { validateAndSetDate } from '../../GenericFunctions';
 

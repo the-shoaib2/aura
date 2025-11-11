@@ -8,7 +8,7 @@ import { watchOnce } from '@vueuse/core';
 import { computed, provide, ref } from 'vue';
 import { useExperimentalNdvStore } from '../experimentalNdv.store';
 import ExperimentalCanvasNodeSettings from './ExperimentalCanvasNodeSettings.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import { getNodeSubTitleText } from '@/features/workflows/canvas/experimental/experimentalNdv.utils';
 import ExperimentalEmbeddedNdvActions from '@/features/workflows/canvas/experimental/components/ExperimentalEmbeddedNdvActions.vue';
@@ -16,7 +16,7 @@ import { useCanvas } from '@/features/workflows/canvas/composables/useCanvas';
 import { useExpressionResolveCtx } from '@/features/workflows/canvas/experimental/composables/useExpressionResolveCtx';
 import { useTelemetryContext } from '@/app/composables/useTelemetryContext';
 
-import { N8nText } from '@n8n/design-system';
+import { N8nText } from '@aura/design-system';
 const { nodeId, isReadOnly } = defineProps<{
 	nodeId: string;
 	isReadOnly?: boolean;
@@ -200,7 +200,7 @@ watchOnce(isVisible, (visible) => {
 	}
 
 	& > * {
-		/* stylelint-disable-next-line @n8n/css-var-naming */
+		/* stylelint-disable-next-line @aura/css-var-naming */
 		zoom: var(--canvas-zoom-compensation-factor, 1);
 		flex-grow: 0;
 		flex-shrink: 0;
@@ -223,7 +223,7 @@ watchOnce(isVisible, (visible) => {
 
 .settingsView {
 	& > * {
-		/* stylelint-disable-next-line @n8n/css-var-naming */
+		/* stylelint-disable-next-line @aura/css-var-naming */
 		zoom: var(--canvas-zoom-compensation-factor, 1);
 	}
 }

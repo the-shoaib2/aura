@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.microsoftTeams",
+	"node": "aura-nodes-base.microsoftTeams",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "HITL"],
@@ -10,12 +10,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/microsoft/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/microsoft/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftteams/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.microsoftteams/"
 			}
 		]
 	}

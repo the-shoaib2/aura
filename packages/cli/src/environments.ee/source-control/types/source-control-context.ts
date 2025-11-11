@@ -1,5 +1,5 @@
-import type { User } from '@n8n/db';
-import { hasGlobalScope } from '@n8n/permissions';
+import type { User } from '@aura/db';
+import { hasGlobalScope } from '@aura/permissions';
 
 export class SourceControlContext {
 	constructor(private readonly userInternal: User) {}

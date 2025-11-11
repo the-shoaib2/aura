@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "ec7323e1-1c71-4115-8791-dd8c572756da",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-300, 1080]
 		},
@@ -19,7 +19,7 @@
 			},
 			"id": "8d9f25e2-7e5a-48bb-88a9-094b3b6c4496",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-80, 1080]
 		},
@@ -30,7 +30,7 @@
 			},
 			"id": "83756a50-a3cc-4cf7-ba40-7aa1d7636280",
 			"name": "Embeddings OpenAI4",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [300, 1260],
 			"credentials": {
@@ -59,7 +59,7 @@
 			},
 			"id": "f6f7ddd4-5c9c-43dc-934d-960cb7f7b9bf",
 			"name": "Default Data Loader1",
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1,
 			"position": [280, 1460]
 		},
@@ -70,7 +70,7 @@
 			},
 			"id": "408bcff8-96bb-4801-bed1-9fcee602f6ba",
 			"name": "Token Splitter1",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [280, 1620]
 		},
@@ -84,7 +84,7 @@
 			},
 			"id": "57467b4f-9dc5-4d58-8e0d-d336b39c554b",
 			"name": "Delete Collection",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 4.1,
 			"position": [2200, 1080],
 			"credentials": {
@@ -122,7 +122,7 @@
 			},
 			"id": "f4e0bc37-c969-4df0-8e03-954143c4198f",
 			"name": "Check Vector Store Populated1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [680, 1080],
 			"executeOnce": true
@@ -134,7 +134,7 @@
 			},
 			"id": "076664b6-978a-4ac9-bb9d-46a9edbf5f1a",
 			"name": "Wait1",
-			"type": "n8n-nodes-base.wait",
+			"type": "aura-nodes-base.wait",
 			"typeVersion": 1,
 			"position": [920, 1080],
 			"webhookId": "c3d05369-6071-4592-87eb-36d57c60851b"
@@ -167,7 +167,7 @@
 			},
 			"id": "bf2e6350-6d64-41cc-bcc4-8b07d6f02d63",
 			"name": "Check Vector Store Retrieval1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1500, 1080],
 			"executeOnce": true
@@ -179,7 +179,7 @@
 			},
 			"id": "5dbcc385-e3e9-4208-9bef-72fdfee4eb3e",
 			"name": "Question and Answer Chain1",
-			"type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+			"type": "@aura/aura-nodes-langchain.chainRetrievalQa",
 			"typeVersion": 1.5,
 			"position": [1700, 1080]
 		},
@@ -192,7 +192,7 @@
 			},
 			"id": "2ff4fe0e-e9f5-4250-a36f-5290dd5c7940",
 			"name": "OpenAI Chat Model1",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1700, 1280],
 			"credentials": {
@@ -206,7 +206,7 @@
 			"parameters": {},
 			"id": "b192d5f4-0d57-4dac-99c8-bef2b3b4d20a",
 			"name": "Vector Store Retriever1",
-			"type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+			"type": "@aura/aura-nodes-langchain.retrieverVectorStore",
 			"typeVersion": 1,
 			"position": [1780, 1280]
 		},
@@ -217,7 +217,7 @@
 			},
 			"id": "a97eac02-2008-46a4-a21c-3f4ddb473f21",
 			"name": "Embeddings OpenAI3",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1720, 1580],
 			"credentials": {
@@ -243,7 +243,7 @@
 			},
 			"id": "969f8ee8-b3be-4a66-8088-8d9629867c22",
 			"name": "Edit Fields1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [2040, 1080]
 		},
@@ -254,7 +254,7 @@
 			},
 			"id": "a8fce256-50b2-4d70-b3a3-ee5aa9fa2c9b",
 			"name": "Embeddings OpenAI5",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1140, 1300],
 			"credentials": {
@@ -276,7 +276,7 @@
 			},
 			"id": "69a471a7-969f-47ef-9e52-4667c943a69f",
 			"name": "Qdrant Vector Store",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+			"type": "@aura/aura-nodes-langchain.vectorStoreQdrant",
 			"typeVersion": 1,
 			"position": [280, 1080],
 			"credentials": {
@@ -296,7 +296,7 @@
 			},
 			"id": "43ac7a37-abd1-4b7c-bfdc-e096bda87de6",
 			"name": "Qdrant Vector Store2",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+			"type": "@aura/aura-nodes-langchain.vectorStoreQdrant",
 			"typeVersion": 1,
 			"position": [1720, 1440],
 			"credentials": {
@@ -318,7 +318,7 @@
 			},
 			"id": "f1a6871e-cc9f-4f36-93f8-15dba0d4687f",
 			"name": "Qdrant Vector Store1",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+			"type": "@aura/aura-nodes-langchain.vectorStoreQdrant",
 			"typeVersion": 1,
 			"position": [1140, 1080],
 			"credentials": {

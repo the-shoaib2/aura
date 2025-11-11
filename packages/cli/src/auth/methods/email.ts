@@ -1,6 +1,6 @@
-import type { User } from '@n8n/db';
-import { UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { User } from '@aura/db';
+import { UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { AuthError } from '@/errors/response-errors/auth.error';
 import { EventService } from '@/events/event.service';

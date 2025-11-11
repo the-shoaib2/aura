@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties, Icon } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties, Icon } from 'workflow';
 
 export class HttpDigestAuth implements ICredentialType {
 	name = 'httpDigestAuth';
@@ -9,7 +9,7 @@ export class HttpDigestAuth implements ICredentialType {
 
 	genericAuth = true;
 
-	icon: Icon = 'node:n8n-nodes-base.httpRequest';
+	icon: Icon = 'node:aura-nodes-base.httpRequest';
 
 	properties: INodeProperties[] = [
 		{

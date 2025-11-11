@@ -1,6 +1,6 @@
-import { GlobalConfig } from '@n8n/config';
-import { UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 export const isMfaFeatureEnabled = () => Container.get(GlobalConfig).mfa.enabled;
 

@@ -2,9 +2,9 @@
 import WorkerList from '../components/WorkerList.vue';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nActionBox } from '@n8n/design-system';
+import { N8nActionBox } from '@aura/design-system';
 const settingsStore = useSettingsStore();
 const pageRedirectionHelper = usePageRedirectionHelper();
 const i18n = useI18n();

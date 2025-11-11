@@ -6,8 +6,8 @@ import type {
 	INode,
 	IPairedItemData,
 	INodeExecutionData,
-} from 'n8n-workflow';
-import { NodeOperationError, UserError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError, UserError } from 'workflow';
 import oracledb from 'oracledb';
 
 import { generatePairedItemData, wrapData } from '@utils/utilities';
@@ -26,7 +26,7 @@ import type {
 	OracleDBNodeOptions,
 } from './interfaces';
 
-const n8nTypetoDBType: { [key: string]: oracledb.DbType } = {
+const auraTypetoDBType: { [key: string]: oracledb.DbType } = {
 	boolean: oracledb.DB_TYPE_BOOLEAN,
 	date: oracledb.DATE,
 	dateTime: oracledb.DB_TYPE_TIMESTAMP,
@@ -44,7 +44,7 @@ function isDateType(type: string) {
 
 interface DbTypeMapping {
 	oracledbType: oracledb.DbType;
-	n8nType: string;
+	auraType: string;
 }
 
 export function mapDbType(dbType: string): DbTypeMapping {
@@ -53,50 +53,50 @@ export function mapDbType(dbType: string): DbTypeMapping {
 	switch (true) {
 		// Date & Time
 		case /^timestamp(\(\d+\))?$/.test(type):
-			return { oracledbType: oracledb.DB_TYPE_TIMESTAMP, n8nType: 'dateTime' };
+			return { oracledbType: oracledb.DB_TYPE_TIMESTAMP, auraType: 'dateTime' };
 
 		case /^timestamp(\(\d+\))? with time zone$/.test(type):
-			return { oracledbType: oracledb.DB_TYPE_TIMESTAMP_TZ, n8nType: 'dateTime' };
+			return { oracledbType: oracledb.DB_TYPE_TIMESTAMP_TZ, auraType: 'dateTime' };
 
 		case /^timestamp(\(\d+\))? with local time zone$/.test(type):
-			return { oracledbType: oracledb.DB_TYPE_TIMESTAMP_LTZ, n8nType: 'dateTime' };
+			return { oracledbType: oracledb.DB_TYPE_TIMESTAMP_LTZ, auraType: 'dateTime' };
 
 		case type === 'date':
-			return { oracledbType: oracledb.DATE, n8nType: 'dateTime' };
+			return { oracledbType: oracledb.DATE, auraType: 'dateTime' };
 
 		// Numbers
 		case type === 'number':
 		case /^(binary_double|binary_float|decimal|float|int|integer|smallint)$/.test(type):
-			return { oracledbType: oracledb.DB_TYPE_NUMBER, n8nType: 'number' };
+			return { oracledbType: oracledb.DB_TYPE_NUMBER, auraType: 'number' };
 
 		// Strings
 		case /^(char|clob|long|nchar|nclob|nvarchar2|rowid|urowid|varchar|varchar2|xmltype)$/.test(
 			type,
 		):
-			return { oracledbType: oracledb.STRING, n8nType: 'string' };
+			return { oracledbType: oracledb.STRING, auraType: 'string' };
 
 		// Boolean
 		case type === 'boolean':
-			return { oracledbType: oracledb.DB_TYPE_BOOLEAN, n8nType: 'boolean' };
+			return { oracledbType: oracledb.DB_TYPE_BOOLEAN, auraType: 'boolean' };
 
 		// Binary / LOB
 		case /^(raw|long raw)$/.test(type):
-			return { oracledbType: oracledb.BUFFER, n8nType: 'json' };
+			return { oracledbType: oracledb.BUFFER, auraType: 'json' };
 
 		case type === 'blob':
-			return { oracledbType: oracledb.BLOB, n8nType: 'json' };
+			return { oracledbType: oracledb.BLOB, auraType: 'json' };
 
 		// JSON
 		case type === 'json':
-			return { oracledbType: oracledb.DB_TYPE_JSON, n8nType: 'object' };
+			return { oracledbType: oracledb.DB_TYPE_JSON, auraType: 'object' };
 
 		// Vector
 		case /^vector(\([^)]*\))?$/.test(type):
-			return { oracledbType: oracledb.DB_TYPE_VECTOR, n8nType: 'array' };
+			return { oracledbType: oracledb.DB_TYPE_VECTOR, auraType: 'array' };
 
 		// Fallback
 		default:
-			return { oracledbType: oracledb.STRING, n8nType: 'string' };
+			return { oracledbType: oracledb.STRING, auraType: 'string' };
 	}
 }
 
@@ -673,7 +673,7 @@ export function addWhereClauses(
 		}
 
 		// The condition value is json type, so convert to required type only
-		// if fixed expression is used instead of n8n expressions.
+		// if fixed expression is used instead of aura expressions.
 		if (typeof clause.value === 'string') {
 			try {
 				clause.value = JSON.parse(clause.value); // "2" → 2 (number)
@@ -732,7 +732,7 @@ export function checkItemAgainstSchema(
  * 		"SELECT * from dual where DUMMY in (:param1f8b29e29_edef_454a_b003_18fa1debff55,:param1bc8a5a46_5bfd_4ddb_851e_2ac4c243a26b)"
  *
  *  The logic is taken from here
- *  https://github.com/jgriffin1/n8n-nodes-oracle-database-parameterization
+ *  https://github.com/jgriffin1/aura-nodes-oracle-database-parameterization
  *
  */
 function generateBindVariablesList(
@@ -882,7 +882,7 @@ export function getBindParameters(
 						? oracledb.BIND_OUT
 						: oracledb.BIND_INOUT;
 			bindParameters[item.name] = {
-				type: n8nTypetoDBType[item.datatype],
+				type: auraTypetoDBType[item.datatype],
 				val: bindVal,
 				dir,
 			};
@@ -1113,7 +1113,7 @@ export function getBindDefsForExecuteMany(
 	return query;
 }
 
-// It will convert the n8n values to compatible bind values.
+// It will convert the aura values to compatible bind values.
 export function formatItemValues(item: IDataObject, col: ColumnMap): unknown[] {
 	const result = [];
 	for (const key of Object.keys(item)) {

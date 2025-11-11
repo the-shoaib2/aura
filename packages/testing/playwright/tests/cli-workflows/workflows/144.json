@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "4b9021d7-c23b-4b65-be5b-8c597bfcd020"
@@ -18,7 +18,7 @@
 				"resource": "account"
 			},
 			"name": "APITemplate.io",
-			"type": "n8n-nodes-base.apiTemplateIo",
+			"type": "aura-nodes-base.apiTemplateIo",
 			"typeVersion": 1,
 			"position": [450, 150],
 			"credentials": {
@@ -40,7 +40,7 @@
 								"propertyValues": [
 									{
 										"key": "src",
-										"value": "https://n8n.io/_nuxt/img/df5be1c.png"
+										"value": "https://aura.io/_nuxt/img/df5be1c.png"
 									},
 									{
 										"key": "name",
@@ -54,7 +54,7 @@
 				"options": {}
 			},
 			"name": "APITemplate.io1",
-			"type": "n8n-nodes-base.apiTemplateIo",
+			"type": "aura-nodes-base.apiTemplateIo",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -81,7 +81,7 @@
 				"options": {}
 			},
 			"name": "APITemplate.io2",
-			"type": "n8n-nodes-base.apiTemplateIo",
+			"type": "aura-nodes-base.apiTemplateIo",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"credentials": {

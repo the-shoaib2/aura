@@ -35,7 +35,7 @@
 		}
 	],
 	"displayName": "E2E Node",
-	"name": "@e2e/n8n-nodes-e2e",
+	"name": "@e2e/aura-nodes-e2e",
 	"group": ["transform"],
 	"codex": {
 		"categories": ["Custom Category"]

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { createComponentRenderer } from '@/__tests__/render';
 import DiffBadge from '@/features/workflows/workflowDiff/DiffBadge.vue';
-import { NodeDiffStatus } from 'n8n-workflow';
+import { NodeDiffStatus } from 'workflow';
 
 const renderComponent = createComponentRenderer(DiffBadge);
 

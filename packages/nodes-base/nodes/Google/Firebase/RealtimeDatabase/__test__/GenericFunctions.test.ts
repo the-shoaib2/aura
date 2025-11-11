@@ -1,6 +1,6 @@
 import { mock, mockDeep } from 'jest-mock-extended';
-import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import { googleApiRequest } from '../GenericFunctions';
 
@@ -15,7 +15,7 @@ describe('GoogleFirebaseRealtimeDatabase > GenericFunctions', () => {
 		mockNode = mock<INode>({
 			id: 'test-node',
 			name: 'Test RealtimeDatabase Node',
-			type: 'n8n-nodes-base.googleFirebaseRealtimeDatabase',
+			type: 'aura-nodes-base.googleFirebaseRealtimeDatabase',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},

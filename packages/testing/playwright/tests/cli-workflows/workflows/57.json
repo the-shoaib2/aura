@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [330, 230],
 			"id": "a2fb028a-a712-440d-b273-88e18c86f688"
@@ -16,7 +16,7 @@
 		{
 			"parameters": {},
 			"name": "Mindee",
-			"type": "n8n-nodes-base.mindee",
+			"type": "aura-nodes-base.mindee",
 			"typeVersion": 1,
 			"position": [650, 150],
 			"credentials": {
@@ -36,13 +36,13 @@
 					"parameter": [
 						{
 							"name": "User-agent",
-							"value": "n8n-io app"
+							"value": "aura-io app"
 						}
 					]
 				}
 			},
 			"name": "HTTP Request",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 1,
 			"position": [500, 150],
 			"id": "8313ed3a-96d5-4f34-8d5c-76bcdc7be95a"
@@ -52,7 +52,7 @@
 				"resource": "invoice"
 			},
 			"name": "Mindee1",
-			"type": "n8n-nodes-base.mindee",
+			"type": "aura-nodes-base.mindee",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -70,7 +70,7 @@
 				"options": {}
 			},
 			"name": "HTTP Request1",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"id": "72d76ab1-1074-42ca-af84-cf8dc7eef32f"

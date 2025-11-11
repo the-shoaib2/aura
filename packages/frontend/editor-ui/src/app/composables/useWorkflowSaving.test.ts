@@ -6,10 +6,10 @@ import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 import { useNpsSurveyStore } from '@/app/stores/npsSurvey.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import type { WorkflowDataUpdate } from '@aura/rest-api-client/api/workflows';
 import { mockedStore } from '@/__tests__/utils';
 import { createTestNode, createTestWorkflow, mockNodeTypeDescription } from '@/__tests__/mocks';
-import { CHAT_TRIGGER_NODE_TYPE } from 'n8n-workflow';
+import { CHAT_TRIGGER_NODE_TYPE } from 'workflow';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
 const modalConfirmSpy = vi.fn();
@@ -33,7 +33,7 @@ const getDuplicateTestWorkflow = (): WorkflowDataUpdate => ({
 			},
 			id: 'c1e1b6e7-df13-41b1-95f6-42903b85e438',
 			name: 'Webhook',
-			type: 'n8n-nodes-base.webhook',
+			type: 'aura-nodes-base.webhook',
 			typeVersion: 2,
 			position: [680, 20],
 			webhookId: '5340ae49-2c96-4492-9073-7744d2e52b8a',
@@ -45,7 +45,7 @@ const getDuplicateTestWorkflow = (): WorkflowDataUpdate => ({
 			},
 			id: 'aa5150d8-1d7d-4247-88d8-44c96fe3a37b',
 			name: 'Webhook 2',
-			type: 'n8n-nodes-base.webhook',
+			type: 'aura-nodes-base.webhook',
 			typeVersion: 2,
 			position: [700, 40],
 			webhookId: 'aa5150d8-1d7d-4247-88d8-44c96fe3a37b',
@@ -59,7 +59,7 @@ const getDuplicateTestWorkflow = (): WorkflowDataUpdate => ({
 			},
 			id: '979d8443-51b1-48e2-b239-acf399b66509',
 			name: 'Wait',
-			type: 'n8n-nodes-base.wait',
+			type: 'aura-nodes-base.wait',
 			typeVersion: 1.1,
 			position: [900, 20],
 			webhookId: '5340ae49-2c96-4492-9073-7744d2e52b8a',

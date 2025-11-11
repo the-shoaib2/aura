@@ -7,8 +7,8 @@ import type {
 	ILoadOptionsFunctions,
 	IWebhookFunctions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import type {
 	WhatsAppAppWebhookSubscriptionsResponse,
@@ -116,11 +116,11 @@ export const createMessage = (
 		return `*${option.label}:*\n_${option.url}_\n\n`;
 	});
 
-	let n8nAttribution: string = '';
+	let auraAttribution: string = '';
 	if (sendAndWaitConfig.appendAttribution) {
 		const attributionText = 'This message was sent automatically with ';
-		const link = createUtmCampaignLink('n8n-nodes-base.whatsapp', instanceId);
-		n8nAttribution = `\n\n${attributionText}${link}`;
+		const link = createUtmCampaignLink('aura-nodes-base.whatsapp', instanceId);
+		auraAttribution = `\n\n${attributionText}${link}`;
 	}
 
 	return {
@@ -130,7 +130,7 @@ export const createMessage = (
 		body: {
 			messaging_product: 'whatsapp',
 			text: {
-				body: `${sendAndWaitConfig.message}\n\n${buttons.join('')}${n8nAttribution}`,
+				body: `${sendAndWaitConfig.message}\n\n${buttons.join('')}${auraAttribution}`,
 			},
 			type: 'text',
 			to: recipientPhoneNumber,

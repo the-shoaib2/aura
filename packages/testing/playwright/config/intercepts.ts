@@ -100,7 +100,7 @@ export async function setupDefaultInterceptors(target: BrowserContext) {
 						hasSecurityFix: null,
 						securityIssueFixVersion: null,
 						hasBreakingChange: null,
-						documentationUrl: 'https://docs.n8n.io/release-notes/#n8n131',
+						documentationUrl: 'https://docs.aura.io/release-notes/#aura131',
 						nodes: [],
 						description: 'Includes <strong>bug fixes</strong>',
 					},
@@ -111,7 +111,7 @@ export async function setupDefaultInterceptors(target: BrowserContext) {
 						hasSecurityFix: null,
 						securityIssueFixVersion: null,
 						hasBreakingChange: true,
-						documentationUrl: 'https://docs.n8n.io/release-notes/#n8n104',
+						documentationUrl: 'https://docs.aura.io/release-notes/#aura104',
 						nodes: [],
 						description:
 							'Includes <strong>core functionality</strong> and <strong>bug fixes</strong>',

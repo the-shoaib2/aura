@@ -4,7 +4,7 @@ import SaveButton from '@/app/components/SaveButton.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import { createTestingPinia } from '@pinia/testing';
 
-vi.mock('@n8n/i18n', async (importActual) => ({
+vi.mock('@aura/i18n', async (importActual) => ({
 	...(await importActual()),
 	useI18n: () => ({
 		baseText: (key: string) => key,

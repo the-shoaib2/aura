@@ -7,12 +7,12 @@ import type {
 	NodePropertyTypes,
 	ResourceMapperField,
 	ResourceMapperValue,
-} from 'n8n-workflow';
+} from 'workflow';
 import ParameterInputFull from '../ParameterInputFull.vue';
 import ParameterIssues from '../ParameterIssues.vue';
 import ParameterOptions from '../ParameterOptions.vue';
 import { computed } from 'vue';
-import { i18n as locale, useI18n } from '@n8n/i18n';
+import { i18n as locale, useI18n } from '@aura/i18n';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import {
 	fieldCannotBeDeleted,
@@ -28,7 +28,7 @@ import {
 	N8nSelect,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 interface Props {
 	parameter: INodeProperties;
 	path: string;

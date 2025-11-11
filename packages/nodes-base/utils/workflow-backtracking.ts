@@ -1,9 +1,4 @@
-import type {
-	INodeExecutionData,
-	IPairedItemData,
-	IRunExecutionData,
-	ITaskData,
-} from 'n8n-workflow';
+import type { INodeExecutionData, IPairedItemData, IRunExecutionData, ITaskData } from 'workflow';
 
 /*
  * These functions do not cover all possible edge cases for backtracking through workflow run data.

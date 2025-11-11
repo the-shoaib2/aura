@@ -1,6 +1,6 @@
-import { Time } from '@n8n/constants';
-import { WorkflowHistoryRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Time } from '@aura/constants';
+import { WorkflowHistoryRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import { DateTime } from 'luxon';
 
 import {

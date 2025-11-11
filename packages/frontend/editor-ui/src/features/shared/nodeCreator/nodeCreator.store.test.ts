@@ -11,11 +11,11 @@ import type { ActionsRecord, INodeCreateElement, INodeUi, SimplifiedNodeType } f
 import { CanvasConnectionMode } from '@/features/workflows/canvas/canvas.types';
 import { parseCanvasConnectionHandleString } from '@/features/workflows/canvas/canvas.utils';
 import { getNodeIconSource } from '@/app/utils/nodeIcon';
-import type { CommunityNodeType } from '@n8n/api-types';
+import type { CommunityNodeType } from '@aura/api-types';
 import { createTestingPinia } from '@pinia/testing';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'workflow';
 import { setActivePinia } from 'pinia';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -94,7 +94,7 @@ describe('useNodeCreatorStore', () => {
 			getNode: vi.fn(
 				() =>
 					({
-						type: 'n8n-node.example',
+						type: 'aura-node.example',
 						typeVersion: 1,
 					}) as INodeUi,
 			),
@@ -249,9 +249,9 @@ describe('useNodeCreatorStore', () => {
 		const title = 'title';
 
 		const mockTrigger = {
-			key: 'n8n-node.exampleTrigger',
+			key: 'aura-node.exampleTrigger',
 			properties: {
-				name: 'n8n-node.exampleTrigger',
+				name: 'aura-node.exampleTrigger',
 				displayName: 'Example Trigger',
 			},
 		} as INodeCreateElement;
@@ -264,21 +264,21 @@ describe('useNodeCreatorStore', () => {
 		} as INodeCreateElement;
 
 		const mockRegular = {
-			key: 'n8n-node.example',
+			key: 'aura-node.example',
 			properties: {},
 		} as INodeCreateElement;
 
 		const mockCommunity1 = {
 			key: 'community-node1.example',
 			properties: {
-				name: 'n8n-nodes-community-node1',
+				name: 'aura-nodes-community-node1',
 			},
 		} as INodeCreateElement;
 
 		const mockCommunity2 = {
 			key: 'community-node2.example',
 			properties: {
-				name: '@author/n8n-nodes-community-node2',
+				name: '@author/aura-nodes-community-node2',
 			},
 		} as INodeCreateElement;
 

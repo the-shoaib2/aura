@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "f0c45c75-abab-4369-b823-165926299d4d"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "Xero",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [500, 200],
 			"credentials": {
@@ -42,7 +42,7 @@
 				"contactId": "={{$node[\"Xero\"].json[\"ContactID\"]}}"
 			},
 			"name": "Xero1",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [650, 200],
 			"credentials": {
@@ -65,7 +65,7 @@
 				}
 			},
 			"name": "Xero2",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [800, 200],
 			"credentials": {
@@ -87,7 +87,7 @@
 				}
 			},
 			"name": "Xero3",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [950, 200],
 			"credentials": {
@@ -119,7 +119,7 @@
 				"additionalFields": {}
 			},
 			"name": "Xero4",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [800, 350],
 			"credentials": {
@@ -137,7 +137,7 @@
 				"invoiceId": "={{$node[\"Xero4\"].json[\"InvoiceID\"]}}"
 			},
 			"name": "Xero5",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [950, 350],
 			"credentials": {
@@ -156,7 +156,7 @@
 				"options": {}
 			},
 			"name": "Xero6",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [1100, 350],
 			"credentials": {
@@ -178,7 +178,7 @@
 				}
 			},
 			"name": "Xero7",
-			"type": "n8n-nodes-base.xero",
+			"type": "aura-nodes-base.xero",
 			"typeVersion": 1,
 			"position": [1250, 350],
 			"credentials": {

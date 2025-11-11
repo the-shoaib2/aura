@@ -1,6 +1,6 @@
-import { Logger } from '@n8n/backend-common';
-import { Service } from '@n8n/di';
-import { UserError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { Service } from '@aura/di';
+import { UserError } from 'workflow';
 
 import { OAuthClientRepository } from './database/repositories/oauth-client.repository';
 import { UserConsentRepository } from './database/repositories/oauth-user-consent.repository';

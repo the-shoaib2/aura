@@ -1,6 +1,6 @@
-import { Logger } from '@n8n/backend-common';
-import { TaskRunnersConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { TaskRunnersConfig } from '@aura/config';
+import { Service } from '@aura/di';
 import { exec, spawn } from 'node:child_process';
 import { access } from 'node:fs/promises';
 import path from 'node:path';
@@ -39,7 +39,7 @@ export class PyTaskRunnerProcess extends TaskRunnerProcessBase {
 			throw new MissingRequirementsError('python');
 		}
 
-		const pythonDir = path.join(__dirname, '../../../@n8n/task-runner-python');
+		const pythonDir = path.join(__dirname, '../../../@aura/task-runner-python');
 		const venvPath = path.join(pythonDir, '.venv/bin/python');
 
 		try {

@@ -6,7 +6,7 @@ import {
 	type IWebhookResponseData,
 	NodeOperationError,
 	FORM_TRIGGER_NODE_TYPE,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { renderForm } from './utils';
 

@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getPollResponse } from './trigger/GenericFunctions';
 import { properties as messageProperties } from './trigger/MessageDescription';

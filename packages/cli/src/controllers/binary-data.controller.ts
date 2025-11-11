@@ -1,8 +1,8 @@
-import { BinaryDataQueryDto, BinaryDataSignedQueryDto, ViewableMimeTypes } from '@n8n/api-types';
-import { Get, Query, RestController } from '@n8n/decorators';
+import { BinaryDataQueryDto, BinaryDataSignedQueryDto, ViewableMimeTypes } from '@aura/api-types';
+import { Get, Query, RestController } from '@aura/decorators';
 import { Request, Response } from 'express';
 import { JsonWebTokenError } from 'jsonwebtoken';
-import { BinaryDataService, FileNotFoundError, isValidNonDefaultMode } from 'n8n-core';
+import { BinaryDataService, FileNotFoundError, isValidNonDefaultMode } from 'aura-core';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 

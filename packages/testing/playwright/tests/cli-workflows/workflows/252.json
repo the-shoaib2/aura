@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "e2e07751-023d-46b8-8538-3da9cb4a4d56",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [180, 600]
 		},
@@ -19,7 +19,7 @@
 			},
 			"id": "b9ece201-2b70-4cae-8191-278ed54fbf75",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [640, 600]
 		},
@@ -30,7 +30,7 @@
 			},
 			"id": "802fa1b1-e696-4def-94a3-95fbd779c730",
 			"name": "Embeddings OpenAI4",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1180, 720],
 			"credentials": {
@@ -55,7 +55,7 @@
 			},
 			"id": "b22de442-b45d-4684-9329-7c63999501ad",
 			"name": "Default Data Loader1",
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1,
 			"position": [1300, 760]
 		},
@@ -66,7 +66,7 @@
 			},
 			"id": "dd5b5ba1-ce62-47ae-9fdc-a5b75389a434",
 			"name": "Token Splitter1",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [1320, 860]
 		},
@@ -78,7 +78,7 @@
 			},
 			"id": "31e9699d-1959-46db-8745-a107f83986c5",
 			"name": "Question and Answer Chain1",
-			"type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+			"type": "@aura/aura-nodes-langchain.chainRetrievalQa",
 			"typeVersion": 1.5,
 			"position": [1140, 2420]
 		},
@@ -91,7 +91,7 @@
 			},
 			"id": "300e7bb4-18a4-4208-8b82-b6533fe0f980",
 			"name": "OpenAI Chat Model1",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1140, 2620],
 			"credentials": {
@@ -107,7 +107,7 @@
 			},
 			"id": "1c5a4e2d-0220-4647-9cd9-10bcf2e59ee2",
 			"name": "Vector Store Retriever1",
-			"type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+			"type": "@aura/aura-nodes-langchain.retrieverVectorStore",
 			"typeVersion": 1,
 			"position": [1220, 2620]
 		},
@@ -118,7 +118,7 @@
 			},
 			"id": "81cb4196-e753-426f-bae5-2f1b963b16b8",
 			"name": "Embeddings OpenAI3",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1140, 2920],
 			"credentials": {
@@ -144,7 +144,7 @@
 			},
 			"id": "c6fc002c-592e-481c-90fe-19ee523a8336",
 			"name": "Edit Fields1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1480, 2420]
 		},
@@ -158,7 +158,7 @@
 				},
 				"table": {
 					"__rl": true,
-					"value": "n8n_vectors",
+					"value": "aura_vectors",
 					"mode": "name"
 				},
 				"deleteCommand": "drop",
@@ -166,7 +166,7 @@
 			},
 			"id": "73de13c8-9b83-450d-afd3-c409720b0843",
 			"name": "Postgres",
-			"type": "n8n-nodes-base.postgres",
+			"type": "aura-nodes-base.postgres",
 			"typeVersion": 2.5,
 			"position": [1120, 3460],
 			"credentials": {
@@ -183,7 +183,7 @@
 			},
 			"id": "01711e02-6d7c-4afa-9d61-d3f7c7ba4466",
 			"name": "Embeddings OpenAI",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1120, 2160],
 			"credentials": {
@@ -200,7 +200,7 @@
 			},
 			"id": "63ae1d1c-adb1-4b88-9885-704d3d31ebda",
 			"name": "Embeddings OpenAI8",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1160, 1160],
 			"credentials": {
@@ -225,7 +225,7 @@
 			},
 			"id": "c9631a79-8fb8-4e78-8f91-cac5040c23f7",
 			"name": "Default Data Loader3",
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1,
 			"position": [1260, 1160]
 		},
@@ -236,7 +236,7 @@
 			},
 			"id": "00345fc9-0c4f-4db8-82e5-e809c69980cd",
 			"name": "Token Splitter3",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [1260, 1300]
 		},
@@ -247,7 +247,7 @@
 			},
 			"id": "6f64e063-03a0-451b-a93a-377a5f49b1ef",
 			"name": "Embeddings OpenAI9",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1120, 1540],
 			"credentials": {
@@ -272,7 +272,7 @@
 			},
 			"id": "b39c08af-2700-4c7a-9a43-b8842307ea32",
 			"name": "Default Data Loader4",
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1,
 			"position": [1220, 1540]
 		},
@@ -283,7 +283,7 @@
 			},
 			"id": "c02b660b-4301-4a82-986e-d29f12257243",
 			"name": "Token Splitter4",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [1220, 1660]
 		},
@@ -294,7 +294,7 @@
 			},
 			"id": "ef5cb549-6c57-475f-a574-6969ba51626e",
 			"name": "Postgres PGVector Store",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+			"type": "@aura/aura-nodes-langchain.vectorStorePGVector",
 			"typeVersion": 1,
 			"position": [1200, 600],
 			"credentials": {
@@ -311,7 +311,7 @@
 			},
 			"id": "93302c27-5e2f-4497-8b2b-a544f71f0b4c",
 			"name": "Postgres PGVector Store6",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+			"type": "@aura/aura-nodes-langchain.vectorStorePGVector",
 			"typeVersion": 1,
 			"position": [1200, 1040],
 			"credentials": {
@@ -352,7 +352,7 @@
 			},
 			"id": "547331e8-808f-4015-854c-06cf8a876e12",
 			"name": "LangChain Code",
-			"type": "@n8n/n8n-nodes-langchain.code",
+			"type": "@aura/aura-nodes-langchain.code",
 			"typeVersion": 1,
 			"position": [1160, 1840],
 			"executeOnce": true
@@ -373,7 +373,7 @@
 			},
 			"id": "e0771a3b-5765-481a-a05c-a56331078797",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [1540, 1840]
 		},
@@ -384,7 +384,7 @@
 			},
 			"id": "8d013334-cfba-4e04-bac8-ae282500366d",
 			"name": "Postgres PGVector Store7",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+			"type": "@aura/aura-nodes-langchain.vectorStorePGVector",
 			"typeVersion": 1,
 			"position": [1180, 1420],
 			"executeOnce": true,
@@ -402,7 +402,7 @@
 			},
 			"id": "22fdcb8c-e4d6-457b-8635-cb8d4f84189b",
 			"name": "Embeddings OpenAI5",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1120, 3280],
 			"credentials": {
@@ -428,7 +428,7 @@
 			},
 			"id": "be8de136-11c8-4656-b94f-132286f7a84c",
 			"name": "Edit Fields2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [1700, 3120]
 		},
@@ -440,14 +440,14 @@
 			},
 			"id": "c3625b63-5e97-4a1c-b0f2-40abcccdcf68",
 			"name": "Aggregate",
-			"type": "n8n-nodes-base.aggregate",
+			"type": "aura-nodes-base.aggregate",
 			"typeVersion": 1,
 			"position": [1500, 3120]
 		},
 		{
 			"parameters": {
 				"mode": "load",
-				"prompt": "n8n_vectors",
+				"prompt": "aura_vectors",
 				"topK": 40,
 				"options": {
 					"metadata": {
@@ -462,7 +462,7 @@
 			},
 			"id": "da78ec78-5970-495c-a597-33b4f1ec8fc4",
 			"name": "Postgres PGVector Store1",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+			"type": "@aura/aura-nodes-langchain.vectorStorePGVector",
 			"typeVersion": 1,
 			"position": [1120, 3120],
 			"credentials": {
@@ -487,7 +487,7 @@
 			},
 			"id": "a90f2fe9-e51b-43cc-a345-fd581a67b204",
 			"name": "Postgres PGVector Store2",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+			"type": "@aura/aura-nodes-langchain.vectorStorePGVector",
 			"typeVersion": 1,
 			"position": [1140, 2800],
 			"credentials": {
@@ -512,7 +512,7 @@
 			},
 			"id": "7111c549-0a33-4662-b574-10eac290bc2e",
 			"name": "Postgres PGVector Store3",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+			"type": "@aura/aura-nodes-langchain.vectorStorePGVector",
 			"typeVersion": 1,
 			"position": [1120, 2040],
 			"credentials": {

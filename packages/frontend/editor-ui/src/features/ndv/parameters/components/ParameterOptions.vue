@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import {
 	isResourceLocatorValue,
 	type INodeProperties,
 	type NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import { isValueExpression } from '@/app/utils/nodeTypesUtils';
 import { computed } from 'vue';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
@@ -13,7 +13,13 @@ import { getParameterTypeOption } from '@/features/ndv/shared/ndv.utils';
 import { useIsInExperimentalNdv } from '@/features/workflows/canvas/experimental/composables/useIsInExperimentalNdv';
 import { useExperimentalNdvStore } from '@/features/workflows/canvas/experimental/experimentalNdv.store';
 
-import { N8nActionToggle, N8nIcon, N8nRadioButtons, N8nText, N8nTooltip } from '@n8n/design-system';
+import {
+	N8nActionToggle,
+	N8nIcon,
+	N8nRadioButtons,
+	N8nText,
+	N8nTooltip,
+} from '@aura/design-system';
 interface Props {
 	parameter: INodeProperties;
 	isReadOnly: boolean;

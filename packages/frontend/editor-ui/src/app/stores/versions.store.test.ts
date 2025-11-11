@@ -1,10 +1,10 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { useVersionsStore } from './versions.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import * as versionsApi from '@n8n/rest-api-client/api/versions';
-import type { IVersionNotificationSettings } from '@n8n/api-types';
-import type { Version, WhatsNewArticle, WhatsNewSection } from '@n8n/rest-api-client/api/versions';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import * as versionsApi from '@aura/rest-api-client/api/versions';
+import type { IVersionNotificationSettings } from '@aura/api-types';
+import type { Version, WhatsNewArticle, WhatsNewSection } from '@aura/rest-api-client/api/versions';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useSettingsStore } from './settings.store';
 import { useToast } from '@/app/composables/useToast';
 import { reactive } from 'vue';
@@ -30,10 +30,10 @@ vi.mock('@/features/settings/users/users.store');
 
 const settings: IVersionNotificationSettings = {
 	enabled: true,
-	endpoint: 'https://test.api.n8n.io/api/versions/',
+	endpoint: 'https://test.api.aura.io/api/versions/',
 	whatsNewEnabled: true,
-	whatsNewEndpoint: 'https://test.api.n8n.io/api/whats-new',
-	infoUrl: 'https://test.docs.n8n.io/hosting/installation/updating/',
+	whatsNewEndpoint: 'https://test.api.aura.io/api/whats-new',
+	infoUrl: 'https://test.docs.aura.io/hosting/installation/updating/',
 };
 
 const instanceId = 'test-instance-id';
@@ -43,7 +43,7 @@ const currentVersion: Version = {
 	nodes: [],
 	createdAt: '2025-06-24T00:00:00Z',
 	description: 'Latest version description',
-	documentationUrl: 'https://docs.n8n.io',
+	documentationUrl: 'https://docs.aura.io',
 	hasBreakingChange: false,
 	hasSecurityFix: false,
 	hasSecurityIssue: false,
@@ -214,10 +214,10 @@ describe('versions.store', () => {
 			const versionsStore = useVersionsStore();
 			versionsStore.initialize({
 				enabled: true,
-				endpoint: 'https://api.n8n.io/api/versions/',
+				endpoint: 'https://api.aura.io/api/versions/',
 				whatsNewEnabled: true,
-				whatsNewEndpoint: 'https://api.n8n.io/api/whats-new',
-				infoUrl: 'https://docs.n8n.io/hosting/installation/updating/',
+				whatsNewEndpoint: 'https://api.aura.io/api/whats-new',
+				infoUrl: 'https://docs.aura.io/hosting/installation/updating/',
 			});
 
 			await versionsStore.checkForNewVersions();
@@ -238,10 +238,10 @@ describe('versions.store', () => {
 			const versionsStore = useVersionsStore();
 			versionsStore.initialize({
 				enabled: true,
-				endpoint: 'https://api.n8n.io/api/versions/',
+				endpoint: 'https://api.aura.io/api/versions/',
 				whatsNewEnabled: true,
-				whatsNewEndpoint: 'https://api.n8n.io/api/whats-new',
-				infoUrl: 'https://docs.n8n.io/hosting/installation/updating/',
+				whatsNewEndpoint: 'https://api.aura.io/api/whats-new',
+				infoUrl: 'https://docs.aura.io/hosting/installation/updating/',
 			});
 
 			await versionsStore.checkForNewVersions();

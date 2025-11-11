@@ -10,7 +10,7 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { createTestingPinia } from '@pinia/testing';
 import { fireEvent } from '@testing-library/vue';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { setActivePinia } from 'pinia';
 import type * as actualVueRouter from 'vue-router';
 import { type RouteLocationNormalizedLoadedGeneric, useRoute } from 'vue-router';
@@ -157,7 +157,7 @@ describe('CanvasNodeDefault', () => {
 			const { getByText } = renderComponent({
 				global: {
 					provide: {
-						...createCanvasNodeProvide({ data: { type: 'n8n-nodes-test.testNode' } }),
+						...createCanvasNodeProvide({ data: { type: 'aura-nodes-test.testNode' } }),
 					},
 				},
 			});
@@ -172,7 +172,7 @@ describe('CanvasNodeDefault', () => {
 			const { getByText } = renderComponent({
 				global: {
 					provide: {
-						...createCanvasNodeProvide({ data: { type: 'n8n-nodes-test.testNode' } }),
+						...createCanvasNodeProvide({ data: { type: 'aura-nodes-test.testNode' } }),
 					},
 				},
 			});

@@ -1,5 +1,5 @@
 import { mockDeep, type DeepMockProxy } from 'jest-mock-extended';
-import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'n8n-workflow';
+import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'workflow';
 
 import { getWorkflowInfo } from './GenericFunctions';
 

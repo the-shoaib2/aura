@@ -1,6 +1,6 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import type { WorkflowTestData } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { WorkflowTestData } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { gongApiResponse, gongNodeResponse } from './mocks';
 
@@ -23,7 +23,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -40,7 +40,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong gongApi',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -64,7 +64,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong gongOAuth2Api',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -155,7 +155,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -172,7 +172,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -229,7 +229,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -262,7 +262,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -353,7 +353,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -378,7 +378,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -502,7 +502,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -514,7 +514,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -576,7 +576,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -594,7 +594,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -655,7 +655,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -669,7 +669,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -739,7 +739,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -755,7 +755,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -811,7 +811,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -829,7 +829,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {
@@ -907,7 +907,7 @@ describe('Gong Node', () => {
 								parameters: {},
 								id: '416e4fc1-5055-4e61-854e-a6265256ac26',
 								name: 'When clicking ‘Execute workflow’',
-								type: 'n8n-nodes-base.manualTrigger',
+								type: 'aura-nodes-base.manualTrigger',
 								position: [820, 380],
 								typeVersion: 1,
 							},
@@ -922,7 +922,7 @@ describe('Gong Node', () => {
 								},
 								id: 'c87d72ec-0683-4e32-9829-5e6ea1d1ee7d',
 								name: 'Gong',
-								type: 'n8n-nodes-base.gong',
+								type: 'aura-nodes-base.gong',
 								typeVersion: 1,
 								position: [1040, 380],
 								credentials: {

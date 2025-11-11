@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { mediumApiRequest } from './GenericFunctions';
 
@@ -16,7 +16,7 @@ export class Medium implements INodeType {
 		displayName: 'Medium',
 		name: 'medium',
 		group: ['output'],
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:medium.png',
 		version: 1,
 		description: 'Consume Medium API',
@@ -134,7 +134,7 @@ export class Medium implements INodeType {
 				},
 				default: '',
 				description:
-					'Publication IDs. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Publication IDs. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Title',

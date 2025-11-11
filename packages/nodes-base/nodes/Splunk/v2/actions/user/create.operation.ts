@@ -1,4 +1,4 @@
-import type { INodeProperties, IExecuteFunctions, IDataObject } from 'n8n-workflow';
+import type { INodeProperties, IExecuteFunctions, IDataObject } from 'workflow';
 
 import { updateDisplayOptions } from '../../../../../utils/utilities';
 import type { SplunkFeedResponse } from '../../helpers/interfaces';
@@ -15,12 +15,12 @@ const properties: INodeProperties[] = [
 		default: '',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 		displayName: 'Roles',
 		name: 'roles',
 		type: 'multiOptions',
 		description:
-			'Comma-separated list of roles to assign to the user. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Comma-separated list of roles to assign to the user. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 		default: ['user'],
 		typeOptions: {

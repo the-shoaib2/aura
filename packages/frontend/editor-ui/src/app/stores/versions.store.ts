@@ -1,23 +1,23 @@
-import type { IVersionNotificationSettings } from '@n8n/api-types';
-import * as versionsApi from '@n8n/rest-api-client/api/versions';
+import type { IVersionNotificationSettings } from '@aura/api-types';
+import * as versionsApi from '@aura/rest-api-client/api/versions';
 import {
 	LOCAL_STORAGE_DISMISSED_WHATS_NEW_CALLOUT,
 	LOCAL_STORAGE_READ_WHATS_NEW_ARTICLES,
 	VERSIONS_MODAL_KEY,
 	WHATS_NEW_MODAL_KEY,
 } from '@/app/constants';
-import { STORES } from '@n8n/stores';
-import type { Version, WhatsNewSection } from '@n8n/rest-api-client/api/versions';
+import { STORES } from '@aura/stores';
+import type { Version, WhatsNewSection } from '@aura/rest-api-client/api/versions';
 import { defineStore } from 'pinia';
 import type { NotificationHandle } from 'element-plus';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useToast } from '@/app/composables/useToast';
 import { useUIStore } from '@/app/stores/ui.store';
 import { computed, ref } from 'vue';
 import { useSettingsStore } from './settings.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useStorage } from '@/app/composables/useStorage';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'workflow';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
 type SetVersionParams = { versions: Version[]; currentVersion: string };

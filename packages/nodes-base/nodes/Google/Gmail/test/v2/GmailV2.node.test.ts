@@ -1,7 +1,7 @@
-/* eslint-disable n8n-nodes-base/node-param-display-name-miscased */
+/* eslint-disable aura-nodes-base/node-param-display-name-miscased */
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
 import { mock, mockDeep } from 'jest-mock-extended';
-import { jsonParse, type ILoadOptionsFunctions, type INode } from 'n8n-workflow';
+import { jsonParse, type ILoadOptionsFunctions, type INode } from 'workflow';
 import nock from 'nock';
 
 import { getGmailAliases, getLabels, getThreadMessages } from '../../v2/loadOptions';
@@ -85,7 +85,7 @@ describe('Test Gmail Node v2', () => {
 			gmailNock.get('/v1/users/me/labels').reply(200, {
 				labels,
 			});
-			gmailNock.get('/v1/users/me/profile').times(2).reply(200, { emailAddress: 'test@n8n.io' });
+			gmailNock.get('/v1/users/me/profile').times(2).reply(200, { emailAddress: 'test@aura.io' });
 			gmailNock
 				.post('/v1/users/me/messages/send')
 				.query({ format: 'metadata' })
@@ -309,7 +309,7 @@ describe('Test Gmail Node v2', () => {
 					format: 'metadata',
 				})
 				.reply(200, messages[0]);
-			gmailNock.get('/v1/users/me/profile').reply(200, { emailAddress: 'test@n8n.io' });
+			gmailNock.get('/v1/users/me/profile').reply(200, { emailAddress: 'test@aura.io' });
 			gmailNock
 				.post('/v1/users/me/messages/send')
 				.query({ userId: 'me', uploadType: 'media', format: 'metadata' })
@@ -375,8 +375,8 @@ describe('Test Gmail Node v2', () => {
 					helpers: mock<ILoadOptionsFunctions['helpers']>({
 						requestWithAuthentication: jest.fn(async () => ({
 							sendAs: [
-								{ isDefault: false, sendAsEmail: 'alias1@n8n.io' },
-								{ isDefault: true, sendAsEmail: 'alias2@n8n.io' },
+								{ isDefault: false, sendAsEmail: 'alias1@aura.io' },
+								{ isDefault: true, sendAsEmail: 'alias2@aura.io' },
 							],
 						})),
 					}),
@@ -384,12 +384,12 @@ describe('Test Gmail Node v2', () => {
 
 				expect(await getGmailAliases.call(loadOptionsFunctions)).toEqual([
 					{
-						name: 'alias1@n8n.io',
-						value: 'alias1@n8n.io',
+						name: 'alias1@aura.io',
+						value: 'alias1@aura.io',
 					},
 					{
-						name: 'alias2@n8n.io (Default)',
-						value: 'alias2@n8n.io',
+						name: 'alias2@aura.io (Default)',
+						value: 'alias2@aura.io',
 					},
 				]);
 			});

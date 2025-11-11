@@ -6,10 +6,10 @@ import type { Locator, Page } from '@playwright/test';
  *
  * @example
  * // Access via workflows page
- * await n8n.workflows.addResource.workflow();
- * await n8n.workflows.addResource.credential();
- * await n8n.workflows.addResource.folder();
- * await n8n.workflows.addResource.dataTable();
+ * await aura.workflows.addResource.workflow();
+ * await aura.workflows.addResource.credential();
+ * await aura.workflows.addResource.folder();
+ * await aura.workflows.addResource.dataTable();
  */
 export class AddResource {
 	constructor(private page: Page) {}

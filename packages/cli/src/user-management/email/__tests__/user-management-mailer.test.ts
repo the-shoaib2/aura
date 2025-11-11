@@ -1,9 +1,9 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
-import type { User, UserRepository } from '@n8n/db';
-import { PROJECT_EDITOR_ROLE_SLUG, PROJECT_VIEWER_ROLE_SLUG } from '@n8n/permissions';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
+import type { User, UserRepository } from '@aura/db';
+import { PROJECT_EDITOR_ROLE_SLUG, PROJECT_VIEWER_ROLE_SLUG } from '@aura/permissions';
 import { mock } from 'jest-mock-extended';
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { IWorkflowBase } from 'workflow';
 
 import type { UrlService } from '@/services/url.service';
 import type { InviteEmailData, PasswordResetData } from '@/user-management/email/interfaces';
@@ -71,7 +71,7 @@ describe('UserManagementMailer', () => {
 		);
 
 		beforeEach(() => {
-			urlService.getInstanceBaseUrl.mockReturnValue('https://n8n.url');
+			urlService.getInstanceBaseUrl.mockReturnValue('https://aura.url');
 		});
 
 		it('should setup email transport', async () => {
@@ -85,7 +85,7 @@ describe('UserManagementMailer', () => {
 			expect(nodeMailer.sendMail).toHaveBeenCalledWith({
 				body: expect.stringContaining(`href="${inviteEmailData.inviteAcceptUrl}"`),
 				emailRecipients: email,
-				subject: 'You have been invited to n8n',
+				subject: 'You have been invited to aura',
 			});
 		});
 
@@ -95,7 +95,7 @@ describe('UserManagementMailer', () => {
 			expect(nodeMailer.sendMail).toHaveBeenCalledWith({
 				body: expect.stringContaining(`href="${passwordResetData.passwordResetUrl}"`),
 				emailRecipients: email,
-				subject: 'n8n password reset',
+				subject: 'aura password reset',
 			});
 		});
 
@@ -117,9 +117,9 @@ describe('UserManagementMailer', () => {
 			expect(nodeMailer.sendMail).toHaveBeenCalledTimes(2);
 			newShareeIds.forEach((id, index) => {
 				expect(nodeMailer.sendMail).toHaveBeenNthCalledWith(index + 1, {
-					body: expect.stringContaining(`href="https://n8n.url/workflow/${workflow.id}"`),
+					body: expect.stringContaining(`href="https://aura.url/workflow/${workflow.id}"`),
 					emailRecipients: `${id}@user.com`,
-					subject: 'Sharer has shared an n8n workflow with you',
+					subject: 'Sharer has shared an aura workflow with you',
 				});
 
 				const callBody = nodeMailer.sendMail.mock.calls[index][0].body;
@@ -144,9 +144,9 @@ describe('UserManagementMailer', () => {
 			expect(nodeMailer.sendMail).toHaveBeenCalledTimes(2);
 			newShareeIds.forEach((id, index) => {
 				expect(nodeMailer.sendMail).toHaveBeenNthCalledWith(index + 1, {
-					body: expect.stringContaining('href="https://n8n.url/home/credentials"'),
+					body: expect.stringContaining('href="https://aura.url/home/credentials"'),
 					emailRecipients: `${id}@user.com`,
-					subject: 'Sharer has shared an n8n credential with you',
+					subject: 'Sharer has shared an aura credential with you',
 				});
 
 				const callBody = nodeMailer.sendMail.mock.calls[index][0].body;
@@ -182,7 +182,7 @@ describe('UserManagementMailer', () => {
 			expect(nodeMailer.sendMail).toHaveBeenCalledTimes(2);
 			newSharees.forEach((sharee, index) => {
 				expect(nodeMailer.sendMail).toHaveBeenCalledWith({
-					body: expect.stringContaining(`href="https://n8n.url/projects/${project.id}"`),
+					body: expect.stringContaining(`href="https://aura.url/projects/${project.id}"`),
 					emailRecipients: `recipient${index + 1}@user.com`,
 					subject: 'Sharer has invited you to a project',
 				});

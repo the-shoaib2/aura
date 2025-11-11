@@ -1,4 +1,4 @@
-import type { PushMessage } from '@n8n/api-types';
+import type { PushMessage } from '@aura/api-types';
 
 export type PushMessageQueueItem = {
 	message: PushMessage;

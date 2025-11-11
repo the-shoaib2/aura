@@ -9,7 +9,7 @@
 					"maxIterations": 1
 				}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 3,
 			"position": [416, 0],
 			"id": "c26a647a-58b2-4c10-9cc5-ac3ccb6c6219",
@@ -24,7 +24,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [288, 208],
 			"id": "4568addd-cc56-4e40-b462-e8c55383ff92",
@@ -40,7 +40,7 @@
 			"parameters": {
 				"inputSource": "passthrough"
 			},
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1.1,
 			"position": [112, -352],
 			"id": "1c26bc07-8091-44ba-98b4-e93020bedb91",
@@ -60,7 +60,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [320, -352],
 			"id": "77b084e4-68bb-45c2-ae2f-76a67c859bcc",
@@ -68,10 +68,10 @@
 		},
 		{
 			"parameters": {
-				"text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+				"text": "={{ /*aura-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agentTool",
+			"type": "@aura/aura-nodes-langchain.agentTool",
 			"typeVersion": 2.2,
 			"position": [992, 160],
 			"id": "2b964f5c-46c7-4e6f-85c2-a3134b3bd223",
@@ -79,7 +79,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+			"type": "@aura/aura-nodes-langchain.memoryBufferWindow",
 			"typeVersion": 1.3,
 			"position": [560, 320],
 			"id": "6eebeae8-5a25-4a79-8d6d-3fa2cb3fcfa5",
@@ -87,7 +87,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-144, 0],
 			"id": "e1570d09-e91c-49a2-bd62-24ceb060ecd1",
@@ -107,7 +107,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [64, 0],
 			"id": "4d04fe47-6af4-4440-b782-e9d8163f4cfa",

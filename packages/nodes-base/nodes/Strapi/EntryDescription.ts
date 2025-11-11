@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const entryOperations: INodeProperties[] = [
 	{
@@ -276,7 +276,7 @@ export const entryFields: INodeProperties[] = [
 		},
 		default: 'id',
 		required: true,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+		// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 		description:
 			'Name of the property which decides which rows in the database should be updated. Normally that would be "id".',
 	},

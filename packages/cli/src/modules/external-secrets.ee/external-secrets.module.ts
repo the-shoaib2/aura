@@ -1,6 +1,6 @@
-import type { ModuleInterface } from '@n8n/decorators';
-import { BackendModule, OnShutdown } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import type { ModuleInterface } from '@aura/decorators';
+import { BackendModule, OnShutdown } from '@aura/decorators';
+import { Container } from '@aura/di';
 
 @BackendModule({ name: 'external-secrets', licenseFlag: 'feat:externalSecrets' })
 export class ExternalSecretsModule implements ModuleInterface {
@@ -8,7 +8,7 @@ export class ExternalSecretsModule implements ModuleInterface {
 		await import('./external-secrets.controller.ee');
 
 		const { ExternalSecretsManager } = await import('./external-secrets-manager.ee');
-		const { ExternalSecretsProxy } = await import('n8n-core');
+		const { ExternalSecretsProxy } = await import('aura-core');
 
 		const externalSecretsManager = Container.get(ExternalSecretsManager);
 		const externalSecretsProxy = Container.get(ExternalSecretsProxy);

@@ -6,8 +6,8 @@ import {
 	AI_TRANSFORM_NODE_TYPE,
 	PRE_BUILT_AGENTS_EXPERIMENT,
 } from '@/app/constants';
-import type { INodeTypeDescription } from 'n8n-workflow';
-import { START_NODE_TYPE } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'workflow';
+import { START_NODE_TYPE } from 'workflow';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { AIView } from './viewsData';
 import { mockNodeTypeDescription } from '@/__tests__/mocks';
@@ -75,7 +75,7 @@ describe('viewsData', () => {
 			() => new URLSearchParams({ test: 'value' }),
 		);
 		vi.spyOn(templatesStore, 'constructTemplateRepositoryURL').mockImplementation(
-			(params) => `template-repository-url.n8n.io?${params.toString()}`,
+			(params) => `template-repository-url.aura.io?${params.toString()}`,
 		);
 		getNodeType.mockImplementation((nodeName: string) => {
 			if (nodeName === AI_TRANSFORM_NODE_TYPE) {

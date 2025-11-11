@@ -24,7 +24,7 @@ import { createTestingPinia } from '@pinia/testing';
 
 import { mock } from 'vitest-mock-extended';
 import type { ViewStack } from './composables/useViewStacks';
-import { SEND_AND_WAIT_OPERATION } from 'n8n-workflow';
+import { SEND_AND_WAIT_OPERATION } from 'workflow';
 import { DISCORD_NODE_TYPE, MICROSOFT_TEAMS_NODE_TYPE } from '@/app/constants';
 
 vi.mock('@/app/stores/settings.store', () => ({
@@ -111,7 +111,7 @@ describe('NodeCreator - utils', () => {
 					name: 'SampleNode',
 				},
 				description: 'Sample description',
-				name: 'n8n-nodes-preview-test.SampleNode',
+				name: 'aura-nodes-preview-test.SampleNode',
 				group: ['transform'],
 				outputs: ['main'],
 			},
@@ -121,7 +121,7 @@ describe('NodeCreator - utils', () => {
 					name: 'OtherNode',
 				},
 				description: 'Other node description',
-				name: 'n8n-nodes-preview-test.OtherNode',
+				name: 'aura-nodes-preview-test.OtherNode',
 				group: ['transform'],
 				outputs: ['main'],
 			},
@@ -131,15 +131,15 @@ describe('NodeCreator - utils', () => {
 			const result = filterAndSearchNodes(mergedNodes, 'sample', false);
 
 			expect(result.length).toEqual(1);
-			expect(result[0].key).toEqual('n8n-nodes-preview-test.SampleNode');
+			expect(result[0].key).toEqual('aura-nodes-preview-test.SampleNode');
 		});
 
 		test('should return two nodes', () => {
 			const result = filterAndSearchNodes(mergedNodes, 'node', false);
 
 			expect(result.length).toEqual(2);
-			expect(result[1].key).toEqual('n8n-nodes-preview-test.SampleNode');
-			expect(result[0].key).toEqual('n8n-nodes-preview-test.OtherNode');
+			expect(result[1].key).toEqual('aura-nodes-preview-test.SampleNode');
+			expect(result[0].key).toEqual('aura-nodes-preview-test.OtherNode');
 		});
 	});
 	describe('prepareCommunityNodeDetailsViewStack', () => {
@@ -147,7 +147,7 @@ describe('NodeCreator - utils', () => {
 			setActivePinia(createTestingPinia());
 		});
 		const nodeCreateElement: NodeCreateElement = {
-			key: 'n8n-nodes-preview-test.OtherNode',
+			key: 'aura-nodes-preview-test.OtherNode',
 			properties: {
 				defaults: {
 					name: 'OtherNode',
@@ -155,12 +155,12 @@ describe('NodeCreator - utils', () => {
 				description: 'Other node description',
 				displayName: 'Other Node',
 				group: ['transform'],
-				name: 'n8n-nodes-preview-test.OtherNode',
+				name: 'aura-nodes-preview-test.OtherNode',
 				outputs: ['main'],
 			},
 			subcategory: '*',
 			type: 'node',
-			uuid: 'n8n-nodes-preview-test.OtherNode-32f238f0-2b05-47ce-b43d-7fab6d7ba3cb',
+			uuid: 'aura-nodes-preview-test.OtherNode-32f238f0-2b05-47ce-b43d-7fab6d7ba3cb',
 		};
 
 		test('should return "community-node" view stack', () => {
@@ -170,16 +170,16 @@ describe('NodeCreator - utils', () => {
 				communityNodeDetails: {
 					description: 'Other node description',
 					installed: false,
-					key: 'n8n-nodes-preview-test.OtherNode',
+					key: 'aura-nodes-preview-test.OtherNode',
 					nodeIcon: undefined,
-					packageName: 'n8n-nodes-test',
+					packageName: 'aura-nodes-test',
 					title: 'Other Node',
 					official: false,
 				},
 				hasSearch: false,
 				items: [
 					{
-						key: 'n8n-nodes-preview-test.OtherNode',
+						key: 'aura-nodes-preview-test.OtherNode',
 						properties: {
 							defaults: {
 								name: 'OtherNode',
@@ -187,12 +187,12 @@ describe('NodeCreator - utils', () => {
 							description: 'Other node description',
 							displayName: 'Other Node',
 							group: ['transform'],
-							name: 'n8n-nodes-preview-test.OtherNode',
+							name: 'aura-nodes-preview-test.OtherNode',
 							outputs: ['main'],
 						},
 						subcategory: '*',
 						type: 'node',
-						uuid: 'n8n-nodes-preview-test.OtherNode-32f238f0-2b05-47ce-b43d-7fab6d7ba3cb',
+						uuid: 'aura-nodes-preview-test.OtherNode-32f238f0-2b05-47ce-b43d-7fab6d7ba3cb',
 					},
 				],
 				mode: 'community-node',
@@ -205,13 +205,13 @@ describe('NodeCreator - utils', () => {
 		test('should return "actions" view stack', () => {
 			const nodeActions: ActionTypeDescription[] = [
 				{
-					name: 'n8n-nodes-preview-test.OtherNode',
+					name: 'aura-nodes-preview-test.OtherNode',
 					group: ['trigger'],
 					codex: {
 						label: 'Log Actions',
 						categories: ['Actions'],
 					},
-					iconUrl: 'icons/n8n-nodes-preview-test/dist/nodes/Test/test.svg',
+					iconUrl: 'icons/aura-nodes-preview-test/dist/nodes/Test/test.svg',
 					outputs: ['main'],
 					defaults: {
 						name: 'LogSnag',
@@ -229,13 +229,13 @@ describe('NodeCreator - utils', () => {
 					displayName: 'Publish an event',
 				},
 				{
-					name: 'n8n-nodes-preview-test.OtherNode',
+					name: 'aura-nodes-preview-test.OtherNode',
 					group: ['trigger'],
 					codex: {
 						label: 'Insight Actions',
 						categories: ['Actions'],
 					},
-					iconUrl: 'icons/n8n-nodes-preview-test/dist/nodes/Test/test.svg',
+					iconUrl: 'icons/aura-nodes-preview-test/dist/nodes/Test/test.svg',
 					outputs: ['main'],
 					defaults: {
 						name: 'LogSnag',
@@ -264,16 +264,16 @@ describe('NodeCreator - utils', () => {
 				communityNodeDetails: {
 					description: 'Other node description',
 					installed: false,
-					key: 'n8n-nodes-preview-test.OtherNode',
+					key: 'aura-nodes-preview-test.OtherNode',
 					nodeIcon: undefined,
-					packageName: 'n8n-nodes-test',
+					packageName: 'aura-nodes-test',
 					title: 'Other Node',
 					official: false,
 				},
 				hasSearch: false,
 				items: [
 					{
-						key: 'n8n-nodes-preview-test.OtherNode',
+						key: 'aura-nodes-preview-test.OtherNode',
 						properties: {
 							actionKey: 'publish',
 							codex: {
@@ -291,8 +291,8 @@ describe('NodeCreator - utils', () => {
 								},
 							},
 							group: ['trigger'],
-							iconUrl: 'icons/n8n-nodes-preview-test/dist/nodes/Test/test.svg',
-							name: 'n8n-nodes-preview-test.OtherNode',
+							iconUrl: 'icons/aura-nodes-preview-test/dist/nodes/Test/test.svg',
+							name: 'aura-nodes-preview-test.OtherNode',
 							outputs: ['main'],
 							values: {
 								operation: 'publish',
@@ -303,7 +303,7 @@ describe('NodeCreator - utils', () => {
 						uuid: expect.any(String),
 					},
 					{
-						key: 'n8n-nodes-preview-test.OtherNode',
+						key: 'aura-nodes-preview-test.OtherNode',
 						properties: {
 							actionKey: 'publish',
 							codex: {
@@ -321,8 +321,8 @@ describe('NodeCreator - utils', () => {
 								},
 							},
 							group: ['trigger'],
-							iconUrl: 'icons/n8n-nodes-preview-test/dist/nodes/Test/test.svg',
-							name: 'n8n-nodes-preview-test.OtherNode',
+							iconUrl: 'icons/aura-nodes-preview-test/dist/nodes/Test/test.svg',
+							name: 'aura-nodes-preview-test.OtherNode',
 							outputs: ['main'],
 							values: {
 								operation: 'publish',
@@ -398,7 +398,7 @@ describe('NodeCreator - utils', () => {
 						label: 'Test Actions',
 						categories: ['Actions'],
 					},
-					iconUrl: 'icons/n8n-nodes-preview-test/dist/nodes/Test/test.svg',
+					iconUrl: 'icons/aura-nodes-preview-test/dist/nodes/Test/test.svg',
 					outputs: ['main'],
 					defaults: {
 						name: 'TestAction',
@@ -420,7 +420,7 @@ describe('NodeCreator - utils', () => {
 						label: 'Discord Actions',
 						categories: ['Actions'],
 					},
-					iconUrl: 'icons/n8n-nodes-preview-test/dist/nodes/Test/test.svg',
+					iconUrl: 'icons/aura-nodes-preview-test/dist/nodes/Test/test.svg',
 					outputs: ['main'],
 					defaults: {
 						name: 'DiscordAction',
@@ -447,7 +447,7 @@ describe('NodeCreator - utils', () => {
 						label: 'Microsoft Teams Actions',
 						categories: ['Actions'],
 					},
-					iconUrl: 'icons/n8n-nodes-preview-test/dist/nodes/Test/test.svg',
+					iconUrl: 'icons/aura-nodes-preview-test/dist/nodes/Test/test.svg',
 					outputs: ['main'],
 					defaults: {
 						name: 'MicrosoftTeamsAction',

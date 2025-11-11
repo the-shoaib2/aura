@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * This script is used to build the n8n application for production.
+ * This script is used to build the Aura application for production.
  * It will:
  * 1. Clean the previous build output
  * 2. Run pnpm install and build
@@ -74,7 +74,7 @@ function printDivider() {
 // #endregion ===== Helper Functions =====
 
 // #region ===== Main Build Process =====
-printHeader('n8n Build & Production Preparation');
+printHeader('Aura Build & Production Preparation');
 echo(`INFO: Output Directory: ${config.compiledAppDir}`);
 printDivider();
 
@@ -202,7 +202,7 @@ if (excludeTestController) {
 	echo(chalk.gray('  - Excluded test controller from packages/cli/package.json'));
 }
 
-await $`cd ${config.rootDir} && NODE_ENV=production DOCKER_BUILD=true pnpm --filter=n8n --prod --legacy deploy --no-optional ./compiled`;
+await $`cd ${config.rootDir} && NODE_ENV=production DOCKER_BUILD=true pnpm --filter=aura --prod --legacy deploy --no-optional ./compiled`;
 await fs.ensureDir(config.compiledTaskRunnerDir);
 
 echo(
@@ -211,7 +211,7 @@ echo(
 	),
 );
 
-await $`cd ${config.rootDir} && NODE_ENV=production DOCKER_BUILD=true pnpm --filter=@n8n/task-runner --prod --legacy deploy --no-optional ${config.compiledTaskRunnerDir}`;
+await $`cd ${config.rootDir} && NODE_ENV=production DOCKER_BUILD=true pnpm --filter=@aura/task-runner --prod --legacy deploy --no-optional ${config.compiledTaskRunnerDir}`;
 
 const packageDeployTime = getElapsedTime('package_deploy');
 
@@ -286,10 +286,10 @@ const totalBuildTime = getElapsedTime('total_build');
 // #region ===== Final Output =====
 echo('');
 echo(chalk.green.bold('================ BUILD SUMMARY ================'));
-echo(chalk.green(`✅ n8n built successfully!`));
+echo(chalk.green(`✅ Aura built successfully!`));
 echo('');
 echo(chalk.blue('📦 Build Output:'));
-echo(chalk.green('   n8n:'));
+echo(chalk.green('   aura:'));
 echo(`   Directory:      ${path.resolve(config.compiledAppDir)}`);
 echo(`   Size:           ${compiledAppOutputSize}`);
 echo('');

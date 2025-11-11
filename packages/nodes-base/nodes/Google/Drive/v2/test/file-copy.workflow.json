@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "trigger-id",
@@ -20,7 +20,7 @@
 				},
 				"name": "Copy of Test File"
 			},
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 3,
 			"position": [200, 0],
 			"id": "file-copy",

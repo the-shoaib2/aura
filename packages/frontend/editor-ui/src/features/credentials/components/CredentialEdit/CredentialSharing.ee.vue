@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { AllRolesMap, PermissionsRecord } from '@n8n/permissions';
+import type { AllRolesMap, PermissionsRecord } from '@aura/permissions';
 import ProjectSharing from '@/features/collaboration/projects/components/ProjectSharing.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { EnterpriseEditionFeature } from '@/app/constants';
 import type { ICredentialsDecryptedResponse, ICredentialsResponse } from '../../credentials.types';
@@ -16,11 +16,11 @@ import type {
 } from '@/features/collaboration/projects/projects.types';
 import { ProjectTypes } from '@/features/collaboration/projects/projects.types';
 import { splitName } from '@/features/collaboration/projects/projects.utils';
-import type { EventBus } from '@n8n/utils/event-bus';
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
+import type { EventBus } from '@aura/utils/event-bus';
+import type { ICredentialDataDecryptedObject } from 'workflow';
 import { computed, onMounted, ref, watch } from 'vue';
 
-import { N8nActionBox, N8nInfoTip } from '@n8n/design-system';
+import { N8nActionBox, N8nInfoTip } from '@aura/design-system';
 type Props = {
 	credentialId: string;
 	credentialData: ICredentialDataDecryptedObject;

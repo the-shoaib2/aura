@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useAnnotationTagsStore } from '../../tags.store';
 import TagsManager from './TagsManager.vue';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
+import type { ITag } from '@aura/rest-api-client/api/tags';
 import { ANNOTATION_TAGS_MANAGER_MODAL_KEY } from '../../tags.constants';
 
 const i18n = useI18n();

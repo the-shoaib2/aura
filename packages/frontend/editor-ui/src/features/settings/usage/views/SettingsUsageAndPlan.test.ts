@@ -7,7 +7,7 @@ import SettingsUsageAndPlan from './SettingsUsageAndPlan.vue';
 import { useUIStore } from '@/app/stores/ui.store';
 import { COMMUNITY_PLUS_ENROLLMENT_MODAL } from '../usage.constants';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@aura/rest-api-client/api/users';
 import { useToast } from '@/app/composables/useToast';
 import { waitFor } from '@testing-library/vue';
 import { useRBACStore } from '@/app/stores/rbac.store';
@@ -69,8 +69,8 @@ describe('SettingsUsageAndPlan', () => {
 		} as unknown as ReturnType<typeof useToast>;
 		vi.mocked(useToast).mockReturnValue(mockToast);
 
-		usageStore.viewPlansUrl = 'https://subscription.n8n.io';
-		usageStore.managePlanUrl = 'https://subscription.n8n.io';
+		usageStore.viewPlansUrl = 'https://subscription.aura.io';
+		usageStore.managePlanUrl = 'https://subscription.aura.io';
 		usageStore.isLoading = false;
 		usageStore.setLoading = vi.fn((value: boolean) => {
 			usageStore.isLoading = value;
@@ -104,7 +104,7 @@ describe('SettingsUsageAndPlan', () => {
 		} as IUser;
 		const { getByRole, container } = renderComponent();
 		expect(getByRole('heading', { level: 3 })).toHaveTextContent('Community');
-		expect(container.querySelector('.n8n-badge')).toBeNull();
+		expect(container.querySelector('.aura-badge')).toBeNull();
 
 		expect(getByRole('button', { name: 'Unlock' })).toBeVisible();
 
@@ -119,8 +119,8 @@ describe('SettingsUsageAndPlan', () => {
 		usageStore.planName = 'Registered Community';
 		const { getByRole, container } = renderComponent();
 		expect(getByRole('heading', { level: 3 })).toHaveTextContent('Community Edition');
-		expect(getByRole('heading', { level: 3 })).toContain(container.querySelector('.n8n-badge'));
-		expect(container.querySelector('.n8n-badge')).toHaveTextContent('Registered');
+		expect(getByRole('heading', { level: 3 })).toContain(container.querySelector('.aura-badge'));
+		expect(container.querySelector('.aura-badge')).toHaveTextContent('Registered');
 	});
 
 	describe('License activation with EULA', () => {

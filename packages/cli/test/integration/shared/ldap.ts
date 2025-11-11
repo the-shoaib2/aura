@@ -1,8 +1,8 @@
-import type { LdapConfig } from '@n8n/constants';
-import { LDAP_DEFAULT_CONFIGURATION, LDAP_FEATURE_NAME } from '@n8n/constants';
-import { SettingsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { jsonParse } from 'n8n-workflow';
+import type { LdapConfig } from '@aura/constants';
+import { LDAP_DEFAULT_CONFIGURATION, LDAP_FEATURE_NAME } from '@aura/constants';
+import { SettingsRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { jsonParse } from 'workflow';
 
 export const defaultLdapConfig = {
 	...LDAP_DEFAULT_CONFIGURATION,

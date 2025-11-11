@@ -2,11 +2,11 @@ import {
 	ChangePasswordRequestDto,
 	ForgotPasswordRequestDto,
 	ResolvePasswordTokenQueryDto,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { GLOBAL_OWNER_ROLE, UserRepository } from '@n8n/db';
-import { Body, Get, Post, Query, RestController } from '@n8n/decorators';
-import { hasGlobalScope } from '@n8n/permissions';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { GLOBAL_OWNER_ROLE, UserRepository } from '@aura/db';
+import { Body, Get, Post, Query, RestController } from '@aura/decorators';
+import { hasGlobalScope } from '@aura/permissions';
 import { Response } from 'express';
 
 import { AuthService } from '@/auth/auth.service';

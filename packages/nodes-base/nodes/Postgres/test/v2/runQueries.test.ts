@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import type { IDataObject, IExecuteFunctions, INode } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INode } from 'workflow';
 import pgPromise from 'pg-promise';
 
 import type { PgpDatabase } from '../../v2/helpers/interfaces';
@@ -9,7 +9,7 @@ const node: INode = {
 	id: '1',
 	name: 'Postgres node',
 	typeVersion: 2,
-	type: 'n8n-nodes-base.postgres',
+	type: 'aura-nodes-base.postgres',
 	position: [60, 760],
 	parameters: {
 		operation: 'executeQuery',

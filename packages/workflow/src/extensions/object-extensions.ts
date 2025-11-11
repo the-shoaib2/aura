@@ -117,7 +117,7 @@ isEmpty.doc = {
 		{ example: '({}).isEmpty()', evaluated: 'true' },
 	],
 	returnType: 'boolean',
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-isEmpty',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-isEmpty',
 };
 
 isNotEmpty.doc = {
@@ -129,7 +129,7 @@ isNotEmpty.doc = {
 	],
 	returnType: 'boolean',
 	docURL:
-		'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-isNotEmpty',
+		'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-isNotEmpty',
 };
 
 compact.doc = {
@@ -138,7 +138,7 @@ compact.doc = {
 		'Removes all fields that have empty values, i.e. are <code>null</code>, <code>undefined</code>, <code>"nil"</code> or <code>""</code>',
 	examples: [{ example: "({ x: null, y: 2, z: '' }).compact()", evaluated: '{ y: 2 }' }],
 	returnType: 'Object',
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-compact',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-compact',
 };
 
 urlEncode.doc = {
@@ -153,7 +153,7 @@ urlEncode.doc = {
 	],
 	returnType: 'string',
 	docURL:
-		'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-urlEncode',
+		'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-urlEncode',
 };
 
 hasField.doc = {
@@ -174,7 +174,8 @@ hasField.doc = {
 			type: 'string',
 		},
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-hasField',
+	docURL:
+		'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-hasField',
 };
 
 removeField.doc = {
@@ -196,7 +197,7 @@ removeField.doc = {
 		},
 	],
 	docURL:
-		'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-removeField',
+		'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-removeField',
 };
 
 removeFieldsContaining.doc = {
@@ -227,7 +228,7 @@ removeFieldsContaining.doc = {
 		},
 	],
 	docURL:
-		'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-removeFieldsContaining',
+		'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-removeFieldsContaining',
 };
 
 keepFieldsContaining.doc = {
@@ -258,7 +259,7 @@ keepFieldsContaining.doc = {
 		},
 	],
 	docURL:
-		'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-keepFieldsContaining',
+		'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-keepFieldsContaining',
 };
 
 keys.doc = {
@@ -266,7 +267,7 @@ keys.doc = {
 	description:
 		"Returns an array with all the field names (keys) the Object contains. The same as JavaScript's <code>Object.keys(obj)</code>.",
 	examples: [{ example: "({ name: 'Mr Nathan', age: 42 }).keys()", evaluated: "['name', 'age']" }],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-keys',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-keys',
 	returnType: 'Array',
 };
 
@@ -277,7 +278,7 @@ values.doc = {
 	examples: [
 		{ example: "({ name: 'Mr Nathan', age: 42 }).values()", evaluated: "['Mr Nathan', 42]" },
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-values',
+	docURL: 'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-values',
 	returnType: 'Array',
 };
 
@@ -292,7 +293,7 @@ toJsonString.doc = {
 		},
 	],
 	docURL:
-		'https://docs.n8n.io/code/builtin/data-transformation-functions/objects/#object-toJsonString',
+		'https://docs.aura.io/code/builtin/data-transformation-functions/objects/#object-toJsonString',
 	returnType: 'string',
 };
 

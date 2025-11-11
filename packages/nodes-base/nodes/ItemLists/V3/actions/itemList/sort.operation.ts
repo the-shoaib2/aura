@@ -1,13 +1,8 @@
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 import lt from 'lodash/lt';
-import type {
-	IExecuteFunctions,
-	IDataObject,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, IDataObject, INodeExecutionData, INodeProperties } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { shuffleArray, updateDisplayOptions } from '@utils/utilities';
 
@@ -56,7 +51,7 @@ const properties: INodeProperties[] = [
 						required: true,
 						default: '',
 						description: 'The field to sort by',
-						// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+						// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 						placeholder: 'e.g. id',
 						hint: ' Enter the field name as text',
 						requiresDataPath: 'single',

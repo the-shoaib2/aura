@@ -4,7 +4,7 @@ import type {
 	IRunExecutionData,
 	ISourceData,
 	ITaskData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { previousTaskData, findPairedItemThroughWorkflowData } from './workflow-backtracking';
 

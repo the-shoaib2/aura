@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 
-/* eslint-disable n8n-local-rules/no-interpolation-in-regular-string */
+/* eslint-disable aura-local-rules/no-interpolation-in-regular-string */
 
 import { evaluate } from './helpers';
 import { ExpressionExtensionError } from '../../src/errors/expression-extension.error';

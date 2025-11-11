@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const userListOperations: INodeProperties[] = [
 	{
@@ -49,7 +49,7 @@ export const userListFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'Identifier to be used. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Identifier to be used. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Identifier',
@@ -108,7 +108,7 @@ export const userListFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'Identifier to be used. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Identifier to be used. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Identifier',

@@ -3,7 +3,7 @@
  * @TODO Remove this notice when Canvas V2 is the only one in use
  */
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { Ref } from 'vue';
@@ -37,13 +37,13 @@ import type {
 	INodeTypeDescription,
 	ITaskData,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	NodeConnectionTypes,
 	NodeHelpers,
 	SEND_AND_WAIT_OPERATION,
 	WAIT_INDEFINITELY,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { INodeUi } from '@/Interface';
 import {
 	CANVAS_EXECUTION_DATA_THROTTLE_DURATION,
@@ -60,7 +60,7 @@ import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { getTriggerNodeServiceName } from '@/app/utils/nodeTypesUtils';
 import { useNodeDirtiness } from '@/app/composables/useNodeDirtiness';
 import { getNodeIconSource } from '@/app/utils/nodeIcon';
-import * as workflowUtils from 'n8n-workflow/common';
+import * as workflowUtils from 'workflow/common';
 import { throttledWatch } from '@vueuse/core';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 

@@ -1,5 +1,5 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'workflow';
 
 import { validateInputData } from '../utils';
 
@@ -13,7 +13,7 @@ describe('Test Remove Duplicates Node, validateInputData util', () => {
 			validateInputData(
 				{
 					name: 'Remove Duplicates',
-					type: 'n8n-nodes-base.removeDuplicates',
+					type: 'aura-nodes-base.removeDuplicates',
 					typeVersion: 1,
 				} as INode,
 				[
@@ -33,7 +33,7 @@ describe('Test Remove Duplicates Node, validateInputData util', () => {
 			validateInputData(
 				{
 					name: 'Remove Duplicates',
-					type: 'n8n-nodes-base.removeDuplicates',
+					type: 'aura-nodes-base.removeDuplicates',
 					typeVersion: 1.1,
 				} as INode,
 				[
@@ -53,7 +53,7 @@ describe('Test Remove Duplicates Node, validateInputData util', () => {
 			validateInputData(
 				{
 					name: 'Remove Duplicates',
-					type: 'n8n-nodes-base.removeDuplicates',
+					type: 'aura-nodes-base.removeDuplicates',
 					typeVersion: 1.1,
 				} as INode,
 				[{ json: { id: 1 } }, { json: { id: '1' } }, { json: { id: 2 } }, { json: { id: null } }],

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const messageOperations: INodeProperties[] = [
 	{
@@ -50,14 +50,14 @@ export const messageFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The channel to send the message to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The channel to send the message to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Text',
 		name: 'text',
 		type: 'string',
 		default: '',
-		placeholder: 'Hello from n8n!',
+		placeholder: 'Hello from aura!',
 		displayOptions: {
 			show: {
 				operation: ['create'],
@@ -155,7 +155,7 @@ export const messageFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'The token to start returning events from. This token can be obtained from a prev_batch token returned for each room by the sync API. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The token to start returning events from. This token can be obtained from a prev_batch token returned for each room by the sync API. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 	},
 	{

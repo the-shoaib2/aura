@@ -1,5 +1,5 @@
-import { mockLogger, mockInstance } from '@n8n/backend-test-utils';
-import { User, WorkflowHistoryRepository } from '@n8n/db';
+import { mockLogger, mockInstance } from '@aura/backend-test-utils';
+import { User, WorkflowHistoryRepository } from '@aura/db';
 import { mockClear } from 'jest-mock-extended';
 
 import { WorkflowFinderService } from '@/workflows/workflow-finder.service';

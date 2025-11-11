@@ -9,70 +9,70 @@ import { test, expect } from '../../fixtures/base';
 
 test.describe('Code node', () => {
 	test.describe('Code editor', () => {
-		test.beforeEach(async ({ n8n }) => {
-			await n8n.goHome();
-			await n8n.workflows.addResource.workflow();
-			await n8n.canvas.addNode(MANUAL_TRIGGER_NODE_NAME);
-			await n8n.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
+		test.beforeEach(async ({ aura }) => {
+			await aura.goHome();
+			await aura.workflows.addResource.workflow();
+			await aura.canvas.addNode(MANUAL_TRIGGER_NODE_NAME);
+			await aura.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
 		});
 
-		test('should show correct placeholders switching modes', async ({ n8n }) => {
+		test('should show correct placeholders switching modes', async ({ aura }) => {
 			await expect(
-				n8n.ndv.getPlaceholderText('// Loop over input items and add a new field'),
+				aura.ndv.getPlaceholderText('// Loop over input items and add a new field'),
 			).toBeVisible();
 
-			await n8n.ndv.getParameterInput('mode').click();
-			await n8n.page.getByRole('option', { name: 'Run Once for Each Item' }).click();
+			await aura.ndv.getParameterInput('mode').click();
+			await aura.page.getByRole('option', { name: 'Run Once for Each Item' }).click();
 
 			await expect(
-				n8n.ndv.getPlaceholderText("// Add a new field called 'myNewField'"),
+				aura.ndv.getPlaceholderText("// Add a new field called 'myNewField'"),
 			).toBeVisible();
 
-			await n8n.ndv.getParameterInput('mode').click();
-			await n8n.page.getByRole('option', { name: 'Run Once for All Items' }).click();
+			await aura.ndv.getParameterInput('mode').click();
+			await aura.page.getByRole('option', { name: 'Run Once for All Items' }).click();
 
 			await expect(
-				n8n.ndv.getPlaceholderText('// Loop over input items and add a new field'),
-			).toBeVisible();
-		});
-
-		test('should execute the placeholder successfully in both modes', async ({ n8n }) => {
-			await n8n.ndv.execute();
-
-			await expect(
-				n8n.notifications.getNotificationByTitle('Node executed successfully').first(),
-			).toBeVisible();
-
-			await n8n.ndv.getParameterInput('mode').click();
-			await n8n.page.getByRole('option', { name: 'Run Once for Each Item' }).click();
-
-			await n8n.ndv.execute();
-
-			await expect(
-				n8n.notifications.getNotificationByTitle('Node executed successfully').first(),
+				aura.ndv.getPlaceholderText('// Loop over input items and add a new field'),
 			).toBeVisible();
 		});
 
-		test('should allow switching between sibling code nodes', async ({ n8n }) => {
-			await n8n.ndv.getCodeEditor().fill("console.log('Code in JavaScript1')");
-			await n8n.ndv.close();
+		test('should execute the placeholder successfully in both modes', async ({ aura }) => {
+			await aura.ndv.execute();
 
-			await n8n.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
+			await expect(
+				aura.notifications.getNotificationByTitle('Node executed successfully').first(),
+			).toBeVisible();
 
-			await n8n.ndv.getCodeEditor().fill("console.log('Code in JavaScript2')");
-			await n8n.ndv.close();
+			await aura.ndv.getParameterInput('mode').click();
+			await aura.page.getByRole('option', { name: 'Run Once for Each Item' }).click();
 
-			await n8n.canvas.openNode(CODE_NODE_DISPLAY_NAME);
+			await aura.ndv.execute();
 
-			await n8n.ndv.clickFloatingNode(CODE_NODE_DISPLAY_NAME + '1');
-			await expect(n8n.ndv.getCodeEditor()).toContainText("console.log('Code in JavaScript2')");
-
-			await n8n.ndv.clickFloatingNode(CODE_NODE_DISPLAY_NAME);
-			await expect(n8n.ndv.getCodeEditor()).toContainText("console.log('Code in JavaScript1')");
+			await expect(
+				aura.notifications.getNotificationByTitle('Node executed successfully').first(),
+			).toBeVisible();
 		});
 
-		test('should show lint errors in `runOnceForAllItems` mode', async ({ n8n }) => {
-			await n8n.ndv.getCodeEditor().fill(`$input.itemMatching()
+		test('should allow switching between sibling code nodes', async ({ aura }) => {
+			await aura.ndv.getCodeEditor().fill("console.log('Code in JavaScript1')");
+			await aura.ndv.close();
+
+			await aura.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
+
+			await aura.ndv.getCodeEditor().fill("console.log('Code in JavaScript2')");
+			await aura.ndv.close();
+
+			await aura.canvas.openNode(CODE_NODE_DISPLAY_NAME);
+
+			await aura.ndv.clickFloatingNode(CODE_NODE_DISPLAY_NAME + '1');
+			await expect(aura.ndv.getCodeEditor()).toContainText("console.log('Code in JavaScript2')");
+
+			await aura.ndv.clickFloatingNode(CODE_NODE_DISPLAY_NAME);
+			await expect(aura.ndv.getCodeEditor()).toContainText("console.log('Code in JavaScript1')");
+		});
+
+		test('should show lint errors in `runOnceForAllItems` mode', async ({ aura }) => {
+			await aura.ndv.getCodeEditor().fill(`$input.itemMatching()
 $input.item
 $('When clicking ‘Execute workflow’').item
 $input.first(1)
@@ -83,9 +83,9 @@ for (const item of $input.all()) {
 
 return
 `);
-			await expect(n8n.ndv.getLintErrors()).toHaveCount(6);
-			await n8n.ndv.getParameterInput('jsCode').getByText('itemMatching').hover();
-			await expect(n8n.ndv.getLintTooltip()).toContainText(
+			await expect(aura.ndv.getLintErrors()).toHaveCount(6);
+			await aura.ndv.getParameterInput('jsCode').getByText('itemMatching').hover();
+			await expect(aura.ndv.getLintTooltip()).toContainText(
 				'`.itemMatching()` expects an item index to be passed in as its argument.',
 			);
 		});
@@ -93,23 +93,23 @@ return
 
 	test.describe
 		.serial('Run Once for Each Item', () => {
-			test('should show lint errors in `runOnceForEachItem` mode', async ({ n8n }) => {
-				await n8n.start.fromHome();
-				await n8n.workflows.addResource.workflow();
-				await n8n.canvas.addNode(MANUAL_TRIGGER_NODE_NAME);
-				await n8n.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
-				await n8n.ndv.toggleCodeMode('Run Once for Each Item');
+			test('should show lint errors in `runOnceForEachItem` mode', async ({ aura }) => {
+				await aura.start.fromHome();
+				await aura.workflows.addResource.workflow();
+				await aura.canvas.addNode(MANUAL_TRIGGER_NODE_NAME);
+				await aura.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
+				await aura.ndv.toggleCodeMode('Run Once for Each Item');
 
-				await n8n.ndv.getCodeEditor().fill(`$input.itemMatching()
+				await aura.ndv.getCodeEditor().fill(`$input.itemMatching()
 $input.all()
 $input.first()
 $input.item()
 
 return []
 `);
-				await expect(n8n.ndv.getLintErrors()).toHaveCount(7);
-				await n8n.ndv.getParameterInput('jsCode').getByText('all').hover();
-				await expect(n8n.ndv.getLintTooltip()).toContainText(
+				await expect(aura.ndv.getLintErrors()).toHaveCount(7);
+				await aura.ndv.getParameterInput('jsCode').getByText('all').hover();
+				await expect(aura.ndv.getLintTooltip()).toContainText(
 					"Method `$input.all()` is only available in the 'Run Once for All Items' mode.",
 				);
 			});
@@ -117,51 +117,51 @@ return []
 
 	test.describe('Ask AI', () => {
 		test.describe('Enabled', () => {
-			test.beforeEach(async ({ api, n8n }) => {
+			test.beforeEach(async ({ api, aura }) => {
 				await api.enableFeature('askAi');
-				await n8n.goHome();
-				await n8n.workflows.addResource.workflow();
-				await n8n.canvas.addNode(MANUAL_TRIGGER_NODE_NAME);
-				await n8n.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
+				await aura.goHome();
+				await aura.workflows.addResource.workflow();
+				await aura.canvas.addNode(MANUAL_TRIGGER_NODE_NAME);
+				await aura.canvas.addNode(CODE_NODE_NAME, { action: 'Code in JavaScript' });
 			});
 
-			test('tab should exist if experiment selected and be selectable', async ({ n8n }) => {
-				await n8n.ndv.clickAskAiTab();
-				await expect(n8n.ndv.getAskAiTabPanel()).toBeVisible();
-				await expect(n8n.ndv.getHeyAiText()).toBeVisible();
+			test('tab should exist if experiment selected and be selectable', async ({ aura }) => {
+				await aura.ndv.clickAskAiTab();
+				await expect(aura.ndv.getAskAiTabPanel()).toBeVisible();
+				await expect(aura.ndv.getHeyAiText()).toBeVisible();
 			});
 
-			test('generate code button should have correct state & tooltips', async ({ n8n }) => {
-				await n8n.ndv.clickAskAiTab();
-				await expect(n8n.ndv.getAskAiTabPanel()).toBeVisible();
+			test('generate code button should have correct state & tooltips', async ({ aura }) => {
+				await aura.ndv.clickAskAiTab();
+				await expect(aura.ndv.getAskAiTabPanel()).toBeVisible();
 
-				await expect(n8n.ndv.getAskAiCtaButton()).toBeDisabled();
-				await n8n.ndv.getAskAiCtaButton().hover();
-				await expect(n8n.ndv.getAskAiCtaTooltipNoInputData()).toBeVisible();
+				await expect(aura.ndv.getAskAiCtaButton()).toBeDisabled();
+				await aura.ndv.getAskAiCtaButton().hover();
+				await expect(aura.ndv.getAskAiCtaTooltipNoInputData()).toBeVisible();
 
-				await n8n.ndv.executePrevious();
-				await n8n.ndv.getAskAiCtaButton().hover();
-				await expect(n8n.ndv.getAskAiCtaTooltipNoPrompt()).toBeVisible();
+				await aura.ndv.executePrevious();
+				await aura.ndv.getAskAiCtaButton().hover();
+				await expect(aura.ndv.getAskAiCtaTooltipNoPrompt()).toBeVisible();
 
-				await n8n.ndv.getAskAiPromptInput().fill(nanoid(14));
+				await aura.ndv.getAskAiPromptInput().fill(nanoid(14));
 
-				await n8n.ndv.getAskAiCtaButton().hover();
-				await expect(n8n.ndv.getAskAiCtaTooltipPromptTooShort()).toBeVisible();
+				await aura.ndv.getAskAiCtaButton().hover();
+				await expect(aura.ndv.getAskAiCtaTooltipPromptTooShort()).toBeVisible();
 
-				await n8n.ndv.getAskAiPromptInput().fill(nanoid(15));
-				await expect(n8n.ndv.getAskAiCtaButton()).toBeEnabled();
+				await aura.ndv.getAskAiPromptInput().fill(nanoid(15));
+				await expect(aura.ndv.getAskAiCtaButton()).toBeEnabled();
 
-				await expect(n8n.ndv.getAskAiPromptCounter()).toContainText('15 / 600');
+				await expect(aura.ndv.getAskAiPromptCounter()).toContainText('15 / 600');
 			});
 
-			test('should send correct schema and replace code', async ({ n8n }) => {
+			test('should send correct schema and replace code', async ({ aura }) => {
 				const prompt = nanoid(20);
-				await n8n.ndv.clickAskAiTab();
-				await n8n.ndv.executePrevious();
+				await aura.ndv.clickAskAiTab();
+				await aura.ndv.executePrevious();
 
-				await n8n.ndv.getAskAiPromptInput().fill(prompt);
+				await aura.ndv.getAskAiPromptInput().fill(prompt);
 
-				await n8n.page.route('**/rest/ai/ask-ai', async (route) => {
+				await aura.page.route('**/rest/ai/ask-ai', async (route) => {
 					await route.fulfill({
 						status: 200,
 						contentType: 'application/json',
@@ -174,8 +174,8 @@ return []
 				});
 
 				const [request] = await Promise.all([
-					n8n.page.waitForRequest('**/rest/ai/ask-ai'),
-					n8n.ndv.getAskAiCtaButton().click(),
+					aura.page.waitForRequest('**/rest/ai/ask-ai'),
+					aura.ndv.getAskAiCtaButton().click(),
 				]);
 
 				const requestBody = request.postDataJSON();
@@ -187,9 +187,9 @@ return []
 				expect(requestBody.context).toHaveProperty('pushRef');
 				expect(requestBody.context).toHaveProperty('inputSchema');
 
-				await expect(n8n.ndv.getCodeGenerationCompletedText()).toBeVisible();
-				await expect(n8n.ndv.getCodeTabPanel()).toContainText('console.log("Hello World")');
-				await expect(n8n.ndv.getCodeTab()).toHaveClass(/is-active/);
+				await expect(aura.ndv.getCodeGenerationCompletedText()).toBeVisible();
+				await expect(aura.ndv.getCodeTabPanel()).toContainText('console.log("Hello World")');
+				await expect(aura.ndv.getCodeTab()).toHaveClass(/is-active/);
 			});
 
 			const handledCodes = [
@@ -204,21 +204,21 @@ return []
 			];
 
 			handledCodes.forEach(({ code, message }) => {
-				test(`should show error based on status code ${code}`, async ({ n8n }) => {
+				test(`should show error based on status code ${code}`, async ({ aura }) => {
 					const prompt = nanoid(20);
-					await n8n.ndv.clickAskAiTab();
-					await n8n.ndv.executePrevious();
+					await aura.ndv.clickAskAiTab();
+					await aura.ndv.executePrevious();
 
-					await n8n.ndv.getAskAiPromptInput().fill(prompt);
+					await aura.ndv.getAskAiPromptInput().fill(prompt);
 
-					await n8n.page.route('**/rest/ai/ask-ai', async (route) => {
+					await aura.page.route('**/rest/ai/ask-ai', async (route) => {
 						await route.fulfill({
 							status: code,
 						});
 					});
 
-					await n8n.ndv.getAskAiCtaButton().click();
-					await expect(n8n.ndv.getErrorMessageText(message)).toBeVisible();
+					await aura.ndv.getAskAiCtaButton().click();
+					await expect(aura.ndv.getErrorMessageText(message)).toBeVisible();
 				});
 			});
 		});

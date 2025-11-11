@@ -5,36 +5,36 @@ import { EventMessageWorkflow } from '@/eventbus/event-message-classes/event-mes
 export const setupMessages = (executionId: string, workflowName: string): EventMessage[] => {
 	return [
 		new EventMessageWorkflow({
-			eventName: 'n8n.workflow.started',
+			eventName: 'aura.workflow.started',
 			payload: { executionId },
 		}),
 		new EventMessageNode({
-			eventName: 'n8n.node.started',
+			eventName: 'aura.node.started',
 			payload: {
 				executionId,
 				workflowName,
 				nodeName: 'When clicking "Execute workflow"',
-				nodeType: 'n8n-nodes-base.manualTrigger',
+				nodeType: 'aura-nodes-base.manualTrigger',
 				nodeId: '123',
 			},
 		}),
 		new EventMessageNode({
-			eventName: 'n8n.node.finished',
+			eventName: 'aura.node.finished',
 			payload: {
 				executionId,
 				workflowName,
 				nodeName: 'When clicking "Execute workflow"',
-				nodeType: 'n8n-nodes-base.manualTrigger',
+				nodeType: 'aura-nodes-base.manualTrigger',
 				nodeId: '123',
 			},
 		}),
 		new EventMessageNode({
-			eventName: 'n8n.node.started',
+			eventName: 'aura.node.started',
 			payload: {
 				executionId,
 				workflowName,
 				nodeName: 'DebugHelper',
-				nodeType: 'n8n-nodes-base.debugHelper',
+				nodeType: 'aura-nodes-base.debugHelper',
 				nodeId: '123',
 			},
 		}),

@@ -36,22 +36,22 @@ test.describe('User API Service', () => {
 		expect(user.role).toBe('global:member');
 	});
 
-	test('should maintain separate sessions for multiple users', async ({ n8n, api }) => {
-		await n8n.navigate.toPersonalSettings();
+	test('should maintain separate sessions for multiple users', async ({ aura, api }) => {
+		await aura.navigate.toPersonalSettings();
 		const user = await api.users.create();
 
-		await n8n.page.reload();
-		await expect(n8n.settingsPersonal.getUserRole()).toHaveText('Owner');
+		await aura.page.reload();
+		await expect(aura.settingsPersonal.getUserRole()).toHaveText('Owner');
 
 		// New user page should have test name
-		const memberN8n = await n8n.start.withUser(user);
+		const memberN8n = await aura.start.withUser(user);
 
 		await memberN8n.navigate.toPersonalSettings();
 		await expect(memberN8n.settingsPersonal.getUserRole()).toHaveText('Member');
 
-		// n8n main should still have owner context
-		await n8n.page.reload();
-		await expect(n8n.settingsPersonal.getUserRole()).toHaveText('Owner');
+		// aura main should still have owner context
+		await aura.page.reload();
+		await expect(aura.settingsPersonal.getUserRole()).toHaveText('Owner');
 
 		// user page should still have member role
 		await memberN8n.page.reload();

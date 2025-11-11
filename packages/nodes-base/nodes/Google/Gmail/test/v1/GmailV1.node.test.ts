@@ -1,5 +1,5 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'workflow';
 import nock from 'nock';
 
 import labels from '../fixtures/labels.json';
@@ -172,8 +172,8 @@ describe('Test Gmail Node v1', () => {
 						const normalized = normalizeDraftMail(mail);
 						const expectedNormalized = [
 							'Content-Type: multipart/mixed; boundary="--test-boundary"',
-							'Cc: test_cc@n8n.io',
-							'Bcc: test_bcc@n8n.io',
+							'Cc: test_cc@aura.io',
+							'Bcc: test_bcc@aura.io',
 							'Subject: Test Subject',
 							'Message-ID: test-message-id',
 							'Date: Mon, 16 Dec 2024 12:34:56 +0000',

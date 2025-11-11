@@ -1,6 +1,6 @@
-import { testDb } from '@n8n/backend-test-utils';
-import { WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { testDb } from '@aura/backend-test-utils';
+import { WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import { v4 as uuid } from 'uuid';
 

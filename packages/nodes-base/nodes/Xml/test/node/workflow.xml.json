@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "745d1191-f221-4eda-9d09-611233f97edd",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [460, 520]
 		},
@@ -16,7 +16,7 @@
 			},
 			"id": "fb48ca4c-5ae2-4c57-9ca9-2080d06dbf65",
 			"name": "XML",
-			"type": "n8n-nodes-base.xml",
+			"type": "aura-nodes-base.xml",
 			"typeVersion": 1,
 			"position": [960, 280]
 		},
@@ -26,7 +26,7 @@
 			},
 			"id": "6a04ca32-c9cc-4cb1-a6b9-3a505b1c2dd5",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [700, 400]
 		},
@@ -39,7 +39,7 @@
 			},
 			"id": "cd740e65-5117-4bec-a3b3-6863ba25f232",
 			"name": "XML1",
-			"type": "n8n-nodes-base.xml",
+			"type": "aura-nodes-base.xml",
 			"typeVersion": 1,
 			"position": [960, 500]
 		},
@@ -49,7 +49,7 @@
 			},
 			"id": "817afbf7-9342-403f-8dc0-c4a3905fde4d",
 			"name": "Code1",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [680, 640]
 		},
@@ -59,7 +59,7 @@
 			},
 			"id": "f0f37a8f-9136-42e8-be34-f32b77e4aa88",
 			"name": "XML2",
-			"type": "n8n-nodes-base.xml",
+			"type": "aura-nodes-base.xml",
 			"typeVersion": 1,
 			"position": [940, 700]
 		}

@@ -1,7 +1,7 @@
-import type { Logger } from '@n8n/backend-common';
-import type { SettingsRepository } from '@n8n/db';
+import type { Logger } from '@aura/backend-common';
+import type { SettingsRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings, Cipher } from 'n8n-core';
+import type { InstanceSettings, Cipher } from 'aura-core';
 import { readFile, access, mkdir } from 'fs/promises';
 import os from 'os';
 import path from 'path';
@@ -14,7 +14,7 @@ jest.unmock('node:fs');
 jest.unmock('node:fs/promises');
 
 describe('SourceControlPreferencesService', () => {
-	const instanceSettings = mock<InstanceSettings>({ n8nFolder: '' });
+	const instanceSettings = mock<InstanceSettings>({ auraFolder: '' });
 	const mockCipher = mock<Cipher>();
 	const mockLogger = mock<Logger>();
 	const mockSettingsRepository = mock<SettingsRepository>();
@@ -29,7 +29,7 @@ describe('SourceControlPreferencesService', () => {
 	it('should class validate correct preferences', async () => {
 		const validPreferences: Partial<SourceControlPreferences> = {
 			branchName: 'main',
-			repositoryUrl: 'git@example.com:n8ntest/n8n_testrepo.git',
+			repositoryUrl: 'git@example.com:auratest/aura_testrepo.git',
 			branchReadOnly: false,
 			branchColor: '#5296D6',
 		};
@@ -41,7 +41,7 @@ describe('SourceControlPreferencesService', () => {
 		let tempDir: string;
 
 		beforeEach(async () => {
-			tempDir = path.join(os.tmpdir(), 'n8n-test-' + Date.now());
+			tempDir = path.join(os.tmpdir(), 'aura-test-' + Date.now());
 			await mkdir(tempDir, { recursive: true });
 		});
 
@@ -54,7 +54,7 @@ describe('SourceControlPreferencesService', () => {
 			const mockCipher = mock<Cipher>();
 			mockCipher.decrypt.mockReturnValue(keyWithCRLF);
 
-			const instanceSettings = mock<InstanceSettings>({ n8nFolder: tempDir });
+			const instanceSettings = mock<InstanceSettings>({ auraFolder: tempDir });
 			const service = new SourceControlPreferencesService(
 				instanceSettings,
 				mock(),
@@ -86,7 +86,7 @@ describe('SourceControlPreferencesService', () => {
 			const mockCipher = mock<Cipher>();
 			mockCipher.decrypt.mockReturnValue(keyWithMixedEndings);
 
-			const instanceSettings = mock<InstanceSettings>({ n8nFolder: tempDir });
+			const instanceSettings = mock<InstanceSettings>({ auraFolder: tempDir });
 			const service = new SourceControlPreferencesService(
 				instanceSettings,
 				mock(),
@@ -120,7 +120,7 @@ describe('SourceControlPreferencesService', () => {
 			const mockCipher = mock<Cipher>();
 			mockCipher.decrypt.mockReturnValue(keyWithLF);
 
-			const instanceSettings = mock<InstanceSettings>({ n8nFolder: tempDir });
+			const instanceSettings = mock<InstanceSettings>({ auraFolder: tempDir });
 			const service = new SourceControlPreferencesService(
 				instanceSettings,
 				mock(),
@@ -148,7 +148,7 @@ describe('SourceControlPreferencesService', () => {
 		let tempDir: string;
 
 		beforeEach(async () => {
-			tempDir = path.join(os.tmpdir(), 'n8n-test-' + Date.now());
+			tempDir = path.join(os.tmpdir(), 'aura-test-' + Date.now());
 			await mkdir(tempDir, { recursive: true });
 		});
 
@@ -160,7 +160,7 @@ describe('SourceControlPreferencesService', () => {
 			const mockCipher = mock<Cipher>();
 			mockCipher.decrypt.mockReturnValue(testKey);
 
-			const instanceSettings = mock<InstanceSettings>({ n8nFolder: tempDir });
+			const instanceSettings = mock<InstanceSettings>({ auraFolder: tempDir });
 			const service = new SourceControlPreferencesService(
 				instanceSettings,
 				mock(),
@@ -189,7 +189,7 @@ describe('SourceControlPreferencesService', () => {
 
 		it('should fail securely when file cannot be created', async () => {
 			// Arrange
-			const instanceSettings = mock<InstanceSettings>({ n8nFolder: '/nonexistent/path' });
+			const instanceSettings = mock<InstanceSettings>({ auraFolder: '/nonexistent/path' });
 			const service = new SourceControlPreferencesService(
 				instanceSettings,
 				mock(),
@@ -216,7 +216,7 @@ describe('SourceControlPreferencesService', () => {
 			const mockCipher = mock<Cipher>();
 			mockCipher.decrypt.mockReturnValue(testKey);
 
-			const instanceSettings = mock<InstanceSettings>({ n8nFolder: tempDir });
+			const instanceSettings = mock<InstanceSettings>({ auraFolder: tempDir });
 			const service = new SourceControlPreferencesService(
 				instanceSettings,
 				mock(),

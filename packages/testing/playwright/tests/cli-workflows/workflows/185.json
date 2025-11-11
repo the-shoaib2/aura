@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "3e759fa8-73f9-4851-968b-65c1843c646c"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Salesforce",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [450, 230],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"contactId": "={{$node[\"Salesforce\"].json[\"id\"]}}"
 			},
 			"name": "Salesforce1",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [600, 230],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"options": {}
 			},
 			"name": "Salesforce2",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [940, 230],
 			"credentials": {
@@ -75,7 +75,7 @@
 				"operation": "getSummary"
 			},
 			"name": "Salesforce3",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1090, 230],
 			"credentials": {
@@ -94,7 +94,7 @@
 				"options": {}
 			},
 			"name": "Salesforce4",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1400, 230],
 			"credentials": {
@@ -114,7 +114,7 @@
 				"options": {}
 			},
 			"name": "Salesforce5",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1550, 230],
 			"credentials": {
@@ -135,7 +135,7 @@
 				}
 			},
 			"name": "Salesforce6",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1910, 230],
 			"credentials": {
@@ -153,7 +153,7 @@
 				"contactId": "={{$node[\"Salesforce\"].json[\"id\"]}}"
 			},
 			"name": "Salesforce7",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [2060, 230],
 			"credentials": {
@@ -178,7 +178,7 @@
 				}
 			},
 			"name": "Salesforce8",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [460, 400],
 			"credentials": {
@@ -197,7 +197,7 @@
 				"recordId": "={{$node[\"Salesforce8\"].json[\"id\"]}}"
 			},
 			"name": "Salesforce9",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [810, 400],
 			"credentials": {
@@ -217,7 +217,7 @@
 				"options": {}
 			},
 			"name": "Salesforce10",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [950, 400],
 			"credentials": {
@@ -244,7 +244,7 @@
 				}
 			},
 			"name": "Salesforce11",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1320, 400],
 			"credentials": {
@@ -263,7 +263,7 @@
 				"recordId": "={{$node[\"Salesforce8\"].json[\"id\"]}}"
 			},
 			"name": "Salesforce12",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1470, 400],
 			"credentials": {
@@ -281,7 +281,7 @@
 				"limit": 1
 			},
 			"name": "Salesforce13",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [460, 560],
 			"credentials": {
@@ -298,7 +298,7 @@
 				"apiName": "={{$node[\"Salesforce13\"].json[\"name\"]}}"
 			},
 			"name": "Salesforce14",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [600, 560],
 			"credentials": {
@@ -312,12 +312,12 @@
 		},
 		{
 			"parameters": {
-				"company": "n8n",
+				"company": "aura",
 				"lastname": "=LastName{{Date.now()}}",
 				"additionalFields": {}
 			},
 			"name": "Salesforce15",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [450, 50],
 			"credentials": {
@@ -334,7 +334,7 @@
 				"leadId": "={{$node[\"Salesforce15\"].json[\"id\"]}}"
 			},
 			"name": "Salesforce16",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [600, 50],
 			"credentials": {
@@ -353,7 +353,7 @@
 				"options": {}
 			},
 			"name": "Salesforce17",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [940, 50],
 			"credentials": {
@@ -369,7 +369,7 @@
 				"operation": "getSummary"
 			},
 			"name": "Salesforce18",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1090, 50],
 			"credentials": {
@@ -387,7 +387,7 @@
 				"options": {}
 			},
 			"name": "Salesforce19",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1400, 50],
 			"credentials": {
@@ -406,7 +406,7 @@
 				"options": {}
 			},
 			"name": "Salesforce20",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1550, 50],
 			"credentials": {
@@ -426,7 +426,7 @@
 				}
 			},
 			"name": "Salesforce21",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [1910, 50],
 			"credentials": {
@@ -443,7 +443,7 @@
 				"leadId": "={{$node[\"Salesforce15\"].json[\"id\"]}}"
 			},
 			"name": "Salesforce22",
-			"type": "n8n-nodes-base.salesforce",
+			"type": "aura-nodes-base.salesforce",
 			"typeVersion": 1,
 			"position": [2060, 50],
 			"credentials": {
@@ -459,7 +459,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [770, 50],
 			"typeVersion": 1,
 			"id": "c004a09e-09fd-4ac2-8d5c-270a15b204b1"
@@ -469,7 +469,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [770, 230],
 			"typeVersion": 1,
 			"id": "4939f605-622d-4f84-8da2-6565fc63b42f"
@@ -479,7 +479,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second2",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1240, 50],
 			"typeVersion": 1,
 			"id": "e44a9ad5-a103-49da-956c-53ff4993450c"
@@ -489,7 +489,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second3",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1250, 230],
 			"typeVersion": 1,
 			"id": "75c555b9-1b6f-426a-9dab-b691918843a2"
@@ -499,7 +499,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second4",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1730, 50],
 			"typeVersion": 1,
 			"id": "523558db-379a-4eac-8ce0-03e3ce08ff6a"
@@ -509,7 +509,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second5",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1730, 230],
 			"typeVersion": 1,
 			"id": "077e1d54-864f-47f9-b248-a5b482946e13"
@@ -519,7 +519,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second6",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1150, 400],
 			"typeVersion": 1,
 			"id": "d6328f6e-5944-4f30-8911-1f691fbfbd4c"
@@ -529,7 +529,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second7",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [620, 400],
 			"typeVersion": 1,
 			"id": "feb9fe8d-176e-442e-85e5-f58a42603a35"

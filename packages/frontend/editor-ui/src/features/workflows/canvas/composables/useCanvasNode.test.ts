@@ -2,7 +2,7 @@ import { useCanvasNode } from './useCanvasNode';
 import { inject, ref } from 'vue';
 import type { CanvasNodeData, CanvasNodeInjectionData } from '../canvas.types';
 import { CanvasConnectionMode, CanvasNodeRenderType } from '../canvas.types';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 vi.mock('vue', async () => {
 	const actual = await vi.importActual('vue');

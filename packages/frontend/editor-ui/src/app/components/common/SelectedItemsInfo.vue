@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
-import { N8nButton } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nButton } from '@aura/design-system';
 interface Props {
 	selectedCount: number;
 }

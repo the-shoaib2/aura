@@ -1,72 +1,72 @@
 {
-	"node": "n8n-nodes-base.mattermost",
+	"node": "aura-nodes-base.mattermost",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/mattermost/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/mattermost/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mattermost/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.mattermost/"
 			}
 		],
 		"generic": [
 			{
-				"label": "How to host virtual coffee breaks with n8n",
+				"label": "How to host virtual coffee breaks with aura",
 				"icon": "☕️",
-				"url": "https://n8n.io/blog/how-to-host-virtual-coffee-breaks-with-n8n/"
+				"url": "https://aura.io/blog/how-to-host-virtual-coffee-breaks-with-aura/"
 			},
 			{
-				"label": "Supercharging your conference registration process with n8n",
+				"label": "Supercharging your conference registration process with aura",
 				"icon": "🎫",
-				"url": "https://n8n.io/blog/supercharging-your-conference-registration-process-with-n8n/"
+				"url": "https://aura.io/blog/supercharging-your-conference-registration-process-with-aura/"
 			},
 			{
-				"label": "Creating triggers for n8n workflows using polling",
+				"label": "Creating triggers for aura workflows using polling",
 				"icon": "⏲",
-				"url": "https://n8n.io/blog/creating-triggers-for-n8n-workflows-using-polling/"
+				"url": "https://aura.io/blog/creating-triggers-for-workflows-using-polling/"
 			},
 			{
 				"label": "5 tasks you can automate with the new Notion API ",
 				"icon": "⚡️",
-				"url": "https://n8n.io/blog/5-tasks-you-can-automate-with-notion-api/"
+				"url": "https://aura.io/blog/5-tasks-you-can-automate-with-notion-api/"
 			},
 			{
 				"label": "15 Google apps you can combine and automate to increase productivity",
 				"icon": "💡",
-				"url": "https://n8n.io/blog/automate-google-apps-for-productivity/"
+				"url": "https://aura.io/blog/automate-google-apps-for-productivity/"
 			},
 			{
-				"label": "The ultimate guide to automate your video collaboration with Whereby, Mattermost, and n8n",
+				"label": "The ultimate guide to automate your video collaboration with Whereby, Mattermost, and aura",
 				"icon": "📹",
-				"url": "https://n8n.io/blog/the-ultimate-guide-to-automate-your-video-collaboration-with-whereby-mattermost-and-n8n/"
+				"url": "https://aura.io/blog/the-ultimate-guide-to-automate-your-video-collaboration-with-whereby-mattermost-and-aura/"
 			},
 			{
-				"label": "5 workflow automations for Mattermost that we love at n8n",
+				"label": "5 workflow automations for Mattermost that we love at aura",
 				"icon": "🤖",
-				"url": "https://n8n.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-n8n/"
+				"url": "https://aura.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-aura/"
 			},
 			{
-				"label": "Creating Error Workflows in n8n",
+				"label": "Creating Error Workflows in aura",
 				"icon": "🌪",
-				"url": "https://n8n.io/blog/creating-error-workflows-in-n8n/"
+				"url": "https://aura.io/blog/creating-error-workflows-in-aura/"
 			},
 			{
 				"label": "How to automate every step of an incident response workflow",
-				"url": "https://n8n.io/blog/creating-custom-incident-response-workflows-with-n8n/"
+				"url": "https://aura.io/blog/creating-custom-incident-response-workflows-with-aura/"
 			},
 			{
 				"label": "Learn how to use webhooks with Mattermost slash commands",
 				"icon": "🦄",
-				"url": "https://n8n.io/blog/learn-how-to-use-webhooks-with-mattermost-slash-commands/"
+				"url": "https://aura.io/blog/learn-how-to-use-webhooks-with-mattermost-slash-commands/"
 			},
 			{
 				"label": "7 no-code workflow automations for Amazon Web Services",
-				"url": "https://n8n.io/blog/aws-workflow-automation/"
+				"url": "https://aura.io/blog/aws-workflow-automation/"
 			}
 		]
 	}

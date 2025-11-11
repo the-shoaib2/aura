@@ -1,5 +1,5 @@
-import { GlobalConfig } from '@n8n/config';
-import type { Project, User } from '@n8n/db';
+import { GlobalConfig } from '@aura/config';
+import type { Project, User } from '@aura/db';
 import {
 	WorkflowEntity,
 	WorkflowTagMapping,
@@ -7,10 +7,10 @@ import {
 	TagRepository,
 	SharedWorkflowRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { PROJECT_OWNER_ROLE_SLUG, type Scope, type WorkflowSharingRole } from '@n8n/permissions';
-import type { WorkflowId } from 'n8n-workflow';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { PROJECT_OWNER_ROLE_SLUG, type Scope, type WorkflowSharingRole } from '@aura/permissions';
+import type { WorkflowId } from 'workflow';
 
 import { License } from '@/license';
 import { WorkflowSharingService } from '@/workflows/workflow-sharing.service';

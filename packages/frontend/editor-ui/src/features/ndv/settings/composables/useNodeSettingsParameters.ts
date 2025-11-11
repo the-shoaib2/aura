@@ -8,7 +8,7 @@ import {
 	type NodeParameterValue,
 	NodeHelpers,
 	deepCopy,
-} from 'n8n-workflow';
+} from 'workflow';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';

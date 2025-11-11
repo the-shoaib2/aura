@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const teamOperations: INodeProperties[] = [
 	{
@@ -76,7 +76,7 @@ const workersField = {
 	},
 	default: [],
 	description:
-		'A list of workers. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+		'A list of workers. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 } as INodeProperties;
 
 const managersField = {
@@ -88,7 +88,7 @@ const managersField = {
 	},
 	default: [],
 	description:
-		'A list of managing administrators. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+		'A list of managing administrators. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 } as INodeProperties;
 
 const hubField = {
@@ -100,7 +100,7 @@ const hubField = {
 	},
 	default: '',
 	description:
-		'The team\'s hub. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+		'The team\'s hub. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 } as INodeProperties;
 
 const enableSelfAssignmentField = {

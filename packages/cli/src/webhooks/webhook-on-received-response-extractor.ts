@@ -1,4 +1,4 @@
-import type { IWebhookResponseData, WebhookResponseData } from 'n8n-workflow';
+import type { IWebhookResponseData, WebhookResponseData } from 'workflow';
 
 /**
 + * Creates the response for a webhook when the response mode is set to

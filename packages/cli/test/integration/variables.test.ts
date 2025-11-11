@@ -1,6 +1,6 @@
-import { createTeamProject, linkUserToProject, testDb } from '@n8n/backend-test-utils';
-import type { Project, Variables } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createTeamProject, linkUserToProject, testDb } from '@aura/backend-test-utils';
+import type { Project, Variables } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { CacheService } from '@/services/cache/cache.service';
 import {

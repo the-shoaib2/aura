@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { GOOGLE_DRIVE_FILE_URL_REGEX, GOOGLE_DRIVE_FOLDER_URL_REGEX } from '../../../constants';
 import { DRIVE, RLC_DRIVE_DEFAULT } from '../helpers/interfaces';
@@ -307,7 +307,7 @@ export const shareOptions: INodeProperties = {
 			name: 'moveToNewOwnersRoot',
 			type: 'boolean',
 			default: false,
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+			// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 			description:
 				"<p>This parameter only takes effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item.</p><p>When set to true, the item is moved to the new owner's My Drive root folder and all prior parents removed.</p>",
 		},

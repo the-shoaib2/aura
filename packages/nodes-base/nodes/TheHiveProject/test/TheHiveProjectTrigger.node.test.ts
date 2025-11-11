@@ -17,7 +17,7 @@ describe('TheHiveProjectTrigger', () => {
 					tags: ['malware', 'test'],
 					tlp: 2,
 					pap: 2,
-					source: 'n8n-test',
+					source: 'aura-test',
 					sourceRef: 'test-ref-001',
 					follow: true,
 					customFields: {},

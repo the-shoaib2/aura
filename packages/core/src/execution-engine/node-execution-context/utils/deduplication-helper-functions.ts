@@ -9,7 +9,7 @@ import type {
 	DeduplicationScope,
 	DeduplicationItemTypes,
 	ICheckProcessedContextData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DataDeduplicationService } from '@/data-deduplication-service';
 

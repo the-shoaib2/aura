@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import type { ApiKey } from '@n8n/api-types';
+import { useI18n } from '@aura/i18n';
+import type { ApiKey } from '@aura/api-types';
 import { DateTime } from 'luxon';
 
-import { N8nActionToggle, N8nCard, N8nText } from '@n8n/design-system';
+import { N8nActionToggle, N8nCard, N8nText } from '@aura/design-system';
 const API_KEY_ITEM_ACTIONS = {
 	EDIT: 'edit',
 	DELETE: 'delete',

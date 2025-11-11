@@ -2,9 +2,9 @@
 import { computed } from 'vue';
 import type { XYPosition } from '@/Interface';
 import { useNodeCreatorStore } from '@/features/shared/nodeCreator/nodeCreator.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 export interface Props {
 	showTooltip: boolean;
 	position: XYPosition;

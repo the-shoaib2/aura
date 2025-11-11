@@ -6,7 +6,7 @@ import {
 	type IDataObject,
 	type IHttpRequestOptions,
 	type IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 import { parseString } from 'xml2js';
 import type { Request } from 'aws4';
 import {
@@ -73,7 +73,7 @@ export function parseAwsUrl(url: URL): { region: AWSRegion | null; service: stri
 export const awsCredentialsTest: ICredentialTestRequest = {
 	request: {
 		baseURL:
-			// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+			// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 			'={{$credentials.region.startsWith("cn-") ? `https://sts.${$credentials.region}.amazonaws.com.cn` : `https://sts.${$credentials.region}.amazonaws.com`}}',
 		url: '?Action=GetCallerIdentity&Version=2011-06-15',
 		method: 'POST',
@@ -286,7 +286,7 @@ export async function assumeRole(
 
 	const assumeRoleBody = {
 		RoleArn: credentials.roleArn,
-		RoleSessionName: credentials.roleSessionName || 'n8n-session',
+		RoleSessionName: credentials.roleSessionName || 'aura-session',
 		...(credentials.externalId && { ExternalId: credentials.externalId }),
 	};
 

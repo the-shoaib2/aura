@@ -1,16 +1,16 @@
 import CredentialConfig from './CredentialConfig.vue';
 import { screen } from '@testing-library/vue';
-import type { ICredentialDataDecryptedObject, ICredentialType } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject, ICredentialType } from 'workflow';
 import { createTestingPinia } from '@pinia/testing';
 import type { RenderOptions } from '@/__tests__/render';
 import { createComponentRenderer } from '@/__tests__/render';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { vi } from 'vitest';
 import { useCredentialsStore } from '../../credentials.store';
-import { addCredentialTranslation } from '@n8n/i18n';
+import { addCredentialTranslation } from '@aura/i18n';
 
-vi.mock('@n8n/i18n', async () => {
-	const actual = await vi.importActual('@n8n/i18n');
+vi.mock('@aura/i18n', async () => {
+	const actual = await vi.importActual('@aura/i18n');
 	return {
 		...actual,
 		addCredentialTranslation: vi.fn(),

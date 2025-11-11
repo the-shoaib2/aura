@@ -29,15 +29,15 @@ import {
 	type WorkflowState,
 } from '@/app/composables/useWorkflowState';
 import type { Telemetry } from '@/app/plugins/telemetry';
-import type { ChatUI } from '@n8n/design-system/types/assistant';
-import { type INodeTypeDescription } from 'n8n-workflow';
+import type { ChatUI } from '@aura/design-system/types/assistant';
+import { type INodeTypeDescription } from 'workflow';
 import { mockedStore } from '@/__tests__/utils';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
 
 // Mock useI18n to return the keys instead of translations
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@aura/i18n', () => ({
 	useI18n: () => ({
 		baseText: (key: string) => key,
 	}),
@@ -851,7 +851,7 @@ describe('AI Builder store', () => {
 					{
 						id: 'node1',
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						position: [250, 300],
 						parameters: {},
 					},
@@ -888,7 +888,7 @@ describe('AI Builder store', () => {
 					{
 						id: 'node1',
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						position: [250, 300],
 						parameters: {},
 					},
@@ -922,7 +922,7 @@ describe('AI Builder store', () => {
 					{
 						id: 'node1',
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						position: [250, 300],
 						parameters: {},
 					},
@@ -955,7 +955,7 @@ describe('AI Builder store', () => {
 					{
 						id: 'node1',
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						position: [250, 300],
 						parameters: {},
 					},
@@ -989,7 +989,7 @@ describe('AI Builder store', () => {
 					{
 						id: 'node1',
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						position: [250, 300],
 						parameters: {},
 					},
@@ -1055,7 +1055,7 @@ describe('AI Builder store', () => {
 					{
 						id: 'node2',
 						name: 'HTTP',
-						type: 'n8n-nodes-base.httpRequest',
+						type: 'aura-nodes-base.httpRequest',
 						position: [450, 300],
 						parameters: {},
 					},
@@ -1072,7 +1072,7 @@ describe('AI Builder store', () => {
 		describe('applyWorkflowUpdate credential defaults', () => {
 			const createTestNodeType = (): INodeTypeDescription => ({
 				displayName: 'Test Node',
-				name: 'n8n-nodes-base.test',
+				name: 'aura-nodes-base.test',
 				description: 'Test node',
 				group: ['trigger'],
 				version: 1,
@@ -1119,7 +1119,7 @@ describe('AI Builder store', () => {
 						{
 							id: 'node1',
 							name: 'HTTP Request',
-							type: 'n8n-nodes-base.test',
+							type: 'aura-nodes-base.test',
 							position: [0, 0],
 							parameters: {},
 						},
@@ -1148,7 +1148,7 @@ describe('AI Builder store', () => {
 						{
 							id: 'node1',
 							name: 'HTTP Request',
-							type: 'n8n-nodes-base.test',
+							type: 'aura-nodes-base.test',
 							position: [0, 0],
 							parameters: { authentication: 'apiKey' },
 							credentials: {

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "a355b2f8-5354-4e3f-9409-c29de450e49c"
@@ -20,7 +20,7 @@
 				"fields": "id,name,valid"
 			},
 			"name": "MongoDB",
-			"type": "n8n-nodes-base.mongoDb",
+			"type": "aura-nodes-base.mongoDb",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"notesInFlow": true,
@@ -68,7 +68,7 @@
 				"collection": "TestCollection"
 			},
 			"name": "MongoDB1",
-			"type": "n8n-nodes-base.mongoDb",
+			"type": "aura-nodes-base.mongoDb",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -86,7 +86,7 @@
 				"fields": "name"
 			},
 			"name": "MongoDB2",
-			"type": "n8n-nodes-base.mongoDb",
+			"type": "aura-nodes-base.mongoDb",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -103,7 +103,7 @@
 				"collection": "TestCollection"
 			},
 			"name": "MongoDB3",
-			"type": "n8n-nodes-base.mongoDb",
+			"type": "aura-nodes-base.mongoDb",
 			"typeVersion": 1,
 			"position": [1200, 300],
 			"credentials": {
@@ -127,7 +127,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"notesInFlow": true,

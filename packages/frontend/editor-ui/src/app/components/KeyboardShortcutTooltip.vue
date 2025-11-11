@@ -2,7 +2,7 @@
 import type { KeyboardShortcut } from '@/Interface';
 import type { Placement } from 'element-plus';
 
-import { N8nKeyboardShortcut, N8nTooltip } from '@n8n/design-system';
+import { N8nKeyboardShortcut, N8nTooltip } from '@aura/design-system';
 interface Props {
 	label: string;
 	shortcut?: KeyboardShortcut;

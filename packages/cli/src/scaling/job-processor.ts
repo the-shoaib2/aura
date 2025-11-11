@@ -1,17 +1,17 @@
-import type { RunningJobSummary } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { ExecutionsConfig } from '@n8n/config';
-import { ExecutionRepository, WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { WorkflowHasIssuesError, InstanceSettings, WorkflowExecute } from 'n8n-core';
+import type { RunningJobSummary } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { ExecutionsConfig } from '@aura/config';
+import { ExecutionRepository, WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { WorkflowHasIssuesError, InstanceSettings, WorkflowExecute } from 'aura-core';
 import type {
 	ExecutionStatus,
 	IExecuteResponsePromiseData,
 	IRun,
 	IWorkflowExecutionDataProcess,
 	StructuredChunk,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, Workflow, UnexpectedError } from 'n8n-workflow';
+} from 'workflow';
+import { BINARY_ENCODING, Workflow, UnexpectedError } from 'workflow';
 import type PCancelable from 'p-cancelable';
 
 import type {
@@ -65,7 +65,7 @@ export class JobProcessor {
 		}
 
 		/**
-		 * Bull's implicit retry mechanism and n8n's execution recovery mechanism may
+		 * Bull's implicit retry mechanism and aura's execution recovery mechanism may
 		 * cause a crashed execution to be enqueued. We refrain from processing it,
 		 * until we have reworked both mechanisms to prevent this scenario.
 		 */

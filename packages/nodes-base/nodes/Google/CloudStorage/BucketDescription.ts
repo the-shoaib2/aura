@@ -4,7 +4,7 @@ import type {
 	IHttpRequestOptions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 // Projection field controls the page limit maximum
 // When not returning all, return the max number for the current projection parameter

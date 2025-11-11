@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.git",
+	"node": "aura-nodes-base.git",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Core Nodes", "Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/git/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/git/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.git/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.git/"
 			}
 		]
 	},

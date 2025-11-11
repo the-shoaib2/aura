@@ -3,13 +3,13 @@ import { computed, useCssModule } from 'vue';
 import TitledList from '@/app/components/TitledList.vue';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useCanvasNode } from '../../../../../composables/useCanvasNode';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { CanvasNodeDirtiness, CanvasNodeRenderType } from '../../../../../canvas.types';
 import { useCanvas } from '@/features/workflows/canvas/composables/useCanvas';
 import { useRoute } from 'vue-router';
 import { VIEWS } from '@/app/constants';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 const {
 	size = 'large',
 	spinnerScrim = false,

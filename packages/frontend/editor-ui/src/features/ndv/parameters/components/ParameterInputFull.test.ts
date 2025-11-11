@@ -4,7 +4,7 @@ import { createTestingPinia } from '@pinia/testing';
 import type { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import type { useSettingsStore } from '@/app/stores/settings.store';
 import ParameterInputFull from './ParameterInputFull.vue';
-import { FROM_AI_AUTO_GENERATED_MARKER } from 'n8n-workflow';
+import { FROM_AI_AUTO_GENERATED_MARKER } from 'workflow';
 import { fireEvent } from '@testing-library/vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import { createTestNodeProperties } from '@/__tests__/mocks';

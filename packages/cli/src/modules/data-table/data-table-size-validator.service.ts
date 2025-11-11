@@ -1,6 +1,6 @@
-import { GlobalConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
-import { DataTableSizeStatus, DataTablesSizeData } from 'n8n-workflow';
+import { GlobalConfig } from '@aura/config';
+import { Service } from '@aura/di';
+import { DataTableSizeStatus, DataTablesSizeData } from 'workflow';
 
 import { Telemetry } from '@/telemetry';
 

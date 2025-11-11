@@ -1,13 +1,13 @@
-import { testDb } from '@n8n/backend-test-utils';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { ApiKeyRepository, GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { getOwnerOnlyApiKeyScopes, type ApiKeyScope } from '@n8n/permissions';
+import { testDb } from '@aura/backend-test-utils';
+import type { AuthenticatedRequest } from '@aura/db';
+import { ApiKeyRepository, GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { getOwnerOnlyApiKeyScopes, type ApiKeyScope } from '@aura/permissions';
 import type { Response, NextFunction } from 'express';
 import { mock, mockDeep } from 'jest-mock-extended';
 import { DateTime } from 'luxon';
-import type { InstanceSettings } from 'n8n-core';
-import { randomString } from 'n8n-workflow';
+import type { InstanceSettings } from 'aura-core';
+import { randomString } from 'workflow';
 import type { OpenAPIV3 } from 'openapi-types';
 
 import type { EventService } from '@/events/event.service';
@@ -23,7 +23,7 @@ const mockReqWith = (apiKey: string, path: string, method: string) => {
 		path,
 		method,
 		headers: {
-			'x-n8n-api-key': apiKey,
+			'x-aura-api-key': apiKey,
 		},
 	});
 };
@@ -170,7 +170,7 @@ describe('PublicApiKeyService', () => {
 			const path = '/test';
 			const method = 'GET';
 			const apiVersion = 'v1';
-			const legacyApiKey = `n8n_api_${randomString(10)}`;
+			const legacyApiKey = `aura_api_${randomString(10)}`;
 
 			const owner = await createOwnerWithApiKey();
 
@@ -379,7 +379,7 @@ describe('PublicApiKeyService', () => {
 			expect(res.json).toHaveBeenCalledWith({ message: 'Forbidden' });
 		});
 
-		it('should deny access when header x-n8n-api-key is not present', async () => {
+		it('should deny access when header x-aura-api-key is not present', async () => {
 			// Arrange
 
 			const requiredScope = 'workflow:read' as ApiKeyScope;

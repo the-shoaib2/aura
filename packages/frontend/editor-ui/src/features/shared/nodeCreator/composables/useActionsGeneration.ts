@@ -14,9 +14,9 @@ import type {
 	INodePropertyCollection,
 	INodePropertyOptions,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 
 import { getCredentialOnlyNodeType } from '@/app/utils/credentialOnlyNodes';
 import { formatTriggerActionName } from '../nodeCreator.utils';
@@ -39,7 +39,7 @@ const customNodeActionsParsers: {
 		nodeTypeDescription: INodeTypeDescription,
 	) => ActionTypeDescription[] | undefined;
 } = {
-	['n8n-nodes-base.hubspotTrigger']: (matchedProperty, nodeTypeDescription) => {
+	['aura-nodes-base.hubspotTrigger']: (matchedProperty, nodeTypeDescription) => {
 		const collection = matchedProperty?.options?.[0] as INodePropertyCollection;
 
 		return (collection?.values[0]?.options as INodePropertyOptions[])?.map(
@@ -55,7 +55,7 @@ const customNodeActionsParsers: {
 			}),
 		);
 	},
-	['n8n-nodes-base.code']: (matchedProperty, nodeTypeDescription) => {
+	['aura-nodes-base.code']: (matchedProperty, nodeTypeDescription) => {
 		if (matchedProperty.name !== 'language') return;
 
 		const languageOptions = matchedProperty.options as INodePropertyOptions[] | undefined;
@@ -99,7 +99,7 @@ function getNodeTypeBase(nodeTypeDescription: INodeTypeDescription, label?: stri
 function operationsCategory(nodeTypeDescription: INodeTypeDescription): ActionTypeDescription[] {
 	if (nodeTypeDescription.properties.find((property) => property.name === 'resource')) return [];
 
-	if (nodeTypeDescription.name === 'n8n-nodes-base.code') {
+	if (nodeTypeDescription.name === 'aura-nodes-base.code') {
 		const languageProperty = nodeTypeDescription.properties.find(
 			(property) =>
 				property.name === 'language' && property.displayOptions?.show?.['@version']?.[0] === 2,
@@ -379,8 +379,8 @@ export function useActionsGenerator() {
 				return true;
 			}
 			return (
-				node.name !== 'n8n-nodes-base.evaluation' &&
-				node.name !== 'n8n-nodes-base.evaluationTrigger'
+				node.name !== 'aura-nodes-base.evaluation' &&
+				node.name !== 'aura-nodes-base.evaluationTrigger'
 			);
 		});
 

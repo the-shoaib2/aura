@@ -1,5 +1,5 @@
-import { Logger, safeJoinPath } from '@n8n/backend-common';
-import type { TagEntity, ICredentialsDb, IWorkflowDb } from '@n8n/db';
+import { Logger, safeJoinPath } from '@aura/backend-common';
+import type { TagEntity, ICredentialsDb, IWorkflowDb } from '@aura/db';
 import {
 	Project,
 	WorkflowEntity,
@@ -7,22 +7,22 @@ import {
 	WorkflowTagMapping,
 	CredentialsRepository,
 	TagRepository,
-} from '@n8n/db';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { DataSource, EntityManager } from '@n8n/typeorm';
-import { Service } from '@n8n/di';
-import { type INode, type INodeCredentialsDetails, type IWorkflowBase } from 'n8n-workflow';
+} from '@aura/db';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { DataSource, EntityManager } from '@aura/typeorm';
+import { Service } from '@aura/di';
+import { type INode, type INodeCredentialsDetails, type IWorkflowBase } from 'workflow';
 import { v4 as uuid } from 'uuid';
 import { readdir, readFile } from 'fs/promises';
 
 import { replaceInvalidCredentials } from '@/workflow-helpers';
 import { validateDbTypeForImportEntities } from '@/utils/validate-database-type';
-import { Cipher } from 'n8n-core';
+import { Cipher } from 'aura-core';
 import { decompressFolder } from '@/utils/compression.util';
 import { z } from 'zod';
 import { ActiveWorkflowManager } from '@/active-workflow-manager';
 import { WorkflowIndexService } from '@/modules/workflow-index/workflow-index.service';
-import { DatabaseConfig } from '@n8n/config';
+import { DatabaseConfig } from '@aura/config';
 
 @Service()
 export class ImportService {

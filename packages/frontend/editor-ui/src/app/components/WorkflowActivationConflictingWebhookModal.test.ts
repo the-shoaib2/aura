@@ -7,7 +7,7 @@ import {
 } from '@/app/constants';
 
 import { waitFor } from '@testing-library/vue';
-import { CHAT_TRIGGER_NODE_TYPE, FORM_TRIGGER_NODE_TYPE, WEBHOOK_NODE_TYPE } from 'n8n-workflow';
+import { CHAT_TRIGGER_NODE_TYPE, FORM_TRIGGER_NODE_TYPE, WEBHOOK_NODE_TYPE } from 'workflow';
 
 vi.mock('@/app/stores/ui.store', () => {
 	return {
@@ -16,7 +16,7 @@ vi.mock('@/app/stores/ui.store', () => {
 		})),
 	};
 });
-vi.mock('@n8n/stores/useRootStore', () => {
+vi.mock('@aura/stores/useRootStore', () => {
 	return {
 		useRootStore: vi.fn(() => ({
 			webhookUrl: 'http://webhook-base',

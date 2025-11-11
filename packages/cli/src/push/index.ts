@@ -1,13 +1,13 @@
-import type { PushMessage } from '@n8n/api-types';
-import { inProduction, Logger } from '@n8n/backend-common';
-import type { User } from '@n8n/db';
-import { OnPubSubEvent, OnShutdown } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import type { PushMessage } from '@aura/api-types';
+import { inProduction, Logger } from '@aura/backend-common';
+import type { User } from '@aura/db';
+import { OnPubSubEvent, OnShutdown } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import type { Application } from 'express';
 import { ServerResponse } from 'http';
 import type { Server } from 'http';
 import pick from 'lodash/pick';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 import { parse as parseUrl } from 'url';
 import { Server as WSServer } from 'ws';
 
@@ -221,7 +221,7 @@ export class Push extends TypedEmitter<PushEvents> {
 	}
 
 	/**
-	 * Relay a push message via the `n8n.commands` pubsub channel,
+	 * Relay a push message via the `aura.commands` pubsub channel,
 	 * reducing the payload size if too large.
 	 *
 	 * See {@link shouldRelayViaPubSub} for more details.

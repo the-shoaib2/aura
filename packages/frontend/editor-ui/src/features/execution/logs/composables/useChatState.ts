@@ -1,23 +1,23 @@
 import type { RunWorkflowChatPayload } from '@/features/execution/logs/composables/useChatMessaging';
 import { useChatMessaging } from '@/features/execution/logs/composables/useChatMessaging';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import { PLACEHOLDER_EMPTY_WORKFLOW_ID, VIEWS } from '@/app/constants';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { ChatOptionsSymbol } from '@n8n/chat/constants';
-import { chatEventBus } from '@n8n/chat/event-buses';
-import type { Chat, ChatMessage, ChatOptions } from '@n8n/chat/types';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { ChatOptionsSymbol } from '@aura/chat/constants';
+import { chatEventBus } from '@aura/chat/event-buses';
+import type { Chat, ChatMessage, ChatOptions } from '@aura/chat/types';
 import { v4 as uuid } from 'uuid';
 import type { InjectionKey, Ref } from 'vue';
 import { computed, provide, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useLogsStore } from '@/app/stores/logs.store';
 import { restoreChatHistory } from '@/features/execution/logs/logs.utils';
-import type { INodeParameters } from 'n8n-workflow';
+import type { INodeParameters } from 'workflow';
 import { isChatNode } from '@/app/utils/aiUtils';
-import { constructChatWebsocketUrl } from '@n8n/chat/utils';
+import { constructChatWebsocketUrl } from '@aura/chat/utils';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 
 type IntegratedChat = Omit<Chat, 'sendMessage'> & {
@@ -181,11 +181,11 @@ export function useChatState(isReadOnly: boolean): ChatState {
 
 				ws.value = new WebSocket(wsUrl);
 				ws.value.onmessage = (event) => {
-					if (event.data === 'n8n|heartbeat') {
-						ws.value?.send('n8n|heartbeat-ack');
+					if (event.data === 'aura|heartbeat') {
+						ws.value?.send('aura|heartbeat-ack');
 						return;
 					}
-					if (event.data === 'n8n|continue') {
+					if (event.data === 'aura|continue') {
 						setLoadingState(true);
 						return;
 					}

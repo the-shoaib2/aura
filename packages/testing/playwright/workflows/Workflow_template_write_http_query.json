@@ -11,7 +11,7 @@
 			"nodes": [
 				{
 					"name": "Webhook",
-					"type": "n8n-nodes-base.webhook",
+					"type": "aura-nodes-base.webhook",
 					"position": [700, 350],
 					"parameters": {
 						"path": "test",
@@ -22,7 +22,7 @@
 				},
 				{
 					"name": "Edit Image",
-					"type": "n8n-nodes-base.editImage",
+					"type": "aura-nodes-base.editImage",
 					"position": [1100, 350],
 					"parameters": {
 						"text": "=They found the killer it was {{$node[\"Webhook\"].data[\"query\"][\"name\"]}}!",
@@ -36,7 +36,7 @@
 				},
 				{
 					"name": "Read File URL",
-					"type": "n8n-nodes-base.httpRequest",
+					"type": "aura-nodes-base.httpRequest",
 					"position": [900, 350],
 					"parameters": {
 						"url": "https://www.needpix.com/file_download.php?url=//storage.needpix.com/thumbs/newspaper-412809_1280.jpg",
@@ -74,13 +74,13 @@
 		"workflowInfo": {
 			"nodeCount": 3,
 			"nodeTypes": {
-				"n8n-nodes-base.webhook": {
+				"aura-nodes-base.webhook": {
 					"count": 1
 				},
-				"n8n-nodes-base.editImage": {
+				"aura-nodes-base.editImage": {
 					"count": 1
 				},
-				"n8n-nodes-base.httpRequest": {
+				"aura-nodes-base.httpRequest": {
 					"count": 1
 				}
 			}
@@ -92,7 +92,7 @@
 			{
 				"id": 9,
 				"icon": "fa:image",
-				"name": "n8n-nodes-base.editImage",
+				"name": "aura-nodes-base.editImage",
 				"defaults": {
 					"name": "Edit Image",
 					"color": "#553399"
@@ -117,7 +117,7 @@
 			{
 				"id": 19,
 				"icon": "file:httprequest.svg",
-				"name": "n8n-nodes-base.httpRequest",
+				"name": "aura-nodes-base.httpRequest",
 				"defaults": {
 					"name": "HTTP Request",
 					"color": "#0004F5"
@@ -142,7 +142,7 @@
 			{
 				"id": 47,
 				"icon": "file:webhook.svg",
-				"name": "n8n-nodes-base.webhook",
+				"name": "aura-nodes-base.webhook",
 				"defaults": {
 					"name": "Webhook"
 				},

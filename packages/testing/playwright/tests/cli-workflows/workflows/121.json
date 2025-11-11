@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "32f14cad-d9c6-4b95-ab68-d4826d48fabf"
@@ -21,7 +21,7 @@
 				"additionalFields": {}
 			},
 			"name": "Mautic",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [550, 250],
 			"credentials": {
@@ -43,7 +43,7 @@
 				}
 			},
 			"name": "Mautic1",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [700, 250],
 			"credentials": {
@@ -62,7 +62,7 @@
 				"companyId": "={{$node[\"Mautic\"].json[\"id\"]}}"
 			},
 			"name": "Mautic2",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1300, 250],
 			"credentials": {
@@ -82,7 +82,7 @@
 				"additionalFields": {}
 			},
 			"name": "Mautic3",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1450, 250],
 			"credentials": {
@@ -101,7 +101,7 @@
 				"companyId": "={{$node[\"Mautic\"].json[\"id\"]}}"
 			},
 			"name": "Mautic4",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1600, 250],
 			"credentials": {
@@ -124,7 +124,7 @@
 				"options": {}
 			},
 			"name": "Mautic5",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [550, 400],
 			"credentials": {
@@ -146,7 +146,7 @@
 				"options": {}
 			},
 			"name": "Mautic6",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [700, 400],
 			"credentials": {
@@ -165,7 +165,7 @@
 				"options": {}
 			},
 			"name": "Mautic7",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1300, 400],
 			"credentials": {
@@ -184,7 +184,7 @@
 				"options": {}
 			},
 			"name": "Mautic8",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1450, 400],
 			"credentials": {
@@ -203,7 +203,7 @@
 				"options": {}
 			},
 			"name": "Mautic9",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1600, 400],
 			"credentials": {
@@ -223,7 +223,7 @@
 				"companyId": "={{$node[\"Mautic\"].json[\"id\"]}}"
 			},
 			"name": "Mautic10",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1000, 340],
 			"credentials": {
@@ -243,7 +243,7 @@
 				"companyId": "={{$node[\"Mautic\"].json[\"id\"]}}"
 			},
 			"name": "Mautic11",
-			"type": "n8n-nodes-base.mautic",
+			"type": "aura-nodes-base.mautic",
 			"typeVersion": 1,
 			"position": [1150, 340],
 			"credentials": {
@@ -259,7 +259,7 @@
 				"mode": "wait"
 			},
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [850, 340],
 			"notesInFlow": true,

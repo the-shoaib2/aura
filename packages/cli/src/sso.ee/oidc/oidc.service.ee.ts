@@ -1,6 +1,6 @@
-import { OidcConfigDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
+import { OidcConfigDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
 import {
 	AuthIdentity,
 	AuthIdentityRepository,
@@ -9,12 +9,12 @@ import {
 	SettingsRepository,
 	type User,
 	UserRepository,
-} from '@n8n/db';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+} from '@aura/db';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import { randomUUID } from 'crypto';
-import { Cipher, InstanceSettings } from 'n8n-core';
-import { jsonParse, UserError } from 'n8n-workflow';
+import { Cipher, InstanceSettings } from 'aura-core';
+import { jsonParse, UserError } from 'workflow';
 import * as client from 'openid-client';
 import { EnvHttpProxyAgent } from 'undici';
 
@@ -51,7 +51,7 @@ type OidcRuntimeConfig = Pick<
 
 const DEFAULT_OIDC_RUNTIME_CONFIG: OidcRuntimeConfig = {
 	...DEFAULT_OIDC_CONFIG,
-	discoveryEndpoint: new URL('http://n8n.io/not-set'),
+	discoveryEndpoint: new URL('http://aura.io/not-set'),
 };
 
 @Service()
@@ -90,7 +90,7 @@ export class OidcService {
 	}
 
 	generateState() {
-		const state = `n8n_state:${randomUUID()}`;
+		const state = `aura_state:${randomUUID()}`;
 		return {
 			signed: this.jwtService.sign({ state }, { expiresIn: '15m' }),
 			plaintext: state,
@@ -114,7 +114,7 @@ export class OidcService {
 
 		const splitState = state.split(':');
 
-		if (splitState.length !== 2 || splitState[0] !== 'n8n_state') {
+		if (splitState.length !== 2 || splitState[0] !== 'aura_state') {
 			this.logger.error('Provided state is missing the well-known prefix');
 			throw new BadRequestError('Invalid state');
 		}
@@ -131,7 +131,7 @@ export class OidcService {
 	}
 
 	generateNonce() {
-		const nonce = `n8n_nonce:${randomUUID()}`;
+		const nonce = `aura_nonce:${randomUUID()}`;
 		return {
 			signed: this.jwtService.sign({ nonce }, { expiresIn: '15m' }),
 			plaintext: nonce,
@@ -155,7 +155,7 @@ export class OidcService {
 
 		const splitNonce = nonce.split(':');
 
-		if (splitNonce.length !== 2 || splitNonce[0] !== 'n8n_nonce') {
+		if (splitNonce.length !== 2 || splitNonce[0] !== 'aura_nonce') {
 			this.logger.error('Provided nonce is missing the well-known prefix');
 			throw new BadRequestError('Invalid nonce');
 		}
@@ -184,7 +184,7 @@ export class OidcService {
 			provisioningConfig.scopesProvisionInstanceRole ||
 			provisioningConfig.scopesProvisionProjectRoles;
 
-		// Include the custom n8n scope if provisioning is enabled
+		// Include the custom aura scope if provisioning is enabled
 		const scope = provisioningEnabled
 			? `openid email profile ${provisioningConfig.scopesName}`
 			: 'openid email profile';

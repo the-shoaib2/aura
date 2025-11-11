@@ -17,86 +17,86 @@ const { email, password, mfaSecret, mfaRecoveryCodes } = INSTANCE_OWNER_CREDENTI
 const RECOVERY_CODE = mfaRecoveryCodes![0];
 
 test.describe('Two-factor authentication @auth:none @db:reset', () => {
-	test('Should be able to login with MFA code', async ({ n8n }) => {
-		await n8n.mfaComposer.enableMfa(email, password, mfaSecret!);
-		await n8n.sideBar.signOutFromWorkflows();
+	test('Should be able to login with MFA code', async ({ aura }) => {
+		await aura.mfaComposer.enableMfa(email, password, mfaSecret!);
+		await aura.sideBar.signOutFromWorkflows();
 
-		await n8n.mfaComposer.loginWithMfaCode(email, password, mfaSecret!);
+		await aura.mfaComposer.loginWithMfaCode(email, password, mfaSecret!);
 
-		await expect(n8n.page).toHaveURL(/workflows/);
+		await expect(aura.page).toHaveURL(/workflows/);
 	});
 
-	test('Should be able to login with MFA recovery code', async ({ n8n }) => {
-		await n8n.mfaComposer.enableMfa(email, password, mfaSecret!);
-		await n8n.sideBar.signOutFromWorkflows();
+	test('Should be able to login with MFA recovery code', async ({ aura }) => {
+		await aura.mfaComposer.enableMfa(email, password, mfaSecret!);
+		await aura.sideBar.signOutFromWorkflows();
 
-		await n8n.mfaComposer.loginWithMfaRecoveryCode(email, password, RECOVERY_CODE);
+		await aura.mfaComposer.loginWithMfaRecoveryCode(email, password, RECOVERY_CODE);
 
-		await expect(n8n.page).toHaveURL(/workflows/);
+		await expect(aura.page).toHaveURL(/workflows/);
 	});
 
-	test('Should be able to disable MFA in account with MFA code', async ({ n8n }) => {
-		await n8n.mfaComposer.enableMfa(email, password, mfaSecret!);
-		await n8n.sideBar.signOutFromWorkflows();
+	test('Should be able to disable MFA in account with MFA code', async ({ aura }) => {
+		await aura.mfaComposer.enableMfa(email, password, mfaSecret!);
+		await aura.sideBar.signOutFromWorkflows();
 
-		await n8n.mfaComposer.loginWithMfaCode(email, password, mfaSecret!);
+		await aura.mfaComposer.loginWithMfaCode(email, password, mfaSecret!);
 
 		const disableToken = authenticator.generate(mfaSecret!);
-		await n8n.settingsPersonal.triggerDisableMfa();
-		await n8n.settingsPersonal.fillMfaCodeAndSave(disableToken);
+		await aura.settingsPersonal.triggerDisableMfa();
+		await aura.settingsPersonal.fillMfaCodeAndSave(disableToken);
 
-		await expect(n8n.settingsPersonal.getEnableMfaButton()).toBeVisible();
+		await expect(aura.settingsPersonal.getEnableMfaButton()).toBeVisible();
 	});
 
-	test('Should prompt for MFA code when email changes', async ({ n8n }) => {
-		await n8n.mfaComposer.enableMfa(email, password, mfaSecret!);
+	test('Should prompt for MFA code when email changes', async ({ aura }) => {
+		await aura.mfaComposer.enableMfa(email, password, mfaSecret!);
 
-		await n8n.settingsPersonal.goToPersonalSettings();
-		await n8n.settingsPersonal.fillEmail(TEST_DATA.NEW_EMAIL);
-		await n8n.settingsPersonal.pressEnterOnEmail();
+		await aura.settingsPersonal.goToPersonalSettings();
+		await aura.settingsPersonal.fillEmail(TEST_DATA.NEW_EMAIL);
+		await aura.settingsPersonal.pressEnterOnEmail();
 
 		const mfaCode = authenticator.generate(mfaSecret!);
-		await n8n.settingsPersonal.fillMfaCodeAndSave(mfaCode);
+		await aura.settingsPersonal.fillMfaCodeAndSave(mfaCode);
 
 		await expect(
-			n8n.notifications.getNotificationByTitleOrContent(NOTIFICATIONS.PERSONAL_DETAILS_UPDATED),
+			aura.notifications.getNotificationByTitleOrContent(NOTIFICATIONS.PERSONAL_DETAILS_UPDATED),
 		).toBeVisible();
 	});
 
-	test('Should prompt for MFA recovery code when email changes', async ({ n8n }) => {
-		await n8n.mfaComposer.enableMfa(email, password, mfaSecret!);
+	test('Should prompt for MFA recovery code when email changes', async ({ aura }) => {
+		await aura.mfaComposer.enableMfa(email, password, mfaSecret!);
 
-		await n8n.settingsPersonal.goToPersonalSettings();
-		await n8n.settingsPersonal.fillEmail(TEST_DATA.NEW_EMAIL);
-		await n8n.settingsPersonal.pressEnterOnEmail();
+		await aura.settingsPersonal.goToPersonalSettings();
+		await aura.settingsPersonal.fillEmail(TEST_DATA.NEW_EMAIL);
+		await aura.settingsPersonal.pressEnterOnEmail();
 
-		await expect(n8n.settingsPersonal.getMfaCodeOrRecoveryCodeInput()).toBeVisible();
+		await expect(aura.settingsPersonal.getMfaCodeOrRecoveryCodeInput()).toBeVisible();
 	});
 
 	test('Should not prompt for MFA code or recovery code when first name or last name changes', async ({
-		n8n,
+		aura,
 	}) => {
-		await n8n.mfaComposer.enableMfa(email, password, mfaSecret!);
+		await aura.mfaComposer.enableMfa(email, password, mfaSecret!);
 
-		await n8n.settingsPersonal.updateFirstAndLastName(
+		await aura.settingsPersonal.updateFirstAndLastName(
 			TEST_DATA.NEW_FIRST_NAME,
 			TEST_DATA.NEW_LAST_NAME,
 		);
 
 		await expect(
-			n8n.notifications.getNotificationByTitleOrContent(NOTIFICATIONS.PERSONAL_DETAILS_UPDATED),
+			aura.notifications.getNotificationByTitleOrContent(NOTIFICATIONS.PERSONAL_DETAILS_UPDATED),
 		).toBeVisible();
 	});
 
-	test('Should be able to disable MFA in account with recovery code', async ({ n8n }) => {
-		await n8n.mfaComposer.enableMfa(email, password, mfaSecret!);
-		await n8n.sideBar.signOutFromWorkflows();
+	test('Should be able to disable MFA in account with recovery code', async ({ aura }) => {
+		await aura.mfaComposer.enableMfa(email, password, mfaSecret!);
+		await aura.sideBar.signOutFromWorkflows();
 
-		await n8n.mfaComposer.loginWithMfaCode(email, password, mfaSecret!);
+		await aura.mfaComposer.loginWithMfaCode(email, password, mfaSecret!);
 
-		await n8n.settingsPersonal.triggerDisableMfa();
-		await n8n.settingsPersonal.fillMfaCodeAndSave(RECOVERY_CODE);
+		await aura.settingsPersonal.triggerDisableMfa();
+		await aura.settingsPersonal.fillMfaCodeAndSave(RECOVERY_CODE);
 
-		await expect(n8n.settingsPersonal.getEnableMfaButton()).toBeVisible();
+		await expect(aura.settingsPersonal.getEnableMfaButton()).toBeVisible();
 	});
 });

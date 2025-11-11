@@ -13,7 +13,7 @@ import {
 	type SchemaNode,
 } from '@/app/composables/useDataSchema';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
@@ -27,7 +27,7 @@ import {
 	NodeConnectionTypes,
 	type IConnectedNode,
 	type IDataObject,
-} from 'n8n-workflow';
+} from 'workflow';
 import { computed, ref, watch } from 'vue';
 import {
 	DynamicScroller,
@@ -50,7 +50,7 @@ import { I18nT } from 'vue-i18n';
 import { useTelemetryContext } from '@/app/composables/useTelemetryContext';
 import NDVEmptyState from '@/features/ndv/panel/components/NDVEmptyState.vue';
 
-import { N8nIcon, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nText, N8nTooltip } from '@aura/design-system';
 type Props = {
 	nodes?: IConnectedNode[];
 	node?: INodeUi | null;
@@ -532,7 +532,7 @@ const onDragEnd = (el: HTMLElement) => {
 
 						<div
 							v-else-if="item.type === 'notice'"
-							v-n8n-html="item.message"
+							v-aura-html="item.message"
 							class="notice"
 							:style="{ '--schema-level': item.level }"
 						/>
@@ -611,13 +611,13 @@ const onDragEnd = (el: HTMLElement) => {
 	color: var(--color--text);
 	font-size: var(--font-size--2xs);
 	line-height: var(--line-height--lg);
-	/* stylelint-disable-next-line @n8n/css-var-naming */
+	/* stylelint-disable-next-line @aura/css-var-naming */
 	margin-left: calc(var(--spacing--lg) * var(--schema-level));
 }
 
 .empty-schema {
 	padding-bottom: var(--spacing--xs);
-	/* stylelint-disable-next-line @n8n/css-var-naming */
+	/* stylelint-disable-next-line @aura/css-var-naming */
 	margin-left: calc((var(--spacing--xl) * var(--schema-level)));
 }
 </style>

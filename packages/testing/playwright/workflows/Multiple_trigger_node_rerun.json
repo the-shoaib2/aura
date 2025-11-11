@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "06ce84a5-0ed0-45bb-ac2e-aa8c35cd67c7",
 			"name": "Start Manually",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-400, -140]
 		},
@@ -22,7 +22,7 @@
 			},
 			"id": "b23a2576-2940-4faf-8a8f-79fdb128087a",
 			"name": "Start on Schedule",
-			"type": "n8n-nodes-base.scheduleTrigger",
+			"type": "aura-nodes-base.scheduleTrigger",
 			"typeVersion": 1.1,
 			"position": [-400, 60]
 		},
@@ -32,7 +32,7 @@
 			},
 			"id": "1742daae-ad58-47cf-b777-3c95670af1ea",
 			"name": "Process The Data",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [60, -60]
 		},
@@ -50,7 +50,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [-160, -60],
 			"id": "e56681c5-2111-4065-bb28-2358f86058c6",

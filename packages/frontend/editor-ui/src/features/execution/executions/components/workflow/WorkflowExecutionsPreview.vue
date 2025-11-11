@@ -5,20 +5,20 @@ import WorkflowPreview from '@/app/components/WorkflowPreview.vue';
 import { useExecutionDebugging } from '../../composables/useExecutionDebugging';
 import type { IExecutionUIData } from '../../composables/useExecutionHelpers';
 import { useExecutionHelpers } from '../../composables/useExecutionHelpers';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useMessage } from '@/app/composables/useMessage';
 import { EnterpriseEditionFeature, MODAL_CONFIRM, VIEWS } from '@/app/constants';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { AnnotationVote, ExecutionSummary } from 'n8n-workflow';
+import type { AnnotationVote, ExecutionSummary } from 'workflow';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useExecutionsStore } from '../../executions.store';
 
 import { ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus';
-import { N8nButton, N8nIconButton, N8nSpinner, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nIconButton, N8nSpinner, N8nText } from '@aura/design-system';
 import VoteButtons from './VoteButtons.vue';
 
 type RetryDropdownRef = InstanceType<typeof ElDropdown>;

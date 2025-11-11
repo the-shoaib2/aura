@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 import * as jmespath from 'jmespath';
 import { DateTime, Duration, Interval, Settings } from 'luxon';
 
@@ -780,7 +780,7 @@ export class WorkflowDataProxy {
 
 				if (context.moreInfoLink && (pinData || isScriptingNode(nodeName, that.workflow))) {
 					const moreInfoLink =
-						' <a target="_blank" href="https://docs.n8n.io/data/data-mapping/data-item-linking/item-linking-errors/">More info</a>';
+						' <a target="_blank" href="https://docs.aura.io/data/data-mapping/data-item-linking/item-linking-errors/">More info</a>';
 
 					context.description += moreInfoLink;
 					if (context.descriptionTemplate) context.descriptionTemplate += moreInfoLink;

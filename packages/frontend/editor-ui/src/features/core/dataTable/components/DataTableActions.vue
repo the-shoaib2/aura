@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { DataTable } from '@/features/core/dataTable/dataTable.types';
-import type { IUser, UserAction } from '@n8n/design-system';
+import type { IUser, UserAction } from '@aura/design-system';
 import { DATA_TABLE_CARD_ACTIONS } from '@/features/core/dataTable/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed } from 'vue';
 import { useMessage } from '@/app/composables/useMessage';
 import { MODAL_CONFIRM } from '@/app/constants';
@@ -10,7 +10,7 @@ import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { useToast } from '@/app/composables/useToast';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
-import { N8nActionToggle } from '@n8n/design-system';
+import { N8nActionToggle } from '@aura/design-system';
 type Props = {
 	dataTable: DataTable;
 	isReadOnly?: boolean;

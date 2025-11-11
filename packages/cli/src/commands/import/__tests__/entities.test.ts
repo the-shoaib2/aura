@@ -1,5 +1,5 @@
 import { ImportEntitiesCommand } from '../entities';
-import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@aura/backend-test-utils';
 import { ImportService } from '@/services/import.service';
 
 jest.mock('@/services/import.service');

@@ -1,4 +1,4 @@
-import type { Icon, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { Icon, ICredentialType, INodeProperties } from 'workflow';
 
 export class MicrosoftAzureMonitorOAuth2Api implements ICredentialType {
 	name = 'microsoftAzureMonitorOAuth2Api';

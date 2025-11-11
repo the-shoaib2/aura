@@ -16,7 +16,7 @@ import {
 import { useUIStore } from '@/app/stores/ui.store';
 import { MOVE_FOLDER_MODAL_KEY } from '../folders.constants';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 import type { Project } from '@/features/collaboration/projects/projects.types';
 import type {
 	ICredentialsResponse,
@@ -28,7 +28,7 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useFoldersStore } from '../folders.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import MoveToFolderModal from './MoveToFolderModal.vue';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
 
 vi.mock('vue-router', () => {
 	const push = vi.fn();

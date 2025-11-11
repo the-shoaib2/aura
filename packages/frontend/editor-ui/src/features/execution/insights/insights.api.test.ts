@@ -5,17 +5,17 @@ import {
 	fetchInsightsByWorkflow,
 	serializeInsightsFilter,
 } from '@/features/execution/insights/insights.api';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import { makeRestApiRequest } from '@aura/rest-api-client';
 import type {
 	InsightsSummary,
 	InsightsByTime,
 	InsightsByWorkflow,
 	ListInsightsWorkflowQueryDto,
 	InsightsDateFilterDto,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import { expect } from 'vitest';
 
-vi.mock('@n8n/rest-api-client', () => ({
+vi.mock('@aura/rest-api-client', () => ({
 	makeRestApiRequest: vi.fn(),
 }));
 

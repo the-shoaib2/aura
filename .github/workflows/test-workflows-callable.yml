@@ -14,7 +14,7 @@ on:
         type: string
     secrets:
       ENCRYPTION_KEY:
-        description: 'Encryption key for n8n operations.'
+        description: 'Encryption key for aura operations.'
         required: true
       CURRENTS_RECORD_KEY:
         description: 'Currents record key for uploading test results.'
@@ -37,17 +37,17 @@ jobs:
         uses: ./.github/actions/setup-nodejs-blacksmith
 
       - name: Set up Workflow Tests
-        run: pnpm --filter=n8n-playwright test:workflows:setup
+        run: pnpm --filter=aura-playwright test:workflows:setup
         env:
-          N8N_ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
+          aura_ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
 
       - name: Run Workflow Tests
-        run: pnpm --filter=n8n-playwright test:workflows --workers 4
+        run: pnpm --filter=aura-playwright test:workflows --workers 4
         env:
           CURRENTS_RECORD_KEY: ${{ secrets.CURRENTS_RECORD_KEY }}
 
       - name: Run Workflow Schema Tests
         if: ${{ inputs.compare_schemas == 'true' }}
-        run: pnpm --filter=n8n-playwright test:workflows:schema
+        run: pnpm --filter=aura-playwright test:workflows:schema
         env:
           CURRENTS_RECORD_KEY: ${{ secrets.CURRENTS_RECORD_KEY }}

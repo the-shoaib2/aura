@@ -1,10 +1,10 @@
-import type { ChatHubLLMProvider } from '@n8n/api-types';
+import type { ChatHubLLMProvider } from '@aura/api-types';
 
 /* eslint-disable @typescript-eslint/naming-convention */
 
 // Maximum context window tokens for various models across supported providers.
 // Based on a snapshot of model capabilities as of October 2025, with a list of models
-// that regular OpenAI / Anthropic / Google API credentials currently have access to at n8n.
+// that regular OpenAI / Anthropic / Google API credentials currently have access to at aura.
 // If the limit is set to 0, it means either the model has no defined limit or the information
 // is not availabl and no context window trimming is applied. Similarly, if the model used is
 // not listed, no limit is applied.

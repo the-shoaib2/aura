@@ -14,11 +14,11 @@ import {
 	CanvasConnectionMode,
 	CanvasNodeRenderType,
 } from '@/features/workflows/canvas/canvas.types';
-import type { NodeConnectionType } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { NodeConnectionType } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 import type { GraphEdge, GraphNode, ViewportTransform } from '@vue-flow/core';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 
 export function createCanvasNodeData({
 	id = 'node',

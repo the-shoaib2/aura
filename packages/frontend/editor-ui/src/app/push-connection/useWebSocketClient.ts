@@ -1,7 +1,7 @@
 import { useHeartbeat } from '@/app/push-connection/useHeartbeat';
 import { useReconnectTimer } from '@/app/push-connection/useReconnectTimer';
 import { ref } from 'vue';
-import { createHeartbeatMessage } from '@n8n/api-types';
+import { createHeartbeatMessage } from '@aura/api-types';
 export type UseWebSocketClientOptions<T> = {
 	url: string;
 	onMessage: (data: T) => void;

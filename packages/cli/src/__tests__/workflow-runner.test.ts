@@ -1,14 +1,14 @@
-import { testDb, createWorkflow, mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { type User, type ExecutionEntity, GLOBAL_OWNER_ROLE, Project } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
+import { testDb, createWorkflow, mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { type User, type ExecutionEntity, GLOBAL_OWNER_ROLE, Project } from '@aura/db';
+import { Container, Service } from '@aura/di';
 import { createExecution } from '@test-integration/db/executions';
 import { createUser } from '@test-integration/db/users';
 import { setupTestServer } from '@test-integration/utils';
 import type { Response } from 'express';
 import { mock } from 'jest-mock-extended';
-import { DirectedGraph, WorkflowExecute } from 'n8n-core';
-import * as core from 'n8n-core';
+import { DirectedGraph, WorkflowExecute } from 'aura-core';
+import * as core from 'aura-core';
 import {
 	type IExecuteData,
 	type INode,
@@ -23,7 +23,7 @@ import {
 	Workflow,
 	ExecutionError,
 	TimeoutExecutionCancelledError,
-} from 'n8n-workflow';
+} from 'workflow';
 import PCancelable from 'p-cancelable';
 
 import { ActiveExecutions } from '@/active-executions';

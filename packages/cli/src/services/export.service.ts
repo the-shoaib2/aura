@@ -1,12 +1,12 @@
-import { Logger, safeJoinPath } from '@n8n/backend-common';
+import { Logger, safeJoinPath } from '@aura/backend-common';
 import { mkdir, rm, readdir, appendFile } from 'fs/promises';
 
-import { Service } from '@n8n/di';
+import { Service } from '@aura/di';
 
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { DataSource } from '@n8n/typeorm';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { DataSource } from '@aura/typeorm';
 import { validateDbTypeForExportEntities } from '@/utils/validate-database-type';
-import { Cipher } from 'n8n-core';
+import { Cipher } from 'aura-core';
 import { compressFolder } from '@/utils/compression.util';
 
 @Service()

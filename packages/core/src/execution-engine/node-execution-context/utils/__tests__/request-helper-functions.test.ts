@@ -10,7 +10,7 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	PaginationOptions,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 import nock from 'nock';
 import type { SecureContextOptions } from 'tls';
 
@@ -461,7 +461,7 @@ describe('Request Helper Functions', () => {
 					url: 'https://example.com',
 					headers: expect.objectContaining({
 						'Custom-Header': 'test',
-						'User-Agent': 'n8n',
+						'User-Agent': 'aura',
 					}),
 					params: { param1: 'value1' },
 				}),
@@ -507,7 +507,7 @@ describe('Request Helper Functions', () => {
 					data: formData,
 					headers: expect.objectContaining({
 						...formData.getHeaders(),
-						'User-Agent': 'n8n',
+						'User-Agent': 'aura',
 					}),
 				}),
 			);
@@ -833,7 +833,7 @@ describe('Request Helper Functions', () => {
 		test('should set default user agent', async () => {
 			const scope = nock(baseUrl, {
 				reqheaders: {
-					'user-agent': 'n8n',
+					'user-agent': 'aura',
 				},
 			})
 				.get('/test')
@@ -852,7 +852,7 @@ describe('Request Helper Functions', () => {
 			const scope = nock(baseUrl, {
 				reqheaders: {
 					'X-Custom-Header': 'custom-value',
-					'user-agent': 'n8n',
+					'user-agent': 'aura',
 				},
 			})
 				.get('/test')

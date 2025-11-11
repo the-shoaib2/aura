@@ -6,8 +6,8 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeApiError } from 'workflow';
 
 import { gitlabApiRequest } from './GenericFunctions';
 
@@ -143,7 +143,7 @@ export class GitlabTrigger implements INodeType {
 				type: 'string',
 				default: '',
 				required: true,
-				placeholder: 'n8n-io',
+				placeholder: 'aura-io',
 				description: 'Owner of the repository',
 			},
 			{
@@ -152,7 +152,7 @@ export class GitlabTrigger implements INodeType {
 				type: 'string',
 				default: '',
 				required: true,
-				placeholder: 'n8n',
+				placeholder: 'aura',
 				description: 'The name of the repository',
 			},
 			{

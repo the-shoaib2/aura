@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
 import { sign, JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
-import type { IBinaryData } from 'n8n-workflow';
+import type { IBinaryData } from 'workflow';
 
 import type { BinaryDataConfig } from '../binary-data.config';
 import { BinaryDataService } from '../binary-data.service';

@@ -3,7 +3,7 @@ import { setActivePinia } from 'pinia';
 import { nodeExecuteAfterData } from './nodeExecuteAfterData';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { mockedStore } from '@/__tests__/utils';
-import type { NodeExecuteAfterData } from '@n8n/api-types/push/execution';
+import type { NodeExecuteAfterData } from '@aura/api-types/push/execution';
 
 describe('nodeExecuteAfterData', () => {
 	beforeEach(() => {

@@ -1,6 +1,6 @@
 import type { DeepMockProxy } from 'jest-mock-extended';
 import { mock, mockDeep } from 'jest-mock-extended';
-import { constructExecutionMetaData } from 'n8n-core';
+import { constructExecutionMetaData } from 'aura-core';
 import {
 	BINARY_ENCODING,
 	WAIT_NODE_TYPE,
@@ -9,7 +9,7 @@ import {
 	type INodeExecutionData,
 	type NodeTypeAndVersion,
 	CHAT_TRIGGER_NODE_TYPE,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { RespondToWebhook } from '../RespondToWebhook.node';
 
@@ -101,7 +101,7 @@ describe('RespondToWebhook Node', () => {
 			mockExecuteFunctions.getInputData.mockReturnValue([]);
 			mockExecuteFunctions.getNode.mockReturnValue(mock<INode>({ typeVersion: 1.1 }));
 			mockExecuteFunctions.getParentNodes.mockReturnValue([
-				mock<NodeTypeAndVersion>({ type: 'n8n-nodes-base.someNode' }),
+				mock<NodeTypeAndVersion>({ type: 'aura-nodes-base.someNode' }),
 			]);
 
 			await expect(respondToWebhook.execute.call(mockExecuteFunctions)).rejects.toThrow(
@@ -251,13 +251,13 @@ describe('RespondToWebhook Node', () => {
 			mockExecuteFunctions.getNodeParameter.mockImplementation((paramName) => {
 				if (paramName === 'respondWith') return 'redirect';
 				if (paramName === 'options') return {};
-				if (paramName === 'redirectURL') return 'https://n8n.io';
+				if (paramName === 'redirectURL') return 'https://aura.io';
 			});
 			mockExecuteFunctions.sendResponse.mockReturnValue();
 
 			await expect(respondToWebhook.execute.call(mockExecuteFunctions)).resolves.not.toThrow();
 			expect(mockExecuteFunctions.sendResponse).toHaveBeenCalledWith({
-				headers: { location: 'https://n8n.io' },
+				headers: { location: 'https://aura.io' },
 				statusCode: 307,
 			});
 		});
@@ -345,7 +345,7 @@ describe('RespondToWebhook Node', () => {
 			]);
 			mockExecuteFunctions.getNodeParameter.mockImplementation((paramName) => {
 				if (paramName === 'respondWith') return 'redirect';
-				if (paramName === 'redirectURL') return 'n8n.io';
+				if (paramName === 'redirectURL') return 'aura.io';
 				if (paramName === 'options') return {};
 			});
 			mockExecuteFunctions.sendResponse.mockReturnValue();
@@ -373,7 +373,7 @@ describe('RespondToWebhook Node', () => {
 						json: {
 							response: {
 								headers: {
-									location: 'n8n.io',
+									location: 'aura.io',
 								},
 								statusCode: 307,
 							},

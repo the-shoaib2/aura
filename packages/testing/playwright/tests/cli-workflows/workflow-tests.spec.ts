@@ -75,8 +75,8 @@ function loadWorkflows(): Workflow[] {
  */
 function executeWorkflow(workflowId: string): ExecutionResult {
 	const packagesRoot = findPackagesRoot('cli');
-	const n8nExecutablePath = path.join(packagesRoot, 'cli/bin/n8n');
-	const command = `"${n8nExecutablePath}" execute --id="${workflowId}"`;
+	const auraExecutablePath = path.join(packagesRoot, 'cli/bin/aura');
+	const command = `"${auraExecutablePath}" execute --id="${workflowId}"`;
 	const options = {
 		encoding: 'utf-8' as const,
 		maxBuffer: 10 * 1024 * 1024,

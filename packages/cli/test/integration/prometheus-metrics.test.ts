@@ -1,7 +1,7 @@
-import { createWorkflow, newWorkflow } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createWorkflow, newWorkflow } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { DateTime } from 'luxon';
 import { parse as semverParse } from 'semver';
 import request, { type Response } from 'supertest';
@@ -22,7 +22,7 @@ const globalConfig = Container.get(GlobalConfig);
 globalConfig.cache.backend = 'memory';
 globalConfig.endpoints.metrics = {
 	enable: true,
-	prefix: 'n8n_test_',
+	prefix: 'aura_test_',
 	includeDefaultMetrics: true,
 	includeApiEndpoints: true,
 	includeCacheMetrics: true,
@@ -59,7 +59,7 @@ describe('PrometheusMetricsService', () => {
 		jest.useRealTimers();
 	});
 
-	it('should return n8n version', async () => {
+	it('should return aura version', async () => {
 		/**
 		 * Arrange
 		 */
@@ -76,16 +76,16 @@ describe('PrometheusMetricsService', () => {
 		expect(response.status).toEqual(200);
 		expect(response.type).toEqual('text/plain');
 
-		const n8nVersion = semverParse(N8N_VERSION);
+		const auraVersion = semverParse(N8N_VERSION);
 
-		if (!n8nVersion) fail('Failed to parse n8n version');
+		if (!auraVersion) fail('Failed to parse aura version');
 
-		const { version, major, minor, patch } = n8nVersion;
+		const { version, major, minor, patch } = auraVersion;
 
 		const lines = toLines(response);
 
 		expect(lines).toContain(
-			`n8n_test_version_info{version="v${version}",major="${major}",minor="${minor}",patch="${patch}"} 1`,
+			`aura_test_version_info{version="v${version}",major="${major}",minor="${minor}",patch="${patch}"} 1`,
 		);
 	});
 
@@ -109,7 +109,7 @@ describe('PrometheusMetricsService', () => {
 
 		const lines = toLines(response);
 
-		expect(lines).toContain('n8n_test_nodejs_heap_space_size_total_bytes{space="read_only"} 0');
+		expect(lines).toContain('aura_test_nodejs_heap_space_size_total_bytes{space="read_only"} 0');
 	});
 
 	it('should not return default metrics if disabled', async () => {
@@ -154,9 +154,9 @@ describe('PrometheusMetricsService', () => {
 
 		const lines = toLines(response);
 
-		expect(lines).toContain('n8n_test_cache_hits_total 0');
-		expect(lines).toContain('n8n_test_cache_misses_total 0');
-		expect(lines).toContain('n8n_test_cache_updates_total 0');
+		expect(lines).toContain('aura_test_cache_hits_total 0');
+		expect(lines).toContain('aura_test_cache_misses_total 0');
+		expect(lines).toContain('aura_test_cache_updates_total 0');
 	});
 
 	it('should not return cache metrics if disabled', async () => {
@@ -178,9 +178,9 @@ describe('PrometheusMetricsService', () => {
 
 		const lines = toLines(response);
 
-		expect(lines).not.toContain('n8n_test_cache_hits_total 0');
-		expect(lines).not.toContain('n8n_test_cache_misses_total 0');
-		expect(lines).not.toContain('n8n_test_cache_updates_total 0');
+		expect(lines).not.toContain('aura_test_cache_hits_total 0');
+		expect(lines).not.toContain('aura_test_cache_misses_total 0');
+		expect(lines).not.toContain('aura_test_cache_updates_total 0');
 	});
 
 	it('should return route metrics if enabled', async () => {
@@ -204,12 +204,12 @@ describe('PrometheusMetricsService', () => {
 
 		const lines = toLines(response);
 
-		expect(lines).toContain('n8n_test_http_request_duration_seconds_count 1');
+		expect(lines).toContain('aura_test_http_request_duration_seconds_count 1');
 		expect(lines).toContainEqual(
-			expect.stringContaining('n8n_test_http_request_duration_seconds_sum'),
+			expect.stringContaining('aura_test_http_request_duration_seconds_sum'),
 		);
 		expect(lines).toContainEqual(
-			expect.stringContaining('n8n_test_http_request_duration_seconds_bucket'),
+			expect.stringContaining('aura_test_http_request_duration_seconds_bucket'),
 		);
 	});
 
@@ -236,9 +236,9 @@ describe('PrometheusMetricsService', () => {
 
 		const lines = toLines(response);
 
-		expect(lines).toContainEqual(expect.stringContaining('n8n_test_last_activity'));
+		expect(lines).toContainEqual(expect.stringContaining('aura_test_last_activity'));
 
-		const lastActivityLine = lines.find((line) => line.startsWith('n8n_test_last_activity'));
+		const lastActivityLine = lines.find((line) => line.startsWith('aura_test_last_activity'));
 
 		expect(lastActivityLine).toBeDefined();
 
@@ -254,7 +254,7 @@ describe('PrometheusMetricsService', () => {
 		const updatedLines = toLines(response);
 
 		const newLastActivityLine = updatedLines.find((line) =>
-			line.startsWith('n8n_test_last_activity'),
+			line.startsWith('aura_test_last_activity'),
 		);
 
 		expect(newLastActivityLine).toBeDefined();
@@ -312,10 +312,10 @@ describe('PrometheusMetricsService', () => {
 
 		const lines = toLines(response);
 
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_waiting 0');
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_active 0');
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_completed 0');
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_failed 0');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_waiting 0');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_active 0');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_completed 0');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_failed 0');
 	});
 
 	it('should set queue metrics in response to `job-counts-updated` event', async () => {
@@ -341,10 +341,10 @@ describe('PrometheusMetricsService', () => {
 
 		const lines = toLines(response);
 
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_waiting 1');
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_active 2');
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_completed 0');
-		expect(lines).toContain('n8n_test_scaling_mode_queue_jobs_failed 0');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_waiting 1');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_active 2');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_completed 0');
+		expect(lines).toContain('aura_test_scaling_mode_queue_jobs_failed 0');
 	});
 
 	it('should return active workflow count', async () => {
@@ -357,7 +357,7 @@ describe('PrometheusMetricsService', () => {
 
 		let lines = toLines(response);
 
-		expect(lines).toContain('n8n_test_active_workflow_count 0');
+		expect(lines).toContain('aura_test_active_workflow_count 0');
 
 		const workflow = newWorkflow({ active: true });
 		await createWorkflow(workflow);
@@ -372,7 +372,7 @@ describe('PrometheusMetricsService', () => {
 		lines = toLines(response);
 
 		// Should return cached value
-		expect(lines).toContain('n8n_test_active_workflow_count 0');
+		expect(lines).toContain('aura_test_active_workflow_count 0');
 
 		const cacheService = Container.get(CacheService);
 		await cacheService.delete('metrics:active-workflow-count');
@@ -381,6 +381,6 @@ describe('PrometheusMetricsService', () => {
 
 		lines = toLines(response);
 
-		expect(lines).toContain('n8n_test_active_workflow_count 1');
+		expect(lines).toContain('aura_test_active_workflow_count 1');
 	});
 });

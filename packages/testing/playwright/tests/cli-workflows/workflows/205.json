@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "b67fccde-5dac-406f-98f4-d5c58ac8aa37"
@@ -22,7 +22,7 @@
 				}
 			},
 			"name": "Pushover",
-			"type": "n8n-nodes-base.pushover",
+			"type": "aura-nodes-base.pushover",
 			"typeVersion": 1,
 			"position": [510, 300],
 			"credentials": {

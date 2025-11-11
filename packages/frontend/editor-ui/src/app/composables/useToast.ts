@@ -5,10 +5,10 @@ import { sanitizeHtml } from '@/app/utils/htmlUtils';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useExternalHooks } from './useExternalHooks';
 import { VIEWS } from '@/app/constants';
-import type { ApplicationError } from 'n8n-workflow';
+import type { ApplicationError } from 'workflow';
 import { useStyles } from './useStyles';
 
 export interface NotificationErrorWithNodeAndDescription extends ApplicationError {

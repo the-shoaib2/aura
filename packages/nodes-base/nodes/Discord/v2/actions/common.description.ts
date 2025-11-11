@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { updateDisplayOptions } from '../../../../utils/utilities';
 
@@ -252,7 +252,7 @@ export const userRLC: INodeProperties = {
 };
 
 export const roleMultiOptions: INodeProperties = {
-	// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+	// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 	displayName: 'Role',
 	name: 'role',
 	type: 'multiOptions',
@@ -261,7 +261,7 @@ export const roleMultiOptions: INodeProperties = {
 		loadOptionsDependsOn: ['userId.value', 'guildId.value', 'operation'],
 	},
 	required: true,
-	// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options
+	// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-multi-options
 	description: 'Select the roles you want to add to the user',
 	default: [],
 };

@@ -705,7 +705,7 @@ export class CanvasPage extends BasePage {
 	}
 
 	getRagCalloutTip(): Locator {
-		return this.page.getByText('Tip: Get a feel for vector stores in n8n with our');
+		return this.page.getByText('Tip: Get a feel for vector stores in aura with our');
 	}
 
 	getRagTemplateLink(): Locator {
@@ -934,7 +934,7 @@ export class CanvasPage extends BasePage {
 	}
 
 	getExecuteWorkflowButtonSpinner(): Locator {
-		return this.getExecuteWorkflowButton().locator('.n8n-spinner');
+		return this.getExecuteWorkflowButton().locator('.aura-spinner');
 	}
 
 	getCanvasPlusButton(): Locator {

@@ -1,6 +1,6 @@
-import { PullWorkFolderRequestDto } from '@n8n/api-types';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { PullWorkFolderRequestDto } from '@aura/api-types';
+import type { AuthenticatedRequest } from '@aura/db';
+import { Container } from '@aura/di';
 import type express from 'express';
 import type { StatusResult } from 'simple-git';
 

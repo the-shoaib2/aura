@@ -6,8 +6,8 @@ import type {
 	INode,
 	IHttpRequestOptions,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import { bitbucketApiRequest, bitbucketApiRequestAllItems } from '../GenericFunctions';
 
@@ -20,7 +20,7 @@ describe('Bitbucket GenericFunctions', () => {
 		const mockNode: INode = {
 			id: 'test-node-id',
 			name: 'Bitbucket Test',
-			type: 'n8n-nodes-base.bitbucket',
+			type: 'aura-nodes-base.bitbucket',
 			typeVersion: 1.1,
 			position: [0, 0],
 			parameters: {},
@@ -287,7 +287,7 @@ describe('Bitbucket GenericFunctions', () => {
 		const mockNode: INode = {
 			id: 'test-node-id',
 			name: 'Bitbucket Test',
-			type: 'n8n-nodes-base.bitbucket',
+			type: 'aura-nodes-base.bitbucket',
 			typeVersion: 1.1,
 			position: [0, 0],
 			parameters: {},

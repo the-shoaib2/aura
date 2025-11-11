@@ -1,5 +1,5 @@
 import { useCalloutHelpers } from '@/app/composables/useCalloutHelpers';
-import { updateCurrentUserSettings } from '@n8n/rest-api-client/api/users';
+import { updateCurrentUserSettings } from '@aura/rest-api-client/api/users';
 import { createTestingPinia } from '@pinia/testing';
 import {
 	PrebuiltAgentTemplates,
@@ -57,13 +57,13 @@ vi.mock('@/app/stores/workflows.store', () => ({
 	}),
 }));
 
-vi.mock('@n8n/stores/useRootStore', () => ({
+vi.mock('@aura/stores/useRootStore', () => ({
 	useRootStore: () => ({
 		restApiContext: mocks.restApiContext,
 	}),
 }));
 
-vi.mock('@n8n/rest-api-client/api/users', () => ({
+vi.mock('@aura/rest-api-client/api/users', () => ({
 	updateCurrentUserSettings: vi.fn(),
 }));
 
@@ -89,7 +89,7 @@ describe('useCalloutHelpers()', () => {
 	describe('openSampleWorkflowTemplate()', () => {
 		it('opens the RAG starter template from NDV successfully', () => {
 			vi.spyOn(window, 'open').mockImplementation(() => null);
-			mocks.resolve.mockReturnValue({ href: 'n8n.io' });
+			mocks.resolve.mockReturnValue({ href: 'aura.io' });
 
 			const { openSampleWorkflowTemplate } = useCalloutHelpers();
 			const nodeType = 'testNode';
@@ -101,7 +101,7 @@ describe('useCalloutHelpers()', () => {
 				},
 			});
 
-			expect(window.open).toHaveBeenCalledWith('n8n.io', '_blank');
+			expect(window.open).toHaveBeenCalledWith('aura.io', '_blank');
 			expect(mocks.track).toHaveBeenCalledWith('User clicked on RAG callout', {
 				node_type: nodeType,
 			});
@@ -109,7 +109,7 @@ describe('useCalloutHelpers()', () => {
 
 		it('opens the RAG starter template from node creator successfully', () => {
 			vi.spyOn(window, 'open').mockImplementation(() => null);
-			mocks.resolve.mockReturnValue({ href: 'n8n.io' });
+			mocks.resolve.mockReturnValue({ href: 'aura.io' });
 
 			const { openSampleWorkflowTemplate } = useCalloutHelpers();
 
@@ -120,7 +120,7 @@ describe('useCalloutHelpers()', () => {
 				},
 			});
 
-			expect(window.open).toHaveBeenCalledWith('n8n.io', '_blank');
+			expect(window.open).toHaveBeenCalledWith('aura.io', '_blank');
 			expect(mocks.track).toHaveBeenCalledWith('User clicked on RAG callout', {
 				node_type: null,
 			});
@@ -128,7 +128,7 @@ describe('useCalloutHelpers()', () => {
 
 		it('opens easy AI starter successfully', () => {
 			vi.spyOn(window, 'open').mockImplementation(() => null);
-			mocks.resolve.mockReturnValue({ href: 'n8n.io' });
+			mocks.resolve.mockReturnValue({ href: 'aura.io' });
 
 			const { openSampleWorkflowTemplate } = useCalloutHelpers();
 
@@ -139,13 +139,13 @@ describe('useCalloutHelpers()', () => {
 				},
 			});
 
-			expect(window.open).toHaveBeenCalledWith('n8n.io', '_blank');
+			expect(window.open).toHaveBeenCalledWith('aura.io', '_blank');
 			expect(mocks.track).not.toHaveBeenCalled();
 		});
 
 		it('includes project ID in template URL when opening template', () => {
 			vi.spyOn(window, 'open').mockImplementation(() => null);
-			mocks.resolve.mockReturnValue({ href: 'n8n.io/template/test' });
+			mocks.resolve.mockReturnValue({ href: 'aura.io/template/test' });
 
 			const { openSampleWorkflowTemplate } = useCalloutHelpers();
 
@@ -168,7 +168,7 @@ describe('useCalloutHelpers()', () => {
 
 		it('includes folder ID in template URL when opening template', () => {
 			vi.spyOn(window, 'open').mockImplementation(() => null);
-			mocks.resolve.mockReturnValue({ href: 'n8n.io/template/test' });
+			mocks.resolve.mockReturnValue({ href: 'aura.io/template/test' });
 			mocks.useRoute.mockReturnValueOnce({
 				query: {},
 				params: { folderId: 'my-folder-id' },
@@ -198,7 +198,7 @@ describe('useCalloutHelpers()', () => {
 			'opens pre-built agent template %s from NDV successfully',
 			(templateId) => {
 				vi.spyOn(window, 'open').mockImplementation(() => null);
-				mocks.resolve.mockReturnValue({ href: 'n8n.io' });
+				mocks.resolve.mockReturnValue({ href: 'aura.io' });
 
 				const { openSampleWorkflowTemplate } = useCalloutHelpers();
 				const nodeType = 'testNode';
@@ -210,7 +210,7 @@ describe('useCalloutHelpers()', () => {
 					},
 				});
 
-				expect(window.open).toHaveBeenCalledWith('n8n.io', '_blank');
+				expect(window.open).toHaveBeenCalledWith('aura.io', '_blank');
 				expect(mocks.track).toHaveBeenCalledWith('User inserted pre-built Agent', {
 					source: 'ndv',
 					template: templateId,
@@ -224,7 +224,7 @@ describe('useCalloutHelpers()', () => {
 			'opens pre-built agent template %s from node creator successfully',
 			(templateId) => {
 				vi.spyOn(window, 'open').mockImplementation(() => null);
-				mocks.resolve.mockReturnValue({ href: 'n8n.io' });
+				mocks.resolve.mockReturnValue({ href: 'aura.io' });
 
 				const { openSampleWorkflowTemplate } = useCalloutHelpers();
 				const section = 'Test Section';
@@ -236,7 +236,7 @@ describe('useCalloutHelpers()', () => {
 					},
 				});
 
-				expect(window.open).toHaveBeenCalledWith('n8n.io', '_blank');
+				expect(window.open).toHaveBeenCalledWith('aura.io', '_blank');
 				expect(mocks.track).toHaveBeenCalledWith('User inserted pre-built Agent', {
 					source: 'nodeCreator',
 					template: templateId,
@@ -250,7 +250,7 @@ describe('useCalloutHelpers()', () => {
 	describe('openPreBuiltAgentsCollection', () => {
 		it('opens pre-built agents collection successfully', async () => {
 			vi.spyOn(window, 'open').mockImplementation(() => null);
-			mocks.resolve.mockReturnValue({ href: 'n8n.io' });
+			mocks.resolve.mockReturnValue({ href: 'aura.io' });
 
 			const { openPreBuiltAgentsCollection } = useCalloutHelpers();
 

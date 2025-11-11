@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
-import type { IWorkflowBase, ExecutionSummary } from 'n8n-workflow';
+import type { IWorkflowBase, ExecutionSummary } from 'workflow';
 import { nanoid } from 'nanoid';
 
-// Type for execution responses from the n8n API
+// Type for execution responses from the aura API
 // Couldn't find the exact type so I put these ones together
 
 interface ExecutionListResponse extends ExecutionSummary {
@@ -117,7 +117,7 @@ export class WorkflowApiHelper {
 
 		if (workflow.nodes) {
 			for (const node of workflow.nodes) {
-				if (node.type === 'n8n-nodes-base.webhook') {
+				if (node.type === 'aura-nodes-base.webhook') {
 					webhookId = nanoid(idLength);
 					webhookPath = `${webhookPrefix}-${webhookId}`;
 					node.webhookId = webhookId;

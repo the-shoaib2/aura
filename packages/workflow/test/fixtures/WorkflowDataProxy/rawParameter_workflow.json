@@ -3,7 +3,7 @@
 		{
 			"id": "804e5ba7-4b1d-48c2-abfa-a36717a9fa66",
 			"name": "Manual trigger",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-320, -100],
 			"parameters": {}
@@ -11,7 +11,7 @@
 		{
 			"id": "f995b1a2-8a49-4f0c-ae0d-8fb4c600cdef",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [-100, -100],
 			"parameters": {
@@ -31,7 +31,7 @@
 		{
 			"id": "62717ac7-614d-4e3f-b2ec-1e28688068c4",
 			"name": "Execute Workflow",
-			"type": "n8n-nodes-base.executeWorkflow",
+			"type": "aura-nodes-base.executeWorkflow",
 			"typeVersion": 1.2,
 			"position": [120, -100],
 			"parameters": {

@@ -6,8 +6,8 @@ import type {
 	DateValue,
 	N8nDateRangePickerProps,
 	N8nDateRangePickerRootEmits,
-} from '@n8n/design-system';
-import { N8nButton, N8nDateRangePicker, N8nIcon } from '@n8n/design-system';
+} from '@aura/design-system';
+import { N8nButton, N8nDateRangePicker, N8nIcon } from '@aura/design-system';
 import dateformat from 'dateformat';
 import { computed, ref, shallowRef, watch } from 'vue';
 import InsightsUpgradeModal from './InsightsUpgradeModal.vue';

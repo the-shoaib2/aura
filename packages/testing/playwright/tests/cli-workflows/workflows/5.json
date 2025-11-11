@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "481a7e7f-5ea7-402b-8316-f72c37b850bb"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hacker News",
-			"type": "n8n-nodes-base.hackerNews",
+			"type": "aura-nodes-base.hackerNews",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"id": "3c48cdd6-1b9f-41cc-9ffd-861839a17846"
@@ -31,7 +31,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hacker News1",
-			"type": "n8n-nodes-base.hackerNews",
+			"type": "aura-nodes-base.hackerNews",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"id": "3cd97e86-f978-498a-9519-117a930529ad"
@@ -42,7 +42,7 @@
 				"username": "={{$json[\"author\"]}}"
 			},
 			"name": "Hacker News2",
-			"type": "n8n-nodes-base.hackerNews",
+			"type": "aura-nodes-base.hackerNews",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"id": "4f1db844-dea5-4ee0-bf62-ae05a7467fe7"

@@ -1,8 +1,8 @@
-export namespace n8n {
+export namespace aura {
 	export interface PackageJson {
 		name: string;
 		version: string;
-		n8n?: {
+		aura?: {
 			credentials?: string[];
 			nodes?: string[];
 		};

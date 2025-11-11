@@ -14,7 +14,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [200, -100],
 			"id": "351ce967-0399-4a78-848a-9cc69b831796",
@@ -26,7 +26,7 @@
 					"interval": [{}]
 				}
 			},
-			"type": "n8n-nodes-base.scheduleTrigger",
+			"type": "aura-nodes-base.scheduleTrigger",
 			"typeVersion": 1.2,
 			"position": [0, -100],
 			"id": "cf2f58a8-1fbb-4c70-b2b1-9e06bee7ec47",
@@ -38,7 +38,7 @@
 					"interval": [{}]
 				}
 			},
-			"type": "n8n-nodes-base.scheduleTrigger",
+			"type": "aura-nodes-base.scheduleTrigger",
 			"typeVersion": 1.2,
 			"position": [0, 100],
 			"id": "4fade34e-2bfc-4a2e-a8ed-03ab2ed9c690",

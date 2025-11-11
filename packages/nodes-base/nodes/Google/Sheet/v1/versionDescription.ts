@@ -1,5 +1,5 @@
-/* eslint-disable n8n-nodes-base/node-filename-against-convention */
-import { NodeConnectionTypes, type INodeTypeDescription } from 'n8n-workflow';
+/* eslint-disable aura-nodes-base/node-filename-against-convention */
+import { NodeConnectionTypes, type INodeTypeDescription } from 'workflow';
 
 import { oldVersionNotice } from '@utils/descriptions';
 
@@ -66,7 +66,7 @@ export const versionDescription: INodeTypeDescription = {
 			type: 'options',
 			options: [
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'OAuth2 (recommended)',
 					value: 'oAuth2',
 				},
@@ -239,7 +239,7 @@ export const versionDescription: INodeTypeDescription = {
 							default: '',
 							required: true,
 							description:
-								'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+								'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						},
 						{
 							displayName: 'Start Index',
@@ -278,7 +278,7 @@ export const versionDescription: INodeTypeDescription = {
 							default: '',
 							required: true,
 							description:
-								'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+								'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						},
 						{
 							displayName: 'Start Index',
@@ -490,7 +490,7 @@ export const versionDescription: INodeTypeDescription = {
 							'/operation': ['lookup', 'read'],
 						},
 					},
-					// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+					// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 					description:
 						'By default, the workflow stops executing if the lookup/read does not return values',
 				},
@@ -504,7 +504,7 @@ export const versionDescription: INodeTypeDescription = {
 							'/operation': ['lookup'],
 						},
 					},
-					// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+					// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 					description:
 						'By default only the first result gets returned. If options gets set all found matches get returned.',
 				},

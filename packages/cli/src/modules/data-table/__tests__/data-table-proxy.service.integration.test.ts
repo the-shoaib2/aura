@@ -1,6 +1,6 @@
-import type { Logger } from '@n8n/backend-common';
-import { testDb, testModules } from '@n8n/backend-test-utils';
-import type { Project } from '@n8n/db';
+import type { Logger } from '@aura/backend-common';
+import { testDb, testModules } from '@aura/backend-test-utils';
+import type { Project } from '@aura/db';
 import { mock } from 'jest-mock-extended';
 import type {
 	AddDataTableColumnOptions,
@@ -9,7 +9,7 @@ import type {
 	MoveDataTableColumnOptions,
 	UpsertDataTableRowOptions,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { OwnershipService } from '@/services/ownership.service';
 
@@ -50,7 +50,7 @@ describe('DataTableProxyService', () => {
 			id: PROJECT_ID,
 		});
 		node = mock<INode>({
-			type: 'n8n-nodes-base.dataTable',
+			type: 'aura-nodes-base.dataTable',
 		});
 
 		ownershipServiceMock.getWorkflowProjectCached.mockResolvedValueOnce(project);

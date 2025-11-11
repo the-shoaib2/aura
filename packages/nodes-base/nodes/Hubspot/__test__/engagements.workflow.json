@@ -17,7 +17,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.2,
 			"position": [0, 0],
 			"id": "942a05ef-f3ed-4511-a00f-0b1e5e1b8a49",
@@ -41,7 +41,7 @@
 				},
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.2,
 			"position": [0, 200],
 			"id": "7fb51d0d-28b5-450d-b910-f6d91e69e934",
@@ -64,7 +64,7 @@
 				},
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 400],
 			"id": "7fb51d0d-28b5-450d-b910-f6d91e69e935",
@@ -78,7 +78,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-220, 600],
 			"id": "ec9e619e-c75a-41ea-8f54-16827bcd664b",

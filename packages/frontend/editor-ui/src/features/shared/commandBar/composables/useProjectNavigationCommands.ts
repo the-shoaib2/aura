@@ -1,7 +1,7 @@
 import { computed, type Ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { N8nIcon } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nIcon } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import { VIEWS } from '@/app/constants';
 import type { ProjectListItem } from '@/features/collaboration/projects/projects.types';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';

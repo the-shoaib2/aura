@@ -8,17 +8,17 @@ import { useLogStreamingStore } from '../logStreaming.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { LOG_STREAM_MODAL_KEY, EnterpriseEditionFeature } from '@/app/constants';
-import type { MessageEventBusDestinationOptions } from 'n8n-workflow';
-import { deepCopy, defaultMessageEventBusDestinationOptions } from 'n8n-workflow';
+import type { MessageEventBusDestinationOptions } from 'workflow';
+import { deepCopy, defaultMessageEventBusDestinationOptions } from 'workflow';
 import EventDestinationCard from '../components/EventDestinationCard.vue';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 
 import { ElCol, ElRow, ElSwitch } from 'element-plus';
-import { N8nActionBox, N8nButton, N8nHeading, N8nInfoTip } from '@n8n/design-system';
+import { N8nActionBox, N8nButton, N8nHeading, N8nInfoTip } from '@aura/design-system';
 const environment = process.env.NODE_ENV;
 
 const settingsStore = useSettingsStore();
@@ -186,7 +186,7 @@ async function onEdit(destinationId?: string) {
 		<template v-if="isLicensed">
 			<div class="mb-l">
 				<N8nInfoTip theme="info" type="note">
-					<span v-n8n-html="i18n.baseText('settings.log-streaming.infoText')"></span>
+					<span v-aura-html="i18n.baseText('settings.log-streaming.infoText')"></span>
 				</N8nInfoTip>
 			</div>
 			<template v-if="storeHasItems()">
@@ -218,7 +218,7 @@ async function onEdit(destinationId?: string) {
 					@click:button="addDestination"
 				>
 					<template #heading>
-						<span v-n8n-html="i18n.baseText(`settings.log-streaming.addFirstTitle`)" />
+						<span v-aura-html="i18n.baseText(`settings.log-streaming.addFirstTitle`)" />
 					</template>
 				</N8nActionBox>
 			</div>
@@ -226,7 +226,7 @@ async function onEdit(destinationId?: string) {
 		<template v-else>
 			<div v-if="i18n.baseText('settings.log-streaming.infoText')" class="mb-l">
 				<N8nInfoTip theme="info" type="note">
-					<span v-n8n-html="i18n.baseText('settings.log-streaming.infoText')"></span>
+					<span v-aura-html="i18n.baseText('settings.log-streaming.infoText')"></span>
 				</N8nInfoTip>
 			</div>
 			<div data-test-id="action-box-unlicensed">
@@ -236,7 +236,7 @@ async function onEdit(destinationId?: string) {
 					@click:button="goToUpgrade"
 				>
 					<template #heading>
-						<span v-n8n-html="i18n.baseText('settings.log-streaming.actionBox.title')" />
+						<span v-aura-html="i18n.baseText('settings.log-streaming.actionBox.title')" />
 					</template>
 				</N8nActionBox>
 			</div>

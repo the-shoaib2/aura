@@ -1,13 +1,13 @@
 import get from 'lodash/get';
 import set from 'lodash/set';
 import { MongoClient, ObjectId } from 'mongodb';
-import { NodeOperationError } from 'n8n-workflow';
+import { NodeOperationError } from 'workflow';
 import type {
 	ICredentialDataDecryptedObject,
 	IDataObject,
 	INode,
 	INodeExecutionData,
-} from 'n8n-workflow';
+} from 'workflow';
 import { createSecureContext } from 'tls';
 
 import type {
@@ -160,7 +160,7 @@ export async function connectMongoClient(
 ) {
 	let client: MongoClient;
 	const driverInfo = {
-		name: 'n8n_crud',
+		name: 'aura_crud',
 		version: nodeVersion > 0 ? nodeVersion.toString() : 'unknown',
 	};
 

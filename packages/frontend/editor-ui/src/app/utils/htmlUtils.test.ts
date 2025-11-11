@@ -15,7 +15,7 @@ describe('sanitizeHtml', () => {
 	});
 
 	test('should remove disallowed img tag', () => {
-		const dirtyHtml = '<img src="https://n8n.io/logo.png">';
+		const dirtyHtml = '<img src="https://aura.io/logo.png">';
 		const result = sanitizeHtml(dirtyHtml);
 		expect(result).toBe('');
 	});
@@ -44,7 +44,7 @@ describe('sanitizeHtml', () => {
 			'https://www.ex.com/sfefdfdfdf/xdfef.json',
 		],
 		[
-			// eslint-disable-next-line n8n-local-rules/no-unneeded-backticks
+			// eslint-disable-next-line aura-local-rules/no-unneeded-backticks
 			`https://www.ex.com/sfefdfd<details title='"><img/src/onerror=alert(document.domain)>/ '>/c.json`,
 			'https://www.ex.com/sfefdfd<details title="&quot;&gt;&lt;img/src/onerror=alert(document.domain)&gt;/">/c.json',
 		],

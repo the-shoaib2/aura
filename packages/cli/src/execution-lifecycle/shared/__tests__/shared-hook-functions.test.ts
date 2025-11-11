@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import type { IRun } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IRun } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { determineFinalExecutionStatus } from '../shared-hook-functions';
 

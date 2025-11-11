@@ -1,6 +1,6 @@
-import { GlobalConfig } from '@n8n/config';
-import { WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import nock from 'nock';
 import { v4 as uuid } from 'uuid';
 
@@ -47,7 +47,7 @@ export async function saveManualTriggerWorkflow() {
 			{
 				id: uuid(),
 				name: 'My Node',
-				type: 'n8n-nodes-base.manualTrigger',
+				type: 'aura-nodes-base.manualTrigger',
 				typeVersion: 1,
 				position: [0, 0] as [number, number],
 			},
@@ -61,7 +61,7 @@ export const MOCK_09990_N8N_VERSION = {
 	name: '0.999.0',
 	nodes: [
 		{
-			name: 'n8n-nodes-base.testNode',
+			name: 'aura-nodes-base.testNode',
 			displayName: 'Test Node',
 			icon: 'file:testNode.svg',
 			defaults: {
@@ -72,7 +72,7 @@ export const MOCK_09990_N8N_VERSION = {
 	createdAt: '2022-11-11T11:11:11.111Z',
 	description:
 		'Includes <strong>new nodes</strong>, <strong>node enhancements</strong>, <strong>core functionality</strong> and <strong>bug fixes</strong>',
-	documentationUrl: 'https://docs.n8n.io/release-notes/0-x/#n8n0990',
+	documentationUrl: 'https://docs.aura.io/release-notes/0-x/#aura0990',
 	hasBreakingChange: false,
 	hasSecurityFix: false,
 	hasSecurityIssue: false,
@@ -85,7 +85,7 @@ export const MOCK_01110_N8N_VERSION = {
 	createdAt: '2022-01-01T00:00:00.000Z',
 	description:
 		'Includes <strong>new nodes</strong>, <strong>node enhancements</strong>, <strong>core functionality</strong> and <strong>bug fixes</strong>',
-	documentationUrl: 'https://docs.n8n.io/release-notes/0-x/#n8n01100',
+	documentationUrl: 'https://docs.aura.io/release-notes/0-x/#aura01100',
 	hasBreakingChange: false,
 	hasSecurityFix: false,
 	hasSecurityIssue: false,
@@ -96,7 +96,7 @@ export const MOCK_PACKAGE: InstalledPackages[] = [
 	{
 		createdAt: new Date(),
 		updatedAt: new Date(),
-		packageName: 'n8n-nodes-test',
+		packageName: 'aura-nodes-test',
 		installedVersion: '1.1.2',
 		authorName: 'test',
 		authorEmail: 'test@test.com',

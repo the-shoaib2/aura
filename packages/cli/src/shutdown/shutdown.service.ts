@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import type { ShutdownHandler } from '@n8n/decorators';
-import { ShutdownMetadata } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import { assert, UnexpectedError, UserError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import type { ShutdownHandler } from '@aura/decorators';
+import { ShutdownMetadata } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import { assert, UnexpectedError, UserError } from 'workflow';
 
 /** Error reported when a listener fails to shutdown gracefully */
 export class ComponentShutdownError extends UnexpectedError {

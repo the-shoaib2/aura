@@ -1,6 +1,6 @@
-import { inTest } from '@n8n/backend-common';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { inTest } from '@aura/backend-common';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import { z } from 'zod';
 
 import { N8N_VERSION } from '@/constants';
@@ -24,7 +24,7 @@ const flagsSchema = z.object({
 
 @Command({
 	name: 'worker',
-	description: 'Starts a n8n worker',
+	description: 'Starts a aura worker',
 	examples: ['--concurrency=5'],
 	flagsSchema,
 })
@@ -44,7 +44,7 @@ export class Worker extends BaseCommand<z.infer<typeof flagsSchema>> {
 	override needsTaskRunner = true;
 
 	/**
-	 * Stop n8n in a graceful way.
+	 * Stop aura in a graceful way.
 	 * Make for example sure that all the webhooks from third party services
 	 * get removed.
 	 */
@@ -52,7 +52,7 @@ export class Worker extends BaseCommand<z.infer<typeof flagsSchema>> {
 		this.logger.info('Stopping worker...');
 
 		try {
-			await this.externalHooks?.run('n8n.stop');
+			await this.externalHooks?.run('aura.stop');
 		} catch (error) {
 			await this.exitWithCrash('Error shutting down worker', error);
 		}
@@ -81,7 +81,7 @@ export class Worker extends BaseCommand<z.infer<typeof flagsSchema>> {
 		}
 		await this.initCrashJournal();
 
-		this.logger.debug('Starting n8n worker...');
+		this.logger.debug('Starting aura worker...');
 		this.logger.debug(`Host ID: ${this.instanceSettings.hostId}`);
 
 		await this.setConcurrency();
@@ -107,7 +107,7 @@ export class Worker extends BaseCommand<z.infer<typeof flagsSchema>> {
 
 		await Container.get(MessageEventBus).send(
 			new EventMessageGeneric({
-				eventName: 'n8n.worker.started',
+				eventName: 'aura.worker.started',
 				payload: {
 					workerId: this.instanceSettings.hostId,
 				},
@@ -134,7 +134,7 @@ export class Worker extends BaseCommand<z.infer<typeof flagsSchema>> {
 		Container.get(Publisher);
 
 		Container.get(PubSubRegistry).init();
-		await Container.get(Subscriber).subscribe('n8n.commands');
+		await Container.get(Subscriber).subscribe('aura.commands');
 		Container.get(WorkerStatusService);
 	}
 
@@ -162,7 +162,7 @@ export class Worker extends BaseCommand<z.infer<typeof flagsSchema>> {
 	}
 
 	async run() {
-		this.logger.info('\nn8n worker is now ready');
+		this.logger.info('\naura worker is now ready');
 		this.logger.info(` * Version: ${N8N_VERSION}`);
 		this.logger.info(` * Concurrency: ${this.concurrency}`);
 		this.logger.info('');

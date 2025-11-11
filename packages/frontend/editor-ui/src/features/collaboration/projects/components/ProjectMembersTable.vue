@@ -5,11 +5,11 @@ import {
 	N8nUserInfo,
 	type ActionDropdownItem,
 	type UserAction,
-} from '@n8n/design-system';
-import type { TableHeader, TableOptions } from '@n8n/design-system/components/N8nDataTableServer';
-import type { UsersInfoProps } from '@n8n/design-system/components/N8nUserInfo/UserInfo.vue';
-import { useI18n } from '@n8n/i18n';
-import type { AllRolesMap, Role } from '@n8n/permissions';
+} from '@aura/design-system';
+import type { TableHeader, TableOptions } from '@aura/design-system/components/N8nDataTableServer';
+import type { UsersInfoProps } from '@aura/design-system/components/N8nUserInfo/UserInfo.vue';
+import { useI18n } from '@aura/i18n';
+import type { AllRolesMap, Role } from '@aura/permissions';
 import { computed, ref } from 'vue';
 import type { ProjectMemberData } from '../projects.types';
 import ProjectMembersActionsCell from './ProjectMembersActionsCell.vue';

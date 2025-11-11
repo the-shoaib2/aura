@@ -4,12 +4,12 @@ import { useActionsGenerator } from '@/features/shared/nodeCreator/composables/u
 import { CUSTOM_API_CALL_KEY } from '@/app/constants';
 import type { ActionCreateElement, INodeCreateElement, INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useI18n } from '@n8n/i18n';
-import { type INodeParameters } from 'n8n-workflow';
+import { useI18n } from '@aura/i18n';
+import { type INodeParameters } from 'workflow';
 import { computed, ref, watch } from 'vue';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 
-import { N8nIcon, N8nText } from '@n8n/design-system';
+import { N8nIcon, N8nText } from '@aura/design-system';
 const { node } = defineProps<{
 	node: INodeUi;
 }>();

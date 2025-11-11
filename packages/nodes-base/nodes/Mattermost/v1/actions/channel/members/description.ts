@@ -18,7 +18,7 @@ export const channelMembersDescription: ChannelProperties = [
 			},
 		},
 		description:
-			'The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Channel Name or ID',
@@ -38,7 +38,7 @@ export const channelMembersDescription: ChannelProperties = [
 			},
 		},
 		description:
-			'The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Resolve Data',
@@ -51,7 +51,7 @@ export const channelMembersDescription: ChannelProperties = [
 			},
 		},
 		default: true,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description:
 			'By default the response only contain the ID of the user. If this option gets activated, it will resolve the user automatically.',
 	},

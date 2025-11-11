@@ -1,6 +1,6 @@
 import toPlainObject from 'lodash/toPlainObject';
 import { DateTime } from 'luxon';
-import type { NodeParameterValue } from 'n8n-workflow';
+import type { NodeParameterValue } from 'workflow';
 
 import { cleanupParameterData } from '../cleanup-parameter-data';
 

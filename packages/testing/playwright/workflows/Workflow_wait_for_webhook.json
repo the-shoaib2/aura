@@ -2,7 +2,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "42c6e003-10e7-4100-aff8-8865c49f384c",
@@ -13,7 +13,7 @@
 				"resume": "webhook",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.wait",
+			"type": "aura-nodes-base.wait",
 			"typeVersion": 1.1,
 			"position": [220, 0],
 			"id": "77614c15-c41e-4b8c-95d6-084d48fed328",

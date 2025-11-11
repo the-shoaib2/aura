@@ -7,8 +7,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { contactFields, contactOperations } from './ContactDescription';
 import {
@@ -22,7 +22,7 @@ export class GoogleContacts implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Google Contacts',
 		name: 'googleContacts',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:googleContacts.png',
 		group: ['input'],
 		version: 1,

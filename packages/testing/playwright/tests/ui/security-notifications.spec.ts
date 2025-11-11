@@ -1,9 +1,9 @@
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 
 test.describe('Security Notifications', () => {
 	async function setupVersionsApiMock(
-		n8n: n8nPage,
+		aura: auraPage,
 		options: {
 			hasSecurityIssue?: boolean;
 			hasSecurityFix?: boolean;
@@ -16,7 +16,7 @@ test.describe('Security Notifications', () => {
 			securityIssueFixVersion = '',
 		} = options;
 
-		await n8n.page.route('**/api/versions/**', async (route) => {
+		await aura.page.route('**/api/versions/**', async (route) => {
 			// Extract current version from URL path
 			const url = route.request().url();
 			const currentVersion = url.split('/').pop() ?? '1.106.1';
@@ -31,7 +31,7 @@ test.describe('Security Notifications', () => {
 					nodes: [],
 					createdAt: '2025-06-24T00:00:00Z',
 					description: hasSecurityIssue ? 'Current version with security issue' : 'Current version',
-					documentationUrl: 'https://docs.n8n.io',
+					documentationUrl: 'https://docs.aura.io',
 					hasBreakingChange: false,
 					hasSecurityFix: false,
 					hasSecurityIssue,
@@ -43,7 +43,7 @@ test.describe('Security Notifications', () => {
 					nodes: [],
 					createdAt: '2025-06-25T00:00:00Z',
 					description: hasSecurityFix ? 'Fixed version' : 'Next version',
-					documentationUrl: 'https://docs.n8n.io',
+					documentationUrl: 'https://docs.aura.io',
 					hasBreakingChange: false,
 					hasSecurityFix,
 					hasSecurityIssue: false,
@@ -54,8 +54,8 @@ test.describe('Security Notifications', () => {
 		});
 	}
 
-	async function setupApiFailure(n8n: n8nPage) {
-		await n8n.page.route('**/api/versions/**', async (route) => {
+	async function setupApiFailure(aura: auraPage) {
+		await aura.page.route('**/api/versions/**', async (route) => {
 			await route.fulfill({
 				status: 500,
 				contentType: 'application/json',
@@ -71,29 +71,29 @@ test.describe('Security Notifications', () => {
 					settings: {
 						versionNotifications: {
 							enabled: false,
-							endpoint: 'https://test.api.n8n.io/api/versions/',
+							endpoint: 'https://test.api.aura.io/api/versions/',
 							whatsNewEnabled: false,
-							whatsNewEndpoint: 'https://test.api.n8n.io/api/whats-new',
-							infoUrl: 'https://test.docs.n8n.io/hosting/installation/updating/',
+							whatsNewEndpoint: 'https://test.api.aura.io/api/whats-new',
+							infoUrl: 'https://test.docs.aura.io/hosting/installation/updating/',
 						},
 					},
 				},
 			});
 		});
 
-		test('should not check for versions if feature is disabled', async ({ n8n }) => {
+		test('should not check for versions if feature is disabled', async ({ aura }) => {
 			// Track whether any API requests are made to versions endpoint
 			let versionsApiCalled = false;
 
-			await n8n.page.route('**/api/versions/**', () => {
+			await aura.page.route('**/api/versions/**', () => {
 				versionsApiCalled = true;
 			});
 
-			await n8n.goHome();
+			await aura.goHome();
 
 			// Wait a moment for any potential API calls or notifications
 			// eslint-disable-next-line playwright/no-networkidle
-			await n8n.page.waitForLoadState('networkidle');
+			await aura.page.waitForLoadState('networkidle');
 
 			// Verify no API request was made to versions endpoint when notifications are disabled
 			expect(versionsApiCalled).toBe(false);
@@ -107,10 +107,10 @@ test.describe('Security Notifications', () => {
 					settings: {
 						versionNotifications: {
 							enabled: true,
-							endpoint: 'https://test.api.n8n.io/api/versions/',
+							endpoint: 'https://test.api.aura.io/api/versions/',
 							whatsNewEnabled: true,
-							whatsNewEndpoint: 'https://test.api.n8n.io/api/whats-new',
-							infoUrl: 'https://test.docs.n8n.io/hosting/installation/updating/',
+							whatsNewEndpoint: 'https://test.api.aura.io/api/whats-new',
+							infoUrl: 'https://test.docs.aura.io/hosting/installation/updating/',
 						},
 					},
 				},
@@ -118,38 +118,38 @@ test.describe('Security Notifications', () => {
 		});
 
 		test('should display security notification with correct messaging and styling', async ({
-			n8n,
+			aura,
 		}) => {
-			await setupVersionsApiMock(n8n, { hasSecurityIssue: true, hasSecurityFix: true });
+			await setupVersionsApiMock(aura, { hasSecurityIssue: true, hasSecurityFix: true });
 
 			// Reload to trigger version check
-			await n8n.page.reload();
-			await n8n.goHome();
+			await aura.page.reload();
+			await aura.goHome();
 
 			// Verify security notification appears with default message
-			const notification = n8n.notifications.getNotificationByTitle('Critical update available');
+			const notification = aura.notifications.getNotificationByTitle('Critical update available');
 			await expect(notification).toBeVisible();
 			await expect(notification).toContainText('Please update to latest version.');
 			await expect(notification).toContainText('More info');
 
 			// Verify warning styling
-			await expect(n8n.notifications.getWarningNotifications()).toBeVisible();
+			await expect(aura.notifications.getWarningNotifications()).toBeVisible();
 
 			// Close the notification
-			await n8n.notifications.closeNotificationByText('Critical update available');
+			await aura.notifications.closeNotificationByText('Critical update available');
 
 			// Now test with specific fix version
-			await setupVersionsApiMock(n8n, {
+			await setupVersionsApiMock(aura, {
 				hasSecurityIssue: true,
 				hasSecurityFix: true,
 				securityIssueFixVersion: 'useNextPatch',
 			});
 
 			// Reload to trigger new version check with fix version
-			await n8n.goHome();
+			await aura.goHome();
 
 			// Verify notification shows specific fix version (dynamically generated)
-			const notificationWithFixVersion = n8n.notifications.getNotificationByTitle(
+			const notificationWithFixVersion = aura.notifications.getNotificationByTitle(
 				'Critical update available',
 			);
 			await expect(notificationWithFixVersion).toBeVisible();
@@ -157,54 +157,54 @@ test.describe('Security Notifications', () => {
 			await expect(notificationWithFixVersion).toContainText('or higher.');
 		});
 
-		test('should open versions modal when clicking security notification', async ({ n8n }) => {
-			await setupVersionsApiMock(n8n, {
+		test('should open versions modal when clicking security notification', async ({ aura }) => {
+			await setupVersionsApiMock(aura, {
 				hasSecurityIssue: true,
 				hasSecurityFix: true,
 				securityIssueFixVersion: 'useNextPatch',
 			});
 
-			await n8n.goHome();
+			await aura.goHome();
 
 			// Wait for and click the security notification
-			const notification = n8n.notifications.getNotificationByTitle('Critical update available');
+			const notification = aura.notifications.getNotificationByTitle('Critical update available');
 			await expect(notification).toBeVisible();
 			await notification.click();
 
 			// Verify versions modal opens
-			const versionsModal = n8n.versions.getVersionUpdatesPanel();
+			const versionsModal = aura.versions.getVersionUpdatesPanel();
 			await expect(versionsModal).toBeVisible();
 
 			// Verify security update badge exists for the new version
-			const versionCard = n8n.versions.getVersionCard().first();
+			const versionCard = aura.versions.getVersionCard().first();
 			const securityBadge = versionCard.locator('.el-tag--danger').getByText('Security update');
 			await expect(securityBadge).toBeVisible();
 		});
 
 		test('should not display security notification when theres no security issue', async ({
-			n8n,
+			aura,
 		}) => {
-			await setupVersionsApiMock(n8n, { hasSecurityIssue: false });
+			await setupVersionsApiMock(aura, { hasSecurityIssue: false });
 
-			await n8n.goHome();
+			await aura.goHome();
 
 			// Verify no security notification appears when no security issue
-			const notification = n8n.notifications.getNotificationByTitle('Critical update available');
+			const notification = aura.notifications.getNotificationByTitle('Critical update available');
 			await expect(notification).toBeHidden();
 		});
 
-		test('should handle API failure gracefully', async ({ n8n }) => {
+		test('should handle API failure gracefully', async ({ aura }) => {
 			// Enable notifications but mock API failure
-			await setupApiFailure(n8n);
+			await setupApiFailure(aura);
 
-			await n8n.goHome();
+			await aura.goHome();
 
 			// Verify no security notification appears on API failure
-			const notification = n8n.notifications.getNotificationByTitle('Critical update available');
+			const notification = aura.notifications.getNotificationByTitle('Critical update available');
 			await expect(notification).toBeHidden();
 
 			// Verify the app still functions normally
-			await expect(n8n.workflows.getProjectName()).toBeVisible();
+			await expect(aura.workflows.getProjectName()).toBeVisible();
 		});
 	});
 });

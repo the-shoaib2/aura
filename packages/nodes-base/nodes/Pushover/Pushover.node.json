@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.pushover",
+	"node": "aura-nodes-base.pushover",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/pushover/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/pushover/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.pushover/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.pushover/"
 			}
 		]
 	}

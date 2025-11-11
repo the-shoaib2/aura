@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "manual-trigger",
@@ -22,7 +22,7 @@
 					"includeSimilarAlerts": true
 				}
 			},
-			"type": "n8n-nodes-base.theHiveProject",
+			"type": "aura-nodes-base.theHiveProject",
 			"typeVersion": 1,
 			"position": [200, 0],
 			"id": "thehive-node",
@@ -46,8 +46,8 @@
 					"type": "incident",
 					"severity": 2,
 					"status": "New",
-					"tags": ["test", "n8n"],
-					"source": "n8n-test",
+					"tags": ["test", "aura"],
+					"source": "aura-test",
 					"sourceRef": "test-ref-001",
 					"follow": true,
 					"createdAt": 1698753600000,

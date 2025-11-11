@@ -4,13 +4,13 @@ import type {
 	INodeParameters,
 	INodeProperties,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	ADD_FORM_NOTICE,
 	getParameterValueByPath,
 	NodeHelpers,
 	resolveRelativePath,
-} from 'n8n-workflow';
+} from 'workflow';
 import { computed, defineAsyncComponent, onErrorCaptured, ref, watch, type WatchSource } from 'vue';
 
 import type { INodeUi, IUpdateInformation } from '@/Interface';
@@ -22,7 +22,7 @@ import ImportCurlParameter from './ImportCurlParameter.vue';
 import MultipleParameter from './MultipleParameter.vue';
 import ParameterInputFull from './ParameterInputFull.vue';
 import ResourceMapper from './ResourceMapper/ResourceMapper.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeSettingsParameters } from '@/features/ndv/settings/composables/useNodeSettingsParameters';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { useMessage } from '@/app/composables/useMessage';
@@ -43,7 +43,7 @@ import { storeToRefs } from 'pinia';
 import { useCalloutHelpers } from '@/app/composables/useCalloutHelpers';
 import { getParameterTypeOption } from '@/features/ndv/shared/ndv.utils';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import type { IconName } from '@aura/design-system/components/N8nIcon/icons';
 
 import {
 	N8nCallout,
@@ -54,7 +54,7 @@ import {
 	N8nNotice,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const LazyFixedCollectionParameter = defineAsyncComponent(
 	async () => await import('./FixedCollectionParameter.vue'),
 );
@@ -546,7 +546,7 @@ async function onCalloutDismiss(parameter: INodeProperties) {
 				>
 					<N8nText size="small">
 						<N8nText
-							v-n8n-html="i18n.nodeText(activeNode?.type).inputLabelDisplayName(parameter, path)"
+							v-aura-html="i18n.nodeText(activeNode?.type).inputLabelDisplayName(parameter, path)"
 							size="small"
 						/>
 						<template v-if="parameter.typeOptions?.calloutAction">

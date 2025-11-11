@@ -1,13 +1,13 @@
-import { mockLogger } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
-import { LicenseManager } from '@n8n_io/license-sdk';
+import { mockLogger } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
+import { LicenseManager } from '@aura_io/license-sdk';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 
 import { N8N_VERSION } from '@/constants';
 import { License } from '@/license';
 
-jest.mock('@n8n_io/license-sdk');
+jest.mock('@aura_io/license-sdk');
 
 const MOCK_SERVER_URL = 'https://server.com/v1';
 const MOCK_RENEW_OFFSET = 259200;
@@ -56,7 +56,7 @@ describe('License', () => {
 				offlineMode: false,
 				renewOnInit: true,
 				deviceFingerprint: expect.any(Function),
-				productIdentifier: `n8n-${N8N_VERSION}`,
+				productIdentifier: `aura-${N8N_VERSION}`,
 				loadCertStr: expect.any(Function),
 				saveCertStr: expect.any(Function),
 				onFeatureChange: expect.any(Function),
@@ -87,7 +87,7 @@ describe('License', () => {
 				offlineMode: true,
 				renewOnInit: false,
 				deviceFingerprint: expect.any(Function),
-				productIdentifier: `n8n-${N8N_VERSION}`,
+				productIdentifier: `aura-${N8N_VERSION}`,
 				loadCertStr: expect.any(Function),
 				saveCertStr: expect.any(Function),
 				onFeatureChange: expect.any(Function),
@@ -107,7 +107,7 @@ describe('License', () => {
 	});
 
 	test('attempts to activate license with eulaUri', async () => {
-		const eulaUri = 'https://n8n.io/legal/eula/';
+		const eulaUri = 'https://aura.io/legal/eula/';
 		await license.activate(MOCK_ACTIVATION_KEY, eulaUri);
 
 		expect(LicenseManager.prototype.activate).toHaveBeenCalledWith(MOCK_ACTIVATION_KEY, eulaUri);

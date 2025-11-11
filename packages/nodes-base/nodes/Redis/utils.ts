@@ -4,8 +4,8 @@ import type {
 	IDataObject,
 	IExecuteFunctions,
 	INodeCredentialTestResult,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 import { createClient } from 'redis';
 
 import type { RedisCredential, RedisClient } from './types';

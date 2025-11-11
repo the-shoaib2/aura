@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "51494395-ea61-4b02-9a5d-e9f3f97bddbe"
@@ -19,7 +19,7 @@
 				"text": "=Posted At {{(new Date).toUTCString()}}"
 			},
 			"name": "Discord",
-			"type": "n8n-nodes-base.discord",
+			"type": "aura-nodes-base.discord",
 			"typeVersion": 1,
 			"position": [490, 300],
 			"id": "ffb4c420-0c18-4cc9-a2fe-5898b93815aa"

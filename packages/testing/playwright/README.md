@@ -53,7 +53,7 @@ import { test, expect } from '../fixtures/base';
 
 // Cloud resource testing
 import { test, expect } from '../fixtures/cloud-only';
-test('Performance under constraints @cloud:trial', async ({ n8n, api }) => {
+test('Performance under constraints @cloud:trial', async ({ aura, api }) => {
   // Test runs with 384MB RAM, 250 millicore CPU
 });
 ```
@@ -83,12 +83,12 @@ import { test, expect } from '../fixtures/base';
 
 // The `@capability:proxy` tag ensures tests only run when proxy infrastructure is available.
 test.describe('Proxy tests @capability:proxy', () => {
-  test('should mock HTTP requests', async ({ proxyServer, n8n }) => {
+  test('should mock HTTP requests', async ({ proxyServer, aura }) => {
     // Create mock expectations
     await proxyServer.createGetExpectation('/api/data', { result: 'mocked' });
 
     // Execute workflow that makes HTTP requests
-    await n8n.canvas.openNewWorkflow();
+    await aura.canvas.openNewWorkflow();
     // ... test implementation
 
     // Verify requests were proxied

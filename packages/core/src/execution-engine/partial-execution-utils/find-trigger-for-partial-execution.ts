@@ -1,5 +1,5 @@
 import * as assert from 'assert/strict';
-import type { INode, INodeType, IRunData, Workflow } from 'n8n-workflow';
+import type { INode, INodeType, IRunData, Workflow } from 'workflow';
 
 const isTriggerNode = (nodeType: INodeType) => nodeType.description.group.includes('trigger');
 
@@ -80,7 +80,7 @@ export function findTriggerForPartialExecution(
 //				!node.disabled &&
 //				pinData?.[node.name] &&
 //				['trigger', 'webhook'].some((suffix) => node.type.toLowerCase().endsWith(suffix)) &&
-//				node.type !== 'n8n-nodes-base.respondToWebhook',
+//				node.type !== 'aura-nodes-base.respondToWebhook',
 //		)
 //		.sort((a) => (a.type.endsWith('webhook') ? -1 : 1));
 //}

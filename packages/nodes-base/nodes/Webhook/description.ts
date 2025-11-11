@@ -1,4 +1,4 @@
-import type { INodeProperties, INodeTypeDescription, IWebhookDescription } from 'n8n-workflow';
+import type { INodeProperties, INodeTypeDescription, IWebhookDescription } from 'workflow';
 
 import { getResponseCode, getResponseData } from './utils';
 
@@ -322,7 +322,7 @@ export const optionsProperty: INodeProperties = {
 				},
 			},
 			default: false,
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+			// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 			description: 'Raw body (binary)',
 		},
 		{
@@ -366,7 +366,7 @@ export const optionsProperty: INodeProperties = {
 			},
 			default: '',
 			placeholder: 'application/xml',
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-json
+			// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-json
 			description:
 				'Set a custom content-type to return if another one as the "application/json" should be returned',
 		},

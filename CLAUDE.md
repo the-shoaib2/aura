@@ -1,11 +1,11 @@
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with
-code in the n8n repository.
+code in the Aura repository.
 
 ## Project Overview
 
-n8n is a workflow automation platform written in TypeScript, using a monorepo
+Aura is a workflow automation platform written in TypeScript, using a monorepo
 structure managed by pnpm workspaces. It consists of a Node.js backend, Vue.js
 frontend, and extensible node-based workflow engine.
 
@@ -55,7 +55,7 @@ Always run lint and typecheck before committing code to ensure quality.
 Execute these commands from within the specific package directory you're
 working on (e.g., `cd packages/cli && pnpm lint`). Run the full repository
 check only when preparing the final PR. When your changes affect type
-definitions, interfaces in `@n8n/api-types`, or cross-package dependencies,
+definitions, interfaces in `@aura/api-types`, or cross-package dependencies,
 build the system before running lint and typecheck.
 
 ## Architecture Overview
@@ -66,16 +66,16 @@ build the system before running lint and typecheck.
 
 The monorepo is organized into these key packages:
 
-- **`packages/@n8n/api-types`**: Shared TypeScript interfaces between frontend and backend
+- **`packages/@aura/api-types`**: Shared TypeScript interfaces between frontend and backend
 - **`packages/workflow`**: Core workflow interfaces and types
 - **`packages/core`**: Workflow execution engine
 - **`packages/cli`**: Express server, REST API, and CLI commands
 - **`packages/editor-ui`**: Vue 3 frontend application
-- **`packages/@n8n/i18n`**: Internationalization for UI text
+- **`packages/@aura/i18n`**: Internationalization for UI text
 - **`packages/nodes-base`**: Built-in nodes for integrations
-- **`packages/@n8n/nodes-langchain`**: AI/LangChain nodes
-- **`@n8n/design-system`**: Vue component library for UI consistency
-- **`@n8n/config`**: Centralized configuration management
+- **`packages/@aura/nodes-langchain`**: AI/LangChain nodes
+- **`@aura/design-system`**: Vue component library for UI consistency
+- **`@aura/config`**: Centralized configuration management
 
 ## Technology Stack
 
@@ -87,13 +87,13 @@ The monorepo is organized into these key packages:
 
 ### Key Architectural Patterns
 
-1. **Dependency Injection**: Uses `@n8n/di` for IoC container
+1. **Dependency Injection**: Uses `@aura/di` for IoC container
 2. **Controller-Service-Repository**: Backend follows MVC-like pattern
 3. **Event-Driven**: Internal event bus for decoupled communication
 4. **Context-Based Execution**: Different contexts for different node types
 5. **State Management**: Frontend uses Pinia stores
 6. **Design System**: Reusable components and design tokens are centralized in
-   `@n8n/design-system`, where all pure Vue components should be placed to
+   `@aura/design-system`, where all pure Vue components should be placed to
    ensure consistency and reusability
 
 ## Key Development Patterns
@@ -107,7 +107,7 @@ The monorepo is organized into these key packages:
 ### TypeScript Best Practices
 - **NEVER use `any` type** - use proper types or `unknown`
 - **Avoid type casting with `as`** - use type guards or type predicates instead
-- **Define shared interfaces in `@n8n/api-types`** package for FE/BE communication
+- **Define shared interfaces in `@aura/api-types`** package for FE/BE communication
 
 ### Error Handling
 - Don't use `ApplicationError` class in CLI and nodes for throwing errors,
@@ -116,7 +116,7 @@ The monorepo is organized into these key packages:
 - Import from appropriate error classes in each package
 
 ### Frontend Development
-- **All UI text must use i18n** - add translations to `@n8n/i18n` package
+- **All UI text must use i18n** - add translations to `@aura/i18n` package
 - **Use CSS variables directly** - never hardcode spacing as px values
 - **data-test-id must be a single value** (no spaces or multiple values)
 
@@ -134,13 +134,13 @@ What we use for testing and writing tests:
 - For testing nodes and other backend components, we use Jest for unit tests. Examples can be found in `packages/nodes-base/nodes/**/*test*`.
 - We use `nock` for server mocking
 - For frontend we use `vitest`
-- For E2E tests we use Playwright. Run with `pnpm --filter=n8n-playwright test:local`.
+- For E2E tests we use Playwright. Run with `pnpm --filter=aura-playwright test:local`.
   See `packages/testing/playwright/README.md` for details.
 
 ### Common Development Tasks
 
 When implementing features:
-1. Define API types in `packages/@n8n/api-types`
+1. Define API types in `packages/@aura/api-types`
 2. Implement backend logic in `packages/cli` module, follow
    `@packages/cli/scripts/backend-module/backend-module.guide.md`
 3. Add API endpoints via controllers
@@ -154,5 +154,5 @@ When implementing features:
   `.github/pull_request_title_conventions.md`.
 - Use `gh pr create --draft` to create draft PRs.
 - Always reference the Linear ticket in the PR description,
-  use `https://linear.app/n8n/issue/[TICKET-ID]`
+  use `https://linear.app/aura/issue/[TICKET-ID]`
 - always link to the github issue if mentioned in the linear ticket.

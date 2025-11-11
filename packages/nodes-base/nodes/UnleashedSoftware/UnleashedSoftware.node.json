@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.unleashedSoftware",
+	"node": "aura-nodes-base.unleashedSoftware",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Sales", "Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/unleashedsoftware/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/unleashedsoftware/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.unleashedsoftware/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.unleashedsoftware/"
 			}
 		]
 	}

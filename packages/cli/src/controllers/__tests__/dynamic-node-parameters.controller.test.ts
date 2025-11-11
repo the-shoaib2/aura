@@ -3,15 +3,15 @@ import type {
 	ResourceLocatorRequestDto,
 	ResourceMapperFieldsRequestDto,
 	ActionResultRequestDto,
-} from '@n8n/api-types';
-import type { AuthenticatedRequest } from '@n8n/db';
+} from '@aura/api-types';
+import type { AuthenticatedRequest } from '@aura/db';
 import { mock } from 'jest-mock-extended';
 import type {
 	ILoadOptions,
 	IWorkflowExecuteAdditionalData,
 	INodePropertyOptions,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DynamicNodeParametersController } from '@/controllers/dynamic-node-parameters.controller';
 import type { DynamicNodeParametersService } from '@/services/dynamic-node-parameters.service';

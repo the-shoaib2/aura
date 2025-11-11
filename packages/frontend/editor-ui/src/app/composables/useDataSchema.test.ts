@@ -4,11 +4,7 @@ import type { INodeUi, Schema } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import { setActivePinia } from 'pinia';
 import { createTestingPinia } from '@pinia/testing';
-import {
-	NodeConnectionTypes,
-	type INodeExecutionData,
-	type ITaskDataConnections,
-} from 'n8n-workflow';
+import { NodeConnectionTypes, type INodeExecutionData, type ITaskDataConnections } from 'workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { JSONSchema7 } from 'json-schema';
 import { mock } from 'vitest-mock-extended';

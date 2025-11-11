@@ -1,5 +1,5 @@
-import { testDb, mockInstance } from '@n8n/backend-test-utils';
-import type { CommandClass } from '@n8n/decorators';
+import { testDb, mockInstance } from '@aura/backend-test-utils';
+import type { CommandClass } from '@aura/decorators';
 import argvParser from 'yargs-parser';
 
 import { MessageEventBus } from '@/eventbus/message-event-bus/message-event-bus';

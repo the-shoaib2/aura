@@ -1,6 +1,6 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
 
 import { License } from '@/license';
 import { getWorkflowHistoryPruneTime } from '@/workflows/workflow-history.ee/workflow-history-helper.ee';

@@ -1,4 +1,4 @@
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 
 import { execute } from '../../../../v2/actions/spreadsheet/create.operation';
 import { apiRequest } from '../../../../v2/transport';

@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.segment",
+	"node": "aura-nodes-base.segment",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Analytics", "Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/segment/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/segment/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.segment/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.segment/"
 			}
 		]
 	}

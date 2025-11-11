@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.ciscoWebex",
+	"node": "aura-nodes-base.ciscoWebex",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/ciscowebex/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/ciscowebex/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.ciscowebex/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.ciscowebex/"
 			}
 		]
 	}

@@ -1,32 +1,32 @@
 {
-	"extends": "@n8n/typescript-config/tsconfig.frontend.json",
+	"extends": "@aura/typescript-config/tsconfig.frontend.json",
 	"compilerOptions": {
 		"baseUrl": ".",
 		"moduleResolution": "bundler",
 		"rootDirs": [
 			".",
-			"../@n8n/rest-api-client/src",
-			"../@n8n/composables/src",
-			"../@n8n/chat/src",
-			"../@n8n/design-system/src"
+			"../@aura/rest-api-client/src",
+			"../@aura/composables/src",
+			"../@aura/chat/src",
+			"../@aura/design-system/src"
 		],
 		"outDir": "dist",
 		"types": [
 			"vitest/globals",
 			"unplugin-icons/types/vue",
-			"../@n8n/design-system/src/shims-modules.d.ts"
+			"../@aura/design-system/src/shims-modules.d.ts"
 		],
 		"paths": {
 			"@/*": ["./src/*"],
-			"@n8n/rest-api-client*": ["../@n8n/rest-api-client/src*"],
-			"@n8n/composables*": ["../@n8n/composables/src*"],
-			"@n8n/constants*": ["../../@n8n/constants/src*"],
-			"@n8n/chat*": ["../@n8n/chat/src*"],
-			"@n8n/design-system*": ["../@n8n/design-system/src*"],
-			"@n8n/i18n*": ["../@n8n/i18n/src*"],
-			"@n8n/stores*": ["../@n8n/stores/src*"],
-			"@n8n/api-types*": ["../../@n8n/api-types/src*"],
-			"@n8n/utils*": ["../../@n8n/utils/src*"]
+			"@aura/rest-api-client*": ["../@aura/rest-api-client/src*"],
+			"@aura/composables*": ["../@aura/composables/src*"],
+			"@aura/constants*": ["../../@aura/constants/src*"],
+			"@aura/chat*": ["../@aura/chat/src*"],
+			"@aura/design-system*": ["../@aura/design-system/src*"],
+			"@aura/i18n*": ["../@aura/i18n/src*"],
+			"@aura/stores*": ["../@aura/stores/src*"],
+			"@aura/api-types*": ["../../@aura/api-types/src*"],
+			"@aura/utils*": ["../../@aura/utils/src*"]
 		},
 		// TODO: remove all options below this line
 		"useUnknownInCatchVariables": false

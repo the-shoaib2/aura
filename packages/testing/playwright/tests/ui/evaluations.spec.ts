@@ -7,16 +7,16 @@ test.use({
 });
 
 test.describe('Evaluations @capability:proxy', () => {
-	test.beforeEach(async ({ n8n, proxyServer }) => {
+	test.beforeEach(async ({ aura, proxyServer }) => {
 		await proxyServer.clearAllExpectations();
 
-		await n8n.goHome();
+		await aura.goHome();
 	});
 
-	test('should load evaluations workflow and execute twice', async ({ n8n, proxyServer }) => {
+	test('should load evaluations workflow and execute twice', async ({ aura, proxyServer }) => {
 		await proxyServer.loadExpectations('evaluations');
 
-		await n8n.api.credentials.createCredentialFromDefinition({
+		await aura.api.credentials.createCredentialFromDefinition({
 			name: 'Test Google Sheets',
 			type: 'googleApi',
 			data: {
@@ -53,26 +53,26 @@ m82JpEptTfAxFHtd8+Sb0U2G
 			},
 		});
 
-		await n8n.workflows.addResource.workflow();
+		await aura.workflows.addResource.workflow();
 		// Import the evaluations workflow
-		await n8n.canvas.importWorkflow('evaluations_loop.json', 'Evaluations');
+		await aura.canvas.importWorkflow('evaluations_loop.json', 'Evaluations');
 
 		// Open each node to ensure credentials are set
-		await n8n.canvas.openNode('When fetching a dataset row');
-		await n8n.page.keyboard.press('Escape');
+		await aura.canvas.openNode('When fetching a dataset row');
+		await aura.page.keyboard.press('Escape');
 
 		// Open each node to ensure credentials are set
-		await n8n.canvas.openNode('Set outputs');
-		await n8n.page.keyboard.press('Escape');
+		await aura.canvas.openNode('Set outputs');
+		await aura.page.keyboard.press('Escape');
 
 		// Execute workflow from canvas - first execution
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
 		// wait for first run to finish
-		await n8n.notifications.waitForNotificationAndClose('Successful', { timeout: 10000 });
+		await aura.notifications.waitForNotificationAndClose('Successful', { timeout: 10000 });
 
 		// wait for second run to finish
-		await n8n.notifications.waitForNotificationAndClose('Successful', { timeout: 10000 });
+		await aura.notifications.waitForNotificationAndClose('Successful', { timeout: 10000 });
 
 		// 💡 To update recordings, remove stored expectations, set real credentials above and rerecord here.
 		// await proxyServer.recordExpectations('evaluations', { host: 'google', dedupe: true });

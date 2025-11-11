@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, -160],
 			"id": "efd3f04e-8695-4f2c-8f8d-0b0166390d3f",
@@ -17,7 +17,7 @@
 				"campaignId": "12345678901",
 				"requestOptions": {}
 			},
-			"type": "n8n-nodes-base.googleAds",
+			"type": "aura-nodes-base.googleAds",
 			"typeVersion": 1,
 			"position": [220, -160],
 			"id": "773cca04-b4be-4bfd-8fb4-e37154df2991",

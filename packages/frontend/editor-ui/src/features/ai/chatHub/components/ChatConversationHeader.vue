@@ -3,8 +3,8 @@ import type { CredentialsMap } from '@/features/ai/chatHub/chat.types';
 import ModelSelector from '@/features/ai/chatHub/components/ModelSelector.vue';
 import { useChatHubSidebarState } from '@/features/ai/chatHub/composables/useChatHubSidebarState';
 import { CHAT_VIEW } from '@/features/ai/chatHub/constants';
-import type { ChatHubProvider, ChatModelDto, ChatSessionId } from '@n8n/api-types';
-import { N8nButton, N8nIconButton } from '@n8n/design-system';
+import type { ChatHubProvider, ChatModelDto, ChatSessionId } from '@aura/api-types';
+import { N8nButton, N8nIconButton } from '@aura/design-system';
 import { useTemplateRef } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -85,7 +85,7 @@ defineExpose({
 			@click="emit('editCustomAgent', selectedModel.model.agentId)"
 		/>
 		<N8nButton
-			v-if="selectedModel?.model.provider === 'n8n'"
+			v-if="selectedModel?.model.provider === 'aura'"
 			:class="$style.editAgent"
 			type="secondary"
 			size="small"

@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.quickbooks",
+	"node": "aura-nodes-base.quickbooks",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Finance & Accounting"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/quickbooks/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/quickbooks/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.quickbooks/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.quickbooks/"
 			}
 		]
 	}

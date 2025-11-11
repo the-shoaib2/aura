@@ -1,7 +1,7 @@
 import { getSchemaPreview } from './schemaPreview.api';
-import * as apiUtils from '@n8n/rest-api-client';
+import * as apiUtils from '@aura/rest-api-client';
 
-vi.mock('@n8n/rest-api-client');
+vi.mock('@aura/rest-api-client');
 
 describe('API: schemaPreview', () => {
 	describe('getSchemaPreview', () => {
@@ -11,14 +11,14 @@ describe('API: schemaPreview', () => {
 				properties: { count: { type: 'number' }, name: { type: 'string' } },
 			};
 			vi.spyOn(apiUtils, 'request').mockResolvedValue(schema);
-			const schemaResponse = await getSchemaPreview('http://test-n8n-base-url', {
-				nodeType: 'n8n-nodes-base.test',
+			const schemaResponse = await getSchemaPreview('http://test-aura-base-url', {
+				nodeType: 'aura-nodes-base.test',
 				version: 1.2,
 			});
 
 			expect(apiUtils.request).toHaveBeenCalledWith({
-				baseURL: 'http://test-n8n-base-url',
-				endpoint: 'schemas/n8n-nodes-base.test/1.2.0.json',
+				baseURL: 'http://test-aura-base-url',
+				endpoint: 'schemas/aura-nodes-base.test/1.2.0.json',
 				method: 'GET',
 				withCredentials: false,
 			});
@@ -30,8 +30,8 @@ describe('API: schemaPreview', () => {
 			vi.spyOn(apiUtils, 'request').mockResolvedValue(schema);
 
 			await expect(
-				getSchemaPreview('http://test-n8n-base-url', {
-					nodeType: 'n8n-nodes-base.test',
+				getSchemaPreview('http://test-aura-base-url', {
+					nodeType: 'aura-nodes-base.test',
 					version: 1.2,
 					resource: 'contact',
 					operation: 'create',
@@ -39,8 +39,8 @@ describe('API: schemaPreview', () => {
 			).rejects.toEqual(new Error('Invalid JSON schema'));
 
 			expect(apiUtils.request).toHaveBeenCalledWith({
-				baseURL: 'http://test-n8n-base-url',
-				endpoint: 'schemas/n8n-nodes-base.test/1.2.0/contact/create.json',
+				baseURL: 'http://test-aura-base-url',
+				endpoint: 'schemas/aura-nodes-base.test/1.2.0/contact/create.json',
 				method: 'GET',
 				withCredentials: false,
 			});
@@ -54,7 +54,7 @@ describe('API: schemaPreview', () => {
 			vi.spyOn(apiUtils, 'request').mockResolvedValue(schema);
 
 			await getSchemaPreview('http://test.com', {
-				nodeType: '@n8n/n8n-nodes-base.asana',
+				nodeType: '@aura/aura-nodes-base.asana',
 				version: 1,
 				resource: 'resource',
 				operation: 'operation',
@@ -63,7 +63,7 @@ describe('API: schemaPreview', () => {
 			expect(apiUtils.request).toHaveBeenCalledWith({
 				method: 'GET',
 				baseURL: 'http://test.com',
-				endpoint: 'schemas/n8n-nodes-base.asana/1.0.0/resource/operation.json',
+				endpoint: 'schemas/aura-nodes-base.asana/1.0.0/resource/operation.json',
 				withCredentials: false,
 			});
 		});

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useCanvasNode } from '../../../../composables/useCanvasNode';
 import type { CanvasNodeStickyNoteRender } from '../../../../canvas.types';
 
-import { N8nIcon, N8nPopover } from '@n8n/design-system';
+import { N8nIcon, N8nPopover } from '@aura/design-system';
 const emit = defineEmits<{
 	update: [color: number];
 }>();

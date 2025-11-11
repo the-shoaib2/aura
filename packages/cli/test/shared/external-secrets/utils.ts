@@ -1,4 +1,4 @@
-import type { IDataObject, INodeProperties } from 'n8n-workflow';
+import type { IDataObject, INodeProperties } from 'workflow';
 
 import { SecretsProvider } from '@/modules/external-secrets.ee/types';
 import type {

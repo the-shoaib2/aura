@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "9e687c5d-e3a5-436d-a96d-7bfde1110f40",
@@ -14,7 +14,7 @@
 				"operation": "getAll",
 				"returnAll": true
 			},
-			"type": "n8n-nodes-base.philipsHue",
+			"type": "aura-nodes-base.philipsHue",
 			"typeVersion": 1,
 			"position": [260, 0],
 			"id": "063bcf31-3055-42f1-904f-d517f85db182",
@@ -28,7 +28,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [480, 0],
 			"id": "d6c4f99a-d660-4113-aa08-a7bcc9391236",
@@ -42,7 +42,7 @@
 					"hue": 50000
 				}
 			},
-			"type": "n8n-nodes-base.philipsHue",
+			"type": "aura-nodes-base.philipsHue",
 			"typeVersion": 1,
 			"position": [260, 200],
 			"id": "c8311112-d24e-4787-80b1-cc5397aea98e",
@@ -56,7 +56,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [480, 200],
 			"id": "c438bf28-0cf8-459a-bd3a-28f6c30b3f2f",
@@ -67,7 +67,7 @@
 				"operation": "delete",
 				"lightId": "=1"
 			},
-			"type": "n8n-nodes-base.philipsHue",
+			"type": "aura-nodes-base.philipsHue",
 			"typeVersion": 1,
 			"position": [280, 400],
 			"id": "fd197627-9221-4e6d-ab51-53d262004db8",
@@ -81,7 +81,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [500, 400],
 			"id": "19796164-8527-462b-b01b-71d7f60c94af",

@@ -22,7 +22,7 @@ import { reactive } from 'vue';
 import * as chatAPI from '@/features/ai/assistant/assistant.api';
 import * as telemetryModule from '@/app/composables/useTelemetry';
 import type { Telemetry } from '@/app/plugins/telemetry';
-import type { ChatUI } from '@n8n/design-system/types/assistant';
+import type { ChatUI } from '@aura/design-system/types/assistant';
 
 let settingsStore: ReturnType<typeof useSettingsStore>;
 let posthogStore: ReturnType<typeof usePostHog>;
@@ -363,7 +363,7 @@ describe('AI Assistant store', () => {
 			},
 			node: {
 				id: '1',
-				type: 'n8n-nodes-base.stopAndError',
+				type: 'aura-nodes-base.stopAndError',
 				typeVersion: 1,
 				name: 'Stop and Error',
 				position: [250, 250],
@@ -384,7 +384,7 @@ describe('AI Assistant store', () => {
 			},
 			node: {
 				id: '1',
-				type: 'n8n-nodes-base.stopAndError',
+				type: 'aura-nodes-base.stopAndError',
 				typeVersion: 1,
 				name: 'Stop and Error',
 				position: [250, 250],
@@ -412,7 +412,7 @@ describe('AI Assistant store', () => {
 		});
 		expect(track).toHaveBeenCalledWith('Assistant session started', {
 			chat_session_id: 'test',
-			node_type: 'n8n-nodes-base.stopAndError',
+			node_type: 'aura-nodes-base.stopAndError',
 			task: 'error',
 			credential_type: undefined,
 		});
@@ -425,7 +425,7 @@ describe('AI Assistant store', () => {
 				name: 'NodeOperationError',
 			},
 			has_existing_session: true,
-			node_type: 'n8n-nodes-base.stopAndError',
+			node_type: 'aura-nodes-base.stopAndError',
 			source: 'error',
 			task: 'error',
 			workflow_id: '__EMPTY__',

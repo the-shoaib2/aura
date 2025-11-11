@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { updateDisplayOptions, wrapData } from '@utils/utilities';
 
@@ -12,7 +7,7 @@ import { theHiveApiRequest } from '../../transport';
 
 const properties: INodeProperties[] = [
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 		displayName: 'Add to',
 		name: 'addTo',
 		type: 'options',

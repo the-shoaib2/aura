@@ -6,8 +6,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, jsonParse, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, jsonParse, NodeApiError } from 'workflow';
 
 import { documentFields, documentOperations, indexFields, indexOperations } from './descriptions';
 import {

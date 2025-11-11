@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.mocean",
+	"node": "aura-nodes-base.mocean",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/mocean/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/mocean/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mocean/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.mocean/"
 			}
 		]
 	}

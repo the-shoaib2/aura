@@ -1,7 +1,7 @@
-import type { EntityClass, ModuleInterface } from '@n8n/decorators';
-import { BackendModule } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
+import type { EntityClass, ModuleInterface } from '@aura/decorators';
+import { BackendModule } from '@aura/decorators';
+import { Container } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
 import path from 'node:path';
 
 @BackendModule({ name: 'community-packages' })

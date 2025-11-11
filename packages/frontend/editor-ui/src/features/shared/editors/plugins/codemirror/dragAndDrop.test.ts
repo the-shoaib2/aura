@@ -5,7 +5,7 @@ import { createTestingPinia } from '@pinia/testing';
 import { fireEvent } from '@testing-library/dom';
 import { setActivePinia } from 'pinia';
 import { mappingDropCursor } from './dragAndDrop';
-import { n8nLang } from './n8nLang';
+import { auraLang } from './auraLang';
 
 describe('CodeMirror drag and drop', () => {
 	beforeEach(() => {
@@ -19,7 +19,7 @@ describe('CodeMirror drag and drop', () => {
 			document.body.appendChild(parent);
 			const state = EditorState.create({
 				doc: 'test {{ $json.foo }} \n\nnewline',
-				extensions: [mappingDropCursor(), n8nLang()],
+				extensions: [mappingDropCursor(), auraLang()],
 			});
 			const editor = new EditorView({ parent, state });
 			return editor;

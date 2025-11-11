@@ -8,7 +8,7 @@ import {
 	makeOverrideValue,
 	parseOverrides,
 } from './fromAIOverride.utils';
-import type { INodeTypeDescription, NodePropertyTypes } from 'n8n-workflow';
+import type { INodeTypeDescription, NodePropertyTypes } from 'workflow';
 
 const getNodeType = vi.fn();
 
@@ -115,7 +115,7 @@ describe('makeOverrideValue', () => {
 	it('should create an fromAI override', () => {
 		getNodeType.mockReturnValue(AI_NODE_TYPE);
 		const result = makeOverrideValue(
-			makeContext(`={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}') }}`),
+			makeContext(`={{ /*aura-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}') }}`),
 			mockNodeFromType(AI_NODE_TYPE),
 		);
 
@@ -129,7 +129,7 @@ describe('makeOverrideValue', () => {
 		const description = 'a description';
 		const result = makeOverrideValue(
 			makeContext(
-				`={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}', \`${description}\`) }}`,
+				`={{ /*aura-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}', \`${description}\`) }}`,
 			),
 			mockNodeFromType(AI_NODE_TYPE),
 		);
@@ -142,7 +142,7 @@ describe('makeOverrideValue', () => {
 		getNodeType.mockReturnValue(AI_NODE_TYPE);
 
 		const result = makeOverrideValue(
-			makeContext("={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('aName', ``) }}"),
+			makeContext("={{ /*aura-auto-generated-fromAI-override*/ $fromAI('aName', ``) }}"),
 			mockNodeFromType(AI_NODE_TYPE),
 		);
 
@@ -154,7 +154,7 @@ describe('makeOverrideValue', () => {
 describe('FromAiOverride', () => {
 	it('correctly identifies override values', () => {
 		expect(isFromAIOverrideValue('={{ $fromAI() }}')).toBe(false);
-		expect(isFromAIOverrideValue('={{ /*n8n-auto-generated-fromAI-override*/ $fromAI() }}')).toBe(
+		expect(isFromAIOverrideValue('={{ /*aura-auto-generated-fromAI-override*/ $fromAI() }}')).toBe(
 			true,
 		);
 	});
@@ -167,12 +167,12 @@ describe('FromAiOverride', () => {
 		expect(parseOverrides("={{ $fromAI('aKey', `a description`) }}")).toEqual({
 			description: 'a description',
 		});
-		expect(parseOverrides("={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('aKey') }}")).toEqual(
-			{ description: undefined },
-		);
+		expect(
+			parseOverrides("={{ /*aura-auto-generated-fromAI-override*/ $fromAI('aKey') }}"),
+		).toEqual({ description: undefined });
 		expect(
 			parseOverrides(
-				"={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('aKey', `a description`) }}",
+				"={{ /*aura-auto-generated-fromAI-override*/ $fromAI('aKey', `a description`) }}",
 			),
 		).toEqual({
 			description: 'a description',
@@ -197,7 +197,7 @@ describe('FromAiOverride', () => {
 			extraPropValues: {},
 		};
 		expect(buildValueFromOverride(override, makeContext(''), true)).toEqual(
-			`={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}', \`\`, 'string') }}`,
+			`={{ /*aura-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}', \`\`, 'string') }}`,
 		);
 		expect(buildValueFromOverride(override, makeContext(''), false)).toEqual(
 			`={{ $fromAI('${DISPLAY_NAME}', \`\`, 'string') }}`,
@@ -207,7 +207,7 @@ describe('FromAiOverride', () => {
 		override.extraPropValues.description = description;
 
 		expect(buildValueFromOverride(override, makeContext(''), true)).toEqual(
-			`={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}', \`${description}\`, 'string') }}`,
+			`={{ /*aura-auto-generated-fromAI-override*/ $fromAI('${DISPLAY_NAME}', \`${description}\`, 'string') }}`,
 		);
 		expect(buildValueFromOverride(override, makeContext(''), false)).toEqual(
 			`={{ $fromAI('${DISPLAY_NAME}', \`${description}\`, 'string') }}`,

@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.aiTransform",
+	"node": "aura-nodes-base.aiTransform",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "Modify data by writing a prompt",
@@ -7,7 +7,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.aitransform/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.aitransform/"
 			}
 		]
 	},

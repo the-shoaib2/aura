@@ -6,7 +6,7 @@ import type {
 	ILoadOptionsFunctions,
 	IRequestOptions,
 	IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export async function segmentApiRequest(
 	this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions | IWebhookFunctions,

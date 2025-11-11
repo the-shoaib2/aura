@@ -5,8 +5,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import type { IRecord } from './v1/GenericFunctions';
 import { apiRequestAllItems, downloadRecordAttachments } from './v1/GenericFunctions';
@@ -207,7 +207,7 @@ export class AirtableTrigger implements INodeType {
 						type: 'string',
 						requiresDataPath: 'multiple',
 						default: '',
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+						// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 						description:
 							'Fields to be included in the response. Multiple ones can be set separated by comma. Example: <code>name, id</code>. By default just the trigger field will be included.',
 					},

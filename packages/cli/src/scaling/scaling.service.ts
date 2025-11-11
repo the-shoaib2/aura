@@ -1,10 +1,10 @@
-import { isObjectLiteral, Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import { ExecutionRepository } from '@n8n/db';
-import { OnLeaderStepdown, OnLeaderTakeover, OnShutdown } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
-import { ErrorReporter, InstanceSettings } from 'n8n-core';
+import { isObjectLiteral, Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import { ExecutionRepository } from '@aura/db';
+import { OnLeaderStepdown, OnLeaderTakeover, OnShutdown } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
+import { ErrorReporter, InstanceSettings } from 'aura-core';
 import {
 	BINARY_ENCODING,
 	sleep,
@@ -12,8 +12,8 @@ import {
 	ensureError,
 	UnexpectedError,
 	ManualExecutionCancelledError,
-} from 'n8n-workflow';
-import type { IExecuteResponsePromiseData } from 'n8n-workflow';
+} from 'workflow';
+import type { IExecuteResponsePromiseData } from 'workflow';
 import assert, { strict } from 'node:assert';
 
 import { ActiveExecutions } from '@/active-executions';

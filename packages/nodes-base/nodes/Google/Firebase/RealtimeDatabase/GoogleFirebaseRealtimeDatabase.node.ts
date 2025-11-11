@@ -8,8 +8,8 @@ import type {
 	INodeTypeDescription,
 	JsonObject,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { googleApiRequest, googleApiRequestAllItems } from './GenericFunctions';
 
@@ -43,7 +43,7 @@ export class GoogleFirebaseRealtimeDatabase implements INodeType {
 					loadOptionsMethod: 'getProjects',
 				},
 				description:
-					'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				required: true,
 			},
 			{
@@ -92,7 +92,7 @@ export class GoogleFirebaseRealtimeDatabase implements INodeType {
 				type: 'string',
 				default: '',
 				placeholder: 'e.g. /app/users',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-json
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-json
 				description: 'Object path on database. Do not append .json.',
 				required: true,
 				displayOptions: {
@@ -107,7 +107,7 @@ export class GoogleFirebaseRealtimeDatabase implements INodeType {
 				type: 'string',
 				default: '',
 				placeholder: 'e.g. /app/users',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-json
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-json
 				description: 'Object path on database. Do not append .json.',
 				hint: 'Leave blank to get a whole database object',
 				displayOptions: {

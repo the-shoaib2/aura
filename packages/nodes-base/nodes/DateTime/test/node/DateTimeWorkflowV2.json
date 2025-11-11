@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "21ff2e15-375d-4e68-b1ca-d48a110be238",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-420, 20]
 		},
@@ -17,7 +17,7 @@
 			},
 			"id": "b99986f1-edeb-434c-b7ed-9cc86eaec522",
 			"name": "Add to date",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 2,
 			"position": [140, 40]
 		},
@@ -29,7 +29,7 @@
 			},
 			"id": "aa75a04b-0d42-46ff-87e7-75d4b4f6c7ea",
 			"name": "Subtract date",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 2,
 			"position": [300, 200]
 		},
@@ -41,7 +41,7 @@
 			},
 			"id": "52076d89-bc6d-4253-8ca4-9aad3a058d17",
 			"name": "Format Date",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 2,
 			"position": [420, 40]
 		},
@@ -53,7 +53,7 @@
 			},
 			"id": "10016499-c9da-4984-9a5f-2f8c8844fb63",
 			"name": "Round Date",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 2,
 			"position": [560, 200]
 		},
@@ -66,7 +66,7 @@
 			},
 			"id": "f62b6d0b-b13a-4fcd-b4eb-3ec7ea85e80c",
 			"name": "Get between date",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 2,
 			"position": [660, 40]
 		},
@@ -79,7 +79,7 @@
 			},
 			"id": "764e3e08-f71b-4e42-b059-36285076fe10",
 			"name": "Extract Date",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 2,
 			"position": [780, 220]
 		},
@@ -91,7 +91,7 @@
 			},
 			"id": "f0b75198-74a4-4a13-8842-340539f41d80",
 			"name": "V1",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [0, -180],
 			"disabled": true
@@ -102,7 +102,7 @@
 			},
 			"id": "7ba0c2a1-a683-4975-a2ca-70904111a3fc",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [-140, 140]
 		}

@@ -7,21 +7,27 @@ import { useToast } from '@/app/composables/useToast';
 import { useMessage } from '@/app/composables/useMessage';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import type { IFormInput, IFormInputs } from '@/Interface';
-import type { LdapConfig, LdapSyncData, LdapSyncTable } from '@n8n/rest-api-client/api/ldap';
+import type { LdapConfig, LdapSyncData, LdapSyncTable } from '@aura/rest-api-client/api/ldap';
 import { MODAL_CONFIRM } from '@/app/constants';
 
 import humanizeDuration from 'humanize-duration';
 import type { Events } from 'v3-infinite-loading';
 import InfiniteLoading from 'v3-infinite-loading';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { createFormEventBus } from '@n8n/design-system/utils';
+import { createFormEventBus } from '@aura/design-system/utils';
 import type { TableColumnCtx } from 'element-plus';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { useSSOStore } from '../sso.store';
 
 import { ElTable, ElTableColumn } from 'element-plus';
-import { N8nActionBox, N8nButton, N8nFormInputs, N8nHeading, N8nInfoTip } from '@n8n/design-system';
+import {
+	N8nActionBox,
+	N8nButton,
+	N8nFormInputs,
+	N8nHeading,
+	N8nInfoTip,
+} from '@aura/design-system';
 type TableRow = {
 	status: string;
 	startAt: string;
@@ -621,7 +627,7 @@ onMounted(async () => {
 			</div>
 			<div :class="$style.docsInfoTip">
 				<N8nInfoTip theme="info" type="note">
-					<span v-n8n-html="i18n.baseText('settings.ldap.infoTip')"></span>
+					<span v-aura-html="i18n.baseText('settings.ldap.infoTip')"></span>
 				</N8nInfoTip>
 			</div>
 			<div :class="$style.settingsForm">

@@ -1,11 +1,11 @@
-import type { OidcConfigDto } from '@n8n/api-types';
-import type { Logger } from '@n8n/backend-common';
-import { mockInstance, mockLogger } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
-import type { AuthIdentityRepository, SettingsRepository, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { OidcConfigDto } from '@aura/api-types';
+import type { Logger } from '@aura/backend-common';
+import { mockInstance, mockLogger } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
+import type { AuthIdentityRepository, SettingsRepository, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import type { Cipher, InstanceSettings } from 'n8n-core';
+import type { Cipher, InstanceSettings } from 'aura-core';
 import * as client from 'openid-client';
 import { EnvHttpProxyAgent } from 'undici';
 

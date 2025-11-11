@@ -2,13 +2,13 @@
 import { ref } from 'vue';
 import Modal from '@/app/components/Modal.vue';
 import { PROMPT_MFA_CODE_MODAL_KEY } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { promptMfaCodeBus } from '../auth.eventBus';
 import { type IFormInput } from '@/Interface';
-import { createFormEventBus } from '@n8n/design-system/utils';
+import { createFormEventBus } from '@aura/design-system/utils';
 import { validate as validateUuid } from 'uuid';
 
-import { N8nButton, N8nFormInputs } from '@n8n/design-system';
+import { N8nButton, N8nFormInputs } from '@aura/design-system';
 const i18n = useI18n();
 
 const formBus = createFormEventBus();

@@ -1,5 +1,5 @@
 import type { Completion, CompletionSection } from '@codemirror/autocomplete';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 import { withSectionHeader } from './utils';
 import { createInfoBoxRenderer } from './infoBoxRenderer';
 import { Facet } from '@codemirror/state';
@@ -58,7 +58,7 @@ export const ROOT_DOLLAR_COMPLETIONS: Completion[] = [
 			name: '$json',
 			returnType: 'Object',
 			description: i18n.baseText('codeNodeEditor.completer.json'),
-			docURL: 'https://docs.n8n.io/data/data-structure/',
+			docURL: 'https://docs.aura.io/data/data-structure/',
 		}),
 	},
 	{
@@ -286,7 +286,7 @@ export const ROOT_DOLLAR_COMPLETIONS: Completion[] = [
 				name: '$fromAI',
 				returnType: 'any',
 				description: 'Populate this with the parameter passed from the large language model',
-				docURL: 'https://docs.n8n.io/advanced-ai/examples/using-the-fromai-function/',
+				docURL: 'https://docs.aura.io/advanced-ai/examples/using-the-fromai-function/',
 				args: [
 					{
 						name: 'key',

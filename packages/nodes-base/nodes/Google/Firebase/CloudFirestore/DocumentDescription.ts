@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const documentOperations: INodeProperties[] = [
 	{
@@ -78,7 +78,7 @@ export const documentFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 	},
 	{
@@ -168,7 +168,7 @@ export const documentFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 	},
 	{
@@ -244,7 +244,7 @@ export const documentFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 	},
 	{
@@ -339,7 +339,7 @@ export const documentFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 	},
 	{
@@ -516,7 +516,7 @@ export const documentFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 	},
 	{
@@ -595,7 +595,7 @@ export const documentFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 	},
 	{

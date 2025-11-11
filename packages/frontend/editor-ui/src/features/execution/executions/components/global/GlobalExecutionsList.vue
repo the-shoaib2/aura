@@ -3,7 +3,7 @@ import ConcurrentExecutionsHeader from '../ConcurrentExecutionsHeader.vue';
 import ExecutionsFilter from '../ExecutionsFilter.vue';
 import GlobalExecutionsListItem from './GlobalExecutionsListItem.vue';
 import SelectedItemsInfo from '@/app/components/common/SelectedItemsInfo.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useMessage } from '@/app/composables/useMessage';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -11,18 +11,18 @@ import { useToast } from '@/app/composables/useToast';
 import { EnterpriseEditionFeature, MODAL_CONFIRM } from '@/app/constants';
 import type { IWorkflowDb } from '@/Interface';
 import type { ExecutionFilterType, ExecutionSummaryWithScopes } from '../../executions.types';
-import type { PermissionsRecord } from '@n8n/permissions';
-import { getResourcePermissions } from '@n8n/permissions';
+import type { PermissionsRecord } from '@aura/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 import { useExecutionsStore } from '../../executions.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { executionRetryMessage } from '../../executions.utils';
 import { useIntersectionObserver } from '@vueuse/core';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'workflow';
 import { computed, ref, useTemplateRef, watch, type ComponentPublicInstance } from 'vue';
 
 import { ElCheckbox, ElSkeletonItem } from 'element-plus';
-import { N8nButton, N8nCheckbox, N8nTableBase } from '@n8n/design-system';
+import { N8nButton, N8nCheckbox, N8nTableBase } from '@aura/design-system';
 const props = withDefaults(
 	defineProps<{
 		executions: ExecutionSummaryWithScopes[];

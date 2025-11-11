@@ -1,4 +1,4 @@
-import { Service } from '@n8n/di';
+import { Service } from '@aura/di';
 
 import { AwsSecretsManager } from './providers/aws-secrets-manager';
 import { AzureKeyVault } from './providers/azure-key-vault/azure-key-vault';

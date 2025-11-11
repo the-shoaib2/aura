@@ -2,8 +2,8 @@ import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 import lt from 'lodash/lt';
 import pick from 'lodash/pick';
-import { NodeOperationError } from 'n8n-workflow';
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import { NodeOperationError } from 'workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { compareItems, flattenKeys, updateDisplayOptions } from '@utils/utilities';
 

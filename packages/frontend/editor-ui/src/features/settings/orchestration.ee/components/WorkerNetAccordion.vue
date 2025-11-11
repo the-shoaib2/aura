@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { WorkerStatus } from '@n8n/api-types';
+import type { WorkerStatus } from '@aura/api-types';
 import WorkerAccordion from './WorkerAccordion.vue';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 
 const props = defineProps<{

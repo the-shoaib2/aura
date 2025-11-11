@@ -9,16 +9,16 @@ const requirements: TestRequirements = {
 
 test.describe('ADO-1338-ndv-missing-input-panel', () => {
 	test('should show the input and output panels when node is missing input and output data', async ({
-		n8n,
+		aura,
 		setupRequirements,
 	}) => {
 		await setupRequirements(requirements);
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(
 			'Workflow successfully executed',
 		);
 
-		await n8n.canvas.openNode('Discourse1');
-		await expect(n8n.ndv.inputPanel.get()).toBeVisible();
-		await expect(n8n.ndv.outputPanel.get()).toBeVisible();
+		await aura.canvas.openNode('Discourse1');
+		await expect(aura.ndv.inputPanel.get()).toBeVisible();
+		await expect(aura.ndv.outputPanel.get()).toBeVisible();
 	});
 });

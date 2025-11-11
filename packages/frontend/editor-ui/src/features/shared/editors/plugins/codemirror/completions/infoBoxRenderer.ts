@@ -1,7 +1,7 @@
 import type { Completion } from '@codemirror/autocomplete';
-import type { DocMetadata, DocMetadataArgument, DocMetadataExample } from 'n8n-workflow';
+import type { DocMetadata, DocMetadataArgument, DocMetadataExample } from 'workflow';
 import { sanitizeHtml } from '@/app/utils/htmlUtils';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 
 const shouldHighlightArgument = (
 	arg: DocMetadataArgument,

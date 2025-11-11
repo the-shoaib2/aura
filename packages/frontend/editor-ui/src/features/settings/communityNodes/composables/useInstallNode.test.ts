@@ -5,9 +5,9 @@ import { useCredentialsStore } from '@/features/credentials/credentials.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { CommunityNodeType } from '@n8n/api-types';
+import type { CommunityNodeType } from '@aura/api-types';
 import { createTestingPinia } from '@pinia/testing';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'workflow';
 import { setActivePinia } from 'pinia';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
 import { useInstallNode } from './useInstallNode';
@@ -26,7 +26,7 @@ vi.mock('@/app/composables/useToast', () => ({
 	}),
 }));
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@aura/i18n', () => ({
 	i18n: {
 		baseText: vi.fn((key: string) => key),
 	},

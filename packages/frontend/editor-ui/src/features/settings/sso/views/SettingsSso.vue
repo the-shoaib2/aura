@@ -7,8 +7,8 @@ import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
 import { MODAL_CONFIRM } from '@/app/constants';
 import { useSSOStore, SupportedProtocols, type SupportedProtocolType } from '../sso.store';
-import { useI18n } from '@n8n/i18n';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useI18n } from '@aura/i18n';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { computed, onMounted, ref } from 'vue';
 
 import { ElSwitch } from 'element-plus';
@@ -22,7 +22,7 @@ import {
 	N8nRadioButtons,
 	N8nSelect,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const IdentityProviderSettingsType = {
 	URL: 'url',
 	XML: 'xml',
@@ -352,7 +352,7 @@ async function onOidcSettingsSave() {
 		</div>
 		<N8nInfoTip>
 			{{ i18n.baseText('settings.sso.info') }}
-			<a href="https://docs.n8n.io/user-management/saml/" target="_blank">
+			<a href="https://docs.aura.io/user-management/saml/" target="_blank">
 				{{ i18n.baseText('settings.sso.info.link') }}
 			</a>
 		</N8nInfoTip>

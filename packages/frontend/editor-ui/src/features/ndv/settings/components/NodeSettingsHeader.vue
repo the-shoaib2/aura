@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IUpdateInformation } from '@/Interface';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'workflow';
 import NodeSettingsTabs from './NodeSettingsTabs.vue';
 import NodeExecuteButton from '@/app/components/NodeExecuteButton.vue';
 import type { NodeSettingsTab } from '@/app/types/nodeSettings';

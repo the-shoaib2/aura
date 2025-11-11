@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const objectOperations: INodeProperties[] = [
 	{
@@ -304,7 +304,7 @@ export const objectFields: INodeProperties[] = [
 								displayName: 'Constrain',
 								name: 'constraint_type',
 								type: 'options',
-								// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+								// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 								options: [
 									{
 										name: 'Equals',

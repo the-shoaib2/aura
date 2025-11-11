@@ -32,7 +32,7 @@ import { useTagsStore } from '@/features/shared/tags/tags.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { useMessage } from '@/app/composables/useMessage';
@@ -49,11 +49,11 @@ import { useNpsSurveyStore } from '@/app/stores/npsSurvey.store';
 import { ProjectTypes } from '@/features/collaboration/projects/projects.types';
 import { sanitizeFilename } from '@/app/utils/fileUtils';
 import { hasPermission } from '@/app/utils/rbac/permissions';
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
-import { type BaseTextKey, useI18n } from '@n8n/i18n';
-import { getResourcePermissions } from '@n8n/permissions';
-import type { WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { PathItem } from '@aura/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import { type BaseTextKey, useI18n } from '@aura/i18n';
+import { getResourcePermissions } from '@aura/permissions';
+import type { WorkflowDataUpdate } from '@aura/rest-api-client/api/workflows';
+import { createEventBus } from '@aura/utils/event-bus';
 import { saveAs } from 'file-saver';
 import {
 	computed,
@@ -73,7 +73,7 @@ import {
 	N8nButton,
 	N8nInlineTextEdit,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import WorkflowDescriptionPopover from './WorkflowDescriptionPopover.vue';
 
 const WORKFLOW_NAME_BP_TO_WIDTH: { [key: string]: number } = {

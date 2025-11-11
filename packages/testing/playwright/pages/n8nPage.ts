@@ -54,7 +54,7 @@ import { NavigationHelper } from '../helpers/NavigationHelper';
 import { ApiHelpers } from '../services/api-helper';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-export class n8nPage {
+export class auraPage {
 	readonly page: Page;
 	readonly api: ApiHelpers;
 

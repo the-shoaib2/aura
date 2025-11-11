@@ -11,10 +11,10 @@ import type {
 	ITemplatesWorkflow,
 	ITemplatesWorkflowFull,
 	IWorkflowTemplate,
-} from '@n8n/rest-api-client/api/templates';
-import * as templatesApi from '@n8n/rest-api-client/api/templates';
-import { STORES } from '@n8n/stores';
-import { useRootStore } from '@n8n/stores/useRootStore';
+} from '@aura/rest-api-client/api/templates';
+import * as templatesApi from '@aura/rest-api-client/api/templates';
+import { STORES } from '@aura/stores';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -179,7 +179,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, () => {
 		const defaultParameters: Record<string, string> = {
 			...TEMPLATES_URLS.UTM_QUERY,
 			utm_instance: currentN8nPath.value,
-			utm_n8n_version: rootStore.versionCli,
+			utm_aura_version: rootStore.versionCli,
 			utm_awc: String(workflowsStore.activeWorkflows.length),
 		};
 		if (userRole.value) {
@@ -305,7 +305,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, () => {
 		const apiEndpoint: string = settingsStore.templatesHost;
 		const versionCli: string = rootStore.versionCli;
 		const response = await templatesApi.getTemplateById(apiEndpoint, templateId, {
-			'n8n-version': versionCli,
+			'aura-version': versionCli,
 		});
 
 		const template: ITemplatesWorkflowFull = {
@@ -323,7 +323,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, () => {
 		const apiEndpoint: string = settingsStore.templatesHost;
 		const versionCli: string = rootStore.versionCli;
 		const response = await templatesApi.getCollectionById(apiEndpoint, collectionId, {
-			'n8n-version': versionCli,
+			'aura-version': versionCli,
 		});
 		const collection: ITemplatesCollectionFull = {
 			...response.collection,
@@ -343,7 +343,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, () => {
 		const apiEndpoint: string = settingsStore.templatesHost;
 		const versionCli: string = rootStore.versionCli;
 		const response = await templatesApi.getCategories(apiEndpoint, {
-			'n8n-version': versionCli,
+			'aura-version': versionCli,
 		});
 		const categories = response.categories;
 
@@ -360,7 +360,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, () => {
 		const apiEndpoint: string = settingsStore.templatesHost;
 		const versionCli: string = rootStore.versionCli;
 		const response = await templatesApi.getCollections(apiEndpoint, query, {
-			'n8n-version': versionCli,
+			'aura-version': versionCli,
 		});
 		const collections = response.collections;
 
@@ -383,7 +383,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, () => {
 		const payload = await templatesApi.getWorkflows(
 			apiEndpoint,
 			{ ...query, page: 1, limit: TEMPLATES_PAGE_SIZE },
-			{ 'n8n-version': versionCli },
+			{ 'aura-version': versionCli },
 		);
 
 		addWorkflows(payload.workflows);
@@ -421,7 +421,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, () => {
 		const apiEndpoint: string = settingsStore.templatesHost;
 		const versionCli: string = rootStore.versionCli;
 		return await templatesApi.getWorkflowTemplate(apiEndpoint, templateId, {
-			'n8n-version': versionCli,
+			'aura-version': versionCli,
 		});
 	};
 

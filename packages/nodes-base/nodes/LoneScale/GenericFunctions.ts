@@ -7,7 +7,7 @@ import {
 	type ILoadOptionsFunctions,
 	type IWebhookFunctions,
 	type IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { BASE_URL } from './constants';
 

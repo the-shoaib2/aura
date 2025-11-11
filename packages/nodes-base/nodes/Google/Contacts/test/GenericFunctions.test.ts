@@ -1,6 +1,6 @@
 import { mockDeep } from 'jest-mock-extended';
-import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import * as GenericFunctions from '../GenericFunctions';
 
@@ -15,7 +15,7 @@ describe('Google Contacts GenericFunctions', () => {
 		mockNode = {
 			id: 'test-node-id',
 			name: 'Google Contacts Test',
-			type: 'n8n-nodes-base.googleContacts',
+			type: 'aura-nodes-base.googleContacts',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},

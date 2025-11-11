@@ -1,12 +1,12 @@
-/* eslint-disable n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options */
-/* eslint-disable n8n-nodes-base/node-param-description-wrong-for-dynamic-options */
+/* eslint-disable aura-nodes-base/node-param-display-name-wrong-for-dynamic-options */
+/* eslint-disable aura-nodes-base/node-param-description-wrong-for-dynamic-options */
 import {
 	type IDataObject,
 	type INodeExecutionData,
 	type INodeProperties,
 	type IExecuteFunctions,
 	updateDisplayOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { seaTableApiRequest } from '../../GenericFunctions';
 
@@ -42,7 +42,7 @@ export const properties: INodeProperties[] = [
 		name: 'rowId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		required: true,
 		typeOptions: {
 			loadOptionsDependsOn: ['tableName'],

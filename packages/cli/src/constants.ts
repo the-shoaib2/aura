@@ -1,8 +1,8 @@
-import { Time } from '@n8n/constants';
+import { Time } from '@aura/constants';
 import { readFileSync, statSync } from 'fs';
-import type { n8n } from 'n8n-core';
-import type { ITaskDataConnections } from 'n8n-workflow';
-import { jsonParse, TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'n8n-workflow';
+import type { aura } from 'aura-core';
+import type { ITaskDataConnections } from 'workflow';
+import { jsonParse, TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'workflow';
 import { resolve, join, dirname } from 'path';
 
 const { E2E_TESTS } = process.env;
@@ -13,23 +13,23 @@ export const CUSTOM_API_CALL_KEY = '__CUSTOM_API_CALL__';
 
 export const CLI_DIR = resolve(__dirname, '..');
 export const TEMPLATES_DIR = join(CLI_DIR, 'templates');
-export const NODES_BASE_DIR = dirname(require.resolve('n8n-nodes-base'));
-export const EDITOR_UI_DIST_DIR = join(dirname(require.resolve('n8n-editor-ui')), 'dist');
+export const NODES_BASE_DIR = dirname(require.resolve('aura-nodes-base'));
+export const EDITOR_UI_DIST_DIR = join(dirname(require.resolve('aura-editor-ui')), 'dist');
 
 const packageJsonPath = join(CLI_DIR, 'package.json');
-const n8nPackageJson = jsonParse<n8n.PackageJson>(readFileSync(packageJsonPath, 'utf8'));
-export const N8N_VERSION = n8nPackageJson.version;
+const auraPackageJson = jsonParse<aura.PackageJson>(readFileSync(packageJsonPath, 'utf8'));
+export const N8N_VERSION = auraPackageJson.version;
 export const N8N_RELEASE_DATE = statSync(packageJsonPath).mtime;
 
 export const STARTING_NODES = [
-	'@n8n/n8n-nodes-langchain.manualChatTrigger',
-	'n8n-nodes-base.start',
-	'n8n-nodes-base.manualTrigger',
+	'@aura/aura-nodes-langchain.manualChatTrigger',
+	'aura-nodes-base.start',
+	'aura-nodes-base.manualTrigger',
 ];
 
-export const MCP_TRIGGER_NODE_TYPE = '@n8n/n8n-nodes-langchain.mcpTrigger';
+export const MCP_TRIGGER_NODE_TYPE = '@aura/aura-nodes-langchain.mcpTrigger';
 
-export const NODE_PACKAGE_PREFIX = 'n8n-nodes-';
+export const NODE_PACKAGE_PREFIX = 'aura-nodes-';
 
 export const STARTER_TEMPLATE_NAME = `${NODE_PACKAGE_PREFIX}starter`;
 
@@ -51,9 +51,9 @@ export const RESPONSE_ERROR_MESSAGES = {
 	MISSING_SCOPE: 'User is missing a scope required to perform this action',
 } as const;
 
-export const AUTH_COOKIE_NAME = 'n8n-auth';
-export const OIDC_STATE_COOKIE_NAME = 'n8n-oidc-state';
-export const OIDC_NONCE_COOKIE_NAME = 'n8n-oidc-nonce';
+export const AUTH_COOKIE_NAME = 'aura-auth';
+export const OIDC_STATE_COOKIE_NAME = 'aura-oidc-state';
+export const OIDC_NONCE_COOKIE_NAME = 'aura-oidc-nonce';
 
 export const NPM_COMMAND_TOKENS = {
 	NPM_PACKAGE_NOT_FOUND_ERROR: '404 Not Found',
@@ -72,10 +72,10 @@ export const WORKFLOW_REACTIVATE_MAX_TIMEOUT = 24 * 60 * 60 * 1000; // 1 day
 
 export const SETTINGS_LICENSE_CERT_KEY = 'license.cert';
 
-export const CREDENTIAL_BLANKING_VALUE = '__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6';
+export const CREDENTIAL_BLANKING_VALUE = '__aura_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6';
 
 export const UM_FIX_INSTRUCTION =
-	'Please fix the database by running ./packages/cli/bin/n8n user-management:reset';
+	'Please fix the database by running ./packages/cli/bin/aura user-management:reset';
 
 export const TEST_WEBHOOK_TIMEOUT = 2 * Time.minutes.toMilliseconds;
 
@@ -130,6 +130,6 @@ export const WsStatusCodes = {
 	CloseInvalidData: 1007,
 } as const;
 
-export const FREE_AI_CREDITS_CREDENTIAL_NAME = 'n8n free OpenAI API credits';
+export const FREE_AI_CREDITS_CREDENTIAL_NAME = 'aura free OpenAI API credits';
 
 export const STREAM_SEPARATOR = '⧉⇋⇋➽⌑⧉§§\n';

@@ -7,7 +7,7 @@
 			"parameters": {},
 			"id": "656d6d8d-1af6-4af7-ab53-7c4e495ee51c",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-300, 1880]
 		},
@@ -37,7 +37,7 @@
 			},
 			"id": "204feab7-f5e9-458f-8fdb-4b762b184147",
 			"name": "If",
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"typeVersion": 2,
 			"position": [40, 1880]
 		},
@@ -50,7 +50,7 @@
 			},
 			"id": "ab122060-f8da-475e-b6c6-d9e486289e1f",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [360, 2080]
 		}

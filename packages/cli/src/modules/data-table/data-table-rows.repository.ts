@@ -1,6 +1,6 @@
-import { DataTableFilter, ListDataTableContentQueryDto } from '@n8n/api-types';
-import { withTransaction } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { DataTableFilter, ListDataTableContentQueryDto } from '@aura/api-types';
+import { withTransaction } from '@aura/db';
+import { Service } from '@aura/di';
 import {
 	DataSource,
 	DataSourceOptions,
@@ -10,7 +10,7 @@ import {
 	ObjectLiteral,
 	EntityManager,
 	DeleteQueryBuilder,
-} from '@n8n/typeorm';
+} from '@aura/typeorm';
 import {
 	DataTableColumnJsType,
 	DataTableRows,
@@ -22,7 +22,7 @@ import {
 	DataTableInsertRowsResult,
 	DataTableRowReturnWithState,
 	DataTableRawRowReturn,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DataTableColumn } from './data-table-column.entity';
 import { DataTableUserTableName } from './data-table.types';

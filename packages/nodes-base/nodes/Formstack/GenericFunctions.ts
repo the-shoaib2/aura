@@ -8,8 +8,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { ApplicationError, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, NodeApiError } from 'workflow';
 
 export interface IFormstackFieldDefinitionType {
 	id: string;

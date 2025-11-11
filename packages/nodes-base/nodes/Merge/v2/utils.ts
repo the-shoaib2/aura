@@ -9,8 +9,8 @@ import type {
 	IDataObject,
 	INodeExecutionData,
 	IPairedItemData,
-} from 'n8n-workflow';
-import { ApplicationError } from '@n8n/errors';
+} from 'workflow';
+import { ApplicationError } from '@aura/errors';
 
 import { fuzzyCompare, preparePairedItemDataArray } from '@utils/utilities';
 

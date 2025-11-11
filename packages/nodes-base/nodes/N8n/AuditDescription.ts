@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const auditOperations: INodeProperties[] = [
 	{
@@ -17,7 +17,7 @@ export const auditOperations: INodeProperties[] = [
 				name: 'Generate',
 				value: 'generate',
 				action: 'Generate a security audit',
-				description: 'Generate a security audit for this n8n instance',
+				description: 'Generate a security audit for this aura instance',
 				routing: {
 					request: {
 						method: 'POST',

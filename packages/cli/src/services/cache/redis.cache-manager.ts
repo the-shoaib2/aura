@@ -5,7 +5,7 @@
 import type { Cache, Store, Config } from 'cache-manager';
 import Redis from 'ioredis';
 import type { Cluster, ClusterNode, ClusterOptions, RedisOptions } from 'ioredis';
-import { jsonParse, UnexpectedError } from 'n8n-workflow';
+import { jsonParse, UnexpectedError } from 'workflow';
 
 export class NoCacheableError implements Error {
 	name = 'NoCacheableError';

@@ -1,4 +1,4 @@
-import type { ILoadOptionsFunctions, ResourceMapperFields, FieldType } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, ResourceMapperFields, FieldType } from 'workflow';
 
 import type { OracleDBNodeCredentials } from '../helpers/interfaces';
 import { getColumnMetaData, mapDbType } from '../helpers/utils';
@@ -21,7 +21,7 @@ export async function getMappingColumns(
 
 	const columns = await getColumnMetaData(this.getNode(), pool, schema, table);
 	const fields = columns.map((col) => {
-		const type = mapDbType(col.dataType).n8nType as FieldType;
+		const type = mapDbType(col.dataType).auraType as FieldType;
 		const nullable = col.isNullable;
 		const hasDefault = col.columnDefault === 'YES';
 		const isGenerated = col.isGenerated === 'ALWAYS';

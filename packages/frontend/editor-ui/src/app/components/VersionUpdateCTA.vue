@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useVersionsStore } from '@/app/stores/versions.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { VERSIONS_MODAL_KEY } from '@/app/constants';
 
-import { N8nButton, N8nLink, N8nTooltip } from '@n8n/design-system';
+import { N8nButton, N8nLink, N8nTooltip } from '@aura/design-system';
 interface Props {
 	disabled?: boolean;
 	tooltipText?: string;

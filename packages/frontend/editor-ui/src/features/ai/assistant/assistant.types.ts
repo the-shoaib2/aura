@@ -9,8 +9,8 @@ import type {
 	INodeParameters,
 	IRunExecutionData,
 	ITaskData,
-} from 'n8n-workflow';
-import type { ChatUI } from '@n8n/design-system/types/assistant';
+} from 'workflow';
+import type { ChatUI } from '@aura/design-system/types/assistant';
 
 export namespace ChatRequest {
 	export interface NodeExecutionSchema {
@@ -152,7 +152,7 @@ export namespace ChatRequest {
 		role: 'assistant' | 'user';
 		type: 'message'; // API uses 'message' instead of 'text'
 		text: string;
-		step?: 'n8n_documentation' | 'n8n_forum';
+		step?: 'aura_documentation' | 'aura_forum';
 		codeSnippet?: string;
 		quickReplies?: ChatUI.QuickReply[];
 	}

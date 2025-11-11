@@ -18,17 +18,17 @@ const BASE_TMP_DIR = '/tmp';
 const TMP_PDF_DEST_DIR = path.join(BASE_TMP_DIR, 'testData', 'pdfs');
 
 /**
- * Executes an n8n CLI command, providing robust error handling and logging.
- * @param command The n8n CLI subcommand (e.g., 'import:credentials').
+ * Executes an aura CLI command, providing robust error handling and logging.
+ * @param command The aura CLI subcommand (e.g., 'import:credentials').
  * @param args Arguments specific to the subcommand.
  * @param options Options for `child_process.execFile`. `cwd` is typically required.
  * @returns A promise that resolves with the stdout of the command, or rejects on error.
  */
 async function runN8nCliCommand(command: string, args: string[], options: { cwd: string }) {
 	const packagesRoot = findPackagesRoot('cli');
-	const n8nExecutablePath = path.join(packagesRoot, 'cli/bin/n8n');
-	console.log(`Executing n8n command: n8n ${command} ${args.join(' ')}`);
-	await execFileAsync(n8nExecutablePath, [command, ...args], options);
+	const auraExecutablePath = path.join(packagesRoot, 'cli/bin/aura');
+	console.log(`Executing aura command: aura ${command} ${args.join(' ')}`);
+	await execFileAsync(auraExecutablePath, [command, ...args], options);
 }
 
 /**
@@ -69,12 +69,12 @@ async function copyAsset(sourcePath: string, destinationPath: string): Promise<v
 }
 
 /**
- * Sets up the n8n test environment by importing credentials and workflows,
+ * Sets up the aura test environment by importing credentials and workflows,
  * and copying necessary test data/assets.
  * This function is designed to be used as a global setup hook in testing frameworks.
  */
 export async function globalWorkflowSetup(): Promise<void> {
-	console.log('\n--- 🚀 Starting n8n workflow test environment setup ---\n');
+	console.log('\n--- 🚀 Starting aura workflow test environment setup ---\n');
 
 	try {
 		console.log('📥 Importing test credentials...');
@@ -92,19 +92,19 @@ export async function globalWorkflowSetup(): Promise<void> {
 		await fsPromises.mkdir(BASE_TMP_DIR, { recursive: true });
 
 		await copyAsset(
-			path.join(ASSETS_SOURCE_PATH, 'n8n-logo.png'),
-			path.join(BASE_TMP_DIR, 'n8n-logo.png'),
+			path.join(ASSETS_SOURCE_PATH, 'aura-logo.png'),
+			path.join(BASE_TMP_DIR, 'aura-logo.png'),
 		);
 		await copyAsset(
-			path.join(ASSETS_SOURCE_PATH, 'n8n-screenshot.png'),
-			path.join(BASE_TMP_DIR, 'n8n-screenshot.png'),
+			path.join(ASSETS_SOURCE_PATH, 'aura-screenshot.png'),
+			path.join(BASE_TMP_DIR, 'aura-screenshot.png'),
 		);
 
 		await copyAsset(PDF_SOURCE_DIR, TMP_PDF_DEST_DIR);
 
-		console.log('\n--- ✅ n8n workflow test environment setup complete! ---\n');
+		console.log('\n--- ✅ aura workflow test environment setup complete! ---\n');
 	} catch (error: unknown) {
-		console.error('\n--- ❌ n8n workflow test environment setup failed! ---\n', error);
+		console.error('\n--- ❌ aura workflow test environment setup failed! ---\n', error);
 		process.exit(1);
 	}
 }

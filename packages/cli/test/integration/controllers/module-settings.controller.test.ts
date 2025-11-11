@@ -1,5 +1,5 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { ModuleSettings } from '@n8n/decorators';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { ModuleSettings } from '@aura/decorators';
 
 import { createMember, createOwner } from '../shared/db/users';
 import type { SuperAgentTest } from '../shared/types';

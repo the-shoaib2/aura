@@ -1,4 +1,4 @@
-import type { User } from '@n8n/db';
+import type { User } from '@aura/db';
 import { mock } from 'jest-mock-extended';
 import { simpleGit } from 'simple-git';
 import type { SimpleGit } from 'simple-git';
@@ -277,8 +277,8 @@ describe('SourceControlGitService', () => {
 			it('should normalize Windows paths to POSIX format for SSH command', async () => {
 				// Arrange
 				const mockPreferencesService = mock<SourceControlPreferencesService>();
-				const windowsPath = 'C:\\Users\\Test\\.n8n\\ssh_private_key_temp';
-				const sshFolder = 'C:\\Users\\Test\\.n8n\\.ssh';
+				const windowsPath = 'C:\\Users\\Test\\.aura\\ssh_private_key_temp';
+				const sshFolder = 'C:\\Users\\Test\\.aura\\.ssh';
 
 				// Mock the getPrivateKeyPath to return a Windows path
 				mockPreferencesService.getPrivateKeyPath.mockResolvedValue(windowsPath);
@@ -302,11 +302,11 @@ describe('SourceControlGitService', () => {
 				// Assert - verify Windows paths are normalized to POSIX format
 				expect(mockGitInstance.env).toHaveBeenCalledWith(
 					'GIT_SSH_COMMAND',
-					expect.stringContaining('C:/Users/Test/.n8n/ssh_private_key_temp'), // Forward slashes
+					expect.stringContaining('C:/Users/Test/.aura/ssh_private_key_temp'), // Forward slashes
 				);
 				expect(mockGitInstance.env).toHaveBeenCalledWith(
 					'GIT_SSH_COMMAND',
-					expect.stringContaining('C:/Users/Test/.n8n/.ssh/known_hosts'), // Forward slashes
+					expect.stringContaining('C:/Users/Test/.aura/.ssh/known_hosts'), // Forward slashes
 				);
 				// Ensure no backslashes remain in the SSH command
 				expect(mockGitInstance.env).toHaveBeenCalledWith(
@@ -318,8 +318,8 @@ describe('SourceControlGitService', () => {
 			it('should create properly quoted SSH command', async () => {
 				// Arrange
 				const mockPreferencesService = mock<SourceControlPreferencesService>();
-				const privateKeyPath = 'C:/Users/Test User/.n8n/ssh_private_key_temp';
-				const sshFolder = 'C:/Users/Test User/.n8n/.ssh';
+				const privateKeyPath = 'C:/Users/Test User/.aura/ssh_private_key_temp';
+				const sshFolder = 'C:/Users/Test User/.aura/.ssh';
 
 				// Mock the getPrivateKeyPath to return a path with spaces
 				mockPreferencesService.getPrivateKeyPath.mockResolvedValue(privateKeyPath);
@@ -343,11 +343,11 @@ describe('SourceControlGitService', () => {
 				// Assert - verify paths with spaces are properly quoted
 				expect(mockGitInstance.env).toHaveBeenCalledWith(
 					'GIT_SSH_COMMAND',
-					expect.stringContaining('"C:/Users/Test User/.n8n/ssh_private_key_temp"'), // Quoted path with spaces
+					expect.stringContaining('"C:/Users/Test User/.aura/ssh_private_key_temp"'), // Quoted path with spaces
 				);
 				expect(mockGitInstance.env).toHaveBeenCalledWith(
 					'GIT_SSH_COMMAND',
-					expect.stringContaining('"C:/Users/Test User/.n8n/.ssh/known_hosts"'), // Quoted known_hosts path
+					expect.stringContaining('"C:/Users/Test User/.aura/.ssh/known_hosts"'), // Quoted known_hosts path
 				);
 				expect(mockGitInstance.env).toHaveBeenCalledWith(
 					'GIT_SSH_COMMAND',
@@ -362,8 +362,8 @@ describe('SourceControlGitService', () => {
 			it('should escape double quotes in paths to prevent command injection', async () => {
 				// Arrange
 				const mockPreferencesService = mock<SourceControlPreferencesService>();
-				const pathWithQuotes = 'C:/Users/Test"User/.n8n/ssh_private_key_temp';
-				const sshFolder = 'C:/Users/Test"User/.n8n/.ssh';
+				const pathWithQuotes = 'C:/Users/Test"User/.aura/ssh_private_key_temp';
+				const sshFolder = 'C:/Users/Test"User/.aura/.ssh';
 
 				// Mock the getPrivateKeyPath to return a path with quotes
 				mockPreferencesService.getPrivateKeyPath.mockResolvedValue(pathWithQuotes);

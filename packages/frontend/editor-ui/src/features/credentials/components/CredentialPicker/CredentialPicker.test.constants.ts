@@ -13,7 +13,7 @@ export const TEST_CREDENTIALS: ICredentialMap = {
 		homeProject: {
 			id: '1',
 			type: 'personal',
-			name: 'Kobi Dog <kobi@n8n.io>',
+			name: 'Kobi Dog <kobi@aura.io>',
 			icon: null,
 			createdAt: new Date().toISOString(),
 			updatedAt: new Date().toISOString(),
@@ -78,7 +78,7 @@ export const TEST_CREDENTIALS: ICredentialMap = {
 		homeProject: {
 			id: '1',
 			type: 'personal',
-			name: 'Kobi Dog <kobi@n8n.io>',
+			name: 'Kobi Dog <kobi@aura.io>',
 			icon: null,
 			createdAt: new Date().toISOString(),
 			updatedAt: new Date().toISOString(),
@@ -163,14 +163,14 @@ export const TEST_CREDENTIAL_TYPES: ICredentialTypeMap = {
 			},
 		},
 		iconUrl: {
-			light: 'icons/n8n-nodes-base/dist/nodes/OpenAi/openai.svg',
-			dark: 'icons/n8n-nodes-base/dist/nodes/OpenAi/openai.dark.svg',
+			light: 'icons/aura-nodes-base/dist/nodes/OpenAi/openai.svg',
+			dark: 'icons/aura-nodes-base/dist/nodes/OpenAi/openai.dark.svg',
 		},
 		supportedNodes: [
-			'n8n-nodes-base.openAi',
-			'@n8n/n8n-nodes-langchain.embeddingsOpenAi',
-			'@n8n/n8n-nodes-langchain.lmChatOpenAi',
-			'@n8n/n8n-nodes-langchain.lmOpenAi',
+			'aura-nodes-base.openAi',
+			'@aura/aura-nodes-langchain.embeddingsOpenAi',
+			'@aura/aura-nodes-langchain.lmChatOpenAi',
+			'@aura/aura-nodes-langchain.lmOpenAi',
 		],
 	},
 	supabaseApi: {
@@ -213,8 +213,8 @@ export const TEST_CREDENTIAL_TYPES: ICredentialTypeMap = {
 				url: '/',
 			},
 		},
-		iconUrl: 'icons/n8n-nodes-base/dist/nodes/Supabase/supabase.svg',
-		supportedNodes: ['n8n-nodes-base.supabase'],
+		iconUrl: 'icons/aura-nodes-base/dist/nodes/Supabase/supabase.svg',
+		supportedNodes: ['aura-nodes-base.supabase'],
 	},
 	slackOAuth2Api: {
 		name: 'slackOAuth2Api',
@@ -261,14 +261,14 @@ export const TEST_CREDENTIAL_TYPES: ICredentialTypeMap = {
 			},
 			{
 				displayName:
-					'If you get an Invalid Scopes error, make sure you add the correct one <a target="_blank" href="https://docs.n8n.io/integrations/builtin/credentials/slack/#using-oauth">here</a> to your Slack integration',
+					'If you get an Invalid Scopes error, make sure you add the correct one <a target="_blank" href="https://docs.aura.io/integrations/builtin/credentials/slack/#using-oauth">here</a> to your Slack integration',
 				name: 'notice',
 				type: 'notice',
 				default: '',
 			},
 		],
-		iconUrl: 'icons/n8n-nodes-base/dist/nodes/Slack/slack.svg',
-		supportedNodes: ['n8n-nodes-base.slack'],
+		iconUrl: 'icons/aura-nodes-base/dist/nodes/Slack/slack.svg',
+		supportedNodes: ['aura-nodes-base.slack'],
 	},
 };
 

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [150, 400],
 			"id": "cab42b4b-d902-4524-ba7c-a43e35900705"
@@ -18,7 +18,7 @@
 				"name": "=TestList{{Date.now()}}"
 			},
 			"name": "SendGrid",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [350, 300],
 			"credentials": {
@@ -36,7 +36,7 @@
 				"name": "=UpdatedTestList{{Date.now()}}"
 			},
 			"name": "SendGrid1",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -53,7 +53,7 @@
 				"listId": "={{$node[\"SendGrid\"].json[\"id\"]}}"
 			},
 			"name": "SendGrid2",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -70,7 +70,7 @@
 				"listId": "={{$node[\"SendGrid\"].json[\"id\"]}}"
 			},
 			"name": "SendGrid3",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [950, 300],
 			"credentials": {
@@ -87,7 +87,7 @@
 				"limit": 1
 			},
 			"name": "SendGrid4",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -108,7 +108,7 @@
 				}
 			},
 			"name": "SendGrid5",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [350, 450],
 			"credentials": {
@@ -127,7 +127,7 @@
 				"filters": {}
 			},
 			"name": "SendGrid6",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [650, 450],
 			"executeOnce": false,
@@ -147,7 +147,7 @@
 				"contactId": "={{$node[\"SendGrid6\"].json[\"id\"]}}"
 			},
 			"name": "SendGrid7",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [800, 450],
 			"alwaysOutputData": true,
@@ -166,7 +166,7 @@
 				"ids": "=undefined"
 			},
 			"name": "SendGrid8",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [950, 450],
 			"credentials": {
@@ -182,7 +182,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(1000);\nreturn item;"
 			},
 			"name": "FunctionItem",
-			"type": "n8n-nodes-base.functionItem",
+			"type": "aura-nodes-base.functionItem",
 			"typeVersion": 1,
 			"position": [500, 450],
 			"notes": "Sleep function",
@@ -193,7 +193,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(5000);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 5 Seconds",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1400, 200],
 			"typeVersion": 1,
 			"id": "c1921fc7-275d-4fc9-bb8c-151d5a525b90"
@@ -209,7 +209,7 @@
 				"additionalFields": {}
 			},
 			"name": "SendGrid9",
-			"type": "n8n-nodes-base.sendGrid",
+			"type": "aura-nodes-base.sendGrid",
 			"typeVersion": 1,
 			"position": [350, 600],
 			"credentials": {

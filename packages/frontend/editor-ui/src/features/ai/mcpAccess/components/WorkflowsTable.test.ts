@@ -64,7 +64,7 @@ describe('WorkflowsTable', () => {
 				},
 			});
 
-			const loadingElements = container.querySelectorAll('.n8n-loading');
+			const loadingElements = container.querySelectorAll('.aura-loading');
 			expect(loadingElements.length).toBeGreaterThan(0);
 
 			expect(() => getByTestId('mcp-workflow-table')).toThrow();

@@ -1,6 +1,6 @@
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
-import type { IWorkflowSettings } from 'n8n-workflow';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
+import type { IWorkflowSettings } from 'workflow';
 
 export type ExecutionSaveSettings = {
 	error: boolean | 'all' | 'none';

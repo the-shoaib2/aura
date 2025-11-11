@@ -5,13 +5,13 @@ import type {
 	WorkflowVersion,
 	WorkflowHistoryActionTypes,
 	WorkflowVersionId,
-} from '@n8n/rest-api-client/api/workflowHistory';
+} from '@aura/rest-api-client/api/workflowHistory';
 import WorkflowPreview from '@/app/components/WorkflowPreview.vue';
 import WorkflowHistoryListItem from './WorkflowHistoryListItem.vue';
-import { useI18n } from '@n8n/i18n';
-import type { IUser } from 'n8n-workflow';
+import { useI18n } from '@aura/i18n';
+import type { IUser } from 'workflow';
 
-import { N8nButton, N8nIcon } from '@n8n/design-system';
+import { N8nButton, N8nIcon } from '@aura/design-system';
 const i18n = useI18n();
 
 const props = defineProps<{

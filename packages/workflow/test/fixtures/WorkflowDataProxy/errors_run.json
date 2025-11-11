@@ -23,7 +23,7 @@
 						}
 					}
 				],
-				"Customer Datastore (n8n training)": [
+				"Customer Datastore (aura training)": [
 					{
 						"startTime": 1707471743602,
 						"executionTime": 1,
@@ -112,7 +112,7 @@
 						"executionTime": 2,
 						"source": [
 							{
-								"previousNode": "Customer Datastore (n8n training)"
+								"previousNode": "Customer Datastore (aura training)"
 							}
 						],
 						"executionStatus": "success",
@@ -591,7 +591,7 @@
 						"executionTime": 15,
 						"source": [
 							{
-								"previousNode": "Customer Datastore (n8n training)"
+								"previousNode": "Customer Datastore (aura training)"
 							}
 						],
 						"executionStatus": "error",
@@ -627,13 +627,13 @@
 								},
 								"id": "4cbbee96-dd4c-4625-95b9-c68faef3e9a8",
 								"name": "Reference impossible with .item",
-								"type": "n8n-nodes-base.set",
+								"type": "aura-nodes-base.set",
 								"typeVersion": 3.2,
 								"position": [1420, 2000]
 							},
 							"description": "The expression uses data in the node <strong>âImpossibleâ</strong> but there is no path back to it. Please check this node is connected to it (there can be other nodes in between).",
 							"message": "Invalid expression",
-							"stack": "NodeOperationError: Invalid expression\n    at Object.execute (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/n8n-nodes-base/dist/nodes/Set/v2/manual.mode.js:197:15)\n    at Object.execute (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/n8n-nodes-base/dist/nodes/Set/v2/SetV2.node.js:286:57)\n    at Workflow.runNode (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+workflow/node_modules/n8n-workflow/dist/Workflow.js:706:42)\n    at /usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+core_n8n-nodes-base@1.28.0/node_modules/n8n-core/dist/WorkflowExecute.js:656:68\n    at /usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+core_n8n-nodes-base@1.28.0/node_modules/n8n-core/dist/WorkflowExecute.js:1058:20"
+							"stack": "NodeOperationError: Invalid expression\n    at Object.execute (/usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/aura-nodes-base/dist/nodes/Set/v2/manual.mode.js:197:15)\n    at Object.execute (/usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/aura-nodes-base/dist/nodes/Set/v2/SetV2.node.js:286:57)\n    at Workflow.runNode (/usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+workflow/node_modules/workflow/dist/Workflow.js:706:42)\n    at /usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+core_aura-nodes-base@1.28.0/node_modules/aura-core/dist/WorkflowExecute.js:656:68\n    at /usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+core_aura-nodes-base@1.28.0/node_modules/aura-core/dist/WorkflowExecute.js:1058:20"
 						}
 					}
 				]
@@ -694,13 +694,13 @@
 					},
 					"id": "4cbbee96-dd4c-4625-95b9-c68faef3e9a8",
 					"name": "Reference impossible with .item",
-					"type": "n8n-nodes-base.set",
+					"type": "aura-nodes-base.set",
 					"typeVersion": 3.2,
 					"position": [1420, 2000]
 				},
 				"description": "The expression uses data in the node <strong>âImpossibleâ</strong> but there is no path back to it. Please check this node is connected to it (there can be other nodes in between).",
 				"message": "Invalid expression",
-				"stack": "NodeOperationError: Invalid expression\n    at Object.execute (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/n8n-nodes-base/dist/nodes/Set/v2/manual.mode.js:197:15)\n    at Object.execute (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/n8n-nodes-base/dist/nodes/Set/v2/SetV2.node.js:286:57)\n    at Workflow.runNode (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+workflow/node_modules/n8n-workflow/dist/Workflow.js:706:42)\n    at /usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+core_n8n-nodes-base@1.28.0/node_modules/n8n-core/dist/WorkflowExecute.js:656:68\n    at /usr/local/lib/node_modules/n8n/node_modules/.pnpm/file+packages+core_n8n-nodes-base@1.28.0/node_modules/n8n-core/dist/WorkflowExecute.js:1058:20"
+				"stack": "NodeOperationError: Invalid expression\n    at Object.execute (/usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/aura-nodes-base/dist/nodes/Set/v2/manual.mode.js:197:15)\n    at Object.execute (/usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+nodes-base_asn1.js@5.4.1_date-fns@2.30.0_promise-ftp-common@1.1.5_zod@3.22.4/node_modules/aura-nodes-base/dist/nodes/Set/v2/SetV2.node.js:286:57)\n    at Workflow.runNode (/usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+workflow/node_modules/workflow/dist/Workflow.js:706:42)\n    at /usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+core_aura-nodes-base@1.28.0/node_modules/aura-core/dist/WorkflowExecute.js:656:68\n    at /usr/local/lib/node_modules/aura/node_modules/.pnpm/file+packages+core_aura-nodes-base@1.28.0/node_modules/aura-core/dist/WorkflowExecute.js:1058:20"
 			}
 		},
 		"executionData": {
@@ -725,7 +725,7 @@
 						},
 						"id": "4cbbee96-dd4c-4625-95b9-c68faef3e9a8",
 						"name": "Reference impossible with .item",
-						"type": "n8n-nodes-base.set",
+						"type": "aura-nodes-base.set",
 						"typeVersion": 3.2,
 						"position": [1420, 2000]
 					},
@@ -803,7 +803,7 @@
 					"source": {
 						"main": [
 							{
-								"previousNode": "Customer Datastore (n8n training)"
+								"previousNode": "Customer Datastore (aura training)"
 							}
 						]
 					}
@@ -827,7 +827,7 @@
 						},
 						"id": "6d47bd08-810a-4ade-be57-635adc1df47f",
 						"name": "Reference impossible with .first()",
-						"type": "n8n-nodes-base.set",
+						"type": "aura-nodes-base.set",
 						"typeVersion": 3.2,
 						"position": [1420, 2320]
 					},
@@ -905,7 +905,7 @@
 					"source": {
 						"main": [
 							{
-								"previousNode": "Customer Datastore (n8n training)"
+								"previousNode": "Customer Datastore (aura training)"
 							}
 						]
 					}
@@ -937,7 +937,7 @@
 						},
 						"id": "56dd65f0-d67a-42ce-a876-77434f621dc3",
 						"name": "Impossible if",
-						"type": "n8n-nodes-base.if",
+						"type": "aura-nodes-base.if",
 						"typeVersion": 2,
 						"position": [1000, 2000]
 					},
@@ -980,7 +980,7 @@
 						},
 						"id": "327d7f7b-61a5-4d60-9542-d61f84e7c83a",
 						"name": "Reference non-existent node",
-						"type": "n8n-nodes-base.set",
+						"type": "aura-nodes-base.set",
 						"typeVersion": 3.2,
 						"position": [1000, 2320]
 					},

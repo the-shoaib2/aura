@@ -1,9 +1,9 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import { isContainedWithin } from '@n8n/backend-common';
-import { GLOBAL_ADMIN_ROLE, GLOBAL_MEMBER_ROLE, User, type WorkflowEntity } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { SourceControlledFile } from '@aura/api-types';
+import { isContainedWithin } from '@aura/backend-common';
+import { GLOBAL_ADMIN_ROLE, GLOBAL_MEMBER_ROLE, User, type WorkflowEntity } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 import type { PushResult } from 'simple-git';
 
 import { SourceControlPreferencesService } from '@/environments.ee/source-control/source-control-preferences.service.ee';
@@ -21,8 +21,8 @@ const mockStatusService = {
 	getStatus: jest.fn(),
 };
 
-jest.mock('@n8n/backend-common', () => ({
-	...jest.requireActual('@n8n/backend-common'),
+jest.mock('@aura/backend-common', () => ({
+	...jest.requireActual('@aura/backend-common'),
 	isContainedWithin: jest.fn(() => true),
 }));
 

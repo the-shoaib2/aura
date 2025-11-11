@@ -1,5 +1,5 @@
 import { ExportEntitiesCommand } from '../entities';
-import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@aura/backend-test-utils';
 import { ExportService } from '@/services/export.service';
 
 jest.mock('fs-extra');

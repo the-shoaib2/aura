@@ -4,7 +4,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class ReadBinaryFile implements INodeType {
 	description: INodeTypeDescription = {

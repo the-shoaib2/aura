@@ -6,7 +6,7 @@ import { describe, it, beforeEach, vi, expect } from 'vitest';
 import { useCommandBar } from './useCommandBar';
 import { VIEWS } from '@/app/constants';
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({ baseText: (key: string) => key }),
 }));

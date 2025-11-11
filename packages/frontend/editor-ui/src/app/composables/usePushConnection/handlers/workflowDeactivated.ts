@@ -1,4 +1,4 @@
-import type { WorkflowDeactivated } from '@n8n/api-types/push/workflow';
+import type { WorkflowDeactivated } from '@aura/api-types/push/workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 
 export async function workflowDeactivated({ data }: WorkflowDeactivated) {

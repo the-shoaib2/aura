@@ -6,8 +6,8 @@ import type {
 	IRequestOptions,
 	IHttpRequestMethods,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import type {
 	ICredential,

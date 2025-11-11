@@ -5,7 +5,7 @@ import { setActivePinia } from 'pinia';
 import { waitFor } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
 import { SET_NODE_TYPE } from '@/app/constants';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { defaultSettings } from '@/__tests__/defaults';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -39,7 +39,7 @@ describe('VirtualSchemaHeader.vue', () => {
 				outputs: [NodeConnectionTypes.Main],
 			}),
 			mockNodeTypeDescription({
-				name: 'n8n-nodes-base.manualTrigger',
+				name: 'aura-nodes-base.manualTrigger',
 				group: ['trigger'],
 				outputs: [NodeConnectionTypes.Main],
 			}),
@@ -116,7 +116,7 @@ describe('VirtualSchemaHeader.vue', () => {
 
 		it('should render trigger icon for trigger nodes', () => {
 			const nodeTypesStore = useNodeTypesStore();
-			const triggerNode = nodeTypesStore.getNodeType('n8n-nodes-base.manualTrigger');
+			const triggerNode = nodeTypesStore.getNodeType('aura-nodes-base.manualTrigger');
 
 			const { getByTestId } = renderComponent({
 				props: {
@@ -328,7 +328,7 @@ describe('VirtualSchemaHeader.vue', () => {
 	describe('CSS class binding', () => {
 		it('should apply icon-trigger class to trigger node icons', () => {
 			const nodeTypesStore = useNodeTypesStore();
-			const triggerNode = nodeTypesStore.getNodeType('n8n-nodes-base.manualTrigger');
+			const triggerNode = nodeTypesStore.getNodeType('aura-nodes-base.manualTrigger');
 
 			const { container } = renderComponent({
 				props: {

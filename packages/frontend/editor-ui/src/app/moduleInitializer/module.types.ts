@@ -2,7 +2,7 @@ import type { ModalState } from '@/Interface';
 import type { DynamicTabOptions } from '@/app/utils/modules/tabUtils';
 import type { RouteRecordRaw } from 'vue-router';
 import type { Component } from 'vue/dist/vue.js';
-import type { IMenuItem } from '@n8n/design-system';
+import type { IMenuItem } from '@aura/design-system';
 
 export type ModalDefinition = {
 	key: string;

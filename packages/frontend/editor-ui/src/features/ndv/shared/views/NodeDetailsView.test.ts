@@ -17,7 +17,7 @@ import {
 	defaultNodeDescriptions,
 	mockNodes,
 } from '@/__tests__/mocks';
-import type { Workflow } from 'n8n-workflow';
+import type { Workflow } from 'workflow';
 
 vi.mock('vue-router', () => {
 	return {

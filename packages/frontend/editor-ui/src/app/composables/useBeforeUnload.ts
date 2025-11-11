@@ -1,6 +1,6 @@
 import { useCanvasStore } from '@/app/stores/canvas.store';
 import { useUIStore } from '@/app/stores/ui.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed, ref } from 'vue';
 import { VIEWS } from '@/app/constants';
 import type { useRoute } from 'vue-router';

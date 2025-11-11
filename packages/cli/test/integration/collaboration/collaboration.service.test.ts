@@ -3,11 +3,11 @@ import {
 	shareWorkflowWithUsers,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { IWorkflowBase } from 'workflow';
 
 import type {
 	WorkflowClosedMessage,

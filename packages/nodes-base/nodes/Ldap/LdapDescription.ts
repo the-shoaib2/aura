@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const ldapFields: INodeProperties[] = [
 	// ----------------------------------
@@ -9,7 +9,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'dn',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. ou=users,dc=n8n,dc=io',
+		placeholder: 'e.g. ou=users,dc=aura,dc=io',
 		required: true,
 		typeOptions: {
 			alwaysOpenEditWindow: false,
@@ -26,7 +26,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'dn',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. ou=users,dc=n8n,dc=io',
+		placeholder: 'e.g. ou=users,dc=aura,dc=io',
 		required: true,
 		typeOptions: {
 			alwaysOpenEditWindow: false,
@@ -43,7 +43,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'dn',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. ou=users,dc=n8n,dc=io',
+		placeholder: 'e.g. ou=users,dc=aura,dc=io',
 		required: true,
 		typeOptions: {
 			alwaysOpenEditWindow: false,
@@ -60,7 +60,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'dn',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. cn=john,ou=users,dc=n8n,dc=io',
+		placeholder: 'e.g. cn=john,ou=users,dc=aura,dc=io',
 		required: true,
 		typeOptions: {
 			alwaysOpenEditWindow: false,
@@ -77,7 +77,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'dn',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. ou=users,dc=n8n,dc=io',
+		placeholder: 'e.g. ou=users,dc=aura,dc=io',
 		required: true,
 		typeOptions: {
 			alwaysOpenEditWindow: false,
@@ -94,7 +94,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'dn',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. ou=users,dc=n8n,dc=io',
+		placeholder: 'e.g. ou=users,dc=aura,dc=io',
 		required: true,
 		typeOptions: {
 			alwaysOpenEditWindow: false,
@@ -110,7 +110,7 @@ export const ldapFields: INodeProperties[] = [
 	//         Compare
 	// ----------------------------------
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Attribute ID',
 		name: 'id',
 		type: 'options',
@@ -119,7 +119,7 @@ export const ldapFields: INodeProperties[] = [
 		typeOptions: {
 			loadOptionsMethod: 'getAttributesForDn',
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 		description: 'The ID of the attribute to compare',
 		displayOptions: {
 			show: {
@@ -147,7 +147,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'targetDn',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. cn=nathan,ou=users,dc=n8n,dc=io',
+		placeholder: 'e.g. cn=nathan,ou=users,dc=aura,dc=io',
 		required: true,
 		displayOptions: {
 			show: {
@@ -291,7 +291,7 @@ export const ldapFields: INodeProperties[] = [
 		name: 'baseDN',
 		type: 'string',
 		default: '',
-		placeholder: 'e.g. ou=users, dc=n8n, dc=io',
+		placeholder: 'e.g. ou=users, dc=aura, dc=io',
 		required: true,
 		displayOptions: {
 			show: {
@@ -301,7 +301,7 @@ export const ldapFields: INodeProperties[] = [
 		description: 'The distinguished name of the subtree to search in',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Search For',
 		name: 'searchFor',
 		type: 'options',
@@ -314,7 +314,7 @@ export const ldapFields: INodeProperties[] = [
 				operation: ['search'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 		description: 'Directory object class to search for',
 	},
 	{
@@ -331,7 +331,7 @@ export const ldapFields: INodeProperties[] = [
 		description: 'Custom LDAP filter. Escape these chars * ( ) \\ with a backslash "\\".',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Attribute',
 		name: 'attribute',
 		type: 'options',
@@ -340,7 +340,7 @@ export const ldapFields: INodeProperties[] = [
 		typeOptions: {
 			loadOptionsMethod: 'getAttributes',
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 		description: 'Attribute to search for',
 		displayOptions: {
 			show: {
@@ -416,7 +416,7 @@ export const ldapFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'Comma-separated list of attributes to return. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Comma-separated list of attributes to return. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Page Size',

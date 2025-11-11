@@ -1,10 +1,10 @@
 import { getLastSuccessfulExecution } from './workflows';
-import * as apiUtils from '@n8n/rest-api-client';
-import type { IRestApiContext } from '@n8n/rest-api-client';
+import * as apiUtils from '@aura/rest-api-client';
+import type { IRestApiContext } from '@aura/rest-api-client';
 import { vi, describe, it, beforeEach, afterEach, expect } from 'vitest';
 import type { MockInstance } from 'vitest';
 
-vi.mock('@n8n/rest-api-client');
+vi.mock('@aura/rest-api-client');
 
 describe('API: workflows', () => {
 	describe('getLastSuccessfulExecution', () => {

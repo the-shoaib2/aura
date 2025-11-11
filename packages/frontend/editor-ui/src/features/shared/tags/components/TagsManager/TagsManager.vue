@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
+import type { ITag } from '@aura/rest-api-client/api/tags';
 import TagsView from './TagsView/TagsView.vue';
 import NoTagsView from './NoTagsView.vue';
 import Modal from '@/app/components/Modal.vue';
-import { createEventBus } from '@n8n/utils/event-bus';
-import { useI18n } from '@n8n/i18n';
-import type { BaseTextKey } from '@n8n/i18n';
+import { createEventBus } from '@aura/utils/event-bus';
+import { useI18n } from '@aura/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 
 import { ElRow } from 'element-plus';
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 interface TagsManagerProps {
 	modalKey: string;
 	usageLocaleKey?: BaseTextKey;

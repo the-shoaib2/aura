@@ -20,10 +20,10 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import LoadingView from '@/app/views/LoadingView.vue';
-import { locale, N8nCommandBar } from '@n8n/design-system';
-import { setLanguage } from '@n8n/i18n';
+import { locale, N8nCommandBar } from '@aura/design-system';
+import { setLanguage } from '@aura/i18n';
 // Note: no need to import en.json here; default 'en' is handled via setLanguage
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import axios from 'axios';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
@@ -138,7 +138,7 @@ useExposeCssVar('--ask-assistant--floating-button--margin-bottom', askAiFloating
 	<LoadingView v-if="loading" />
 	<div
 		v-else
-		id="n8n-app"
+		id="aura-app"
 		:class="{
 			[$style.container]: true,
 			[$style.sidebarCollapsed]: uiStore.sidebarMenuCollapsed,

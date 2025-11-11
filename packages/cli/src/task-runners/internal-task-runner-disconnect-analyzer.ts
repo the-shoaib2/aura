@@ -1,5 +1,5 @@
-import { TaskRunnersConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
+import { TaskRunnersConfig } from '@aura/config';
+import { Service } from '@aura/di';
 
 import type { DisconnectErrorOptions } from '@/task-runners/task-broker/task-broker-types';
 

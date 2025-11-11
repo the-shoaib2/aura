@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { TIMEZONE_VALIDATION_REGEX } from './GenericFunctions';
 
@@ -147,7 +147,7 @@ export const eventFields: INodeProperties[] = [
 		},
 		default: '={{ $now }}',
 		description:
-			'Start time of the event, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+			'Start time of the event, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 	},
 	{
 		displayName: 'End',
@@ -163,7 +163,7 @@ export const eventFields: INodeProperties[] = [
 		},
 		default: "={{ $now.plus(1, 'hour') }}",
 		description:
-			'End time of the event, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+			'End time of the event, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 	},
 	{
 		displayName: 'Use Default Reminders',
@@ -227,7 +227,7 @@ export const eventFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The color of the event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The color of the event. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Conference Data',
@@ -248,7 +248,7 @@ export const eventFields: INodeProperties[] = [
 								name: 'conferenceSolution',
 								type: 'options',
 								description:
-									'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 								typeOptions: {
 									loadOptionsMethod: 'getConferenceSolutions',
 									loadOptionsDependsOn: ['calendar'],
@@ -682,7 +682,7 @@ export const eventFields: INodeProperties[] = [
 		type: 'dateTime',
 		default: '={{ $now }}',
 		description:
-			'At least some part of the event must be after this time, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+			'At least some part of the event must be after this time, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 		displayOptions: {
 			show: {
 				'@version': [{ _cnd: { gte: 1.3 } }],
@@ -697,7 +697,7 @@ export const eventFields: INodeProperties[] = [
 		type: 'dateTime',
 		default: '={{ $now.plus({ week: 1 }) }}',
 		description:
-			'At least some part of the event must be before this time, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+			'At least some part of the event must be before this time, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 		displayOptions: {
 			show: {
 				'@version': [{ _cnd: { gte: 1.3 } }],
@@ -725,7 +725,7 @@ export const eventFields: INodeProperties[] = [
 				type: 'dateTime',
 				default: '',
 				description:
-					'At least some part of the event must be after this time, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+					'At least some part of the event must be after this time, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 				displayOptions: {
 					hide: {
 						'@version': [{ _cnd: { gte: 1.3 } }],
@@ -738,7 +738,7 @@ export const eventFields: INodeProperties[] = [
 				type: 'dateTime',
 				default: '',
 				description:
-					'At least some part of the event must be before this time, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+					'At least some part of the event must be before this time, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 				displayOptions: {
 					hide: {
 						'@version': [{ _cnd: { gte: 1.3 } }],
@@ -1064,7 +1064,7 @@ export const eventFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The color of the event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The color of the event. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Description',

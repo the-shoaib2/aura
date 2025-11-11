@@ -1,4 +1,4 @@
-/* eslint-disable n8n-nodes-base/node-param-display-name-miscased */
+/* eslint-disable aura-nodes-base/node-param-display-name-miscased */
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
 import nock from 'nock';
 
@@ -98,7 +98,7 @@ describe('Hubspot Node', () => {
 					],
 				})
 				.reply(200, companies.companies[0])
-				.post('/companies/v2/domains/n8n.io/companies', { requestOptions: {}, limit: 100 })
+				.post('/companies/v2/domains/aura.io/companies', { requestOptions: {}, limit: 100 })
 				.reply(200, companiesSearchResult)
 				.get('/companies/v2/companies/paged')
 				.query(
@@ -124,7 +124,7 @@ describe('Hubspot Node', () => {
 			hubspotNock
 				.delete('/contacts/v1/contact/vid/123', {})
 				.reply(200, contacts.contacts[0])
-				.post('/contacts/v1/contact/createOrUpdate/email/elias@n8n.io', {
+				.post('/contacts/v1/contact/createOrUpdate/email/elias@aura.io', {
 					properties: [
 						{
 							property: 'annualrevenue',
@@ -152,7 +152,7 @@ describe('Hubspot Node', () => {
 						},
 						{
 							property: 'work_email',
-							value: 'elias@n8n.io',
+							value: 'elias@aura.io',
 						},
 						{
 							property: 'test_custom_prop_name',
@@ -190,7 +190,7 @@ describe('Hubspot Node', () => {
 								{
 									propertyName: 'email',
 									operator: 'CONTAINS_TOKEN',
-									value: 'n8n.io',
+									value: 'aura.io',
 								},
 							],
 						},

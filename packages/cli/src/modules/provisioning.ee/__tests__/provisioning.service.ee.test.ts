@@ -1,4 +1,4 @@
-import type { Logger } from '@n8n/backend-common';
+import type { Logger } from '@aura/backend-common';
 import { mock } from 'jest-mock-extended';
 
 import { ProvisioningService } from '@/modules/provisioning.ee/provisioning.service.ee';
@@ -11,14 +11,14 @@ import {
 	type Project,
 	type ProjectRepository,
 	ProjectRelation,
-} from '@n8n/db';
-import { type GlobalConfig } from '@n8n/config';
+} from '@aura/db';
+import { type GlobalConfig } from '@aura/config';
 import { PROVISIONING_PREFERENCES_DB_KEY } from '../constants';
-import { type ProvisioningConfigDto } from '@n8n/api-types';
+import { type ProvisioningConfigDto } from '@aura/api-types';
 import { type Publisher } from '@/scaling/pubsub/publisher.service';
 import { type ProjectService } from '@/services/project.service.ee';
-import type { EntityManager } from '@n8n/typeorm';
-import { type InstanceSettings } from 'n8n-core';
+import type { EntityManager } from '@aura/typeorm';
+import { type InstanceSettings } from 'aura-core';
 
 const globalConfig = mock<GlobalConfig>();
 const settingsRepository = mock<SettingsRepository>();
@@ -56,9 +56,9 @@ describe('ProvisioningService', () => {
 	const provisioningConfigDto: ProvisioningConfigDto = {
 		scopesProvisionInstanceRole: true,
 		scopesProvisionProjectRoles: true,
-		scopesName: 'n8n_test_scope',
-		scopesInstanceRoleClaimName: 'n8n_test_instance_role',
-		scopesProjectsRolesClaimName: 'n8n_test_projects_roles',
+		scopesName: 'aura_test_scope',
+		scopesInstanceRoleClaimName: 'aura_test_instance_role',
+		scopesProjectsRolesClaimName: 'aura_test_projects_roles',
 	};
 
 	describe('init', () => {
@@ -142,9 +142,9 @@ describe('ProvisioningService', () => {
 			const overriddenConfig = {
 				scopesProvisionInstanceRole: false,
 				scopesProvisionProjectRoles: false,
-				scopesName: 'n8n_test_scope_overridden',
-				scopesInstanceRoleClaimName: 'n8n_test_instance_role_overridden',
-				scopesProjectsRolesClaimName: 'n8n_test_projects_roles_overridden',
+				scopesName: 'aura_test_scope_overridden',
+				scopesInstanceRoleClaimName: 'aura_test_instance_role_overridden',
+				scopesProjectsRolesClaimName: 'aura_test_projects_roles_overridden',
 			};
 			settingsRepository.findByKey.mockResolvedValue({
 				key: PROVISIONING_PREFERENCES_DB_KEY,

@@ -1,12 +1,12 @@
 import type { Request, Page } from '@playwright/test';
 
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 /**
  * A class for user interactions with Node Details View (NDV) that involve multi-step workflows.
  */
 export class NodeDetailsViewComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Selects a workflow from the resource locator list by name
@@ -14,9 +14,9 @@ export class NodeDetailsViewComposer {
 	 * @param workflowName - The name of the workflow to select
 	 */
 	async selectWorkflowFromList(paramName: string, workflowName: string): Promise<void> {
-		await this.n8n.ndv.openResourceLocator(paramName);
+		await this.aura.ndv.openResourceLocator(paramName);
 
-		const items = this.n8n.page.getByTestId('rlc-item');
+		const items = this.aura.page.getByTestId('rlc-item');
 		const targetItem = items.filter({ hasText: workflowName });
 		await targetItem.click();
 	}
@@ -27,15 +27,15 @@ export class NodeDetailsViewComposer {
 	 * @param searchTerm - The term to search for
 	 */
 	async filterWorkflowList(paramName: string, searchTerm: string): Promise<void> {
-		await this.n8n.ndv.openResourceLocator(paramName);
-		await this.n8n.ndv.getResourceLocatorSearch(paramName).fill(searchTerm);
+		await this.aura.ndv.openResourceLocator(paramName);
+		await this.aura.ndv.getResourceLocatorSearch(paramName).fill(searchTerm);
 	}
 
 	/**
 	 * Selects the first workflow item from a filtered list
 	 */
 	async selectFirstFilteredWorkflow(): Promise<void> {
-		const items = this.n8n.page.getByTestId('rlc-item');
+		const items = this.aura.page.getByTestId('rlc-item');
 		await items.first().click();
 	}
 
@@ -50,7 +50,7 @@ export class NodeDetailsViewComposer {
 		}
 
 		// Switch to expression mode
-		await this.n8n.page.getByTestId('radio-button-expression').nth(1).click();
+		await this.aura.page.getByTestId('radio-button-expression').nth(1).click();
 	}
 
 	/**
@@ -58,9 +58,9 @@ export class NodeDetailsViewComposer {
 	 * @param paramName - The parameter name for the resource locator
 	 */
 	async createNewSubworkflow(paramName: string): Promise<void> {
-		await this.n8n.ndv.openResourceLocator(paramName);
+		await this.aura.ndv.openResourceLocator(paramName);
 
-		const addResourceItem = this.n8n.page.getByTestId('rlc-item-add-resource').first();
+		const addResourceItem = this.aura.page.getByTestId('rlc-item-add-resource').first();
 		await addResourceItem.waitFor({ state: 'visible' });
 
 		await addResourceItem.click();
@@ -74,10 +74,10 @@ export class NodeDetailsViewComposer {
 	async createNewSubworkflowWithRedirect(
 		paramName: string,
 	): Promise<{ request: Request; page: Page }> {
-		const subWorkflowPagePromise = this.n8n.page.waitForEvent('popup');
+		const subWorkflowPagePromise = this.aura.page.waitForEvent('popup');
 
 		const [request] = await Promise.all([
-			this.n8n.page.waitForRequest('**/rest/workflows'),
+			this.aura.page.waitForRequest('**/rest/workflows'),
 			this.createNewSubworkflow(paramName),
 		]);
 

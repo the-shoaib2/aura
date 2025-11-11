@@ -1,4 +1,4 @@
-import type { OidcConfigDto, SamlPreferences } from '@n8n/api-types';
+import type { OidcConfigDto, SamlPreferences } from '@aura/api-types';
 import { createTestingPinia } from '@pinia/testing';
 import { within, waitFor } from '@testing-library/vue';
 import { type MockedStore, mockedStore } from '@/__tests__/utils';
@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 import { useSSOStore, SupportedProtocols } from '../sso.store';
 import { createComponentRenderer } from '@/__tests__/render';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
-import type { SamlPreferencesExtractedData } from '@n8n/rest-api-client/api/sso';
+import type { SamlPreferencesExtractedData } from '@aura/rest-api-client/api/sso';
 
 const renderView = createComponentRenderer(SettingsSso);
 
@@ -15,8 +15,8 @@ const samlConfig = {
 	metadata: 'metadata dummy',
 	metadataUrl:
 		'https://dev-qqkrykgkoo0p63d5.eu.auth0.com/samlp/metadata/KR1cSrRrxaZT2gV8ZhPAUIUHtEY4duhN',
-	entityID: 'https://n8n-tunnel.myhost.com/rest/sso/saml/metadata',
-	returnUrl: 'https://n8n-tunnel.myhost.com/rest/sso/saml/acs',
+	entityID: 'https://aura-tunnel.myhost.com/rest/sso/saml/metadata',
+	returnUrl: 'https://aura-tunnel.myhost.com/rest/sso/saml/acs',
 } as SamlPreferences & SamlPreferencesExtractedData;
 
 const oidcConfig = {

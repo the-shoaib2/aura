@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 400],
 			"id": "238a4bec-9ecf-47ad-a99b-98ac07a426da"
@@ -26,7 +26,7 @@
 				}
 			},
 			"name": "Segment",
-			"type": "n8n-nodes-base.segment",
+			"type": "aura-nodes-base.segment",
 			"typeVersion": 1,
 			"position": [500, 250],
 			"credentials": {
@@ -44,7 +44,7 @@
 				"event": "click"
 			},
 			"name": "Segment1",
-			"type": "n8n-nodes-base.segment",
+			"type": "aura-nodes-base.segment",
 			"typeVersion": 1,
 			"position": [500, 400],
 			"credentials": {
@@ -63,7 +63,7 @@
 				"name": "landing"
 			},
 			"name": "Segment2",
-			"type": "n8n-nodes-base.segment",
+			"type": "aura-nodes-base.segment",
 			"typeVersion": 1,
 			"position": [650, 400],
 			"credentials": {
@@ -89,7 +89,7 @@
 				}
 			},
 			"name": "Segment3",
-			"type": "n8n-nodes-base.segment",
+			"type": "aura-nodes-base.segment",
 			"typeVersion": 1,
 			"position": [500, 550],
 			"credentials": {

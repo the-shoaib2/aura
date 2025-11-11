@@ -5,7 +5,7 @@ import {
 	type INodeTypeBaseDescription,
 	type INodeTypeDescription,
 	type IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	formDescription,
@@ -18,14 +18,14 @@ import {
 import { formWebhook } from '../utils/utils';
 
 const descriptionV1: INodeTypeDescription = {
-	displayName: 'n8n Form Trigger',
+	displayName: 'aura Form Trigger',
 	name: 'formTrigger',
 	icon: 'file:form.svg',
 	group: ['trigger'],
 	version: 1,
-	description: 'Generate webforms in n8n and pass their responses to the workflow',
+	description: 'Generate webforms in aura and pass their responses to the workflow',
 	defaults: {
-		name: 'n8n Form Trigger',
+		name: 'aura Form Trigger',
 	},
 
 	inputs: [],

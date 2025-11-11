@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ElSwitch } from 'element-plus';
-import { N8nText, N8nTooltip } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nText, N8nTooltip } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 
 type Props = {
 	modelValue: boolean;

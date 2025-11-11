@@ -11,7 +11,7 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	Workflow,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { WebhookContext } from '../webhook-context';
 

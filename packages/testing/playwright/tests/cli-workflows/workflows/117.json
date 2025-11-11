@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "1d2659eb-da2b-4d7c-94f6-09d7dc99ef0d"
@@ -21,7 +21,7 @@
 				}
 			},
 			"name": "Gotify",
-			"type": "n8n-nodes-base.gotify",
+			"type": "aura-nodes-base.gotify",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"limit": 1
 			},
 			"name": "Gotify1",
-			"type": "n8n-nodes-base.gotify",
+			"type": "aura-nodes-base.gotify",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -55,7 +55,7 @@
 				"messageId": "={{$node[\"Gotify\"].json[\"id\"]}}"
 			},
 			"name": "Gotify2",
-			"type": "n8n-nodes-base.gotify",
+			"type": "aura-nodes-base.gotify",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {

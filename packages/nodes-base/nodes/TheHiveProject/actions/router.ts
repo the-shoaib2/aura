@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import * as alert from './alert';
 import * as case_ from './case';

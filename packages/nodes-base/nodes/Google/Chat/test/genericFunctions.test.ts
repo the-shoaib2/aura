@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import { type IExecuteFunctions } from 'n8n-workflow';
+import { type IExecuteFunctions } from 'workflow';
 
 import * as googleHelpers from '../../GenericFunctions';
 import { googleApiRequest } from '../GenericFunctions';

@@ -1,8 +1,8 @@
-import { GlobalConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import { Container, Service } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import { Container, Service } from '@aura/di';
 import { caching } from 'cache-manager';
-import { jsonStringify, UserError } from 'n8n-workflow';
+import { jsonStringify, UserError } from 'workflow';
 
 import { MalformedRefreshValueError } from '@/errors/cache-errors/malformed-refresh-value.error';
 import { UncacheableValueError } from '@/errors/cache-errors/uncacheable-value.error';
@@ -41,13 +41,13 @@ export class CacheService extends TypedEmitter<CacheEvents> {
 			const prefixBase = this.globalConfig.redis.prefix;
 			const cachePrefix = this.globalConfig.cache.redis.prefix;
 
-			// For cluster mode, we need to ensure proper hash tagging: {n8n:cache}:
-			// instead of {n8n:cache:} to keep the colon outside the hash tag
+			// For cluster mode, we need to ensure proper hash tagging: {aura:cache}:
+			// instead of {aura:cache:} to keep the colon outside the hash tag
 			const hashTagPart = `${prefixBase}:${cachePrefix}`;
 			const prefix = redisClientService.toValidPrefix(hashTagPart) + ':';
 
 			const redisClient = redisClientService.createClient({
-				type: 'cache(n8n)',
+				type: 'cache(aura)',
 				extraOptions: { keyPrefix: prefix },
 			});
 

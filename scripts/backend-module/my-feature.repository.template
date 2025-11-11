@@ -1,5 +1,5 @@
-import { Service } from '@n8n/di';
-import { DataSource, Repository } from '@n8n/typeorm';
+import { Service } from '@aura/di';
+import { DataSource, Repository } from '@aura/typeorm';
 
 import { MyFeatureEntity } from './my-feature.entity';
 
@@ -10,6 +10,6 @@ export class MyFeatureRepository extends Repository<MyFeatureEntity> {
 	}
 
 	async getSummary() {
-		return await Promise.resolve({}); 
+		return await Promise.resolve({});
 	}
 }

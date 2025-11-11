@@ -1,1 +1,1 @@
-export const TEMPLATES_NODES_FILTER = ['n8n-nodes-base.start', 'n8n-nodes-base.respondToWebhook'];
+export const TEMPLATES_NODES_FILTER = ['aura-nodes-base.start', 'aura-nodes-base.respondToWebhook'];

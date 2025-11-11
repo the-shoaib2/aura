@@ -7,7 +7,7 @@
 			"parameters": {},
 			"id": "4535ce3e-280e-49b0-8854-373472ec86d1",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [80, 860]
 		},
@@ -19,20 +19,20 @@
 			},
 			"id": "d7fba18a-d51f-4509-af45-68cd9425ac6b",
 			"name": "DebugHelper1",
-			"type": "n8n-nodes-base.debugHelper",
+			"type": "aura-nodes-base.debugHelper",
 			"typeVersion": 1,
 			"position": [280, 860]
 		},
 		{
 			"parameters": {
 				"source": "parameter",
-				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"n8n-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
+				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"aura-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"aura-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
 				"mode": "each",
 				"options": {
 					"waitForSubWorkflow": false
 				}
 			},
-			"type": "n8n-nodes-base.executeWorkflow",
+			"type": "aura-nodes-base.executeWorkflow",
 			"typeVersion": 1.1,
 			"position": [680, 1540],
 			"id": "f90a25da-dd89-4bf8-8f5b-bf8ee1de0b70",
@@ -58,7 +58,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [900, 1540],
 			"id": "3be57648-3be8-4b0f-abfa-8fdcafee804d",
@@ -67,12 +67,12 @@
 		{
 			"parameters": {
 				"source": "parameter",
-				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"n8n-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
+				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"aura-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"aura-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
 				"options": {
 					"waitForSubWorkflow": false
 				}
 			},
-			"type": "n8n-nodes-base.executeWorkflow",
+			"type": "aura-nodes-base.executeWorkflow",
 			"typeVersion": 1.1,
 			"position": [620, 1220],
 			"id": "dabc2356-3660-4d17-b305-936a002029ba",
@@ -98,7 +98,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [840, 1220],
 			"id": "9d2a9dda-e2a1-43e8-a66f-a8a555692e5f",
@@ -107,13 +107,13 @@
 		{
 			"parameters": {
 				"source": "parameter",
-				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"n8n-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
+				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"aura-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"aura-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
 				"mode": "each",
 				"options": {
 					"waitForSubWorkflow": true
 				}
 			},
-			"type": "n8n-nodes-base.executeWorkflow",
+			"type": "aura-nodes-base.executeWorkflow",
 			"typeVersion": 1.1,
 			"position": [560, 900],
 			"id": "07e47f60-622a-484c-ab24-35f6f2280595",
@@ -139,7 +139,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [760, 900],
 			"id": "80563d0a-0bab-444f-a04c-4041a505d78b",
@@ -148,12 +148,12 @@
 		{
 			"parameters": {
 				"source": "parameter",
-				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"n8n-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
+				"workflowJson": "{\n  \"meta\": {\n    \"instanceId\": \"a786b722078489c1fa382391a9f3476c2784761624deb2dfb4634827256d51a0\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"aura-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        0,\n        0\n      ],\n      \"id\": \"00600a51-e63a-4b6e-93f5-f01d50a21e0c\",\n      \"name\": \"Execute Workflow Trigger\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"87ff01af-2e28-48da-ae6c-304040200b15\",\n              \"name\": \"hello\",\n              \"value\": \"=world {{ $json.firstname }} {{ $json.lastname }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": false,\n        \"options\": {}\n      },\n      \"type\": \"aura-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        280,\n        0\n      ],\n      \"id\": \"642219a1-d655-4a30-af5c-fcccbb690322\",\n      \"name\": \"Edit Fields\"\n    }\n  ],\n  \"connections\": {\n    \"Execute Workflow Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Edit Fields\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}",
 				"options": {
 					"waitForSubWorkflow": true
 				}
 			},
-			"type": "n8n-nodes-base.executeWorkflow",
+			"type": "aura-nodes-base.executeWorkflow",
 			"typeVersion": 1.1,
 			"position": [560, 580],
 			"id": "f04af481-f4d9-4d91-a60a-a377580e8393",
@@ -179,7 +179,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [760, 580],
 			"id": "80c10607-a0ac-4090-86a1-890da0a2aa52",
@@ -193,7 +193,7 @@
 			},
 			"id": "534ef523-3453-4a16-9ff0-8ac9f025d47d",
 			"name": "Sticky Note5",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [500, 1080]
 		},
@@ -205,7 +205,7 @@
 			},
 			"id": "838f0fa3-5ee4-4d1a-afb8-42e009f1aa9e",
 			"name": "Sticky Note4",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [580, 1400]
 		},
@@ -217,7 +217,7 @@
 			},
 			"id": "86699a49-2aa7-488e-8ea9-828404c98f08",
 			"name": "DebugHelper",
-			"type": "n8n-nodes-base.debugHelper",
+			"type": "aura-nodes-base.debugHelper",
 			"typeVersion": 1,
 			"position": [320, 1120]
 		},
@@ -229,7 +229,7 @@
 			},
 			"id": "885d35f0-8ae6-45ec-821b-a82c27e7577a",
 			"name": "Sticky Note3",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [480, 760]
 		},
@@ -241,7 +241,7 @@
 			},
 			"id": "505bd7f2-767e-41b8-9325-77300aed5883",
 			"name": "Sticky Note2",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [460, 460]
 		}

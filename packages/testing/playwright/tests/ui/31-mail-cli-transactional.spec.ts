@@ -3,7 +3,7 @@ import { test, expect } from '../../fixtures/base';
 test.use({ addContainerCapability: { email: true } });
 
 test('Password reset email is delivered @capability:email', async ({ api, chaos }) => {
-	const ownerEmail = 'nathan@n8n.io';
+	const ownerEmail = 'nathan@aura.io';
 	const res = await api.request.post('/rest/forgot-password', {
 		data: { email: ownerEmail },
 	});

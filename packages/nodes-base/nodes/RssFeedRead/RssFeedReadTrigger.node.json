@@ -1,12 +1,12 @@
 {
-	"node": "n8n-nodes-base.rssFeedReadTrigger",
+	"node": "aura-nodes-base.rssFeedReadTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Core Nodes"],
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.rssfeedreadtrigger/"
 			}
 		]
 	}

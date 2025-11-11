@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { I18nT } from 'vue-i18n';
 
 import { ElDialog } from 'element-plus';
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 type Props = {
 	limit: number;
 	planName?: string;

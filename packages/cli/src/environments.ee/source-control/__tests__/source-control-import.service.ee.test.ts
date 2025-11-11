@@ -1,5 +1,5 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import type { Logger } from '@n8n/backend-common';
+import type { SourceControlledFile } from '@aura/api-types';
+import type { Logger } from '@aura/backend-common';
 import {
 	type Variables,
 	type VariablesRepository,
@@ -12,11 +12,11 @@ import {
 	User,
 	WorkflowEntity,
 	type WorkflowRepository,
-} from '@n8n/db';
-import { In } from '@n8n/typeorm';
+} from '@aura/db';
+import { In } from '@aura/typeorm';
 import * as fastGlob from 'fast-glob';
 import { mock } from 'jest-mock-extended';
-import { type InstanceSettings } from 'n8n-core';
+import { type InstanceSettings } from 'aura-core';
 import fsp from 'node:fs/promises';
 
 import type { VariablesService } from '@/environments.ee/variables/variables.service.ee';
@@ -68,7 +68,7 @@ describe('SourceControlImportService', () => {
 		mock(),
 		mock(),
 		folderRepository,
-		mock<InstanceSettings>({ n8nFolder: '/mock/n8n' }),
+		mock<InstanceSettings>({ auraFolder: '/mock/aura' }),
 		sourceControlScopedService,
 	);
 
@@ -807,11 +807,11 @@ describe('SourceControlImportService', () => {
 				expect(result).toHaveLength(2);
 				expect(result[0]).toMatchObject({
 					...mockProjectData1,
-					filename: `/mock/n8n/git/projects/${mockProjectData1.id}.json`,
+					filename: `/mock/aura/git/projects/${mockProjectData1.id}.json`,
 				});
 				expect(result[1]).toMatchObject({
 					...mockProjectData2,
-					filename: `/mock/n8n/git/projects/${mockProjectData2.id}.json`,
+					filename: `/mock/aura/git/projects/${mockProjectData2.id}.json`,
 				});
 			});
 
@@ -835,7 +835,7 @@ describe('SourceControlImportService', () => {
 				expect(result).toHaveLength(1);
 				expect(result[0]).toMatchObject({
 					...mockProjectData2,
-					filename: `/mock/n8n/git/projects/${mockProjectData2.id}.json`,
+					filename: `/mock/aura/git/projects/${mockProjectData2.id}.json`,
 				});
 			});
 		});
@@ -891,7 +891,7 @@ describe('SourceControlImportService', () => {
 					name: mockProjectData1.name,
 					description: mockProjectData1.description,
 					icon: mockProjectData1.icon,
-					filename: `/mock/n8n/git/projects/${mockProjectData1.id}.json`,
+					filename: `/mock/aura/git/projects/${mockProjectData1.id}.json`,
 					type: mockProjectData1.type,
 					owner: {
 						type: 'team',
@@ -904,7 +904,7 @@ describe('SourceControlImportService', () => {
 					name: mockProjectData2.name,
 					description: mockProjectData2.description,
 					icon: mockProjectData2.icon,
-					filename: `/mock/n8n/git/projects/${mockProjectData2.id}.json`,
+					filename: `/mock/aura/git/projects/${mockProjectData2.id}.json`,
 					type: mockProjectData2.type,
 					owner: {
 						type: 'team',
@@ -947,7 +947,7 @@ describe('SourceControlImportService', () => {
 					name: mockProjectData1.name,
 					description: mockProjectData1.description,
 					icon: mockProjectData1.icon,
-					filename: `/mock/n8n/git/projects/${mockProjectData1.id}.json`,
+					filename: `/mock/aura/git/projects/${mockProjectData1.id}.json`,
 					type: mockProjectData1.type,
 					owner: {
 						type: 'team',

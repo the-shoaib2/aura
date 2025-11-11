@@ -15,13 +15,13 @@ import { dropInExpressionEditor } from '@/features/shared/editors/plugins/codemi
 import type { Segment } from '@/app/types/expressions';
 import { startCompletion } from '@codemirror/autocomplete';
 import type { EditorState, SelectionRange } from '@codemirror/state';
-import type { IDataObject } from 'n8n-workflow';
-import { createEventBus, type EventBus } from '@n8n/utils/event-bus';
+import type { IDataObject } from 'workflow';
+import { createEventBus, type EventBus } from '@aura/utils/event-bus';
 import { CanvasKey } from '@/app/constants';
 import { useIsInExperimentalNdv } from '@/features/workflows/canvas/experimental/composables/useIsInExperimentalNdv';
 import { isEventTargetContainedBy } from '@/app/utils/htmlUtils';
 
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 const isFocused = ref(false);
 const segments = ref<Segment[]>([]);
 const editorState = ref<EditorState>();

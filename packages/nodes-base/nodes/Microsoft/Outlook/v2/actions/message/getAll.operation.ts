@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 
@@ -138,7 +133,7 @@ export const properties: INodeProperties[] = [
 								},
 								default: [],
 								description:
-									'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 							},
 							{
 								displayName: 'Folders to Include',
@@ -149,7 +144,7 @@ export const properties: INodeProperties[] = [
 								},
 								default: [],
 								description:
-									'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 							},
 							{
 								displayName: 'Read Status',
@@ -159,17 +154,17 @@ export const properties: INodeProperties[] = [
 								hint: 'Filter messages by whether they have been read or not',
 								options: [
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Unread and read messages',
 										value: 'both',
 									},
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Unread messages only',
 										value: 'unread',
 									},
 									{
-										// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+										// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 										name: 'Read messages only',
 										value: 'read',
 									},

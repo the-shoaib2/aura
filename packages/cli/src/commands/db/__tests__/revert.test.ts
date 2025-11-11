@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { IrreversibleMigration, ReversibleMigration } from '@n8n/db';
-import type { Migration, MigrationExecutor, DataSource } from '@n8n/typeorm';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { IrreversibleMigration, ReversibleMigration } from '@aura/db';
+import type { Migration, MigrationExecutor, DataSource } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
 
 import { main } from '@/commands/db/revert';
@@ -127,11 +127,11 @@ test("don't revert the last migration if we cannot find the migration in the cod
 	expect(logger.error).toHaveBeenCalledTimes(2);
 	expect(logger.error).toHaveBeenNthCalledWith(
 		1,
-		'The last migration that was executed is "TestMigration", but I could not find that migration\'s code in the currently installed version of n8n.',
+		'The last migration that was executed is "TestMigration", but I could not find that migration\'s code in the currently installed version of aura.',
 	);
 	expect(logger.error).toHaveBeenNthCalledWith(
 		2,
-		'This usually means that you downgraded n8n before running `n8n db:revert`. Please upgrade n8n again and run `n8n db:revert` and then downgrade again.',
+		'This usually means that you downgraded aura before running `aura db:revert`. Please upgrade aura again and run `aura db:revert` and then downgrade again.',
 	);
 	expect(dataSource.undoLastMigration).not.toHaveBeenCalled();
 	expect(dataSource.destroy).not.toHaveBeenCalled();

@@ -4,7 +4,7 @@ import type {
 	INodeProperties,
 	NodeApiError,
 	IExecuteFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { updateDisplayOptions, wrapData } from '../../../../../utils/utilities';
 import { processAirtableError } from '../../helpers/utils';
@@ -18,7 +18,7 @@ const properties: INodeProperties[] = [
 		default: '',
 		placeholder: 'e.g. recf7EaZp707CEc8g',
 		required: true,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+		// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 		description:
 			'ID of the record to delete. <a href="https://support.airtable.com/docs/record-id" target="_blank">More info</a>.',
 	},

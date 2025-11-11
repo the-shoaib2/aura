@@ -1,4 +1,4 @@
-import type { IRunExecutionData } from 'n8n-workflow';
+import type { IRunExecutionData } from 'workflow';
 
 import { InvalidExecutionMetadataError } from '@/errors/invalid-execution-metadata.error';
 

@@ -1,4 +1,4 @@
-import type { LicenseMetricsRepository, WorkflowRepository } from '@n8n/db';
+import type { LicenseMetricsRepository, WorkflowRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
 
 import { LicenseMetricsService } from '@/metrics/license-metrics.service';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import type express from 'express';
 import { validate } from 'jsonschema';
 

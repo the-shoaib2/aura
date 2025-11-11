@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "8d0ffac0-dfbf-4407-91db-0756041b0894",
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [-320, 1640]
 		},
@@ -22,7 +22,7 @@
 			},
 			"id": "8bc8719a-4e79-4df0-bd34-e67b4aaa7823",
 			"name": "IF",
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"typeVersion": 1,
 			"position": [140, 1180]
 		},
@@ -30,7 +30,7 @@
 			"parameters": {},
 			"id": "26ceab02-97d2-4e4b-b27f-d5a5584e697e",
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 1260]
 		},
@@ -38,7 +38,7 @@
 			"parameters": {},
 			"id": "2b3f9309-8c75-4dc6-bf02-ab19f17983d7",
 			"name": "Merge1",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 1260]
 		},
@@ -50,7 +50,7 @@
 			},
 			"id": "a0456576-8dbb-437f-81e5-5fe331eb45f6",
 			"name": "Merge3",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 1100]
 		},
@@ -62,7 +62,7 @@
 			},
 			"id": "66c801a7-c020-42b1-bedb-f5104a792e0c",
 			"name": "Merge4",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 1100]
 		},
@@ -71,8 +71,8 @@
 				"operation": "getAllPeople"
 			},
 			"id": "e8e83cef-c782-490c-9a0e-206435e3b71c",
-			"name": "Customer Datastore (n8n training)",
-			"type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+			"name": "Customer Datastore (aura training)",
+			"type": "aura-nodes-base.auraTrainingCustomerDatastore",
 			"typeVersion": 1,
 			"position": [-100, 1640]
 		},
@@ -82,7 +82,7 @@
 			},
 			"id": "f8b779dc-992d-49db-9fc2-d8b76b0f3419",
 			"name": "Merge2",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 1440]
 		},
@@ -92,7 +92,7 @@
 			},
 			"id": "e6136b98-ab2c-4c44-bc14-6af3fa39ed01",
 			"name": "Merge5",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 1440]
 		},
@@ -110,7 +110,7 @@
 			},
 			"id": "c97cba6c-5a4e-4929-81d1-da20be216900",
 			"name": "Set1B",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [380, 1260]
 		},
@@ -128,7 +128,7 @@
 			},
 			"id": "87fdfaf7-dafc-427e-ad89-3839ea9718aa",
 			"name": "Set1A",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [380, 1120]
 		},
@@ -148,7 +148,7 @@
 			},
 			"id": "f5e4aabd-93f8-405c-804a-9487393467e6",
 			"name": "Merge6",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 940],
 			"disabled": true
@@ -169,7 +169,7 @@
 			},
 			"id": "b713a005-f140-4565-b30a-3136d892a8c3",
 			"name": "Merge8",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 940],
 			"disabled": true
@@ -182,7 +182,7 @@
 			},
 			"id": "868d4a27-7192-4252-826b-dcc20b42948a",
 			"name": "Merge9",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 780]
 		},
@@ -194,7 +194,7 @@
 			},
 			"id": "b8e770e8-c0a0-413b-a887-4e6395787d76",
 			"name": "Merge10",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 780]
 		},
@@ -205,7 +205,7 @@
 			},
 			"id": "925a9e9e-2628-4561-a7d7-89f55248e1d4",
 			"name": "Merge7",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 1620]
 		},
@@ -216,7 +216,7 @@
 			},
 			"id": "fed3c762-9171-4d7e-85b9-c2c100eba9f9",
 			"name": "Merge11",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 1620]
 		},
@@ -224,7 +224,7 @@
 			"parameters": {},
 			"id": "8f3b781a-c82b-40a0-a896-d459e25f9b79",
 			"name": "Merge12",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 2360]
 		},
@@ -232,7 +232,7 @@
 			"parameters": {},
 			"id": "65c4b385-cf4c-4a6e-98bb-797dbfdf67a0",
 			"name": "Merge13",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 2360]
 		},
@@ -244,7 +244,7 @@
 			},
 			"id": "5260edf9-c448-4790-ac0a-6f1bc9845c56",
 			"name": "Merge14",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 2200]
 		},
@@ -256,7 +256,7 @@
 			},
 			"id": "1d60a9d0-cd9e-418e-85e7-19726f6dfc27",
 			"name": "Merge15",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 2200]
 		},
@@ -266,7 +266,7 @@
 			},
 			"id": "0432532f-7ab6-428e-8a09-5473ea43da9e",
 			"name": "Merge16",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 2540]
 		},
@@ -276,7 +276,7 @@
 			},
 			"id": "0ffc7240-3225-4223-a8c9-f76327dfbe02",
 			"name": "Merge17",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 2540]
 		},
@@ -296,7 +296,7 @@
 			},
 			"id": "5b139ae2-f46d-4149-9e63-b50acaac2be7",
 			"name": "Merge18",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 2040]
 		},
@@ -316,7 +316,7 @@
 			},
 			"id": "49132c5a-a0bb-4254-a693-9a243ef13ca8",
 			"name": "Merge19",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 2040]
 		},
@@ -328,7 +328,7 @@
 			},
 			"id": "2856e67f-d640-45b6-8d2d-7264bf419b2f",
 			"name": "Merge20",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 1880]
 		},
@@ -340,7 +340,7 @@
 			},
 			"id": "a8fb6c81-fdc0-4da3-a3d7-21f8d901d5f2",
 			"name": "Merge21",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 1880]
 		},
@@ -351,7 +351,7 @@
 			},
 			"id": "922005a8-9d49-4e63-9b53-22aedcc5577d",
 			"name": "Merge22",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [640, 2720]
 		},
@@ -362,7 +362,7 @@
 			},
 			"id": "6d0d4e32-a7e8-447b-929f-7faaa3044a5f",
 			"name": "Merge23",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2,
 			"position": [900, 2720]
 		},
@@ -380,7 +380,7 @@
 			},
 			"id": "c60a9307-efbf-444e-899c-33002e80d9f0",
 			"name": "Set2A",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [380, 2220]
 		},
@@ -398,7 +398,7 @@
 			},
 			"id": "df76be2b-5e4f-48bf-b779-aacfffb8c2ba",
 			"name": "Set2B",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [380, 2360]
 		}
@@ -2118,7 +2118,7 @@
 			"main": [
 				[
 					{
-						"node": "Customer Datastore (n8n training)",
+						"node": "Customer Datastore (aura training)",
 						"type": "main",
 						"index": 0
 					}
@@ -2143,7 +2143,7 @@
 				]
 			]
 		},
-		"Customer Datastore (n8n training)": {
+		"Customer Datastore (aura training)": {
 			"main": [
 				[
 					{

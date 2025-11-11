@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { FIELDS_SECTION } from '../../plugins/codemirror/completions/constants';
 import { datatypeCompletions } from '../../plugins/codemirror/completions/datatype.completions';
 import { isCompletionSection } from '../../plugins/codemirror/completions/utils';
@@ -9,7 +9,7 @@ import { EditorSelection, EditorState, type SelectionRange } from '@codemirror/s
 import { watchDebounced } from '@vueuse/core';
 import { computed, onBeforeUnmount, ref, watch } from 'vue';
 
-import { N8nText } from '@n8n/design-system';
+import { N8nText } from '@aura/design-system';
 type TipId = 'executePrevious' | 'drag' | 'default' | 'dotObject' | 'dotPrimitive';
 
 type Props = {
@@ -128,15 +128,15 @@ watchDebounced(
 		</div>
 
 		<div v-else-if="tip === 'dotPrimitive'" :class="$style.content">
-			<span v-n8n-html="i18n.baseText('expressionTip.typeDotPrimitive')" />
+			<span v-aura-html="i18n.baseText('expressionTip.typeDotPrimitive')" />
 		</div>
 
 		<div v-else-if="tip === 'dotObject'" :class="$style.content">
-			<span v-n8n-html="i18n.baseText('expressionTip.typeDotObject')" />
+			<span v-aura-html="i18n.baseText('expressionTip.typeDotObject')" />
 		</div>
 
 		<div v-else :class="$style.content">
-			<span v-n8n-html="i18n.baseText('expressionTip.javascript')" />
+			<span v-aura-html="i18n.baseText('expressionTip.javascript')" />
 		</div>
 	</div>
 </template>

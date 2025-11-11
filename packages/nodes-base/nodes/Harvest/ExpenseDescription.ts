@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 const resource = ['expense'];
 
@@ -290,7 +290,7 @@ export const expenseFields: INodeProperties[] = [
 				name: 'user_id',
 				type: 'boolean',
 				default: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'The ID of the user associated with this expense. Defaults to the ID of the currently authenticated user.',
 			},
@@ -381,7 +381,7 @@ export const expenseFields: INodeProperties[] = [
 				name: 'user_id',
 				type: 'boolean',
 				default: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'The ID of the user associated with this expense. Defaults to the ID of the currently authenticated user.',
 			},

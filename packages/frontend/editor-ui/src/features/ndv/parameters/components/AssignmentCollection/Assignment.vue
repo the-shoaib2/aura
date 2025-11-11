@@ -7,13 +7,13 @@ import ParameterIssues from '../ParameterIssues.vue';
 import { useResolvedExpression } from '@/app/composables/useResolvedExpression';
 import useEnvironmentsStore from '@/features/settings/environments.ee/environments.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
-import type { AssignmentValue, INodeProperties } from 'n8n-workflow';
+import type { AssignmentValue, INodeProperties } from 'workflow';
 import { computed, ref } from 'vue';
 import TypeSelect from './TypeSelect.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { BINARY_DATA_ACCESS_TOOLTIP } from '@/app/constants';
 
-import { N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nIconButton, N8nTooltip } from '@aura/design-system';
 interface Props {
 	path: string;
 	modelValue: AssignmentValue;

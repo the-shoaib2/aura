@@ -1,4 +1,4 @@
-import type { CredentialsEntity } from '@n8n/db';
+import type { CredentialsEntity } from '@aura/db';
 import {
 	User,
 	CredentialsRepository,
@@ -8,9 +8,9 @@ import {
 	SharedWorkflowRepository,
 	UserRepository,
 	GLOBAL_OWNER_ROLE,
-} from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 
 import { BaseCommand } from '../base-command';
 

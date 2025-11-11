@@ -4,16 +4,16 @@ import type {
 	OptionsRequestDto,
 	ResourceLocatorRequestDto,
 	ResourceMapperFieldsRequestDto,
-} from '@n8n/api-types';
-import * as nodeTypesApi from '@n8n/rest-api-client/api/nodeTypes';
+} from '@aura/api-types';
+import * as nodeTypesApi from '@aura/rest-api-client/api/nodeTypes';
 import {
 	HTTP_REQUEST_NODE_TYPE,
 	CREDENTIAL_ONLY_HTTP_NODE_VERSION,
 	MODULE_ENABLED_NODES,
 } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import type { NodeTypesByTypeNameAndVersion } from '@/Interface';
-import { addHeaders, addNodeTranslation } from '@n8n/i18n';
+import { addHeaders, addNodeTranslation } from '@aura/i18n';
 import { omit } from '@/app/utils/typesUtils';
 import type {
 	INode,
@@ -23,11 +23,11 @@ import type {
 	INodeTypeNameVersion,
 	Workflow,
 	NodeConnectionType,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeHelpers } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeHelpers } from 'workflow';
 import { defineStore } from 'pinia';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import * as utils from '@/app/utils/credentialOnlyNodes';
 import { groupNodeTypesByNameAndType } from '@/app/utils/nodeTypes/nodeTypeTransforms';
 import { computed, ref } from 'vue';
@@ -315,7 +315,7 @@ export const useNodeTypesStore = defineStore(STORES.NODE_TYPES, () => {
 
 		nodesInformation.forEach((nodeInformation) => {
 			if (nodeInformation.translation) {
-				const nodeType = nodeInformation.name.replace('n8n-nodes-base.', '');
+				const nodeType = nodeInformation.name.replace('aura-nodes-base.', '');
 
 				addNodeTranslation({ [nodeType]: nodeInformation.translation }, rootStore.defaultLocale);
 			}

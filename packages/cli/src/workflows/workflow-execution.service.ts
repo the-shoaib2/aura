@@ -1,10 +1,10 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { Project, User, CreateExecutionPayload } from '@n8n/db';
-import { ExecutionRepository, WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import type { Project, User, CreateExecutionPayload } from '@aura/db';
+import { ExecutionRepository, WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import type { Response } from 'express';
-import { ErrorReporter } from 'n8n-core';
+import { ErrorReporter } from 'aura-core';
 import type {
 	IDeferredPromise,
 	IExecuteData,
@@ -17,8 +17,8 @@ import type {
 	WorkflowExecuteMode,
 	IWorkflowExecutionDataProcess,
 	IWorkflowBase,
-} from 'n8n-workflow';
-import { SubworkflowOperationError, Workflow } from 'n8n-workflow';
+} from 'workflow';
+import { SubworkflowOperationError, Workflow } from 'workflow';
 
 import { ExecutionDataService } from '@/executions/execution-data.service';
 import { SubworkflowPolicyChecker } from '@/executions/pre-execution-checks';
@@ -413,11 +413,11 @@ export class WorkflowExecutionService {
 	 * Select the pinned activator node to use as starter for a manual execution.
 	 *
 	 * In a full manual execution, select the pinned activator that was first added
-	 * to the workflow, prioritizing `n8n-nodes-base.webhook` over other activators.
+	 * to the workflow, prioritizing `aura-nodes-base.webhook` over other activators.
 	 *
 	 * In a partial manual execution, if the executed node has parent nodes among the
 	 * pinned activators, select the pinned activator that was first added to the workflow,
-	 * prioritizing `n8n-nodes-base.webhook` over other activators. If the executed node
+	 * prioritizing `aura-nodes-base.webhook` over other activators. If the executed node
 	 * has no upstream nodes and is itself is a pinned activator, select it.
 	 */
 	selectPinnedActivatorStarter(
@@ -491,7 +491,7 @@ export class WorkflowExecutionService {
 					!node.disabled &&
 					pinData?.[node.name] &&
 					['trigger', 'webhook'].some((suffix) => node.type.toLowerCase().endsWith(suffix)) &&
-					node.type !== 'n8n-nodes-base.respondToWebhook',
+					node.type !== 'aura-nodes-base.respondToWebhook',
 			)
 			.sort((a) => (a.type.endsWith('webhook') ? -1 : 1));
 	}

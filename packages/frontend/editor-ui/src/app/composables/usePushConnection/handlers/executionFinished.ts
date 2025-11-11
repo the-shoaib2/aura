@@ -26,11 +26,11 @@ import {
 	getExecutionErrorToastConfiguration,
 } from '@/features/execution/executions/executions.utils';
 import { getTriggerNodeServiceName } from '@/app/utils/nodeTypesUtils';
-import type { ExecutionFinished } from '@n8n/api-types/push/execution';
-import { useI18n } from '@n8n/i18n';
+import type { ExecutionFinished } from '@aura/api-types/push/execution';
+import { useI18n } from '@aura/i18n';
 import { parse } from 'flatted';
-import type { ExpressionError, IDataObject, IRunExecutionData, IWorkflowBase } from 'n8n-workflow';
-import { EVALUATION_TRIGGER_NODE_TYPE, TelemetryHelpers } from 'n8n-workflow';
+import type { ExpressionError, IDataObject, IRunExecutionData, IWorkflowBase } from 'workflow';
+import { EVALUATION_TRIGGER_NODE_TYPE, TelemetryHelpers } from 'workflow';
 import type { useRouter } from 'vue-router';
 import { type WorkflowState } from '@/app/composables/useWorkflowState';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';

@@ -1,4 +1,4 @@
-import type { AuthenticatedRequest } from '@n8n/db';
+import type { AuthenticatedRequest } from '@aura/db';
 
 import type { ListQuery } from '@/requests';
 

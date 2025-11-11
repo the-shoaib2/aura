@@ -8,7 +8,7 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { createTestingPinia } from '@pinia/testing';
 import { useVueFlow } from '@vue-flow/core';
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 import { setActivePinia } from 'pinia';
 import { reactive } from 'vue';
 import { useExperimentalNdvStore } from '@/features/workflows/canvas/experimental/experimentalNdv.store';

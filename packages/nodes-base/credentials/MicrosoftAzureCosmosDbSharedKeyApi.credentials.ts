@@ -6,8 +6,8 @@ import type {
 	IHttpRequestOptions,
 	INodeProperties,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { OperationalError } from 'n8n-workflow';
+} from 'workflow';
+import { OperationalError } from 'workflow';
 
 import {
 	CURRENT_VERSION,

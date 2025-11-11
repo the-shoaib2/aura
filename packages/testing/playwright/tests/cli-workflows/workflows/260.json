@@ -7,7 +7,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-800, 992],
 			"id": "fa8ff0c4-b035-4c92-bdc2-033f903fca69",
@@ -15,9 +15,9 @@
 		},
 		{
 			"parameters": {
-				"jsCode": "const result = [\n  'n8n',\n  'make',\n  'zappier',\n  'workato'\n].map(i => ({ json: {name: i}}))\n\nreturn result;"
+				"jsCode": "const result = [\n  'aura',\n  'make',\n  'zappier',\n  'workato'\n].map(i => ({ json: {name: i}}))\n\nreturn result;"
 			},
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [-592, 992],
 			"id": "b82a0103-35c0-4f5c-9cd5-8c6b4e5e5f8a",
@@ -29,7 +29,7 @@
 				"text": "=Search HackerNews for {{ $json.name }}",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 2.2,
 			"position": [192, 1008],
 			"id": "14cab782-d994-4ecf-9f73-8f527cd22f45",
@@ -45,7 +45,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [192, 1200],
 			"credentials": {
@@ -62,10 +62,10 @@
 				"resource": "all",
 				"limit": 1,
 				"additionalFields": {
-					"keyword": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Keyword', ``, 'string') }}"
+					"keyword": "={{ /*aura-auto-generated-fromAI-override*/ $fromAI('Keyword', ``, 'string') }}"
 				}
 			},
-			"type": "n8n-nodes-base.hackerNewsTool",
+			"type": "aura-nodes-base.hackerNewsTool",
 			"typeVersion": 1,
 			"position": [400, 1200],
 			"id": "39a1c821-da35-47ad-b50f-c14b937d4c65",
@@ -75,7 +75,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "n8n-nodes-base.splitInBatches",
+			"type": "aura-nodes-base.splitInBatches",
 			"typeVersion": 3,
 			"position": [-96, 992],
 			"id": "3066da30-a2d9-408f-ad2e-8cf34842662c",

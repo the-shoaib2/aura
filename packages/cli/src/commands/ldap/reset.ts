@@ -1,4 +1,4 @@
-import { LDAP_FEATURE_NAME, LDAP_DEFAULT_CONFIGURATION } from '@n8n/constants';
+import { LDAP_FEATURE_NAME, LDAP_DEFAULT_CONFIGURATION } from '@aura/constants';
 import {
 	AuthIdentityRepository,
 	AuthProviderSyncHistoryRepository,
@@ -9,12 +9,12 @@ import {
 	SharedCredentialsRepository,
 	SharedWorkflowRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In } from '@n8n/typeorm';
-import { UserError } from 'n8n-workflow';
+} from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In } from '@aura/typeorm';
+import { UserError } from 'workflow';
 import { z } from 'zod';
 
 import { UM_FIX_INSTRUCTION } from '@/constants';

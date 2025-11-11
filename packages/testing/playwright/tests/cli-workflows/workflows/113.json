@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "cb0c801c-e74c-43a6-9b4d-6e3c2b265f22"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "AMQP Sender",
-			"type": "n8n-nodes-base.amqp",
+			"type": "aura-nodes-base.amqp",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -48,7 +48,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"id": "951c5927-93e8-4efb-924a-e6516679017c"

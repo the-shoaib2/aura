@@ -1,4 +1,4 @@
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { type FrontendModuleDescription } from '@/app/moduleInitializer/module.types';
 import {
 	ADD_DATA_TABLE_MODAL_KEY,

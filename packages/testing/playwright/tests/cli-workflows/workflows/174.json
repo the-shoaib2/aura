@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "b7de37cc-c85a-4eac-beec-1f0c1ea5190a"
@@ -24,7 +24,7 @@
 				}
 			},
 			"name": "Vero",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -42,7 +42,7 @@
 				"newId": "={{$node[\"Set id & email\"].json[\"email\"]}}"
 			},
 			"name": "Vero1",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -60,7 +60,7 @@
 				"tags": "TEST,"
 			},
 			"name": "Vero2",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -78,7 +78,7 @@
 				"tags": "TEST,"
 			},
 			"name": "Vero3",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"credentials": {
@@ -95,7 +95,7 @@
 				"id": "={{$node[\"Set id & email\"].json[\"email\"]}}"
 			},
 			"name": "Vero4",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [1150, 300],
 			"credentials": {
@@ -112,7 +112,7 @@
 				"id": "={{$node[\"Set id & email\"].json[\"email\"]}}"
 			},
 			"name": "Vero5",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [1300, 300],
 			"credentials": {
@@ -129,7 +129,7 @@
 				"id": "={{$node[\"Set id & email\"].json[\"email\"]}}"
 			},
 			"name": "Vero6",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [1600, 300],
 			"credentials": {
@@ -160,7 +160,7 @@
 				"options": {}
 			},
 			"name": "Set id & email",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"id": "76d32334-89e0-4fc0-aa81-e56eaeb206c2"
@@ -184,7 +184,7 @@
 				}
 			},
 			"name": "Vero7",
-			"type": "n8n-nodes-base.vero",
+			"type": "aura-nodes-base.vero",
 			"typeVersion": 1,
 			"position": [1450, 400],
 			"credentials": {

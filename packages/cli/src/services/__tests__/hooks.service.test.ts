@@ -5,7 +5,7 @@ import type {
 	CredentialsRepository,
 	WorkflowRepository,
 	UserRepository,
-} from '@n8n/db';
+} from '@aura/db';
 import RudderStack from '@rudderstack/rudder-sdk-node';
 import type { Response } from 'express';
 import { mock } from 'jest-mock-extended';
@@ -45,7 +45,7 @@ describe('HooksService', () => {
 
 	it('hooksService.inviteUsers should call userService.inviteUsers', async () => {
 		// ARRANGE
-		const usersToInvite: Invitation[] = [{ email: 'test@n8n.io', role: 'global:member' }];
+		const usersToInvite: Invitation[] = [{ email: 'test@aura.io', role: 'global:member' }];
 
 		// ACT
 		await hooksService.inviteUsers(mockedUser, usersToInvite);

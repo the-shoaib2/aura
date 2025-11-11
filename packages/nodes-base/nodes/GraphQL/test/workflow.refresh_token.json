@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "ae67b437-48c0-4c4b-9c8f-005b8911ca5f",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [32, 80]
 		},
@@ -17,7 +17,7 @@
 				"query": "query { foo }"
 			},
 			"name": "GraphQL",
-			"type": "n8n-nodes-base.graphql",
+			"type": "aura-nodes-base.graphql",
 			"typeVersion": 1,
 			"position": [256, 80],
 			"id": "6cb4c117-907a-40b9-b3ba-cd3756b1cb7b",

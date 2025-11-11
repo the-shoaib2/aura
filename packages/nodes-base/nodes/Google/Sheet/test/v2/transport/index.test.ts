@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, ILoadOptionsFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions, ILoadOptionsFunctions } from 'workflow';
 
 import { getGoogleAccessToken } from '../../../../GenericFunctions';
 import { apiRequest, apiRequestAllItems } from '../../../v2/transport';

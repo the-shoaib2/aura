@@ -1,4 +1,4 @@
-import type { IAuthenticateGeneric, ICredentialType, INodeProperties, Icon } from 'n8n-workflow';
+import type { IAuthenticateGeneric, ICredentialType, INodeProperties, Icon } from 'workflow';
 
 export class TrellixEpoApi implements ICredentialType {
 	name = 'trellixEpoApi';

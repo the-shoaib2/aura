@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import type { INode, IExecuteFunctions, IDataObject } from 'n8n-workflow';
+import type { INode, IExecuteFunctions, IDataObject } from 'workflow';
 
 import * as genericFunctions from '../../GenericFunctions';
 import { GoogleCalendar } from '../../GoogleCalendar.node';

@@ -6,7 +6,7 @@ import {
 	type INodeExecutionData,
 	type INodeProperties,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 import { promisify } from 'util';
 
 const createEvent = promisify(ics.createEvent);

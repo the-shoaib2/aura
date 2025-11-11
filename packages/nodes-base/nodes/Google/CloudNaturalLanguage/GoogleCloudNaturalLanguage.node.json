@@ -1,34 +1,34 @@
 {
-	"node": "n8n-nodes-base.googleCloudNaturalLanguage",
+	"node": "aura-nodes-base.googleCloudNaturalLanguage",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Analytics"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/google/oauth-single-service/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/google/oauth-single-service/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecloudnaturallanguage/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.googlecloudnaturallanguage/"
 			}
 		],
 		"generic": [
 			{
 				"label": "Automate your data processing pipeline in 9 steps",
 				"icon": "⚙️",
-				"url": "https://n8n.io/blog/automate-your-data-processing-pipeline-in-9-steps-with-n8n/"
+				"url": "https://aura.io/blog/automate-your-data-processing-pipeline-in-9-steps-with-aura/"
 			},
 			{
 				"label": "5 tasks you can automate with the new Notion API ",
 				"icon": "⚡️",
-				"url": "https://n8n.io/blog/5-tasks-you-can-automate-with-notion-api/"
+				"url": "https://aura.io/blog/5-tasks-you-can-automate-with-notion-api/"
 			},
 			{
 				"label": "15 Google apps you can combine and automate to increase productivity",
 				"icon": "💡",
-				"url": "https://n8n.io/blog/automate-google-apps-for-productivity/"
+				"url": "https://aura.io/blog/automate-google-apps-for-productivity/"
 			}
 		]
 	}

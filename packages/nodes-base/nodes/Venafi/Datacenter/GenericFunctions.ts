@@ -1,5 +1,5 @@
 import get from 'lodash/get';
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 import type {
 	IDataObject,
 	IExecuteFunctions,
@@ -7,7 +7,7 @@ import type {
 	ILoadOptionsFunctions,
 	IPollFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export async function venafiApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions | IPollFunctions,

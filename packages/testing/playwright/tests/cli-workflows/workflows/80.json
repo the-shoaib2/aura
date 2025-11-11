@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [200, 460],
 			"id": "4b8759d6-5b80-4936-93a5-b13fb5796186"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Zendesk",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"credentials": {
@@ -41,7 +41,7 @@
 				}
 			},
 			"name": "Zendesk1",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"id": "={{$node[\"Zendesk\"].json[\"id\"]}}"
 			},
 			"name": "Zendesk2",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -78,7 +78,7 @@
 				"options": {}
 			},
 			"name": "Zendesk3",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -96,7 +96,7 @@
 				"id": "={{$node[\"Zendesk\"].json[\"id\"]}}"
 			},
 			"name": "Zendesk4",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"credentials": {
@@ -115,7 +115,7 @@
 				"limit": 1
 			},
 			"name": "Zendesk5",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [400, 450],
 			"credentials": {
@@ -133,7 +133,7 @@
 				"ticketFieldId": "={{$node[\"Zendesk5\"].json[\"id\"]}}"
 			},
 			"name": "Zendesk6",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [550, 450],
 			"credentials": {
@@ -152,7 +152,7 @@
 				"additionalFields": {}
 			},
 			"name": "Zendesk7",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [400, 600],
 			"credentials": {
@@ -174,7 +174,7 @@
 				}
 			},
 			"name": "Zendesk8",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [550, 600],
 			"credentials": {
@@ -194,7 +194,7 @@
 				"filters": {}
 			},
 			"name": "Zendesk9",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [700, 600],
 			"credentials": {
@@ -214,7 +214,7 @@
 				"filters": {}
 			},
 			"name": "Zendesk10",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [850, 600],
 			"credentials": {
@@ -233,7 +233,7 @@
 				"id": "={{$node[\"Zendesk7\"].json[\"id\"]}}"
 			},
 			"name": "Zendesk11",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [1000, 600],
 			"credentials": {
@@ -252,7 +252,7 @@
 				"id": "={{$node[\"Zendesk7\"].json[\"id\"]}}"
 			},
 			"name": "Zendesk12",
-			"type": "n8n-nodes-base.zendesk",
+			"type": "aura-nodes-base.zendesk",
 			"typeVersion": 1,
 			"position": [1150, 600],
 			"credentials": {

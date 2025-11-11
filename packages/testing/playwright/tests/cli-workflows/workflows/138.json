@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "9f90439e-037b-46fd-b837-9b5c85b79e77"
@@ -20,12 +20,12 @@
 				"date": "={{(new Date()).toISOString()}}",
 				"tags": "test",
 				"type": "test",
-				"source": "n8n",
+				"source": "aura",
 				"sourceRef": "={{Date.now().toString()}}",
 				"additionalFields": {}
 			},
 			"name": "TheHive",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [470, 50],
 			"credentials": {
@@ -45,7 +45,7 @@
 				}
 			},
 			"name": "TheHive1",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [620, 50],
 			"credentials": {
@@ -62,7 +62,7 @@
 				"id": "={{$node[\"TheHive\"].json[\"id\"]}}"
 			},
 			"name": "TheHive2",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [970, 50],
 			"credentials": {
@@ -81,7 +81,7 @@
 				"filters": {}
 			},
 			"name": "TheHive3",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1120, 50],
 			"credentials": {
@@ -99,7 +99,7 @@
 				"additionalFields": {}
 			},
 			"name": "TheHive4",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1430, 50],
 			"credentials": {
@@ -122,7 +122,7 @@
 				"options": {}
 			},
 			"name": "TheHive6",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [470, 350],
 			"credentials": {
@@ -143,7 +143,7 @@
 				}
 			},
 			"name": "TheHive7",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [620, 350],
 			"credentials": {
@@ -161,7 +161,7 @@
 				"id": "={{$node[\"TheHive6\"].json[\"id\"]}}"
 			},
 			"name": "TheHive8",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [950, 350],
 			"credentials": {
@@ -180,7 +180,7 @@
 				"filters": {}
 			},
 			"name": "TheHive9",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1100, 350],
 			"credentials": {
@@ -200,7 +200,7 @@
 				"options": {}
 			},
 			"name": "TheHive11",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [620, 520],
 			"credentials": {
@@ -221,7 +221,7 @@
 				}
 			},
 			"name": "TheHive12",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [770, 520],
 			"credentials": {
@@ -239,7 +239,7 @@
 				"id": "={{$node[\"TheHive11\"].json[\"id\"]}}"
 			},
 			"name": "TheHive13",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1080, 520],
 			"credentials": {
@@ -259,7 +259,7 @@
 				"filters": {}
 			},
 			"name": "TheHive14",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1230, 520],
 			"credentials": {
@@ -281,7 +281,7 @@
 				"options": {}
 			},
 			"name": "TheHive16",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [770, 680],
 			"credentials": {
@@ -299,7 +299,7 @@
 				"id": "={{$node[\"TheHive16\"].json[\"_id\"]}}"
 			},
 			"name": "TheHive17",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1090, 680],
 			"credentials": {
@@ -317,7 +317,7 @@
 				"limit": 1
 			},
 			"name": "TheHive18",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1240, 680],
 			"credentials": {
@@ -342,7 +342,7 @@
 				"options": {}
 			},
 			"name": "TheHive19",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [620, 200],
 			"credentials": {
@@ -363,7 +363,7 @@
 				}
 			},
 			"name": "TheHive20",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [940, 200],
 			"credentials": {
@@ -381,7 +381,7 @@
 				"id": "={{$node[\"TheHive19\"].json[\"_id\"]}}"
 			},
 			"name": "TheHive21",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1090, 200],
 			"credentials": {
@@ -401,7 +401,7 @@
 				"filters": {}
 			},
 			"name": "TheHive22",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1450, 200],
 			"credentials": {
@@ -420,7 +420,7 @@
 				"options": {}
 			},
 			"name": "TheHive23",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1600, 200],
 			"credentials": {
@@ -439,7 +439,7 @@
 				"options": {}
 			},
 			"name": "TheHive26",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1520, 520],
 			"credentials": {
@@ -456,7 +456,7 @@
 				"operation": "executeResponder"
 			},
 			"name": "TheHive28",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1390, 680],
 			"credentials": {
@@ -474,7 +474,7 @@
 				"filters": {}
 			},
 			"name": "TheHive29",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1600, 50],
 			"credentials": {
@@ -492,7 +492,7 @@
 				"filters": {}
 			},
 			"name": "TheHive30",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1730, 200],
 			"credentials": {
@@ -510,7 +510,7 @@
 				"filters": {}
 			},
 			"name": "TheHive31",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1460, 350],
 			"credentials": {
@@ -528,7 +528,7 @@
 				"filters": {}
 			},
 			"name": "TheHive32",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1650, 520],
 			"credentials": {
@@ -546,7 +546,7 @@
 				"caseId": "={{$node[\"TheHive34\"].json[\"id\"]}}"
 			},
 			"name": "TheHive33",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [900, -100],
 			"credentials": {
@@ -569,7 +569,7 @@
 				"options": {}
 			},
 			"name": "TheHive34",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [470, -100],
 			"credentials": {
@@ -587,12 +587,12 @@
 				"date": "={{(new Date()).toISOString()}}",
 				"tags": "test",
 				"type": "test",
-				"source": "n8n",
+				"source": "aura",
 				"sourceRef": "={{Date.now().toString()}}",
 				"additionalFields": {}
 			},
 			"name": "TheHive35",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [750, -100],
 			"credentials": {
@@ -610,7 +610,7 @@
 				"responder": "23bc4aef9aa1c88d6624004a3d04aeae"
 			},
 			"name": "TheHive15",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1770, 50],
 			"credentials": {
@@ -629,7 +629,7 @@
 				"responder": "fbe415a38eb649eb7df174aa11a32cfe"
 			},
 			"name": "TheHive25",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [2060, 200],
 			"credentials": {
@@ -649,7 +649,7 @@
 				"analyzers": ["6fdd3c9b5432f1e2094cd3b8f2347d09::cortex"]
 			},
 			"name": "TheHive24",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1880, 200],
 			"credentials": {
@@ -668,7 +668,7 @@
 				"responder": "23bc4aef9aa1c88d6624004a3d04aeae"
 			},
 			"name": "TheHive10",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1620, 350],
 			"credentials": {
@@ -687,7 +687,7 @@
 				"responder": "23bc4aef9aa1c88d6624004a3d04aeae"
 			},
 			"name": "TheHive27",
-			"type": "n8n-nodes-base.theHive",
+			"type": "aura-nodes-base.theHive",
 			"typeVersion": 1,
 			"position": [1810, 520],
 			"credentials": {
@@ -703,7 +703,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [600, -100],
 			"typeVersion": 1,
 			"id": "48448770-8579-45c5-8b44-a3630182989b"
@@ -713,7 +713,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [770, 50],
 			"typeVersion": 1,
 			"id": "56f919d6-ba81-41f5-80f5-f5b1f57edc6a"
@@ -723,7 +723,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second2",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [780, 200],
 			"typeVersion": 1,
 			"id": "cc581b90-c49e-45dc-a74f-2058b14f54e6"
@@ -733,7 +733,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second3",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [790, 350],
 			"typeVersion": 1,
 			"id": "b11a7b70-aa7a-4c94-988e-04576c28ec06"
@@ -743,7 +743,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second4",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [920, 520],
 			"typeVersion": 1,
 			"id": "00e38394-b83d-4b2d-8f64-f002f3dee288"
@@ -753,7 +753,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second5",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [930, 680],
 			"typeVersion": 1,
 			"id": "203e4d68-f936-4f70-88cc-162cb3754faf"
@@ -763,7 +763,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second6",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1380, 520],
 			"typeVersion": 1,
 			"id": "dc7c936c-b400-402e-af72-927ca98ac0ea"
@@ -773,7 +773,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second7",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1280, 350],
 			"typeVersion": 1,
 			"id": "733a450f-5c8b-4451-b542-afbbd1757233"
@@ -783,7 +783,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second8",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1260, 200],
 			"typeVersion": 1,
 			"id": "96ae2c59-bde3-4c79-be16-525e36e0634f"
@@ -793,7 +793,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second9",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1270, 50],
 			"typeVersion": 1,
 			"id": "53151c11-2f85-4596-920a-4770739fd32e"

@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "90c8a569-5351-44a4-9073-b8d114108676",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [680, 640]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "b4974ce2-9bc8-4242-b6f9-86b43608b521",
 			"name": "Read Binary Files",
-			"type": "n8n-nodes-base.readBinaryFiles",
+			"type": "aura-nodes-base.readBinaryFiles",
 			"typeVersion": 1,
 			"position": [880, 640]
 		}

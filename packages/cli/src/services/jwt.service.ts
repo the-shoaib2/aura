@@ -1,8 +1,8 @@
-import { GlobalConfig } from '@n8n/config';
-import { Container, Service } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Container, Service } from '@aura/di';
 import { createHash } from 'crypto';
 import jwt from 'jsonwebtoken';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 
 @Service()
 export class JwtService {

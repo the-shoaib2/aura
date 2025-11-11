@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.timescaleDb",
+	"node": "aura-nodes-base.timescaleDb",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage", "Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/timescaledb/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/timescaledb/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.timescaledb/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.timescaledb/"
 			}
 		]
 	}

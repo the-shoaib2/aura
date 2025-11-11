@@ -1,4 +1,4 @@
-import { Tournament } from '@n8n/tournament';
+import { Tournament } from '@aura/tournament';
 
 import {
 	DollarSignValidator,
@@ -127,7 +127,7 @@ describe('PrototypeSanitizer', () => {
 				}).not.toThrow();
 
 				expect(() => {
-					// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+					// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 					tournament.execute('{{ `template ${100}$` }}', {});
 				}).not.toThrow();
 			});

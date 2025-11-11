@@ -1,7 +1,7 @@
-import { randomEmail, randomName, randomValidPassword } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { User } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { randomEmail, randomName, randomValidPassword } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { User } from '@aura/db';
+import { Container } from '@aura/di';
 import type express from 'express';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
@@ -301,7 +301,7 @@ describe('SAML email validation', () => {
 				firstName: 'John',
 				lastName: 'Doe',
 				userPrincipalName: 'john.doe',
-				n8nInstanceRole: 'n8n_instance_role',
+				auraInstanceRole: 'aura_instance_role',
 			});
 
 			const mockRequest = {} as express.Request;
@@ -319,7 +319,7 @@ describe('SAML email validation', () => {
 					firstName: 'John',
 					lastName: 'Doe',
 					userPrincipalName: 'john.doe',
-					n8nInstanceRole: 'n8n_instance_role',
+					auraInstanceRole: 'aura_instance_role',
 				});
 
 				const mockRequest = {} as express.Request;
@@ -343,7 +343,7 @@ describe('SAML email validation', () => {
 				firstName: 'John',
 				lastName: 'Doe',
 				userPrincipalName: 'john.doe',
-				n8nInstanceRole: 'n8n_instance_role',
+				auraInstanceRole: 'aura_instance_role',
 			});
 
 			// Should not throw an error for valid emails
@@ -360,7 +360,7 @@ describe('SAML email validation', () => {
 				firstName: 'John',
 				lastName: 'Doe',
 				userPrincipalName: 'john.doe',
-				n8nInstanceRole: 'n8n_instance_role',
+				auraInstanceRole: 'aura_instance_role',
 			});
 
 			const mockRequest = {} as express.Request;

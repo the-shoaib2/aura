@@ -1,5 +1,5 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'workflow';
 import nock from 'nock';
 
 describe('Google Contacts', () => {

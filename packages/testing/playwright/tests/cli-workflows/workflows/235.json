@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "7040b003-e694-4251-9dad-f4245966cfdf",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [1120, 600]
 		},
@@ -19,7 +19,7 @@
 			},
 			"id": "97eb5104-6741-4330-ac11-4c5776aedd79",
 			"name": "Set Article",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [1540, 600]
 		},
@@ -32,7 +32,7 @@
 			},
 			"id": "42de18cf-1320-4f45-bb11-d28523c88a43",
 			"name": "OpenAI Chat Model",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1760, 760],
 			"credentials": {
@@ -58,7 +58,7 @@
 			},
 			"id": "b7f4e65c-2f5b-41eb-bffd-aeb1ec9919b4",
 			"name": "Set Baseline",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1340, 600]
 		},
@@ -69,7 +69,7 @@
 			},
 			"id": "584d9374-ce54-42df-9c88-b996754e8967",
 			"name": "Summary - Simple - Map",
-			"type": "@n8n/n8n-nodes-langchain.chainSummarization",
+			"type": "@aura/aura-nodes-langchain.chainSummarization",
 			"typeVersion": 2,
 			"position": [1740, 600]
 		},
@@ -82,7 +82,7 @@
 			},
 			"id": "beaf320b-b14d-44a9-b7f3-1d4379875531",
 			"name": "OpenAI Chat Model1",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [2080, 760],
 			"credentials": {
@@ -123,7 +123,7 @@
 			},
 			"id": "b3f8e974-8f56-4cfe-ae9d-dd0906bb87c4",
 			"name": "Evaluate to Baseline",
-			"type": "@n8n/n8n-nodes-langchain.code",
+			"type": "@aura/aura-nodes-langchain.code",
 			"typeVersion": 1,
 			"position": [2060, 600]
 		}

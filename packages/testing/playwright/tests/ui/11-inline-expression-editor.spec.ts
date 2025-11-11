@@ -11,149 +11,149 @@ const HACKER_NEWS_ACTION = 'Get many items';
 const HACKER_NEWS_PARAMETER_NAME = 'limit';
 
 test.describe('Inline expression editor', () => {
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.start.fromBlankCanvas();
+	test.beforeEach(async ({ aura }) => {
+		await aura.start.fromBlankCanvas();
 	});
 
 	test.describe('Basic UI functionality', () => {
-		test('should open and close inline expression preview', async ({ n8n }) => {
-			await n8n.canvas.addNode(SCHEDULE_TRIGGER_NODE_NAME);
-			await n8n.ndv.activateParameterExpressionEditor(SCHEDULE_PARAMETER_NAME);
+		test('should open and close inline expression preview', async ({ aura }) => {
+			await aura.canvas.addNode(SCHEDULE_TRIGGER_NODE_NAME);
+			await aura.ndv.activateParameterExpressionEditor(SCHEDULE_PARAMETER_NAME);
 
-			await n8n.ndv.getInlineExpressionEditorInput(SCHEDULE_PARAMETER_NAME).click();
-			await n8n.ndv.clearExpressionEditor(SCHEDULE_PARAMETER_NAME);
-			await n8n.ndv.typeInExpressionEditor('{{ 123', SCHEDULE_PARAMETER_NAME);
+			await aura.ndv.getInlineExpressionEditorInput(SCHEDULE_PARAMETER_NAME).click();
+			await aura.ndv.clearExpressionEditor(SCHEDULE_PARAMETER_NAME);
+			await aura.ndv.typeInExpressionEditor('{{ 123', SCHEDULE_PARAMETER_NAME);
 
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('123');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('123');
 
 			// Click outside to close
-			await n8n.ndv.outputPanel.get().click();
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toBeHidden();
+			await aura.ndv.outputPanel.get().click();
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toBeHidden();
 		});
 
 		// eslint-disable-next-line playwright/no-skipped-test
-		test.skip('should switch between expression and fixed using keyboard', async ({ n8n }) => {
-			await n8n.canvas.addNode(EDIT_FIELDS_SET_NODE_NAME);
+		test.skip('should switch between expression and fixed using keyboard', async ({ aura }) => {
+			await aura.canvas.addNode(EDIT_FIELDS_SET_NODE_NAME);
 
 			// Should switch to expression with =
-			await n8n.ndv.getAssignmentCollectionAdd('assignments').click();
-			await n8n.ndv.fillParameterInputByName('value', '=');
+			await aura.ndv.getAssignmentCollectionAdd('assignments').click();
+			await aura.ndv.fillParameterInputByName('value', '=');
 
 			// Should complete {{ --> {{ | }}
-			await n8n.ndv.getInlineExpressionEditorInput().click();
-			await n8n.ndv.typeInExpressionEditor('{{');
-			await expect(n8n.ndv.getInlineExpressionEditorInput()).toHaveText('{{  }}');
+			await aura.ndv.getInlineExpressionEditorInput().click();
+			await aura.ndv.typeInExpressionEditor('{{');
+			await expect(aura.ndv.getInlineExpressionEditorInput()).toHaveText('{{  }}');
 
 			// Should switch back to fixed with backspace on empty expression
-			await n8n.ndv.clearExpressionEditor('value');
-			await expect(n8n.ndv.getParameterInputHint()).toContainText('empty');
-			const parameterInput = n8n.ndv.getParameterInput('value').getByRole('textbox');
+			await aura.ndv.clearExpressionEditor('value');
+			await expect(aura.ndv.getParameterInputHint()).toContainText('empty');
+			const parameterInput = aura.ndv.getParameterInput('value').getByRole('textbox');
 			await parameterInput.click();
 			await parameterInput.focus();
 			await parameterInput.press('Backspace');
-			await expect(n8n.ndv.getInlineExpressionEditorInput()).toBeHidden();
+			await expect(aura.ndv.getInlineExpressionEditorInput()).toBeHidden();
 		});
 	});
 
 	test.describe('Static data', () => {
-		test.beforeEach(async ({ n8n }) => {
-			await n8n.start.fromBlankCanvas();
-			await n8n.canvas.addNode(SCHEDULE_TRIGGER_NODE_NAME);
-			await n8n.ndv.activateParameterExpressionEditor(SCHEDULE_PARAMETER_NAME);
+		test.beforeEach(async ({ aura }) => {
+			await aura.start.fromBlankCanvas();
+			await aura.canvas.addNode(SCHEDULE_TRIGGER_NODE_NAME);
+			await aura.ndv.activateParameterExpressionEditor(SCHEDULE_PARAMETER_NAME);
 		});
 
-		test('should resolve primitive resolvables', async ({ n8n }) => {
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ 1 + 2');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('3');
+		test('should resolve primitive resolvables', async ({ aura }) => {
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ 1 + 2');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('3');
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ "ab" + "cd"');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('abcd');
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ "ab" + "cd"');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('abcd');
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ true && false');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('false');
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ true && false');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('false');
 		});
 
-		test('should resolve object resolvables', async ({ n8n }) => {
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ { a: 1 }');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText(
+		test('should resolve object resolvables', async ({ aura }) => {
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ { a: 1 }');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText(
 				/^\[Object: \{"a": 1\}\]$/,
 			);
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ { a: 1 }.a');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('1');
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ { a: 1 }.a');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('1');
 		});
 
-		test('should resolve array resolvables', async ({ n8n }) => {
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ [1, 2, 3]');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText(/^\[Array: \[1,2,3\]\]$/);
+		test('should resolve array resolvables', async ({ aura }) => {
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ [1, 2, 3]');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText(/^\[Array: \[1,2,3\]\]$/);
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ [1, 2, 3][0]');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('1');
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ [1, 2, 3][0]');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('1');
 		});
 	});
 
 	test.describe('Dynamic data', () => {
-		test.beforeEach(async ({ n8n }) => {
-			await n8n.canvas.addNode(SCHEDULE_TRIGGER_NODE_NAME);
-			await n8n.ndv.setPinnedData([{ myStr: 'Monday' }]);
-			await n8n.ndv.close();
-			await n8n.canvas.addNode(NO_OPERATION_NODE_NAME, { closeNDV: true });
-			await n8n.canvas.addNode(HACKER_NEWS_NODE_NAME, { action: HACKER_NEWS_ACTION });
-			await n8n.ndv.activateParameterExpressionEditor(HACKER_NEWS_PARAMETER_NAME);
+		test.beforeEach(async ({ aura }) => {
+			await aura.canvas.addNode(SCHEDULE_TRIGGER_NODE_NAME);
+			await aura.ndv.setPinnedData([{ myStr: 'Monday' }]);
+			await aura.ndv.close();
+			await aura.canvas.addNode(NO_OPERATION_NODE_NAME, { closeNDV: true });
+			await aura.canvas.addNode(HACKER_NEWS_NODE_NAME, { action: HACKER_NEWS_ACTION });
+			await aura.ndv.activateParameterExpressionEditor(HACKER_NEWS_PARAMETER_NAME);
 		});
 
-		test('should resolve $parameter[]', async ({ n8n }) => {
-			await n8n.ndv.clearExpressionEditor();
+		test('should resolve $parameter[]', async ({ aura }) => {
+			await aura.ndv.clearExpressionEditor();
 			// Resolving $parameter is slow, especially on CI runner
-			await n8n.ndv.typeInExpressionEditor('{{ $parameter["operation"]');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('getAll');
+			await aura.ndv.typeInExpressionEditor('{{ $parameter["operation"]');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('getAll');
 		});
 
-		test('should resolve input: $json,$input,$(nodeName)', async ({ n8n }) => {
+		test('should resolve input: $json,$input,$(nodeName)', async ({ aura }) => {
 			// Previous nodes have not run, input is empty
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ $json.myStr');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText(
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ $json.myStr');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText(
 				'[Execute previous nodes for preview]',
 			);
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ $input.item.json.myStr');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText(
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ $input.item.json.myStr');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText(
 				'[Execute previous nodes for preview]',
 			);
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor("{{ $('No Operation, do nothing').item.json.myStr");
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText(
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor("{{ $('No Operation, do nothing').item.json.myStr");
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText(
 				'[Execute previous nodes for preview]',
 			);
 
 			// Run workflow
-			await n8n.ndv.close();
-			await n8n.canvas.executeNode(NO_OPERATION_NODE_NAME);
-			await n8n.canvas.openNode(HACKER_NEWS_ACTION);
-			await n8n.ndv.activateParameterExpressionEditor(HACKER_NEWS_PARAMETER_NAME);
+			await aura.ndv.close();
+			await aura.canvas.executeNode(NO_OPERATION_NODE_NAME);
+			await aura.canvas.openNode(HACKER_NEWS_ACTION);
+			await aura.ndv.activateParameterExpressionEditor(HACKER_NEWS_PARAMETER_NAME);
 
 			// Previous nodes have run, input can be resolved
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ $json.myStr');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('Monday');
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ $json.myStr');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('Monday');
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor('{{ $input.item.json.myStr');
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('Monday');
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor('{{ $input.item.json.myStr');
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('Monday');
 
-			await n8n.ndv.clearExpressionEditor();
-			await n8n.ndv.typeInExpressionEditor("{{ $('No Operation, do nothing').item.json.myStr");
-			await expect(n8n.ndv.getInlineExpressionEditorOutput()).toHaveText('Monday');
+			await aura.ndv.clearExpressionEditor();
+			await aura.ndv.typeInExpressionEditor("{{ $('No Operation, do nothing').item.json.myStr");
+			await expect(aura.ndv.getInlineExpressionEditorOutput()).toHaveText('Monday');
 		});
 	});
 });

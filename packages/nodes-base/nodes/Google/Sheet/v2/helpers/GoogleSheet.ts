@@ -5,8 +5,8 @@ import type {
 	ILoadOptionsFunctions,
 	INode,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { ApplicationError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, NodeOperationError } from 'workflow';
 import { utils as xlsxUtils } from 'xlsx';
 
 import type {

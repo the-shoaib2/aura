@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.spotify",
+	"node": "aura-nodes-base.spotify",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/spotify/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/spotify/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.spotify/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.spotify/"
 			}
 		]
 	},

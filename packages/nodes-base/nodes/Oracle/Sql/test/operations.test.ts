@@ -6,7 +6,7 @@ import {
 	type INode,
 	type INodeExecutionData,
 	type INodeParameters,
-} from 'n8n-workflow';
+} from 'workflow';
 import * as oracleDBTypes from 'oracledb';
 
 import * as deleteTable from '../actions/database/deleteTable.operation';
@@ -155,7 +155,7 @@ const node: INode = {
 	id: '1',
 	typeVersion: 1,
 	name: 'Oracle Database node',
-	type: 'n8n-nodes-starter-oracledb',
+	type: 'aura-nodes-starter-oracledb',
 	position: [60, 760],
 	parameters: {
 		operation: 'execute',

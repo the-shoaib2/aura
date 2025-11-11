@@ -6,8 +6,8 @@ import type {
 	JsonObject,
 	IRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 function resolveHeaderData(fullResponse: any) {
 	if (fullResponse.statusCode === 201) {
 		return { urn: fullResponse.headers['x-restli-id'] };

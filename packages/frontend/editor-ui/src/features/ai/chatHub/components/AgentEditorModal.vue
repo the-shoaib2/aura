@@ -5,11 +5,11 @@ import { useToast } from '@/app/composables/useToast';
 import { useChatStore } from '@/features/ai/chatHub/chat.store';
 import ModelSelector from '@/features/ai/chatHub/components/ModelSelector.vue';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { ChatHubProvider, ChatModelDto } from '@n8n/api-types';
-import { N8nButton, N8nHeading, N8nInput, N8nInputLabel } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
-import { assert } from '@n8n/utils/assert';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { ChatHubProvider, ChatModelDto } from '@aura/api-types';
+import { N8nButton, N8nHeading, N8nInput, N8nInputLabel } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
+import { assert } from '@aura/utils/assert';
+import { createEventBus } from '@aura/utils/event-bus';
 import { computed, ref, watch } from 'vue';
 import type { CredentialsMap } from '../chat.types';
 
@@ -124,7 +124,7 @@ async function onSave() {
 		const model = 'model' in selectedModel.value ? selectedModel.value.model : undefined;
 
 		assert(model);
-		assert(model.provider !== 'n8n' && model.provider !== 'custom-agent');
+		assert(model.provider !== 'aura' && model.provider !== 'custom-agent');
 
 		const credentialId = agentMergedCredentials.value[model.provider];
 

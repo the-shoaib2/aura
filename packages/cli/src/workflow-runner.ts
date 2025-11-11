@@ -2,12 +2,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Logger } from '@n8n/backend-common';
-import { ExecutionsConfig } from '@n8n/config';
-import { ExecutionRepository } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
-import type { ExecutionLifecycleHooks } from 'n8n-core';
-import { ErrorReporter, InstanceSettings, WorkflowExecute } from 'n8n-core';
+import { Logger } from '@aura/backend-common';
+import { ExecutionsConfig } from '@aura/config';
+import { ExecutionRepository } from '@aura/db';
+import { Container, Service } from '@aura/di';
+import type { ExecutionLifecycleHooks } from 'aura-core';
+import { ErrorReporter, InstanceSettings, WorkflowExecute } from 'aura-core';
 import type {
 	ExecutionError,
 	IDeferredPromise,
@@ -16,13 +16,13 @@ import type {
 	IRun,
 	WorkflowExecuteMode,
 	IWorkflowExecutionDataProcess,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	ExecutionCancelledError,
 	ManualExecutionCancelledError,
 	TimeoutExecutionCancelledError,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 import PCancelable from 'p-cancelable';
 
 import { ActiveExecutions } from '@/active-executions';

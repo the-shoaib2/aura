@@ -1,4 +1,4 @@
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 import { createPinia, setActivePinia } from 'pinia';
 import { mock } from 'vitest-mock-extended';
 import { useSettingsStore } from './settings.store';
@@ -35,15 +35,15 @@ const { sessionStarted } = vi.hoisted(() => ({
 	sessionStarted: vi.fn(),
 }));
 
-vi.mock('@n8n/rest-api-client/api/settings', () => ({
+vi.mock('@aura/rest-api-client/api/settings', () => ({
 	getSettings,
 }));
 
-vi.mock('@n8n/rest-api-client/api/events', () => ({
+vi.mock('@aura/rest-api-client/api/events', () => ({
 	sessionStarted,
 }));
 
-vi.mock('@n8n/stores/useRootStore', () => ({
+vi.mock('@aura/stores/useRootStore', () => ({
 	useRootStore,
 }));
 

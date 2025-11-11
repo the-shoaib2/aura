@@ -1,7 +1,7 @@
 import type { Mock, MockInstance } from 'vitest';
 import { createPinia, setActivePinia } from 'pinia';
 import { waitFor } from '@testing-library/vue';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'workflow';
 import { createComponentRenderer } from '@/__tests__/render';
 import type { INodeUi, IWorkflowDb } from '@/Interface';
 import WorkflowPreview from '@/app/components/WorkflowPreview.vue';
@@ -53,7 +53,7 @@ describe('WorkflowPreview', () => {
 			props: {},
 		});
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).not.toHaveBeenCalled();
@@ -69,7 +69,7 @@ describe('WorkflowPreview', () => {
 			},
 		});
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).not.toHaveBeenCalled();
@@ -85,7 +85,7 @@ describe('WorkflowPreview', () => {
 			},
 		});
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).not.toHaveBeenCalled();
@@ -102,7 +102,7 @@ describe('WorkflowPreview', () => {
 			},
 		});
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).toHaveBeenCalledWith(
@@ -128,7 +128,7 @@ describe('WorkflowPreview', () => {
 			},
 		});
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).not.toHaveBeenCalled();
@@ -145,7 +145,7 @@ describe('WorkflowPreview', () => {
 			},
 		});
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).toHaveBeenCalledWith(
@@ -175,7 +175,7 @@ describe('WorkflowPreview', () => {
 			},
 		});
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).toHaveBeenCalledWith(
@@ -213,7 +213,7 @@ describe('WorkflowPreview', () => {
 
 		expect(iframe?.classList.toString()).not.toContain('openNDV');
 
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 
 		await waitFor(() => {
 			expect(postMessageSpy).toHaveBeenCalledWith(
@@ -251,7 +251,7 @@ describe('WorkflowPreview', () => {
 				canOpenNDV: false,
 			},
 		});
-		sendPostMessageCommand('n8nReady');
+		sendPostMessageCommand('auraReady');
 		await waitFor(() => {
 			expect(postMessageSpy).toHaveBeenCalledWith(
 				JSON.stringify({

@@ -1,4 +1,4 @@
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 
 export class ExecutionError extends ApplicationError {
 	description: string | null = null;

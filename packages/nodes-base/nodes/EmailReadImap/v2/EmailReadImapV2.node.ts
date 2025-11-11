@@ -6,8 +6,8 @@ import type {
 	Message,
 	MessagePart,
 	SearchCriteria,
-} from '@n8n/imap';
-import { connect as imapConnect } from '@n8n/imap';
+} from '@aura/imap';
+import { connect as imapConnect } from '@aura/imap';
 import isEmpty from 'lodash/isEmpty';
 import { DateTime } from 'luxon';
 import type {
@@ -23,8 +23,8 @@ import type {
 	ITriggerResponse,
 	JsonObject,
 	INodeExecutionData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError, TriggerCloseError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError, TriggerCloseError } from 'workflow';
 import rfc2047 from 'rfc2047';
 
 import { getNewEmails } from './utils';
@@ -351,7 +351,7 @@ export class EmailReadImapV2 implements INodeType {
 							((attachmentPart.disposition as IDataObject)?.params as IDataObject)
 								?.filename as string,
 						);
-						// Return it in the format n8n expects
+						// Return it in the format aura expects
 						return await this.helpers.prepareBinaryData(partData.buffer, fileName);
 					});
 
@@ -435,7 +435,7 @@ export class EmailReadImapV2 implements INodeType {
 							this.logger.error('Email Read Imap node encountered an error fetching new emails', {
 								error: error as Error,
 							});
-							// Wait with resolving till the returnedPromise got resolved, else n8n will be unhappy
+							// Wait with resolving till the returnedPromise got resolved, else aura will be unhappy
 							// if it receives an error before the workflow got activated
 							await returnedPromise.promise.then(() => {
 								this.emitError(error as Error);

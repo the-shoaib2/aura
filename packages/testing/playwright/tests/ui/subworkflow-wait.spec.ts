@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { IWorkflowBase } from 'workflow';
 
 import { test, expect } from '../../fixtures/base';
 import { resolveFromRoot } from '../../utils/path-helper';

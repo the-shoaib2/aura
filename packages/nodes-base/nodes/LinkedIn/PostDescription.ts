@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const postOperations: INodeProperties[] = [
 	{
@@ -54,7 +54,7 @@ export const postFields: INodeProperties[] = [
 		default: '',
 		required: true,
 		description:
-			'Person as which the post should be posted as. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Person as which the post should be posted as. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		displayOptions: {
 			show: {
 				operation: ['create'],

@@ -1,63 +1,63 @@
 import { test, expect } from '../../fixtures/base';
 
 test.describe('Node IO Filter', () => {
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Node_IO_filter.json');
-		await n8n.canvas.clickExecuteWorkflowButton();
+	test.beforeEach(async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Node_IO_filter.json');
+		await aura.canvas.clickExecuteWorkflowButton();
 	});
 
-	test('should filter pinned data', async ({ n8n }) => {
-		const canvasNodes = n8n.canvas.getCanvasNodes();
+	test('should filter pinned data', async ({ aura }) => {
+		const canvasNodes = aura.canvas.getCanvasNodes();
 		await canvasNodes.first().dblclick();
 
-		await n8n.ndv.close();
+		await aura.ndv.close();
 		await canvasNodes.first().dblclick();
 
-		await expect(n8n.ndv.outputPanel.getDataContainer()).toBeVisible();
+		await expect(aura.ndv.outputPanel.getDataContainer()).toBeVisible();
 
-		const searchInput = n8n.ndv.outputPanel.getSearchInput();
+		const searchInput = aura.ndv.outputPanel.getSearchInput();
 		await expect(searchInput).toBeVisible();
 
-		await n8n.page.keyboard.press('/');
+		await aura.page.keyboard.press('/');
 
 		await expect(searchInput).toBeFocused();
 
-		const pagination = n8n.ndv.getOutputPagination();
+		const pagination = aura.ndv.getOutputPagination();
 		await expect(pagination.locator('li')).toHaveCount(3);
-		await expect(n8n.ndv.outputPanel.getDataContainer().locator('mark')).toHaveCount(0);
+		await expect(aura.ndv.outputPanel.getDataContainer().locator('mark')).toHaveCount(0);
 
 		await searchInput.fill('ar');
 		await expect(pagination.locator('li')).toHaveCount(2);
-		const markCount1 = await n8n.ndv.outputPanel.getDataContainer().locator('mark').count();
+		const markCount1 = await aura.ndv.outputPanel.getDataContainer().locator('mark').count();
 		expect(markCount1).toBeGreaterThan(0);
 
 		await searchInput.fill('ari');
 		await expect(pagination).toBeHidden();
-		const markCount2 = await n8n.ndv.outputPanel.getDataContainer().locator('mark').count();
+		const markCount2 = await aura.ndv.outputPanel.getDataContainer().locator('mark').count();
 		expect(markCount2).toBeGreaterThan(0);
 	});
 
-	test('should filter input/output data separately', async ({ n8n }) => {
-		const canvasNodes = n8n.canvas.getCanvasNodes();
+	test('should filter input/output data separately', async ({ aura }) => {
+		const canvasNodes = aura.canvas.getCanvasNodes();
 		await canvasNodes.nth(1).dblclick();
 
-		await expect(n8n.ndv.outputPanel.getDataContainer()).toBeVisible();
-		await expect(n8n.ndv.inputPanel.getDataContainer()).toBeVisible();
+		await expect(aura.ndv.outputPanel.getDataContainer()).toBeVisible();
+		await expect(aura.ndv.inputPanel.getDataContainer()).toBeVisible();
 
-		await n8n.ndv.inputPanel.switchDisplayMode('table');
+		await aura.ndv.inputPanel.switchDisplayMode('table');
 
-		await expect(n8n.ndv.outputPanel.getSearchInput()).toBeVisible();
+		await expect(aura.ndv.outputPanel.getSearchInput()).toBeVisible();
 
-		await n8n.page.keyboard.press('/');
-		await expect(n8n.ndv.outputPanel.getSearchInput()).not.toBeFocused();
+		await aura.page.keyboard.press('/');
+		await expect(aura.ndv.outputPanel.getSearchInput()).not.toBeFocused();
 
-		const inputSearchInput = n8n.ndv.inputPanel.getSearchInput();
+		const inputSearchInput = aura.ndv.inputPanel.getSearchInput();
 		await expect(inputSearchInput).toBeFocused();
 
-		const getInputPagination = () => n8n.ndv.inputPanel.get().getByTestId('ndv-data-pagination');
-		const getInputCounter = () => n8n.ndv.inputPanel.getItemsCount();
-		const getOutputPagination = () => n8n.ndv.outputPanel.get().getByTestId('ndv-data-pagination');
-		const getOutputCounter = () => n8n.ndv.outputPanel.getItemsCount();
+		const getInputPagination = () => aura.ndv.inputPanel.get().getByTestId('ndv-data-pagination');
+		const getInputCounter = () => aura.ndv.inputPanel.getItemsCount();
+		const getOutputPagination = () => aura.ndv.outputPanel.get().getByTestId('ndv-data-pagination');
+		const getOutputCounter = () => aura.ndv.outputPanel.getItemsCount();
 
 		await expect(getInputPagination().locator('li')).toHaveCount(3);
 		await expect(getInputCounter()).toContainText('21 items');
@@ -82,11 +82,11 @@ test.describe('Node IO Filter', () => {
 		await expect(getOutputPagination().locator('li')).toHaveCount(3);
 		await expect(getOutputCounter()).toContainText('21 items');
 
-		await n8n.ndv.outputPanel.getDataContainer().click();
-		await n8n.page.keyboard.press('/');
-		await expect(n8n.ndv.inputPanel.getSearchInput()).not.toBeFocused();
+		await aura.ndv.outputPanel.getDataContainer().click();
+		await aura.page.keyboard.press('/');
+		await expect(aura.ndv.inputPanel.getSearchInput()).not.toBeFocused();
 
-		const outputSearchInput = n8n.ndv.outputPanel.getSearchInput();
+		const outputSearchInput = aura.ndv.outputPanel.getSearchInput();
 		await expect(outputSearchInput).toBeFocused();
 
 		await expect(getInputPagination().locator('li')).toHaveCount(3);

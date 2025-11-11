@@ -1,4 +1,4 @@
-import type { INodeExecutionData } from 'n8n-workflow';
+import type { INodeExecutionData } from 'workflow';
 
 import { checkInput } from '../../GenericFunctions';
 

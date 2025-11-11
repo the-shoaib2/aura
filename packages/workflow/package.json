@@ -1,7 +1,7 @@
 {
-  "name": "n8n-workflow",
+  "name": "workflow",
   "version": "1.116.0",
-  "description": "Workflow base code of n8n",
+  "description": "Workflow base code of aura",
   "types": "dist/esm/index.d.ts",
   "module": "dist/esm/index.js",
   "main": "dist/cjs/index.js",
@@ -37,9 +37,9 @@
   ],
   "devDependencies": {
     "@langchain/core": "catalog:",
-    "@n8n/config": "workspace:*",
-    "@n8n/typescript-config": "workspace:*",
-    "@n8n/vitest-config": "workspace:*",
+    "@aura/config": "workspace:*",
+    "@aura/typescript-config": "workspace:*",
+    "@aura/vitest-config": "workspace:*",
     "@types/express": "catalog:",
     "@types/jmespath": "^0.15.0",
     "@types/lodash": "catalog:",
@@ -50,8 +50,8 @@
     "vitest-mock-extended": "catalog:"
   },
   "dependencies": {
-    "@n8n/errors": "workspace:^",
-    "@n8n/tournament": "1.0.6",
+    "@aura/errors": "workspace:^",
+    "@aura/tournament": "1.0.6",
     "ast-types": "0.15.2",
     "callsites": "catalog:",
     "esprima-next": "5.8.4",

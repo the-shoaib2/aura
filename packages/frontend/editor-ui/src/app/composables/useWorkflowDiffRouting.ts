@@ -1,6 +1,6 @@
 import { watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import { useUIStore } from '@/app/stores/ui.store';
 import { WORKFLOW_DIFF_MODAL_KEY } from '@/app/constants';
 import {

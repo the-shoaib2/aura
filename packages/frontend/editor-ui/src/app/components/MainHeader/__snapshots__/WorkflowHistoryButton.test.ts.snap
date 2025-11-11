@@ -2,13 +2,13 @@
 
 exports[`WorkflowHistoryButton > should be enabled if the feature is enabled and the workflow is not new 1`] = `
 <div>
-  
+
   <div
     class="el-tooltip__trigger"
     to="[object Object]"
   >
-    
-    <n8n-icon-button-stub
+
+    <aura-icon-button-stub
       active="false"
       data-test-id="workflow-history-button"
       disabled="false"
@@ -19,10 +19,10 @@ exports[`WorkflowHistoryButton > should be enabled if the feature is enabled and
       text="false"
       type="highlight"
     />
-    
+
   </div>
   <!--teleport start-->
   <!--teleport end-->
-  
+
 </div>
 `;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { CallbackManager as CallbackManagerLC } from '@langchain/core/callbacks/manager';
-import type { LogScope } from '@n8n/config';
+import type { LogScope } from '@aura/config';
 import type { AxiosProxyConfig, GenericAbortSignal } from 'axios';
 import type * as express from 'express';
 import type FormData from 'form-data';
@@ -1291,7 +1291,7 @@ export interface INodeExecutionData {
 	 * - Put execution to wait after sending.
 	 *
 	 * See example in
-	 * packages/@n8n/nodes-langchain/nodes/trigger/ChatTrigger/Chat.node.ts
+	 * packages/@aura/nodes-langchain/nodes/trigger/ChatTrigger/Chat.node.ts
 	 */
 	sendMessage?: string;
 
@@ -2159,7 +2159,7 @@ export type ExpressionString = `={{${string}}}`;
 
 export type NodeDefaults = Partial<{
 	/**
-	 * @deprecated Use {@link INodeTypeBaseDescription.iconColor|iconColor} instead. `iconColor` supports dark mode and uses preset colors from n8n's design system.
+	 * @deprecated Use {@link INodeTypeBaseDescription.iconColor|iconColor} instead. `iconColor` supports dark mode and uses preset colors from aura's design system.
 	 */
 	color: string;
 	name: string;
@@ -2903,21 +2903,21 @@ export interface INodeGraphItem {
 	method?: string; // HTTP Request node v2
 	src_node_id?: string;
 	src_instance_id?: string;
-	agent?: string; //@n8n/n8n-nodes-langchain.agent
-	is_streaming?: boolean; //@n8n/n8n-nodes-langchain.agent
+	agent?: string; //@aura/aura-nodes-langchain.agent
+	is_streaming?: boolean; //@aura/aura-nodes-langchain.agent
 	prompts?: IDataObject[] | IDataObject; //ai node's prompts, cloud only
-	use_responses_api?: boolean; //@n8n/n8n-nodes-langchain.lmChatOpenAi
+	use_responses_api?: boolean; //@aura/aura-nodes-langchain.lmChatOpenAi
 	toolSettings?: IDataObject; //various langchain tool's settings
 	sql?: string; //merge node combineBySql, cloud only
-	workflow_id?: string; //@n8n/n8n-nodes-langchain.toolWorkflow and n8n-nodes-base.executeWorkflow
-	response_mode?: string; // @n8n/n8n-nodes-langchain.chatTrigger, n8n-nodes-base.webhook selected response mode
-	public_chat?: boolean; // @n8n/n8n-nodes-langchain.chatTrigger
+	workflow_id?: string; //@aura/aura-nodes-langchain.toolWorkflow and aura-nodes-base.executeWorkflow
+	response_mode?: string; // @aura/aura-nodes-langchain.chatTrigger, aura-nodes-base.webhook selected response mode
+	public_chat?: boolean; // @aura/aura-nodes-langchain.chatTrigger
 	runs?: number;
 	items_total?: number;
 	metric_names?: string[];
 	language?: string; // only for Code node: 'javascript' or 'python' or 'pythonNative'
 	package_version?: string; // only for community nodes
-	used_guardrails?: string[]; // only for @n8n/n8n-nodes-langchain.guardrails
+	used_guardrails?: string[]; // only for @aura/aura-nodes-langchain.guardrails
 }
 
 export interface INodeNameIndex {
@@ -3218,7 +3218,7 @@ export type CallbackManager = CallbackManagerLC;
 export type IPersonalizationSurveyAnswersV4 = {
 	version: 'v4';
 	personalization_survey_submitted_at: string;
-	personalization_survey_n8n_version: string;
+	personalization_survey_aura_version: string;
 	automationGoalDevops?: string[] | null;
 	automationGoalDevopsOther?: string | null;
 	companyIndustryExtended?: string[] | null;

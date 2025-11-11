@@ -1,14 +1,14 @@
-import type { ApiKeyWithRawValue } from '@n8n/api-types';
-import { testDb, randomValidPassword, mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { User } from '@n8n/db';
-import { ApiKeyRepository, GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { ApiKeyWithRawValue } from '@aura/api-types';
+import { testDb, randomValidPassword, mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { User } from '@aura/db';
+import { ApiKeyRepository, GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE } from '@aura/db';
+import { Container } from '@aura/di';
 import {
 	getApiKeyScopesForRole,
 	getOwnerOnlyApiKeyScopes,
 	type ApiKeyScope,
-} from '@n8n/permissions';
+} from '@aura/permissions';
 import { mock } from 'jest-mock-extended';
 
 import type { License } from '@/license';

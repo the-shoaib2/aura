@@ -4,7 +4,10 @@ import { Prec } from '@codemirror/state';
 import { dropCursor, EditorView, keymap } from '@codemirror/view';
 import { computed, onMounted, ref, watch } from 'vue';
 
-import { n8nAutocompletion, n8nLang } from '@/features/shared/editors/plugins/codemirror/n8nLang';
+import {
+	auraAutocompletion,
+	auraLang,
+} from '@/features/shared/editors/plugins/codemirror/auraLang';
 import { forceParse } from '@/app/utils/forceParse';
 import { inputTheme } from './theme';
 
@@ -39,8 +42,8 @@ const root = ref<HTMLElement>();
 const extensions = computed(() => [
 	inputTheme(props.isReadOnly),
 	Prec.highest(keymap.of(editorKeymap)),
-	n8nLang(),
-	n8nAutocompletion(),
+	auraLang(),
+	auraAutocompletion(),
 	mappingDropCursor(),
 	dropCursor(),
 	history(),

@@ -1,4 +1,4 @@
-import { type INodeTypeDescription, isCommunityPackageName } from 'n8n-workflow';
+import { type INodeTypeDescription, isCommunityPackageName } from 'workflow';
 import { computed, toValue, type MaybeRefOrGetter } from 'vue';
 import { BUILTIN_NODES_DOCS_URL, NPM_PACKAGE_DOCS_BASE_URL } from '../constants';
 
@@ -26,7 +26,7 @@ export const useNodeDocsUrl = ({
 		}
 
 		const utmParams = new URLSearchParams({
-			utm_source: 'n8n_app',
+			utm_source: 'aura_app',
 			utm_medium: 'node_settings_modal-credential_link',
 			utm_campaign: nodeType.name,
 		});

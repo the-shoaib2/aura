@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import { useLogStreamingStore } from '../logStreaming.store';
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 import { ElCheckbox as Checkbox, type CheckboxValueType } from 'element-plus';
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 
 interface Props {
 	destinationId?: string;
@@ -83,7 +83,7 @@ function groupLabelInfo(t: string): string | undefined {
 				</N8nTooltip>
 			</Checkbox>
 			<Checkbox
-				v-if="group.name === 'n8n.audit'"
+				v-if="group.name === 'aura.audit'"
 				:model-value="anonymizeAuditMessages"
 				:disabled="readonly"
 				@update:model-value="onInput"

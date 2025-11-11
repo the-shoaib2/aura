@@ -2,11 +2,11 @@
 import { MAX_TAG_NAME_LENGTH } from '../../../tags.constants';
 import type { ITagRow } from '../../../tags.types';
 import { onMounted, ref, watch } from 'vue';
-import type { BaseTextKey } from '@n8n/i18n';
-import { useI18n } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
+import { useI18n } from '@aura/i18n';
 
 import { ElTable, ElTableColumn } from 'element-plus';
-import { N8nButton, N8nIconButton, N8nInput } from '@n8n/design-system';
+import { N8nButton, N8nIconButton, N8nInput } from '@aura/design-system';
 interface Props {
 	rows: ITagRow[];
 	isLoading: boolean;

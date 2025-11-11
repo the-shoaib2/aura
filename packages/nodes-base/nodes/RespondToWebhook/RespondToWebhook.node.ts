@@ -9,7 +9,7 @@ import type {
 	INodeProperties,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	jsonParse,
 	NodeOperationError,
@@ -19,7 +19,7 @@ import {
 	CHAT_TRIGGER_NODE_TYPE,
 	WAIT_NODE_TYPE,
 	WAIT_INDEFINITELY,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { Readable } from 'stream';
 
 import { getBinaryResponse } from './utils/binary';
@@ -115,7 +115,7 @@ export class RespondToWebhook implements INodeType {
 			},
 			{
 				displayName:
-					'Verify that the "Webhook" node\'s "Respond" parameter is set to "Using Respond to Webhook Node". <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/" target="_blank">More details',
+					'Verify that the "Webhook" node\'s "Respond" parameter is set to "Using Respond to Webhook Node". <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.respondtowebhook/" target="_blank">More details',
 				name: 'generalNotice',
 				type: 'notice',
 				default: '',
@@ -163,7 +163,7 @@ export class RespondToWebhook implements INodeType {
 					},
 				},
 				default: '',
-				placeholder: 'e.g. http://www.n8n.io',
+				placeholder: 'e.g. http://www.aura.io',
 				description: 'The URL to redirect to',
 				validateType: 'url',
 			},

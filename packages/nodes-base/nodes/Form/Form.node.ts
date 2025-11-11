@@ -6,7 +6,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookFunctions,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	Node,
 	updateDisplayOptions,
@@ -15,7 +15,7 @@ import {
 	FORM_TRIGGER_NODE_TYPE,
 	tryToParseJsonToFormFields,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { cssVariables } from './cssVariables';
 import { renderFormCompletion } from './utils/formCompletionUtils';
@@ -73,7 +73,7 @@ export const formFieldsProperties: INodeProperties[] = [
 			'[\n  {\n    "fieldLabel": "Name",\n    "placeholder": "enter your name",\n    "requiredField": true\n  },\n  {\n    "fieldLabel": "Age",\n    "fieldType": "number",\n    "placeholder": "enter your age"\n  },\n  {\n    "fieldLabel": "Email",\n    "fieldType": "email",\n    "requiredField": true\n  },\n  {\n    "fieldLabel": "Textarea",\n    "fieldType": "textarea"\n  },\n  {\n    "fieldLabel": "Dropdown Options",\n    "fieldType": "dropdown",\n    "fieldOptions": {\n      "values": [\n        {\n          "option": "option 1"\n        },\n        {\n          "option": "option 2"\n        }\n      ]\n    },\n    "requiredField": true\n  },\n  {\n    "fieldLabel": "Checkboxes",\n    "fieldType": "checkbox",\n    "fieldOptions": {\n      "values": [\n        {\n          "option": "option 1"\n        },\n        {\n          "option": "option 2"\n        }\n      ]\n    }\n  },\n  {\n    "fieldLabel": "Radio",\n    "fieldType": "radio",\n    "fieldOptions": {\n      "values": [\n        {\n          "option": "option 1"\n        },\n        {\n          "option": "option 2"\n        }\n      ]\n    }\n  },\n  {\n    "fieldLabel": "Email",\n    "fieldType": "email",\n    "placeholder": "me@mail.con"\n  },\n  {\n    "fieldLabel": "File",\n    "fieldType": "file",\n    "multipleFiles": true,\n    "acceptFileTypes": ".jpg, .png"\n  },\n  {\n    "fieldLabel": "Number",\n    "fieldType": "number"\n  },\n  {\n    "fieldLabel": "Password",\n    "fieldType": "password"\n  }\n]\n',
 		validateType: 'form-fields',
 		ignoreValidationDuringExecution: true,
-		hint: '<a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.form/" target="_blank">See docs</a> for field syntax',
+		hint: '<a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.form/" target="_blank">See docs</a> for field syntax',
 		displayOptions: {
 			show: {
 				defineForm: ['json'],
@@ -131,8 +131,8 @@ const completionProperties = updateDisplayOptions(
 	},
 	[
 		{
-			// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-			displayName: 'On n8n Form Submission',
+			// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
+			displayName: 'On aura Form Submission',
 			name: 'respondWith',
 			type: 'options',
 			default: 'text',
@@ -263,14 +263,14 @@ export class Form extends Node {
 	nodeInputData: INodeExecutionData[] = [];
 
 	description: INodeTypeDescription = {
-		displayName: 'n8n Form',
+		displayName: 'aura Form',
 		name: 'form',
 		icon: 'file:form.svg',
 		group: ['input'],
 		// since trigger and node are sharing descriptions and logic we need to sync the versions
 		// and keep them aligned in both nodes
 		version: [1, 2.3],
-		description: 'Generate webforms in n8n and pass their responses to the workflow',
+		description: 'Generate webforms in aura and pass their responses to the workflow',
 		defaults: {
 			name: 'Form',
 		},
@@ -300,7 +300,7 @@ export class Form extends Node {
 		],
 		properties: [
 			{
-				displayName: 'An n8n Form Trigger node must be set up before this node',
+				displayName: 'An aura Form Trigger node must be set up before this node',
 				name: 'triggerNotice',
 				type: 'notice',
 				default: '',

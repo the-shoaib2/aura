@@ -1,5 +1,5 @@
 import { ExecutionBaseError } from './abstract/execution-base.error';
-import type { ApplicationError } from '@n8n/errors';
+import type { ApplicationError } from '@aura/errors';
 import type { INode } from '../interfaces';
 
 interface WorkflowActivationErrorOptions {

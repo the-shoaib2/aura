@@ -1,13 +1,13 @@
 {
-  "name": "n8n-core",
+  "name": "aura-core",
   "version": "1.118.0",
-  "description": "Core functionality of n8n",
+  "description": "Core functionality of aura",
   "main": "dist/index",
   "types": "dist/index.d.ts",
   "bin": {
-    "n8n-copy-static-files": "./bin/copy-static-files",
-    "n8n-generate-translations": "./bin/generate-translations",
-    "n8n-generate-metadata": "./bin/generate-metadata"
+    "aura-copy-static-files": "./bin/copy-static-files",
+    "aura-generate-translations": "./bin/generate-translations",
+    "aura-generate-metadata": "./bin/generate-metadata"
   },
   "scripts": {
     "clean": "rimraf dist .turbo",
@@ -27,8 +27,8 @@
     "bin"
   ],
   "devDependencies": {
-    "@n8n/errors": "workspace:^",
-    "@n8n/typescript-config": "workspace:*",
+    "@aura/errors": "workspace:^",
+    "@aura/typescript-config": "workspace:*",
     "@types/express": "catalog:",
     "@types/jsonwebtoken": "catalog:",
     "@types/lodash": "catalog:",
@@ -40,12 +40,12 @@
   "dependencies": {
     "@aws-sdk/client-s3": "3.808.0",
     "@langchain/core": "catalog:",
-    "@n8n/backend-common": "workspace:^",
-    "@n8n/client-oauth2": "workspace:*",
-    "@n8n/config": "workspace:*",
-    "@n8n/constants": "workspace:*",
-    "@n8n/decorators": "workspace:*",
-    "@n8n/di": "workspace:*",
+    "@aura/backend-common": "workspace:^",
+    "@aura/client-oauth2": "workspace:*",
+    "@aura/config": "workspace:*",
+    "@aura/constants": "workspace:*",
+    "@aura/decorators": "workspace:*",
+    "@aura/di": "workspace:*",
     "@sentry/node": "catalog:",
     "@sentry/node-native": "^9.42.1",
     "axios": "catalog:",
@@ -63,7 +63,7 @@
     "lodash": "catalog:",
     "luxon": "catalog:",
     "mime-types": "2.1.35",
-    "n8n-workflow": "workspace:*",
+    "workflow": "workspace:*",
     "nanoid": "catalog:",
     "oauth-1.0a": "2.2.6",
     "p-cancelable": "2.1.1",

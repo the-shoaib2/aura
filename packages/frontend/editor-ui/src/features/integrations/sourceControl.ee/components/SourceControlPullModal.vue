@@ -15,9 +15,9 @@ import {
 	getStatusTheme,
 	notifyUserAboutPullWorkFolderOutcome,
 } from '../sourceControl.utils';
-import { type SourceControlledFile, SOURCE_CONTROL_FILE_TYPE } from '@n8n/api-types';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
+import { type SourceControlledFile, SOURCE_CONTROL_FILE_TYPE } from '@aura/api-types';
+import { useI18n } from '@aura/i18n';
+import type { EventBus } from '@aura/utils/event-bus';
 import dateformat from 'dateformat';
 import orderBy from 'lodash/orderBy';
 import { computed, onBeforeMount, onMounted, ref } from 'vue';
@@ -35,7 +35,7 @@ import {
 	N8nLink,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 type SourceControlledFileType = SourceControlledFile['type'];
 type SourceControlledFileWithProject = SourceControlledFile & { project?: ProjectListItem };
 

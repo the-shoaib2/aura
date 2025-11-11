@@ -12,7 +12,7 @@ import { useRoute } from 'vue-router';
 import { BUILDER_ENABLED_VIEWS } from '../constants';
 import type { VIEWS } from '@/app/constants';
 
-import { N8nResizeWrapper } from '@n8n/design-system';
+import { N8nResizeWrapper } from '@aura/design-system';
 import HubSwitcher from '@/features/ai/assistant/components/HubSwitcher.vue';
 
 const builderStore = useBuilderStore();

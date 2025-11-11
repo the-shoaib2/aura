@@ -14,7 +14,7 @@ on:
         required: true
         default: '1.0.1'
       resumeUrl:
-        description: 'n8n workflow resume URL'
+        description: 'aura workflow resume URL'
         required: true
 jobs:
   create-branch:
@@ -45,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git switch "n8n@${{ inputs.old_version }}" --detach
+          git switch "aura@${{ inputs.old_version }}" --detach
           BRANCH="patch/${{ inputs.new_version }}"
           git checkout -b $BRANCH
           IFS=',' read -ra SHAS <<< "${{ inputs.commit_shas }}"

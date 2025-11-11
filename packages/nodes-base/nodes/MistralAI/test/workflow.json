@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-400, -380],
 			"id": "48cf408c-de44-4ed2-8a43-d16a4fa5b95b",
@@ -14,7 +14,7 @@
 				"inputType": "url",
 				"url": "https://example.com/document.pdf"
 			},
-			"type": "n8n-nodes-base.mistralAi",
+			"type": "aura-nodes-base.mistralAi",
 			"typeVersion": 1,
 			"position": [-180, -680],
 			"id": "d7af696f-26a4-419e-9377-02c91d0ea23d",
@@ -32,7 +32,7 @@
 				"documentType": "image_url",
 				"url": "https://example.com/image.jpg"
 			},
-			"type": "n8n-nodes-base.mistralAi",
+			"type": "aura-nodes-base.mistralAi",
 			"typeVersion": 1,
 			"position": [-180, -480],
 			"id": "9bddff7e-00ab-412c-9cf3-52f88e941641",
@@ -46,7 +46,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.mistralAi",
+			"type": "aura-nodes-base.mistralAi",
 			"typeVersion": 1,
 			"position": [260, -380],
 			"id": "cd64700f-abfb-48c7-b744-c68365a7cda2",
@@ -72,7 +72,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [-180, -280],
 			"id": "ebc64cb6-524b-4ae3-8a1f-c51c33e8043b",
@@ -87,7 +87,7 @@
 					"mimeType": "application/pdf"
 				}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [40, -380],
 			"id": "9f656043-c21e-4eb8-b591-a609634e487f",
@@ -97,7 +97,7 @@
 			"parameters": {
 				"documentType": "image_url"
 			},
-			"type": "n8n-nodes-base.mistralAi",
+			"type": "aura-nodes-base.mistralAi",
 			"typeVersion": 1,
 			"position": [260, -180],
 			"id": "8f2cc502-c9b0-4561-9ff9-0734d336de6d",
@@ -118,7 +118,7 @@
 					"mimeType": "image/jpeg"
 				}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [40, -180],
 			"id": "e1398740-1b36-493b-8950-caf153d6fdd9",
@@ -129,7 +129,7 @@
 				"fieldToSplitOut": "data",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.splitOut",
+			"type": "aura-nodes-base.splitOut",
 			"typeVersion": 1,
 			"position": [40, 20],
 			"id": "c6810b4b-804c-44e6-89e0-a73d585750ee",
@@ -149,7 +149,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [-180, 20],
 			"id": "887989fe-2829-43d5-86e6-333f399035b3",
@@ -164,7 +164,7 @@
 					"mimeType": "application/pdf"
 				}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [260, 20],
 			"id": "27ef8f5b-ee55-45f9-b66a-741cc6ccde21",
@@ -178,7 +178,7 @@
 					"deleteFiles": false
 				}
 			},
-			"type": "n8n-nodes-base.mistralAi",
+			"type": "aura-nodes-base.mistralAi",
 			"typeVersion": 1,
 			"position": [480, -80],
 			"id": "ad4b06b9-65e7-4b9c-b06a-bcbf0df5999a",
@@ -197,7 +197,7 @@
 					"batchSize": 2
 				}
 			},
-			"type": "n8n-nodes-base.mistralAi",
+			"type": "aura-nodes-base.mistralAi",
 			"typeVersion": 1,
 			"position": [480, 120],
 			"id": "ca14c489-02d2-459f-b694-d83112d95d13",

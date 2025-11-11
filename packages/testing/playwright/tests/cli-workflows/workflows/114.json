@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [200, 300],
 			"id": "f7c60ae7-b68c-4251-9778-4d7a1f033285"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Monday.com",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [440, 280],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"boardId": "={{$node[\"Monday.com\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com1",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [600, 280],
 			"credentials": {
@@ -54,7 +54,7 @@
 				"limit": 1
 			},
 			"name": "Monday.com2",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [750, 280],
 			"credentials": {
@@ -71,7 +71,7 @@
 				"boardId": "={{$node[\"Monday.com\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com3",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [3110, 270],
 			"credentials": {
@@ -91,7 +91,7 @@
 				"additionalFields": {}
 			},
 			"name": "Monday.com4",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [900, 0],
 			"credentials": {
@@ -109,7 +109,7 @@
 				"boardId": "={{$node[\"Monday.com\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com5",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [2850, -50],
 			"credentials": {
@@ -127,7 +127,7 @@
 				"name": "=Group{{Date.now()}}"
 			},
 			"name": "Monday.com6",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [1200, 50],
 			"credentials": {
@@ -146,7 +146,7 @@
 				"groupId": "={{$node[\"Monday.com6\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com7",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [2540, 50],
 			"credentials": {
@@ -164,7 +164,7 @@
 				"boardId": "={{$node[\"Monday.com\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com8",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [2690, 50],
 			"credentials": {
@@ -184,7 +184,7 @@
 				"additionalFields": {}
 			},
 			"name": "Monday.com9",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [1350, 150],
 			"credentials": {
@@ -203,7 +203,7 @@
 				"value": "=Update{{Date.now()}}"
 			},
 			"name": "Monday.com10",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [1500, 150],
 			"credentials": {
@@ -224,7 +224,7 @@
 				"value": "={{JSON.stringify({\"checked\": \"true\"});}}"
 			},
 			"name": "Monday.com11",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [1650, 150],
 			"credentials": {
@@ -242,7 +242,7 @@
 				"itemId": "={{$node[\"Monday.com9\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com12",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [1800, 150],
 			"credentials": {
@@ -262,7 +262,7 @@
 				"limit": 1
 			},
 			"name": "Monday.com13",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [1950, 150],
 			"credentials": {
@@ -283,7 +283,7 @@
 				"limit": 1
 			},
 			"name": "Monday.com14",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [2100, 150],
 			"alwaysOutputData": true,
@@ -304,7 +304,7 @@
 				"groupId": "={{$node[\"Monday.com6\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com15",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [2250, 150],
 			"alwaysOutputData": true,
@@ -323,7 +323,7 @@
 				"itemId": "={{$node[\"Monday.com9\"].json[\"id\"]}}"
 			},
 			"name": "Monday.com16",
-			"type": "n8n-nodes-base.mondayCom",
+			"type": "aura-nodes-base.mondayCom",
 			"typeVersion": 1,
 			"position": [2400, 150],
 			"alwaysOutputData": true,
@@ -340,7 +340,7 @@
 				"mode": "wait"
 			},
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 1,
 			"position": [2960, 120],
 			"id": "7ca43678-0fea-4fc4-85c5-af1dc02be4d2"

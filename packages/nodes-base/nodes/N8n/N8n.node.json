@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.n8n",
+	"node": "aura-nodes-base.aura",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Core Nodes"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/api/authentication/"
+				"url": "https://docs.aura.io/api/authentication/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.n8n/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.aura/"
 			}
 		]
 	},

@@ -1,11 +1,11 @@
-import type { Logger } from '@n8n/backend-common';
-import { mockInstance, randomName } from '@n8n/backend-test-utils';
-import { LICENSE_FEATURES } from '@n8n/constants';
+import type { Logger } from '@aura/backend-common';
+import { mockInstance, randomName } from '@aura/backend-test-utils';
+import { LICENSE_FEATURES } from '@aura/constants';
 import axios from 'axios';
 import { mocked } from 'jest-mock';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings, PackageDirectoryLoader } from 'n8n-core';
-import type { PublicInstalledPackage } from 'n8n-workflow';
+import type { InstanceSettings, PackageDirectoryLoader } from 'aura-core';
+import type { PublicInstalledPackage } from 'workflow';
 import { exec } from 'node:child_process';
 import { access, constants, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path, { join } from 'node:path';
@@ -54,7 +54,7 @@ describe('CommunityPackagesService', () => {
 	const installedNodesRepository = mockInstance(InstalledNodesRepository);
 	const installedPackageRepository = mockInstance(InstalledPackagesRepository);
 
-	const nodesDownloadDir = path.join('tmp', 'n8n-jest-global-downloads');
+	const nodesDownloadDir = path.join('tmp', 'aura-jest-global-downloads');
 	const instanceSettings = mock<InstanceSettings>({ nodesDownloadDir });
 
 	const logger = mock<Logger>();
@@ -124,7 +124,7 @@ describe('CommunityPackagesService', () => {
 		});
 
 		test('should parse valid package name, scope and version', () => {
-			const scope = '@n8n';
+			const scope = '@aura';
 			const name = mockPackageName();
 			const version = '0.1.1';
 			const fullPackageName = `${scope}/${name}@${version}`;
@@ -367,7 +367,7 @@ describe('CommunityPackagesService', () => {
 	};
 
 	describe('updatePackage', () => {
-		const PACKAGE_NAME = 'n8n-nodes-test';
+		const PACKAGE_NAME = 'aura-nodes-test';
 		const installedPackageForUpdateTest = mock<InstalledPackages>({
 			packageName: PACKAGE_NAME,
 		});
@@ -443,7 +443,7 @@ describe('CommunityPackagesService', () => {
 			expect(rm).toHaveBeenNthCalledWith(1, testBlockPackageDir, { recursive: true, force: true });
 			expect(rm).toHaveBeenNthCalledWith(
 				2,
-				path.join(nodesDownloadDir, 'n8n-nodes-test-latest.tgz'),
+				path.join(nodesDownloadDir, 'aura-nodes-test-latest.tgz'),
 			);
 
 			expect(exec).toHaveBeenCalledTimes(3);
@@ -639,7 +639,7 @@ describe('CommunityPackagesService', () => {
 			await communityPackagesService.checkForMissingPackages();
 
 			expect(communityPackagesService.installPackage).toHaveBeenCalledWith('package-1', '1.0.0');
-			expect(logger.error).toHaveBeenCalledWith('n8n was unable to install the missing packages.');
+			expect(logger.error).toHaveBeenCalledWith('aura was unable to install the missing packages.');
 			expect(communityPackagesService.missingPackages).toEqual(['package-1@1.0.0']);
 		});
 
@@ -660,7 +660,7 @@ describe('CommunityPackagesService', () => {
 
 			expect(communityPackagesService.installPackage).toHaveBeenCalledWith('package-1', '1.0.0');
 			expect(communityPackagesService.installPackage).toHaveBeenCalledWith('package-2', '2.0.0');
-			expect(logger.error).toHaveBeenCalledWith('n8n was unable to install the missing packages.');
+			expect(logger.error).toHaveBeenCalledWith('aura was unable to install the missing packages.');
 			expect(communityPackagesService.missingPackages).toEqual(['package-2@2.0.0']);
 		});
 	});

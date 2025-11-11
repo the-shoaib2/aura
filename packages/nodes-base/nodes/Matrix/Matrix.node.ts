@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { accountOperations } from './AccountDescription';
 import { eventFields, eventOperations } from './EventDescription';
@@ -21,7 +21,7 @@ export class Matrix implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Matrix',
 		name: 'matrix',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:matrix.png',
 		group: ['output'],
 		version: 1,

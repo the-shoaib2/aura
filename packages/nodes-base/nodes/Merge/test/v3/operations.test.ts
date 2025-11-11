@@ -1,4 +1,4 @@
-import type { IDataObject, INode } from 'n8n-workflow';
+import type { IDataObject, INode } from 'workflow';
 
 import { createMockExecuteFunction } from '@test/nodes/Helpers';
 
@@ -8,7 +8,7 @@ const node: INode = {
 	id: '123456',
 	name: 'Merge',
 	typeVersion: 3,
-	type: 'n8n-nodes-base.merge',
+	type: 'aura-nodes-base.merge',
 	position: [50, 50],
 	parameters: {},
 };

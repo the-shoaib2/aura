@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "c30d1114-d7f7-44dc-b55a-15312ef2d76d",
 			"name": "On clicking 'execute'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [600, 580]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "5bf514bd-65ae-4a1c-8b69-a01bfeaad411",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [820, 580]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "02bf49e9-44b2-4f4e-8cb2-8c02399208af",
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1040, 580]
 		}

@@ -1,6 +1,6 @@
-import type { Project } from '@n8n/db';
-import { WorkflowOperationError } from 'n8n-workflow';
-import type { INode } from 'n8n-workflow';
+import type { Project } from '@aura/db';
+import { WorkflowOperationError } from 'workflow';
+import type { INode } from 'workflow';
 
 type Options = {
 	/** ID of the subworkflow whose execution was denied. */
@@ -12,7 +12,7 @@ type Options = {
 	/** Whether the user has read access to the subworkflow based on their project and scope. */
 	hasReadAccess: boolean;
 
-	/** URL of the n8n instance. */
+	/** URL of the aura instance. */
 	instanceUrl: string;
 
 	/** Full name of the user who owns the personal project that owns the subworkflow. Absent if team project. */

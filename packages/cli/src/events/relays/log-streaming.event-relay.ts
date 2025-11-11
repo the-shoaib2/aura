@@ -1,7 +1,7 @@
-import { Redactable } from '@n8n/decorators';
-import { Service } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
-import type { IWorkflowBase } from 'n8n-workflow';
+import { Redactable } from '@aura/decorators';
+import { Service } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
+import type { IWorkflowBase } from 'workflow';
 
 import { MessageEventBus } from '@/eventbus/message-event-bus/message-event-bus';
 import { EventService } from '@/events/event.service';
@@ -78,7 +78,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private workflowCreated({ user, workflow }: RelayEventMap['workflow-created']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.workflow.created',
+			eventName: 'aura.audit.workflow.created',
 			payload: {
 				...user,
 				workflowId: workflow.id,
@@ -90,7 +90,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private workflowDeleted({ user, workflowId }: RelayEventMap['workflow-deleted']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.workflow.deleted',
+			eventName: 'aura.audit.workflow.deleted',
 			payload: { ...user, workflowId },
 		});
 	}
@@ -98,7 +98,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private workflowArchived({ user, workflowId }: RelayEventMap['workflow-archived']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.workflow.archived',
+			eventName: 'aura.audit.workflow.archived',
 			payload: { ...user, workflowId },
 		});
 	}
@@ -106,7 +106,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private workflowUnarchived({ user, workflowId }: RelayEventMap['workflow-unarchived']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.workflow.unarchived',
+			eventName: 'aura.audit.workflow.unarchived',
 			payload: { ...user, workflowId },
 		});
 	}
@@ -114,7 +114,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private workflowSaved({ user, workflow }: RelayEventMap['workflow-saved']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.workflow.updated',
+			eventName: 'aura.audit.workflow.updated',
 			payload: {
 				...user,
 				workflowId: workflow.id,
@@ -142,7 +142,7 @@ export class LogStreamingEventRelay extends EventRelay {
 					};
 
 		void this.eventBus.sendWorkflowEvent({
-			eventName: 'n8n.workflow.started',
+			eventName: 'aura.workflow.started',
 			payload,
 		});
 	}
@@ -161,13 +161,13 @@ export class LogStreamingEventRelay extends EventRelay {
 
 		if (payload.success) {
 			void this.eventBus.sendWorkflowEvent({
-				eventName: 'n8n.workflow.success',
+				eventName: 'aura.workflow.success',
 				payload,
 			});
 
 			if (runData?.jobId) {
 				void this.eventBus.sendQueueEvent({
-					eventName: 'n8n.queue.job.completed',
+					eventName: 'aura.queue.job.completed',
 					payload: {
 						executionId,
 						workflowId: workflow.id,
@@ -181,7 +181,7 @@ export class LogStreamingEventRelay extends EventRelay {
 		}
 
 		void this.eventBus.sendWorkflowEvent({
-			eventName: 'n8n.workflow.failed',
+			eventName: 'aura.workflow.failed',
 			payload: {
 				...payload,
 				lastNodeExecuted: runData?.data.resultData.lastNodeExecuted,
@@ -195,7 +195,7 @@ export class LogStreamingEventRelay extends EventRelay {
 
 		if (runData?.jobId) {
 			void this.eventBus.sendQueueEvent({
-				eventName: 'n8n.queue.job.failed',
+				eventName: 'aura.queue.job.failed',
 				payload: {
 					executionId,
 					workflowId: workflow.id,
@@ -218,7 +218,7 @@ export class LogStreamingEventRelay extends EventRelay {
 		nodeType,
 	}: RelayEventMap['node-pre-execute']) {
 		void this.eventBus.sendNodeEvent({
-			eventName: 'n8n.node.started',
+			eventName: 'aura.node.started',
 			payload: {
 				workflowId: workflow.id,
 				workflowName: workflow.name,
@@ -238,7 +238,7 @@ export class LogStreamingEventRelay extends EventRelay {
 		nodeId,
 	}: RelayEventMap['node-post-execute']) {
 		void this.eventBus.sendNodeEvent({
-			eventName: 'n8n.node.finished',
+			eventName: 'aura.node.finished',
 			payload: {
 				workflowId: workflow.id,
 				workflowName: workflow.name,
@@ -257,7 +257,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private userDeleted({ user }: RelayEventMap['user-deleted']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.deleted',
+			eventName: 'aura.audit.user.deleted',
 			payload: user,
 		});
 	}
@@ -265,7 +265,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private userInvited({ user, targetUserId }: RelayEventMap['user-invited']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.invited',
+			eventName: 'aura.audit.user.invited',
 			payload: { ...user, targetUserId },
 		});
 	}
@@ -273,7 +273,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private userReinvited({ user, targetUserId }: RelayEventMap['user-reinvited']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.reinvited',
+			eventName: 'aura.audit.user.reinvited',
 			payload: { ...user, targetUserId },
 		});
 	}
@@ -281,7 +281,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private userUpdated({ user, fieldsChanged }: RelayEventMap['user-updated']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.updated',
+			eventName: 'aura.audit.user.updated',
 			payload: { ...user, fieldsChanged },
 		});
 	}
@@ -293,7 +293,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private userSignedUp({ user }: RelayEventMap['user-signed-up']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.signedup',
+			eventName: 'aura.audit.user.signedup',
 			payload: user,
 		});
 	}
@@ -301,7 +301,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private userLoggedIn({ user, authenticationMethod }: RelayEventMap['user-logged-in']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.login.success',
+			eventName: 'aura.audit.user.login.success',
 			payload: { ...user, authenticationMethod },
 		});
 	}
@@ -310,7 +310,7 @@ export class LogStreamingEventRelay extends EventRelay {
 		event: RelayEventMap['user-login-failed'] /* exception: no `UserLike` to redact */,
 	) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.login.failed',
+			eventName: 'aura.audit.user.login.failed',
 			payload: event,
 		});
 	}
@@ -323,7 +323,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable('invitee')
 	private userInviteEmailClick(event: RelayEventMap['user-invite-email-click']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.invitation.accepted',
+			eventName: 'aura.audit.user.invitation.accepted',
 			payload: event,
 		});
 	}
@@ -331,7 +331,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private userPasswordResetEmailClick({ user }: RelayEventMap['user-password-reset-email-click']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.reset',
+			eventName: 'aura.audit.user.reset',
 			payload: user,
 		});
 	}
@@ -341,7 +341,7 @@ export class LogStreamingEventRelay extends EventRelay {
 		user,
 	}: RelayEventMap['user-password-reset-request-click']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.reset.requested',
+			eventName: 'aura.audit.user.reset.requested',
 			payload: user,
 		});
 	}
@@ -353,7 +353,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private publicApiKeyCreated({ user }: RelayEventMap['public-api-key-created']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.api.created',
+			eventName: 'aura.audit.user.api.created',
 			payload: user,
 		});
 	}
@@ -361,7 +361,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private publicApiKeyDeleted({ user }: RelayEventMap['public-api-key-deleted']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.api.deleted',
+			eventName: 'aura.audit.user.api.deleted',
 			payload: user,
 		});
 	}
@@ -373,7 +373,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private emailFailed({ user, messageType }: RelayEventMap['email-failed']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.email.failed',
+			eventName: 'aura.audit.user.email.failed',
 			payload: { ...user, messageType },
 		});
 	}
@@ -385,7 +385,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private credentialsCreated({ user, ...rest }: RelayEventMap['credentials-created']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.credentials.created',
+			eventName: 'aura.audit.user.credentials.created',
 			payload: { ...user, ...rest },
 		});
 	}
@@ -393,7 +393,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private credentialsDeleted({ user, ...rest }: RelayEventMap['credentials-deleted']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.credentials.deleted',
+			eventName: 'aura.audit.user.credentials.deleted',
 			payload: { ...user, ...rest },
 		});
 	}
@@ -401,7 +401,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private credentialsShared({ user, ...rest }: RelayEventMap['credentials-shared']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.credentials.shared',
+			eventName: 'aura.audit.user.credentials.shared',
 			payload: { ...user, ...rest },
 		});
 	}
@@ -409,7 +409,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private credentialsUpdated({ user, ...rest }: RelayEventMap['credentials-updated']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.user.credentials.updated',
+			eventName: 'aura.audit.user.credentials.updated',
 			payload: { ...user, ...rest },
 		});
 	}
@@ -424,7 +424,7 @@ export class LogStreamingEventRelay extends EventRelay {
 		...rest
 	}: RelayEventMap['community-package-installed']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.package.installed',
+			eventName: 'aura.audit.package.installed',
 			payload: { ...user, ...rest },
 		});
 	}
@@ -432,7 +432,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private communityPackageUpdated({ user, ...rest }: RelayEventMap['community-package-updated']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.package.updated',
+			eventName: 'aura.audit.package.updated',
 			payload: { ...user, ...rest },
 		});
 	}
@@ -440,7 +440,7 @@ export class LogStreamingEventRelay extends EventRelay {
 	@Redactable()
 	private communityPackageDeleted({ user, ...rest }: RelayEventMap['community-package-deleted']) {
 		void this.eventBus.sendAuditEvent({
-			eventName: 'n8n.audit.package.deleted',
+			eventName: 'aura.audit.package.deleted',
 			payload: { ...user, ...rest },
 		});
 	}
@@ -451,7 +451,7 @@ export class LogStreamingEventRelay extends EventRelay {
 
 	private executionThrottled({ executionId, type }: RelayEventMap['execution-throttled']) {
 		void this.eventBus.sendExecutionEvent({
-			eventName: 'n8n.execution.throttled',
+			eventName: 'aura.execution.throttled',
 			payload: { executionId, type },
 		});
 	}
@@ -460,7 +460,7 @@ export class LogStreamingEventRelay extends EventRelay {
 		executionId,
 	}: RelayEventMap['execution-started-during-bootup']) {
 		void this.eventBus.sendExecutionEvent({
-			eventName: 'n8n.execution.started-during-bootup',
+			eventName: 'aura.execution.started-during-bootup',
 			payload: { executionId },
 		});
 	}
@@ -473,98 +473,98 @@ export class LogStreamingEventRelay extends EventRelay {
 		payload: RelayEventMap['ai-messages-retrieved-from-memory'],
 	) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.memory.get.messages',
+			eventName: 'aura.ai.memory.get.messages',
 			payload,
 		});
 	}
 
 	private aiMessageAddedToMemory(payload: RelayEventMap['ai-message-added-to-memory']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.memory.added.message',
+			eventName: 'aura.ai.memory.added.message',
 			payload,
 		});
 	}
 
 	private aiOutputParsed(payload: RelayEventMap['ai-output-parsed']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.output.parser.parsed',
+			eventName: 'aura.ai.output.parser.parsed',
 			payload,
 		});
 	}
 
 	private aiDocumentsRetrieved(payload: RelayEventMap['ai-documents-retrieved']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.retriever.get.relevant.documents',
+			eventName: 'aura.ai.retriever.get.relevant.documents',
 			payload,
 		});
 	}
 
 	private aiDocumentEmbedded(payload: RelayEventMap['ai-document-embedded']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.embeddings.embedded.document',
+			eventName: 'aura.ai.embeddings.embedded.document',
 			payload,
 		});
 	}
 
 	private aiQueryEmbedded(payload: RelayEventMap['ai-query-embedded']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.embeddings.embedded.query',
+			eventName: 'aura.ai.embeddings.embedded.query',
 			payload,
 		});
 	}
 
 	private aiDocumentProcessed(payload: RelayEventMap['ai-document-processed']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.document.processed',
+			eventName: 'aura.ai.document.processed',
 			payload,
 		});
 	}
 
 	private aiTextSplitIntoChunks(payload: RelayEventMap['ai-text-split']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.text.splitter.split',
+			eventName: 'aura.ai.text.splitter.split',
 			payload,
 		});
 	}
 
 	private aiToolCalled(payload: RelayEventMap['ai-tool-called']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.tool.called',
+			eventName: 'aura.ai.tool.called',
 			payload,
 		});
 	}
 
 	private aiVectorStoreSearched(payload: RelayEventMap['ai-vector-store-searched']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.vector.store.searched',
+			eventName: 'aura.ai.vector.store.searched',
 			payload,
 		});
 	}
 
 	private aiLlmGeneratedOutput(payload: RelayEventMap['ai-llm-generated-output']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.llm.generated',
+			eventName: 'aura.ai.llm.generated',
 			payload,
 		});
 	}
 
 	private aiLlmErrored(payload: RelayEventMap['ai-llm-errored']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.llm.error',
+			eventName: 'aura.ai.llm.error',
 			payload,
 		});
 	}
 
 	private aiVectorStorePopulated(payload: RelayEventMap['ai-vector-store-populated']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.vector.store.populated',
+			eventName: 'aura.ai.vector.store.populated',
 			payload,
 		});
 	}
 
 	private aiVectorStoreUpdated(payload: RelayEventMap['ai-vector-store-updated']) {
 		void this.eventBus.sendAiNodeEvent({
-			eventName: 'n8n.ai.vector.store.updated',
+			eventName: 'aura.ai.vector.store.updated',
 			payload,
 		});
 	}
@@ -575,14 +575,14 @@ export class LogStreamingEventRelay extends EventRelay {
 
 	private runnerTaskRequested(payload: RelayEventMap['runner-task-requested']) {
 		void this.eventBus.sendRunnerEvent({
-			eventName: 'n8n.runner.task.requested',
+			eventName: 'aura.runner.task.requested',
 			payload,
 		});
 	}
 
 	private runnerResponseReceived(payload: RelayEventMap['runner-response-received']) {
 		void this.eventBus.sendRunnerEvent({
-			eventName: 'n8n.runner.response.received',
+			eventName: 'aura.runner.response.received',
 			payload,
 		});
 	}
@@ -593,21 +593,21 @@ export class LogStreamingEventRelay extends EventRelay {
 
 	private jobEnqueued(payload: RelayEventMap['job-enqueued']) {
 		void this.eventBus.sendQueueEvent({
-			eventName: 'n8n.queue.job.enqueued',
+			eventName: 'aura.queue.job.enqueued',
 			payload,
 		});
 	}
 
 	private jobDequeued(payload: RelayEventMap['job-dequeued']) {
 		void this.eventBus.sendQueueEvent({
-			eventName: 'n8n.queue.job.dequeued',
+			eventName: 'aura.queue.job.dequeued',
 			payload,
 		});
 	}
 
 	private jobStalled(payload: RelayEventMap['job-stalled']) {
 		void this.eventBus.sendQueueEvent({
-			eventName: 'n8n.queue.job.stalled',
+			eventName: 'aura.queue.job.stalled',
 			payload,
 		});
 	}

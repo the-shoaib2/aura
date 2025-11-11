@@ -1,5 +1,5 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
+import type { SourceControlledFile } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
 import type {
 	FindOptionsWhere,
 	Project,
@@ -8,7 +8,7 @@ import type {
 	Variables,
 	WorkflowEntity,
 	WorkflowTagMapping,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	CredentialsRepository,
 	FolderRepository,
@@ -20,14 +20,14 @@ import {
 	VariablesRepository,
 	WorkflowRepository,
 	WorkflowTagMappingRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In } from '@n8n/typeorm';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In } from '@aura/typeorm';
 import glob from 'fast-glob';
-import { Credentials, ErrorReporter, InstanceSettings } from 'n8n-core';
-import { ensureError, jsonParse, UnexpectedError, UserError } from 'n8n-workflow';
+import { Credentials, ErrorReporter, InstanceSettings } from 'aura-core';
+import { ensureError, jsonParse, UnexpectedError, UserError } from 'workflow';
 import { readFile as fsReadFile } from 'node:fs/promises';
 import path from 'path';
 
@@ -152,7 +152,7 @@ export class SourceControlImportService {
 		instanceSettings: InstanceSettings,
 		private readonly sourceControlScopedService: SourceControlScopedService,
 	) {
-		this.gitFolder = path.join(instanceSettings.n8nFolder, SOURCE_CONTROL_GIT_FOLDER);
+		this.gitFolder = path.join(instanceSettings.auraFolder, SOURCE_CONTROL_GIT_FOLDER);
 		this.workflowExportFolder = path.join(this.gitFolder, SOURCE_CONTROL_WORKFLOW_EXPORT_FOLDER);
 		this.credentialExportFolder = path.join(
 			this.gitFolder,

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "0591985b-5e87-405c-9836-f3445e04edf6"
@@ -19,7 +19,7 @@
 				"username": "nodeqa"
 			},
 			"name": "Reddit",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [450, 150],
 			"id": "56e5318b-d8b6-4e9b-a847-29871a1671a1"
@@ -32,7 +32,7 @@
 				"limit": 1
 			},
 			"name": "Reddit1",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [600, 150],
 			"alwaysOutputData": true,
@@ -46,7 +46,7 @@
 				"limit": 1
 			},
 			"name": "Reddit2",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [750, 150],
 			"alwaysOutputData": true,
@@ -60,7 +60,7 @@
 				"limit": 1
 			},
 			"name": "Reddit3",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [900, 150],
 			"alwaysOutputData": true,
@@ -74,7 +74,7 @@
 				"limit": 1
 			},
 			"name": "Reddit4",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [1050, 150],
 			"alwaysOutputData": true,
@@ -86,7 +86,7 @@
 				"subreddit": "nocode"
 			},
 			"name": "Reddit5",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"alwaysOutputData": true,
@@ -102,7 +102,7 @@
 				}
 			},
 			"name": "Reddit6",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"alwaysOutputData": true,
@@ -113,7 +113,7 @@
 				"resource": "profile"
 			},
 			"name": "Reddit7",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"alwaysOutputData": true,
@@ -132,7 +132,7 @@
 				"details": "prefs"
 			},
 			"name": "Reddit8",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"alwaysOutputData": true,
@@ -150,7 +150,7 @@
 				"details": "trophies"
 			},
 			"name": "Reddit9",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [750, 450],
 			"alwaysOutputData": true,
@@ -169,7 +169,7 @@
 				"text": "=Test post {{Date.now()}}"
 			},
 			"name": "Reddit10",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [450, 600],
 			"alwaysOutputData": true,
@@ -188,7 +188,7 @@
 				"postId": "={{$node[\"Reddit10\"].json[\"id\"]}}"
 			},
 			"name": "Reddit11",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [600, 600],
 			"alwaysOutputData": true,
@@ -210,7 +210,7 @@
 				}
 			},
 			"name": "Reddit12",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [750, 600],
 			"alwaysOutputData": true,
@@ -233,7 +233,7 @@
 				}
 			},
 			"name": "Reddit13",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [900, 600],
 			"alwaysOutputData": true,
@@ -252,7 +252,7 @@
 				"postId": "={{$node[\"Reddit10\"].json[\"id\"]}}"
 			},
 			"name": "Reddit14",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [1960, 600],
 			"alwaysOutputData": true,
@@ -271,7 +271,7 @@
 				"commentText": "=Comment{{Date.now()}}"
 			},
 			"name": "Reddit15",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [1050, 750],
 			"alwaysOutputData": true,
@@ -292,7 +292,7 @@
 				"limit": 1
 			},
 			"name": "Reddit16",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [1360, 750],
 			"alwaysOutputData": true,
@@ -312,7 +312,7 @@
 				"replyText": "=ReplyComment{{Date.now()}}"
 			},
 			"name": "Reddit17",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [1510, 750],
 			"alwaysOutputData": true,
@@ -331,7 +331,7 @@
 				"commentId": "={{$node[\"Reddit15\"].json[\"id\"]}}"
 			},
 			"name": "Reddit18",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [1660, 750],
 			"alwaysOutputData": true,
@@ -350,7 +350,7 @@
 				"commentId": "={{$node[\"Reddit17\"].json[\"id\"]}}"
 			},
 			"name": "Reddit19",
-			"type": "n8n-nodes-base.reddit",
+			"type": "aura-nodes-base.reddit",
 			"typeVersion": 1,
 			"position": [1810, 750],
 			"alwaysOutputData": true,
@@ -367,7 +367,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(10000);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 10 seconds",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1200, 750],
 			"typeVersion": 1,
 			"id": "858b86f3-9efd-45b0-88e7-c2b25d560159"

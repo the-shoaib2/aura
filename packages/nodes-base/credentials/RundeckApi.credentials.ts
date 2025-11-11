@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class RundeckApi implements ICredentialType {
 	name = 'rundeckApi';
@@ -33,7 +33,7 @@ export class RundeckApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				'user-agent': 'n8n',
+				'user-agent': 'aura',
 				'X-Rundeck-Auth-Token': '={{$credentials?.token}}',
 			},
 		},

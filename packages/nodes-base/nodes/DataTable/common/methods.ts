@@ -5,7 +5,7 @@ import {
 	type INodePropertyOptions,
 	type ResourceMapperField,
 	type ResourceMapperFields,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getDataTableAggregateProxy, getDataTableProxyLoadOptions } from './utils';
 

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const operationFields: INodeProperties[] = [
 	// ----------------------------------
@@ -15,7 +15,7 @@ export const operationFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getWorkspaces',
 		},
@@ -32,7 +32,7 @@ export const operationFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsDependsOn: ['workspaceId'],
 			loadOptionsMethod: 'getBases',
@@ -63,7 +63,7 @@ export const operationFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getBases',
 		},
@@ -80,7 +80,7 @@ export const operationFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The table to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The table to operate on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		typeOptions: {
 			loadOptionsDependsOn: ['projectId'],
 			loadOptionsMethod: 'getTables',

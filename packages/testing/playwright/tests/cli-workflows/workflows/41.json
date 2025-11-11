@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "6aeb5434-f098-403c-8a10-3b49b0ce5b28"
@@ -24,7 +24,7 @@
 				}
 			},
 			"name": "Google Calendar",
-			"type": "n8n-nodes-base.googleCalendar",
+			"type": "aura-nodes-base.googleCalendar",
 			"typeVersion": 1,
 			"position": [500, 210],
 			"credentials": {
@@ -45,7 +45,7 @@
 				}
 			},
 			"name": "Google Calendar1",
-			"type": "n8n-nodes-base.googleCalendar",
+			"type": "aura-nodes-base.googleCalendar",
 			"typeVersion": 1,
 			"position": [490, 390],
 			"credentials": {
@@ -64,7 +64,7 @@
 				"options": {}
 			},
 			"name": "Google Calendar2",
-			"type": "n8n-nodes-base.googleCalendar",
+			"type": "aura-nodes-base.googleCalendar",
 			"typeVersion": 1,
 			"position": [820, 390],
 			"alwaysOutputData": true,
@@ -86,7 +86,7 @@
 				}
 			},
 			"name": "Google Calendar3",
-			"type": "n8n-nodes-base.googleCalendar",
+			"type": "aura-nodes-base.googleCalendar",
 			"typeVersion": 1,
 			"position": [650, 390],
 			"credentials": {
@@ -107,7 +107,7 @@
 				}
 			},
 			"name": "Google Calendar4",
-			"type": "n8n-nodes-base.googleCalendar",
+			"type": "aura-nodes-base.googleCalendar",
 			"typeVersion": 1,
 			"position": [980, 390],
 			"credentials": {
@@ -126,7 +126,7 @@
 				"options": {}
 			},
 			"name": "Google Calendar5",
-			"type": "n8n-nodes-base.googleCalendar",
+			"type": "aura-nodes-base.googleCalendar",
 			"typeVersion": 1,
 			"position": [1130, 390],
 			"credentials": {

@@ -1,4 +1,4 @@
-import { NodeApiError } from 'n8n-workflow';
+import { NodeApiError } from 'workflow';
 
 import { ERROR_MESSAGES, SESSION_STATUS } from '../constants';
 import {
@@ -414,7 +414,7 @@ describe('Test Airtop utils', () => {
 		const mockNode = {
 			id: '1',
 			name: 'Airtop node',
-			type: 'n8n-nodes-base.airtop',
+			type: 'aura-nodes-base.airtop',
 			typeVersion: 1,
 			position: [0, 0] as [number, number],
 			parameters: {},

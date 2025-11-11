@@ -1,4 +1,4 @@
-import type { IHookFunctions } from 'n8n-workflow';
+import type { IHookFunctions } from 'workflow';
 
 import { stripeApiRequest } from '../helpers';
 import { StripeTrigger } from '../StripeTrigger.node';
@@ -59,7 +59,7 @@ describe('Stripe Trigger Node', () => {
 
 		const expectedRequestBody = {
 			url: 'https://webhook.url/test',
-			description: 'Created by n8n for workflow ID: test-workflow-id',
+			description: 'Created by aura for workflow ID: test-workflow-id',
 			enabled_events: ['*'],
 		};
 
@@ -82,7 +82,7 @@ describe('Stripe Trigger Node', () => {
 
 		const expectedRequestBody = {
 			url: 'https://webhook.url/test',
-			description: 'Created by n8n for workflow ID: test-workflow-id',
+			description: 'Created by aura for workflow ID: test-workflow-id',
 			enabled_events: ['*'],
 			api_version: '2025-05-28.basil',
 		};

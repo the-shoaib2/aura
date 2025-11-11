@@ -1,6 +1,6 @@
-import { testDb } from '@n8n/backend-test-utils';
-import { GLOBAL_OWNER_ROLE, TagRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { testDb } from '@aura/backend-test-utils';
+import { GLOBAL_OWNER_ROLE, TagRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { createUserShell } from './shared/db/users';
 import type { SuperAgentTest } from './shared/types';

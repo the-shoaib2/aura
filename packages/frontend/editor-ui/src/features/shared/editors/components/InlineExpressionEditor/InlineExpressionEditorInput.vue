@@ -7,10 +7,10 @@ import { computed, ref, watch } from 'vue';
 import { useExpressionEditor } from '../../composables/useExpressionEditor';
 import { mappingDropCursor } from '../../plugins/codemirror/dragAndDrop';
 import { editorKeymap } from '../../plugins/codemirror/keymap';
-import { n8nAutocompletion, n8nLang } from '../../plugins/codemirror/n8nLang';
+import { auraAutocompletion, auraLang } from '../../plugins/codemirror/auraLang';
 import { infoBoxTooltips } from '../../plugins/codemirror/tooltips/InfoBoxTooltip';
 import type { Segment } from '@/app/types/expressions';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'workflow';
 import { inputTheme } from './theme';
 import { onKeyStroke } from '@vueuse/core';
 import { expressionCloseBrackets } from '../../plugins/codemirror/expressionCloseBrackets';
@@ -38,8 +38,8 @@ const emit = defineEmits<{
 const root = ref<HTMLElement>();
 const extensions = computed(() => [
 	Prec.highest(keymap.of(editorKeymap)),
-	n8nLang(),
-	n8nAutocompletion(),
+	auraLang(),
+	auraAutocompletion(),
 	inputTheme({ isReadOnly: props.isReadOnly, rows: props.rows }),
 	history(),
 	mappingDropCursor(),

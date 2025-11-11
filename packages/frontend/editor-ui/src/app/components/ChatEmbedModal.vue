@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import Modal from './Modal.vue';
 import { CHAT_EMBED_MODAL_KEY, CHAT_TRIGGER_NODE_TYPE, WEBHOOK_NODE_TYPE } from '../constants';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import HtmlEditor from '@/features/shared/editors/components/HtmlEditor/HtmlEditor.vue';
 import JsEditor from '@/features/shared/editors/components/JsEditor/JsEditor.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { I18nT } from 'vue-i18n';
 
-import { N8nButton, N8nInfoTip, N8nLink, N8nTabs, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nInfoTip, N8nLink, N8nTabs, N8nText } from '@aura/design-system';
 const props = withDefaults(
 	defineProps<{
 		modalBus?: EventBus;
@@ -86,18 +86,18 @@ function indentLines(code: string, indent: string = '	') {
 
 const importCode = 'import'; // To avoid vite from parsing the import statement
 const commonCode = computed(() => ({
-	import: `${importCode} '@n8n/chat/style.css';
-${importCode} { createChat } from '@n8n/chat';`,
+	import: `${importCode} '@aura/chat/style.css';
+${importCode} { createChat } from '@aura/chat';`,
 	createChat: `createChat({
 	webhookUrl: '${webhookUrl.value}'
 });`,
-	install: 'npm install @n8n/chat',
+	install: 'npm install @aura/chat',
 }));
 
 const cdnCode = computed(
-	() => `<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+	() => `<link href="https://cdn.jsdelivr.net/npm/@aura/chat/dist/style.css" rel="stylesheet" />
 <script type="module">
-${importCode} { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+${importCode} { createChat } from 'https://cdn.jsdelivr.net/npm/@aura/chat/dist/chat.bundle.es.js';
 
 ${commonCode.value.createChat}
 </${'script'}>`,

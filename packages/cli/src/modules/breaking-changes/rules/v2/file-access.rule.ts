@@ -1,7 +1,7 @@
-import { BreakingChangeRecommendation } from '@n8n/api-types';
-import { WorkflowEntity } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { INode } from 'n8n-workflow';
+import { BreakingChangeRecommendation } from '@aura/api-types';
+import { WorkflowEntity } from '@aura/db';
+import { Service } from '@aura/di';
+import { INode } from 'workflow';
 
 import type {
 	BreakingChangeRuleMetadata,
@@ -12,7 +12,10 @@ import { BreakingChangeCategory } from '../../types';
 
 @Service()
 export class FileAccessRule implements IBreakingChangeWorkflowRule {
-	private readonly FILE_NODES = ['n8n-nodes-base.readWriteFile', 'n8n-nodes-base.readBinaryFiles'];
+	private readonly FILE_NODES = [
+		'aura-nodes-base.readWriteFile',
+		'aura-nodes-base.readBinaryFiles',
+	];
 
 	id: string = 'file-access-restriction-v2';
 

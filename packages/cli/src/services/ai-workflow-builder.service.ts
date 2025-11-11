@@ -1,10 +1,10 @@
-import { AiWorkflowBuilderService } from '@n8n/ai-workflow-builder';
-import { ChatPayload } from '@n8n/ai-workflow-builder/dist/workflow-builder-agent';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
-import { AiAssistantClient } from '@n8n_io/ai-assistant-sdk';
-import type { IUser } from 'n8n-workflow';
+import { AiWorkflowBuilderService } from '@aura/ai-workflow-builder';
+import { ChatPayload } from '@aura/ai-workflow-builder/dist/workflow-builder-agent';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Service } from '@aura/di';
+import { AiAssistantClient } from '@aura_io/ai-assistant-sdk';
+import type { IUser } from 'workflow';
 
 import { N8N_VERSION } from '@/constants';
 import { License } from '@/license';
@@ -43,7 +43,7 @@ export class WorkflowBuilderService {
 					licenseCert,
 					consumerId,
 					baseUrl,
-					n8nVersion: N8N_VERSION,
+					auraVersion: N8N_VERSION,
 				});
 			}
 

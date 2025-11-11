@@ -1,6 +1,6 @@
 import { removeWorkflowExecutionData } from './workflowUtils';
 import type { IWorkflowDb } from '@/Interface';
-import type { INodeIssues } from 'n8n-workflow';
+import type { INodeIssues } from 'workflow';
 
 describe('workflowUtils', () => {
 	describe('removeWorkflowExecutionData', () => {

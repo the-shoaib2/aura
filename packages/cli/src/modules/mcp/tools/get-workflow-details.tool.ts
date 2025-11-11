@@ -1,5 +1,5 @@
-import type { User } from '@n8n/db';
-import { UserError, WEBHOOK_NODE_TYPE } from 'n8n-workflow';
+import type { User } from '@aura/db';
+import { UserError, WEBHOOK_NODE_TYPE } from 'workflow';
 import z from 'zod';
 
 import { USER_CALLED_MCP_TOOL_EVENT } from '../mcp.constants';
@@ -117,7 +117,7 @@ export async function getWorkflowDetails(
 
 	triggerNotice += `${
 		workflow.active
-			? '\n- Workflow is active and accessible. Use the production path for live traffic; the test path remains available when listening for test events in the editor. n8n Webhooks nodes do not have information about required request payloads, so ask the user if that cannot be inferred from the workflow.'
+			? '\n- Workflow is active and accessible. Use the production path for live traffic; the test path remains available when listening for test events in the editor. aura Webhooks nodes do not have information about required request payloads, so ask the user if that cannot be inferred from the workflow.'
 			: '\n- Workflow is not active. Click "Listen for test event" in the editor and use the test path; activate the workflow to make the production path available.'
 	}`;
 

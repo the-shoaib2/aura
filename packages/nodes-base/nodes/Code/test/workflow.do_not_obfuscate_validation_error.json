@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "d2ff695c-4ca0-457d-ae9e-666d2dc53a53",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"position": [360, 420],
 			"typeVersion": 1
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "fc540f62-d671-49a2-b35d-aead4ed8bd10",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [620, 420],
 			"onError": "continueErrorOutput"
@@ -24,7 +24,7 @@
 			"parameters": {},
 			"id": "d8335277-61af-42d8-9cf5-02a8b85df42b",
 			"name": "No Operation, do nothing",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [900, 500]
 		}

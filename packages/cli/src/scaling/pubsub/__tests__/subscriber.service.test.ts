@@ -1,5 +1,5 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { ExecutionsConfig } from '@n8n/config';
+import { mockInstance } from '@aura/backend-test-utils';
+import { ExecutionsConfig } from '@aura/config';
 import type { Redis as SingleNodeClient } from 'ioredis';
 import { mock } from 'jest-mock-extended';
 
@@ -67,9 +67,9 @@ describe('Subscriber', () => {
 				executionsConfig,
 			);
 
-			await subscriber.subscribe('n8n.commands');
+			await subscriber.subscribe('aura.commands');
 
-			expect(client.subscribe).toHaveBeenCalledWith('n8n.commands', expect.any(Function));
+			expect(client.subscribe).toHaveBeenCalledWith('aura.commands', expect.any(Function));
 		});
 	});
 });

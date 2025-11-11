@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import type { User, WorkflowHistory } from '@n8n/db';
-import { WorkflowHistoryRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import type { IWorkflowBase } from 'n8n-workflow';
-import { ensureError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import type { User, WorkflowHistory } from '@aura/db';
+import { WorkflowHistoryRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import type { IWorkflowBase } from 'workflow';
+import { ensureError } from 'workflow';
 
 import { SharedWorkflowNotFoundError } from '@/errors/shared-workflow-not-found.error';
 import { WorkflowHistoryVersionNotFoundError } from '@/errors/workflow-history-version-not-found.error';

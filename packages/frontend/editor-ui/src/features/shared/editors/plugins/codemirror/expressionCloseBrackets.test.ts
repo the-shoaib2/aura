@@ -1,7 +1,7 @@
 import { EditorView } from '@codemirror/view';
 import userEvent from '@testing-library/user-event';
 import { expressionCloseBrackets } from './expressionCloseBrackets';
-import { n8nAutocompletion, n8nLang } from './n8nLang';
+import { auraAutocompletion, auraLang } from './auraLang';
 import { completionStatus } from '@codemirror/autocomplete';
 import { EditorSelection } from '@codemirror/state';
 import { setActivePinia } from 'pinia';
@@ -13,7 +13,7 @@ describe('expressionCloseBrackets', () => {
 		document.body.appendChild(parent);
 		const editor = new EditorView({
 			parent,
-			extensions: [expressionCloseBrackets(), n8nLang(), n8nAutocompletion()],
+			extensions: [expressionCloseBrackets(), auraLang(), auraAutocompletion()],
 		});
 		return editor;
 	};

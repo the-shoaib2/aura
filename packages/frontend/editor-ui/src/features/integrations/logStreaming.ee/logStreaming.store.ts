@@ -1,4 +1,4 @@
-import type { MessageEventBusDestinationOptions } from 'n8n-workflow';
+import type { MessageEventBusDestinationOptions } from 'workflow';
 import { defineStore } from 'pinia';
 import {
 	deleteDestinationFromDb,
@@ -7,8 +7,8 @@ import {
 	hasDestinationId,
 	saveDestinationToDb,
 	sendTestMessageToDestination,
-} from '@n8n/rest-api-client/api/eventbus.ee';
-import { useRootStore } from '@n8n/stores/useRootStore';
+} from '@aura/rest-api-client/api/eventbus.ee';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { ref } from 'vue';
 
 export interface EventSelectionItem {
@@ -60,8 +60,8 @@ const eventGroupsFromStringList = (
 	const groups: Set<string> = new Set<string>();
 
 	// since a Set returns iteration items on the order they were added, we can make sure workflow and nodes come first
-	groups.add('n8n.workflow');
-	groups.add('n8n.node');
+	groups.add('aura.workflow');
+	groups.add('aura.node');
 
 	for (const eventName of eventNameArray) {
 		const matches = eventName.match(/^[\w\s]+\.[\w\s]+/);

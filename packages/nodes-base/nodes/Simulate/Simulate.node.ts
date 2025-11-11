@@ -1,11 +1,11 @@
-import { sleep, jsonParse, NodeOperationError, NodeConnectionTypes } from 'n8n-workflow';
+import { sleep, jsonParse, NodeOperationError, NodeConnectionTypes } from 'workflow';
 import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
 	IDataObject,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	executionDurationProperty,
@@ -42,17 +42,17 @@ export class Simulate implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Returns all input items',
 						value: 'all',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Specify how many of input items to return',
 						value: 'specify',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Specify output as JSON',
 						value: 'custom',
 					},

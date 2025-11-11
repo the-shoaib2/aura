@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [270, 300],
 			"id": "64bf3c53-0178-4d4d-9512-03e5d4499dbd"
@@ -25,7 +25,7 @@
 				}
 			},
 			"name": "Intercom1",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [450, 140],
 			"credentials": {
@@ -44,7 +44,7 @@
 				"value": "={{$node[\"Intercom1\"].json[\"company_id\"]}}"
 			},
 			"name": "Intercom",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [600, 140],
 			"credentials": {
@@ -63,7 +63,7 @@
 				"filters": {}
 			},
 			"name": "Intercom2",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [750, 140],
 			"alwaysOutputData": true,
@@ -85,7 +85,7 @@
 				}
 			},
 			"name": "Intercom3",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [900, 140],
 			"credentials": {
@@ -104,7 +104,7 @@
 				"value": "={{$node[\"Intercom\"].json[\"company_id\"]}}"
 			},
 			"name": "Intercom4",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [1050, 140],
 			"credentials": {
@@ -124,7 +124,7 @@
 				}
 			},
 			"name": "Intercom5",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -143,7 +143,7 @@
 				"value": "={{$node[\"Intercom5\"].json[\"id\"]}}"
 			},
 			"name": "Intercom6",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -162,7 +162,7 @@
 				"filters": {}
 			},
 			"name": "Intercom7",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"alwaysOutputData": true,
@@ -184,7 +184,7 @@
 				}
 			},
 			"name": "Intercom8",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -203,7 +203,7 @@
 				"value": "={{$node[\"Intercom5\"].json[\"id\"]}}"
 			},
 			"name": "Intercom9",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -221,7 +221,7 @@
 				"additionalFields": {}
 			},
 			"name": "Intercom10",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [450, 440],
 			"credentials": {
@@ -239,7 +239,7 @@
 				"value": "={{$node[\"Intercom10\"].json[\"id\"]}}"
 			},
 			"name": "Intercom11",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [600, 440],
 			"credentials": {
@@ -257,7 +257,7 @@
 				"filters": {}
 			},
 			"name": "Intercom12",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [740, 440],
 			"alwaysOutputData": true,
@@ -278,7 +278,7 @@
 				}
 			},
 			"name": "Intercom13",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [900, 440],
 			"credentials": {
@@ -295,7 +295,7 @@
 				"id": "={{$node[\"Intercom10\"].json[\"id\"]}}"
 			},
 			"name": "Intercom14",
-			"type": "n8n-nodes-base.intercom",
+			"type": "aura-nodes-base.intercom",
 			"typeVersion": 1,
 			"position": [1050, 440],
 			"credentials": {

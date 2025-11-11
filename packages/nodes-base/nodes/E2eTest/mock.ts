@@ -5,7 +5,7 @@ import type {
 	INodeListSearchResult,
 	INodePropertyOptions,
 	ResourceMapperFields,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export const returnData: INodeExecutionData[] = [
 	{

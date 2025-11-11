@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.stripeTrigger",
+	"node": "aura-nodes-base.stripeTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Finance & Accounting", "Sales"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/stripe/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/stripe/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.stripetrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.stripetrigger/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Automate your customer journey with n8n: An interview with Blent.ai",
+				"label": "Automate your customer journey with aura: An interview with Blent.ai",
 				"icon": "🚀",
-				"url": "https://n8n.io/blog/automate-your-customer-journey-with-n8n-an-interview-with-blent-ai/"
+				"url": "https://aura.io/blog/automate-your-customer-journey-with-aura-an-interview-with-blent-ai/"
 			}
 		]
 	}

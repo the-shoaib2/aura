@@ -10,8 +10,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { deepCopy, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { deepCopy, NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 function parseDateByFormat(this: IExecuteFunctions, value: string, fromFormat: string) {
 	const date = moment(value, fromFormat, true);
@@ -61,7 +61,7 @@ const versionDescription: INodeTypeDescription = {
 	properties: [
 		{
 			displayName:
-				"More powerful date functionality is available in <a href='https://docs.n8n.io/code/cookbook/luxon/' target='_blank'>expressions</a>,</br> e.g. <code>{{ $now.plus(1, 'week') }}</code>",
+				"More powerful date functionality is available in <a href='https://docs.aura.io/code/cookbook/luxon/' target='_blank'>expressions</a>,</br> e.g. <code>{{ $now.plus(1, 'week') }}</code>",
 			name: 'noticeDateTime',
 			type: 'notice',
 			default: '',
@@ -148,7 +148,7 @@ const versionDescription: INodeTypeDescription = {
 					custom: [false],
 				},
 			},
-			// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+			// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 			options: [
 				{
 					name: 'MM/DD/YYYY',
@@ -217,7 +217,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: 'UTC',
 					description:
-						'The timezone to convert from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'The timezone to convert from. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'To Timezone Name or ID',
@@ -228,7 +228,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: 'UTC',
 					description:
-						'The timezone to convert to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'The timezone to convert to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 			],
 		},
@@ -298,7 +298,7 @@ const versionDescription: INodeTypeDescription = {
 				},
 			},
 			type: 'options',
-			// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+			// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 			options: [
 				{
 					name: 'Quarters',
@@ -371,7 +371,7 @@ const versionDescription: INodeTypeDescription = {
 					type: 'string',
 					default: '',
 					description:
-						'Format for parsing the value as a date. If unrecognized, specify the <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datetime/#faqs">format</a> for the value.',
+						'Format for parsing the value as a date. If unrecognized, specify the <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.datetime/#faqs">format</a> for the value.',
 				},
 			],
 		},

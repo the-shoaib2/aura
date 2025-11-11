@@ -1,9 +1,9 @@
-import { type Logger } from '@n8n/backend-common';
+import { type Logger } from '@aura/backend-common';
 import { ExportService } from '../export.service';
-import { type DataSource } from '@n8n/typeorm';
+import { type DataSource } from '@aura/typeorm';
 import { mkdir, rm, readdir, appendFile } from 'fs/promises';
 import { mock } from 'jest-mock-extended';
-import type { Cipher } from 'n8n-core';
+import type { Cipher } from 'aura-core';
 
 // Mock fs/promises with proper implementations
 jest.mock('fs/promises', () => ({
@@ -23,8 +23,8 @@ jest.mock('@/utils/validate-database-type', () => ({
 	validateDbTypeForExportEntities: jest.fn(),
 }));
 
-// Mock @n8n/db
-jest.mock('@n8n/db', () => ({
+// Mock @aura/db
+jest.mock('@aura/db', () => ({
 	DataSource: mock<DataSource>(),
 }));
 

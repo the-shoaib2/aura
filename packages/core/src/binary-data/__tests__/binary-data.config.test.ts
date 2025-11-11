@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 
 import { InstanceSettings } from '@/instance-settings';
 import { mockInstance } from '@test/utils';
@@ -6,7 +6,7 @@ import { mockInstance } from '@test/utils';
 import { BinaryDataConfig } from '../binary-data.config';
 
 describe('BinaryDataConfig', () => {
-	const n8nFolder = '/test/n8n';
+	const auraFolder = '/test/aura';
 	const encryptionKey = 'test-encryption-key';
 	console.warn = jest.fn().mockImplementation(() => {});
 
@@ -17,7 +17,7 @@ describe('BinaryDataConfig', () => {
 		process.env = {};
 		jest.resetAllMocks();
 		Container.reset();
-		mockInstance(InstanceSettings, { encryptionKey, n8nFolder });
+		mockInstance(InstanceSettings, { encryptionKey, auraFolder });
 	});
 
 	it('should use default values when no env variables are defined', () => {
@@ -25,14 +25,14 @@ describe('BinaryDataConfig', () => {
 
 		expect(config.availableModes).toEqual(['filesystem']);
 		expect(config.mode).toBe('default');
-		expect(config.localStoragePath).toBe('/test/n8n/binaryData');
+		expect(config.localStoragePath).toBe('/test/aura/binaryData');
 	});
 
 	it('should use values from env variables when defined', () => {
-		process.env.N8N_AVAILABLE_BINARY_DATA_MODES = 'filesystem,s3';
-		process.env.N8N_DEFAULT_BINARY_DATA_MODE = 's3';
-		process.env.N8N_BINARY_DATA_STORAGE_PATH = '/custom/storage/path';
-		process.env.N8N_BINARY_DATA_SIGNING_SECRET = 'super-secret';
+		process.env.aura_AVAILABLE_BINARY_DATA_MODES = 'filesystem,s3';
+		process.env.aura_DEFAULT_BINARY_DATA_MODE = 's3';
+		process.env.aura_BINARY_DATA_STORAGE_PATH = '/custom/storage/path';
+		process.env.aura_BINARY_DATA_SIGNING_SECRET = 'super-secret';
 
 		const config = Container.get(BinaryDataConfig);
 
@@ -49,24 +49,24 @@ describe('BinaryDataConfig', () => {
 	});
 
 	it('should fallback to default for mode', () => {
-		process.env.N8N_DEFAULT_BINARY_DATA_MODE = 'invalid-mode';
+		process.env.aura_DEFAULT_BINARY_DATA_MODE = 'invalid-mode';
 
 		const config = Container.get(BinaryDataConfig);
 
 		expect(config.mode).toEqual('default');
 		expect(console.warn).toHaveBeenCalledWith(
-			expect.stringContaining('Invalid value for N8N_DEFAULT_BINARY_DATA_MODE'),
+			expect.stringContaining('Invalid value for aura_DEFAULT_BINARY_DATA_MODE'),
 		);
 	});
 
 	it('should fallback to default for available modes', () => {
-		process.env.N8N_AVAILABLE_BINARY_DATA_MODES = 'filesystem,invalid-mode,s3';
+		process.env.aura_AVAILABLE_BINARY_DATA_MODES = 'filesystem,invalid-mode,s3';
 
 		const config = Container.get(BinaryDataConfig);
 
 		expect(config.availableModes).toEqual(['filesystem']);
 		expect(console.warn).toHaveBeenCalledWith(
-			expect.stringContaining('Invalid value for N8N_AVAILABLE_BINARY_DATA_MODES'),
+			expect.stringContaining('Invalid value for aura_AVAILABLE_BINARY_DATA_MODES'),
 		);
 	});
 });

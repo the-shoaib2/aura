@@ -8,7 +8,7 @@ import type {
 	INodeTypes,
 	IWorkflowExecuteAdditionalData,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { LoadOptionsContext } from '../load-options-context';
 

@@ -5,7 +5,7 @@ import ExternalSecretsProviderConnectionSwitch from './ExternalSecretsProviderCo
 import { useExternalSecretsStore } from '../externalSecrets.ee.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useToast } from '@/app/composables/useToast';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useExternalSecretsProvider } from '@/features/integrations/externalSecrets.ee/composables/useExternalSecretsProvider';
 import { EXTERNAL_SECRETS_PROVIDER_MODAL_KEY } from '@/app/constants';
 import { DateTime } from 'luxon';
@@ -19,7 +19,7 @@ import {
 	N8nCard,
 	N8nIcon,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const props = defineProps<{
 	provider: ExternalSecretsProvider;
 }>();

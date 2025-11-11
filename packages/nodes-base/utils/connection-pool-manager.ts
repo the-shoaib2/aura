@@ -1,5 +1,5 @@
 import { createHash } from 'crypto';
-import { OperationalError, type Logger } from 'n8n-workflow';
+import { OperationalError, type Logger } from 'workflow';
 
 let instance: ConnectionPoolManager;
 

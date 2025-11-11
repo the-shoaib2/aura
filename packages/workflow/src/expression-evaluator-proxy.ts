@@ -1,4 +1,4 @@
-import { Tournament } from '@n8n/tournament';
+import { Tournament } from '@aura/tournament';
 
 import { DollarSignValidator, PrototypeSanitizer } from './expression-sandboxing';
 

@@ -1,5 +1,5 @@
-import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { INodeType, INodeTypeDescription } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { binFields, binOperations } from './BinDescription';
 import { requestFields, requestOperations } from './RequestDescription';

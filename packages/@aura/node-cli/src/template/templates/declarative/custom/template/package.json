@@ -1,0 +1,48 @@
+{
+    "name": "{{nodePackageName}}",
+    "version": "0.1.0",
+    "description": "",
+    "license": "MIT",
+    "homepage": "",
+    "keywords": [
+        "aura-community-node-package"
+    ],
+    "author": {
+        "name": "{{user.name}}",
+        "email": "{{user.email}}"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/<...>/aura-nodes-<...>.git"
+    },
+   "scripts": {
+		"build": "aura-node build",
+		"build:watch": "tsc --watch",
+		"dev": "aura-node dev",
+		"lint": "aura-node lint",
+        "lint:fix": "aura-node lint --fix",
+		"release": "aura-node release",
+		"prepublishOnly": "aura-node prerelease"
+	},
+    "files": [
+        "dist"
+    ],
+    "aura": {
+        "auraNodesApiVersion": 1,
+        "strict": true,
+        "credentials": [],
+        "nodes": [
+            "dist/nodes/Example/Example.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@aura/node-cli": "*",
+        "eslint": "9.32.0",
+        "prettier": "3.6.2",
+        "release-it": "^19.0.4",
+        "typescript": "5.9.2"
+    },
+    "peerDependencies": {
+        "workflow": "*"
+    }
+}

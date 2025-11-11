@@ -8,7 +8,7 @@ import ParameterOptions from './ParameterOptions.vue';
 import FromAiOverrideButton from './ParameterInputOverrides/FromAiOverrideButton.vue';
 import FromAiOverrideField from './ParameterInputOverrides/FromAiOverrideField.vue';
 import ParameterOverrideSelectableList from './ParameterInputOverrides/ParameterOverrideSelectableList.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { getMappedResult } from '@/app/utils/mappingUtils';
@@ -17,13 +17,13 @@ import {
 	hasOnlyListMode,
 	isValueExpression,
 } from '@/app/utils/nodeTypesUtils';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import {
 	isResourceLocatorValue,
 	type INodeProperties,
 	type IParameterLabel,
 	type NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	buildValueFromOverride,
 	type FromAIOverride,
@@ -35,7 +35,7 @@ import { useTelemetry } from '@/app/composables/useTelemetry';
 import { inject } from 'vue';
 import { ExpressionLocalResolveContextSymbol } from '@/app/constants';
 
-import { N8nInputLabel } from '@n8n/design-system';
+import { N8nInputLabel } from '@aura/design-system';
 type Props = {
 	parameter: INodeProperties;
 	path: string;
@@ -268,7 +268,7 @@ const showOverrideButton = computed(
 watch(
 	() => props.isReadOnly,
 	(isReadOnly) => {
-		// Patch fix, see https://linear.app/n8n/issue/ADO-2974/resource-mapper-values-are-emptied-when-refreshing-the-columns
+		// Patch fix, see https://linear.app/aura/issue/ADO-2974/resource-mapper-values-are-emptied-when-refreshing-the-columns
 		if (isReadOnly && props.parameter.disabledOptions !== undefined) {
 			valueChanged({ name: props.path, value: props.parameter.default });
 		}

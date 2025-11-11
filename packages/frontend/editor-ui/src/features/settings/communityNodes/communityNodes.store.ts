@@ -1,8 +1,8 @@
-import * as communityNodesApi from '@n8n/rest-api-client/api/communityNodes';
+import * as communityNodesApi from '@aura/rest-api-client/api/communityNodes';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import type { PublicInstalledPackage } from 'n8n-workflow';
-import { STORES } from '@n8n/stores';
+import { useRootStore } from '@aura/stores/useRootStore';
+import type { PublicInstalledPackage } from 'workflow';
+import { STORES } from '@aura/stores';
 import { computed, ref } from 'vue';
 import { isAuthenticated } from '@/app/utils/rbac/checks';
 import type { CommunityPackageMap } from './communityNodes.types';

@@ -3,8 +3,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 import pgPromise from 'pg-promise';
 
 import {
@@ -20,7 +20,7 @@ export class CrateDb implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'CrateDB',
 		name: 'crateDb',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:cratedb.png',
 		group: ['input'],
 		version: 1,
@@ -88,7 +88,7 @@ export class CrateDb implements INodeType {
 				placeholder: 'SELECT id, name FROM product WHERE quantity > $1 AND price <= $2',
 				required: true,
 				description:
-					'The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters.',
+					'The SQL query to execute. You can use aura expressions or $1 and $2 in conjunction with query parameters.',
 			},
 
 			// ----------------------------------
@@ -175,7 +175,7 @@ export class CrateDb implements INodeType {
 				},
 				default: 'id',
 				required: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 				description:
 					'Comma-separated list of the properties which decides which rows in the database should be updated. Normally that would be "id".',
 			},
@@ -237,7 +237,7 @@ export class CrateDb implements INodeType {
 						],
 						default: 'multiple',
 						description:
-							'The way queries should be sent to database. Can be used in conjunction with <b>Continue on Fail</b>. See <a href="https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cratedb/">the docs</a> for more examples.',
+							'The way queries should be sent to database. Can be used in conjunction with <b>Continue on Fail</b>. See <a href="https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.cratedb/">the docs</a> for more examples.',
 					},
 					{
 						displayName: 'Query Parameters',
@@ -353,7 +353,7 @@ export class CrateDb implements INodeType {
 				const where =
 					' WHERE ' +
 					updateKeys
-						// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+						// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 						.map((updateKey) => pgp.as.name(updateKey) + ' = ${' + updateKey + '}')
 						.join(' AND ');
 				// updateKeyValue = item.json[updateKey] as string | number;

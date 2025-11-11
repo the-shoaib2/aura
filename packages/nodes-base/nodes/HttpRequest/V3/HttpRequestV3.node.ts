@@ -13,7 +13,7 @@ import type {
 	IRequestOptions,
 	IHttpRequestMethods,
 	ICredentialDataDecryptedObject,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	BINARY_ENCODING,
 	NodeApiError,
@@ -23,7 +23,7 @@ import {
 	removeCircularRefs,
 	sleep,
 	isDomainAllowed,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { Readable } from 'stream';
 
 import { keysToLowercase } from '@utils/utilities';

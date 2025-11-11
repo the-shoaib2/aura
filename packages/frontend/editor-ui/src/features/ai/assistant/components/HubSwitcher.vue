@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed } from 'vue';
 
-import { N8nRadioButtons } from '@n8n/design-system';
+import { N8nRadioButtons } from '@aura/design-system';
 defineProps<{
 	isBuildMode: boolean;
 }>();

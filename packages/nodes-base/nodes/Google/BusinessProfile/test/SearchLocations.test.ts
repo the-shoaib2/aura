@@ -1,4 +1,4 @@
-import type { ILoadOptionsFunctions } from 'n8n-workflow';
+import type { ILoadOptionsFunctions } from 'workflow';
 
 import { searchLocations } from '../GenericFunctions';
 
@@ -28,7 +28,7 @@ describe('GenericFunctions - searchLocations', () => {
 		const result = await searchLocations.call(mockContext, filter);
 
 		expect(result).toEqual({
-			// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+			// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 			results: [{ name: 'locations/123', value: 'locations/123' }],
 			paginationToken: undefined,
 		});
@@ -60,7 +60,7 @@ describe('GenericFunctions - searchLocations', () => {
 		// The request would only return the last result
 		// N8N handles the pagination and adds the previous results to the results array
 		expect(result).toEqual({
-			// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+			// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 			results: [{ name: 'locations/345', value: 'locations/345' }],
 			paginationToken: undefined,
 		});

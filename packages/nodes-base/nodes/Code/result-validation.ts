@@ -1,4 +1,4 @@
-import type { INodeExecutionData } from 'n8n-workflow';
+import type { INodeExecutionData } from 'workflow';
 
 import { ReservedKeyFoundError } from './reserved-key-found-error';
 import { isObject } from './utils';
@@ -139,10 +139,10 @@ export function validateRunCodeAllItems(
 
 	if (Array.isArray(executionResult)) {
 		/**
-		 * If at least one top-level key is an n8n item key (`json`, `binary`, etc.),
-		 * then require all item keys to be an n8n item key.
+		 * If at least one top-level key is an aura item key (`json`, `binary`, etc.),
+		 * then require all item keys to be an aura item key.
 		 *
-		 * If no top-level key is an n8n key, then skip this check, allowing non-n8n
+		 * If no top-level key is an aura key, then skip this check, allowing non-aura
 		 * item keys to be wrapped in `json` when normalizing items below.
 		 */
 		for (const item of executionResult) {

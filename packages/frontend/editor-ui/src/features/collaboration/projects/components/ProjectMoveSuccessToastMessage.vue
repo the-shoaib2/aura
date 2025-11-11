@@ -3,9 +3,9 @@ import { computed } from 'vue';
 import { ResourceType, getTruncatedProjectName } from '../projects.utils';
 import type { ProjectListItem } from '../projects.types';
 import { ProjectTypes } from '../projects.types';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nText } from '@n8n/design-system';
+import { N8nText } from '@aura/design-system';
 const props = defineProps<{
 	routeName: string;
 	resourceType: ResourceType;

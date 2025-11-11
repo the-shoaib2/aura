@@ -1,5 +1,5 @@
-import type { AuthenticatedRequest, TagEntity, WorkflowEntity } from '@n8n/db';
-import type { ExecutionStatus, ICredentialDataDecryptedObject } from 'n8n-workflow';
+import type { AuthenticatedRequest, TagEntity, WorkflowEntity } from '@aura/db';
+import type { ExecutionStatus, ICredentialDataDecryptedObject } from 'workflow';
 
 import type { AuthlessRequest } from '@/requests';
 import type { Risk } from '@/security-audit/types';

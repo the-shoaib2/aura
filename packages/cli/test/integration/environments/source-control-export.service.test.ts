@@ -1,5 +1,5 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import { createTeamProject, mockInstance, testDb } from '@n8n/backend-test-utils';
+import type { SourceControlledFile } from '@aura/api-types';
+import { createTeamProject, mockInstance, testDb } from '@aura/backend-test-utils';
 import {
 	CredentialsEntity,
 	CredentialsRepository,
@@ -8,9 +8,9 @@ import {
 	ProjectRepository,
 	SharedCredentialsRepository,
 	type User,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { Cipher, InstanceSettings } from 'n8n-core';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { Cipher, InstanceSettings } from 'aura-core';
 import { writeFile as fsWriteFile } from 'node:fs/promises';
 import path from 'node:path';
 import { v4 as uuid } from 'uuid';
@@ -61,7 +61,7 @@ describe('SourceControlExportService Integration', () => {
 
 		// Mock the instance settings to use our test directory
 		mockInstance(InstanceSettings, {
-			n8nFolder: exportDirectory,
+			auraFolder: exportDirectory,
 		});
 
 		// Get the service from container (this will use real dependencies)

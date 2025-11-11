@@ -7,8 +7,8 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	IPairedItemData,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 
@@ -57,7 +57,7 @@ const properties: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						description: 'The name of a field in the input items to aggregate together',
-						// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+						// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 						placeholder: 'e.g. id',
 						hint: ' Enter the field name as text',
 						requiresDataPath: 'single',

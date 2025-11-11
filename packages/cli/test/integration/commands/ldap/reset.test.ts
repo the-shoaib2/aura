@@ -5,15 +5,15 @@ import {
 	mockInstance,
 	createWorkflow,
 	randomCredentialPayload,
-} from '@n8n/backend-test-utils';
+} from '@aura/backend-test-utils';
 import {
 	CredentialsRepository,
 	SharedCredentialsRepository,
 	SharedWorkflowRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { EntityNotFoundError } from '@n8n/typeorm';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { EntityNotFoundError } from '@aura/typeorm';
 import { v4 as uuid } from 'uuid';
 
 import { Reset } from '@/commands/ldap/reset';

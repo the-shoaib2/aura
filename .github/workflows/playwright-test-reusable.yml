@@ -15,7 +15,7 @@ on:
       test-command:
         description: 'Test command to run'
         required: false
-        default: 'pnpm --filter=n8n-playwright test:local'
+        default: 'pnpm --filter=aura-playwright test:local'
         type: string
       shards:
         description: 'Shards for parallel execution'
@@ -25,7 +25,7 @@ on:
       docker-image:
         description: 'Docker image to use (for docker-pull mode)'
         required: false
-        default: 'n8nio/n8n:nightly'
+        default: 'auraio/aura:nightly'
         type: string
       workers:
         description: 'Number of parallel workers'
@@ -80,7 +80,7 @@ jobs:
 
       - name: Prepare Test Image
         if: inputs.test-mode == 'docker-pull'
-        run: pnpm --filter=n8n-playwright prepare-test-image ${{ inputs.docker-image }}
+        run: pnpm --filter=aura-playwright prepare-test-image ${{ inputs.docker-image }}
 
       - name: Run Tests
         run: |
@@ -88,7 +88,7 @@ jobs:
             --shard=${{ matrix.shard }}/${{ strategy.job-total }} \
             --workers=${{ env.PLAYWRIGHT_WORKERS }}
         env:
-          N8N_DOCKER_IMAGE: ${{ inputs.test-mode == 'docker-build' && 'n8nio/n8n:local' || inputs.docker-image }}
+          N8N_DOCKER_IMAGE: ${{ inputs.test-mode == 'docker-build' && 'auraio/aura:local' || inputs.docker-image }}
           CURRENTS_RECORD_KEY: ${{ secrets.CURRENTS_RECORD_KEY }}
           QA_PERFORMANCE_METRICS_WEBHOOK_URL: ${{ secrets.QA_PERFORMANCE_METRICS_WEBHOOK_URL }}
           QA_PERFORMANCE_METRICS_WEBHOOK_USER: ${{ secrets.QA_PERFORMANCE_METRICS_WEBHOOK_USER }}

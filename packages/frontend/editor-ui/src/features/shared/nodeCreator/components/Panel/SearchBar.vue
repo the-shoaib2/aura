@@ -2,7 +2,7 @@
 import { onMounted, reactive, toRefs, onBeforeUnmount } from 'vue';
 import { useExternalHooks } from '@/app/composables/useExternalHooks';
 
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@aura/design-system';
 export interface Props {
 	placeholder?: string;
 	modelValue?: string;

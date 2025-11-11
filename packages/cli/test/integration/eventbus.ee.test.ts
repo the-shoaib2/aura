@@ -1,17 +1,17 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GLOBAL_OWNER_ROLE, type User } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GLOBAL_OWNER_ROLE, type User } from '@aura/db';
+import { Container } from '@aura/di';
 import axios from 'axios';
 import type {
 	MessageEventBusDestinationSentryOptions,
 	MessageEventBusDestinationSyslogOptions,
 	MessageEventBusDestinationWebhookOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	defaultMessageEventBusDestinationSentryOptions,
 	defaultMessageEventBusDestinationSyslogOptions,
 	defaultMessageEventBusDestinationWebhookOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 import syslog from 'syslog-client';
 import { v4 as uuid } from 'uuid';
 
@@ -46,7 +46,7 @@ const testSyslogDestination: MessageEventBusDestinationSyslogOptions = {
 	protocol: 'udp',
 	label: 'Test Syslog',
 	enabled: false,
-	subscribedEvents: ['n8n.test.message', 'n8n.audit.user.updated'],
+	subscribedEvents: ['aura.test.message', 'aura.audit.user.updated'],
 };
 
 const testWebhookDestination: MessageEventBusDestinationWebhookOptions = {
@@ -56,7 +56,7 @@ const testWebhookDestination: MessageEventBusDestinationWebhookOptions = {
 	method: 'POST',
 	label: 'Test Webhook',
 	enabled: false,
-	subscribedEvents: ['n8n.test.message', 'n8n.audit.user.updated'],
+	subscribedEvents: ['aura.test.message', 'aura.audit.user.updated'],
 };
 
 const testSentryDestination: MessageEventBusDestinationSentryOptions = {
@@ -65,7 +65,7 @@ const testSentryDestination: MessageEventBusDestinationSentryOptions = {
 	dsn: 'http://localhost:3000',
 	label: 'Test Sentry',
 	enabled: false,
-	subscribedEvents: ['n8n.test.message', 'n8n.audit.user.updated'],
+	subscribedEvents: ['aura.test.message', 'aura.audit.user.updated'],
 };
 
 let eventBus: MessageEventBus;
@@ -110,7 +110,7 @@ test('should have a running logwriter process', () => {
 
 test('should have logwriter log messages', async () => {
 	const testMessage = new EventMessageGeneric({
-		eventName: 'n8n.test.message' as EventNamesTypes,
+		eventName: 'aura.test.message' as EventNamesTypes,
 		id: uuid(),
 	});
 	await eventBus.send(testMessage);
@@ -169,7 +169,7 @@ describe('POST /eventbus/destination', () => {
 
 test('should anonymize audit message to syslog ', async () => {
 	const testAuditMessage = new EventMessageAudit({
-		eventName: 'n8n.audit.user.updated',
+		eventName: 'aura.audit.user.updated',
 		payload: {
 			_secret: 'secret',
 			public: 'public',
@@ -234,7 +234,7 @@ test('should anonymize audit message to syslog ', async () => {
 
 test('should send message to webhook ', async () => {
 	const testMessage = new EventMessageGeneric({
-		eventName: 'n8n.test.message' as EventNamesTypes,
+		eventName: 'aura.test.message' as EventNamesTypes,
 		id: uuid(),
 	});
 
@@ -268,7 +268,7 @@ test('should send message to webhook ', async () => {
 
 test('should send message to sentry ', async () => {
 	const testMessage = new EventMessageGeneric({
-		eventName: 'n8n.test.message' as EventNamesTypes,
+		eventName: 'aura.test.message' as EventNamesTypes,
 		id: uuid(),
 	});
 

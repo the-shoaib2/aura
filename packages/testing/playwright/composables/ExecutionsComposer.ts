@@ -1,10 +1,10 @@
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 /**
  * A class for user interactions with workflow executions that go across multiple pages.
  */
 export class ExecutionsComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Creates workflow executions by executing the workflow multiple times.
@@ -14,18 +14,18 @@ export class ExecutionsComposer {
 	 * @param count - Number of executions to create
 	 * @example
 	 * // Create 10 executions
-	 * await n8n.executionsComposer.createExecutions(10);
+	 * await aura.executionsComposer.createExecutions(10);
 	 */
 	async createExecutions(count: number): Promise<void> {
 		for (let i = 0; i < count; i++) {
-			const responsePromise = this.n8n.page.waitForResponse(
+			const responsePromise = this.aura.page.waitForResponse(
 				(response) =>
 					response.url().includes('/rest/workflows/') &&
 					response.url().includes('/run') &&
 					response.request().method() === 'POST',
 			);
 
-			await this.n8n.canvas.clickExecuteWorkflowButton();
+			await this.aura.canvas.clickExecuteWorkflowButton();
 			await responsePromise;
 		}
 	}
@@ -39,19 +39,19 @@ export class ExecutionsComposer {
 	 * @returns The parsed request body from the workflow run API call
 	 * @example
 	 * // Execute a node and verify payload structure
-	 * const payload = await n8n.executionsComposer.executeNodeAndCapturePayload('Process The Data');
+	 * const payload = await aura.executionsComposer.executeNodeAndCapturePayload('Process The Data');
 	 * expect(payload).toHaveProperty('runData');
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	async executeNodeAndCapturePayload(nodeName: string): Promise<any> {
-		const workflowRunPromise = this.n8n.page.waitForRequest(
+		const workflowRunPromise = this.aura.page.waitForRequest(
 			(request) =>
 				request.url().includes('/rest/workflows/') &&
 				request.url().includes('/run') &&
 				request.method() === 'POST',
 		);
 
-		await this.n8n.canvas.executeNode(nodeName);
+		await this.aura.canvas.executeNode(nodeName);
 
 		const workflowRunRequest = await workflowRunPromise;
 		return workflowRunRequest.postDataJSON();

@@ -11,7 +11,7 @@ import SqlEditor from '@/features/shared/editors/components/SqlEditor/SqlEditor.
 import { useFocusPanelStore } from '@/app/stores/focusPanel.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { computed, nextTick, ref, watch, toRef, useTemplateRef } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import {
 	formatAsExpression,
 	getParameterTypeOption,
@@ -22,7 +22,7 @@ import { isValueExpression } from '@/app/utils/nodeTypesUtils';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import { useNodeSettingsParameters } from '@/features/ndv/settings/composables/useNodeSettingsParameters';
 import { useResolvedExpression } from '@/app/composables/useResolvedExpression';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
+import { useDeviceSupport } from '@aura/composables/useDeviceSupport';
 import {
 	AI_TRANSFORM_NODE_TYPE,
 	type CodeExecutionMode,
@@ -31,7 +31,7 @@ import {
 	HTML_NODE_TYPE,
 	type INodeProperties,
 	isResourceLocatorValue,
-} from 'n8n-workflow';
+} from 'workflow';
 import { useEnvironmentsStore } from '@/features/settings/environments.ee/environments.store';
 import { htmlEditorEventBus } from '@/app/event-bus';
 import { hasFocusOnInput, isFocusableEl } from '@/app/utils/typesUtils';
@@ -57,7 +57,7 @@ import {
 	N8nRadioButtons,
 	N8nResizeWrapper,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 defineOptions({ name: 'FocusPanel' });
 

@@ -41,7 +41,7 @@
 						"id": "toolu_018fLJaxzXmoEUEwW8GNqLih",
 						"name": "add_nodes",
 						"input": {
-							"nodeType": "@n8n/n8n-nodes-langchain.chainLlm",
+							"nodeType": "@aura/aura-nodes-langchain.chainLlm",
 							"name": "Generate Chapters with AI",
 							"connectionParametersReasoning": "Basic LLM Chain has dynamic inputs based on hasOutputParser parameter. Since we don't need output parser for this use case, setting hasOutputParser to false to only accept main input and language model connection.",
 							"connectionParameters": {

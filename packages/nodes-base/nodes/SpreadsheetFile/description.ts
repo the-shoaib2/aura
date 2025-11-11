@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const operationProperty: INodeProperties = {
 	displayName: 'Operation',
@@ -272,7 +272,7 @@ export const fromFileOptions: INodeProperties = {
 			name: 'readAsString',
 			type: 'boolean',
 			default: false,
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+			// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 			description:
 				'In some cases and file formats, it is necessary to read as string to ensure special characters are interpreted correctly',
 		},

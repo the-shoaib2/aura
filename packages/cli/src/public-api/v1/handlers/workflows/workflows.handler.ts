@@ -1,10 +1,10 @@
-import { GlobalConfig } from '@n8n/config';
-import { WorkflowEntity, ProjectRepository, TagRepository, WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In, Like, QueryFailedError } from '@n8n/typeorm';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { FindOptionsWhere } from '@n8n/typeorm';
+import { GlobalConfig } from '@aura/config';
+import { WorkflowEntity, ProjectRepository, TagRepository, WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In, Like, QueryFailedError } from '@aura/typeorm';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { FindOptionsWhere } from '@aura/typeorm';
 import type express from 'express';
 import { v4 as uuid } from 'uuid';
 import { z } from 'zod';

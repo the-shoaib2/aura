@@ -7,7 +7,7 @@ import type {
 	ExecutionOutputMap,
 } from '@/features/workflows/canvas/canvas.types';
 import type { INodeUi, IWorkflowDb } from '@/Interface';
-import { NodeDiffStatus, type IConnections } from 'n8n-workflow';
+import { NodeDiffStatus, type IConnections } from 'workflow';
 import { useCanvasMapping } from '@/features/workflows/canvas/composables/useCanvasMapping';
 
 // Mock modules at top level

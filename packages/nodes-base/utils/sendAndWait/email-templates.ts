@@ -9,7 +9,7 @@ export const ACTION_RECORDED_PAGE = `
 	<head>
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-		<link rel='icon' type='image/png' href='https://n8n.io/favicon.ico' />
+		<link rel='icon' type='image/png' href='https://aura.io/favicon.ico' />
 		<link
 			href='https://fonts.googleapis.com/css?family=Open+Sans'
 			rel='stylesheet'
@@ -22,8 +22,8 @@ export const ACTION_RECORDED_PAGE = `
 			column; justify-content: start; background-color: #FBFCFE; } .container { margin: auto;
 			text-align: center; padding-top: 24px; width: 448px; } .card { padding: 24px;
 			background-color: white; border: 1px solid #DBDFE7; border-radius: 8px; box-shadow: 0px 4px
-			16px 0px #634DFF0F; margin-bottom: 16px; } .n8n-link a { color: #7E8186; font-weight: 600;
-			font-size: 12px; text-decoration: none; } .n8n-link svg { display: inline-block;
+			16px 0px #634DFF0F; margin-bottom: 16px; } .aura-link a { color: #7E8186; font-weight: 600;
+			font-size: 12px; text-decoration: none; } .aura-link svg { display: inline-block;
 			vertical-align: middle; } .header h1 { color: #525356; font-size: 20px; font-weight: 400;
 			padding-bottom: 8px; } .header p { color: #7E8186; font-size: 14px; font-weight: 400; }
 		</style>
@@ -38,9 +38,9 @@ export const ACTION_RECORDED_PAGE = `
 						<p>This page can be closed now</p>
 					</div>
 				</div>
-				<div class='n8n-link'>
+				<div class='aura-link'>
 					<a
-						href='https://n8n.io/?utm_source=n8n-internal&amp;utm_medium=send-and-wait'
+						href='https://aura.io/?utm_source=aura-internal&amp;utm_medium=send-and-wait'
 						target='_blank'
 					>
 						Automated with
@@ -85,7 +85,7 @@ export function createEmailBodyWithN8nAttribution(
 	instanceId?: string,
 ) {
 	const utm_campaign = instanceId ? `&utm_campaign=${instanceId}` : '';
-	const n8nWebsiteLink = `https://n8n.io/?utm_source=n8n-internal&utm_medium=send-and-wait${utm_campaign}`;
+	const auraWebsiteLink = `https://aura.io/?utm_source=aura-internal&utm_medium=send-and-wait${utm_campaign}`;
 	return `
 <!DOCTYPE html>
 <html lang='en'>
@@ -129,9 +129,9 @@ export function createEmailBodyWithN8nAttribution(
 					style="text-align: center; color: #7e8186; font-family: Arial, sans-serif; font-size: 12px;">
 					<tr>
 						<td>
-							<a href=${n8nWebsiteLink}
+							<a href=${auraWebsiteLink}
 								target="_blank" style="color: #7e8186; text-decoration: none;">Automated with
-								n8n</a>
+								aura</a>
 						</td>
 					</tr>
 				</table>

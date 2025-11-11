@@ -2,14 +2,14 @@ import { createTestingPinia } from '@pinia/testing';
 import { createComponentRenderer } from '@/__tests__/render';
 import FromAiParametersModal from '@/app/components/FromAiParametersModal.vue';
 import { FROM_AI_PARAMETERS_MODAL_KEY, AI_MCP_TOOL_NODE_TYPE } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import userEvent from '@testing-library/user-event';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useAgentRequestStore } from '@n8n/stores/useAgentRequestStore';
+import { useAgentRequestStore } from '@aura/stores/useAgentRequestStore';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useRouter } from 'vue-router';
-import type { Workflow } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { Workflow } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { nextTick } from 'vue';
 import { mock } from 'vitest-mock-extended';
@@ -34,7 +34,7 @@ vi.mocked(useRouter);
 const mockNode = {
 	id: 'id1',
 	name: 'Test Node',
-	type: 'n8n-nodes-base.ai-tool',
+	type: 'aura-nodes-base.ai-tool',
 	parameters: {
 		testBoolean: "={{ $fromAI('testBoolean', ``, 'boolean') }}",
 		testParam: "={{ $fromAi('testParam',  ``, 'string') }}",

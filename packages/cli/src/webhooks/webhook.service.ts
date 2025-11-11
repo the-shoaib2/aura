@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import type { WebhookEntity } from '@n8n/db';
-import { WebhookRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { HookContext, WebhookContext } from 'n8n-core';
-import { Node, NodeHelpers, UnexpectedError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import type { WebhookEntity } from '@aura/db';
+import { WebhookRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { HookContext, WebhookContext } from 'aura-core';
+import { Node, NodeHelpers, UnexpectedError } from 'workflow';
 import type {
 	IHttpRequestMethods,
 	INode,
@@ -15,7 +15,7 @@ import type {
 	Workflow,
 	WorkflowActivateMode,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { NodeTypes } from '@/node-types';
 import { CacheService } from '@/services/cache/cache.service';

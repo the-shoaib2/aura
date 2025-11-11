@@ -1,7 +1,7 @@
 import type { RouteLocationNormalized, RouteRecordRaw } from 'vue-router';
 import { VIEWS } from '@/app/constants';
 import { useProjectsStore } from './projects.store';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 
 const MainSidebar = async () => await import('@/app/components/MainSidebar.vue');
 const WorkflowsView = async () => await import('@/app/views/WorkflowsView.vue');

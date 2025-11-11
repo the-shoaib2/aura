@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { TIMEZONE_VALIDATION_REGEX } from './GenericFunctions';
 
@@ -119,7 +119,7 @@ export const calendarFields: INodeProperties[] = [
 		},
 		default: '={{ $now }}',
 		description:
-			'Start of the interval, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+			'Start of the interval, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 	},
 	{
 		displayName: 'End Time',
@@ -135,7 +135,7 @@ export const calendarFields: INodeProperties[] = [
 		},
 		default: "={{ $now.plus(1, 'hour') }}",
 		description:
-			'End of the interval, use <a href="https://docs.n8n.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
+			'End of the interval, use <a href="https://docs.aura.io/code/cookbook/luxon/" target="_blank">expression</a> to set a date, or switch to fixed mode to choose date from widget',
 	},
 	{
 		displayName: 'Options',
@@ -179,7 +179,7 @@ export const calendarFields: INodeProperties[] = [
 				name: 'timezone',
 				type: 'resourceLocator',
 				default: { mode: 'list', value: '' },
-				description: 'Time zone used in the response. By default n8n timezone is used.',
+				description: 'Time zone used in the response. By default aura timezone is used.',
 				modes: [
 					{
 						displayName: 'Timezone',

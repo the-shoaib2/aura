@@ -7,8 +7,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import type { EntryType } from './EntryType';
 import { EntryTypes } from './EntryType';
@@ -42,14 +42,14 @@ export class ClockifyTrigger implements INodeType {
 				name: 'workspaceId',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'listWorkspaces',
 				},
 				required: true,
 				default: '',
 			},
-			// eslint-disable-next-line n8n-nodes-base/node-param-default-missing
+			// eslint-disable-next-line aura-nodes-base/node-param-default-missing
 			{
 				displayName: 'Trigger',
 				name: 'watchField',

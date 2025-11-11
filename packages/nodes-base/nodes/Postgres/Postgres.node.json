@@ -1,49 +1,49 @@
 {
-	"node": "n8n-nodes-base.postgres",
+	"node": "aura-nodes-base.postgres",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/postgres/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/postgres/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.postgres/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Love at first sight: Ricardo’s n8n journey",
+				"label": "Love at first sight: Ricardo’s aura journey",
 				"icon": "❤️",
-				"url": "https://n8n.io/blog/love-at-first-sight-ricardos-n8n-journey/"
+				"url": "https://aura.io/blog/love-at-first-sight-ricardos-aura-journey/"
 			},
 			{
-				"label": "Why I chose n8n over Zapier in 2020",
+				"label": "Why I chose aura over Zapier in 2020",
 				"icon": "😍",
-				"url": "https://n8n.io/blog/why-i-chose-n8n-over-zapier-in-2020/"
+				"url": "https://aura.io/blog/why-i-chose-aura-over-zapier-in-2020/"
 			},
 			{
-				"label": "Database Monitoring and Alerting with n8n",
+				"label": "Database Monitoring and Alerting with aura",
 				"icon": "📡",
-				"url": "https://n8n.io/blog/database-monitoring-and-alerting-with-n8n/"
+				"url": "https://aura.io/blog/database-monitoring-and-alerting-with-aura/"
 			},
 			{
-				"label": "Running n8n on ships: An interview with Maranics",
+				"label": "Running aura on ships: An interview with Maranics",
 				"icon": "🛳",
-				"url": "https://n8n.io/blog/running-n8n-on-ships-an-interview-with-maranics/"
+				"url": "https://aura.io/blog/running-aura-on-ships-an-interview-with-maranics/"
 			},
 			{
 				"label": "Automate your data processing pipeline in 9 steps",
 				"icon": "⚙️",
-				"url": "https://n8n.io/blog/automate-your-data-processing-pipeline-in-9-steps-with-n8n/"
+				"url": "https://aura.io/blog/automate-your-data-processing-pipeline-in-9-steps-with-aura/"
 			},
 			{
 				"label": "How Honest Burgers Use Automation to Save $100k per year",
 				"icon": "🍔",
-				"url": "https://n8n.io/blog/how-honest-burgers-use-automation-to-save-100k-per-year/"
+				"url": "https://aura.io/blog/how-honest-burgers-use-automation-to-save-100k-per-year/"
 			}
 		]
 	}

@@ -1,9 +1,9 @@
 import { type MaybeRefOrGetter, computed, toValue, watchEffect } from 'vue';
-import { ExpressionExtensions } from 'n8n-workflow';
+import { ExpressionExtensions } from 'workflow';
 import { EditorView, type ViewUpdate } from '@codemirror/view';
 
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useTelemetry } from '../composables/useTelemetry';
 import type { Compartment } from '@codemirror/state';
 import debounce from 'lodash/debounce';

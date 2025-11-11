@@ -3,8 +3,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 export class ErrorTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -27,7 +27,7 @@ export class ErrorTrigger implements INodeType {
 		properties: [
 			{
 				displayName:
-					'This node will trigger when there is an error in another workflow, as long as that workflow is set up to do so. <a href="https://docs.n8n.io/integrations/core-nodes/n8n-nodes-base.errortrigger" target="_blank">More info</a>',
+					'This node will trigger when there is an error in another workflow, as long as that workflow is set up to do so. <a href="https://docs.aura.io/integrations/core-nodes/aura-nodes-base.errortrigger" target="_blank">More info</a>',
 				name: 'notice',
 				type: 'notice',
 				default: '',

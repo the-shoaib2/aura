@@ -579,7 +579,7 @@
                     ]
                   }
                 },
-                "Call n8n Workflow Tool2": {
+                "Call aura Workflow Tool2": {
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -994,7 +994,7 @@
                     ]
                   }
                 },
-                "Call n8n Workflow Tool2": {
+                "Call aura Workflow Tool2": {
                   "type": "array",
                   "items": {
                     "type": "object",

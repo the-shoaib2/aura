@@ -4,11 +4,11 @@ import type {
 	OAuth2CredentialData,
 	OAuth2GrantType,
 	OAuthAuthorizationServerMetadata,
-} from '@n8n/client-oauth2';
-import { ClientOAuth2 } from '@n8n/client-oauth2';
-import { GlobalConfig } from '@n8n/config';
-import { Get, RestController } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+} from '@aura/client-oauth2';
+import { ClientOAuth2 } from '@aura/client-oauth2';
+import { GlobalConfig } from '@aura/config';
+import { Get, RestController } from '@aura/decorators';
+import { Container } from '@aura/di';
 import axios from 'axios';
 import { Response } from 'express';
 import omit from 'lodash/omit';
@@ -19,7 +19,7 @@ import {
 	type ICredentialDataDecryptedObject,
 	jsonParse,
 	jsonStringify,
-} from 'n8n-workflow';
+} from 'workflow';
 import pkceChallenge from 'pkce-challenge';
 import * as qs from 'querystring';
 
@@ -104,8 +104,8 @@ export class OAuth2CredentialController extends AbstractOAuthController {
 				token_endpoint_auth_method,
 				grant_types,
 				response_types: ['code'],
-				client_name: 'n8n',
-				client_uri: 'https://n8n.io/',
+				client_name: 'aura',
+				client_uri: 'https://aura.io/',
 			});
 
 			const { client_id, client_secret } = registerResult;

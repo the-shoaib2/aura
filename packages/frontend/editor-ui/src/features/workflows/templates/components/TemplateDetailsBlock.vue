@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { N8nHeading } from '@n8n/design-system';
+import { N8nHeading } from '@aura/design-system';
 
 defineProps<{
 	title: string;

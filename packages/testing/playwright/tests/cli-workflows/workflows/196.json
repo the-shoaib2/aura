@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "e0188874-3b1d-4dfb-881d-74e79e543722"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "QuickBooks",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, 390],
 			"credentials": {
@@ -36,7 +36,7 @@
 				"customerId": "={{$node[\"QuickBooks\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks1",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, 390],
 			"credentials": {
@@ -56,7 +56,7 @@
 				}
 			},
 			"name": "QuickBooks2",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [750, 390],
 			"credentials": {
@@ -73,7 +73,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks3",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [900, 390],
 			"credentials": {
@@ -93,7 +93,7 @@
 				"additionalFields": {}
 			},
 			"name": "QuickBooks4",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, 240],
 			"credentials": {
@@ -110,7 +110,7 @@
 				"employeeId": "={{$node[\"QuickBooks4\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks5",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, 240],
 			"credentials": {
@@ -131,7 +131,7 @@
 				}
 			},
 			"name": "QuickBooks6",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [750, 240],
 			"credentials": {
@@ -149,7 +149,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks7",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [900, 240],
 			"credentials": {
@@ -176,7 +176,7 @@
 				"additionalFields": {}
 			},
 			"name": "QuickBooks8",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, 540],
 			"credentials": {
@@ -193,7 +193,7 @@
 				"estimateId": "={{$node[\"QuickBooks8\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks9",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, 540],
 			"credentials": {
@@ -214,7 +214,7 @@
 				}
 			},
 			"name": "QuickBooks10",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [750, 540],
 			"credentials": {
@@ -233,7 +233,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks11",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [900, 540],
 			"credentials": {
@@ -252,7 +252,7 @@
 				"email": "fake@test.com"
 			},
 			"name": "QuickBooks12",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [1050, 540],
 			"credentials": {
@@ -270,7 +270,7 @@
 				"estimateId": "={{$node[\"QuickBooks8\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks13",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [1200, 540],
 			"credentials": {
@@ -297,7 +297,7 @@
 				"additionalFields": {}
 			},
 			"name": "QuickBooks14",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, 690],
 			"credentials": {
@@ -314,7 +314,7 @@
 				"invoiceId": "={{$node[\"QuickBooks14\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks15",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, 690],
 			"credentials": {
@@ -333,7 +333,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks16",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [750, 690],
 			"credentials": {
@@ -354,7 +354,7 @@
 				}
 			},
 			"name": "QuickBooks17",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [900, 690],
 			"credentials": {
@@ -373,7 +373,7 @@
 				"email": "fake@test.com"
 			},
 			"name": "QuickBooks18",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [1050, 690],
 			"credentials": {
@@ -391,7 +391,7 @@
 				"invoiceId": "={{$node[\"QuickBooks14\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks19",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [1190, 690],
 			"credentials": {
@@ -408,7 +408,7 @@
 				"itemId": "={{$node[\"QuickBooks21\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks22",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, -60],
 			"credentials": {
@@ -427,7 +427,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks21",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, -60],
 			"credentials": {
@@ -447,7 +447,7 @@
 				"additionalFields": {}
 			},
 			"name": "QuickBooks20",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, 840],
 			"credentials": {
@@ -464,7 +464,7 @@
 				"paymentId": "={{$node[\"QuickBooks20\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks23",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, 840],
 			"credentials": {
@@ -483,7 +483,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks24",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [750, 840],
 			"credentials": {
@@ -504,7 +504,7 @@
 				}
 			},
 			"name": "QuickBooks25",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [900, 840],
 			"credentials": {
@@ -523,7 +523,7 @@
 				"email": "fake@test.com"
 			},
 			"name": "QuickBooks26",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [1050, 840],
 			"credentials": {
@@ -541,7 +541,7 @@
 				"paymentId": "={{$node[\"QuickBooks20\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks27",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [1200, 840],
 			"credentials": {
@@ -560,7 +560,7 @@
 				"additionalFields": {}
 			},
 			"name": "QuickBooks28",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, 90],
 			"credentials": {
@@ -577,7 +577,7 @@
 				"vendorId": "={{$node[\"QuickBooks28\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks29",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, 90],
 			"credentials": {
@@ -596,7 +596,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks30",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [750, 90],
 			"credentials": {
@@ -617,7 +617,7 @@
 				}
 			},
 			"name": "QuickBooks31",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [900, 90],
 			"credentials": {
@@ -644,7 +644,7 @@
 				"additionalFields": {}
 			},
 			"name": "QuickBooks37",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [450, -210],
 			"credentials": {
@@ -661,7 +661,7 @@
 				"billId": "={{$node[\"QuickBooks37\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks38",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [600, -210],
 			"credentials": {
@@ -682,7 +682,7 @@
 				}
 			},
 			"name": "QuickBooks39",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [750, -210],
 			"credentials": {
@@ -701,7 +701,7 @@
 				"filters": {}
 			},
 			"name": "QuickBooks40",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [900, -210],
 			"credentials": {
@@ -719,7 +719,7 @@
 				"billId": "={{$node[\"QuickBooks37\"].json[\"Id\"]}}"
 			},
 			"name": "QuickBooks41",
-			"type": "n8n-nodes-base.quickbooks",
+			"type": "aura-nodes-base.quickbooks",
 			"typeVersion": 1,
 			"position": [1050, -210],
 			"credentials": {

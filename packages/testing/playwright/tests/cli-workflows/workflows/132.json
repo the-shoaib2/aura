@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "d6242130-9d76-4db0-8fc8-5b2cbd24b5fe"
@@ -21,7 +21,7 @@
 				"options": {}
 			},
 			"name": "Mandrill",
-			"type": "n8n-nodes-base.mandrill",
+			"type": "aura-nodes-base.mandrill",
 			"typeVersion": 1,
 			"position": [500, 250],
 			"credentials": {
@@ -38,11 +38,11 @@
 				"fromEmail": "=random{{Date.now()}}@email.test",
 				"toEmail": "=nodeqa{{Date.now()}}@email.test",
 				"options": {
-					"html": "=<h2>This is a the html email from n8n workflow</h2>"
+					"html": "=<h2>This is a the html email from aura workflow</h2>"
 				}
 			},
 			"name": "Mandrill1",
-			"type": "n8n-nodes-base.mandrill",
+			"type": "aura-nodes-base.mandrill",
 			"typeVersion": 1,
 			"position": [500, 400],
 			"credentials": {

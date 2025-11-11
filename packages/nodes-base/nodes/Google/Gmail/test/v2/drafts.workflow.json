@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-60, 100],
 			"id": "636b40bc-2c98-4b9a-8ce2-9d1322294518",
@@ -16,7 +16,7 @@
 				"messageId": "test-draft-id",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [440, 200],
 			"id": "8802fdb5-2741-407b-82a4-ccedc4055076",
@@ -35,7 +35,7 @@
 				"operation": "delete",
 				"messageId": "test-draft-id"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [440, 20],
 			"id": "ed979c3a-b2ea-413e-be63-0392cc1714a5",
@@ -61,15 +61,15 @@
 							}
 						]
 					},
-					"bccList": "test-bcc@n8n.io",
-					"ccList": "test-cc@n8n.io",
-					"fromAlias": "=test-alias@n8n.io",
-					"replyTo": "test-reply@n8n.io",
+					"bccList": "test-bcc@aura.io",
+					"ccList": "test-cc@aura.io",
+					"fromAlias": "=test-alias@aura.io",
+					"replyTo": "test-reply@aura.io",
 					"threadId": "test-thread-id",
-					"sendTo": "test-to@n8n.io"
+					"sendTo": "test-to@aura.io"
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [840, -180],
 			"id": "45758452-3b5b-478d-aece-001e117ce69d",
@@ -93,7 +93,7 @@
 					"includeSpamTrash": true
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [440, 400],
 			"id": "bae81586-7641-4fdc-81a4-0006b289bf9d",
@@ -120,7 +120,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [420, -180],
 			"id": "d630c018-1d7b-4779-a280-9f4a21c6a764",
@@ -131,7 +131,7 @@
 				"operation": "toJson",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [640, -180],
 			"id": "fc3bdb76-c278-44f6-9aac-153b79c8177b",

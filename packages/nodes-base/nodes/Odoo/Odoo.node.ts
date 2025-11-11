@@ -11,8 +11,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, deepCopy, randomInt } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, deepCopy, randomInt } from 'workflow';
 
 import {
 	contactDescription,
@@ -248,7 +248,7 @@ export class Odoo implements INodeType {
 
 					const options: IRequestOptions = {
 						headers: {
-							'User-Agent': 'n8n',
+							'User-Agent': 'aura',
 							Connection: 'keep-alive',
 							Accept: '*/*',
 							'Content-Type': 'application/json',

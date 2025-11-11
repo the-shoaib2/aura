@@ -1,12 +1,12 @@
-import { Logger } from '@n8n/backend-common';
-import type { Migration } from '@n8n/db';
-import { wrapMigration, DbConnectionOptions } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { DataSourceOptions as ConnectionOptions } from '@n8n/typeorm';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { MigrationExecutor, DataSource as Connection } from '@n8n/typeorm';
+import { Logger } from '@aura/backend-common';
+import type { Migration } from '@aura/db';
+import { wrapMigration, DbConnectionOptions } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { DataSourceOptions as ConnectionOptions } from '@aura/typeorm';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { MigrationExecutor, DataSource as Connection } from '@aura/typeorm';
 
 // This function is extracted to make it easier to unit test it.
 // Mocking turned into a mess due to this command using typeorm and the db
@@ -37,10 +37,10 @@ export async function main(
 
 	if (lastMigrationInstance === undefined) {
 		logger.error(
-			`The last migration that was executed is "${lastExecutedMigration.name}", but I could not find that migration's code in the currently installed version of n8n.`,
+			`The last migration that was executed is "${lastExecutedMigration.name}", but I could not find that migration's code in the currently installed version of aura.`,
 		);
 		logger.error(
-			'This usually means that you downgraded n8n before running `n8n db:revert`. Please upgrade n8n again and run `n8n db:revert` and then downgrade again.',
+			'This usually means that you downgraded aura before running `aura db:revert`. Please upgrade aura again and run `aura db:revert` and then downgrade again.',
 		);
 		return;
 	}

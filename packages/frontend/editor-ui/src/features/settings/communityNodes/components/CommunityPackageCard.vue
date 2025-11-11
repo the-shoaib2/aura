@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { useUIStore } from '@/app/stores/ui.store';
-import type { IUser, PublicInstalledPackage } from 'n8n-workflow';
+import type { IUser, PublicInstalledPackage } from 'workflow';
 import { COMMUNITY_PACKAGE_MANAGE_ACTIONS } from '../communityNodes.constants';
 import { NPM_PACKAGE_DOCS_BASE_URL } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import type { UserAction } from '@n8n/design-system';
+import type { UserAction } from '@aura/design-system';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { computed, ref, watch } from 'vue';
 import semver from 'semver';
@@ -18,7 +18,7 @@ import {
 	N8nLoading,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 interface Props {
 	communityPackage?: PublicInstalledPackage | null;
 	loading?: boolean;

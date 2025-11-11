@@ -1,6 +1,6 @@
-import { CliParser, Logger, ModuleRegistry } from '@n8n/backend-common';
-import { CommandMetadata, type CommandEntry } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import { CliParser, Logger, ModuleRegistry } from '@aura/backend-common';
+import { CommandMetadata, type CommandEntry } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import glob from 'fast-glob';
 import picocolors from 'picocolors';
 import { z } from 'zod';
@@ -94,7 +94,7 @@ export class CommandRegistry {
 		}
 
 		this.logger.info(
-			'\nFor more detailed information, visit:\nhttps://docs.n8n.io/hosting/cli-commands/',
+			'\nFor more detailed information, visit:\nhttps://docs.aura.io/hosting/cli-commands/',
 		);
 	}
 
@@ -103,7 +103,7 @@ export class CommandRegistry {
 		let output = '';
 
 		output += `${picocolors.bold('USAGE')}\n`;
-		output += `  $ n8n ${commandName}\n\n`;
+		output += `  $ aura ${commandName}\n\n`;
 
 		const { flagsSchema } = commandEntry;
 		if (flagsSchema && Object.keys(flagsSchema.shape).length > 0) {
@@ -156,7 +156,7 @@ export class CommandRegistry {
 		if (commandEntry.examples?.length) {
 			output += `\n${picocolors.bold('EXAMPLES')}\n`;
 			output += commandEntry.examples
-				.map((example) => `  $ n8n ${commandName}${example ? ` ${example}` : ''}`)
+				.map((example) => `  $ aura ${commandName}${example ? ` ${example}` : ''}`)
 				.join('\n');
 			output += '\n';
 		}

@@ -1,4 +1,4 @@
-import { type IPairedItemData, type IRunData, type ITaskData } from 'n8n-workflow';
+import { type IPairedItemData, type IRunData, type ITaskData } from 'workflow';
 import type { TargetItem } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 import { isNotNull } from '@/app/utils/typeGuards';

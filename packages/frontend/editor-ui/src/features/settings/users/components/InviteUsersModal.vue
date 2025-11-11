@@ -4,16 +4,16 @@ import { useToast } from '@/app/composables/useToast';
 import Modal from '@/app/components/Modal.vue';
 import type { FormFieldValueUpdate, IFormInputs } from '@/Interface';
 import type { IInviteResponse, InvitableRoleName } from '../users.types';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@aura/rest-api-client/api/users';
 import { EnterpriseEditionFeature, VALID_EMAIL_REGEX } from '@/app/constants';
 import { INVITE_USER_MODAL_KEY } from '../users.constants';
-import { ROLE } from '@n8n/api-types';
+import { ROLE } from '@aura/api-types';
 import { useUsersStore } from '../users.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { createFormEventBus } from '@n8n/design-system/utils';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createFormEventBus } from '@aura/design-system/utils';
+import { createEventBus } from '@aura/utils/event-bus';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import { I18nT } from 'vue-i18n';
 
@@ -25,7 +25,7 @@ import {
 	N8nNotice,
 	N8nTooltip,
 	N8nUsersList,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const props = defineProps<{
 	modalName: string;
 	data: {

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { includeInputFields } from './common.descriptions';
 
@@ -29,7 +29,7 @@ export const GetTimeBetweenDatesDescription: INodeProperties[] = [
 		displayName: 'Units',
 		name: 'units',
 		type: 'multiOptions',
-		// eslint-disable-next-line n8n-nodes-base/node-param-multi-options-type-unsorted-items
+		// eslint-disable-next-line aura-nodes-base/node-param-multi-options-type-unsorted-items
 		options: [
 			{
 				name: 'Year',

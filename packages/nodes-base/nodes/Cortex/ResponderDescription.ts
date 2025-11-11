@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { TLPs } from './AnalyzerInterface';
 
@@ -43,7 +43,7 @@ export const responderFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'Choose the responder. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Choose the responder. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Entity Type Name or ID',
@@ -61,14 +61,14 @@ export const responderFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'Choose the Data type. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Choose the Data type. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'JSON Parameters',
 		name: 'jsonObject',
 		type: 'boolean',
 		default: false,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description: 'Choose between providing JSON object or seperated attributes',
 		displayOptions: {
 			show: {
@@ -111,7 +111,7 @@ export const responderFields: INodeProperties[] = [
 						name: 'flag',
 						type: 'boolean',
 						default: false,
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+						// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 						description: 'Flag of the case default=false',
 					},
 					{

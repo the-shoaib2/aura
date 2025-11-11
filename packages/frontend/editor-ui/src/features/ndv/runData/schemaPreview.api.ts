@@ -1,6 +1,6 @@
-import { request } from '@n8n/rest-api-client';
+import { request } from '@aura/rest-api-client';
 import type { JSONSchema7 } from 'json-schema';
-import type { NodeParameterValueType } from 'n8n-workflow';
+import type { NodeParameterValueType } from 'workflow';
 import { isEmpty } from '@/app/utils/typesUtils';
 
 export type GetSchemaPreviewOptions = {
@@ -30,7 +30,7 @@ export const getSchemaPreview = async (
 ): Promise<JSONSchema7> => {
 	const { nodeType, version, resource, operation } = options;
 	const versionString = padVersion(version);
-	const path = ['schemas', nodeType.replace('@n8n/', ''), versionString, resource, operation]
+	const path = ['schemas', nodeType.replace('@aura/', ''), versionString, resource, operation]
 		.filter(Boolean)
 		.join('/');
 	const response = await request({

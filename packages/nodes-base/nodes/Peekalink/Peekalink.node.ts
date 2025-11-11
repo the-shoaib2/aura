@@ -6,7 +6,7 @@ import {
 	type INodeTypeDescription,
 	type JsonObject,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export const apiUrl = 'https://api.peekalink.io';
 
@@ -16,7 +16,7 @@ export class Peekalink extends Node {
 	description: INodeTypeDescription = {
 		displayName: 'Peekalink',
 		name: 'peekalink',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:peekalink.png',
 		group: ['output'],
 		version: 1,

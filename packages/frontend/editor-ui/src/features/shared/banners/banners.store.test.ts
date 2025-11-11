@@ -1,7 +1,7 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { useBannersStore } from '@/features/shared/banners/banners.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import * as dynamicBannersApi from '@n8n/rest-api-client/api/dynamic-banners';
+import * as dynamicBannersApi from '@aura/rest-api-client/api/dynamic-banners';
 
 let bannersStore: ReturnType<typeof useBannersStore>;
 let settingsStore: ReturnType<typeof useSettingsStore>;

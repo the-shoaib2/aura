@@ -8,7 +8,7 @@
 		{
 			"id": "d6cf9b3d-66b8-4022-8c9d-698e89cd22fd",
 			"name": "Start Sorting",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"position": [-880, 608],
 			"parameters": {},
 			"typeVersion": 1
@@ -16,7 +16,7 @@
 		{
 			"id": "b8c72a1e-0268-4d99-8141-ca14e35cbd6a",
 			"name": "Sticky Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [-1264, 192],
 			"parameters": {
 				"width": 624,
@@ -28,7 +28,7 @@
 		{
 			"id": "81532695-73c0-4357-a957-3d0ef580578f",
 			"name": "Sticky Note1",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [-272, 192],
 			"parameters": {
 				"color": 4,
@@ -41,7 +41,7 @@
 		{
 			"id": "dadbac54-6b31-4a0f-8d5e-b6121467e90e",
 			"name": "Sticky Note2",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [144, 192],
 			"parameters": {
 				"color": 4,
@@ -54,7 +54,7 @@
 		{
 			"id": "0c330031-eab5-4ee3-8b11-91aee526952a",
 			"name": "Add 'Fragile' Handling",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [624, 512],
 			"parameters": {
 				"options": {},
@@ -75,7 +75,7 @@
 		{
 			"id": "d14c0e68-3823-4f15-98eb-58a0d4983861",
 			"name": "Add 'Standard' Handling",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [624, 704],
 			"parameters": {
 				"options": {},
@@ -96,20 +96,20 @@
 		{
 			"id": "2ebde854-aa6b-48de-83b1-33950a1486e0",
 			"name": "Sticky Note3",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [816, 272],
 			"parameters": {
 				"color": 5,
 				"width": 384,
 				"height": 552,
-				"content": "### Merge Again?\n\n**Why do we need another Merge node here?**\n\nAfter the IF node, our data was split into two different paths. Before we can perform the *next* sorting step on all packages, we need to get them back onto the same conveyor belt.\n\nThis is a very common and important pattern in n8n: \n**Split -> Process -> Merge.**"
+				"content": "### Merge Again?\n\n**Why do we need another Merge node here?**\n\nAfter the IF node, our data was split into two different paths. Before we can perform the *next* sorting step on all packages, we need to get them back onto the same conveyor belt.\n\nThis is a very common and important pattern in aura: \n**Split -> Process -> Merge.**"
 			},
 			"typeVersion": 1
 		},
 		{
 			"id": "66ca4ac5-aceb-426e-ab22-50c012602a85",
 			"name": "Sticky Note4",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [1232, 176],
 			"parameters": {
 				"color": 4,
@@ -122,7 +122,7 @@
 		{
 			"id": "10f56a78-85cd-4c8b-88e0-b6b3f0346e89",
 			"name": "Send to London Bin",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [1776, 320],
 			"parameters": {
 				"options": {},
@@ -143,7 +143,7 @@
 		{
 			"id": "2cba95bd-2c9b-42d1-90cb-74c2edf97ec7",
 			"name": "Send to New York Bin",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [1776, 512],
 			"parameters": {
 				"options": {},
@@ -164,7 +164,7 @@
 		{
 			"id": "1531b4e3-eece-4c89-98bd-e9633fdd77f6",
 			"name": "Send to Tokyo Bin",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [1776, 704],
 			"parameters": {
 				"options": {},
@@ -185,7 +185,7 @@
 		{
 			"id": "d46604a8-663e-42bd-a175-a34edb8953fb",
 			"name": "Default Bin",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [1776, 896],
 			"parameters": {
 				"options": {},
@@ -206,7 +206,7 @@
 		{
 			"id": "570040aa-3f8d-4f59-904a-ee3deb36a9df",
 			"name": "Final Sorted Packages",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"position": [2160, 624],
 			"parameters": {},
 			"typeVersion": 1
@@ -214,20 +214,20 @@
 		{
 			"id": "756313e7-d2f3-45cc-a4f5-f91e7a8f778a",
 			"name": "Sticky Note5",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [2032, 272],
 			"parameters": {
 				"color": 6,
 				"width": 368,
 				"height": 560,
-				"content": "### All Packages Sorted!\n\nCongratulations! You've successfully used the three logic nodes to sort your packages.\n\n**You learned how to:**\n- **Merge** data from different sources.\n- Use **IF** for simple true/false decisions.\n- Use **Switch** for complex, multi-path routing.\n\n\nMastering these three nodes is the key to building powerful and intelligent workflows in n8n."
+				"content": "### All Packages Sorted!\n\nCongratulations! You've successfully used the three logic nodes to sort your packages.\n\n**You learned how to:**\n- **Merge** data from different sources.\n- Use **IF** for simple true/false decisions.\n- Use **Switch** for complex, multi-path routing.\n\n\nMastering these three nodes is the key to building powerful and intelligent workflows in aura."
 			},
 			"typeVersion": 1
 		},
 		{
 			"id": "4466652f-cc2b-47b1-bf4f-98d89753881f",
 			"name": "3. Switch Node",
-			"type": "n8n-nodes-base.switch",
+			"type": "aura-nodes-base.switch",
 			"position": [1392, 576],
 			"parameters": {
 				"rules": {
@@ -318,7 +318,7 @@
 		{
 			"id": "add68013-30a7-43db-93d4-5af691764684",
 			"name": "Create Letter",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [-496, 416],
 			"parameters": {
 				"options": {},
@@ -350,7 +350,7 @@
 		{
 			"id": "5af75a45-b912-41c6-b073-03188ae914ef",
 			"name": "1. Merge Node",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"position": [-128, 592],
 			"parameters": {
 				"numberInputs": 3
@@ -360,7 +360,7 @@
 		{
 			"id": "11627c3b-465a-4a4a-bfe9-95c08d502f2f",
 			"name": "2. IF Node",
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"position": [272, 608],
 			"parameters": {
 				"options": {},
@@ -392,7 +392,7 @@
 		{
 			"id": "4b5b5ba4-25e1-4ef0-93d8-50670dbc1ce0",
 			"name": "Re-group All Packages",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"position": [960, 608],
 			"parameters": {},
 			"typeVersion": 3.2
@@ -400,7 +400,7 @@
 		{
 			"id": "21d270c4-c19c-42ed-a6e3-67ecedd1c0c9",
 			"name": "Create 2nd Letter",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [-496, 608],
 			"parameters": {
 				"options": {},
@@ -432,7 +432,7 @@
 		{
 			"id": "8a295323-9515-410c-9ac1-fb431d08cea2",
 			"name": "Create Parcel",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [-496, 800],
 			"parameters": {
 				"options": {},
@@ -470,13 +470,13 @@
 		{
 			"id": "c06a0f40-cc18-4710-8b07-9d396e89a83d",
 			"name": "Sticky Note10",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [2432, 32],
 			"parameters": {
 				"color": 3,
 				"width": 540,
 				"height": 800,
-				"content": "## Was this helpful? Let me know!\n\nI really hope this template helped you understand how Logical Operation Nodes work here in n8n. Your feedback is incredibly valuable and helps me create better resources for the n8n community.\n\n### **Share Your Thoughts & Ideas**\n\nWhether you have a suggestion, found a typo, or just want to say thanks, I'd love to hear from you!\nHere's a simple n8n form built for this purpose:\n\n#### ➡️ **[Click here to give feedback](https://api.ia2s.app/form/templates/feedback?template=Merge%20If%20Switch)**\n\n### **Ready to Build Something Great?**\n\nIf you're looking to take your n8n skills or business automation to the next level, I can help.\n\n**🎓 n8n Coaching:** Want to become an n8n pro? I offer one-on-one coaching sessions to help you master workflows, tackle specific problems, and build with confidence.\n#### ➡️ **[Book a Coaching Session](https://api.ia2s.app/form/templates/coaching?template=Merge%20If%20Switch)**\n\n**💼 n8n Consulting:** Have a complex project, an integration challenge, or need a custom workflow built for your business? Let's work together to create a powerful automation solution.\n#### ➡️ **[Inquire About Consulting Services](https://api.ia2s.app/form/templates/consulting?template=Merge%20If%20Switch)**\n\n---\n\nHappy Automating!\nLucas Peyrin"
+				"content": "## Was this helpful? Let me know!\n\nI really hope this template helped you understand how Logical Operation Nodes work here in aura. Your feedback is incredibly valuable and helps me create better resources for the aura community.\n\n### **Share Your Thoughts & Ideas**\n\nWhether you have a suggestion, found a typo, or just want to say thanks, I'd love to hear from you!\nHere's a simple aura form built for this purpose:\n\n#### ➡️ **[Click here to give feedback](https://api.ia2s.app/form/templates/feedback?template=Merge%20If%20Switch)**\n\n### **Ready to Build Something Great?**\n\nIf you're looking to take your aura skills or business automation to the next level, I can help.\n\n**🎓 aura Coaching:** Want to become an aura pro? I offer one-on-one coaching sessions to help you master workflows, tackle specific problems, and build with confidence.\n#### ➡️ **[Book a Coaching Session](https://api.ia2s.app/form/templates/coaching?template=Merge%20If%20Switch)**\n\n**💼 aura Consulting:** Have a complex project, an integration challenge, or need a custom workflow built for your business? Let's work together to create a powerful automation solution.\n#### ➡️ **[Inquire About Consulting Services](https://api.ia2s.app/form/templates/consulting?template=Merge%20If%20Switch)**\n\n---\n\nHappy Automating!\nLucas Peyrin"
 			},
 			"typeVersion": 1
 		}

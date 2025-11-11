@@ -4,7 +4,7 @@ import {
 	type IExecuteFunctions,
 	type INodeExecutionData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { makeAddRow, getAddRow } from '../../common/addRow';
 import { DRY_RUN } from '../../common/fields';

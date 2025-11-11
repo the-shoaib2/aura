@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "e945a821-3ba5-4579-966a-2dad40345d27"
@@ -21,7 +21,7 @@
 				"additionalFields": {}
 			},
 			"name": "Vonage",
-			"type": "n8n-nodes-base.vonage",
+			"type": "aura-nodes-base.vonage",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {

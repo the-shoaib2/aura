@@ -1,4 +1,4 @@
-import type { ProjectIcon, ProjectType } from '@n8n/api-types';
+import type { ProjectIcon, ProjectType } from '@aura/api-types';
 import type {
 	APIRequest,
 	AuthenticatedRequest,
@@ -7,19 +7,19 @@ import type {
 	User,
 	ListQueryDb,
 	WorkflowHistory,
-} from '@n8n/db';
+} from '@aura/db';
 import type {
 	AssignableGlobalRole,
 	AssignableProjectRole,
 	GlobalRole,
 	ProjectRole,
 	Scope,
-} from '@n8n/permissions';
+} from '@aura/permissions';
 import type {
 	ICredentialDataDecryptedObject,
 	INodeCredentialTestRequest,
 	IPersonalizationSurveyAnswersV4,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export type AuthlessRequest<
 	RouteParams = {},

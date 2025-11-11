@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import dateformat from 'dateformat';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { RELEASE_NOTES_URL, VERSIONS_MODAL_KEY, WHATS_NEW_MODAL_KEY } from '@/app/constants';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import { useVersionsStore } from '@/app/stores/versions.store';
 import { computed, nextTick, ref } from 'vue';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -20,7 +20,7 @@ import {
 	N8nMarkdown,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const props = defineProps<{
 	modalName: string;
 	data: {

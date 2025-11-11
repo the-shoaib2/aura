@@ -7,7 +7,7 @@ A simple toolkit for measuring and asserting performance in Playwright tests.
 ### "I just want to measure how long something takes"
 ```typescript
 const duration = await measurePerformance(page, 'open-node', async () => {
-  await n8n.canvas.openNode('Code');
+  await aura.canvas.openNode('Code');
 });
 console.log(`Opening node took ${duration.toFixed(1)}ms`);
 ```
@@ -15,7 +15,7 @@ console.log(`Opening node took ${duration.toFixed(1)}ms`);
 ### "I want to ensure an action completes within a time limit"
 ```typescript
 const openNodeDuration = await measurePerformance(page, 'open-node', async () => {
-  await n8n.canvas.openNode('Code');
+  await aura.canvas.openNode('Code');
 });
 expect(openNodeDuration).toBeLessThan(2000); // Must complete in under 2 seconds
 ```
@@ -25,9 +25,9 @@ expect(openNodeDuration).toBeLessThan(2000); // Must complete in under 2 seconds
 const stats = [];
 for (let i = 0; i < 20; i++) {
   const duration = await measurePerformance(page, `open-node-${i}`, async () => {
-    await n8n.canvas.openNode('Code');
+    await aura.canvas.openNode('Code');
   });
-	await n8n.ndv.clickBackToCanvasButton();
+	await aura.ndv.clickBackToCanvasButton();
   stats.push(duration);
 }
 const average = stats.reduce((a, b) => a + b, 0) / stats.length;
@@ -44,13 +44,13 @@ const budgets = {
 
 // Measure workflow execution
 const triggerDuration = await measurePerformance(page, 'trigger-workflow', async () => {
-  await n8n.workflowComposer.executeWorkflowAndWaitForNotification('Successful');
+  await aura.workflowComposer.executeWorkflowAndWaitForNotification('Successful');
 });
 expect(triggerDuration).toBeLessThan(budgets.triggerWorkflow);
 
 // Measure node opening
 const openDuration = await measurePerformance(page, 'open-large-node', async () => {
-  await n8n.canvas.openNode('Code');
+  await aura.canvas.openNode('Code');
 });
 expect(openDuration).toBeLessThan(budgets.openLargeNode);
 ```
@@ -69,7 +69,7 @@ testData.forEach(({ size, budgets }) => {
 
     // Measure against size-specific budgets
     const duration = await measurePerformance(page, 'trigger-workflow', async () => {
-			await n8n.workflowComposer.executeWorkflowAndWaitForNotification('Successful')
+			await aura.workflowComposer.executeWorkflowAndWaitForNotification('Successful')
     });
     expect(duration).toBeLessThan(budgets.triggerWorkflow);
   });

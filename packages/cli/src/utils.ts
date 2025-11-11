@@ -1,5 +1,5 @@
-import { CliWorkflowOperationError, SubworkflowOperationError } from 'n8n-workflow';
-import type { INode, INodeType } from 'n8n-workflow';
+import { CliWorkflowOperationError, SubworkflowOperationError } from 'workflow';
+import type { INode, INodeType } from 'workflow';
 
 import { STARTING_NODES } from '@/constants';
 
@@ -14,7 +14,7 @@ export function isWorkflowIdValid(id: string | null | undefined): boolean {
 function findWorkflowStart(executionMode: 'integrated' | 'cli') {
 	return function (nodes: INode[]) {
 		const executeWorkflowTriggerNode = nodes.find(
-			(node) => node.type === 'n8n-nodes-base.executeWorkflowTrigger',
+			(node) => node.type === 'aura-nodes-base.executeWorkflowTrigger',
 		);
 
 		if (executeWorkflowTriggerNode) return executeWorkflowTriggerNode;

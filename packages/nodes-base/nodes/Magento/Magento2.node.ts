@@ -7,8 +7,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeApiError } from 'workflow';
 
 import { customerFields, customerOperations } from './CustomerDescription';
 import {

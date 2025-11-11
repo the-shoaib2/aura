@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "82eed1ba-179b-4f8f-8a85-b45f0d4e5857",
 			"name": "Execute Workflow Trigger",
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1,
 			"position": [560, 340]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "8f3e00f6-fc92-4aba-817b-93d206158bda",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [780, 340]
 		}

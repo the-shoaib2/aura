@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 export class GongOAuth2Api implements ICredentialType {
 	name = 'gongOAuth2Api';

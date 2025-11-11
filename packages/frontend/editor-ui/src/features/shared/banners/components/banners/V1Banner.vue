@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import BaseBanner from './BaseBanner.vue';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@aura/i18n';
 import { useBannersStore } from '@/features/shared/banners/banners.store';
 import { hasPermission } from '@/app/utils/rbac/permissions';
 
@@ -17,14 +17,14 @@ const hasOwnerPermission = computed(() => hasPermission(['instanceOwner']));
 <template>
 	<BaseBanner custom-icon="info" theme="warning" name="V1" :class="$style.v1container">
 		<template #mainContent>
-			<span v-n8n-html="locale.baseText('banners.v1.message')"></span>
+			<span v-aura-html="locale.baseText('banners.v1.message')"></span>
 			<a
 				v-if="hasOwnerPermission"
 				:class="$style.link"
 				data-test-id="banner-confirm-v1"
 				@click="dismissPermanently"
 			>
-				<span v-n8n-html="locale.baseText('generic.dontShowAgain')"></span>
+				<span v-aura-html="locale.baseText('generic.dontShowAgain')"></span>
 			</a>
 		</template>
 	</BaseBanner>

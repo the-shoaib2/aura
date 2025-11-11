@@ -14,7 +14,7 @@ vi.mock('@/app/composables/useDocumentTitle', () => ({
 		set: vi.fn(),
 	})),
 }));
-vi.mock('@n8n/i18n', () => {
+vi.mock('@aura/i18n', () => {
 	const baseText = (key: string) => {
 		const translations: Record<string, string> = {
 			'dataTable.getDetails.error': 'Error fetching data table details',

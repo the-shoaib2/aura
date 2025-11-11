@@ -3,8 +3,8 @@ import type {
 	ChatHubProvider,
 	ChatMessageId,
 	ChatSessionId,
-} from '@n8n/api-types';
-import type { INodeCredentials } from 'n8n-workflow';
+} from '@aura/api-types';
+import type { INodeCredentials } from 'workflow';
 
 export interface ModelWithCredentials {
 	provider: ChatHubProvider;
@@ -37,7 +37,7 @@ export interface EditMessagePayload extends BaseMessagePayload {
 	message: string;
 }
 
-// From packages/@n8n/nodes-langchain/nodes/memory/MemoryManager/MemoryManager.node.ts
+// From packages/@aura/nodes-langchain/nodes/memory/MemoryManager/MemoryManager.node.ts
 export type MessageRole = 'ai' | 'system' | 'user';
 export interface MessageRecord {
 	type: MessageRole;

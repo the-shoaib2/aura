@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [270, 380],
 			"id": "b4a081a6-9a54-4e52-8e77-18d8d3df627c"
@@ -19,7 +19,7 @@
 				"name": "=List{{Date.now()}}"
 			},
 			"name": "Automizy",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [440, 380],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"listId": "={{$node[\"Automizy\"].json[\"id\"]}}"
 			},
 			"name": "Automizy1",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [640, 380],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"name": "=UpdatedList{{Date.now()}}"
 			},
 			"name": "Automizy2",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [790, 380],
 			"credentials": {
@@ -79,7 +79,7 @@
 				}
 			},
 			"name": "Automizy3",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [940, 380],
 			"credentials": {
@@ -97,7 +97,7 @@
 				"listId": "={{$node[\"Automizy\"].json[\"id\"]}}"
 			},
 			"name": "Automizy4",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [1090, 380],
 			"credentials": {
@@ -138,7 +138,7 @@
 				}
 			},
 			"name": "Automizy5",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [590, 530],
 			"credentials": {
@@ -155,7 +155,7 @@
 				"contactId": "={{$node[\"Automizy5\"].json[\"id\"]}}"
 			},
 			"name": "Automizy6",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [740, 530],
 			"credentials": {
@@ -184,7 +184,7 @@
 				}
 			},
 			"name": "Automizy7",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [890, 530],
 			"credentials": {
@@ -205,7 +205,7 @@
 				}
 			},
 			"name": "Automizy8",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [1040, 530],
 			"credentials": {
@@ -222,7 +222,7 @@
 				"contactId": "={{$node[\"Automizy5\"].json[\"id\"]}}"
 			},
 			"name": "Automizy9",
-			"type": "n8n-nodes-base.automizy",
+			"type": "aura-nodes-base.automizy",
 			"typeVersion": 1,
 			"position": [1190, 530],
 			"credentials": {

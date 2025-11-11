@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import type { IDataObject, Workflow } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import type { IDataObject, Workflow } from 'workflow';
 
 import { isWorkflowIdValid } from '@/utils';
 

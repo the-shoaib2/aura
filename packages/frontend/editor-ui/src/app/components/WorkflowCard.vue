@@ -9,7 +9,7 @@ import {
 import { PROJECT_MOVE_RESOURCE_MODAL } from '@/features/collaboration/projects/projects.constants';
 import { useMessage } from '@/app/composables/useMessage';
 import { useToast } from '@/app/composables/useToast';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 import dateformat from 'dateformat';
 import WorkflowActivator from '@/app/components/WorkflowActivator.vue';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -18,18 +18,18 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import TimeAgo from '@/app/components/TimeAgo.vue';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import ProjectCardBadge from '@/features/collaboration/projects/components/ProjectCardBadge.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { ResourceType } from '@/features/collaboration/projects/projects.utils';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
 import type { UserAction, WorkflowResource } from '@/Interface';
-import type { IUser } from 'n8n-workflow';
+import type { IUser } from 'workflow';
 import {
 	type ProjectSharingData,
 	ProjectTypes,
 } from '@/features/collaboration/projects/projects.types';
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import type { PathItem } from '@aura/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
 import { useFoldersStore } from '@/features/core/folders/folders.store';
 
 import {
@@ -41,7 +41,7 @@ import {
 	N8nTags,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import { useMCPStore } from '@/features/ai/mcpAccess/mcp.store';
 import { useMcp } from '@/features/ai/mcpAccess/composables/useMcp';
 const WORKFLOW_LIST_ITEM_ACTIONS = {
@@ -691,10 +691,10 @@ const tags = computed(
 }
 
 .cardBadge.with-breadcrumbs {
-	:global(.n8n-badge) {
+	:global(.aura-badge) {
 		padding-right: 0;
 	}
-	:global(.n8n-breadcrumbs) {
+	:global(.aura-breadcrumbs) {
 		padding-left: var(--spacing--5xs);
 	}
 }

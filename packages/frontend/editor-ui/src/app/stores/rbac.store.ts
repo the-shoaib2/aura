@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
-import { hasScope as genericHasScope } from '@n8n/permissions';
-import type { ScopeOptions, Scope, Resource } from '@n8n/permissions';
+import { hasScope as genericHasScope } from '@aura/permissions';
+import type { ScopeOptions, Scope, Resource } from '@aura/permissions';
 import { ref } from 'vue';
-import { STORES } from '@n8n/stores';
-import type { Role } from '@n8n/api-types';
+import { STORES } from '@aura/stores';
+import type { Role } from '@aura/api-types';
 
 export const useRBACStore = defineStore(STORES.RBAC, () => {
 	const globalRoles = ref<Role[]>([]);

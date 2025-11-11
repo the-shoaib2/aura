@@ -1,10 +1,10 @@
 import type { RenderOptions } from '@/__tests__/render';
 import { SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
 import type ResourceMapper from './ResourceMapper.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { createTestingPinia } from '@pinia/testing';
 import merge from 'lodash/merge';
-import type { ResourceMapperFields, ResourceMapperValue } from 'n8n-workflow';
+import type { ResourceMapperFields, ResourceMapperValue } from 'workflow';
 
 export const NODE_PARAMETER_VALUES = {
 	authentication: 'oAuth2',
@@ -108,7 +108,7 @@ export const DEFAULT_SETUP: RenderOptions<typeof ResourceMapper> = {
 			parameters: NODE_PARAMETER_VALUES,
 			id: 'f63efb2d-3cc5-4500-89f9-b39aab19baf5',
 			name: 'Google Sheets',
-			type: 'n8n-nodes-base.googleSheets',
+			type: 'aura-nodes-base.googleSheets',
 			typeVersion: 4,
 			position: [1120, 380],
 			credentials: {},

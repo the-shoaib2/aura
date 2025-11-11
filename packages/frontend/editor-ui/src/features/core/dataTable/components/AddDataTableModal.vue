@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { onMounted, ref } from 'vue';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -8,7 +8,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { DATA_TABLE_DETAILS, PROJECT_DATA_TABLES } from '@/features/core/dataTable/constants';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
-import { N8nButton, N8nInput, N8nInputLabel } from '@n8n/design-system';
+import { N8nButton, N8nInput, N8nInputLabel } from '@aura/design-system';
 import Modal from '@/app/components/Modal.vue';
 type Props = {
 	modalName: string;

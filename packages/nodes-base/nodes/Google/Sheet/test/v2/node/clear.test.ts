@@ -1,4 +1,4 @@
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 
 import { execute } from '../../../v2/actions/sheet/clear.operation';
 import type { GoogleSheet } from '../../../v2/helpers/GoogleSheet';

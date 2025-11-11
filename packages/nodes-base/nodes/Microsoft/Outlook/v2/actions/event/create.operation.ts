@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import moment from 'moment-timezone';
-import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeProperties } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 
@@ -39,12 +39,12 @@ export const properties: INodeProperties[] = [
 		default: {},
 		options: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 				displayName: 'Categories',
 				name: 'categories',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getCategoriesNames',
 				},

@@ -1,4 +1,4 @@
-import type { SourceControlledFile } from '@n8n/api-types';
+import type { SourceControlledFile } from '@aura/api-types';
 import type {
 	Folder,
 	FolderRepository,
@@ -14,11 +14,11 @@ import type {
 	WorkflowTagMapping,
 	WorkflowTagMappingRepository,
 	Variables,
-} from '@n8n/db';
-import { GLOBAL_ADMIN_ROLE, In, PROJECT_OWNER_ROLE, User } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { GLOBAL_ADMIN_ROLE, In, PROJECT_OWNER_ROLE, User } from '@aura/db';
+import { Container } from '@aura/di';
 import { captor, mock } from 'jest-mock-extended';
-import { Cipher, type InstanceSettings } from 'n8n-core';
+import { Cipher, type InstanceSettings } from 'aura-core';
 import fsp from 'node:fs/promises';
 
 import type { VariablesService } from '../../variables/variables.service.ee';
@@ -55,7 +55,7 @@ describe('SourceControlExportService', () => {
 		workflowTagMappingRepository,
 		folderRepository,
 		sourceControlScopedService,
-		mock<InstanceSettings>({ n8nFolder: '/mock/n8n' }),
+		mock<InstanceSettings>({ auraFolder: '/mock/aura' }),
 	);
 
 	const fsWriteFile = jest.spyOn(fsp, 'writeFile');
@@ -109,7 +109,7 @@ describe('SourceControlExportService', () => {
 
 			const dataCaptor = captor<string>();
 			expect(fsWriteFile).toHaveBeenCalledWith(
-				'/mock/n8n/git/credential_stubs/cred1.json',
+				'/mock/aura/git/credential_stubs/cred1.json',
 				dataCaptor,
 			);
 			expect(JSON.parse(dataCaptor.value)).toEqual({
@@ -151,7 +151,7 @@ describe('SourceControlExportService', () => {
 
 			const dataCaptor = captor<string>();
 			expect(fsWriteFile).toHaveBeenCalledWith(
-				'/mock/n8n/git/credential_stubs/cred1.json',
+				'/mock/aura/git/credential_stubs/cred1.json',
 				dataCaptor,
 			);
 			expect(JSON.parse(dataCaptor.value)).toEqual({
@@ -203,7 +203,7 @@ describe('SourceControlExportService', () => {
 			});
 			tagRepository.find.mockResolvedValue([mockTag]);
 			workflowTagMappingRepository.find.mockResolvedValue([mockWorkflow]);
-			const fileName = '/mock/n8n/git/tags.json';
+			const fileName = '/mock/aura/git/tags.json';
 
 			// Act
 			const result = await service.exportTagsToWorkFolder(globalAdminContext);
@@ -233,7 +233,7 @@ describe('SourceControlExportService', () => {
 		it('should clear tags file and export it when there are no tags', async () => {
 			// Arrange
 			tagRepository.find.mockResolvedValue([]);
-			const fileName = '/mock/n8n/git/tags.json';
+			const fileName = '/mock/aura/git/tags.json';
 
 			// Act
 			const result = await service.exportTagsToWorkFolder(globalAdminContext);
@@ -313,7 +313,7 @@ describe('SourceControlExportService', () => {
 			// Assert
 			// new json file should contain only the new folders
 			expect(fsWriteFile).toHaveBeenCalledWith(
-				'/mock/n8n/git/folders.json',
+				'/mock/aura/git/folders.json',
 				JSON.stringify(
 					{
 						folders: newFolders.map((f) => ({
@@ -481,11 +481,11 @@ describe('SourceControlExportService', () => {
 				relations: ['variables'],
 			});
 			expect(fsWriteFile).toHaveBeenCalledWith(
-				'/mock/n8n/git/projects/project-id-1.json',
+				'/mock/aura/git/projects/project-id-1.json',
 				expectedProject1Json,
 			);
 			expect(fsWriteFile).toHaveBeenCalledWith(
-				'/mock/n8n/git/projects/project-id-2.json',
+				'/mock/aura/git/projects/project-id-2.json',
 				expectedProject2Json,
 			);
 			expect(result.count).toBe(2);
@@ -494,11 +494,11 @@ describe('SourceControlExportService', () => {
 				expect.arrayContaining([
 					{
 						id: 'project-id-1',
-						name: '/mock/n8n/git/projects/project-id-1.json',
+						name: '/mock/aura/git/projects/project-id-1.json',
 					},
 					{
 						id: 'project-id-2',
-						name: '/mock/n8n/git/projects/project-id-2.json',
+						name: '/mock/aura/git/projects/project-id-2.json',
 					},
 				]),
 			);

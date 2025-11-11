@@ -1,7 +1,7 @@
-import { GLOBAL_OWNER_ROLE, type IWorkflowDb } from '@n8n/db';
+import { GLOBAL_OWNER_ROLE, type IWorkflowDb } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
-import type { INode, IRun, IWorkflowBase } from 'n8n-workflow';
+import type { InstanceSettings } from 'aura-core';
+import type { INode, IRun, IWorkflowBase } from 'workflow';
 
 import type { MessageEventBus } from '@/eventbus/message-event-bus/message-event-bus';
 import { EventService } from '@/events/event.service';
@@ -24,7 +24,7 @@ describe('LogStreamingEventRelay', () => {
 			const event: RelayEventMap['workflow-created'] = {
 				user: {
 					id: '123',
-					email: 'john@n8n.io',
+					email: 'john@aura.io',
 					firstName: 'John',
 					lastName: 'Doe',
 					role: { slug: 'owner' },
@@ -41,10 +41,10 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-created', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.workflow.created',
+				eventName: 'aura.audit.workflow.created',
 				payload: {
 					userId: '123',
-					_email: 'john@n8n.io',
+					_email: 'john@aura.io',
 					_firstName: 'John',
 					_lastName: 'Doe',
 					globalRole: 'owner',
@@ -58,7 +58,7 @@ describe('LogStreamingEventRelay', () => {
 			const event: RelayEventMap['workflow-archived'] = {
 				user: {
 					id: '456',
-					email: 'jane@n8n.io',
+					email: 'jane@aura.io',
 					firstName: 'Jane',
 					lastName: 'Smith',
 					role: { slug: 'user' },
@@ -70,10 +70,10 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-archived', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.workflow.archived',
+				eventName: 'aura.audit.workflow.archived',
 				payload: {
 					userId: '456',
-					_email: 'jane@n8n.io',
+					_email: 'jane@aura.io',
 					_firstName: 'Jane',
 					_lastName: 'Smith',
 					globalRole: 'user',
@@ -86,7 +86,7 @@ describe('LogStreamingEventRelay', () => {
 			const event: RelayEventMap['workflow-unarchived'] = {
 				user: {
 					id: '456',
-					email: 'jane@n8n.io',
+					email: 'jane@aura.io',
 					firstName: 'Jane',
 					lastName: 'Smith',
 					role: { slug: 'user' },
@@ -98,10 +98,10 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-unarchived', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.workflow.unarchived',
+				eventName: 'aura.audit.workflow.unarchived',
 				payload: {
 					userId: '456',
-					_email: 'jane@n8n.io',
+					_email: 'jane@aura.io',
 					_firstName: 'Jane',
 					_lastName: 'Smith',
 					globalRole: 'user',
@@ -114,7 +114,7 @@ describe('LogStreamingEventRelay', () => {
 			const event: RelayEventMap['workflow-deleted'] = {
 				user: {
 					id: '456',
-					email: 'jane@n8n.io',
+					email: 'jane@aura.io',
 					firstName: 'Jane',
 					lastName: 'Smith',
 					role: { slug: 'user' },
@@ -126,10 +126,10 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-deleted', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.workflow.deleted',
+				eventName: 'aura.audit.workflow.deleted',
 				payload: {
 					userId: '456',
-					_email: 'jane@n8n.io',
+					_email: 'jane@aura.io',
 					_firstName: 'Jane',
 					_lastName: 'Smith',
 					globalRole: 'user',
@@ -142,7 +142,7 @@ describe('LogStreamingEventRelay', () => {
 			const event: RelayEventMap['workflow-saved'] = {
 				user: {
 					id: '789',
-					email: 'alex@n8n.io',
+					email: 'alex@aura.io',
 					firstName: 'Alex',
 					lastName: 'Johnson',
 					role: { slug: 'editor' },
@@ -154,10 +154,10 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-saved', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.workflow.updated',
+				eventName: 'aura.audit.workflow.updated',
 				payload: {
 					userId: '789',
-					_email: 'alex@n8n.io',
+					_email: 'alex@aura.io',
 					_firstName: 'Alex',
 					_lastName: 'Johnson',
 					globalRole: 'editor',
@@ -186,7 +186,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-pre-execute', event);
 
 			expect(eventBus.sendWorkflowEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.workflow.started',
+				eventName: 'aura.workflow.started',
 				payload: {
 					executionId: 'exec123',
 					userId: undefined,
@@ -215,7 +215,7 @@ describe('LogStreamingEventRelay', () => {
 			const { runData: _, workflow: __, ...rest } = payload;
 
 			expect(eventBus.sendWorkflowEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.workflow.success',
+				eventName: 'aura.workflow.success',
 				payload: {
 					...rest,
 					success: true, // same as finished
@@ -245,7 +245,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-post-execute', event);
 
 			expect(eventBus.sendQueueEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.queue.job.completed',
+				eventName: 'aura.queue.job.completed',
 				payload: {
 					executionId: 'exec-123',
 					workflowId: 'wf-789',
@@ -285,7 +285,7 @@ describe('LogStreamingEventRelay', () => {
 			const { runData: _, workflow: __, ...rest } = event;
 
 			expect(eventBus.sendWorkflowEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.workflow.failed',
+				eventName: 'aura.workflow.failed',
 				payload: {
 					...rest,
 					success: false, // same as finished
@@ -328,7 +328,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('workflow-post-execute', event);
 
 			expect(eventBus.sendQueueEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.queue.job.failed',
+				eventName: 'aura.queue.job.failed',
 				payload: {
 					executionId: 'exec-456',
 					workflowId: 'wf-101',
@@ -355,7 +355,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-updated', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.updated',
+				eventName: 'aura.audit.user.updated',
 				payload: {
 					userId: 'user456',
 					_email: 'updated@example.com',
@@ -371,7 +371,7 @@ describe('LogStreamingEventRelay', () => {
 			const event: RelayEventMap['user-deleted'] = {
 				user: {
 					id: '123',
-					email: 'john@n8n.io',
+					email: 'john@aura.io',
 					firstName: 'John',
 					lastName: 'Doe',
 					role: { slug: 'some-role' },
@@ -386,10 +386,10 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-deleted', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.deleted',
+				eventName: 'aura.audit.user.deleted',
 				payload: {
 					userId: '123',
-					_email: 'john@n8n.io',
+					_email: 'john@aura.io',
 					_firstName: 'John',
 					_lastName: 'Doe',
 					globalRole: 'some-role',
@@ -415,7 +415,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-invited', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.invited',
+				eventName: 'aura.audit.user.invited',
 				payload: {
 					userId: 'user101',
 					_email: 'inviter@example.com',
@@ -442,7 +442,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-reinvited', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.reinvited',
+				eventName: 'aura.audit.user.reinvited',
 				payload: {
 					userId: 'user202',
 					_email: 'reinviter@example.com',
@@ -470,7 +470,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-signed-up', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.signedup',
+				eventName: 'aura.audit.user.signedup',
 				payload: {
 					userId: 'user303',
 					_email: 'newuser@example.com',
@@ -496,7 +496,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-logged-in', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.login.success',
+				eventName: 'aura.audit.user.login.success',
 				payload: {
 					userId: 'user404',
 					_email: 'loggedin@example.com',
@@ -524,7 +524,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-password-reset-request-click', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.reset.requested',
+				eventName: 'aura.audit.user.reset.requested',
 				payload: {
 					userId: 'user101',
 					_email: 'user101@example.com',
@@ -539,14 +539,14 @@ describe('LogStreamingEventRelay', () => {
 			const event: RelayEventMap['user-invite-email-click'] = {
 				inviter: {
 					id: '123',
-					email: 'john@n8n.io',
+					email: 'john@aura.io',
 					firstName: 'John',
 					lastName: 'Doe',
 					role: { slug: 'some-role' },
 				},
 				invitee: {
 					id: '456',
-					email: 'jane@n8n.io',
+					email: 'jane@aura.io',
 					firstName: 'Jane',
 					lastName: 'Doe',
 					role: { slug: 'some-other-role' },
@@ -556,18 +556,18 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-invite-email-click', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.invitation.accepted',
+				eventName: 'aura.audit.user.invitation.accepted',
 				payload: {
 					inviter: {
 						userId: '123',
-						_email: 'john@n8n.io',
+						_email: 'john@aura.io',
 						_firstName: 'John',
 						_lastName: 'Doe',
 						globalRole: 'some-role',
 					},
 					invitee: {
 						userId: '456',
-						_email: 'jane@n8n.io',
+						_email: 'jane@aura.io',
 						_firstName: 'Jane',
 						_lastName: 'Doe',
 						globalRole: 'some-other-role',
@@ -590,7 +590,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-password-reset-email-click', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.reset',
+				eventName: 'aura.audit.user.reset',
 				payload: {
 					userId: 'user505',
 					_email: 'resetuser@example.com',
@@ -612,14 +612,14 @@ describe('LogStreamingEventRelay', () => {
 					{
 						id: 'node1',
 						name: 'Start Node',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [100, 200],
 					},
 					{
 						id: 'node2',
 						name: 'HTTP Request',
-						type: 'n8n-nodes-base.httpRequest',
+						type: 'aura-nodes-base.httpRequest',
 						typeVersion: 1,
 						position: [300, 200],
 					},
@@ -633,19 +633,19 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'HTTP Request',
 				workflow,
 				nodeId: 'node2',
-				nodeType: 'n8n-nodes-base.httpRequest',
+				nodeType: 'aura-nodes-base.httpRequest',
 			};
 
 			eventService.emit('node-pre-execute', event);
 
 			expect(eventBus.sendNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.node.started',
+				eventName: 'aura.node.started',
 				payload: {
 					executionId: 'exec456',
 					nodeName: 'HTTP Request',
 					workflowId: 'wf303',
 					workflowName: 'Test Workflow with Nodes',
-					nodeType: 'n8n-nodes-base.httpRequest',
+					nodeType: 'aura-nodes-base.httpRequest',
 					nodeId: 'node2',
 				},
 			});
@@ -660,14 +660,14 @@ describe('LogStreamingEventRelay', () => {
 					{
 						id: 'node1',
 						name: 'Start Node',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [100, 200],
 					},
 					{
 						id: 'node2',
 						name: 'HTTP Response',
-						type: 'n8n-nodes-base.httpResponse',
+						type: 'aura-nodes-base.httpResponse',
 						typeVersion: 1,
 						position: [300, 200],
 					},
@@ -681,19 +681,19 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'HTTP Response',
 				workflow,
 				nodeId: 'node2',
-				nodeType: 'n8n-nodes-base.httpResponse',
+				nodeType: 'aura-nodes-base.httpResponse',
 			};
 
 			eventService.emit('node-post-execute', event);
 
 			expect(eventBus.sendNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.node.finished',
+				eventName: 'aura.node.finished',
 				payload: {
 					executionId: 'exec789',
 					nodeName: 'HTTP Response',
 					workflowId: 'wf404',
 					workflowName: 'Test Workflow with Completed Node',
-					nodeType: 'n8n-nodes-base.httpResponse',
+					nodeType: 'aura-nodes-base.httpResponse',
 					nodeId: 'node2',
 				},
 			});
@@ -720,7 +720,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('credentials-shared', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.credentials.shared',
+				eventName: 'aura.audit.user.credentials.shared',
 				payload: {
 					userId: 'user123',
 					_email: 'sharer@example.com',
@@ -755,7 +755,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('credentials-created', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.credentials.created',
+				eventName: 'aura.audit.user.credentials.created',
 				payload: {
 					userId: 'user123',
 					_email: 'user@example.com',
@@ -787,7 +787,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('credentials-deleted', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.credentials.deleted',
+				eventName: 'aura.audit.user.credentials.deleted',
 				payload: {
 					userId: 'user707',
 					_email: 'creduser@example.com',
@@ -816,7 +816,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('credentials-updated', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.credentials.updated',
+				eventName: 'aura.audit.user.credentials.updated',
 				payload: {
 					userId: 'user808',
 					_email: 'updatecred@example.com',
@@ -841,7 +841,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('user-login-failed', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.login.failed',
+				eventName: 'aura.audit.user.login.failed',
 				payload: {
 					userEmail: 'user@example.com',
 					authenticationMethod: 'email',
@@ -861,7 +861,7 @@ describe('LogStreamingEventRelay', () => {
 					lastName: 'Updater',
 					role: { slug: 'global:admin' },
 				},
-				packageName: 'n8n-nodes-awesome-package',
+				packageName: 'aura-nodes-awesome-package',
 				packageVersionCurrent: '1.0.0',
 				packageVersionNew: '1.1.0',
 				packageNodeNames: ['AwesomeNode1', 'AwesomeNode2'],
@@ -872,14 +872,14 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('community-package-updated', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.package.updated',
+				eventName: 'aura.audit.package.updated',
 				payload: {
 					userId: 'user202',
 					_email: 'packageupdater@example.com',
 					_firstName: 'Package',
 					_lastName: 'Updater',
 					globalRole: 'global:admin',
-					packageName: 'n8n-nodes-awesome-package',
+					packageName: 'aura-nodes-awesome-package',
 					packageVersionCurrent: '1.0.0',
 					packageVersionNew: '1.1.0',
 					packageNodeNames: ['AwesomeNode1', 'AwesomeNode2'],
@@ -898,8 +898,8 @@ describe('LogStreamingEventRelay', () => {
 					lastName: 'User',
 					role: { slug: 'global:admin' },
 				},
-				inputString: 'n8n-nodes-custom-package',
-				packageName: 'n8n-nodes-custom-package',
+				inputString: 'aura-nodes-custom-package',
+				packageName: 'aura-nodes-custom-package',
 				success: true,
 				packageVersion: '1.0.0',
 				packageNodeNames: ['CustomNode1', 'CustomNode2'],
@@ -910,15 +910,15 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('community-package-installed', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.package.installed',
+				eventName: 'aura.audit.package.installed',
 				payload: {
 					userId: 'user789',
 					_email: 'admin@example.com',
 					_firstName: 'Admin',
 					_lastName: 'User',
 					globalRole: 'global:admin',
-					inputString: 'n8n-nodes-custom-package',
-					packageName: 'n8n-nodes-custom-package',
+					inputString: 'aura-nodes-custom-package',
+					packageName: 'aura-nodes-custom-package',
 					success: true,
 					packageVersion: '1.0.0',
 					packageNodeNames: ['CustomNode1', 'CustomNode2'],
@@ -937,7 +937,7 @@ describe('LogStreamingEventRelay', () => {
 					lastName: 'Deleter',
 					role: { slug: 'global:admin' },
 				},
-				packageName: 'n8n-nodes-awesome-package',
+				packageName: 'aura-nodes-awesome-package',
 				packageVersion: '1.0.0',
 				packageNodeNames: ['AwesomeNode1', 'AwesomeNode2'],
 				packageAuthor: 'John Doe',
@@ -947,14 +947,14 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('community-package-deleted', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.package.deleted',
+				eventName: 'aura.audit.package.deleted',
 				payload: {
 					userId: 'user909',
 					_email: 'packagedeleter@example.com',
 					_firstName: 'Package',
 					_lastName: 'Deleter',
 					globalRole: 'global:admin',
-					packageName: 'n8n-nodes-awesome-package',
+					packageName: 'aura-nodes-awesome-package',
 					packageVersion: '1.0.0',
 					packageNodeNames: ['AwesomeNode1', 'AwesomeNode2'],
 					packageAuthor: 'John Doe',
@@ -981,7 +981,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('email-failed', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.email.failed',
+				eventName: 'aura.audit.user.email.failed',
 				payload: {
 					userId: 'user789',
 					_email: 'recipient@example.com',
@@ -1010,7 +1010,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('public-api-key-created', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.api.created',
+				eventName: 'aura.audit.user.api.created',
 				payload: {
 					userId: 'user101',
 					_email: 'apiuser@example.com',
@@ -1036,7 +1036,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('public-api-key-deleted', event);
 
 			expect(eventBus.sendAuditEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.audit.user.api.deleted',
+				eventName: 'aura.audit.user.api.deleted',
 				payload: {
 					userId: 'user606',
 					_email: 'apiuser@example.com',
@@ -1057,7 +1057,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('execution-started-during-bootup', event);
 
 			expect(eventBus.sendExecutionEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.execution.started-during-bootup',
+				eventName: 'aura.execution.started-during-bootup',
 				payload: {
 					executionId: 'exec101010',
 				},
@@ -1073,7 +1073,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('execution-throttled', event);
 
 			expect(eventBus.sendExecutionEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.execution.throttled',
+				eventName: 'aura.execution.throttled',
 				payload: {
 					executionId: 'exec123456',
 					type: 'production',
@@ -1090,13 +1090,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Memory',
 				workflowId: 'wf123',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.memory',
+				nodeType: 'aura-nodes-base.memory',
 			};
 
 			eventService.emit('ai-messages-retrieved-from-memory', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.memory.get.messages',
+				eventName: 'aura.ai.memory.get.messages',
 				payload,
 			});
 		});
@@ -1108,13 +1108,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Memory',
 				workflowId: 'wf789',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.memory',
+				nodeType: 'aura-nodes-base.memory',
 			};
 
 			eventService.emit('ai-message-added-to-memory', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.memory.added.message',
+				eventName: 'aura.ai.memory.added.message',
 				payload,
 			});
 		});
@@ -1126,13 +1126,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Output Parser',
 				workflowId: 'wf456',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.outputParser',
+				nodeType: 'aura-nodes-base.outputParser',
 			};
 
 			eventService.emit('ai-output-parsed', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.output.parser.parsed',
+				eventName: 'aura.ai.output.parser.parsed',
 				payload,
 			});
 		});
@@ -1144,13 +1144,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Retriever',
 				workflowId: 'wf123',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.retriever',
+				nodeType: 'aura-nodes-base.retriever',
 			};
 
 			eventService.emit('ai-documents-retrieved', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.retriever.get.relevant.documents',
+				eventName: 'aura.ai.retriever.get.relevant.documents',
 				payload,
 			});
 		});
@@ -1162,13 +1162,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Embeddings',
 				workflowId: 'wf789',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.embeddings',
+				nodeType: 'aura-nodes-base.embeddings',
 			};
 
 			eventService.emit('ai-document-embedded', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.embeddings.embedded.document',
+				eventName: 'aura.ai.embeddings.embedded.document',
 				payload,
 			});
 		});
@@ -1180,13 +1180,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Embeddings',
 				workflowId: 'wf456',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.embeddings',
+				nodeType: 'aura-nodes-base.embeddings',
 			};
 
 			eventService.emit('ai-query-embedded', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.embeddings.embedded.query',
+				eventName: 'aura.ai.embeddings.embedded.query',
 				payload,
 			});
 		});
@@ -1198,13 +1198,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Embeddings',
 				workflowId: 'wf789',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.embeddings',
+				nodeType: 'aura-nodes-base.embeddings',
 			};
 
 			eventService.emit('ai-document-processed', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.document.processed',
+				eventName: 'aura.ai.document.processed',
 				payload,
 			});
 		});
@@ -1216,13 +1216,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Text Splitter',
 				workflowId: 'wf789',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.textSplitter',
+				nodeType: 'aura-nodes-base.textSplitter',
 			};
 
 			eventService.emit('ai-text-split', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.text.splitter.split',
+				eventName: 'aura.ai.text.splitter.split',
 				payload,
 			});
 		});
@@ -1234,13 +1234,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Tool',
 				workflowId: 'wf456',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.tool',
+				nodeType: 'aura-nodes-base.tool',
 			};
 
 			eventService.emit('ai-tool-called', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.tool.called',
+				eventName: 'aura.ai.tool.called',
 				payload,
 			});
 		});
@@ -1252,13 +1252,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Vector Store',
 				workflowId: 'wf123',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.vectorStore',
+				nodeType: 'aura-nodes-base.vectorStore',
 			};
 
 			eventService.emit('ai-vector-store-searched', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.vector.store.searched',
+				eventName: 'aura.ai.vector.store.searched',
 				payload,
 			});
 		});
@@ -1270,13 +1270,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'OpenAI',
 				workflowId: 'wf789',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.openai',
+				nodeType: 'aura-nodes-base.openai',
 			};
 
 			eventService.emit('ai-llm-generated-output', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.llm.generated',
+				eventName: 'aura.ai.llm.generated',
 				payload,
 			});
 		});
@@ -1288,13 +1288,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'OpenAI',
 				workflowId: 'wf123',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.openai',
+				nodeType: 'aura-nodes-base.openai',
 			};
 
 			eventService.emit('ai-llm-errored', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.llm.error',
+				eventName: 'aura.ai.llm.error',
 				payload,
 			});
 		});
@@ -1306,13 +1306,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Vector Store',
 				workflowId: 'wf789',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.vectorStore',
+				nodeType: 'aura-nodes-base.vectorStore',
 			};
 
 			eventService.emit('ai-vector-store-populated', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.vector.store.populated',
+				eventName: 'aura.ai.vector.store.populated',
 				payload,
 			});
 		});
@@ -1324,13 +1324,13 @@ describe('LogStreamingEventRelay', () => {
 				nodeName: 'Vector Store',
 				workflowId: 'wf123',
 				workflowName: 'My Workflow',
-				nodeType: 'n8n-nodes-base.vectorStore',
+				nodeType: 'aura-nodes-base.vectorStore',
 			};
 
 			eventService.emit('ai-vector-store-updated', payload);
 
 			expect(eventBus.sendAiNodeEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.ai.vector.store.updated',
+				eventName: 'aura.ai.vector.store.updated',
 				payload,
 			});
 		});
@@ -1348,7 +1348,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('runner-task-requested', event);
 
 			expect(eventBus.sendRunnerEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.runner.task.requested',
+				eventName: 'aura.runner.task.requested',
 				payload: {
 					taskId: 't-1',
 					nodeId: 'n-2',
@@ -1369,7 +1369,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('runner-response-received', event);
 
 			expect(eventBus.sendRunnerEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.runner.response.received',
+				eventName: 'aura.runner.response.received',
 				payload: {
 					taskId: 't-1',
 					nodeId: 'n-2',
@@ -1392,7 +1392,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('job-enqueued', event);
 
 			expect(eventBus.sendQueueEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.queue.job.enqueued',
+				eventName: 'aura.queue.job.enqueued',
 				payload: {
 					executionId: 'exec-1',
 					workflowId: 'wf-2',
@@ -1413,7 +1413,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('job-dequeued', event);
 
 			expect(eventBus.sendQueueEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.queue.job.dequeued',
+				eventName: 'aura.queue.job.dequeued',
 				payload: {
 					executionId: 'exec-1',
 					workflowId: 'wf-2',
@@ -1434,7 +1434,7 @@ describe('LogStreamingEventRelay', () => {
 			eventService.emit('job-stalled', event);
 
 			expect(eventBus.sendQueueEvent).toHaveBeenCalledWith({
-				eventName: 'n8n.queue.job.stalled',
+				eventName: 'aura.queue.job.stalled',
 				payload: {
 					executionId: 'exec-1',
 					workflowId: 'wf-2',

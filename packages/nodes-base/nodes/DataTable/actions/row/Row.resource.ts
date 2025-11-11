@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import * as deleteRows from './delete.operation';
 import * as rowExists from './rowExists.operation';
@@ -69,7 +69,7 @@ export const description: INodeProperties[] = [
 		default: 'insert',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 		displayName: 'Data table',
 		name: DATA_TABLE_ID_FIELD,
 		type: 'resourceLocator',

@@ -9,8 +9,8 @@ import { useUIStore } from '@/app/stores/ui.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useToast } from '@/app/composables/useToast';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { WEBHOOK_NODE_TYPE } from 'n8n-workflow';
-import { STORES } from '@n8n/stores';
+import { WEBHOOK_NODE_TYPE } from 'workflow';
+import { STORES } from '@aura/stores';
 
 vi.mock('@/app/composables/useToast', () => {
 	const showError = vi.fn();

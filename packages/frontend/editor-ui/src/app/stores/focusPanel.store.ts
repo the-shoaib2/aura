@@ -1,14 +1,9 @@
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import get from 'lodash/get';
 
-import {
-	type NodeParameterValueType,
-	type INode,
-	type INodeProperties,
-	jsonParse,
-} from 'n8n-workflow';
+import { type NodeParameterValueType, type INode, type INodeProperties, jsonParse } from 'workflow';
 import { useWorkflowsStore } from './workflows.store';
 import { LOCAL_STORAGE_FOCUS_PANEL, PLACEHOLDER_EMPTY_WORKFLOW_ID } from '@/app/constants';
 import { useStorage } from '@/app/composables/useStorage';

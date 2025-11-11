@@ -1,8 +1,8 @@
 import { computed, reactive } from 'vue';
 import { defineStore } from 'pinia';
-import type { UsageState } from '@n8n/api-types';
-import * as usageApi from '@n8n/rest-api-client/api/usage';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import type { UsageState } from '@aura/api-types';
+import * as usageApi from '@aura/rest-api-client/api/usage';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
 
 export type UsageTelemetry = {
@@ -62,8 +62,8 @@ export const useUsageStore = defineStore('usage', () => {
 	);
 	const subscriptionAppUrl = computed(() =>
 		settingsStore.settings.license.environment === 'production'
-			? 'https://subscription.n8n.io'
-			: 'https://staging-subscription.n8n.io',
+			? 'https://subscription.aura.io'
+			: 'https://staging-subscription.aura.io',
 	);
 
 	const setLoading = (loading: boolean) => {

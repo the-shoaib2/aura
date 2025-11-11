@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "e0161f99-f352-4391-a04c-4f5f35a5579d"
@@ -21,7 +21,7 @@
 				"additionalFields": {}
 			},
 			"name": "Emelia",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [590, 150],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"campaignId": "={{$node[\"Emelia3\"].json[\"_id\"]}}"
 			},
 			"name": "Emelia1",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [750, 150],
 			"credentials": {
@@ -54,7 +54,7 @@
 				"limit": 1
 			},
 			"name": "Emelia2",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -71,7 +71,7 @@
 				"campaignName": "=TestCampaign{{Date.now()}}"
 			},
 			"name": "Emelia3",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [450, 150],
 			"credentials": {
@@ -88,7 +88,7 @@
 				"campaignId": "6076e11687008a0e9fc32356"
 			},
 			"name": "Emelia4",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -105,7 +105,7 @@
 				"campaignId": "6076e11687008a0e9fc32356"
 			},
 			"name": "Emelia5",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -123,7 +123,7 @@
 				"limit": 1
 			},
 			"name": "Emelia6",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"credentials": {
@@ -143,7 +143,7 @@
 				"additionalFields": {}
 			},
 			"name": "Emelia7",
-			"type": "n8n-nodes-base.emelia",
+			"type": "aura-nodes-base.emelia",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"credentials": {

@@ -8,8 +8,8 @@ import type {
 	INodeTypeDescription,
 	ITriggerResponse,
 	IRun,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 export class KafkaTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -46,7 +46,7 @@ export class KafkaTrigger implements INodeType {
 				type: 'string',
 				default: '',
 				required: true,
-				placeholder: 'n8n-kafka',
+				placeholder: 'aura-kafka',
 				description: 'ID of the consumer group',
 			},
 			{
@@ -234,7 +234,7 @@ export class KafkaTrigger implements INodeType {
 			heartbeatInterval: this.getNodeParameter('options.heartbeatInterval', 3000) as number,
 		});
 
-		// The "closeFunction" function gets called by n8n whenever
+		// The "closeFunction" function gets called by aura whenever
 		// the workflow gets deactivated and can so clean up.
 		async function closeFunction() {
 			await consumer.disconnect();
@@ -298,7 +298,7 @@ export class KafkaTrigger implements INodeType {
 			await startConsumer();
 			return { closeFunction };
 		} else {
-			// The "manualTriggerFunction" function gets called by n8n
+			// The "manualTriggerFunction" function gets called by aura
 			// when a user is in the workflow editor and starts the
 			// workflow manually. So the function has to make sure that
 			// the emit() gets called with similar data like when it

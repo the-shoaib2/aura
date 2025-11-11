@@ -1,11 +1,11 @@
-import { testDb, mockInstance } from '@n8n/backend-test-utils';
+import { testDb, mockInstance } from '@aura/backend-test-utils';
 import {
 	CredentialsEntity,
 	CredentialsRepository,
 	SharedWorkflowRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 
 import { Telemetry } from '@/telemetry';

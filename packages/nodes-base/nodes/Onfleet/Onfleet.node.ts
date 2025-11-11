@@ -9,7 +9,7 @@ import {
 	type INodeTypeDescription,
 	type IRequestOptions,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { adminFields, adminOperations } from './descriptions/AdministratorDescription';
 import { containerFields, containerOperations } from './descriptions/ContainerDescription';
@@ -131,7 +131,7 @@ export class Onfleet implements INodeType {
 				const options: IRequestOptions = {
 					headers: {
 						'Content-Type': 'application/json',
-						'User-Agent': 'n8n-onfleet',
+						'User-Agent': 'aura-onfleet',
 					},
 					auth: {
 						user: credentials.apiKey as string,
@@ -180,7 +180,7 @@ export class Onfleet implements INodeType {
 
 		const responseData = await operations[resource].call(this, `${resource}s`, operation, items);
 
-		// Map data to n8n data
+		// Map data to aura data
 		return [this.helpers.returnJsonArray(responseData as IDataObject)];
 	}
 }

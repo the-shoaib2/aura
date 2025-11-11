@@ -28,7 +28,7 @@ assert.match(releaseType, /^(patch|minor|major|experimental)$/, 'Invalid RELEASE
 
 // TODO: if releaseType is `auto` determine release type based on the changelog
 
-const lastTag = (await exec('git describe --tags --match "n8n@*" --abbrev=0')).stdout.trim();
+const lastTag = (await exec('git describe --tags --match "aura@*" --abbrev=0')).stdout.trim();
 const packages = JSON.parse((await exec('pnpm ls -r --only-projects --json')).stdout);
 
 const packageMap = {};
@@ -49,7 +49,7 @@ assert.ok(
 );
 
 // Keep the monorepo version up to date with the released version
-packageMap['monorepo-root'].version = packageMap['n8n'].version;
+packageMap['monorepo-root'].version = packageMap['aura'].version;
 
 for (const packageName in packageMap) {
 	const { path, version, isDirty } = packageMap[packageName];
@@ -69,4 +69,4 @@ for (const packageName in packageMap) {
 	await writeFile(packageFile, JSON.stringify(packageJson, null, 2) + '\n');
 }
 
-console.log(packageMap['n8n'].nextVersion);
+console.log(packageMap['aura'].nextVersion);

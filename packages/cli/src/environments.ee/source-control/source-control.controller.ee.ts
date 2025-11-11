@@ -1,8 +1,8 @@
 import { IWorkflowToImport } from '@/interfaces';
-import { PullWorkFolderRequestDto, PushWorkFolderRequestDto } from '@n8n/api-types';
-import type { SourceControlledFile } from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Get, Post, Patch, RestController, GlobalScope, Body } from '@n8n/decorators';
+import { PullWorkFolderRequestDto, PushWorkFolderRequestDto } from '@aura/api-types';
+import type { SourceControlledFile } from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
+import { Get, Post, Patch, RestController, GlobalScope, Body } from '@aura/decorators';
 import express from 'express';
 import type { PullResult } from 'simple-git';
 

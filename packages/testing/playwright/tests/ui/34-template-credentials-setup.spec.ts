@@ -4,7 +4,7 @@ import { test, expect } from '../../fixtures/base';
 import type { TestRequirements } from '../../Types';
 import { resolveFromRoot } from '../../utils/path-helper';
 
-const TEMPLATE_HOST = 'https://api.n8n.io/api/';
+const TEMPLATE_HOST = 'https://api.aura.io/api/';
 const TEMPLATE_ID = 1205;
 const TEMPLATE_WITHOUT_CREDS_ID = 1344;
 const COLLECTION_ID = 1;
@@ -56,23 +56,23 @@ test.describe('Template credentials setup @db:reset', () => {
 		await setupRequirements(createTemplateRequirements());
 	});
 
-	test('can be opened from template collection page', async ({ n8n }) => {
-		await n8n.navigate.toTemplateCollection(COLLECTION_ID);
-		await n8n.templates.clickUseWorkflowButton('Promote new Shopify products');
+	test('can be opened from template collection page', async ({ aura }) => {
+		await aura.navigate.toTemplateCollection(COLLECTION_ID);
+		await aura.templates.clickUseWorkflowButton('Promote new Shopify products');
 
 		await expect(
-			n8n.templateCredentialSetup.getTitle("Set up 'Promote new Shopify products' template"),
+			aura.templateCredentialSetup.getTitle("Set up 'Promote new Shopify products' template"),
 		).toBeVisible();
 	});
 
-	test('has all the elements on page', async ({ n8n }) => {
-		await n8n.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
+	test('has all the elements on page', async ({ aura }) => {
+		await aura.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
 
 		await expect(
-			n8n.templateCredentialSetup.getTitle("Set up 'Promote new Shopify products' template"),
+			aura.templateCredentialSetup.getTitle("Set up 'Promote new Shopify products' template"),
 		).toBeVisible();
 
-		await expect(n8n.templateCredentialSetup.getInfoCallout()).toContainText(
+		await expect(aura.templateCredentialSetup.getInfoCallout()).toContainText(
 			'You need 1x Shopify, 1x X (Formerly Twitter) and 1x Telegram account to setup this template',
 		);
 
@@ -83,49 +83,49 @@ test.describe('Template credentials setup @db:reset', () => {
 			'The credential you select will be used in the Telegram node of the workflow template.',
 		];
 
-		const formSteps = n8n.templateCredentialSetup.getFormSteps();
+		const formSteps = aura.templateCredentialSetup.getFormSteps();
 		const count = await formSteps.count();
 
 		for (let i = 0; i < count; i++) {
 			const step = formSteps.nth(i);
-			await expect(n8n.templateCredentialSetup.getStepHeading(step)).toHaveText(
+			await expect(aura.templateCredentialSetup.getStepHeading(step)).toHaveText(
 				expectedAppNames[i],
 			);
-			await expect(n8n.templateCredentialSetup.getStepDescription(step)).toHaveText(
+			await expect(aura.templateCredentialSetup.getStepDescription(step)).toHaveText(
 				expectedAppDescriptions[i],
 			);
 		}
 	});
 
-	test('can skip template creation', async ({ n8n }) => {
-		await n8n.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
+	test('can skip template creation', async ({ aura }) => {
+		await aura.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
 
-		await n8n.templateCredentialSetup.getSkipLink().click();
+		await aura.templateCredentialSetup.getSkipLink().click();
 
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(3);
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(3);
 	});
 
-	test('can create credentials and workflow from the template', async ({ n8n }) => {
-		await n8n.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
+	test('can create credentials and workflow from the template', async ({ aura }) => {
+		await aura.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
 
-		await expect(n8n.templateCredentialSetup.getContinueButton()).toBeDisabled();
+		await expect(aura.templateCredentialSetup.getContinueButton()).toBeDisabled();
 
-		await n8n.templatesComposer.fillDummyCredentialForApp('Shopify');
+		await aura.templatesComposer.fillDummyCredentialForApp('Shopify');
 
-		await expect(n8n.templateCredentialSetup.getContinueButton()).toBeEnabled();
+		await expect(aura.templateCredentialSetup.getContinueButton()).toBeEnabled();
 
-		await n8n.templatesComposer.fillDummyCredentialForAppWithConfirm('X (Formerly Twitter)');
-		await n8n.templatesComposer.fillDummyCredentialForApp('Telegram');
+		await aura.templatesComposer.fillDummyCredentialForAppWithConfirm('X (Formerly Twitter)');
+		await aura.templatesComposer.fillDummyCredentialForApp('Telegram');
 
-		await n8n.notifications.quickCloseAll();
+		await aura.notifications.quickCloseAll();
 
-		const workflowCreatePromise = n8n.page.waitForResponse('**/rest/workflows');
-		await n8n.templateCredentialSetup.getContinueButton().click();
+		const workflowCreatePromise = aura.page.waitForResponse('**/rest/workflows');
+		await aura.templateCredentialSetup.getContinueButton().click();
 		await workflowCreatePromise;
 
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(3);
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(3);
 
-		const workflow = await n8n.canvasComposer.getWorkflowFromClipboard();
+		const workflow = await aura.canvasComposer.getWorkflowFromClipboard();
 
 		expect(workflow.meta).toHaveProperty('templateId', TEMPLATE_ID.toString());
 		expect(workflow.meta).not.toHaveProperty('templateCredsSetupCompleted');
@@ -135,7 +135,7 @@ test.describe('Template credentials setup @db:reset', () => {
 	});
 
 	test('should work with a template that has no credentials (ADO-1603)', async ({
-		n8n,
+		aura,
 		setupRequirements,
 	}) => {
 		await setupRequirements({
@@ -159,7 +159,7 @@ test.describe('Template credentials setup @db:reset', () => {
 			},
 		});
 
-		await n8n.navigate.toTemplateCredentialSetup(TEMPLATE_WITHOUT_CREDS_ID);
+		await aura.navigate.toTemplateCredentialSetup(TEMPLATE_WITHOUT_CREDS_ID);
 
 		const expectedAppNames = ['1. Email (IMAP)', '2. Nextcloud'];
 		const expectedAppDescriptions = [
@@ -167,81 +167,81 @@ test.describe('Template credentials setup @db:reset', () => {
 			'The credential you select will be used in the Nextcloud node of the workflow template.',
 		];
 
-		const formSteps = n8n.templateCredentialSetup.getFormSteps();
+		const formSteps = aura.templateCredentialSetup.getFormSteps();
 		const count = await formSteps.count();
 
 		for (let i = 0; i < count; i++) {
 			const step = formSteps.nth(i);
-			await expect(n8n.templateCredentialSetup.getStepHeading(step)).toHaveText(
+			await expect(aura.templateCredentialSetup.getStepHeading(step)).toHaveText(
 				expectedAppNames[i],
 			);
-			await expect(n8n.templateCredentialSetup.getStepDescription(step)).toHaveText(
+			await expect(aura.templateCredentialSetup.getStepDescription(step)).toHaveText(
 				expectedAppDescriptions[i],
 			);
 		}
 
-		await expect(n8n.templateCredentialSetup.getContinueButton()).toBeDisabled();
+		await expect(aura.templateCredentialSetup.getContinueButton()).toBeDisabled();
 
-		await n8n.templatesComposer.fillDummyCredentialForApp('Email (IMAP)');
-		await n8n.templatesComposer.fillDummyCredentialForApp('Nextcloud');
+		await aura.templatesComposer.fillDummyCredentialForApp('Email (IMAP)');
+		await aura.templatesComposer.fillDummyCredentialForApp('Nextcloud');
 
-		await n8n.notifications.quickCloseAll();
+		await aura.notifications.quickCloseAll();
 
-		const workflowCreatePromise = n8n.page.waitForResponse('**/rest/workflows');
-		await n8n.templateCredentialSetup.getContinueButton().click();
+		const workflowCreatePromise = aura.page.waitForResponse('**/rest/workflows');
+		await aura.templateCredentialSetup.getContinueButton().click();
 		await workflowCreatePromise;
 
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(3);
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(3);
 	});
 
 	test.describe('Credential setup from workflow editor', () => {
 		test('should allow credential setup from workflow editor if user skips it during template setup', async ({
-			n8n,
+			aura,
 		}) => {
-			await n8n.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
-			await n8n.templateCredentialSetup.getSkipLink().click();
+			await aura.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
+			await aura.templateCredentialSetup.getSkipLink().click();
 
-			await expect(n8n.canvas.getSetupWorkflowCredentialsButton()).toBeVisible();
+			await expect(aura.canvas.getSetupWorkflowCredentialsButton()).toBeVisible();
 		});
 
 		test('should allow credential setup from workflow editor if user fills in credentials partially during template setup', async ({
-			n8n,
+			aura,
 		}) => {
-			await n8n.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
-			await n8n.templatesComposer.fillDummyCredentialForApp('Shopify');
+			await aura.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
+			await aura.templatesComposer.fillDummyCredentialForApp('Shopify');
 
-			await n8n.notifications.quickCloseAll();
+			await aura.notifications.quickCloseAll();
 
-			const workflowCreatePromise = n8n.page.waitForResponse('**/rest/workflows');
-			await n8n.templateCredentialSetup.getContinueButton().click();
+			const workflowCreatePromise = aura.page.waitForResponse('**/rest/workflows');
+			await aura.templateCredentialSetup.getContinueButton().click();
 			await workflowCreatePromise;
 
-			await expect(n8n.canvas.getSetupWorkflowCredentialsButton()).toBeVisible();
+			await expect(aura.canvas.getSetupWorkflowCredentialsButton()).toBeVisible();
 		});
 
-		test('should fill credentials from workflow editor', async ({ n8n }) => {
-			await n8n.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
-			await n8n.templateCredentialSetup.getSkipLink().click();
+		test('should fill credentials from workflow editor', async ({ aura }) => {
+			await aura.navigate.toTemplateCredentialSetup(TEMPLATE_ID);
+			await aura.templateCredentialSetup.getSkipLink().click();
 
-			await n8n.canvas.getSetupWorkflowCredentialsButton().click();
-			await expect(n8n.workflowCredentialSetupModal.getModal()).toBeVisible();
+			await aura.canvas.getSetupWorkflowCredentialsButton().click();
+			await expect(aura.workflowCredentialSetupModal.getModal()).toBeVisible();
 
-			await n8n.templatesComposer.fillDummyCredentialForApp('Shopify');
-			await n8n.templatesComposer.fillDummyCredentialForAppWithConfirm('X (Formerly Twitter)');
-			await n8n.templatesComposer.fillDummyCredentialForApp('Telegram');
+			await aura.templatesComposer.fillDummyCredentialForApp('Shopify');
+			await aura.templatesComposer.fillDummyCredentialForAppWithConfirm('X (Formerly Twitter)');
+			await aura.templatesComposer.fillDummyCredentialForApp('Telegram');
 
-			await n8n.notifications.quickCloseAll();
+			await aura.notifications.quickCloseAll();
 
-			await n8n.workflowCredentialSetupModal.clickContinue();
-			await expect(n8n.workflowCredentialSetupModal.getModal()).toBeHidden();
+			await aura.workflowCredentialSetupModal.clickContinue();
+			await expect(aura.workflowCredentialSetupModal.getModal()).toBeHidden();
 
-			const workflow = await n8n.canvasComposer.getWorkflowFromClipboard();
+			const workflow = await aura.canvasComposer.getWorkflowFromClipboard();
 
 			workflow.nodes.forEach((node: { credentials?: Record<string, unknown> }) => {
 				expect(Object.keys(node.credentials ?? {})).toHaveLength(1);
 			});
 
-			await expect(n8n.canvas.getSetupWorkflowCredentialsButton()).toBeHidden();
+			await expect(aura.canvas.getSetupWorkflowCredentialsButton()).toBeHidden();
 		});
 	});
 });

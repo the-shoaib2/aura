@@ -3,7 +3,7 @@ import MCPConnectionInstructions from './MCPConnectionInstructions.vue';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { createPinia, setActivePinia } from 'pinia';
 import userEvent from '@testing-library/user-event';
-import type { ApiKey, OAuthClientResponseDto } from '@n8n/api-types';
+import type { ApiKey, OAuthClientResponseDto } from '@aura/api-types';
 import { MCP_DOCS_PAGE_URL } from '@/features/ai/mcpAccess/mcp.constants';
 
 const renderComponent = createComponentRenderer(MCPConnectionInstructions);
@@ -78,7 +78,7 @@ describe('MCPConnectionInstructions', () => {
 		expect(getByText('How to connect')).toBeInTheDocument();
 
 		// Both tabs
-		const tabs = container.querySelectorAll('.n8n-tabs .tab');
+		const tabs = container.querySelectorAll('.aura-tabs .tab');
 		expect(tabs).toHaveLength(2);
 		expect(tabs[0]).toHaveTextContent('oAuth');
 		expect(tabs[1]).toHaveTextContent('Access Token');
@@ -102,7 +102,7 @@ describe('MCPConnectionInstructions', () => {
 		});
 
 		// Find and click the API Key tab
-		const tabs = container.querySelectorAll('.n8n-tabs .tab');
+		const tabs = container.querySelectorAll('.aura-tabs .tab');
 		const oauthTab = tabs[0];
 		const apiKeyTab = tabs[1];
 		expect(apiKeyTab).toHaveTextContent('Access Token');
@@ -127,7 +127,7 @@ describe('MCPConnectionInstructions', () => {
 		});
 
 		// First switch to API Key tab
-		const tabs = container.querySelectorAll('.n8n-tabs .tab');
+		const tabs = container.querySelectorAll('.aura-tabs .tab');
 		const oauthTab = tabs[0];
 		const apiKeyTab = tabs[1];
 		await userEvent.click(apiKeyTab);

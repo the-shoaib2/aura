@@ -3,7 +3,7 @@ import { type MockedStore, mockedStore } from '@/__tests__/utils';
 import VariableModal from './VariableModal.vue';
 import { createTestingPinia } from '@pinia/testing';
 import { VARIABLE_MODAL_KEY } from '../environments.constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import userEvent from '@testing-library/user-event';
 import { useUIStore } from '@/app/stores/ui.store';
 import useEnvironmentsStore from '../environments.store';

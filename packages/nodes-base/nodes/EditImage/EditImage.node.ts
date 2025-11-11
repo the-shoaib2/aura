@@ -10,8 +10,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError, NodeConnectionTypes, deepCopy } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError, NodeConnectionTypes, deepCopy } from 'workflow';
 import { parse as pathParse } from 'path';
 import { file } from 'tmp-promise';
 
@@ -851,7 +851,7 @@ export class EditImage implements INodeType {
 								},
 								default: '',
 								description:
-									'The font to use. Defaults to Arial. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'The font to use. Defaults to Arial. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 						],
 					},
@@ -892,7 +892,7 @@ export class EditImage implements INodeType {
 						},
 						default: '',
 						description:
-							'The font to use. Defaults to Arial. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'The font to use. Defaults to Arial. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Format',

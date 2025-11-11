@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.discord",
+	"node": "aura-nodes-base.discord",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "HITL"],
@@ -9,12 +9,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/discord/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/discord/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.discord/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.discord/"
 			}
 		]
 	},

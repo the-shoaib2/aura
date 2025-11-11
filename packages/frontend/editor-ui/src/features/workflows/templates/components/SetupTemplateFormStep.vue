@@ -7,12 +7,12 @@ import { getAppNameFromNodeName } from '@/app/utils/nodeTypesUtils';
 import { formatList } from '@/app/utils/formatters/listFormatter';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import type { BaseNode, CredentialUsages } from '../templates.types';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import type { TemplateCredentialKey } from '../utils/templateTransforms';
 import { I18nT } from 'vue-i18n';
 
-import { N8nHeading } from '@n8n/design-system';
+import { N8nHeading } from '@aura/design-system';
 // Props
 const props = withDefaults(
 	defineProps<{
@@ -87,7 +87,7 @@ const onCredentialModalOpened = () => {
 				:plural="credentials.usedBy.length"
 				scope="global"
 			>
-				<span v-n8n-html="nodeNames" />
+				<span v-aura-html="nodeNames" />
 			</I18nT>
 		</p>
 

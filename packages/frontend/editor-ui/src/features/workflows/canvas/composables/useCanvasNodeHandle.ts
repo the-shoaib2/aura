@@ -5,7 +5,7 @@
 
 import { CanvasNodeHandleKey } from '@/app/constants';
 import { computed, inject } from 'vue';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { CanvasConnectionMode } from '../canvas.types';
 
 export function useCanvasNodeHandle() {

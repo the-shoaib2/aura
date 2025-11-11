@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useUIStore } from '@/app/stores/ui.store';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 
-import { N8nButton, N8nCallout } from '@n8n/design-system';
+import { N8nButton, N8nCallout } from '@aura/design-system';
 interface Props {
 	packageName?: string;
 	source?: string;

@@ -1,4 +1,4 @@
-import { ApplicationError, type ReportingOptions } from '@n8n/errors';
+import { ApplicationError, type ReportingOptions } from '@aura/errors';
 
 import type { Functionality, IDataObject, JsonObject } from '../../interfaces';
 

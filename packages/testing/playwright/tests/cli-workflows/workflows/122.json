@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [410, 200],
 			"id": "39ef826b-4c37-4617-aacb-e2d276721e1f"
@@ -28,7 +28,7 @@
 				}
 			},
 			"name": "Orbit",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [750, 200],
 			"credentials": {
@@ -45,7 +45,7 @@
 				"memberId": "={{$node[\"Orbit\"].json[\"id\"]}}"
 			},
 			"name": "Orbit1",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [900, 200],
 			"credentials": {
@@ -64,7 +64,7 @@
 				"options": {}
 			},
 			"name": "Orbit2",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [600, 500],
 			"credentials": {
@@ -85,7 +85,7 @@
 				}
 			},
 			"name": "Orbit3",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [1050, 200],
 			"credentials": {
@@ -105,7 +105,7 @@
 				"username": "={{$node[\"Orbit2\"].json[\"attributes\"][\"github\"]}}"
 			},
 			"name": "Orbit4",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [750, 500],
 			"credentials": {
@@ -123,7 +123,7 @@
 				"memberId": "={{$node[\"Orbit\"].json[\"id\"]}}"
 			},
 			"name": "Orbit5",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [1200, 200],
 			"credentials": {
@@ -147,7 +147,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [600, 200],
 			"id": "9131159f-68a7-4379-945e-2743187ae993"
@@ -161,7 +161,7 @@
 				"additionalFields": {}
 			},
 			"name": "Orbit6",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [900, 350],
 			"credentials": {
@@ -181,7 +181,7 @@
 				"filters": {}
 			},
 			"name": "Orbit7",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [1050, 350],
 			"credentials": {
@@ -200,7 +200,7 @@
 				"note": "=Note{{Date.now()}}"
 			},
 			"name": "Orbit8",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [900, 50],
 			"credentials": {
@@ -221,7 +221,7 @@
 				"note": "=Updated{{$node[\"Orbit8\"].json[\"attributes\"][\"body\"]}}"
 			},
 			"name": "Orbit9",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [1050, 50],
 			"credentials": {
@@ -241,7 +241,7 @@
 				"limit": 1
 			},
 			"name": "Orbit10",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [1200, 50],
 			"credentials": {
@@ -257,11 +257,11 @@
 				"resource": "post",
 				"workspaceId": "543",
 				"memberId": "={{$node[\"Orbit4\"].json[\"id\"]}}",
-				"url": "=https://n8n.io/blog/why-i-chose-n8n-over-zapier-in-2020?test_timestamp={{Date.now()}}",
+				"url": "=https://aura.io/blog/why-i-chose-aura-over-zapier-in-2020?test_timestamp={{Date.now()}}",
 				"additionalFields": {}
 			},
 			"name": "Orbit11",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [900, 500],
 			"credentials": {
@@ -281,7 +281,7 @@
 				"filters": {}
 			},
 			"name": "Orbit12",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [1050, 500],
 			"credentials": {
@@ -301,7 +301,7 @@
 				"postId": "={{$node[\"Orbit11\"].json[\"id\"]}}"
 			},
 			"name": "Orbit13",
-			"type": "n8n-nodes-base.orbit",
+			"type": "aura-nodes-base.orbit",
 			"typeVersion": 1,
 			"position": [1050, 650],
 			"credentials": {

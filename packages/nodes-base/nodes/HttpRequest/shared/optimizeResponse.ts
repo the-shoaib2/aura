@@ -11,7 +11,7 @@ import {
 	NodeOperationError,
 	type IDataObject,
 	type IExecuteFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 type ResponseOptimizerFn = (
 	x: IDataObject | IDataObject[] | string,

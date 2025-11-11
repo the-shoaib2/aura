@@ -1,14 +1,14 @@
 import { screen } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
-import type { ProjectRole, AllRolesMap } from '@n8n/permissions';
-import type { TableOptions } from '@n8n/design-system/components/N8nDataTableServer';
+import type { ProjectRole, AllRolesMap } from '@aura/permissions';
+import type { TableOptions } from '@aura/design-system/components/N8nDataTableServer';
 import ProjectMembersTable from './ProjectMembersTable.vue';
 import { createComponentRenderer } from '@/__tests__/render';
 import type { ProjectMemberData } from '../projects.types';
 
 // Mock design system components
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

@@ -1,5 +1,5 @@
 import { useExecutingNode } from '@/app/composables/useExecutingNode';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { defineStore } from 'pinia';
 
 // This store acts as a temporary home for per-workflow state moved out of workflows.store.ts

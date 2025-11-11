@@ -4,7 +4,7 @@ import {
 	type IDisplayOptions,
 	type IExecuteFunctions,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DATA_TABLE_ID_FIELD } from './fields';
 import { dataObjectToApiInput } from './utils';

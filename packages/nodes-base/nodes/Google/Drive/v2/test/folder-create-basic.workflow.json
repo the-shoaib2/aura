@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "trigger-id",
@@ -15,7 +15,7 @@
 				"operation": "create",
 				"name": "Test Folder"
 			},
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 3,
 			"position": [200, 0],
 			"id": "folder-create-basic",

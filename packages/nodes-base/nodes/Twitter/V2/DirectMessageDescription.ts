@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const directMessageOperations: INodeProperties[] = [
 	{
@@ -46,7 +46,7 @@ export const directMessageFields: INodeProperties[] = [
 				name: 'username',
 				type: 'string',
 				validation: [],
-				placeholder: 'e.g. n8n',
+				placeholder: 'e.g. aura',
 				url: '',
 			},
 			{

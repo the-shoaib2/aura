@@ -1,6 +1,6 @@
 import pick from 'lodash/pick';
-import type { IExecuteFunctions } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import { ERROR_MESSAGES, OPERATION_TIMEOUT } from '../../constants';
 import { waitForSessionEvent } from '../../GenericFunctions';
@@ -13,7 +13,7 @@ import type {
 
 /**
  * Fetches all files from the Airtop API using pagination
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param sessionIds - Comma-separated string of session IDs to filter files by
  * @returns Promise resolving to a response object containing the complete array of files
  */
@@ -58,7 +58,7 @@ export async function requestAllFiles(
 
 /**
  * Polls the Airtop API until a file reaches "available" status or times out
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param fileId - The unique identifier of the file to poll
  * @param timeout - Maximum time in milliseconds to wait before failing (defaults to OPERATION_TIMEOUT)
  * @param intervalSeconds - Time in seconds to wait between polling attempts (defaults to 1)
@@ -93,7 +93,7 @@ export async function pollFileUntilAvailable(
 
 /**
  * Creates a file entry in Airtop, uploads the file content, and waits until processing completes
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param fileName - Name to assign to the uploaded file
  * @param fileBuffer - Buffer containing the binary file data to upload
  * @param fileType - Classification of the file in Airtop (e.g., 'customer_upload')
@@ -140,7 +140,7 @@ export async function createAndUploadFile(
 
 /**
  * Waits for a file to be ready in a session by polling file's information
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param sessionId - ID of the session to check for file availability
  * @param fileId - ID of the file
  * @param timeout - Maximum time in milliseconds to wait before failing (defaults to OPERATION_TIMEOUT)
@@ -175,7 +175,7 @@ export async function waitForFileInSession(
 
 /**
  * Associates a file with a session and waits until the file is ready for use
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param fileId - ID of the file to associate with the session
  * @param sessionId - ID of the session to add the file to
  * @param pollingFunction - Function to use for checking file availability in session (defaults to waitForFileInSession)
@@ -194,7 +194,7 @@ export async function pushFileToSession(
 
 /**
  * Activates a file upload input in a specific window within a session
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param fileId - ID of the file to use for the input
  * @param windowId - ID of the window where the file input will be triggered
  * @param sessionId - ID of the session containing the window
@@ -218,7 +218,7 @@ export async function triggerFileInput(
  * - URL: Downloads the file from the specified URL and returns it as a Buffer
  * - Binary: Retrieves binary data from the workflow's binary data storage
  *
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param source - Source type, either 'url' or 'binary'
  * @param value - Either a URL string or binary data property name depending on source type
  * @param itemIndex - Index of the workflow item to get binary data from (when source is 'binary')

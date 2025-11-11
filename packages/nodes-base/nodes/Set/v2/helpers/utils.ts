@@ -8,7 +8,7 @@ import {
 	getValueDescription,
 	jsonParse,
 	validateFieldType,
-} from 'n8n-workflow';
+} from 'workflow';
 import type {
 	AssignmentCollectionValue,
 	FieldType,
@@ -18,7 +18,7 @@ import type {
 	INode,
 	INodeExecutionData,
 	ISupplyDataFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { SetNodeOptions } from './interfaces';
 import { INCLUDE } from './interfaces';

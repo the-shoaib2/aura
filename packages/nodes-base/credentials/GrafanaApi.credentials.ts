@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class GrafanaApi implements ICredentialType {
 	name = 'grafanaApi';
@@ -27,7 +27,7 @@ export class GrafanaApi implements ICredentialType {
 			type: 'string',
 			default: '',
 			description: 'Base URL of your Grafana instance',
-			placeholder: 'e.g. https://n8n.grafana.net/',
+			placeholder: 'e.g. https://aura.grafana.net/',
 			required: true,
 		},
 	];

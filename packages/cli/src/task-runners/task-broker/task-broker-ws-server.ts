@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { TaskRunnersConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import { Service } from '@n8n/di';
-import type { BrokerMessage, RunnerMessage } from '@n8n/task-runner';
-import { jsonStringify, UserError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { TaskRunnersConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import { Service } from '@aura/di';
+import type { BrokerMessage, RunnerMessage } from '@aura/task-runner';
+import { jsonStringify, UserError } from 'workflow';
 import type WebSocket from 'ws';
 
 import { WsStatusCodes } from '@/constants';

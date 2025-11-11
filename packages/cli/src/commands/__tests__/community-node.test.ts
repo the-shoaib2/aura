@@ -1,4 +1,4 @@
-import type { CredentialsEntity, User } from '@n8n/db';
+import type { CredentialsEntity, User } from '@aura/db';
 import { mock } from 'jest-mock-extended';
 
 import { CommunityNode } from '@/modules/community-packages/community-node.command';
@@ -154,7 +154,7 @@ describe('uninstallPackage', () => {
 		};
 
 		// @ts-expect-error Protected property
-		communityNode.flags = { package: 'n8n-nodes-evolution-api', uninstall: true };
+		communityNode.flags = { package: 'aura-nodes-evolution-api', uninstall: true };
 		communityNode.findCommunityPackage = jest.fn().mockReturnValue(communityPackage);
 
 		const deleteCommunityNode = jest.spyOn(communityNode, 'deleteCommunityNode');
@@ -164,14 +164,14 @@ describe('uninstallPackage', () => {
 		await communityNode.run();
 
 		expect(findCommunityPackage).toHaveBeenCalledTimes(1);
-		expect(findCommunityPackage).toHaveBeenCalledWith('n8n-nodes-evolution-api');
+		expect(findCommunityPackage).toHaveBeenCalledWith('aura-nodes-evolution-api');
 
 		expect(deleteCommunityNode).toHaveBeenCalledTimes(1);
 		expect(deleteCommunityNode).toHaveBeenCalledWith(installedNode);
 
 		expect(removeCommunityPackageSpy).toHaveBeenCalledTimes(1);
 		expect(removeCommunityPackageSpy).toHaveBeenCalledWith(
-			'n8n-nodes-evolution-api',
+			'aura-nodes-evolution-api',
 			communityPackage,
 		);
 	});
@@ -185,7 +185,7 @@ describe('uninstallPackage', () => {
 		};
 
 		// @ts-expect-error Protected property
-		communityNode.flags = { package: 'n8n-nodes-evolution-api', uninstall: true };
+		communityNode.flags = { package: 'aura-nodes-evolution-api', uninstall: true };
 		communityNode.findCommunityPackage = jest.fn().mockReturnValue(communityPackage);
 
 		const deleteCommunityNode = jest.spyOn(communityNode, 'deleteCommunityNode');
@@ -195,7 +195,7 @@ describe('uninstallPackage', () => {
 		await communityNode.run();
 
 		expect(findCommunityPackage).toHaveBeenCalledTimes(1);
-		expect(findCommunityPackage).toHaveBeenCalledWith('n8n-nodes-evolution-api');
+		expect(findCommunityPackage).toHaveBeenCalledWith('aura-nodes-evolution-api');
 
 		expect(deleteCommunityNode).toHaveBeenCalledTimes(2);
 		expect(deleteCommunityNode).toHaveBeenCalledWith(installedNode0);
@@ -203,14 +203,14 @@ describe('uninstallPackage', () => {
 
 		expect(removeCommunityPackageSpy).toHaveBeenCalledTimes(1);
 		expect(removeCommunityPackageSpy).toHaveBeenCalledWith(
-			'n8n-nodes-evolution-api',
+			'aura-nodes-evolution-api',
 			communityPackage,
 		);
 	});
 
 	it('should return if a package is not found', async () => {
 		// @ts-expect-error Protected property
-		communityNode.flags = { package: 'n8n-nodes-evolution-api', uninstall: true };
+		communityNode.flags = { package: 'aura-nodes-evolution-api', uninstall: true };
 		communityNode.findCommunityPackage = jest.fn().mockReturnValue(null);
 
 		const deleteCommunityNode = jest.spyOn(communityNode, 'deleteCommunityNode');
@@ -220,7 +220,7 @@ describe('uninstallPackage', () => {
 		await communityNode.run();
 
 		expect(findCommunityPackage).toHaveBeenCalledTimes(1);
-		expect(findCommunityPackage).toHaveBeenCalledWith('n8n-nodes-evolution-api');
+		expect(findCommunityPackage).toHaveBeenCalledWith('aura-nodes-evolution-api');
 
 		expect(deleteCommunityNode).toHaveBeenCalledTimes(0);
 
@@ -233,7 +233,7 @@ describe('uninstallPackage', () => {
 		};
 
 		// @ts-expect-error Protected property
-		communityNode.flags = { package: 'n8n-nodes-evolution-api', uninstall: true };
+		communityNode.flags = { package: 'aura-nodes-evolution-api', uninstall: true };
 		communityNode.findCommunityPackage = jest.fn().mockReturnValue(communityPackage);
 
 		const deleteCommunityNode = jest.spyOn(communityNode, 'deleteCommunityNode');
@@ -243,13 +243,13 @@ describe('uninstallPackage', () => {
 		await communityNode.run();
 
 		expect(findCommunityPackage).toHaveBeenCalledTimes(1);
-		expect(findCommunityPackage).toHaveBeenCalledWith('n8n-nodes-evolution-api');
+		expect(findCommunityPackage).toHaveBeenCalledWith('aura-nodes-evolution-api');
 
 		expect(deleteCommunityNode).toHaveBeenCalledTimes(0);
 
 		expect(removeCommunityPackageSpy).toHaveBeenCalledTimes(1);
 		expect(removeCommunityPackageSpy).toHaveBeenCalledWith(
-			'n8n-nodes-evolution-api',
+			'aura-nodes-evolution-api',
 			communityPackage,
 		);
 	});

@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { pushFileToSession, triggerFileInput } from './helpers';
 import {

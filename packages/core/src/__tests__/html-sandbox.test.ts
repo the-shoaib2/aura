@@ -1,5 +1,5 @@
-import type { SecurityConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import type { SecurityConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 
 import {

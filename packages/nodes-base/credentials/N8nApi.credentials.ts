@@ -3,14 +3,14 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class N8nApi implements ICredentialType {
-	name = 'n8nApi';
+	name = 'auraApi';
 
-	displayName = 'n8n API';
+	displayName = 'aura API';
 
-	documentationUrl = 'https://docs.n8n.io/api/authentication/';
+	documentationUrl = 'https://docs.aura.io/api/authentication/';
 
 	properties: INodeProperties[] = [
 		{
@@ -19,15 +19,15 @@ export class N8nApi implements ICredentialType {
 			type: 'string',
 			typeOptions: { password: true },
 			default: '',
-			description: 'The API key for the n8n instance',
+			description: 'The API key for the aura instance',
 		},
 		{
 			displayName: 'Base URL',
 			name: 'baseUrl',
 			type: 'string',
 			default: '',
-			placeholder: 'https://<name>.app.n8n.cloud/api/v1',
-			description: 'The API URL of the n8n instance',
+			placeholder: 'https://<name>.app.aura.cloud/api/v1',
+			description: 'The API URL of the aura instance',
 		},
 	];
 

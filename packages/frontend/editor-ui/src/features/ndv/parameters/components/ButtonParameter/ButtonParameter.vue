@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { type INodeProperties, type NodePropertyAction } from 'n8n-workflow';
+import { type INodeProperties, type NodePropertyAction } from 'workflow';
 import type { INodeUi, IUpdateInformation } from '@/Interface';
 import { ref, computed, onMounted } from 'vue';
-import { N8nButton, N8nInput, N8nInputLabel, N8nTooltip } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import { N8nButton, N8nInput, N8nInputLabel, N8nTooltip } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import {

@@ -8,7 +8,7 @@ import type {
 	ValueFormatterParams,
 } from 'ag-grid-community';
 import { ref } from 'vue';
-import type { I18nClass } from '@n8n/i18n';
+import type { I18nClass } from '@aura/i18n';
 import type { DataTableColumn, DataTableRow } from '@/features/core/dataTable/dataTable.types';
 import {
 	getCellClass,

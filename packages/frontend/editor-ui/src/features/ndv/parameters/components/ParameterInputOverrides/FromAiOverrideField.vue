@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 
-import { N8nIconButton, N8nText } from '@n8n/design-system';
+import { N8nIconButton, N8nText } from '@aura/design-system';
 import AiStarsIcon from '@/app/components/AiStarsIcon.vue';
 defineProps<{
 	isReadOnly?: boolean;
@@ -19,7 +19,7 @@ const emit = defineEmits<{
 		</div>
 		<div :class="$style.overrideInput">
 			<N8nText
-				v-n8n-html="i18n.baseText('parameterOverride.overridePanelText')"
+				v-aura-html="i18n.baseText('parameterOverride.overridePanelText')"
 				color="text-dark"
 				size="small"
 			/>
@@ -27,7 +27,7 @@ const emit = defineEmits<{
 		<N8nIconButton
 			v-if="!isReadOnly"
 			type="tertiary"
-			:class="['n8n-input', $style.overrideCloseButton]"
+			:class="['aura-input', $style.overrideCloseButton]"
 			:outline="false"
 			icon="x"
 			size="small"

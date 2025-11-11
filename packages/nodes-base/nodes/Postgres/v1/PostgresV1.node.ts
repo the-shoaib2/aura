@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { oldVersionNotice } from '@utils/descriptions';
 
@@ -86,7 +86,7 @@ const versionDescription: INodeTypeDescription = {
 			placeholder: 'SELECT id, name FROM product WHERE quantity > $1 AND price <= $2',
 			required: true,
 			description:
-				'The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters.',
+				'The SQL query to execute. You can use aura expressions or $1 and $2 in conjunction with query parameters.',
 		},
 		// ----------------------------------
 		//         insert
@@ -127,9 +127,9 @@ const versionDescription: INodeTypeDescription = {
 				},
 			},
 			default: '',
-			// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+			// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 			placeholder: 'id:int,name:text,description',
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+			// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 			description:
 				'Comma-separated list of the properties which should used as columns for the new rows. You can use type casting with colons (:) like id:int.',
 		},
@@ -173,7 +173,7 @@ const versionDescription: INodeTypeDescription = {
 			},
 			default: 'id',
 			required: true,
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+			// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 			description:
 				'Comma-separated list of the properties which decides which rows in the database should be updated. Normally that would be "id".',
 		},
@@ -188,7 +188,7 @@ const versionDescription: INodeTypeDescription = {
 			},
 			default: '',
 			placeholder: 'name:text,description',
-			// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+			// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 			description:
 				'Comma-separated list of the properties which should used as columns for rows to update. You can use type casting with colons (:) like id:int.',
 		},
@@ -242,7 +242,7 @@ const versionDescription: INodeTypeDescription = {
 					],
 					default: 'multiple',
 					description:
-						'The way queries should be sent to database. Can be used in conjunction with <b>Continue on Fail</b>. See <a href="https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postgres/">the docs</a> for more examples',
+						'The way queries should be sent to database. Can be used in conjunction with <b>Continue on Fail</b>. See <a href="https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.postgres/">the docs</a> for more examples',
 				},
 				{
 					displayName: 'Output Large-Format Numbers As',

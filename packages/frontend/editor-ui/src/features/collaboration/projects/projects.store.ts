@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import * as dataTableApi from '@/features/core/dataTable/dataTable.api';
 import * as projectsApi from './projects.api';
 import * as workflowsApi from '@/app/api/workflows';
@@ -14,10 +14,10 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { hasPermission } from '@/app/utils/rbac/permissions';
 import type { IWorkflowDb } from '@/Interface';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { getResourcePermissions } from '@n8n/permissions';
-import type { CreateProjectDto, UpdateProjectDto } from '@n8n/api-types';
+import { getResourcePermissions } from '@aura/permissions';
+import type { CreateProjectDto, UpdateProjectDto } from '@aura/api-types';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 
 export type ResourceCounts = {

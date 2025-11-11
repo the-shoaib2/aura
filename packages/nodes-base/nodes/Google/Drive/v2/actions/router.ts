@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import * as drive from './drive/Drive.resource';
 import * as file from './file/File.resource';

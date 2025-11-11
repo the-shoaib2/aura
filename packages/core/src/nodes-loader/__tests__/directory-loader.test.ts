@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IVersionedNodeType,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'workflow';
+import { deepCopy } from 'workflow';
 import fs from 'node:fs';
 import fsPromises from 'node:fs/promises';
 
@@ -35,8 +35,8 @@ import { PackageDirectoryLoader } from '../package-directory-loader';
 describe('DirectoryLoader', () => {
 	const directory = '/not/a/real/path';
 	const packageJson = JSON.stringify({
-		name: 'n8n-nodes-testing',
-		n8n: {
+		name: 'aura-nodes-testing',
+		aura: {
 			credentials: ['dist/Credential1.js'],
 			nodes: ['dist/Node1/Node1.node.js', 'dist/Node2/Node2.node.js'],
 		},
@@ -113,7 +113,7 @@ describe('DirectoryLoader', () => {
 			mockFs.readFileSync.calledWith(`${directory}/package.json`).mockReturnValue(packageJson);
 
 			const loader = new PackageDirectoryLoader(directory);
-			expect(loader.packageName).toEqual('n8n-nodes-testing');
+			expect(loader.packageName).toEqual('aura-nodes-testing');
 
 			await loader.loadAll();
 
@@ -129,9 +129,9 @@ describe('DirectoryLoader', () => {
 				node1: { sourcePath: 'dist/Node1/Node1.node.js', type: mockNode1 },
 				node2: { sourcePath: 'dist/Node2/Node2.node.js', type: mockNode2 },
 			});
-			expect(mockCredential1.iconUrl).toBe('icons/n8n-nodes-testing/dist/credential1.svg');
-			expect(mockNode1.description.iconUrl).toBe('icons/n8n-nodes-testing/dist/Node1/node1.svg');
-			expect(mockNode2.description.iconUrl).toBe('icons/n8n-nodes-testing/dist/Node2/node2.svg');
+			expect(mockCredential1.iconUrl).toBe('icons/aura-nodes-testing/dist/credential1.svg');
+			expect(mockNode1.description.iconUrl).toBe('icons/aura-nodes-testing/dist/Node1/node1.svg');
+			expect(mockNode2.description.iconUrl).toBe('icons/aura-nodes-testing/dist/Node2/node2.svg');
 		});
 
 		it('should throw error if node has icon not contained within the package directory', async () => {
@@ -162,10 +162,10 @@ describe('DirectoryLoader', () => {
 			expect(() => new PackageDirectoryLoader(directory)).toThrow('Failed to parse JSON');
 		});
 
-		it('should do nothing if package.json has no n8n field', async () => {
+		it('should do nothing if package.json has no aura field', async () => {
 			mockFs.readFileSync.calledWith(`${directory}/package.json`).mockReturnValue(
 				JSON.stringify({
-					name: 'n8n-nodes-testing',
+					name: 'aura-nodes-testing',
 				}),
 			);
 
@@ -212,7 +212,7 @@ describe('DirectoryLoader', () => {
 		it('should not include nodes that are not in "includeNodes" even if they are from a different package', async () => {
 			mockFs.readFileSync.calledWith(`${directory}/package.json`).mockReturnValue(packageJson);
 
-			const loader = new PackageDirectoryLoader(directory, [], ['n8n-nodes-other-package.node']);
+			const loader = new PackageDirectoryLoader(directory, [], ['aura-nodes-other-package.node']);
 			await loader.loadAll();
 
 			expect(loader.nodeTypes).toEqual({});
@@ -225,7 +225,7 @@ describe('DirectoryLoader', () => {
 			mockFsPromises.readFile.mockResolvedValue('[]');
 
 			const loader = new LazyPackageDirectoryLoader(directory);
-			expect(loader.packageName).toEqual('n8n-nodes-testing');
+			expect(loader.packageName).toEqual('aura-nodes-testing');
 
 			await loader.loadAll();
 
@@ -270,7 +270,7 @@ describe('DirectoryLoader', () => {
 				throw new Error('File not found');
 			});
 
-			const loader = new LazyPackageDirectoryLoader(directory, [], ['n8n-nodes-testing.node1']);
+			const loader = new LazyPackageDirectoryLoader(directory, [], ['aura-nodes-testing.node1']);
 			await loader.loadAll();
 
 			expect(loader.isLazyLoaded).toBe(true);
@@ -309,7 +309,7 @@ describe('DirectoryLoader', () => {
 			const loader = new LazyPackageDirectoryLoader(
 				directory,
 				[],
-				['n8n-nodes-testing.nonexistent'],
+				['aura-nodes-testing.nonexistent'],
 			);
 			await loader.loadAll();
 
@@ -346,7 +346,7 @@ describe('DirectoryLoader', () => {
 			const loader = new LazyPackageDirectoryLoader(
 				directory,
 				[],
-				['n8n-nodes-other-package.node'],
+				['aura-nodes-other-package.node'],
 			);
 			await loader.loadAll();
 
@@ -380,7 +380,7 @@ describe('DirectoryLoader', () => {
 				throw new Error('File not found');
 			});
 
-			const loader = new LazyPackageDirectoryLoader(directory, ['n8n-nodes-testing.node1']);
+			const loader = new LazyPackageDirectoryLoader(directory, ['aura-nodes-testing.node1']);
 			await loader.loadAll();
 
 			expect(loader.isLazyLoaded).toBe(true);

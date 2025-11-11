@@ -1,5 +1,5 @@
-import { Project, WithTimestampsAndStringId } from '@n8n/db';
-import { Column, Entity, Index, JoinColumn, ManyToOne, OneToMany } from '@n8n/typeorm';
+import { Project, WithTimestampsAndStringId } from '@aura/db';
+import { Column, Entity, Index, JoinColumn, ManyToOne, OneToMany } from '@aura/typeorm';
 
 import { DataTableColumn } from './data-table-column.entity';
 

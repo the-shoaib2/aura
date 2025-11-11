@@ -3,7 +3,7 @@ import {
 	testDb,
 	createWorkflowWithTrigger,
 	getAllWorkflows,
-} from '@n8n/backend-test-utils';
+} from '@aura/backend-test-utils';
 
 import { UpdateWorkflowCommand } from '@/commands/update/workflow';
 import { LoadNodesAndCredentials } from '@/load-nodes-and-credentials';

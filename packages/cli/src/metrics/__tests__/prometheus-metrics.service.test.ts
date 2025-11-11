@@ -1,11 +1,11 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { WorkflowRepository } from '@n8n/db';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { WorkflowRepository } from '@aura/db';
 import type express from 'express';
 import promBundle from 'express-prom-bundle';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
-import { EventMessageTypeNames } from 'n8n-workflow';
+import type { InstanceSettings } from 'aura-core';
+import { EventMessageTypeNames } from 'workflow';
 import promClient from 'prom-client';
 
 import type { MessageEventBus } from '@/eventbus/message-event-bus/message-event-bus';
@@ -35,7 +35,7 @@ describe('PrometheusMetricsService', () => {
 		globalConfig = mockInstance(GlobalConfig, {
 			endpoints: {
 				metrics: {
-					prefix: 'n8n_',
+					prefix: 'aura_',
 					includeDefaultMetrics: false,
 					includeApiEndpoints: false,
 					includeCacheMetrics: false,
@@ -103,7 +103,7 @@ describe('PrometheusMetricsService', () => {
 			await customPrometheusMetricsService.init(app);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_cache_hits_total',
+				name: 'aura_cache_hits_total',
 				help: 'Total number of cache hits.',
 				labelNames: ['cache'],
 			});
@@ -111,12 +111,12 @@ describe('PrometheusMetricsService', () => {
 	});
 
 	describe('init', () => {
-		it('should set up `n8n_version_info`', async () => {
+		it('should set up `aura_version_info`', async () => {
 			await prometheusMetricsService.init(app);
 
 			expect(promClient.Gauge).toHaveBeenNthCalledWith(1, {
-				name: 'n8n_version_info',
-				help: 'n8n version info.',
+				name: 'aura_version_info',
+				help: 'aura version info.',
 				labelNames: ['version', 'major', 'minor', 'patch'],
 			});
 		});
@@ -128,34 +128,34 @@ describe('PrometheusMetricsService', () => {
 			expect(promClient.collectDefaultMetrics).toHaveBeenCalled();
 		});
 
-		it('should set up `n8n_cache_hits_total`', async () => {
+		it('should set up `aura_cache_hits_total`', async () => {
 			prometheusMetricsService.enableMetric('cache');
 			await prometheusMetricsService.init(app);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_cache_hits_total',
+				name: 'aura_cache_hits_total',
 				help: 'Total number of cache hits.',
 				labelNames: ['cache'],
 			});
 		});
 
-		it('should set up `n8n_cache_misses_total`', async () => {
+		it('should set up `aura_cache_misses_total`', async () => {
 			prometheusMetricsService.enableMetric('cache');
 			await prometheusMetricsService.init(app);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_cache_misses_total',
+				name: 'aura_cache_misses_total',
 				help: 'Total number of cache misses.',
 				labelNames: ['cache'],
 			});
 		});
 
-		it('should set up `n8n_cache_updates_total`', async () => {
+		it('should set up `aura_cache_updates_total`', async () => {
 			prometheusMetricsService.enableMetric('cache');
 			await prometheusMetricsService.init(app);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_cache_updates_total',
+				name: 'aura_cache_updates_total',
 				help: 'Total number of cache updates.',
 				labelNames: ['cache'],
 			});
@@ -168,7 +168,7 @@ describe('PrometheusMetricsService', () => {
 			await prometheusMetricsService.init(app);
 
 			expect(promBundle).toHaveBeenCalledWith({
-				httpDurationMetricName: 'n8n_http_request_duration_seconds',
+				httpDurationMetricName: 'aura_http_request_duration_seconds',
 				autoregister: false,
 				includeUp: false,
 				includePath: false,
@@ -177,7 +177,7 @@ describe('PrometheusMetricsService', () => {
 			});
 
 			expect(promClient.Gauge).toHaveBeenNthCalledWith(3, {
-				name: 'n8n_last_activity',
+				name: 'aura_last_activity',
 				help: 'last instance activity (backend request) in Unix time (seconds).',
 			});
 
@@ -209,25 +209,25 @@ describe('PrometheusMetricsService', () => {
 
 			await prometheusMetricsService.init(app);
 
-			// call 1 is for `n8n_version_info` (always enabled)
+			// call 1 is for `aura_version_info` (always enabled)
 
 			expect(promClient.Gauge).toHaveBeenNthCalledWith(3, {
-				name: 'n8n_scaling_mode_queue_jobs_waiting',
+				name: 'aura_scaling_mode_queue_jobs_waiting',
 				help: 'Current number of enqueued jobs waiting for pickup in scaling mode.',
 			});
 
 			expect(promClient.Gauge).toHaveBeenNthCalledWith(4, {
-				name: 'n8n_scaling_mode_queue_jobs_active',
+				name: 'aura_scaling_mode_queue_jobs_active',
 				help: 'Current number of jobs being processed across all workers in scaling mode.',
 			});
 
 			expect(promClient.Counter).toHaveBeenNthCalledWith(1, {
-				name: 'n8n_scaling_mode_queue_jobs_completed',
+				name: 'aura_scaling_mode_queue_jobs_completed',
 				help: 'Total number of jobs completed across all workers in scaling mode since instance start.',
 			});
 
 			expect(promClient.Counter).toHaveBeenNthCalledWith(2, {
-				name: 'n8n_scaling_mode_queue_jobs_failed',
+				name: 'aura_scaling_mode_queue_jobs_failed',
 				help: 'Total number of jobs failed across all workers in scaling mode since instance start.',
 			});
 
@@ -261,11 +261,11 @@ describe('PrometheusMetricsService', () => {
 		it('should setup active workflow count metric', async () => {
 			await prometheusMetricsService.init(app);
 
-			// First call is n8n version metric
+			// First call is aura version metric
 			expect(promClient.Gauge).toHaveBeenCalledTimes(3);
 
 			expect(promClient.Gauge).toHaveBeenNthCalledWith(3, {
-				name: 'n8n_active_workflow_count',
+				name: 'aura_active_workflow_count',
 				help: 'Total number of active workflows.',
 				collect: expect.any(Function),
 			});
@@ -291,20 +291,20 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.audit,
-				eventName: 'n8n.audit.user.credentials.created',
-				payload: { credentialType: 'n8n-nodes-base.googleApi' },
+				eventName: 'aura.audit.user.credentials.created',
+				payload: { credentialType: 'aura-nodes-base.googleApi' },
 			};
 
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_audit_user_credentials_created_total',
-				help: 'Total number of n8n.audit.user.credentials.created events.',
+				name: 'aura_audit_user_credentials_created_total',
+				help: 'Total number of aura.audit.user.credentials.created events.',
 				labelNames: ['credential_type'],
 			});
 
 			expect(promClient.Counter.prototype.inc).toHaveBeenCalledWith(
-				{ credential_type: 'n8n-nodes-base_googleApi' },
+				{ credential_type: 'aura-nodes-base_googleApi' },
 				1,
 			);
 		});
@@ -318,14 +318,14 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.audit,
-				eventName: 'n8n.audit.workflow.created',
+				eventName: 'aura.audit.workflow.created',
 				payload: { workflowId: 'wf_123' },
 			};
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_audit_workflow_created_total',
-				help: 'Total number of n8n.audit.workflow.created events.',
+				name: 'aura_audit_workflow_created_total',
+				help: 'Total number of aura.audit.workflow.created events.',
 				labelNames: ['workflow_id'],
 			});
 
@@ -341,14 +341,14 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.audit,
-				eventName: 'n8n.audit.workflow.created',
+				eventName: 'aura.audit.workflow.created',
 				payload: { workflowName: 'Fake Workflow Name' },
 			};
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_audit_workflow_created_total',
-				help: 'Total number of n8n.audit.workflow.created events.',
+				name: 'aura_audit_workflow_created_total',
+				help: 'Total number of aura.audit.workflow.created events.',
 				labelNames: ['workflow_name'],
 			});
 
@@ -366,15 +366,15 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.node,
-				eventName: 'n8n.node.execution.started',
-				payload: { nodeType: 'n8n-nodes-base.if' },
+				eventName: 'aura.node.execution.started',
+				payload: { nodeType: 'aura-nodes-base.if' },
 			};
 
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_node_execution_started_total',
-				help: 'Total number of n8n.node.execution.started events.',
+				name: 'aura_node_execution_started_total',
+				help: 'Total number of aura.node.execution.started events.',
 				labelNames: ['node_type'],
 			});
 
@@ -389,15 +389,15 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.node,
-				eventName: 'n8n.node.execution.started',
+				eventName: 'aura.node.execution.started',
 				payload: { workflowId: 'wf_123' },
 			};
 
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_node_execution_started_total',
-				help: 'Total number of n8n.node.execution.started events.',
+				name: 'aura_node_execution_started_total',
+				help: 'Total number of aura.node.execution.started events.',
 				labelNames: ['workflow_id'],
 			});
 
@@ -412,15 +412,15 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.node,
-				eventName: 'n8n.node.execution.started',
+				eventName: 'aura.node.execution.started',
 				payload: { workflowName: 'Fake Workflow Name' },
 			};
 
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_node_execution_started_total',
-				help: 'Total number of n8n.node.execution.started events.',
+				name: 'aura_node_execution_started_total',
+				help: 'Total number of aura.node.execution.started events.',
 				labelNames: ['workflow_name'],
 			});
 
@@ -438,19 +438,19 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.node,
-				eventName: 'n8n.node.execution.started',
+				eventName: 'aura.node.execution.started',
 				payload: {
 					workflowId: 'wf_123',
 					workflowName: 'Fake Workflow Name',
-					nodeType: 'n8n-nodes-base.if',
+					nodeType: 'aura-nodes-base.if',
 				},
 			};
 
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_node_execution_started_total',
-				help: 'Total number of n8n.node.execution.started events.',
+				name: 'aura_node_execution_started_total',
+				help: 'Total number of aura.node.execution.started events.',
 				labelNames: ['workflow_id', 'workflow_name', 'node_type'],
 			});
 
@@ -472,14 +472,14 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.workflow,
-				eventName: 'n8n.workflow.execution.finished',
+				eventName: 'aura.workflow.execution.finished',
 				payload: { workflowId: 'wf_456' },
 			};
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_workflow_execution_finished_total',
-				help: 'Total number of n8n.workflow.execution.finished events.',
+				name: 'aura_workflow_execution_finished_total',
+				help: 'Total number of aura.workflow.execution.finished events.',
 				labelNames: ['workflow_id'],
 			});
 
@@ -494,14 +494,14 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.workflow,
-				eventName: 'n8n.workflow.execution.finished',
+				eventName: 'aura.workflow.execution.finished',
 				payload: { workflowName: 'Fake Workflow Name' },
 			};
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_workflow_execution_finished_total',
-				help: 'Total number of n8n.workflow.execution.finished events.',
+				name: 'aura_workflow_execution_finished_total',
+				help: 'Total number of aura.workflow.execution.finished events.',
 				labelNames: ['workflow_name'],
 			});
 
@@ -518,14 +518,14 @@ describe('PrometheusMetricsService', () => {
 			const eventHandler = getEventHandler();
 			const mockEvent = {
 				__type: EventMessageTypeNames.workflow,
-				eventName: 'n8n.workflow.execution.finished',
+				eventName: 'aura.workflow.execution.finished',
 				payload: { workflowId: 'wf_789' },
 			};
 			eventHandler(mockEvent);
 
 			expect(promClient.Counter).toHaveBeenCalledWith({
-				name: 'n8n_workflow_execution_finished_total',
-				help: 'Total number of n8n.workflow.execution.finished events.',
+				name: 'aura_workflow_execution_finished_total',
+				help: 'Total number of aura.workflow.execution.finished events.',
 				labelNames: [], // Expecting no labels
 			});
 
@@ -541,7 +541,7 @@ describe('PrometheusMetricsService', () => {
 			await prometheusMetricsService.init(app);
 
 			expect(promClient.Gauge).toHaveBeenCalledWith({
-				name: 'n8n_instance_role_leader',
+				name: 'aura_instance_role_leader',
 				help: 'Whether this main instance is the leader (1) or not (0).',
 			});
 		});
@@ -558,7 +558,7 @@ describe('PrometheusMetricsService', () => {
 			// Verify instance role metric was not created
 			const calls = (promClient.Gauge as jest.Mock).mock.calls;
 			const hasInstanceRoleMetric = calls.some(
-				(call) => call[0]?.name === 'n8n_instance_role_leader',
+				(call) => call[0]?.name === 'aura_instance_role_leader',
 			);
 			expect(hasInstanceRoleMetric).toBe(false);
 		});

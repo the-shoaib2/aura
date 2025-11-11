@@ -6,8 +6,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { stravaApiRequest } from './GenericFunctions';
 
@@ -94,7 +94,7 @@ export class StravaTrigger implements INodeType {
 				name: 'resolveData',
 				type: 'boolean',
 				default: true,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'By default the webhook-data only contain the Object ID. If this option gets activated, it will resolve the data automatically.',
 			},
@@ -110,7 +110,7 @@ export class StravaTrigger implements INodeType {
 						name: 'deleteIfExist',
 						type: 'boolean',
 						default: false,
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+						// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 						description:
 							'Strava allows just one subscription at all times. If you want to delete the current subscription to make room for a new subscription with the current parameters, set this parameter to true. Keep in mind this is a destructive operation.',
 					},
@@ -177,7 +177,7 @@ export class StravaTrigger implements INodeType {
 										`/push_subscriptions/${webhooks[0].id}`,
 									);
 
-									// now there is room create a subscription with the n8n data
+									// now there is room create a subscription with the aura data
 									const requestBody = {
 										callback_url: webhookUrl,
 										verify_token: randomBytes(20).toString('hex'),

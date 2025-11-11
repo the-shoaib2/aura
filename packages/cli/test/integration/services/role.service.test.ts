@@ -1,10 +1,10 @@
-import type { CreateRoleDto, UpdateRoleDto } from '@n8n/api-types';
-import { LicenseState } from '@n8n/backend-common';
-import { testDb } from '@n8n/backend-test-utils';
-import { ProjectRepository } from '@n8n/db';
-import { RoleRepository, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { ALL_ROLES } from '@n8n/permissions';
+import type { CreateRoleDto, UpdateRoleDto } from '@aura/api-types';
+import { LicenseState } from '@aura/backend-common';
+import { testDb } from '@aura/backend-test-utils';
+import { ProjectRepository } from '@aura/db';
+import { RoleRepository, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { ALL_ROLES } from '@aura/permissions';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 import { NotFoundError } from '@/errors/response-errors/not-found.error';

@@ -4,7 +4,7 @@ import {
 	type IDataObject,
 	type INodeExecutionData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { Readable } from 'stream';
 
 // Define these because we'll be using them in two separate places

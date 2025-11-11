@@ -1,14 +1,17 @@
 <script lang="ts" setup>
-import { isIconOrEmoji, type IconOrEmoji } from '@n8n/design-system/components/N8nIconPicker/types';
-import type { SelectSize } from '@n8n/design-system/types';
-import { useI18n } from '@n8n/i18n';
-import type { AllRolesMap } from '@n8n/permissions';
+import {
+	isIconOrEmoji,
+	type IconOrEmoji,
+} from '@aura/design-system/components/N8nIconPicker/types';
+import type { SelectSize } from '@aura/design-system/types';
+import { useI18n } from '@aura/i18n';
+import type { AllRolesMap } from '@aura/permissions';
 import orderBy from 'lodash/orderBy';
 import { computed, ref, watch } from 'vue';
 import { ProjectTypes, type ProjectListItem, type ProjectSharingData } from '../projects.types';
 import ProjectSharingInfo from './ProjectSharingInfo.vue';
 
-import { N8nBadge, N8nButton, N8nIcon, N8nOption, N8nSelect, N8nText } from '@n8n/design-system';
+import { N8nBadge, N8nButton, N8nIcon, N8nOption, N8nSelect, N8nText } from '@aura/design-system';
 const locale = useI18n();
 
 type Props = {

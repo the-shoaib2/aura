@@ -9,8 +9,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export function getSchemaHeader(
 	context: IExecuteFunctions | ILoadOptionsFunctions,
@@ -177,7 +177,7 @@ export function getFilters(
 							name: 'keyName',
 							type: 'options',
 							description:
-								'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+								'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 							typeOptions: {
 								loadOptionsDependsOn: ['tableId'],
 								loadOptionsMethod: 'getTableColumns',

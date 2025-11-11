@@ -1,9 +1,9 @@
-import { ExecutionRepository } from '@n8n/db';
-import type { IExecutionResponse } from '@n8n/db';
+import { ExecutionRepository } from '@aura/db';
+import type { IExecutionResponse } from '@aura/db';
 
 import * as WorkflowExecuteAdditionalData from '@/workflow-execute-additional-data';
 import { WorkflowRunner } from '@/workflow-runner';
-import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@aura/backend-test-utils';
 
 import { NodeTypes } from '../../node-types';
 import { OwnershipService } from '../../services/ownership.service';

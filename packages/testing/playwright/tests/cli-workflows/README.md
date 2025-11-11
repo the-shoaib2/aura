@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This framework tests n8n's nodes and workflows to:
+This framework tests aura's nodes and workflows to:
 
 * ✅ **Ensure Correctness:** Verify that nodes operate correctly
 * 🔄 **Maintain Compatibility:** Detect breaking changes in external APIs
@@ -23,7 +23,7 @@ This framework is an evolution of a previous system. We moved to **Playwright** 
 
 ### Prerequisites
 
-1. **Set encryption key:** The test credentials are encrypted. Add to `~/.n8n/config`:
+1. **Set encryption key:** The test credentials are encrypted. Add to `~/.aura/config`:
    ```json
    {
      "N8N_ENCRYPTION_KEY": "YOUR_KEY_FROM_BITWARDEN"
@@ -31,7 +31,7 @@ This framework is an evolution of a previous system. We moved to **Playwright** 
    ```
    Find the key in Bitwarden under "Testing Framework encryption key"
 
-2. **Fresh database (optional):** For a clean start, remove `~/.n8n/database.sqlite` if it exists
+2. **Fresh database (optional):** For a clean start, remove `~/.aura/database.sqlite` if it exists
 3. **Setup Environment**: ```pnpm test:workflows:setup```
 
 ### Basic Commands
@@ -144,9 +144,9 @@ Controls workflow execution and testing behavior:
 ### Step-by-Step Process
 
 ```bash
-# 1. Create/modify workflow in n8n UI
+# 1. Create/modify workflow in aura UI
 # 2. Export the workflow
-./packages/cli/bin/n8n export:workflow --separate --output=test-workflows/workflows --pretty --id=XXX
+./packages/cli/bin/aura export:workflow --separate --output=test-workflows/workflows --pretty --id=XXX
 
 # 3. Add configuration entry to workflowConfig.json
 # Edit workflowConfig.json and add:
@@ -218,8 +218,8 @@ Update `workflowConfig.json`:
 ### Available Test Files
 
 The setup automatically copies these to `/tmp`:
-- `n8n-logo.png`
-- `n8n-screenshot.png`
+- `aura-logo.png`
+- `aura-screenshot.png`
 - PDF test files:
   - `04-valid.pdf`
   - `05-versions-space.pdf`
@@ -229,9 +229,9 @@ The setup automatically copies these to `/tmp`:
 When credentials expire or need updating:
 
 ```bash
-# Update the credential in n8n UI
+# Update the credential in aura UI
 # Export all credentials (encrypted)
-./packages/cli/bin/n8n export:credentials --output=test-workflows/credentials.json --all --pretty
+./packages/cli/bin/aura export:credentials --output=test-workflows/credentials.json --all --pretty
 ```
 
 ⚠️ **Never use `--decrypted` when exporting credentials!**

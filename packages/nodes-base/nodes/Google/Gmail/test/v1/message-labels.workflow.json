@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [1220, 600],
 			"id": "84b20fb7-d041-4a49-b7dc-8a09c1ac0071",
@@ -15,7 +15,7 @@
 				"messageId": "test",
 				"labelIds": "={{ ['label1', 'label2'] }}"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [1440, 500],
 			"id": "71a7716d-344b-4050-b2b8-f9f049e46642",
@@ -35,7 +35,7 @@
 				"messageId": "test",
 				"labelIds": "={{ ['label1', 'label2'] }}"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [1440, 700],
 			"id": "c92f2d14-f4a3-48d4-b59b-917d4670163d",

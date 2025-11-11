@@ -1,4 +1,4 @@
-import type { INodeProperties, INodePropertyOptions } from 'n8n-workflow';
+import type { INodeProperties, INodePropertyOptions } from 'workflow';
 
 export const oldVersionNotice: INodeProperties = {
 	displayName:
@@ -36,14 +36,14 @@ export const returnAllOrLimit: INodeProperties[] = [
 export const looseTypeValidationProperty: INodeProperties = {
 	displayName: 'Convert types where required',
 	description:
-		'If the type of an expression doesn\'t match the type of the comparison, n8n will try to cast the expression to the required type. E.g. for booleans <code>"false"</code> or <code>0</code> will be cast to <code>false</code>',
+		'If the type of an expression doesn\'t match the type of the comparison, aura will try to cast the expression to the required type. E.g. for booleans <code>"false"</code> or <code>0</code> will be cast to <code>false</code>',
 	name: 'looseTypeValidation',
 	type: 'boolean',
 	default: true,
 };
 
 export const appendAttributionOption: INodeProperties = {
-	displayName: 'Append n8n Attribution',
+	displayName: 'Append aura Attribution',
 	name: 'appendAttribution',
 	type: 'boolean',
 	default: true,

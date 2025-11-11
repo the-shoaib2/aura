@@ -1,4 +1,4 @@
-import type { BuilderCreditsPushMessage } from '@n8n/api-types/push/builder-credits';
+import type { BuilderCreditsPushMessage } from '@aura/api-types/push/builder-credits';
 import { useBuilderStore } from '@/features/ai/assistant/builder.store';
 
 export async function builderCreditsUpdated(event: BuilderCreditsPushMessage): Promise<void> {

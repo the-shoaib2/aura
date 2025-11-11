@@ -1,4 +1,4 @@
-import type { WorkflowDataCreate } from '@n8n/rest-api-client';
+import type { WorkflowDataCreate } from '@aura/rest-api-client';
 
 export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 	meta: {
@@ -21,7 +21,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 				},
 				options: {},
 			},
-			type: 'n8n-nodes-base.formTrigger',
+			type: 'aura-nodes-base.formTrigger',
 			typeVersion: 2.2,
 			position: [-368, -304],
 			id: 'e45eaedc-7ed9-4fd6-b79b-82a155734bce',
@@ -32,7 +32,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 			parameters: {
 				options: {},
 			},
-			type: '@n8n/n8n-nodes-langchain.embeddingsOpenAi',
+			type: '@aura/aura-nodes-langchain.embeddingsOpenAi',
 			typeVersion: 1.2,
 			position: [288, 176],
 			id: 'f9f1745a-9c6d-42cf-8f8b-19a1c4c91b77',
@@ -43,7 +43,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 				dataType: 'binary',
 				options: {},
 			},
-			type: '@n8n/n8n-nodes-langchain.documentDefaultDataLoader',
+			type: '@aura/aura-nodes-langchain.documentDefaultDataLoader',
 			typeVersion: 1.1,
 			position: [80, -144],
 			id: '56da285f-9ad9-4cb4-a7d4-fb0f035e9071',
@@ -52,12 +52,12 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 		{
 			parameters: {
 				content:
-					'### Readme\nLoad your data into a vector database with the 📚 **Load Data** flow, and then use your data as chat context with the 🐕 **Retriever** flow.\n\n**Quick start**\n1. Click on the `Execute Workflow` button to run the 📚 **Load Data** flow.\n2. Click on `Open Chat` button to run the 🐕 **Retriever** flow. Then ask a question about content from your document(s)\n\n\nFor more info, check [our docs on RAG in n8n](https://docs.n8n.io/advanced-ai/rag-in-n8n/).',
+					'### Readme\nLoad your data into a vector database with the 📚 **Load Data** flow, and then use your data as chat context with the 🐕 **Retriever** flow.\n\n**Quick start**\n1. Click on the `Execute Workflow` button to run the 📚 **Load Data** flow.\n2. Click on `Open Chat` button to run the 🐕 **Retriever** flow. Then ask a question about content from your document(s)\n\n\nFor more info, check [our docs on RAG in aura](https://docs.aura.io/advanced-ai/rag-in-aura/).',
 				height: 300,
 				width: 440,
 				color: 4,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			position: [-896, -368],
 			typeVersion: 1,
 			id: '72cb28c7-572b-41ce-ba4c-2dd0dc80acb4',
@@ -70,7 +70,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 				width: 700,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			position: [-416, -368],
 			typeVersion: 1,
 			id: '075a4895-8b5f-487b-b7ff-8766aa1d1450',
@@ -86,7 +86,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 					cachedResultName: 'vector_store_key',
 				},
 			},
-			type: '@n8n/n8n-nodes-langchain.vectorStoreInMemory',
+			type: '@aura/aura-nodes-langchain.vectorStoreInMemory',
 			typeVersion: 1.2,
 			position: [-176, -304],
 			id: 'd24732cb-b6b4-4eb6-ad47-1f290f0da13d',
@@ -103,7 +103,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 					value: 'vector_store_key',
 				},
 			},
-			type: '@n8n/n8n-nodes-langchain.vectorStoreInMemory',
+			type: '@aura/aura-nodes-langchain.vectorStoreInMemory',
 			typeVersion: 1.2,
 			position: [704, -96],
 			id: '8915e9b6-2a6c-472c-b043-78c1d77888ae',
@@ -113,7 +113,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 			parameters: {
 				options: {},
 			},
-			type: '@n8n/n8n-nodes-langchain.agent',
+			type: '@aura/aura-nodes-langchain.agent',
 			typeVersion: 2,
 			position: [704, -320],
 			id: 'a2baaa1d-beee-40a2-8b5f-757b2b1aaca9',
@@ -123,7 +123,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 			parameters: {
 				options: {},
 			},
-			type: '@n8n/n8n-nodes-langchain.chatTrigger',
+			type: '@aura/aura-nodes-langchain.chatTrigger',
 			typeVersion: 1.1,
 			position: [480, -320],
 			id: 'c0a831dd-362c-4352-9409-bfe8c2e6f5ab',
@@ -139,7 +139,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 				},
 				options: {},
 			},
-			type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+			type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 			typeVersion: 1.2,
 			position: [480, -96],
 			id: '2ba103b5-7783-49a7-9693-a156383ca697',
@@ -152,7 +152,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 				width: 680,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			position: [368, -368],
 			typeVersion: 1,
 			id: '729f9492-3811-43d8-8230-d9ad78d910f7',
@@ -166,7 +166,7 @@ export const AGENT_WITH_KNOWLEDGE: WorkflowDataCreate = {
 				width: 320,
 				color: 4,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			position: [432, 144],
 			typeVersion: 1,
 			id: '20a6b946-5588-4df2-b1f6-952fc82d166c',

@@ -1,4 +1,4 @@
-import type { IExecuteSingleFunctions, IHttpRequestOptions, INode } from 'n8n-workflow';
+import type { IExecuteSingleFunctions, IHttpRequestOptions, INode } from 'workflow';
 
 import { contactIdentifierPreSendAction, isEmailValid, isPhoneValid } from '../GenericFunctions';
 
@@ -19,7 +19,7 @@ describe('contactIdentifierPreSendAction', () => {
 						id: 'mock-node-id',
 						name: 'mock-node',
 						typeVersion: 1,
-						type: 'n8n-nodes-base.mockNode',
+						type: 'aura-nodes-base.mockNode',
 						position: [0, 0],
 						parameters: {},
 					}) as INode,

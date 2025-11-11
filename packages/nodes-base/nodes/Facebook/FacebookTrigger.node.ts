@@ -10,8 +10,8 @@ import type {
 	IWebhookFunctions,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { facebookApiRequest, getAllFields, getFields } from './GenericFunctions';
@@ -147,7 +147,7 @@ export class FacebookTrigger implements INodeType {
 				},
 				default: [],
 				description:
-					'The set of fields in this object that are subscribed to. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The set of fields in this object that are subscribed to. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Options',

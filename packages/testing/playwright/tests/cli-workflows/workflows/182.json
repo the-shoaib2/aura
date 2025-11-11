@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "a462a0c7-cda9-4a9e-b447-99be5b8df6f2"
@@ -40,7 +40,7 @@
 				}
 			},
 			"name": "Webflow",
-			"type": "n8n-nodes-base.webflow",
+			"type": "aura-nodes-base.webflow",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"itemId": "={{$node[\"Webflow\"].json[\"_id\"]}}"
 			},
 			"name": "Webflow1",
-			"type": "n8n-nodes-base.webflow",
+			"type": "aura-nodes-base.webflow",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -97,7 +97,7 @@
 				}
 			},
 			"name": "Webflow2",
-			"type": "n8n-nodes-base.webflow",
+			"type": "aura-nodes-base.webflow",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -116,7 +116,7 @@
 				"itemId": "={{$node[\"Webflow\"].json[\"_id\"]}}"
 			},
 			"name": "Webflow3",
-			"type": "n8n-nodes-base.webflow",
+			"type": "aura-nodes-base.webflow",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -135,7 +135,7 @@
 				"limit": 1
 			},
 			"name": "Webflow4",
-			"type": "n8n-nodes-base.webflow",
+			"type": "aura-nodes-base.webflow",
 			"typeVersion": 1,
 			"position": [1250, 300],
 			"credentials": {

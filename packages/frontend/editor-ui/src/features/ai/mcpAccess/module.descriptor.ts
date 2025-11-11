@@ -1,4 +1,4 @@
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { type FrontendModuleDescription } from '@/app/moduleInitializer/module.types';
 import { MCP_SETTINGS_VIEW } from '@/features/ai/mcpAccess/mcp.constants';
 
@@ -9,7 +9,7 @@ const SettingsMCPView = async () => await import('@/features/ai/mcpAccess/Settin
 export const MCPModule: FrontendModuleDescription = {
 	id: 'mcp',
 	name: 'MCP Access',
-	description: 'Access your n8n instance through MCP clients',
+	description: 'Access your aura instance through MCP clients',
 	icon: 'mcp',
 	routes: [
 		{

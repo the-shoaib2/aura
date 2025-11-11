@@ -1,4 +1,4 @@
-import type { ExecutionStarted } from '@n8n/api-types/push/execution';
+import type { ExecutionStarted } from '@aura/api-types/push/execution';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { parse } from 'flatted';
 import type { WorkflowState } from '@/app/composables/useWorkflowState';

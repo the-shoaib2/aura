@@ -1,9 +1,9 @@
-import type { SamlAcsDto, SamlPreferences } from '@n8n/api-types';
-import { GlobalConfig } from '@n8n/config';
-import type { User } from '@n8n/db';
-import { AuthIdentity, AuthIdentityRepository, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { randomString } from 'n8n-workflow';
+import type { SamlAcsDto, SamlPreferences } from '@aura/api-types';
+import { GlobalConfig } from '@aura/config';
+import type { User } from '@aura/db';
+import { AuthIdentity, AuthIdentityRepository, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { randomString } from 'workflow';
 import type { FlowResult } from 'samlify/types/src/flow';
 
 import { AuthError } from '@/errors/response-errors/auth.error';
@@ -162,11 +162,11 @@ export function getMappedSamlAttributesFromFlowResult(
 			userPrincipalName,
 		};
 		if (jitClaimNames.instanceRole && typeof attributes[jitClaimNames.instanceRole] === 'string') {
-			result.attributes.n8nInstanceRole = attributes[jitClaimNames.instanceRole] as string;
+			result.attributes.auraInstanceRole = attributes[jitClaimNames.instanceRole] as string;
 		}
 		if (jitClaimNames.projectRoles && attributes[jitClaimNames.projectRoles]) {
 			const projectRolesFromFlowResult = attributes[jitClaimNames.projectRoles];
-			result.attributes.n8nProjectRoles = Array.isArray(projectRolesFromFlowResult)
+			result.attributes.auraProjectRoles = Array.isArray(projectRolesFromFlowResult)
 				? projectRolesFromFlowResult
 				: [projectRolesFromFlowResult];
 		}

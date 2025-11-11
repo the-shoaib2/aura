@@ -4,8 +4,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IPairedItemData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, deepCopy } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, deepCopy } from 'workflow';
 
 export class SplitInBatchesV1 implements INodeType {
 	description: INodeTypeDescription = {
@@ -24,7 +24,7 @@ export class SplitInBatchesV1 implements INodeType {
 		properties: [
 			{
 				displayName:
-					'You may not need this node — n8n nodes automatically run once for each input item. <a href="https://docs.n8n.io/getting-started/key-concepts/looping.html#using-loops-in-n8n" target="_blank">More info</a>',
+					'You may not need this node — aura nodes automatically run once for each input item. <a href="https://docs.aura.io/getting-started/key-concepts/looping.html#using-loops-in-aura" target="_blank">More info</a>',
 				name: 'splitInBatchesNotice',
 				type: 'notice',
 				default: '',

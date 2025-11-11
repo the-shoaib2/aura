@@ -1,26 +1,26 @@
 {
-  "name": "n8n-nodes-base",
+  "name": "aura-nodes-base",
   "version": "1.117.0",
-  "description": "Base nodes of n8n",
+  "description": "Base nodes of aura",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist .turbo",
     "copy-nodes-json": "node scripts/copy-nodes-json.js .",
     "dev": "pnpm watch",
     "typecheck": "tsc --noEmit",
-    "build": "tsc --build tsconfig.build.cjs.json && pnpm copy-nodes-json && tsc-alias -p tsconfig.build.cjs.json && pnpm n8n-copy-static-files && pnpm n8n-generate-translations && pnpm n8n-generate-metadata",
+    "build": "tsc --build tsconfig.build.cjs.json && pnpm copy-nodes-json && tsc-alias -p tsconfig.build.cjs.json && pnpm aura-copy-static-files && pnpm aura-generate-translations && pnpm aura-generate-metadata",
     "format": "biome format --write .",
     "format:check": "biome ci .",
     "lint": "eslint nodes credentials utils test --quiet && node ./scripts/validate-load-options-methods.js",
     "lint:fix": "eslint nodes credentials utils test --fix",
-    "watch": "tsc-watch -p tsconfig.build.cjs.json --onCompilationComplete \"pnpm copy-nodes-json && tsc-alias -p tsconfig.build.cjs.json\" --onSuccess \"pnpm n8n-generate-metadata\"",
+    "watch": "tsc-watch -p tsconfig.build.cjs.json --onCompilationComplete \"pnpm copy-nodes-json && tsc-alias -p tsconfig.build.cjs.json\" --onSuccess \"pnpm aura-generate-metadata\"",
     "test": "jest",
     "test:dev": "jest --watch"
   },
   "files": [
     "dist"
   ],
-  "n8n": {
+  "aura": {
     "credentials": [
       "dist/credentials/ActionNetworkApi.credentials.js",
       "dist/credentials/ActiveCampaignApi.credentials.js",
@@ -855,8 +855,8 @@
     ]
   },
   "devDependencies": {
-    "@n8n/eslint-plugin-community-nodes": "workspace:*",
-    "@n8n/typescript-config": "workspace:*",
+    "@aura/eslint-plugin-community-nodes": "workspace:*",
+    "@aura/typescript-config": "workspace:*",
     "@types/amqplib": "^0.10.1",
     "@types/aws4": "^1.5.1",
     "@types/basic-auth": "catalog:",
@@ -881,18 +881,18 @@
     "@types/ssh2-sftp-client": "^9.0.5",
     "@types/uuid": "catalog:",
     "@types/xml2js": "catalog:",
-    "eslint-plugin-n8n-nodes-base": "^1.16.3",
-    "n8n-core": "workspace:*"
+    "eslint-plugin-aura-nodes-base": "^1.16.3",
+    "aura-core": "workspace:*"
   },
   "dependencies": {
     "@aws-sdk/client-sso-oidc": "3.808.0",
     "@kafkajs/confluent-schema-registry": "3.8.0",
     "@mozilla/readability": "0.6.0",
-    "@n8n/config": "workspace:*",
-    "@n8n/di": "workspace:*",
-    "@n8n/errors": "workspace:^",
-    "@n8n/imap": "workspace:*",
-    "@n8n/vm2": "3.9.25",
+    "@aura/config": "workspace:*",
+    "@aura/di": "workspace:*",
+    "@aura/errors": "workspace:^",
+    "@aura/imap": "workspace:*",
+    "@aura/vm2": "3.9.25",
     "alasql": "4.4.0",
     "amqplib": "0.10.6",
     "aws4": "1.11.0",
@@ -930,7 +930,7 @@
     "mqtt": "5.7.2",
     "mssql": "10.0.2",
     "mysql2": "catalog:",
-    "n8n-workflow": "workspace:*",
+    "workflow": "workspace:*",
     "node-html-markdown": "1.2.0",
     "node-ssh": "13.2.0",
     "nodemailer": "catalog:",

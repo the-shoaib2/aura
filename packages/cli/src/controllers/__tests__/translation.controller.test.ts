@@ -1,4 +1,4 @@
-import type { GlobalConfig } from '@n8n/config';
+import type { GlobalConfig } from '@aura/config';
 import { mock } from 'jest-mock-extended';
 
 import type { TranslationRequest } from '@/controllers/translation.controller';

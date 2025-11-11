@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, nextTick, type Ref, useTemplateRef } from 'vue';
 import { onClickOutside, type VueInstance } from '@vueuse/core';
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import {
 	N8nNavigationDropdown,
 	N8nTooltip,
@@ -16,8 +16,8 @@ import {
 	N8nText,
 	N8nIcon,
 	N8nButton,
-} from '@n8n/design-system';
-import type { IMenuItem } from '@n8n/design-system';
+} from '@aura/design-system';
+import type { IMenuItem } from '@aura/design-system';
 import {
 	ABOUT_MODAL_KEY,
 	EXPERIMENT_TEMPLATE_RECO_V2_KEY,
@@ -31,7 +31,7 @@ import { EXTERNAL_LINKS } from '@/app/constants/externalLinks';
 import { CHAT_VIEW } from '@/features/ai/chatHub/constants';
 import { hasPermission } from '@/app/utils/rbac/permissions';
 import { useCloudPlanStore } from '@/app/stores/cloudPlan.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
 import { useUIStore } from '@/app/stores/ui.store';
@@ -464,7 +464,7 @@ onClickOutside(createBtn as Ref<VueInstance>, () => {
 						<I18nT keypath="readOnlyEnv.tooltip" scope="global">
 							<template #link>
 								<N8nLink
-									to="https://docs.n8n.io/source-control-environments/setup/#step-4-connect-n8n-and-configure-your-instance"
+									to="https://docs.aura.io/source-control-environments/setup/#step-4-connect-aura-and-configure-your-instance"
 									size="small"
 								>
 									{{ i18n.baseText('readOnlyEnv.tooltip.link') }}

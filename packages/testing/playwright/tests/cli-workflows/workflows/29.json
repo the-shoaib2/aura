@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "31a422ab-f12f-4746-ae7a-bf991eb8cfb2"
@@ -21,7 +21,7 @@
 				"name": "=Test2{{Date.now()}}"
 			},
 			"name": "ClickUp",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"credentials": {
@@ -43,7 +43,7 @@
 				"additionalFields": {}
 			},
 			"name": "ClickUp1",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [680, 350],
 			"credentials": {
@@ -63,7 +63,7 @@
 				"additionalFields": {}
 			},
 			"name": "ClickUp2",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [960, 420],
 			"credentials": {
@@ -84,7 +84,7 @@
 				}
 			},
 			"name": "ClickUp3",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [1230, 420],
 			"credentials": {
@@ -104,7 +104,7 @@
 				"limit": 1
 			},
 			"name": "ClickUp4",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [1520, 420],
 			"credentials": {
@@ -122,7 +122,7 @@
 				"comment": "={{$node[\"ClickUp4\"].json[\"id\"]}}"
 			},
 			"name": "ClickUp5",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [1830, 420],
 			"credentials": {
@@ -142,7 +142,7 @@
 				"folder": "={{$node[\"ClickUp\"].json[\"id\"]}}"
 			},
 			"name": "ClickUp7",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [2400, 290],
 			"credentials": {
@@ -163,7 +163,7 @@
 				"list": "={{$node[\"ClickUp1\"].json[\"id\"]}}"
 			},
 			"name": "ClickUp6",
-			"type": "n8n-nodes-base.clickUp",
+			"type": "aura-nodes-base.clickUp",
 			"typeVersion": 1,
 			"position": [2130, 350],
 			"credentials": {
@@ -179,7 +179,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 8 Seconds",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [550, 300],
 			"typeVersion": 1,
 			"id": "01532975-dbf4-4757-a52b-255765b578bd"
@@ -189,7 +189,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 8 Seconds1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [810, 400],
 			"typeVersion": 1,
 			"id": "50e69461-441f-4e30-be11-e2a426d4ec05"
@@ -199,7 +199,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 8 Seconds2",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1100, 420],
 			"typeVersion": 1,
 			"id": "89191a40-0e4b-482b-a346-c7e04d9dd93f"
@@ -209,7 +209,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 8 Seconds3",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1370, 420],
 			"typeVersion": 1,
 			"id": "fd4dddb0-7f59-42bb-aac0-07c76dea598e"
@@ -219,7 +219,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 8 Seconds4",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1670, 420],
 			"typeVersion": 1,
 			"id": "3179d398-f06c-4902-82ac-3689d262297a"
@@ -229,7 +229,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 8 Seconds5",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [2000, 350],
 			"typeVersion": 1,
 			"id": "bfa972c2-e9ac-4500-8ffb-1ede8db29900"
@@ -239,7 +239,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 8 Seconds6",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [2270, 290],
 			"typeVersion": 1,
 			"id": "2a6b234c-2bcf-4295-b092-2d7ba6ab7dd1"

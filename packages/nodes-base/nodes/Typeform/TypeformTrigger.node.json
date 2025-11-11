@@ -1,68 +1,68 @@
 {
-	"node": "n8n-nodes-base.typeformTrigger",
+	"node": "aura-nodes-base.typeformTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/typeform/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/typeform/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.typeformtrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.typeformtrigger/"
 			}
 		],
 		"generic": [
 			{
-				"label": "2021: The Year to Automate the New You with n8n",
+				"label": "2021: The Year to Automate the New You with aura",
 				"icon": "☀️",
-				"url": "https://n8n.io/blog/2021-the-year-to-automate-the-new-you-with-n8n/"
+				"url": "https://aura.io/blog/2021-the-year-to-automate-the-new-you-with-aura/"
 			},
 			{
-				"label": "Supercharging your conference registration process with n8n",
+				"label": "Supercharging your conference registration process with aura",
 				"icon": "🎫",
-				"url": "https://n8n.io/blog/supercharging-your-conference-registration-process-with-n8n/"
+				"url": "https://aura.io/blog/supercharging-your-conference-registration-process-with-aura/"
 			},
 			{
 				"label": "How to get started with CRM automation (with 3 no-code workflow ideas",
 				"icon": "👥",
-				"url": "https://n8n.io/blog/how-to-get-started-with-crm-automation-and-no-code-workflow-ideas/"
+				"url": "https://aura.io/blog/how-to-get-started-with-crm-automation-and-no-code-workflow-ideas/"
 			},
 			{
 				"label": "5 tasks you can automate with the new Notion API ",
 				"icon": "⚡️",
-				"url": "https://n8n.io/blog/5-tasks-you-can-automate-with-notion-api/"
+				"url": "https://aura.io/blog/5-tasks-you-can-automate-with-notion-api/"
 			},
 			{
 				"label": "15 Google apps you can combine and automate to increase productivity",
 				"icon": "💡",
-				"url": "https://n8n.io/blog/automate-google-apps-for-productivity/"
+				"url": "https://aura.io/blog/automate-google-apps-for-productivity/"
 			},
 			{
 				"label": "Building an expense tracking app in 10 minutes",
 				"icon": "📱",
-				"url": "https://n8n.io/blog/building-an-expense-tracking-app-in-10-minutes/"
+				"url": "https://aura.io/blog/building-an-expense-tracking-app-in-10-minutes/"
 			},
 			{
-				"label": "5 workflow automations for Mattermost that we love at n8n",
+				"label": "5 workflow automations for Mattermost that we love at aura",
 				"icon": "🤖",
-				"url": "https://n8n.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-n8n/"
+				"url": "https://aura.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-aura/"
 			},
 			{
-				"label": "Automating Conference Organization Processes with n8n",
+				"label": "Automating Conference Organization Processes with aura",
 				"icon": "🙋‍♀️",
-				"url": "https://n8n.io/blog/automating-conference-organization-processes-with-n8n/"
+				"url": "https://aura.io/blog/automating-conference-organization-processes-with-aura/"
 			},
 			{
 				"label": "How Common Knowledge use workflow automation for activism",
 				"icon": "✨",
-				"url": "https://n8n.io/blog/automations-for-activists/"
+				"url": "https://aura.io/blog/automations-for-activists/"
 			},
 			{
 				"label": "7 no-code workflow automations for Amazon Web Services",
-				"url": "https://n8n.io/blog/aws-workflow-automation/"
+				"url": "https://aura.io/blog/aws-workflow-automation/"
 			}
 		]
 	},

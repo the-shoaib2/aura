@@ -1,8 +1,8 @@
-import type { Iso8601DateTimeString } from '@n8n/api-types';
-import { Time } from '@n8n/constants';
-import type { User } from '@n8n/db';
-import { Service } from '@n8n/di';
-import type { Workflow } from 'n8n-workflow';
+import type { Iso8601DateTimeString } from '@aura/api-types';
+import { Time } from '@aura/constants';
+import type { User } from '@aura/db';
+import { Service } from '@aura/di';
+import type { Workflow } from 'workflow';
 
 import { CacheService } from '@/services/cache/cache.service';
 

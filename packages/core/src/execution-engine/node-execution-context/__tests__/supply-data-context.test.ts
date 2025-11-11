@@ -15,8 +15,8 @@ import type {
 	ICredentialDataDecryptedObject,
 	NodeConnectionType,
 	IRunData,
-} from 'n8n-workflow';
-import { ApplicationError, ManualExecutionCancelledError, NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, ManualExecutionCancelledError, NodeConnectionTypes } from 'workflow';
 
 import { describeCommonTests } from './shared-tests';
 import { SupplyDataContext } from '../supply-data-context';

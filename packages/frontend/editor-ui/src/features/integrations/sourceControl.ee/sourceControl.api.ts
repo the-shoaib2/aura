@@ -2,8 +2,8 @@ import type {
 	PullWorkFolderRequestDto,
 	PushWorkFolderRequestDto,
 	SourceControlledFile,
-} from '@n8n/api-types';
-import type { IRestApiContext } from '@n8n/rest-api-client';
+} from '@aura/api-types';
+import type { IRestApiContext } from '@aura/rest-api-client';
 import type {
 	SourceControlPreferences,
 	SourceControlStatus,
@@ -11,7 +11,7 @@ import type {
 } from './sourceControl.types';
 import type { IWorkflowDb } from '@/Interface';
 
-import { makeRestApiRequest } from '@n8n/rest-api-client';
+import { makeRestApiRequest } from '@aura/rest-api-client';
 import type { TupleToUnion } from '@/app/utils/typeHelpers';
 
 const sourceControlApiRoot = '/source-control';

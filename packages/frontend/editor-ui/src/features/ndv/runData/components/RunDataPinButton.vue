@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import type { usePinnedData } from '@/app/composables/usePinnedData';
-import { N8nIconButton, N8nLink, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIconButton, N8nLink, N8nText, N8nTooltip } from '@aura/design-system';
 const locale = useI18n();
 
 type Props = {

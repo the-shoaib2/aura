@@ -7,7 +7,7 @@
 			},
 			"id": "38c14c4a-7af1-4b04-be76-f8e474c95569",
 			"name": "Break pairedItem chain",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [240, 1020]
 		},
@@ -17,7 +17,7 @@
 			},
 			"id": "78c4964a-c4e8-47e5-81f3-89ba778feb8b",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [40, 1020]
 		},
@@ -25,7 +25,7 @@
 			"parameters": {},
 			"id": "4f4c6527-d565-448a-96bd-8f5414caf8cc",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-180, 1020]
 		},
@@ -42,7 +42,7 @@
 			},
 			"id": "44f4e5da-bfe9-4dc3-8d1f-f38e9f364754",
 			"name": "Error",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [460, 1020]
 		}

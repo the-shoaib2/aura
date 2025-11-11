@@ -1,83 +1,83 @@
 {
-	"node": "n8n-nodes-base.airtable",
+	"node": "aura-nodes-base.airtable",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/airtable/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/airtable/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.airtable/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.airtable/"
 			}
 		],
 		"generic": [
 			{
-				"label": "2021 Goals: Level Up Your Vocabulary With Vonage and n8n",
+				"label": "2021 Goals: Level Up Your Vocabulary With Vonage and aura",
 				"icon": "🎯",
-				"url": "https://n8n.io/blog/2021-goals-level-up-your-vocabulary-with-vonage-and-n8n/"
+				"url": "https://aura.io/blog/2021-goals-level-up-your-vocabulary-with-vonage-and-aura/"
 			},
 			{
-				"label": "2021: The Year to Automate the New You with n8n",
+				"label": "2021: The Year to Automate the New You with aura",
 				"icon": "☀️",
-				"url": "https://n8n.io/blog/2021-the-year-to-automate-the-new-you-with-n8n/"
+				"url": "https://aura.io/blog/2021-the-year-to-automate-the-new-you-with-aura/"
 			},
 			{
 				"label": "How to build a low-code, self-hosted URL shortener in 3 steps",
 				"icon": "🔗",
-				"url": "https://n8n.io/blog/how-to-build-a-low-code-self-hosted-url-shortener/"
+				"url": "https://aura.io/blog/how-to-build-a-low-code-self-hosted-url-shortener/"
 			},
 			{
 				"label": "How to get started with CRM automation (with 3 no-code workflow ideas",
 				"icon": "👥",
-				"url": "https://n8n.io/blog/how-to-get-started-with-crm-automation-and-no-code-workflow-ideas/"
+				"url": "https://aura.io/blog/how-to-get-started-with-crm-automation-and-no-code-workflow-ideas/"
 			},
 			{
 				"label": "15 Google apps you can combine and automate to increase productivity",
 				"icon": "💡",
-				"url": "https://n8n.io/blog/automate-google-apps-for-productivity/"
+				"url": "https://aura.io/blog/automate-google-apps-for-productivity/"
 			},
 			{
 				"label": "Building an expense tracking app in 10 minutes",
 				"icon": "📱",
-				"url": "https://n8n.io/blog/building-an-expense-tracking-app-in-10-minutes/"
+				"url": "https://aura.io/blog/building-an-expense-tracking-app-in-10-minutes/"
 			},
 			{
-				"label": "Why this Product Manager loves workflow automation with n8n",
+				"label": "Why this Product Manager loves workflow automation with aura",
 				"icon": "🧠",
-				"url": "https://n8n.io/blog/why-this-product-manager-loves-workflow-automation-with-n8n/"
+				"url": "https://aura.io/blog/why-this-product-manager-loves-workflow-automation-with-aura/"
 			},
 			{
 				"label": "Learn to Build Powerful API Endpoints Using Webhooks",
 				"icon": "🧰",
-				"url": "https://n8n.io/blog/learn-to-build-powerful-api-endpoints-using-webhooks/"
+				"url": "https://aura.io/blog/learn-to-build-powerful-api-endpoints-using-webhooks/"
 			},
 			{
-				"label": "Sending SMS the Low-Code Way with Airtable, Twilio Programmable SMS, and n8n",
+				"label": "Sending SMS the Low-Code Way with Airtable, Twilio Programmable SMS, and aura",
 				"icon": "📱",
-				"url": "https://n8n.io/blog/sending-sms-the-low-code-way-with-airtable-twilio-programmable-sms-and-n8n/"
+				"url": "https://aura.io/blog/sending-sms-the-low-code-way-with-airtable-twilio-programmable-sms-and-aura/"
 			},
 			{
-				"label": "Automating Conference Organization Processes with n8n",
+				"label": "Automating Conference Organization Processes with aura",
 				"icon": "🙋‍♀️",
-				"url": "https://n8n.io/blog/automating-conference-organization-processes-with-n8n/"
+				"url": "https://aura.io/blog/automating-conference-organization-processes-with-aura/"
 			},
 			{
-				"label": "Benefits of automation and n8n: An interview with HubSpot's Hugh Durkin",
+				"label": "Benefits of automation and aura: An interview with HubSpot's Hugh Durkin",
 				"icon": "🎖",
-				"url": "https://n8n.io/blog/benefits-of-automation-and-n8n-an-interview-with-hubspots-hugh-durkin/"
+				"url": "https://aura.io/blog/benefits-of-automation-and-aura-an-interview-with-hubspots-hugh-durkin/"
 			},
 			{
-				"label": "How Goomer automated their operations with over 200 n8n workflows",
+				"label": "How Goomer automated their operations with over 200 aura workflows",
 				"icon": "🛵",
-				"url": "https://n8n.io/blog/how-goomer-automated-their-operations-with-over-200-n8n-workflows/"
+				"url": "https://aura.io/blog/how-goomer-automated-their-operations-with-over-200-workflows/"
 			},
 			{
 				"label": "7 no-code workflow automations for Amazon Web Services",
-				"url": "https://n8n.io/blog/aws-workflow-automation/"
+				"url": "https://aura.io/blog/aws-workflow-automation/"
 			}
 		]
 	}

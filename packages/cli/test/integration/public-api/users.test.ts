@@ -1,4 +1,4 @@
-import { testDb, mockInstance } from '@n8n/backend-test-utils';
+import { testDb, mockInstance } from '@aura/backend-test-utils';
 
 import { FeatureNotLicensedError } from '@/errors/feature-not-licensed.error';
 import { Telemetry } from '@/telemetry';

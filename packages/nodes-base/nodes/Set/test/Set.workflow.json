@@ -5,12 +5,9 @@
 			"parameters": {},
 			"id": "90ddfdf0-973b-4b4f-b082-0e013b70629a",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
-			"position": [
-				900,
-				2560
-			]
+			"position": [900, 2560]
 		},
 		{
 			"parameters": {
@@ -38,12 +35,9 @@
 			},
 			"id": "b46b7da8-3c0f-4111-bb3f-973fd2827dc4",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
-			"position": [
-				1380,
-				2200
-			]
+			"position": [1380, 2200]
 		},
 		{
 			"parameters": {
@@ -51,12 +45,9 @@
 			},
 			"id": "a7e51ac7-734a-4652-bb02-d9f0a4d8410b",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
-			"position": [
-				1120,
-				2560
-			]
+			"position": [1120, 2560]
 		},
 		{
 			"parameters": {
@@ -85,12 +76,9 @@
 			},
 			"id": "3744306e-7a23-486f-881c-accf3a81e08a",
 			"name": "Set Keep Only Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
-			"position": [
-				1380,
-				2380
-			]
+			"position": [1380, 2380]
 		},
 		{
 			"parameters": {
@@ -118,12 +106,9 @@
 			},
 			"id": "60ab031b-f5e2-4aa7-9427-6379f3a75550",
 			"name": "Set to Array",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
-			"position": [
-				1380,
-				2940
-			]
+			"position": [1380, 2940]
 		},
 		{
 			"parameters": {
@@ -151,12 +136,9 @@
 			},
 			"id": "24e0d35a-f2d4-4121-8cf1-7eb9ab2ed79e",
 			"name": "Set to Object",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
-			"position": [
-				1380,
-				2560
-			]
+			"position": [1380, 2560]
 		},
 		{
 			"parameters": {
@@ -186,12 +168,9 @@
 			},
 			"id": "e9c34a76-28ac-455a-8f77-1d6118b01291",
 			"name": "Set Disable Dot Notation",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
-			"position": [
-				1380,
-				2740
-			]
+			"position": [1380, 2740]
 		}
 	],
 	"pinData": {
@@ -201,9 +180,7 @@
 					"nested": {
 						"foo": "bar"
 					},
-					"list": [
-						"foo"
-					],
+					"list": ["foo"],
 					"boolean": true,
 					"number": 1,
 					"string": "foo"
@@ -228,9 +205,7 @@
 						"number": 1,
 						"string": "foo"
 					},
-					"list": [
-						"foo"
-					]
+					"list": ["foo"]
 				}
 			}
 		],
@@ -240,9 +215,7 @@
 					"nested": {
 						"foo": "bar"
 					},
-					"list": [
-						"foo"
-					],
+					"list": ["foo"],
 					"nested.boolean": true,
 					"nested.number": 1,
 					"nested.string": "foo"
@@ -255,12 +228,7 @@
 					"nested": {
 						"foo": "bar"
 					},
-					"list": [
-						"foo",
-						"bar",
-						true,
-						1
-					]
+					"list": ["foo", "bar", true, 1]
 				}
 			}
 		]

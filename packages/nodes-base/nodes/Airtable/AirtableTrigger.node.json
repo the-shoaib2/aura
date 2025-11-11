@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.airtableTrigger",
+	"node": "aura-nodes-base.airtableTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/airtable/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/airtable/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.airtabletrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.airtabletrigger/"
 			}
 		]
 	}

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import GoogleAuthButton from './GoogleAuthButton.vue';
 
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 defineProps<{
 	isGoogleOAuthType: boolean;
 }>();

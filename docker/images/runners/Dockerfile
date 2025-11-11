@@ -2,7 +2,7 @@ ARG NODE_VERSION=22.21.0
 ARG PYTHON_VERSION=3.13
 
 # ==============================================================================
-# STAGE 1: JavaScript runner (@n8n/task-runner) artifact from CI
+# STAGE 1: JavaScript runner (@aura/task-runner) artifact from CI
 # ==============================================================================
 FROM node:${NODE_VERSION}-alpine AS javascript-runner-builder
 COPY ./dist/task-runner-javascript /app/task-runner-javascript
@@ -12,7 +12,7 @@ WORKDIR /app/task-runner-javascript
 RUN corepack enable pnpm
 
 # Install extra runtime-only npm packages. Allow usage in the Code node via
-# 'NODE_FUNCTION_ALLOW_EXTERNAL' env variable on n8n-task-runners.json.
+# 'NODE_FUNCTION_ALLOW_EXTERNAL' env variable on aura-task-runners.json.
 RUN rm -f node_modules/.modules.yaml
 RUN mv package.json package.json.bak
 COPY docker/images/runners/package.json /app/task-runner-javascript/package.json
@@ -21,7 +21,7 @@ RUN mv package.json extras.json
 RUN mv package.json.bak package.json
 
 # ==============================================================================
-# STAGE 2: Python runner build (@n8n/task-runner-python) with uv
+# STAGE 2: Python runner build (@aura/task-runner-python) with uv
 # Produces a relocatable venv tied to the python version used
 # ==============================================================================
 FROM python:${PYTHON_VERSION}-alpine AS python-runner-builder
@@ -44,9 +44,9 @@ RUN set -e; \
 
 WORKDIR /app/task-runner-python
 
-COPY packages/@n8n/task-runner-python/pyproject.toml \
-     packages/@n8n/task-runner-python/uv.lock** \
-     packages/@n8n/task-runner-python/.python-version** \
+COPY packages/@aura/task-runner-python/pyproject.toml \
+     packages/@aura/task-runner-python/uv.lock** \
+     packages/@aura/task-runner-python/.python-version** \
      ./
 
 RUN uv venv
@@ -57,7 +57,7 @@ RUN uv sync \
 			--no-dev \
 			--all-extras
 
-COPY packages/@n8n/task-runner-python/ ./
+COPY packages/@aura/task-runner-python/ ./
 RUN uv sync \
       --frozen \
 			--no-dev \
@@ -65,7 +65,7 @@ RUN uv sync \
       --no-editable
 
 # Install extra runtime-only Python packages. Allow usage in the Code node via
-# 'N8N_RUNNERS_EXTERNAL_ALLOW' env variable on n8n-task-runners.json.
+# 'aura_RUNNERS_EXTERNAL_ALLOW' env variable on aura-task-runners.json.
 COPY docker/images/runners/extras.txt /app/task-runner-python/extras.txt
 RUN uv pip install -r /app/task-runner-python/extras.txt
 
@@ -83,8 +83,8 @@ RUN set -e; \
         *) echo "Unsupported platform: $TARGETPLATFORM" && exit 1 ;; \
     esac; \
     mkdir /launcher-temp && cd /launcher-temp; \
-    wget -q "https://github.com/n8n-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz"; \
-    wget -q "https://github.com/n8n-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz.sha256"; \
+    wget -q "https://github.com/aura-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz"; \
+    wget -q "https://github.com/aura-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz.sha256"; \
     echo "$(cat task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz.sha256) task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz" > checksum.sha256; \
     sha256sum -c checksum.sha256; \
     mkdir -p /launcher-bin; \
@@ -100,11 +100,11 @@ FROM node:${NODE_VERSION}-alpine AS node-alpine
 # STAGE 5: Runtime
 # ==============================================================================
 FROM python:${PYTHON_VERSION}-alpine AS runtime
-ARG N8N_VERSION=snapshot
-ARG N8N_RELEASE_TYPE=dev
+ARG aura_VERSION=snapshot
+ARG aura_RELEASE_TYPE=dev
 
 ENV NODE_ENV=production \
-    N8N_RELEASE_TYPE=${N8N_RELEASE_TYPE} \
+    aura_RELEASE_TYPE=${aura_RELEASE_TYPE} \
     SHELL=/bin/sh
 
 # Bring `uv` over from python-runner-builder
@@ -125,7 +125,7 @@ WORKDIR /home/runner
 COPY --from=javascript-runner-builder --chown=root:root /app/task-runner-javascript /opt/runners/task-runner-javascript
 COPY --from=python-runner-builder --chown=root:root /app/task-runner-python /opt/runners/task-runner-python
 COPY --from=launcher-downloader /launcher-bin/* /usr/local/bin/
-COPY --chown=root:root docker/images/runners/n8n-task-runners.json /etc/n8n-task-runners.json
+COPY --chown=root:root docker/images/runners/aura-task-runners.json /etc/aura-task-runners.json
 
 USER runner
 
@@ -133,8 +133,8 @@ EXPOSE 5680/tcp
 ENTRYPOINT ["tini", "--", "/usr/local/bin/task-runner-launcher"]
 CMD ["javascript", "python"]
 
-LABEL org.opencontainers.image.title="n8n task runners" \
-      org.opencontainers.image.description="Sidecar image providing n8n task runners for JavaScript and Python code execution" \
-      org.opencontainers.image.source="https://github.com/n8n-io/n8n" \
-      org.opencontainers.image.url="https://n8n.io" \
-      org.opencontainers.image.version="${N8N_VERSION}"
+LABEL org.opencontainers.image.title="aura task runners" \
+      org.opencontainers.image.description="Sidecar image providing aura task runners for JavaScript and Python code execution" \
+      org.opencontainers.image.source="https://github.com/aura-io/aura" \
+      org.opencontainers.image.url="https://aura.io" \
+      org.opencontainers.image.version="${aura_VERSION}"

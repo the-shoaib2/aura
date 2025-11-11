@@ -1,10 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import type {
-	ICredentialsDecrypted,
-	ICredentialTestFunctions,
-	IExecuteFunctions,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { ICredentialsDecrypted, ICredentialTestFunctions, IExecuteFunctions } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 const mockClient = mock<RedisClient>();
 const createClient = jest.fn().mockReturnValue(mockClient);

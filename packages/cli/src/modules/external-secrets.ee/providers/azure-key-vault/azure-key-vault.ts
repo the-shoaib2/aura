@@ -1,8 +1,8 @@
 import type { SecretClient } from '@azure/keyvault-secrets';
-import { Logger } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
-import { ensureError } from 'n8n-workflow';
-import type { INodeProperties } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { Container } from '@aura/di';
+import { ensureError } from 'workflow';
+import type { INodeProperties } from 'workflow';
 
 import type { AzureKeyVaultContext } from './types';
 import { DOCS_HELP_NOTICE, EXTERNAL_SECRETS_NAME_REGEX } from '../../constants';

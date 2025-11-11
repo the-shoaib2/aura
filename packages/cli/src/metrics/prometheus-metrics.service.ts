@@ -1,13 +1,13 @@
-import { GlobalConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import { WorkflowRepository } from '@n8n/db';
-import { OnLeaderStepdown, OnLeaderTakeover } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import { WorkflowRepository } from '@aura/db';
+import { OnLeaderStepdown, OnLeaderTakeover } from '@aura/decorators';
+import { Service } from '@aura/di';
 import type express from 'express';
 import promBundle from 'express-prom-bundle';
 import { DateTime } from 'luxon';
-import { InstanceSettings } from 'n8n-core';
-import { EventMessageTypeNames } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { EventMessageTypeNames } from 'workflow';
 import promClient, { type Counter, type Gauge } from 'prom-client';
 import semverParse from 'semver/functions/parse';
 
@@ -95,20 +95,20 @@ export class PrometheusMetricsService {
 	}
 
 	/**
-	 * Set up metric for n8n version: `n8n_version_info`
+	 * Set up metric for aura version: `aura_version_info`
 	 */
 	private initN8nVersionMetric() {
-		const n8nVersion = semverParse(N8N_VERSION ?? '0.0.0');
+		const auraVersion = semverParse(N8N_VERSION ?? '0.0.0');
 
-		if (!n8nVersion) return;
+		if (!auraVersion) return;
 
 		const versionGauge = new promClient.Gauge({
 			name: this.prefix + 'version_info',
-			help: 'n8n version info.',
+			help: 'aura version info.',
 			labelNames: ['version', 'major', 'minor', 'patch'],
 		});
 
-		const { version, major, minor, patch } = n8nVersion;
+		const { version, major, minor, patch } = auraVersion;
 
 		versionGauge.set({ version: 'v' + version, major, minor, patch }, 1);
 	}
@@ -193,8 +193,8 @@ export class PrometheusMetricsService {
 	}
 
 	/**
-	 * Set up cache metrics: `n8n_cache_hits_total`, `n8n_cache_misses_total`, and
-	 * `n8n_cache_updates_total`
+	 * Set up cache metrics: `aura_cache_hits_total`, `aura_cache_misses_total`, and
+	 * `aura_cache_updates_total`
 	 */
 	private initCacheMetrics() {
 		if (!this.includes.metrics.cache) return;
@@ -222,7 +222,8 @@ export class PrometheusMetricsService {
 		const { eventName } = event;
 
 		if (!this.counters[eventName]) {
-			const metricName = this.prefix + eventName.replace('n8n.', '').replace(/\./g, '_') + '_total';
+			const metricName =
+				this.prefix + eventName.replace('aura.', '').replace(/\./g, '_') + '_total';
 
 			if (!promClient.validateMetricName(metricName)) {
 				this.counters[eventName] = null;
@@ -336,7 +337,7 @@ export class PrometheusMetricsService {
 
 		switch (__type) {
 			case EventMessageTypeNames.audit:
-				if (eventName.startsWith('n8n.audit.user.credentials')) {
+				if (eventName.startsWith('aura.audit.user.credentials')) {
 					return this.includes.labels.credentialsType
 						? {
 								credential_type: String(
@@ -346,7 +347,7 @@ export class PrometheusMetricsService {
 						: {};
 				}
 
-				if (eventName.startsWith('n8n.audit.workflow')) {
+				if (eventName.startsWith('aura.audit.workflow')) {
 					return this.buildWorkflowLabels(payload);
 				}
 				break;
@@ -356,7 +357,7 @@ export class PrometheusMetricsService {
 
 				if (this.includes.labels.nodeType) {
 					nodeLabels.node_type = String(
-						(payload.nodeType ?? 'unknown').replace('n8n-nodes-', '').replace(/\./g, '_'),
+						(payload.nodeType ?? 'unknown').replace('aura-nodes-', '').replace(/\./g, '_'),
 					);
 				}
 

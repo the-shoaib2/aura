@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.apiTemplateIo",
+	"node": "aura-nodes-base.apiTemplateIo",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/apitemplateio/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/apitemplateio/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.apitemplateio/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.apitemplateio/"
 			}
 		]
 	}

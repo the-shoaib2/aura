@@ -5,8 +5,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { fileFields, fileOperations } from './FileDescription';
 import { formFields, formOperations } from './FormDescription';
@@ -473,7 +473,7 @@ export class KoBoToolbox implements INodeType {
 			returnData = returnData.concat(responseData);
 		}
 
-		// Map data to n8n data
+		// Map data to aura data
 		return binaryItems.length > 0 ? [binaryItems] : [this.helpers.returnJsonArray(returnData)];
 	}
 }

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { AddDataTableColumnDto, CreateDataTableColumnDto } from '@n8n/api-types';
-import { createTeamProject, testDb, testModules } from '@n8n/backend-test-utils';
-import type { Project } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { DataTableRow } from 'n8n-workflow';
+import type { AddDataTableColumnDto, CreateDataTableColumnDto } from '@aura/api-types';
+import { createTeamProject, testDb, testModules } from '@aura/backend-test-utils';
+import type { Project } from '@aura/db';
+import { Container } from '@aura/di';
+import type { DataTableRow } from 'workflow';
 
 import { DataTableRowsRepository } from '../data-table-rows.repository';
 import { DataTableRepository } from '../data-table.repository';

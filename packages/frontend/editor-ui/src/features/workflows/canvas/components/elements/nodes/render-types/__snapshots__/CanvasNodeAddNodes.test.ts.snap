@@ -5,14 +5,14 @@ exports[`CanvasNodeAddNodes > should render node correctly 1`] = `
   class="addNodes"
   data-test-id="canvas-add-button"
 >
-  
+
   <button
     class="button el-tooltip__trigger el-tooltip__trigger"
     data-test-id="canvas-plus-button"
   >
     <svg
       aria-hidden="true"
-      class="n8n-icon"
+      class="aura-icon"
       data-icon="plus"
       focusable="false"
       height="40px"
@@ -32,11 +32,11 @@ exports[`CanvasNodeAddNodes > should render node correctly 1`] = `
   </button>
   <!--teleport start-->
   <!--teleport end-->
-  
+
   <p
     class="label"
   >
-    Add first step… 
+    Add first step…
     <!--v-if-->
   </p>
 </div>

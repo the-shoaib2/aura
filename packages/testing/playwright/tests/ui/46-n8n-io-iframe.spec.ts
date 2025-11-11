@@ -8,7 +8,7 @@ const telemetryDisabledRequirements: TestRequirements = {
 		},
 	},
 	storage: {
-		'n8n-telemetry': JSON.stringify({ enabled: false }),
+		'aura-telemetry': JSON.stringify({ enabled: false }),
 	},
 };
 
@@ -20,49 +20,49 @@ const telemetryEnabledRequirements: TestRequirements = {
 		},
 	},
 	storage: {
-		'n8n-telemetry': JSON.stringify({ enabled: true }),
-		'n8n-instance-id': 'test-instance-id',
+		'aura-telemetry': JSON.stringify({ enabled: true }),
+		'aura-instance-id': 'test-instance-id',
 	},
 	intercepts: {
 		iframeRequest: {
-			url: 'https://n8n.io/self-install*',
+			url: 'https://aura.io/self-install*',
 			response: '<html><body>Test iframe content</body></html>',
 			contentType: 'text/html',
 		},
 	},
 };
 
-test.describe('n8n.io iframe', () => {
+test.describe('aura.io iframe', () => {
 	test.describe('when telemetry is disabled', () => {
 		test('should not load the iframe when visiting /home/workflows', async ({
-			n8n,
+			aura,
 			setupRequirements,
 		}) => {
 			await setupRequirements(telemetryDisabledRequirements);
 
-			await n8n.page.goto('/');
-			await n8n.page.waitForLoadState();
-			await expect(n8n.iframe.getIframe()).not.toBeAttached();
+			await aura.page.goto('/');
+			await aura.page.waitForLoadState();
+			await expect(aura.iframe.getIframe()).not.toBeAttached();
 		});
 	});
 
 	test.describe('when telemetry is enabled', () => {
 		test('should load the iframe when visiting /home/workflows @auth:owner', async ({
-			n8n,
+			aura,
 			setupRequirements,
 		}) => {
 			await setupRequirements(telemetryEnabledRequirements);
 
 			// Get current user ID from the API
-			const currentUser = await n8n.api.get('/rest/login');
+			const currentUser = await aura.api.get('/rest/login');
 			const testInstanceId = 'test-instance-id';
 			const testUserId = currentUser.id;
-			const iframeUrl = `https://n8n.io/self-install?instanceId=${testInstanceId}&userId=${testUserId}`;
+			const iframeUrl = `https://aura.io/self-install?instanceId=${testInstanceId}&userId=${testUserId}`;
 
-			await n8n.page.goto('/');
-			await n8n.page.waitForLoadState();
+			await aura.page.goto('/');
+			await aura.page.waitForLoadState();
 
-			const iframeElement = n8n.iframe.getIframeBySrc(iframeUrl);
+			const iframeElement = aura.iframe.getIframeBySrc(iframeUrl);
 			await expect(iframeElement).toBeAttached();
 
 			await expect(iframeElement).toHaveAttribute('src', iframeUrl);

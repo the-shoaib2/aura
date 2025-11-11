@@ -1,6 +1,6 @@
 import { renderComponent } from '@/__tests__/render';
 import * as workflowHelpers from '@/app/composables/useWorkflowHelpers';
-import { n8nLang } from '../plugins/codemirror/n8nLang';
+import { auraLang } from '../plugins/codemirror/auraLang';
 import { EditorSelection } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
 import { createTestingPinia } from '@pinia/testing';
@@ -17,7 +17,7 @@ vi.mock('@/app/composables/useAutocompleteTelemetry', () => ({
 
 vi.mock('@/features/ndv/shared/ndv.store', () => ({
 	useNDVStore: vi.fn(() => ({
-		activeNode: { type: 'n8n-nodes-base.test' },
+		activeNode: { type: 'aura-nodes-base.test' },
 	})),
 }));
 
@@ -72,7 +72,7 @@ describe('useExpressionEditor', () => {
 			expressionEditor: { segments },
 		} = await renderExpressionEditor({
 			editorValue: 'before {{ $json.test.length }} after',
-			extensions: [n8nLang()],
+			extensions: [auraLang()],
 		});
 
 		await waitFor(() => {
@@ -136,7 +136,7 @@ describe('useExpressionEditor', () => {
 			expressionEditor: { segments },
 		} = await renderExpressionEditor({
 			editorValue: "{{ '' }}",
-			extensions: [n8nLang()],
+			extensions: [auraLang()],
 		});
 
 		await waitFor(() => {
@@ -175,7 +175,7 @@ describe('useExpressionEditor', () => {
 			expressionEditor: { segments },
 		} = await renderExpressionEditor({
 			editorValue: "before {{ '' }} after",
-			extensions: [n8nLang()],
+			extensions: [auraLang()],
 		});
 
 		await waitFor(() => {
@@ -239,7 +239,7 @@ describe('useExpressionEditor', () => {
 				expressionEditor: { readEditorValue },
 			} = await renderExpressionEditor({
 				editorValue: 'before {{ $json.test.length }} after',
-				extensions: [n8nLang()],
+				extensions: [auraLang()],
 			});
 
 			expect(readEditorValue()).toEqual('before {{ $json.test.length }} after');
@@ -279,7 +279,7 @@ describe('useExpressionEditor', () => {
 				expressionEditor: { editor, setCursorPosition },
 			} = await renderExpressionEditor({
 				editorValue,
-				extensions: [n8nLang()],
+				extensions: [auraLang()],
 			});
 
 			setCursorPosition('lastExpression');

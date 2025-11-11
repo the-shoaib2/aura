@@ -1,5 +1,5 @@
-import type { CreateRoleDto, UpdateRoleDto } from '@n8n/api-types';
-import { testDb } from '@n8n/backend-test-utils';
+import type { CreateRoleDto, UpdateRoleDto } from '@aura/api-types';
+import { testDb } from '@aura/backend-test-utils';
 
 import { cleanupRolesAndScopes } from '../shared/db/roles';
 import { createMember, createOwner } from '../shared/db/users';
@@ -11,8 +11,8 @@ import {
 	PROJECT_OWNER_ROLE,
 	PROJECT_VIEWER_ROLE,
 	RoleRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 
 describe('RoleController - Integration Tests', () => {
 	const testServer = setupTestServer({ endpointGroups: ['role'] });

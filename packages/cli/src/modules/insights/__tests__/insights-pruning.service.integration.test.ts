@@ -1,12 +1,12 @@
-import type { LicenseState } from '@n8n/backend-common';
+import type { LicenseState } from '@aura/backend-common';
 import {
 	mockLogger,
 	createTeamProject,
 	createWorkflow,
 	testDb,
 	testModules,
-} from '@n8n/backend-test-utils';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import { DateTime } from 'luxon';
 

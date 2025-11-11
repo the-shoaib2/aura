@@ -1,11 +1,11 @@
 <script setup lang="ts" generic="T">
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import type { TestTableColumn } from './TestTableBase.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRouter } from 'vue-router';
-import type { BadgeTheme } from '@n8n/design-system';
+import type { BadgeTheme } from '@aura/design-system';
 
-import { N8nBadge, N8nTooltip } from '@n8n/design-system';
+import { N8nBadge, N8nTooltip } from '@aura/design-system';
 defineProps<{
 	column: TestTableColumn<T>;
 	row: T & { status: string };
@@ -95,7 +95,7 @@ function getErrorTooltipUrl(column: TestTableColumn<T>, row: T): string | undefi
 		:disabled="getErrorTooltip(column, row) === undefined"
 	>
 		<template #content>
-			<div v-n8n-html="getErrorTooltip(column, row)" />
+			<div v-aura-html="getErrorTooltip(column, row)" />
 		</template>
 		<N8nBadge :theme="statusThemeMap[row.status]" class="mr-4xs">
 			{{ statusLabelMap[row.status] }}

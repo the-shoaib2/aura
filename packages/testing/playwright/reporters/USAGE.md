@@ -42,10 +42,10 @@ await testInfo.attach('metric:memory-usage', {
 
 ## Data Pipeline
 
-**Playwright Test** → **n8n Webhook** → **BigQuery Table**
+**Playwright Test** → **aura Webhook** → **BigQuery Table**
 
-The n8n workflow that processes the metrics is here:
-https://internal.users.n8n.cloud/workflow/zSRjEwfBfCNjGXK8
+The aura workflow that processes the metrics is here:
+https://internal.users.aura.cloud/workflow/zSRjEwfBfCNjGXK8
 
 ## BigQuery Schema
 

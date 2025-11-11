@@ -1,5 +1,5 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { SharedCredentials } from '@n8n/db';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { SharedCredentials } from '@aura/db';
 import {
 	Project,
 	SharedWorkflow,
@@ -11,8 +11,8 @@ import {
 	UserRepository,
 	GLOBAL_OWNER_ROLE,
 	PROJECT_OWNER_ROLE,
-} from '@n8n/db';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
+} from '@aura/db';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
 import { v4 as uuid } from 'uuid';
 
 import { OwnershipService } from '@/services/ownership.service';

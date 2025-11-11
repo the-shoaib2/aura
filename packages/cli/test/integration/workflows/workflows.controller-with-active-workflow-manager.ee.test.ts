@@ -3,8 +3,8 @@ import {
 	createWorkflowWithTrigger,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
 
 import { Telemetry } from '@/telemetry';
 

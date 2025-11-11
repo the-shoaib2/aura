@@ -2,11 +2,11 @@
 import type { IAiDataContent } from '@/Interface';
 import capitalize from 'lodash/capitalize';
 import { computed, ref } from 'vue';
-import { NodeConnectionTypes } from 'n8n-workflow';
-import type { NodeConnectionType, NodeError } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
+import type { NodeConnectionType, NodeError } from 'workflow';
 import RunDataAi from '../RunDataParsedAiContent.vue';
 import { parseAiContent } from '@/app/utils/aiUtils';
-import { N8nIcon, N8nRadioButtons } from '@n8n/design-system';
+import { N8nIcon, N8nRadioButtons } from '@aura/design-system';
 import NodeErrorView from '../error/NodeErrorView.vue';
 const props = defineProps<{
 	runData: IAiDataContent;

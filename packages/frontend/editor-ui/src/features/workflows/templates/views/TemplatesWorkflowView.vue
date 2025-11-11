@@ -7,12 +7,12 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useRoute, useRouter } from 'vue-router';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import TemplateDetails from '../components/TemplateDetails.vue';
 import WorkflowPreview from '@/app/components/WorkflowPreview.vue';
 import TemplatesView from './TemplatesView.vue';
 
-import { N8nButton, N8nHeading, N8nLoading, N8nMarkdown, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nHeading, N8nLoading, N8nMarkdown, N8nText } from '@aura/design-system';
 const externalHooks = useExternalHooks();
 const templatesStore = useTemplatesStore();
 const nodeTypesStore = useNodeTypesStore();

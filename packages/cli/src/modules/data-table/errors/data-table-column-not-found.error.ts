@@ -1,4 +1,4 @@
-import { UserError } from 'n8n-workflow';
+import { UserError } from 'workflow';
 
 export class DataTableColumnNotFoundError extends UserError {
 	constructor(dataTableId: string, columnId: string) {

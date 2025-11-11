@@ -1,4 +1,4 @@
-import { type ResizeData } from '@n8n/design-system';
+import { type ResizeData } from '@aura/design-system';
 import { useLocalStorage } from '@vueuse/core';
 import { computed, type MaybeRef, ref, unref, watch } from 'vue';
 

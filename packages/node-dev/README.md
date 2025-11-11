@@ -1,12 +1,12 @@
-![n8n.io - Workflow Automation](https://user-images.githubusercontent.com/65276001/173571060-9f2f6d7b-bac0-43b6-bdb2-001da9694058.png)
+![aura.io - Workflow Automation](https://user-images.githubusercontent.com/65276001/173571060-9f2f6d7b-bac0-43b6-bdb2-001da9694058.png)
 
-# n8n-node-dev
+# aura-node-dev
 
 Currently very simple and not very sophisticated CLI which makes it easier
-to create credentials and nodes in TypeScript for n8n.
+to create credentials and nodes in TypeScript for aura.
 
 ```
-npm install n8n-node-dev -g
+npm install aura-node-dev -g
 ```
 
 ## Contents
@@ -22,7 +22,7 @@ npm install n8n-node-dev -g
 
 ## Usage
 
-The commandline tool can be started with `n8n-node-dev <COMMAND>`
+The commandline tool can be started with `aura-node-dev <COMMAND>`
 
 ## Commands
 
@@ -31,7 +31,7 @@ The following commands exist:
 ### build
 
 Builds credentials and nodes in the current folder and copies them into the
-n8n custom extension folder (`~/.n8n/custom/`) unless destination path is
+aura custom extension folder (`~/.aura/custom/`) unless destination path is
 overwritten with `--destination <FOLDER_PATH>`
 
 When "--watch" gets set it starts in watch mode and automatically builds and
@@ -43,10 +43,10 @@ Creates new basic credentials or node of the selected type to have a first start
 
 ## Create a node
 
-The easiest way to create a new node is via the "n8n-node-dev" cli. It sets up
+The easiest way to create a new node is via the "aura-node-dev" cli. It sets up
 all the basics.
 
-A n8n node is a JavaScript file (normally written in TypeScript) which describes
+A aura node is a JavaScript file (normally written in TypeScript) which describes
 some basic information (like name, description, ...) and also at least one method.
 Depending on which method gets implemented defines if it is a regular-, trigger-
 or webhook-node.
@@ -66,7 +66,7 @@ import {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 
 export class MyNode implements INodeType {
@@ -176,7 +176,7 @@ The following properties can be set in the node description:
 - **outputs** [required]: Types of outputs the node has (currently only "main" exists) and the amount
 - **outputNames** [optional]: In case a node has multiple outputs, names can be set that users know what data to expect
 - **maxNodes** [optional]: If an unlimited number of nodes of that type cannot exist in a workflow, the max-amount can be specified
-- **name** [required]: Name of the node (for n8n to use internally, in camelCase)
+- **name** [required]: Name of the node (for aura to use internally, in camelCase)
 - **properties** [required]: Properties which get displayed in the Editor UI and can be set by the user
 - **subtitle** [optional]: Text which should be displayed underneath the name of the node in the Editor UI (can be an expression)
 - **version** [required]: Version of the node. Currently always "1" (integer). For future usage, does not get used yet
@@ -190,7 +190,7 @@ The following properties can be set in the node properties:
 - **description** [required]: Description that is displayed to users in the Editor UI
 - **displayName** [required]: Name that is displayed to users in the Editor UI
 - **displayOptions** [optional]: Defines logic to decide if a property should be displayed or not
-- **name** [required]: Name of the property (for n8n to use internally, in camelCase)
+- **name** [required]: Name of the property (for aura to use internally, in camelCase)
 - **options** [optional]: The options the user can select when type of property is "collection", "fixedCollection" or "options"
 - **placeholder** [optional]: Placeholder text that is displayed to users in the Editor UI
 - **type** [required]: Type of the property. If it is for example a "string", "number", ...
@@ -215,4 +215,4 @@ All properties are optional. However, most only work when the node-property is o
 
 ## License
 
-You can find the license information [here](https://github.com/n8n-io/n8n/blob/master/README.md#license)
+You can find the license information [here](https://github.com/aura-io/aura/blob/master/README.md#license)

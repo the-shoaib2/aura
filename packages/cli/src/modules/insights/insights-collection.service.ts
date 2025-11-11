@@ -1,10 +1,10 @@
-import { Logger } from '@n8n/backend-common';
-import { SharedWorkflowRepository } from '@n8n/db';
-import { OnLifecycleEvent, type WorkflowExecuteAfterContext } from '@n8n/decorators';
-import { Service } from '@n8n/di';
-import { In } from '@n8n/typeorm';
+import { Logger } from '@aura/backend-common';
+import { SharedWorkflowRepository } from '@aura/db';
+import { OnLifecycleEvent, type WorkflowExecuteAfterContext } from '@aura/decorators';
+import { Service } from '@aura/di';
+import { In } from '@aura/typeorm';
 import { DateTime } from 'luxon';
-import { UnexpectedError, type ExecutionStatus, type WorkflowExecuteMode } from 'n8n-workflow';
+import { UnexpectedError, type ExecutionStatus, type WorkflowExecuteMode } from 'workflow';
 
 import { InsightsMetadata } from '@/modules/insights/database/entities/insights-metadata';
 import { InsightsRaw } from '@/modules/insights/database/entities/insights-raw';
@@ -41,7 +41,7 @@ const shouldSkipMode: Record<WorkflowExecuteMode, boolean> = {
 
 	manual: true,
 
-	// n8n Chat hub messages
+	// aura Chat hub messages
 	chat: true,
 };
 

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 850],
 			"id": "1d47bc56-1b68-4ff0-8007-ae06b9c29610"
@@ -20,7 +20,7 @@
 				}
 			},
 			"name": "Invoice Ninja",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [500, 390],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja1",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [650, 390],
 			"credentials": {
@@ -56,7 +56,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja2",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [800, 390],
 			"credentials": {
@@ -73,7 +73,7 @@
 				"clientId": "={{$node[\"Invoice Ninja\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja3",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [950, 390],
 			"credentials": {
@@ -92,7 +92,7 @@
 				}
 			},
 			"name": "Invoice Ninja4",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [500, 550],
 			"credentials": {
@@ -110,7 +110,7 @@
 				"limit": 1
 			},
 			"name": "Invoice Ninja5",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [650, 550],
 			"credentials": {
@@ -128,7 +128,7 @@
 				"expenseId": "={{$node[\"Invoice Ninja4\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja6",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [800, 550],
 			"credentials": {
@@ -146,7 +146,7 @@
 				"expenseId": "={{$node[\"Invoice Ninja4\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja7",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [950, 550],
 			"credentials": {
@@ -165,7 +165,7 @@
 				}
 			},
 			"name": "Invoice Ninja8",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [500, 710],
 			"credentials": {
@@ -184,7 +184,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja9",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [1250, 710],
 			"credentials": {
@@ -203,7 +203,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja10",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [1400, 710],
 			"credentials": {
@@ -221,7 +221,7 @@
 				"invoiceId": "={{$node[\"Invoice Ninja8\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja11",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [1550, 710],
 			"credentials": {
@@ -239,7 +239,7 @@
 				"invoiceId": "={{$node[\"Invoice Ninja8\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja12",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [1700, 710],
 			"credentials": {
@@ -258,7 +258,7 @@
 				"additionalFields": {}
 			},
 			"name": "Invoice Ninja14",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [650, 820],
 			"credentials": {
@@ -277,7 +277,7 @@
 				}
 			},
 			"name": "Invoice Ninja15",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [500, 1020],
 			"credentials": {
@@ -296,7 +296,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja16",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [650, 1020],
 			"credentials": {
@@ -315,7 +315,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja17",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [800, 1020],
 			"credentials": {
@@ -333,7 +333,7 @@
 				"quoteId": "={{$node[\"Invoice Ninja15\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja18",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [950, 1020],
 			"credentials": {
@@ -351,7 +351,7 @@
 				"quoteId": "={{$node[\"Invoice Ninja15\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja19",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [1100, 1020],
 			"credentials": {
@@ -368,7 +368,7 @@
 				"additionalFields": {}
 			},
 			"name": "Invoice Ninja20",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [500, 1180],
 			"credentials": {
@@ -387,7 +387,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja21",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [650, 1180],
 			"credentials": {
@@ -406,7 +406,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja22",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [800, 1180],
 			"credentials": {
@@ -424,7 +424,7 @@
 				"taskId": "={{$node[\"Invoice Ninja20\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja23",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [950, 1180],
 			"credentials": {
@@ -443,7 +443,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja24",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [800, 820],
 			"credentials": {
@@ -462,7 +462,7 @@
 				"options": {}
 			},
 			"name": "Invoice Ninja25",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [950, 820],
 			"credentials": {
@@ -480,7 +480,7 @@
 				"paymentId": "={{$node[\"Invoice Ninja14\"].json[\"id\"]}}"
 			},
 			"name": "Invoice Ninja26",
-			"type": "n8n-nodes-base.invoiceNinja",
+			"type": "aura-nodes-base.invoiceNinja",
 			"typeVersion": 1,
 			"position": [1100, 820],
 			"credentials": {

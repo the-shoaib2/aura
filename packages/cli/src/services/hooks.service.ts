@@ -4,17 +4,17 @@ import type {
 	CredentialsEntity,
 	User,
 	WorkflowEntity,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	CredentialsRepository,
 	WorkflowRepository,
 	SettingsRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { FindManyOptions, FindOneOptions, FindOptionsWhere } from '@n8n/typeorm';
-import type { QueryDeepPartialEntity } from '@n8n/typeorm/query-builder/QueryPartialEntity';
+} from '@aura/db';
+import { Service } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { FindManyOptions, FindOneOptions, FindOptionsWhere } from '@aura/typeorm';
+import type { QueryDeepPartialEntity } from '@aura/typeorm/query-builder/QueryPartialEntity';
 import RudderStack, { type constructorOptions } from '@rudderstack/rudder-sdk-node';
 import type { NextFunction, Response } from 'express';
 
@@ -53,7 +53,7 @@ export class HooksService {
 	}
 
 	/**
-	 * Set the n8n-auth cookie in the response to auto-login
+	 * Set the aura-auth cookie in the response to auto-login
 	 * the user after instance is provisioned
 	 */
 	issueCookie(res: Response, user: User) {

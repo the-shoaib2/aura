@@ -1,6 +1,6 @@
-import type { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
+import type { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
 import type { Application } from 'express';
 import { captor, mock } from 'jest-mock-extended';
 import type { Server, ServerResponse } from 'node:http';
@@ -19,9 +19,9 @@ jest.mock('ws', () => ({
 	Server: jest.fn(),
 }));
 jest.unmock('@/push');
-jest.mock('@n8n/backend-common', () => {
+jest.mock('@aura/backend-common', () => {
 	return {
-		...jest.requireActual('@n8n/backend-common'),
+		...jest.requireActual('@aura/backend-common'),
 		inProduction: true,
 	};
 });

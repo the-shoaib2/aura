@@ -1,10 +1,10 @@
-import { inProduction } from '@n8n/backend-common';
+import { inProduction } from '@aura/backend-common';
 
 import { getCommunityNodeTypes } from '../community-node-types-utils';
 import { CommunityNodeTypesService } from '../community-node-types.service';
 
-jest.mock('@n8n/backend-common', () => ({
-	...jest.requireActual('@n8n/backend-common'),
+jest.mock('@aura/backend-common', () => ({
+	...jest.requireActual('@aura/backend-common'),
 	inProduction: jest.fn().mockReturnValue(false),
 }));
 

@@ -5,9 +5,9 @@ import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { useInstalledCommunityPackage } from '../../composables/useInstalledCommunityPackage';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 
-import { N8nLink, N8nText } from '@n8n/design-system';
+import { N8nLink, N8nText } from '@aura/design-system';
 export interface Props {
 	packageName: string;
 	showManage: boolean;

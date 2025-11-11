@@ -2,7 +2,7 @@
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { computed } from 'vue';
 
-import { N8nIcon, N8nText } from '@n8n/design-system';
+import { N8nIcon, N8nText } from '@aura/design-system';
 export interface Props {
 	hint: string;
 }

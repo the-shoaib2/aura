@@ -1,5 +1,5 @@
-import { createEventBus } from '@n8n/utils/event-bus';
-import type { IDataObject } from 'n8n-workflow';
+import { createEventBus } from '@aura/utils/event-bus';
+import type { IDataObject } from 'workflow';
 
 export interface NodeViewEventBusEvents {
 	/** Command to create a new workflow */

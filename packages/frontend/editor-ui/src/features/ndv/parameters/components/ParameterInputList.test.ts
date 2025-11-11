@@ -13,8 +13,8 @@ import {
 	FIXED_COLLECTION_PARAMETERS,
 	TEST_ISSUE,
 } from './ParameterInputList.test.constants';
-import { FORM_NODE_TYPE, FORM_TRIGGER_NODE_TYPE } from 'n8n-workflow';
-import type { INodeProperties, Workflow } from 'n8n-workflow';
+import { FORM_NODE_TYPE, FORM_TRIGGER_NODE_TYPE } from 'workflow';
+import type { INodeProperties, Workflow } from 'workflow';
 import type { INodeUi } from '@/Interface';
 import type { MockInstance } from 'vitest';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -119,7 +119,7 @@ describe('ParameterInputList', () => {
 		});
 		expect(getByText('Note: This is a notice with')).toBeInTheDocument();
 		expect(getByText('notice link')).toBeInTheDocument();
-		expect(getByText('notice link').getAttribute('href')).toEqual('notice.n8n.io');
+		expect(getByText('notice link').getAttribute('href')).toEqual('notice.aura.io');
 	});
 
 	it('renders callout correctly', () => {
@@ -133,7 +133,7 @@ describe('ParameterInputList', () => {
 
 		expect(getByText('Tip: This is a callout with')).toBeInTheDocument();
 		expect(getByText('callout link')).toBeInTheDocument();
-		expect(getByText('callout link').getAttribute('href')).toEqual('callout.n8n.io');
+		expect(getByText('callout link').getAttribute('href')).toEqual('callout.aura.io');
 		expect(getByText('and action!')).toBeInTheDocument();
 		expect(getByTestId('callout-dismiss-icon')).toBeInTheDocument();
 	});

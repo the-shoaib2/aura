@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
 import type { CommandGroup } from '../types';

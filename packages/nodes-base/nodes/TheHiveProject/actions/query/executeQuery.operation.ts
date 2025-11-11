@@ -1,10 +1,5 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError, jsonParse } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
+import { NodeOperationError, jsonParse } from 'workflow';
 
 import { updateDisplayOptions, wrapData } from '@utils/utilities';
 

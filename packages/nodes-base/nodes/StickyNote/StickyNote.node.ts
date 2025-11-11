@@ -3,7 +3,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class StickyNote implements INodeType {
 	description: INodeTypeDescription = {
@@ -27,7 +27,7 @@ export class StickyNote implements INodeType {
 				name: 'content',
 				type: 'string',
 				default:
-					"## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+					"## I'm a note \n**Double click** to edit me. [Guide](https://docs.aura.io/workflows/sticky-notes/)",
 			},
 			{
 				displayName: 'Height',

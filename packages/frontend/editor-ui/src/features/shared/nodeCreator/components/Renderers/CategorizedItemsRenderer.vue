@@ -22,9 +22,9 @@ export interface Props {
 	expanded?: boolean;
 }
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 const props = withDefaults(defineProps<Props>(), {
 	elements: () => [],
 });
@@ -116,7 +116,7 @@ registerKeyHook(`CategoryLeft_${props.category}`, {
 				<N8nTooltip placement="top" :popper-class="$style.tooltipPopper">
 					<N8nIcon icon="circle-help" size="small" />
 					<template #content>
-						<div v-n8n-html="mouseOverTooltip" />
+						<div v-aura-html="mouseOverTooltip" />
 					</template>
 				</N8nTooltip>
 			</span>

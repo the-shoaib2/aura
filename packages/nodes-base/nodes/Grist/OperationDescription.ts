@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const operationFields: INodeProperties[] = [
 	{
@@ -20,7 +20,7 @@ export const operationFields: INodeProperties[] = [
 				action: 'Delete rows from a table',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
+				// eslint-disable-next-line aura-nodes-base/node-param-option-name-wrong-for-get-many
 				name: 'Get Many Rows',
 				value: 'getAll',
 				description: 'Read rows from a table',
@@ -143,7 +143,7 @@ export const operationFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'Column to apply the filter in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'Column to apply the filter in. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 								required: true,
 							},
 							{
@@ -182,7 +182,7 @@ export const operationFields: INodeProperties[] = [
 								default: '',
 								required: true,
 								description:
-									'Column to sort on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'Column to sort on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Direction',
@@ -292,7 +292,7 @@ export const operationFields: INodeProperties[] = [
 						displayName: 'Column Name or ID',
 						name: 'fieldId',
 						description:
-							'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+							'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						type: 'options',
 						typeOptions: {
 							loadOptionsDependsOn: ['tableId'],

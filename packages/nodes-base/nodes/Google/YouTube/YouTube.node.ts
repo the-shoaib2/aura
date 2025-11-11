@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, BINARY_ENCODING, NodeOperationError } from 'workflow';
 import { Readable } from 'stream';
 
 import { isoCountryCodes } from '@utils/ISOCountryCodes';
@@ -26,7 +26,7 @@ export class YouTube implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'YouTube',
 		name: 'youTube',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:youTube.png',
 		group: ['input'],
 		version: 1,

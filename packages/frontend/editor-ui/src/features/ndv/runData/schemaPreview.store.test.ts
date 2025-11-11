@@ -3,9 +3,9 @@ import { useSchemaPreviewStore } from './schemaPreview.store';
 import * as schemaPreviewApi from './schemaPreview.api';
 import type { JSONSchema7 } from 'json-schema';
 import { mock } from 'vitest-mock-extended';
-import type { PushPayload } from '@n8n/api-types';
+import type { PushPayload } from '@aura/api-types';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 
 vi.mock('./schemaPreview.api');
@@ -18,7 +18,7 @@ vi.mock('@/app/composables/useTelemetry', () => {
 	};
 });
 
-vi.mock('@n8n/stores/useRootStore', () => ({
+vi.mock('@aura/stores/useRootStore', () => ({
 	useRootStore: vi.fn(() => ({
 		baseUrl: 'https://test.com',
 	})),
@@ -52,7 +52,7 @@ describe('schemaPreview.store', () => {
 			schemaPreviewApiSpy.mockResolvedValueOnce(mockedSchema);
 
 			const options = {
-				nodeType: 'n8n-nodes-base.test',
+				nodeType: 'aura-nodes-base.test',
 				version: 1.2,
 				resource: 'messages',
 				operation: 'send',
@@ -75,7 +75,7 @@ describe('schemaPreview.store', () => {
 			schemaPreviewApiSpy.mockRejectedValueOnce(error);
 
 			const options = {
-				nodeType: 'n8n-nodes-base.test',
+				nodeType: 'aura-nodes-base.test',
 				version: 1.2,
 				resource: 'messages',
 				operation: 'send',
@@ -88,7 +88,7 @@ describe('schemaPreview.store', () => {
 
 	describe('trackSchemaPreviewExecution', () => {
 		const options = {
-			nodeType: 'n8n-nodes-base.test',
+			nodeType: 'aura-nodes-base.test',
 			version: 1.2,
 			resource: 'messages',
 			operation: 'send',
@@ -132,7 +132,7 @@ describe('schemaPreview.store', () => {
 				node_id: 'test-node-id',
 				node_operation: 'send',
 				node_resource: 'messages',
-				node_type: 'n8n-nodes-base.test',
+				node_type: 'aura-nodes-base.test',
 				node_version: 1.2,
 				output_schema:
 					'{"type":"object","properties":{"foo":{"type":"string"},"quz":{"type":"string"}}}',

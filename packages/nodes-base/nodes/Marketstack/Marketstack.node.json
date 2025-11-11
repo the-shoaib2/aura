@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.marketstack",
+	"node": "aura-nodes-base.marketstack",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Analytics", "Finance & Accounting"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/marketstack/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/marketstack/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.marketstack/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.marketstack/"
 			}
 		]
 	}

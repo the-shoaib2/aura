@@ -1,11 +1,11 @@
-import * as n8nWorkflow from 'n8n-workflow';
+import * as auraWorkflow from 'workflow';
 
 import { testTriggerNode } from '@test/nodes/TriggerHelpers';
 
 import { ScheduleTrigger } from '../ScheduleTrigger.node';
 
 describe('ScheduleTrigger', () => {
-	Object.defineProperty(n8nWorkflow, 'randomInt', {
+	Object.defineProperty(auraWorkflow, 'randomInt', {
 		value: (min: number, max: number) => Math.floor((min + max) / 2),
 	});
 
@@ -104,7 +104,7 @@ describe('ScheduleTrigger', () => {
 					},
 					workflowStaticData: {},
 				}),
-			).rejects.toBeInstanceOf(n8nWorkflow.NodeOperationError);
+			).rejects.toBeInstanceOf(auraWorkflow.NodeOperationError);
 		});
 
 		it('should emit when manually executed', async () => {
@@ -154,7 +154,7 @@ describe('ScheduleTrigger', () => {
 				workflowStaticData: {},
 			});
 			await expect(manualTriggerFunction?.()).rejects.toBeInstanceOf(
-				n8nWorkflow.NodeOperationError,
+				auraWorkflow.NodeOperationError,
 			);
 		});
 	});

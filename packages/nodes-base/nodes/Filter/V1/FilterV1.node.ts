@@ -7,7 +7,7 @@ import {
 	type INodeTypeBaseDescription,
 	type INodeTypeDescription,
 	type NodeParameterValue,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { compareOperationFunctions, convertDateTime } from './GenericFunctions';
 
@@ -47,10 +47,10 @@ export class FilterV1 implements INodeType {
 									name: 'value1',
 									type: 'boolean',
 									default: false,
-									// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+									// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 									description: 'The value to compare with the second one',
 								},
-								// eslint-disable-next-line n8n-nodes-base/node-param-operation-without-no-data-expression
+								// eslint-disable-next-line aura-nodes-base/node-param-operation-without-no-data-expression
 								{
 									displayName: 'Operation',
 									name: 'operation',
@@ -73,7 +73,7 @@ export class FilterV1 implements INodeType {
 									name: 'value2',
 									type: 'boolean',
 									default: false,
-									// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+									// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 									description: 'The value to compare with the first one',
 								},
 							],
@@ -89,7 +89,7 @@ export class FilterV1 implements INodeType {
 									default: '',
 									description: 'The value to compare with the second one',
 								},
-								// eslint-disable-next-line n8n-nodes-base/node-param-operation-without-no-data-expression
+								// eslint-disable-next-line aura-nodes-base/node-param-operation-without-no-data-expression
 								{
 									displayName: 'Operation',
 									name: 'operation',
@@ -132,7 +132,7 @@ export class FilterV1 implements INodeType {
 									name: 'operation',
 									type: 'options',
 									noDataExpression: true,
-									// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+									// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 									options: [
 										{
 											name: 'Smaller',
@@ -200,7 +200,7 @@ export class FilterV1 implements INodeType {
 									name: 'operation',
 									type: 'options',
 									noDataExpression: true,
-									// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+									// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 									options: [
 										{
 											name: 'Contains',

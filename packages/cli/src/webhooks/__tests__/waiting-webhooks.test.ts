@@ -1,8 +1,8 @@
-import type { IExecutionResponse, ExecutionRepository } from '@n8n/db';
+import type { IExecutionResponse, ExecutionRepository } from '@aura/db';
 import type express from 'express';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
-import { generateUrlSignature, prepareUrlForSigning, WAITING_TOKEN_QUERY_PARAM } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
+import { generateUrlSignature, prepareUrlForSigning, WAITING_TOKEN_QUERY_PARAM } from 'aura-core';
 
 import { ConflictError } from '@/errors/response-errors/conflict.error';
 import { NotFoundError } from '@/errors/response-errors/not-found.error';
@@ -134,7 +134,7 @@ describe('WaitingWebhooks', () => {
 			expect(result).toBe(true);
 		});
 
-		it('should validate signature correctly when n8n is behind a reverse proxy', () => {
+		it('should validate signature correctly when aura is behind a reverse proxy', () => {
 			/* Arrange */
 			const signature = generateValidSignature('proxy.example.com');
 			const mockReq = mock<express.Request>({

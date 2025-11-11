@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { VIEWS } from '@/app/constants';
 import type { Project } from '@/features/collaboration/projects/projects.types';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { N8nActionBox } from '@n8n/design-system';
+import { N8nActionBox } from '@aura/design-system';
 type Props = {
 	personalProject: Project;
 	resourceType?: 'workflows' | 'credentials';

@@ -1,19 +1,19 @@
 import { computed, reactive, ref } from 'vue';
 import { defineStore } from 'pinia';
 import type { CloudPlanState } from '@/Interface';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import type { Cloud } from '@n8n/rest-api-client/api/cloudPlans';
+import type { Cloud } from '@aura/rest-api-client/api/cloudPlans';
 import {
 	getAdminPanelLoginCode,
 	getCurrentPlan,
 	getCurrentUsage,
-} from '@n8n/rest-api-client/api/cloudPlans';
+} from '@aura/rest-api-client/api/cloudPlans';
 import { DateTime } from 'luxon';
 import { CLOUD_TRIAL_CHECK_INTERVAL } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { hasPermission } from '@/app/utils/rbac/permissions';
-import * as cloudApi from '@n8n/rest-api-client/api/cloudPlans';
+import * as cloudApi from '@aura/rest-api-client/api/cloudPlans';
 
 const DEFAULT_STATE: CloudPlanState = {
 	initialized: false,
@@ -22,7 +22,7 @@ const DEFAULT_STATE: CloudPlanState = {
 	loadingPlan: false,
 };
 
-const DYNAMIC_TRIAL_BANNER_DISMISSED_KEY = 'n8n-dynamic-trial-banner-dismissed';
+const DYNAMIC_TRIAL_BANNER_DISMISSED_KEY = 'aura-dynamic-trial-banner-dismissed';
 
 export const useCloudPlanStore = defineStore(STORES.CLOUD_PLAN, () => {
 	const rootStore = useRootStore();
@@ -95,7 +95,7 @@ export const useCloudPlanStore = defineStore(STORES.CLOUD_PLAN, () => {
 	});
 
 	const hasCloudPlan = computed<boolean>(() => {
-		const cloudUserId = settingsStore.settings.n8nMetadata?.userId;
+		const cloudUserId = settingsStore.settings.auraMetadata?.userId;
 		return hasPermission(['instanceOwner']) && settingsStore.isCloudDeployment && !!cloudUserId;
 	});
 

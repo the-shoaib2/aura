@@ -8,7 +8,7 @@ import {
 	FORM_TRIGGER_NODE_TYPE,
 } from '@/app/constants';
 import type { INodeUi } from '@/Interface';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'workflow';
 import { getTriggerNodeServiceName } from '@/app/utils/nodeTypesUtils';
 import NodeExecuteButton from '@/app/components/NodeExecuteButton.vue';
 import CopyInput from '@/app/components/CopyInput.vue';
@@ -17,11 +17,11 @@ import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import { useRouter } from 'vue-router';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { isTriggerPanelObject } from '@/app/utils/typeGuards';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
 import {
@@ -32,7 +32,7 @@ import {
 	N8nPulse,
 	N8nSpinner,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const props = withDefaults(
 	defineProps<{
 		nodeName: string;
@@ -468,7 +468,7 @@ const onNodeExecute = () => {
 				</div>
 
 				<N8nText v-if="activationHint" size="small" @click="onLinkClick">
-					<span v-n8n-html="activationHint"></span>&nbsp;
+					<span v-aura-html="activationHint"></span>&nbsp;
 				</N8nText>
 				<N8nLink
 					v-if="activationHint && executionsHelp"

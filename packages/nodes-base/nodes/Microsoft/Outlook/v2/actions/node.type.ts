@@ -1,4 +1,4 @@
-import type { AllEntities } from 'n8n-workflow';
+import type { AllEntities } from 'workflow';
 
 type NodeMap = {
 	calendar: 'create' | 'delete' | 'get' | 'getAll' | 'update';

@@ -3,8 +3,8 @@ import { parseArgs } from 'node:util';
 
 import { getDockerImageFromEnv } from './docker-image';
 import { DockerImageNotFoundError } from './docker-image-not-found-error';
-import type { N8NConfig, N8NStack } from './n8n-test-container-creation';
-import { createN8NStack } from './n8n-test-container-creation';
+import type { N8NConfig, N8NStack } from './aura-test-container-creation';
+import { createN8NStack } from './aura-test-container-creation';
 import { BASE_PERFORMANCE_PLANS, isValidPerformancePlan } from './performance-plans';
 
 // ANSI colors for terminal output
@@ -28,9 +28,9 @@ const log = {
 
 function showHelp() {
 	console.log(`
-${colors.bright}n8n Stack Manager${colors.reset}
+${colors.bright}aura Stack Manager${colors.reset}
 
-Start n8n containers for development and testing.
+Start aura containers for development and testing.
 
 ${colors.yellow}Usage:${colors.reset}
   npm run stack [options]
@@ -56,7 +56,7 @@ ${Object.entries(BASE_PERFORMANCE_PLANS)
 	.join('\n')}
 
 ${colors.yellow}Environment Variables:${colors.reset}
-  • N8N_DOCKER_IMAGE=<image>  Use a custom Docker image (default: n8nio/n8n:local)
+  • N8N_DOCKER_IMAGE=<image>  Use a custom Docker image (default: auraio/aura:local)
 
 ${colors.yellow}Examples:${colors.reset}
   ${colors.bright}# Simple SQLite instance${colors.reset}
@@ -127,7 +127,7 @@ async function main() {
 		postgres: values.postgres ?? false,
 		taskRunner: values['task-runner'] ?? false,
 		sourceControl: values['source-control'] ?? false,
-		projectName: values.name ?? `n8n-stack-${Math.random().toString(36).substring(7)}`,
+		projectName: values.name ?? `aura-stack-${Math.random().toString(36).substring(7)}`,
 	};
 
 	// Handle queue mode
@@ -189,7 +189,7 @@ async function main() {
 		}
 	}
 
-	log.header('Starting n8n Stack');
+	log.header('Starting aura Stack');
 	log.info(`Project name: ${config.projectName}`);
 	displayConfig(config);
 
@@ -209,7 +209,7 @@ async function main() {
 
 		log.success('All containers started successfully!');
 		console.log('');
-		log.info(`n8n URL: ${colors.bright}${colors.green}${stack.baseUrl}${colors.reset}`);
+		log.info(`aura URL: ${colors.bright}${colors.green}${stack.baseUrl}${colors.reset}`);
 	} catch (error) {
 		log.error(`Failed to start: ${error as string}`);
 		process.exit(1);
@@ -252,7 +252,7 @@ function displayConfig(config: N8NConfig) {
 	if (config.sourceControl) {
 		log.info('Source Control: enabled (Git server - Gitea 1.24.6)');
 		log.info('  Admin: giteaadmin / giteapassword');
-		log.info('  Repository: n8n-test-repo');
+		log.info('  Repository: aura-test-repo');
 	} else {
 		log.info('Source Control: disabled');
 	}

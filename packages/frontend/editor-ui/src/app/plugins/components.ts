@@ -3,7 +3,7 @@ import type { Plugin } from 'vue';
 import 'regenerator-runtime/runtime';
 
 import { ElLoading, ElMessageBox } from 'element-plus';
-import { N8nPlugin } from '@n8n/design-system';
+import { N8nPlugin } from '@aura/design-system';
 import { useMessage } from '@/app/composables/useMessage';
 
 export const GlobalComponentsPlugin: Plugin = {

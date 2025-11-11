@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "ccd210e8-4155-4e27-bcda-8ecde0543afe"
@@ -22,7 +22,7 @@
 				"filters": {}
 			},
 			"name": "CircleCI",
-			"type": "n8n-nodes-base.circleCi",
+			"type": "aura-nodes-base.circleCi",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"projectSlug": "nodemationqa/nodeQA"
 			},
 			"name": "CircleCI1",
-			"type": "n8n-nodes-base.circleCi",
+			"type": "aura-nodes-base.circleCi",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -60,7 +60,7 @@
 				}
 			},
 			"name": "CircleCI2",
-			"type": "n8n-nodes-base.circleCi",
+			"type": "aura-nodes-base.circleCi",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {

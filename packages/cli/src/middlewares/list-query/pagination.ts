@@ -1,5 +1,5 @@
 import type { RequestHandler } from 'express';
-import { UnexpectedError } from 'n8n-workflow';
+import { UnexpectedError } from 'workflow';
 
 import type { ListQuery } from '@/requests';
 import * as ResponseHelper from '@/response-helper';

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const scanOperations: INodeProperties[] = [
 	{
@@ -103,7 +103,7 @@ export const scanFields: INodeProperties[] = [
 				description:
 					'Query using the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-dsl-query-string-query">Elastic Search Query String syntax</a>. See <a href="https://urlscan.io/docs/search/">supported fields</a> in the documentation.',
 				default: '',
-				placeholder: 'domain:n8n.io',
+				placeholder: 'domain:aura.io',
 			},
 		],
 	},
@@ -116,7 +116,7 @@ export const scanFields: INodeProperties[] = [
 		name: 'url',
 		type: 'string',
 		default: '',
-		placeholder: 'https://n8n.io',
+		placeholder: 'https://aura.io',
 		description: 'URL to scan',
 		displayOptions: {
 			show: {
@@ -142,7 +142,7 @@ export const scanFields: INodeProperties[] = [
 				displayName: 'Custom Agent',
 				name: 'customAgent',
 				description:
-					'<code>User-Agent</code> header to set for this scan. Defaults to <code>n8n</code>',
+					'<code>User-Agent</code> header to set for this scan. Defaults to <code>aura</code>',
 				type: 'string',
 				default: '',
 			},
@@ -158,7 +158,7 @@ export const scanFields: INodeProperties[] = [
 				name: 'referer',
 				description: 'HTTP referer to set for this scan',
 				type: 'string',
-				placeholder: 'https://n8n.io',
+				placeholder: 'https://aura.io',
 				default: '',
 			},
 			{

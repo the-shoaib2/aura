@@ -9,8 +9,8 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes, randomString } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes, randomString } from 'workflow';
 
 import type {
 	ITypeformAnswer,
@@ -90,7 +90,7 @@ export class TypeformTrigger implements INodeType {
 				default: '',
 				required: true,
 				description:
-					'Form which should trigger workflow on submission. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Form which should trigger workflow on submission. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Simplify Answers',
@@ -177,7 +177,7 @@ export class TypeformTrigger implements INodeType {
 				const webhookUrl = this.getNodeWebhookUrl('default');
 
 				const formId = this.getNodeParameter('formId') as string;
-				const webhookId = 'n8n-' + randomString(10).toLowerCase();
+				const webhookId = 'aura-' + randomString(10).toLowerCase();
 
 				const endpoint = `forms/${formId}/webhooks/${webhookId}`;
 

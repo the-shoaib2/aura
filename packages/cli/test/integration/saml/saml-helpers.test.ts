@@ -1,4 +1,4 @@
-import { getPersonalProject, testDb } from '@n8n/backend-test-utils';
+import { getPersonalProject, testDb } from '@aura/backend-test-utils';
 
 import * as helpers from '@/sso.ee/saml/saml-helpers';
 import type { SamlUserAttributes } from '@/sso.ee/saml/types';
@@ -20,9 +20,9 @@ describe('sso/saml/samlHelpers', () => {
 			const samlUserAttributes: SamlUserAttributes = {
 				firstName: 'Nathan',
 				lastName: 'Nathaniel',
-				email: 'nathan@n8n.io',
+				email: 'nathan@aura.io',
 				userPrincipalName: 'Huh?',
-				n8nInstanceRole: 'n8n_instance_role',
+				auraInstanceRole: 'aura_instance_role',
 			};
 
 			//

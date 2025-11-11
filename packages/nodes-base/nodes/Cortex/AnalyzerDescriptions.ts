@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { TLPs } from './AnalyzerInterface';
 
@@ -43,7 +43,7 @@ export const analyzerFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'Choose the analyzer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Choose the analyzer. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		default: '',
 	},
 	{
@@ -66,7 +66,7 @@ export const analyzerFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'Choose the observable type. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Choose the observable type. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 
 	// Observable type != file

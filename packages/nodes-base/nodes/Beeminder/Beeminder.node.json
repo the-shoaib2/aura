@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.beeminder",
+	"node": "aura-nodes-base.beeminder",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Productivity"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/beeminder/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/beeminder/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.beeminder/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.beeminder/"
 			}
 		]
 	}

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { searchProperties } from './common.descriptions';
 import { updateDisplayOptions } from '../../../utils/utilities';

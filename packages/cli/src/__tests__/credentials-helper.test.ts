@@ -1,6 +1,6 @@
-import { CredentialsEntity, type CredentialsRepository } from '@n8n/db';
-import { EntityNotFoundError } from '@n8n/typeorm';
-import { Container } from '@n8n/di';
+import { CredentialsEntity, type CredentialsRepository } from '@aura/db';
+import { EntityNotFoundError } from '@aura/typeorm';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import type {
 	IAuthenticateGeneric,
@@ -11,9 +11,9 @@ import type {
 	INodeProperties,
 	INodeTypes,
 	INodeCredentialsDetails,
-} from 'n8n-workflow';
-import { deepCopy, Workflow } from 'n8n-workflow';
-import { type InstanceSettings, Cipher } from 'n8n-core';
+} from 'workflow';
+import { deepCopy, Workflow } from 'workflow';
+import { type InstanceSettings, Cipher } from 'aura-core';
 
 import { CredentialTypes } from '@/credential-types';
 import { CredentialsHelper } from '@/credentials-helper';

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import * as getPaginated from './getPaginated.operation';
 import * as query from './query.operation';

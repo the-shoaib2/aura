@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import BaseBanner from './BaseBanner.vue';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@aura/i18n';
 
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 function onUpdatePlanClick() {
 	void usePageRedirectionHelper().goToUpgrade('canvas-nav', 'upgrade-canvas-nav', 'redirect');
 }

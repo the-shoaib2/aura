@@ -15,11 +15,11 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { removeWorkflowExecutionData } from '@/app/utils/workflowUtils';
-import type { BaseTextKey } from '@n8n/i18n';
-import { useI18n } from '@n8n/i18n';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { BaseTextKey } from '@aura/i18n';
+import { useI18n } from '@aura/i18n';
+import type { EventBus } from '@aura/utils/event-bus';
 import { useAsyncState } from '@vueuse/core';
-import { NodeDiffStatus, type IWorkflowSettings } from 'n8n-workflow';
+import { NodeDiffStatus, type IWorkflowSettings } from 'workflow';
 import { computed, onMounted, onUnmounted, ref, useCssModule } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import HighlightedEdge from './HighlightedEdge.vue';
@@ -34,7 +34,7 @@ import {
 	N8nIconButton,
 	N8nRadioButtons,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const props = defineProps<{
 	data: { eventBus: EventBus; workflowId: string; direction: 'push' | 'pull' };
 }>();
@@ -721,7 +721,7 @@ const modifiers = [
 </template>
 
 <style module lang="scss">
-/* Diff colors are now centralized in @n8n/design-system tokens */
+/* Diff colors are now centralized in @aura/design-system tokens */
 
 .workflowDiffModal {
 	margin-bottom: 0;
@@ -757,10 +757,10 @@ const modifiers = [
 .tabs {
 	display: flex;
 	flex-direction: row;
-	:global(.n8n-radio-button) {
+	:global(.aura-radio-button) {
 		flex: 1;
 	}
-	:global(.n8n-radio-button > div) {
+	:global(.aura-radio-button > div) {
 		justify-content: center;
 	}
 }

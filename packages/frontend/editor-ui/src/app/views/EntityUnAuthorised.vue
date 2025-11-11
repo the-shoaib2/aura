@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
-import { N8nCard, N8nHeading, N8nText } from '@n8n/design-system';
+import { N8nCard, N8nHeading, N8nText } from '@aura/design-system';
 defineProps<{
 	entityType: 'credential' | 'workflow';
 }>();

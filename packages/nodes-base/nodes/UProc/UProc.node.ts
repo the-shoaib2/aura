@@ -1,12 +1,12 @@
-/* eslint-disable n8n-nodes-base/node-filename-against-convention */
+/* eslint-disable aura-nodes-base/node-filename-against-convention */
 import type {
 	IExecuteFunctions,
 	IDataObject,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { uprocApiRequest } from './GenericFunctions';
 import { groupOptions } from './GroupDescription';
@@ -16,7 +16,7 @@ export class UProc implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'uProc',
 		name: 'uproc',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:uproc.png',
 		group: ['output'],
 		version: 1,

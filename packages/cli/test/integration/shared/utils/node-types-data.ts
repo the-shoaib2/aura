@@ -1,4 +1,4 @@
-import type { INodeTypeData } from 'n8n-workflow';
+import type { INodeTypeData } from 'workflow';
 
 export function mockNodeTypesData(
 	nodeNames: string[],
@@ -7,7 +7,7 @@ export function mockNodeTypesData(
 	},
 ) {
 	return nodeNames.reduce<INodeTypeData>((acc, nodeName) => {
-		const fullName = nodeName.indexOf('.') === -1 ? `n8n-nodes-base.${nodeName}` : nodeName;
+		const fullName = nodeName.indexOf('.') === -1 ? `aura-nodes-base.${nodeName}` : nodeName;
 
 		return (
 			(acc[fullName] = {

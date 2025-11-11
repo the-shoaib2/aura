@@ -13,14 +13,14 @@ import {
 import { computed, ref, toRaw } from 'vue';
 
 import { useExpressionEditor } from '../../composables/useExpressionEditor';
-import { n8nCompletionSources } from '../../plugins/codemirror/completions/addCompletions';
+import { auraCompletionSources } from '../../plugins/codemirror/completions/addCompletions';
 import { dropInExpressionEditor, mappingDropCursor } from '../../plugins/codemirror/dragAndDrop';
 import {
 	expressionCloseBrackets,
 	expressionCloseBracketsConfig,
 } from '../../plugins/codemirror/expressionCloseBrackets';
 import { editorKeymap } from '../../plugins/codemirror/keymap';
-import { n8nAutocompletion } from '../../plugins/codemirror/n8nLang';
+import { auraAutocompletion } from '../../plugins/codemirror/auraLang';
 import { codeEditorTheme } from '../CodeNodeEditor/theme';
 import type { TargetNodeParameterContext } from '@/Interface';
 import DraggableTarget from '@/app/components/DraggableTarget.vue';
@@ -49,10 +49,10 @@ const editorValue = ref<string>(props.modelValue);
 
 const extensions = computed(() => [
 	bracketMatching(),
-	n8nAutocompletion(),
+	auraAutocompletion(),
 	new LanguageSupport(cssLanguage, [
 		cssLanguage.data.of({ closeBrackets: expressionCloseBracketsConfig }),
-		n8nCompletionSources().map((source) => cssLanguage.data.of(source)),
+		auraCompletionSources().map((source) => cssLanguage.data.of(source)),
 	]),
 	expressionCloseBrackets(),
 	Prec.highest(keymap.of(editorKeymap)),

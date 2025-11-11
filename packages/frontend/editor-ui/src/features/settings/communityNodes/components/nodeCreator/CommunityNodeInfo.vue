@@ -2,14 +2,14 @@
 import { computed, onMounted, ref } from 'vue';
 import { useViewStacks } from '@/features/shared/nodeCreator/composables/useViewStacks';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { captureException } from '@sentry/vue';
 import ShieldIcon from 'virtual:icons/fa-solid/shield-alt';
 import ContactAdministratorToInstall from '../ContactAdministratorToInstall.vue';
 import { useInstalledCommunityPackage } from '../../composables/useInstalledCommunityPackage';
 
-import { N8nIcon, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nText, N8nTooltip } from '@aura/design-system';
 import CommunityNodeUpdateInfo from './CommunityNodeUpdateInfo.vue';
 
 const { activeViewStack } = useViewStacks();

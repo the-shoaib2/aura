@@ -1,5 +1,5 @@
-/* eslint-disable n8n-nodes-base/node-filename-against-convention */
-import { NodeConnectionTypes, type INodeTypeDescription, type INodeProperties } from 'n8n-workflow';
+/* eslint-disable aura-nodes-base/node-filename-against-convention */
+import { NodeConnectionTypes, type INodeTypeDescription, type INodeProperties } from 'workflow';
 
 import * as drive from './drive/Drive.resource';
 import * as file from './file/File.resource';
@@ -7,7 +7,7 @@ import * as fileFolder from './fileFolder/FileFolder.resource';
 import * as folder from './folder/Folder.resource';
 
 const preBuiltAgentsCallout: INodeProperties = {
-	// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+	// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 	displayName:
 		'Retrieve, analyze, and answer questions using your Google Drive documents with our pre-built',
 	name: 'preBuiltAgentsCalloutGoogleDrive',
@@ -65,7 +65,7 @@ export const versionDescription: INodeTypeDescription = {
 			type: 'options',
 			options: [
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'OAuth2 (recommended)',
 					value: 'oAuth2',
 				},

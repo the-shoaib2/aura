@@ -10,13 +10,13 @@ import { createExpressionTelemetryPayload } from '@/app/utils/telemetryUtils';
 
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import type { Segment } from '@/app/types/expressions';
-import type { INodeProperties } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { outputTheme } from './ExpressionEditorModal/theme';
 import ExpressionOutput from '@/features/shared/editors/components/InlineExpressionEditor/ExpressionOutput.vue';
 import VirtualSchema from '@/features/ndv/runData/components/VirtualSchema.vue';
 import OutputItemSelect from '@/features/shared/editors/components/InlineExpressionEditor/OutputItemSelect.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useDebounce } from '@/app/composables/useDebounce';
 import DraggableTarget from '@/app/components/DraggableTarget.vue';
 import { dropInExpressionEditor } from '@/features/shared/editors/plugins/codemirror/dragAndDrop';
@@ -25,7 +25,7 @@ import { APP_MODALS_ELEMENT_ID } from '@/app/constants';
 import { useThrottleFn } from '@vueuse/core';
 
 import { ElDialog } from 'element-plus';
-import { N8nIcon, N8nInput, N8nResizeWrapper, N8nText, type ResizeData } from '@n8n/design-system';
+import { N8nIcon, N8nInput, N8nResizeWrapper, N8nText, type ResizeData } from '@aura/design-system';
 const DEFAULT_LEFT_SIDEBAR_WIDTH = 360;
 
 type Props = {
@@ -184,7 +184,7 @@ const onResizeThrottle = useThrottleFn(onResize, 10);
 							{{ i18n.baseText('expressionEdit.expression') }}
 						</N8nText>
 						<N8nText
-							v-n8n-html="i18n.baseText('expressionTip.javascript')"
+							v-aura-html="i18n.baseText('expressionTip.javascript')"
 							:class="$style.tip"
 							size="small"
 						/>

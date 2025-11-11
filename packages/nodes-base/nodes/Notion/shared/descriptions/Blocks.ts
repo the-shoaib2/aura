@@ -1,4 +1,4 @@
-import type { IDisplayOptions, INodeProperties } from 'n8n-workflow';
+import type { IDisplayOptions, INodeProperties } from 'workflow';
 
 import {
 	databaseUrlExtractionRegexp,
@@ -188,7 +188,7 @@ const typeMention: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'The ID of the user being mentioned. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The ID of the user being mentioned. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Page ID',
@@ -580,7 +580,7 @@ export const blocks = (resource: string, operation: string): INodeProperties[] =
 						name: 'type',
 						type: 'options',
 						description:
-							'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+							'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getBlockTypes',
 						},

@@ -1,8 +1,8 @@
-import { initDbUpToMigration, runSingleMigration } from '@n8n/backend-test-utils';
-import { DbConnection } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { DataSource } from '@n8n/typeorm';
-import { UnexpectedError } from 'n8n-workflow';
+import { initDbUpToMigration, runSingleMigration } from '@aura/backend-test-utils';
+import { DbConnection } from '@aura/db';
+import { Container } from '@aura/di';
+import { DataSource } from '@aura/typeorm';
+import { UnexpectedError } from 'workflow';
 
 describe('Migration Test Helpers', () => {
 	let dataSource: DataSource;

@@ -16,31 +16,31 @@ test.describe('Demo', () => {
 		await setupRequirements(requirements);
 	});
 
-	test('can import template', async ({ n8n }) => {
-		await n8n.demo.visitDemoPage();
-		expect(await n8n.notifications.getAllNotificationTexts()).toHaveLength(0);
-		await n8n.demo.importWorkflow(simpleWorkflow);
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(3);
+	test('can import template', async ({ aura }) => {
+		await aura.demo.visitDemoPage();
+		expect(await aura.notifications.getAllNotificationTexts()).toHaveLength(0);
+		await aura.demo.importWorkflow(simpleWorkflow);
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(3);
 	});
 
-	test('can import workflow with pin data', async ({ n8n }) => {
-		await n8n.demo.visitDemoPage();
-		await n8n.demo.importWorkflow(workflowWithPinned);
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(2);
-		await n8n.canvas.openNode('Webhook');
-		await expect(n8n.ndv.outputPanel.getTableHeaders().first()).toContainText('headers');
-		await expect(n8n.ndv.outputPanel.getTbodyCell(0, 3)).toContainText('dragons');
+	test('can import workflow with pin data', async ({ aura }) => {
+		await aura.demo.visitDemoPage();
+		await aura.demo.importWorkflow(workflowWithPinned);
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(2);
+		await aura.canvas.openNode('Webhook');
+		await expect(aura.ndv.outputPanel.getTableHeaders().first()).toContainText('headers');
+		await expect(aura.ndv.outputPanel.getTbodyCell(0, 3)).toContainText('dragons');
 	});
 
-	test('can override theme to dark', async ({ n8n }) => {
-		await n8n.demo.visitDemoPage('dark');
-		await expect(n8n.demo.getBody()).toHaveAttribute('data-theme', 'dark');
-		expect(await n8n.notifications.getAllNotificationTexts()).toHaveLength(0);
+	test('can override theme to dark', async ({ aura }) => {
+		await aura.demo.visitDemoPage('dark');
+		await expect(aura.demo.getBody()).toHaveAttribute('data-theme', 'dark');
+		expect(await aura.notifications.getAllNotificationTexts()).toHaveLength(0);
 	});
 
-	test('can override theme to light', async ({ n8n }) => {
-		await n8n.demo.visitDemoPage('light');
-		await expect(n8n.demo.getBody()).toHaveAttribute('data-theme', 'light');
-		expect(await n8n.notifications.getAllNotificationTexts()).toHaveLength(0);
+	test('can override theme to light', async ({ aura }) => {
+		await aura.demo.visitDemoPage('light');
+		await expect(aura.demo.getBody()).toHaveAttribute('data-theme', 'light');
+		expect(await aura.notifications.getAllNotificationTexts()).toHaveLength(0);
 	});
 });

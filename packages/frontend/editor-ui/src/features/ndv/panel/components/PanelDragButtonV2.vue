@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@aura/design-system';
 import Draggable from '@/app/components/Draggable.vue';
 import type { XYPosition } from '@/Interface';
 

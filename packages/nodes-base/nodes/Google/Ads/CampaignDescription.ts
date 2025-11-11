@@ -4,7 +4,7 @@ import type {
 	IN8nHttpFullResponse,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 async function processCampaignSearchResponse(
 	this: IExecuteSingleFunctions,
@@ -194,7 +194,7 @@ export const campaignFields: INodeProperties[] = [
 				name: 'dateRange',
 				description: 'Filters statistics by period',
 				type: 'options',
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+				// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 				options: [
 					{
 						name: 'All Time',

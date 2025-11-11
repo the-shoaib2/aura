@@ -1,11 +1,11 @@
-jest.mock('@n8n/backend-common', () => {
+jest.mock('@aura/backend-common', () => {
 	return {
-		...jest.requireActual('@n8n/backend-common'),
+		...jest.requireActual('@aura/backend-common'),
 		inProduction: true,
 	};
 });
 
-import type { GlobalConfig } from '@n8n/config';
+import type { GlobalConfig } from '@aura/config';
 import {
 	ControllerRegistryMetadata,
 	Param,
@@ -13,8 +13,8 @@ import {
 	Licensed,
 	RestController,
 	RootLevelController,
-} from '@n8n/decorators';
-import { Container } from '@n8n/di';
+} from '@aura/decorators';
+import { Container } from '@aura/di';
 import express from 'express';
 import { mock } from 'jest-mock-extended';
 import { agent as testAgent } from 'supertest';

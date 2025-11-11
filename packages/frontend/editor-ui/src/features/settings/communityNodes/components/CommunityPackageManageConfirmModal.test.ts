@@ -6,7 +6,7 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { defaultSettings } from '@/__tests__/defaults';
 import { mockNodeTypeDescription } from '@/__tests__/mocks';
 import { createTestingPinia } from '@pinia/testing';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { COMMUNITY_PACKAGE_CONFIRM_MODAL_KEY } from '../communityNodes.constants';
 
 const fetchWorkflowsWithNodesIncluded = vi.fn();
@@ -19,7 +19,7 @@ vi.mock('@/app/stores/workflows.store', () => ({
 const renderComponent = createComponentRenderer(CommunityPackageManageConfirmModal, {
 	data() {
 		return {
-			packageName: 'n8n-nodes-hello',
+			packageName: 'aura-nodes-hello',
 		};
 	},
 	pinia: createTestingPinia({
@@ -31,8 +31,8 @@ const renderComponent = createComponentRenderer(CommunityPackageManageConfirmMod
 			},
 			[STORES.COMMUNITY_NODES]: {
 				installedPackages: {
-					'n8n-nodes-test': {
-						packageName: 'n8n-nodes-test',
+					'aura-nodes-test': {
+						packageName: 'aura-nodes-test',
 						installedVersion: '1.0.0',
 						updateAvailable: '2.0.0',
 						installedNodes: [{ name: 'TestNode' }],
@@ -41,9 +41,9 @@ const renderComponent = createComponentRenderer(CommunityPackageManageConfirmMod
 			},
 			[STORES.NODE_TYPES]: {
 				nodeTypes: {
-					['n8n-nodes-test.test']: {
+					['aura-nodes-test.test']: {
 						1: mockNodeTypeDescription({
-							name: 'n8n-nodes-test.test',
+							name: 'aura-nodes-test.test',
 						}),
 					},
 				},
@@ -75,7 +75,7 @@ describe('CommunityPackageManageConfirmModal', () => {
 		renderComponent({
 			props: {
 				modalName: 'test-modal',
-				activePackageName: 'n8n-nodes-test',
+				activePackageName: 'aura-nodes-test',
 				mode: 'update',
 			},
 		});
@@ -83,7 +83,7 @@ describe('CommunityPackageManageConfirmModal', () => {
 		await flushPromises();
 
 		expect(nodeTypesStore.loadNodeTypesIfNotLoaded).toHaveBeenCalled();
-		expect(nodeTypesStore.getCommunityNodeAttributes).toHaveBeenCalledWith('n8n-nodes-test.test');
+		expect(nodeTypesStore.getCommunityNodeAttributes).toHaveBeenCalledWith('aura-nodes-test.test');
 	});
 
 	it('should call nodeTypesStore methods and update latestVerifiedVersion on mount', async () => {
@@ -95,7 +95,7 @@ describe('CommunityPackageManageConfirmModal', () => {
 		const { getByTestId } = renderComponent({
 			props: {
 				modalName: 'test-modal',
-				activePackageName: 'n8n-nodes-test',
+				activePackageName: 'aura-nodes-test',
 				mode: 'update',
 			},
 		});
@@ -140,7 +140,7 @@ describe('CommunityPackageManageConfirmModal', () => {
 		const screen = renderComponent({
 			props: {
 				modalName: 'test-modal',
-				activePackageName: 'n8n-nodes-test',
+				activePackageName: 'aura-nodes-test',
 				mode: 'update',
 			},
 			global: {
@@ -178,7 +178,7 @@ describe('CommunityPackageManageConfirmModal', () => {
 		const screen = renderComponent({
 			props: {
 				modalName: 'test-modal',
-				activePackageName: 'n8n-nodes-test',
+				activePackageName: 'aura-nodes-test',
 				mode: 'update',
 			},
 		});

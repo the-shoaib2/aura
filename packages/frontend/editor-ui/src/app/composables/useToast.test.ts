@@ -44,7 +44,7 @@ describe('useToast', () => {
 	it('should sanitize but keep valid, allowed HTML tags', async () => {
 		const messageData = {
 			message:
-				'<a data-action="reload">Refresh</a> to see the <strong>latest status</strong>.<br/> <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/" target="_blank">More info</a> or go to the <a href="/settings/usage">Usage and plan</a> settings page.',
+				'<a data-action="reload">Refresh</a> to see the <strong>latest status</strong>.<br/> <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/" target="_blank">More info</a> or go to the <a href="/settings/usage">Usage and plan</a> settings page.',
 			title: '<strong>Title</strong>',
 		};
 
@@ -59,7 +59,7 @@ describe('useToast', () => {
 				within(screen.getByRole('alert')).getByRole('heading', { level: 2 }).querySelectorAll('*'),
 			).toHaveLength(0);
 			expect(screen.getByRole('alert')).toContainHTML(
-				'<a data-action="reload">Refresh</a> to see the <strong>latest status</strong>.<br /> <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/" target="_blank">More info</a> or go to the <a href="/settings/usage">Usage and plan</a> settings page.',
+				'<a data-action="reload">Refresh</a> to see the <strong>latest status</strong>.<br /> <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/" target="_blank">More info</a> or go to the <a href="/settings/usage">Usage and plan</a> settings page.',
 			);
 		});
 	});

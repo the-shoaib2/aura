@@ -1,4 +1,4 @@
-import { DATA_TABLE_COLUMN_REGEX } from '@n8n/api-types';
+import { DATA_TABLE_COLUMN_REGEX } from '@aura/api-types';
 
 // Route and view identifiers
 export const DATA_TABLE_VIEW = 'data-tables';
@@ -15,7 +15,7 @@ export const DEFAULT_COLUMN_WIDTH = 250;
 export const DATA_TABLE_HEADER_HEIGHT = 36;
 export const DATA_TABLE_ROW_HEIGHT = 33;
 
-export const ADD_ROW_ROW_ID = '__n8n_add_row__';
+export const ADD_ROW_ROW_ID = '__aura_add_row__';
 
 export const DATA_TABLE_CARD_ACTIONS = {
 	RENAME: 'rename',

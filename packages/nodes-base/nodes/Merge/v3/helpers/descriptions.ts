@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const fuzzyCompareProperty: INodeProperties = {
 	displayName: 'Fuzzy Compare',
@@ -70,10 +70,10 @@ export const clashHandlingProperties: INodeProperties = {
 			name: 'values',
 			values: [
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 					displayName: 'When Field Values Clash',
 					name: 'resolveClash',
-					// eslint-disable-next-line n8n-nodes-base/node-param-description-missing-from-dynamic-options
+					// eslint-disable-next-line aura-nodes-base/node-param-description-missing-from-dynamic-options
 					type: 'options',
 					default: '',
 					typeOptions: {

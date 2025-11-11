@@ -1,10 +1,10 @@
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 import type {
 	ICredentialDataDecryptedObject,
 	ICredentialType,
 	IHttpRequestOptions,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class CustomerIoApi implements ICredentialType {
 	name = 'customerIoApi';

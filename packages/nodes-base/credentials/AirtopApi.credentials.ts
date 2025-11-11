@@ -3,7 +3,7 @@ import type {
 	ICredentialType,
 	ICredentialTestRequest,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { BASE_URL } from '../nodes/Airtop/constants';
 

@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "94fcb304-1724-46e1-91cf-039ac12ff094",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [380, 1180]
 		},
@@ -19,7 +19,7 @@
 			},
 			"id": "72553fda-2372-4f50-a71c-43d99ff9bc81",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [600, 1180]
 		},
@@ -30,7 +30,7 @@
 			},
 			"id": "86dbd078-2724-4acc-ad29-182603ab8fbb",
 			"name": "Embeddings OpenAI",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [860, 1360],
 			"credentials": {
@@ -59,7 +59,7 @@
 			},
 			"id": "5402877d-e03d-49d5-aa3a-ca5f911811c7",
 			"name": "Default Data Loader",
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1,
 			"position": [840, 1560]
 		},
@@ -70,7 +70,7 @@
 			},
 			"id": "554a499c-04d1-4644-a05a-93c9fb4a6fa6",
 			"name": "Token Splitter",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [840, 1720]
 		},
@@ -81,7 +81,7 @@
 			},
 			"id": "4953b654-157e-4048-8c8c-e9cdc0112bba",
 			"name": "Wait",
-			"type": "n8n-nodes-base.wait",
+			"type": "aura-nodes-base.wait",
 			"typeVersion": 1,
 			"position": [1480, 1180],
 			"webhookId": "c3d05369-6071-4592-87eb-36d57c60851b"
@@ -114,7 +114,7 @@
 			},
 			"id": "b7f64fff-c9e7-42c4-80a2-9eec4ab86d75",
 			"name": "Check Vector Store Retrieval",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [2060, 1180],
 			"executeOnce": true
@@ -126,7 +126,7 @@
 			},
 			"id": "a18395f0-240d-40c4-84c2-6aaee560aab0",
 			"name": "Question and Answer Chain",
-			"type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+			"type": "@aura/aura-nodes-langchain.chainRetrievalQa",
 			"typeVersion": 1.5,
 			"position": [2260, 1180]
 		},
@@ -139,7 +139,7 @@
 			},
 			"id": "7c6ba271-7628-4f90-8c09-53764c4d18d4",
 			"name": "OpenAI Chat Model",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [2260, 1380],
 			"credentials": {
@@ -153,7 +153,7 @@
 			"parameters": {},
 			"id": "25862b21-175a-4126-97e9-69c5b2623937",
 			"name": "Vector Store Retriever",
-			"type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+			"type": "@aura/aura-nodes-langchain.retrieverVectorStore",
 			"typeVersion": 1,
 			"position": [2340, 1380]
 		},
@@ -164,7 +164,7 @@
 			},
 			"id": "21a318d1-8d44-43c1-85b9-102cf320e0ed",
 			"name": "Embeddings OpenAI9",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [2280, 1680],
 			"credentials": {
@@ -190,7 +190,7 @@
 			},
 			"id": "abfc59fb-d887-407d-aca4-da476b92619a",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [2600, 1180]
 		},
@@ -201,7 +201,7 @@
 			},
 			"id": "c784fb20-7fa0-496c-87ee-512f83276fd0",
 			"name": "Embeddings OpenAI10",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1700, 1400],
 			"credentials": {
@@ -216,9 +216,9 @@
 				"mode": "insert",
 				"pineconeIndex": {
 					"__rl": true,
-					"value": "n8n",
+					"value": "aura",
 					"mode": "list",
-					"cachedResultName": "n8n"
+					"cachedResultName": "aura"
 				},
 				"options": {
 					"clearNamespace": true,
@@ -227,7 +227,7 @@
 			},
 			"id": "ba43d67a-0573-4452-bb9e-e73d58ef75e2",
 			"name": "Pinecone Vector Store",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+			"type": "@aura/aura-nodes-langchain.vectorStorePinecone",
 			"typeVersion": 1,
 			"position": [840, 1180],
 			"credentials": {
@@ -265,7 +265,7 @@
 			},
 			"id": "92b37ec8-a093-48d3-be9b-21ecc1de7e30",
 			"name": "Check Vector Store Populated",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1220, 1180],
 			"executeOnce": true
@@ -274,9 +274,9 @@
 			"parameters": {
 				"pineconeIndex": {
 					"__rl": true,
-					"value": "n8n",
+					"value": "aura",
 					"mode": "list",
-					"cachedResultName": "n8n"
+					"cachedResultName": "aura"
 				},
 				"options": {
 					"pineconeNamespace": "bitcoin_wf_test"
@@ -284,7 +284,7 @@
 			},
 			"id": "db229cc9-ccf7-405d-8549-5a82e4137103",
 			"name": "Pinecone Vector Store2",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+			"type": "@aura/aura-nodes-langchain.vectorStorePinecone",
 			"typeVersion": 1,
 			"position": [2280, 1560],
 			"credentials": {
@@ -299,9 +299,9 @@
 				"mode": "load",
 				"pineconeIndex": {
 					"__rl": true,
-					"value": "n8n",
+					"value": "aura",
 					"mode": "list",
-					"cachedResultName": "n8n"
+					"cachedResultName": "aura"
 				},
 				"prompt": "What is bitcoin?",
 				"options": {
@@ -310,7 +310,7 @@
 			},
 			"id": "387518ca-2c63-40b5-bd96-8b5958a2a0d8",
 			"name": "Pinecone Vector Store1",
-			"type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+			"type": "@aura/aura-nodes-langchain.vectorStorePinecone",
 			"typeVersion": 1,
 			"position": [1680, 1180],
 			"credentials": {

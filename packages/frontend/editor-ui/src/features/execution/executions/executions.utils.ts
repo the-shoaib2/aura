@@ -1,4 +1,4 @@
-import { MANUAL_TRIGGER_NODE_TYPE, TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'n8n-workflow';
+import { MANUAL_TRIGGER_NODE_TYPE, TRIMMED_TASK_DATA_CONNECTIONS_KEY } from 'workflow';
 import type {
 	ITaskData,
 	ExecutionStatus,
@@ -11,7 +11,7 @@ import type {
 	INodeExecutionData,
 	Workflow,
 	IWorkflowDataProxyAdditionalKeys,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { INodeUi } from '@/Interface';
 import type {
 	ExecutionFilterType,
@@ -29,8 +29,8 @@ import {
 	WORKFLOW_TRIGGER_NODE_TYPE,
 } from '@/app/constants';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { i18n } from '@n8n/i18n';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { i18n } from '@aura/i18n';
 import { h } from 'vue';
 import NodeExecutionErrorMessage from '@/app/components/NodeExecutionErrorMessage.vue';
 import { parse } from 'flatted';

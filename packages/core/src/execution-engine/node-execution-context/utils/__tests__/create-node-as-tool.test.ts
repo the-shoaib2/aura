@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import type { INodeType, ISupplyDataFunctions, INode } from 'n8n-workflow';
+import type { INodeType, ISupplyDataFunctions, INode } from 'workflow';
 import { z } from 'zod';
 
 import { createNodeAsTool } from '../create-node-as-tool';
@@ -352,7 +352,7 @@ describe('createNodeAsTool', () => {
 				varyingSpacing3: "={{ $FROMai('param3', 'Description3', 'boolean') }}",
 				wrongCapitalization: "={{$fromai('param4','Description4','number')}}",
 				templateLiteralParam:
-					// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+					// eslint-disable-next-line aura-local-rules/no-interpolation-in-regular-string
 					"={{ `Value is: ${$fromAI('templatedParam', 'Templated param description', 'string')}` }}",
 			};
 

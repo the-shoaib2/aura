@@ -1,7 +1,7 @@
-import type { CommunityNodeType } from '@n8n/api-types';
-import { Logger, inProduction } from '@n8n/backend-common';
-import { Service } from '@n8n/di';
-import { ensureError } from 'n8n-workflow';
+import type { CommunityNodeType } from '@aura/api-types';
+import { Logger, inProduction } from '@aura/backend-common';
+import { Service } from '@aura/di';
+import { ensureError } from 'workflow';
 
 import { getCommunityNodeTypes, StrapiCommunityNodeType } from './community-node-types-utils';
 import { CommunityPackagesConfig } from './community-packages.config';

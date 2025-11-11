@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.jinaAi",
+	"node": "aura-nodes-base.jinaAi",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/jinaai/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/jinaai/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.jinaai/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.jinaai/"
 			}
 		]
 	}

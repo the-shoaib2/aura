@@ -1,4 +1,4 @@
-import type { GlobalConfig } from '@n8n/config';
+import type { GlobalConfig } from '@aura/config';
 import { mock } from 'jest-mock-extended';
 import { ServerResponse } from 'node:http';
 import type WebSocket from 'ws';

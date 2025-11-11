@@ -1,9 +1,9 @@
-import type { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { InstanceType } from '@n8n/constants';
+import type { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { InstanceType } from '@aura/constants';
 import { mock } from 'jest-mock-extended';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 
 import { DeprecationService } from '../deprecation.service';
 
@@ -101,7 +101,7 @@ describe('DeprecationService', () => {
 
 			const globalConfig = mockInstance(GlobalConfig, {
 				nodes: {
-					exclude: ['n8n-nodes-base.code'],
+					exclude: ['aura-nodes-base.code'],
 				},
 			});
 
@@ -262,7 +262,7 @@ describe('DeprecationService', () => {
 
 		test('should not warn when Git node is excluded', () => {
 			const globalConfig = mockInstance(GlobalConfig, {
-				nodes: { exclude: ['n8n-nodes-base.git'] },
+				nodes: { exclude: ['aura-nodes-base.git'] },
 			});
 			const deprecationService = new DeprecationService(logger, globalConfig, instanceSettings);
 

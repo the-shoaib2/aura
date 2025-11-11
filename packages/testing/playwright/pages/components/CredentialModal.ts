@@ -3,13 +3,13 @@ import { expect } from '@playwright/test';
 
 /**
  * Credential modal component for canvas and credentials interactions.
- * Used within CanvasPage as `n8n.canvas.credentialModal.*`
- * Used within CredentialsPage as `n8n.credentials.modal.*`
+ * Used within CanvasPage as `aura.canvas.credentialModal.*`
+ * Used within CredentialsPage as `aura.credentials.modal.*`
  *
  * @example
  * // Access via canvas page or credentials page
- * await n8n.canvas.credentialModal.addCredential();
- * await expect(n8n.canvas.credentialModal.getModal()).toBeVisible();
+ * await aura.canvas.credentialModal.addCredential();
+ * await expect(aura.canvas.credentialModal.getModal()).toBeVisible();
  */
 export class CredentialModal {
 	constructor(private root: Locator) {}

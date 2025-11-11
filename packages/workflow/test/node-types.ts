@@ -15,7 +15,7 @@ const stickyNode: LoadedClass<INodeType> = {
 	type: {
 		description: {
 			displayName: 'Sticky Note',
-			name: 'n8n-nodes-base.stickyNote',
+			name: 'aura-nodes-base.stickyNote',
 			icon: 'fa:sticky-note',
 			group: ['input'],
 			version: 1,
@@ -30,7 +30,7 @@ const stickyNode: LoadedClass<INodeType> = {
 					type: 'string',
 					required: true,
 					default:
-						"## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+						"## I'm a note \n**Double click** to edit me. [Guide](https://docs.aura.io/workflows/sticky-notes/)",
 				},
 				{ displayName: 'Height', name: 'height', type: 'number', required: true, default: 160 },
 				{ displayName: 'Width', name: 'width', type: 'number', required: true, default: 240 },
@@ -901,11 +901,11 @@ const manualTriggerNode: LoadedClass<INodeType> = {
 	type: {
 		description: {
 			displayName: 'Manual Trigger',
-			name: 'n8n-nodes-base.manualTrigger',
+			name: 'aura-nodes-base.manualTrigger',
 			icon: 'fa:mouse-pointer',
 			group: ['trigger'],
 			version: 1,
-			description: 'Runs the flow on clicking a button in n8n',
+			description: 'Runs the flow on clicking a button in aura',
 			eventTriggerDescription: '',
 			maxNodes: 1,
 			defaults: {
@@ -930,7 +930,7 @@ const manualTriggerNode: LoadedClass<INodeType> = {
 const executeWorkflowNode: LoadedClass<INodeType> = {
 	type: {
 		description: {
-			name: 'n8n-nodes-base.executeWorkflow',
+			name: 'aura-nodes-base.executeWorkflow',
 			displayName: 'Execute Sub-workflow',
 			icon: 'fa:sign-in-alt',
 			iconColor: 'orange-red',
@@ -1055,7 +1055,7 @@ const executeWorkflowNode: LoadedClass<INodeType> = {
 				},
 				{
 					displayName:
-						'Any data you pass into this node will be output by the Execute Workflow Trigger. <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow/" target="_blank">More info</a>',
+						'Any data you pass into this node will be output by the Execute Workflow Trigger. <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.executeworkflow/" target="_blank">More info</a>',
 					name: 'executeWorkflowNotice',
 					type: 'notice',
 					default: '',
@@ -1137,11 +1137,11 @@ const executeWorkflowNode: LoadedClass<INodeType> = {
 			codex: {
 				categories: ['Core Nodes'],
 				subcategories: { 'Core Nodes': ['Helpers', 'Flow'] },
-				alias: ['n8n', 'call', 'sub', 'workflow', 'sub-workflow', 'subworkflow'],
+				alias: ['aura', 'call', 'sub', 'workflow', 'sub-workflow', 'subworkflow'],
 				resources: {
 					primaryDocumentation: [
 						{
-							url: 'https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow/',
+							url: 'https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.executeworkflow/',
 						},
 					],
 				},
@@ -1156,7 +1156,7 @@ const aiAgentNode: LoadedClass<INodeType> = {
 	type: {
 		description: {
 			displayName: 'AI Agent',
-			name: '@n8n/n8n-nodes-langchain.agent',
+			name: '@aura/aura-nodes-langchain.agent',
 			icon: 'fa:robot',
 			iconColor: 'black',
 			group: ['transform'],
@@ -1183,7 +1183,7 @@ const wikipediaTool: LoadedClass<INodeType> = {
 	type: {
 		description: {
 			displayName: 'Wikipedia',
-			name: '@n8n/n8n-nodes-langchain.toolWikipedia',
+			name: '@aura/aura-nodes-langchain.toolWikipedia',
 			icon: 'file:wikipedia.svg',
 			group: ['transform'],
 			version: 1,
@@ -1203,7 +1203,7 @@ const calculatorTool: LoadedClass<INodeType> = {
 	type: {
 		description: {
 			displayName: 'Calculator',
-			name: '@n8n/n8n-nodes-langchain.toolCalculator',
+			name: '@aura/aura-nodes-langchain.toolCalculator',
 			icon: 'fa:calculator',
 			iconColor: 'black',
 			group: ['transform'],
@@ -1224,7 +1224,7 @@ const googleCalendarTool: LoadedClass<INodeType> = {
 	type: {
 		description: {
 			displayName: 'Google Calendar',
-			name: 'n8n-nodes-base.googleCalendarTool',
+			name: 'aura-nodes-base.googleCalendarTool',
 			icon: 'file:googleCalendar.svg',
 			group: ['input'],
 			version: [1, 1.1, 1.2, 1.3],
@@ -1326,14 +1326,14 @@ const googleCalendarTool: LoadedClass<INodeType> = {
 
 export class NodeTypes implements INodeTypes {
 	nodeTypes: INodeTypeData = {
-		'n8n-nodes-base.stickyNote': stickyNode,
-		'n8n-nodes-base.set': setNode,
-		'n8n-nodes-base.code': codeNode,
-		'n8n-nodes-base.html': htmlNode,
-		'n8n-nodes-base.form': formNode,
+		'aura-nodes-base.stickyNote': stickyNode,
+		'aura-nodes-base.set': setNode,
+		'aura-nodes-base.code': codeNode,
+		'aura-nodes-base.html': htmlNode,
+		'aura-nodes-base.form': formNode,
 		'test.googleSheets': googleSheetsNode,
 		'test.set': setNode,
-		'n8n-nodes-base.executeWorkflow': executeWorkflowNode,
+		'aura-nodes-base.executeWorkflow': executeWorkflowNode,
 		'test.setMulti': {
 			sourcePath: '',
 			type: {
@@ -1385,11 +1385,11 @@ export class NodeTypes implements INodeTypes {
 				},
 			},
 		},
-		'n8n-nodes-base.manualTrigger': manualTriggerNode,
-		'@n8n/n8n-nodes-langchain.agent': aiAgentNode,
-		'n8n-nodes-base.googleCalendarTool': googleCalendarTool,
-		'@n8n/n8n-nodes-langchain.toolCalculator': calculatorTool,
-		'@n8n/n8n-nodes-langchain.toolWikipedia': wikipediaTool,
+		'aura-nodes-base.manualTrigger': manualTriggerNode,
+		'@aura/aura-nodes-langchain.agent': aiAgentNode,
+		'aura-nodes-base.googleCalendarTool': googleCalendarTool,
+		'@aura/aura-nodes-langchain.toolCalculator': calculatorTool,
+		'@aura/aura-nodes-langchain.toolWikipedia': wikipediaTool,
 	};
 
 	getByName(nodeType: string): INodeType | IVersionedNodeType {

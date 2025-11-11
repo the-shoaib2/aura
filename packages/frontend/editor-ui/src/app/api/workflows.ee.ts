@@ -1,8 +1,8 @@
-import type { TransferWorkflowBodyDto } from '@n8n/api-types';
+import type { TransferWorkflowBodyDto } from '@aura/api-types';
 import type { IShareWorkflowsPayload, IWorkflowsShareResponse } from '@/Interface';
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest } from '@n8n/rest-api-client';
-import type { IDataObject } from 'n8n-workflow';
+import type { IRestApiContext } from '@aura/rest-api-client';
+import { makeRestApiRequest } from '@aura/rest-api-client';
+import type { IDataObject } from 'workflow';
 
 export async function setWorkflowSharedWith(
 	context: IRestApiContext,

@@ -1,10 +1,10 @@
-import type { CredentialsEntity, User } from '@n8n/db';
-import { Project, SharedCredentials, SharedCredentialsRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { hasGlobalScope } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In, type EntityManager } from '@n8n/typeorm';
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
+import type { CredentialsEntity, User } from '@aura/db';
+import { Project, SharedCredentials, SharedCredentialsRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { hasGlobalScope } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In, type EntityManager } from '@aura/typeorm';
+import type { ICredentialDataDecryptedObject } from 'workflow';
 
 import { NotFoundError } from '@/errors/response-errors/not-found.error';
 import { TransferCredentialError } from '@/errors/response-errors/transfer-credential.error';
@@ -88,7 +88,7 @@ export class EnterpriseCredentialsService {
 					credentialId,
 					user,
 					// TODO: replace credential:update with credential:decrypt once it lands
-					// see: https://n8nio.slack.com/archives/C062YRE7EG4/p1708531433206069?thread_ts=1708525972.054149&cid=C062YRE7EG4
+					// see: https://auraio.slack.com/archives/C062YRE7EG4/p1708531433206069?thread_ts=1708525972.054149&cid=C062YRE7EG4
 					['credential:read', 'credential:update'],
 				)
 			: null;

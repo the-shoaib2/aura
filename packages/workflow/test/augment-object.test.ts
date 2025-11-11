@@ -486,7 +486,7 @@ describe('AugmentObject', () => {
 		});
 
 		// Skipping this test since it is no longer true in vitest, to be investigated
-		// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+		// eslint-disable-next-line aura-local-rules/no-skipped-tests
 		test.skip('should be faster than doing a deepCopy', () => {
 			const iterations = 100;
 			const originalObject: any = {

@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { ExecutionsConfig } from '@n8n/config';
-import type { ExecutionRepository } from '@n8n/db';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import { ExecutionsConfig } from '@aura/config';
+import type { ExecutionRepository } from '@aura/db';
 import type { Response } from 'express';
 import { captor, mock } from 'jest-mock-extended';
 import type {
@@ -10,21 +10,21 @@ import type {
 	IRun,
 	IWorkflowExecutionDataProcess,
 	StructuredChunk,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	ManualExecutionCancelledError,
 	randomInt,
 	sleep,
 	SystemShutdownExecutionCancelledError,
-} from 'n8n-workflow';
+} from 'workflow';
 import PCancelable from 'p-cancelable';
 import { v4 as uuid } from 'uuid';
 
 import { ActiveExecutions } from '@/active-executions';
 import { ConcurrencyControlService } from '@/concurrency/concurrency-control.service';
 
-jest.mock('n8n-workflow', () => ({
-	...jest.requireActual('n8n-workflow'),
+jest.mock('workflow', () => ({
+	...jest.requireActual('workflow'),
 	sleep: jest.fn(),
 }));
 

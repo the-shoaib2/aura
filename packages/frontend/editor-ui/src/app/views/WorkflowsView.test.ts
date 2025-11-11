@@ -1,10 +1,10 @@
 import { createComponentRenderer } from '@/__tests__/render';
 import { mockedStore, waitAllPromises } from '@/__tests__/utils';
-import * as usersApi from '@n8n/rest-api-client/api/users';
+import * as usersApi from '@aura/rest-api-client/api/users';
 import { useProjectPages } from '@/features/collaboration/projects/composables/useProjectPages';
 import { VIEWS } from '@/app/constants';
 import type { WorkflowListResource } from '@/Interface';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@aura/rest-api-client/api/users';
 import { useFoldersStore } from '@/features/core/folders/folders.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -15,14 +15,14 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { Project } from '@/features/collaboration/projects/projects.types';
 import { TemplateClickSource } from '@/experiments/utils';
 import WorkflowsView from '@/app/views/WorkflowsView.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { createTestingPinia } from '@pinia/testing';
 import userEvent from '@testing-library/user-event';
 import { waitFor } from '@testing-library/vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 vi.mock('@/features/collaboration/projects/projects.api');
-vi.mock('@n8n/rest-api-client/api/users');
+vi.mock('@aura/rest-api-client/api/users');
 vi.mock('@/features/integrations/sourceControl.ee/sourceControl.api');
 vi.mock('@/app/composables/useGlobalEntityCreation', () => ({
 	useGlobalEntityCreation: () => ({
@@ -70,7 +70,7 @@ const router = createRouter({
 	],
 });
 
-vi.mock('@n8n/rest-api-client/api/usage', () => ({
+vi.mock('@aura/rest-api-client/api/usage', () => ({
 	getLicense: vi.fn(),
 }));
 

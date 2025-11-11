@@ -1,14 +1,17 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { ResourceType, splitName } from '../projects.utils';
 import type { Project } from '../projects.types';
 import { ProjectTypes } from '../projects.types';
 import type { CredentialsResource, FolderResource, WorkflowResource } from '@/Interface';
 import { VIEWS } from '@/app/constants';
-import { type IconOrEmoji, isIconOrEmoji } from '@n8n/design-system/components/N8nIconPicker/types';
+import {
+	type IconOrEmoji,
+	isIconOrEmoji,
+} from '@aura/design-system/components/N8nIconPicker/types';
 import ProjectIcon from './ProjectIcon.vue';
-import { N8nBadge, N8nTooltip } from '@n8n/design-system';
+import { N8nBadge, N8nTooltip } from '@aura/design-system';
 type Props = {
 	resource: WorkflowResource | CredentialsResource | FolderResource;
 	resourceType: ResourceType;
@@ -167,9 +170,9 @@ const projectLocation = computed(() => {
 			>
 				<ProjectIcon :icon="badgeIcon" :border-less="true" size="mini" />
 				<RouterLink v-if="projectLocation" :to="projectLocation">
-					<span v-n8n-truncate:20="badgeText" :class="$style.nowrap" />
+					<span v-aura-truncate:20="badgeText" :class="$style.nowrap" />
 				</RouterLink>
-				<span v-else v-n8n-truncate:20="badgeText" :class="$style.nowrap" />
+				<span v-else v-aura-truncate:20="badgeText" :class="$style.nowrap" />
 			</N8nBadge>
 			<template #content>
 				{{ badgeTooltip }}
@@ -211,7 +214,7 @@ const projectLocation = computed(() => {
 	z-index: 1;
 	position: relative;
 	height: 23px;
-	:global(.n8n-text),
+	:global(.aura-text),
 	a {
 		color: var(--color--text);
 	}

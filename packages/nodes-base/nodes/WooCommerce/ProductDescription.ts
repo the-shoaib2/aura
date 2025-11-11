@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const productOperations: INodeProperties[] = [
 	{
@@ -139,7 +139,7 @@ export const productFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'List of categories. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'List of categories. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Cross Sell IDs',
@@ -195,7 +195,7 @@ export const productFields: INodeProperties[] = [
 				name: 'manageStock',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description: 'Stock management at product level',
 			},
 			{
@@ -336,7 +336,7 @@ export const productFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'List of tags. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'List of tags. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Tax Class',
@@ -632,7 +632,7 @@ export const productFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'List of categories. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'List of categories. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Cross Sell IDs',
@@ -688,7 +688,7 @@ export const productFields: INodeProperties[] = [
 				name: 'manageStock',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description: 'Stock management at product level',
 			},
 			{
@@ -836,7 +836,7 @@ export const productFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'List of tags. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'List of tags. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Tax Class',
@@ -1128,7 +1128,7 @@ export const productFields: INodeProperties[] = [
 					loadOptionsMethod: 'getCategories',
 				},
 				description:
-					'Limit result set to products assigned a specific category ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Limit result set to products assigned a specific category ID. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Context',
@@ -1298,7 +1298,7 @@ export const productFields: INodeProperties[] = [
 					loadOptionsMethod: 'getTags',
 				},
 				description:
-					'Limit result set to products assigned a specific tag ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Limit result set to products assigned a specific tag ID. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Tax Class',

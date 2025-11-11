@@ -13,7 +13,7 @@ const IS_CI = !!process.env.CI;
 
 const MACBOOK_WINDOW_SIZE = { width: 1536, height: 960 };
 
-const USER_FOLDER = path.join(os.tmpdir(), `n8n-main-${Date.now()}`);
+const USER_FOLDER = path.join(os.tmpdir(), `aura-main-${Date.now()}`);
 
 // Helper to get environment variables from N8N_TEST_ENV
 const getTestEnv = () => {
@@ -47,7 +47,7 @@ export default defineConfig<CurrentsFixtures, CurrentsWorkerFixtures>({
 	},
 	projects: getProjects(),
 
-	// We use this if an n8n url is passed in. If the server is already running, we reuse it.
+	// We use this if an aura url is passed in. If the server is already running, we reuse it.
 	webServer: process.env.N8N_BASE_URL
 		? {
 				command: 'cd .. && pnpm start',

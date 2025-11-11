@@ -8,7 +8,7 @@ const ChatAgentsView = async () => await import('@/features/ai/chatHub/ChatAgent
 export const ChatModule: FrontendModuleDescription = {
 	id: 'chat-hub',
 	name: 'Chat',
-	description: 'Interact with various LLM models or your n8n AI agents.',
+	description: 'Interact with various LLM models or your aura AI agents.',
 	icon: 'chat',
 	modals: [],
 	routes: [

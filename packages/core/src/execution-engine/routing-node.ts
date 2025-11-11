@@ -12,7 +12,7 @@ import {
 	NodeOperationError,
 	sleep,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 import type {
 	ICredentialDataDecryptedObject,
 	ICredentialsDecrypted,
@@ -36,7 +36,7 @@ import type {
 	JsonObject,
 	INodeCredentialDescription,
 	IExecutePaginationFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 import url from 'node:url';
 
 import { type ExecuteContext, ExecuteSingleContext } from './node-execution-context';

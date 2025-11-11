@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "bfe11af4-fb50-452c-b976-4d03d10829d2"
@@ -16,7 +16,7 @@
 		{
 			"parameters": {},
 			"name": "Redis",
-			"type": "n8n-nodes-base.redis",
+			"type": "aura-nodes-base.redis",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -34,7 +34,7 @@
 				"value": "={{$node[\"Set\"].json[\"value\"]}}"
 			},
 			"name": "Redis1",
-			"type": "n8n-nodes-base.redis",
+			"type": "aura-nodes-base.redis",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -51,7 +51,7 @@
 				"keyPattern": "={{$node[\"Set\"].json[\"key\"]}}"
 			},
 			"name": "Redis2",
-			"type": "n8n-nodes-base.redis",
+			"type": "aura-nodes-base.redis",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -70,7 +70,7 @@
 				"options": {}
 			},
 			"name": "Redis3",
-			"type": "n8n-nodes-base.redis",
+			"type": "aura-nodes-base.redis",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -87,7 +87,7 @@
 				"key": "={{$node[\"Set\"].json[\"key\"]}}"
 			},
 			"name": "Redis4",
-			"type": "n8n-nodes-base.redis",
+			"type": "aura-nodes-base.redis",
 			"typeVersion": 1,
 			"position": [1300, 300],
 			"credentials": {
@@ -115,7 +115,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"id": "779cc18d-7a1a-454d-b70a-b54ae590c896"
@@ -125,7 +125,7 @@
 				"functionCode": "if($node['Set'].json['value'] !== $node['Redis3'].json['value'] ){\n  throw new Error('Error in redis node');\n}\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [1300, 450],
 			"notesInFlow": true,

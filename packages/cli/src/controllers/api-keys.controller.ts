@@ -1,7 +1,7 @@
-import { CreateApiKeyRequestDto, UpdateApiKeyRequestDto } from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Body, Delete, Get, Param, Patch, Post, RestController } from '@n8n/decorators';
-import { getApiKeyScopesForRole } from '@n8n/permissions';
+import { CreateApiKeyRequestDto, UpdateApiKeyRequestDto } from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
+import { Body, Delete, Get, Param, Patch, Post, RestController } from '@aura/decorators';
+import { getApiKeyScopesForRole } from '@aura/permissions';
 import type { RequestHandler } from 'express';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';

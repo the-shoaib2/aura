@@ -17,7 +17,7 @@ import { useChatPanelStore } from '@/features/ai/assistant/chatPanel.store';
 import type { NodeTypeSelectedPayload } from '@/Interface';
 import { onClickOutside } from '@vueuse/core';
 
-import { N8nIconButton } from '@n8n/design-system';
+import { N8nIconButton } from '@aura/design-system';
 // elements that should not trigger onClickOutside
 const OUTSIDE_CLICK_WHITELIST = [
 	// different modals

@@ -1,8 +1,8 @@
-import type { SourceControlledFile } from '@n8n/api-types';
-import { Container } from '@n8n/di';
+import type { SourceControlledFile } from '@aura/api-types';
+import { Container } from '@aura/di';
 import { constants as fsConstants, accessSync } from 'fs';
 import { mock } from 'jest-mock-extended';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 import path from 'path';
 
 import {
@@ -177,11 +177,11 @@ beforeAll(async () => {
 	sourceControlPreferencesService.getPreferences.mockReturnValue({
 		branchName: 'main',
 		connected: true,
-		repositoryUrl: 'git@example.com:n8ntest/n8n_testrepo.git',
+		repositoryUrl: 'git@example.com:auratest/aura_testrepo.git',
 		branchReadOnly: false,
 		branchColor: '#5296D6',
 		publicKey:
-			'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDBSz2nMZAiUBWe6n89aWd5x9QMcIOaznVW3fpuCYC4L n8n deploy key',
+			'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDBSz2nMZAiUBWe6n89aWd5x9QMcIOaznVW3fpuCYC4L aura deploy key',
 	});
 });
 
@@ -203,9 +203,9 @@ describe('Source Control', () => {
 	});
 
 	it('should check for git and ssh folders and create them if required', async () => {
-		const { n8nFolder } = Container.get(InstanceSettings);
-		const sshFolder = path.join(n8nFolder, SOURCE_CONTROL_SSH_FOLDER);
-		const gitFolder = path.join(n8nFolder, SOURCE_CONTROL_GIT_FOLDER);
+		const { auraFolder } = Container.get(InstanceSettings);
+		const sshFolder = path.join(auraFolder, SOURCE_CONTROL_SSH_FOLDER);
+		const gitFolder = path.join(auraFolder, SOURCE_CONTROL_GIT_FOLDER);
 		let hasThrown = false;
 		try {
 			accessSync(sshFolder, fsConstants.F_OK);
@@ -229,9 +229,9 @@ describe('Source Control', () => {
 	});
 
 	it('should get repo type from url', async () => {
-		expect(getRepoType('git@github.com:n8ntest/n8n_testrepo.git')).toBe('github');
-		expect(getRepoType('git@gitlab.com:n8ntest/n8n_testrepo.git')).toBe('gitlab');
-		expect(getRepoType('git@mygitea.io:n8ntest/n8n_testrepo.git')).toBe('other');
+		expect(getRepoType('git@github.com:auratest/aura_testrepo.git')).toBe('github');
+		expect(getRepoType('git@gitlab.com:auratest/aura_testrepo.git')).toBe('gitlab');
+		expect(getRepoType('git@mygitea.io:auratest/aura_testrepo.git')).toBe('other');
 	});
 
 	it('should get tracking information from pre-push results', () => {

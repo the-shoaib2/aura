@@ -8,7 +8,7 @@ import {
 	REGULAR_NODE_CREATOR_VIEW,
 	TRIGGER_NODE_CREATOR_VIEW,
 } from '@/app/constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import type {
 	NodeFilterType,
 	NodeCreatorOpenSource,
@@ -20,13 +20,8 @@ import type {
 
 import { computed, nextTick, ref } from 'vue';
 import { prepareCommunityNodeDetailsViewStack, transformNodeType } from './nodeCreator.utils';
-import type {
-	IDataObject,
-	INodeInputConfiguration,
-	NodeConnectionType,
-	Workflow,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeHelpers, isCommunityPackageName } from 'n8n-workflow';
+import type { IDataObject, INodeInputConfiguration, NodeConnectionType, Workflow } from 'workflow';
+import { NodeConnectionTypes, NodeHelpers, isCommunityPackageName } from 'workflow';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';

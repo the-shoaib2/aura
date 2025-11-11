@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 const field: INodeProperties[] = [
 	{
@@ -15,7 +15,7 @@ const field: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Field',
 		name: 'field',
 		type: 'options',
@@ -24,7 +24,7 @@ const field: INodeProperties[] = [
 			loadOptionsMethod: 'loadAlertFields',
 		},
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		displayOptions: {
 			show: {
 				'/resource': ['alert'],
@@ -32,7 +32,7 @@ const field: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Field',
 		name: 'field',
 		type: 'options',
@@ -41,7 +41,7 @@ const field: INodeProperties[] = [
 			loadOptionsMethod: 'loadCaseFields',
 		},
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		displayOptions: {
 			show: {
 				'/resource': ['case'],
@@ -49,7 +49,7 @@ const field: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Field',
 		name: 'field',
 		type: 'options',
@@ -58,7 +58,7 @@ const field: INodeProperties[] = [
 			loadOptionsMethod: 'loadTaskFields',
 		},
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		displayOptions: {
 			show: {
 				'/resource': ['task'],
@@ -66,7 +66,7 @@ const field: INodeProperties[] = [
 		},
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Field',
 		name: 'field',
 		type: 'options',
@@ -75,7 +75,7 @@ const field: INodeProperties[] = [
 			loadOptionsMethod: 'loadObservableFields',
 		},
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		displayOptions: {
 			show: {
 				'/resource': ['observable'],

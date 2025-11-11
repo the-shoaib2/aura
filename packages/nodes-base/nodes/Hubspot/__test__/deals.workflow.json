@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-220, 600],
 			"id": "4d956443-f695-467e-8ab4-3500914bb1dc",
@@ -19,7 +19,7 @@
 					"mode": "id"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 0],
 			"id": "c7db8b4e-7ceb-4070-8559-4daf1b23e63a",
@@ -51,7 +51,7 @@
 					"pipeline": "=test pipeline name"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 400],
 			"id": "9abda6ab-bd8c-4e9e-9e9c-178f6241c7df",
@@ -84,7 +84,7 @@
 					"pipeline": "123"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 200],
 			"id": "92854c9b-16d8-44e0-adba-2a4296476a02",
@@ -109,7 +109,7 @@
 					"includePropertyVersions": true
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 600],
 			"id": "3566fc17-93d8-4b89-8864-a26ea2f4de51",
@@ -130,7 +130,7 @@
 					"includeAssociations": true
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 800],
 			"id": "d0f5d2be-8369-494e-8526-452e6b2a51dc",
@@ -152,7 +152,7 @@
 					"includePropertyVersions": true
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 1000],
 			"id": "4ac5aae3-0192-40bf-83d8-d36fadc19a57",
@@ -188,7 +188,7 @@
 					"sortBy": "=createdate"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [0, 1200],
 			"id": "a6011494-27f9-4f09-bd30-f509f6438232",

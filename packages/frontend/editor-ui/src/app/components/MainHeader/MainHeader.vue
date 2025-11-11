@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import TabBar from '@/app/components/MainHeader/TabBar.vue';
 import WorkflowDetails from '@/app/components/MainHeader/WorkflowDetails.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { usePushConnection } from '@/app/composables/usePushConnection';
 import {
 	LOCAL_STORAGE_HIDE_GITHUB_STAR_BUTTON,
@@ -25,7 +25,7 @@ import { useLocalStorage } from '@vueuse/core';
 import GithubButton from 'vue-github-button';
 import type { FolderShortInfo } from '@/features/core/folders/folders.types';
 
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@aura/design-system';
 import { useToast } from '@/app/composables/useToast';
 const router = useRouter();
 const route = useRoute();

@@ -2,12 +2,12 @@
 import { ref, onMounted } from 'vue';
 import { CONFIRM_PASSWORD_MODAL_KEY } from '@/app/constants';
 import Modal from '@/app/components/Modal.vue';
-import { createFormEventBus } from '@n8n/design-system/utils';
+import { createFormEventBus } from '@aura/design-system/utils';
 import type { IFormInputs, IFormInput, FormValues } from '@/Interface';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { confirmPasswordEventBus } from '../auth.eventBus';
 
-import { N8nButton, N8nFormInputs, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nFormInputs, N8nText } from '@aura/design-system';
 const config = ref<IFormInputs | null>(null);
 const formBus = createFormEventBus();
 const loading = ref(false);

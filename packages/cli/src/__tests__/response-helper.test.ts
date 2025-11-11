@@ -15,7 +15,7 @@ describe('sendErrorResponse', () => {
 	});
 
 	it('should include meta field for LicenseEulaRequiredError', () => {
-		const eulaUrl = 'https://n8n.io/legal/eula/';
+		const eulaUrl = 'https://aura.io/legal/eula/';
 		const error = new LicenseEulaRequiredError('License activation requires EULA acceptance', {
 			eulaUrl,
 		});

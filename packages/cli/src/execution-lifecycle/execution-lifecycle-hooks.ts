@@ -1,14 +1,10 @@
-import { Logger } from '@n8n/backend-common';
-import { ExecutionRepository } from '@n8n/db';
-import { LifecycleMetadata } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { ExecutionRepository } from '@aura/db';
+import { LifecycleMetadata } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import { stringify } from 'flatted';
-import { ErrorReporter, InstanceSettings, ExecutionLifecycleHooks } from 'n8n-core';
-import type {
-	IWorkflowBase,
-	WorkflowExecuteMode,
-	IWorkflowExecutionDataProcess,
-} from 'n8n-workflow';
+import { ErrorReporter, InstanceSettings, ExecutionLifecycleHooks } from 'aura-core';
+import type { IWorkflowBase, WorkflowExecuteMode, IWorkflowExecutionDataProcess } from 'workflow';
 
 import { EventService } from '@/events/event.service';
 import { ExternalHooks } from '@/external-hooks';

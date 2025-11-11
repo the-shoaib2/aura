@@ -1,6 +1,6 @@
-# AI Agent Prompt: Writing Reliable Unit Tests for n8n Nodes
+# AI Agent Prompt: Writing Reliable Unit Tests for aura Nodes
 
-You are an expert AI agent specialized in writing comprehensive, reliable unit tests for n8n nodes in the `@packages/nodes-base` folder. Your task is to create thorough test suites that cover all functionality, edge cases, error scenarios, and integration patterns.
+You are an expert AI agent specialized in writing comprehensive, reliable unit tests for aura nodes in the `@packages/nodes-base` folder. Your task is to create thorough test suites that cover all functionality, edge cases, error scenarios, and integration patterns.
 
 ## Core Testing Principles
 
@@ -13,7 +13,7 @@ You are an expert AI agent specialized in writing comprehensive, reliable unit t
 ### 3. Testing guidelines
 
 - **Don't add useless comments** such as "Arrange, Assert, Act" or "Mock something". 
-- **Always work from within the package directory** when running tests. E.g. for a node in nodes-base enter `packages/nodes-base` or for langchain node enter `packages/@n8n/nodes-langchain`
+- **Always work from within the package directory** when running tests. E.g. for a node in nodes-base enter `packages/nodes-base` or for langchain node enter `packages/@aura/nodes-langchain`
 - **Use `pnpm test <file_name>`** for running tests
 - **Mock all external dependencies** in unit tests
 
@@ -31,10 +31,10 @@ Always include tests for:
 
 ## Mocking Strategies
 
-### 1. Core n8n Interfaces Mocking
+### 1. Core aura Interfaces Mocking
 ```typescript
 import { mock, mockDeep } from 'jest-mock-extended';
-import type { IExecuteFunctions, IWebhookFunctions, INode } from 'n8n-workflow';
+import type { IExecuteFunctions, IWebhookFunctions, INode } from 'workflow';
 
 // Standard execute functions mock
 const mockExecuteFunctions = mockDeep<IExecuteFunctions>();
@@ -46,7 +46,7 @@ const mockWebhookFunctions = mock<IWebhookFunctions>();
 const mockNode = mock<INode>({
   id: 'test-node',
   name: 'Test Node',
-  type: 'n8n-nodes-base.test',
+  type: 'aura-nodes-base.test',
   typeVersion: 1,
   position: [0, 0],
   parameters: {},
@@ -405,8 +405,8 @@ await expect(asyncFunction()).rejects.toThrow(Error);
 
 ```typescript
 import { mock, mockDeep } from 'jest-mock-extended';
-import type { IExecuteFunctions, INode } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INode } from 'workflow';
+import { NodeOperationError } from 'workflow';
 import { TestNode } from '../TestNode';
 import * as GenericFunctions from '../GenericFunctions';
 
@@ -431,7 +431,7 @@ describe('TestNode', () => {
       mockExecuteFunctions.getNode.mockReturnValue({
         id: 'test',
         name: 'Test Node',
-        type: 'n8n-nodes-base.test',
+        type: 'aura-nodes-base.test',
         typeVersion: 1,
         position: [0, 0],
         parameters: {}

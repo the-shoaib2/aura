@@ -5,10 +5,10 @@ import {
 	mockInstance,
 	shareWorkflowWithUsers,
 	testDb,
-} from '@n8n/backend-test-utils';
-import type { ExecutionEntity, User } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { UnexpectedError, type ExecutionStatus } from 'n8n-workflow';
+} from '@aura/backend-test-utils';
+import type { ExecutionEntity, User } from '@aura/db';
+import { Container } from '@aura/di';
+import { UnexpectedError, type ExecutionStatus } from 'workflow';
 
 import {
 	createdExecutionWithStatus,

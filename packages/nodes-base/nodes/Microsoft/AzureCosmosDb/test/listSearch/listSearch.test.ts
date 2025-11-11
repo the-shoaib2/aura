@@ -2,7 +2,7 @@ import {
 	OperationalError,
 	type IGetNodeParameterOptions,
 	type ILoadOptionsFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { AzureCosmosDb } from '../../AzureCosmosDb.node';
 import { HeaderConstants } from '../../helpers/constants';
@@ -57,7 +57,7 @@ describe('Azure Cosmos DB', () => {
 				'microsoftAzureCosmosDbSharedKeyApi',
 				expect.objectContaining({
 					method: 'GET',
-					url: 'https://n8n-us-east-account.documents.azure.com/dbs/database_1/colls',
+					url: 'https://aura-us-east-account.documents.azure.com/dbs/database_1/colls',
 					headers: {
 						[HeaderConstants.X_MS_CONTINUATION]: paginationToken,
 					},
@@ -126,7 +126,7 @@ describe('Azure Cosmos DB', () => {
 				'microsoftAzureCosmosDbSharedKeyApi',
 				expect.objectContaining({
 					method: 'GET',
-					url: 'https://n8n-us-east-account.documents.azure.com/dbs/database_1/colls/Container1/docs',
+					url: 'https://aura-us-east-account.documents.azure.com/dbs/database_1/colls/Container1/docs',
 					headers: {
 						[HeaderConstants.X_MS_CONTINUATION]: paginationToken,
 					},

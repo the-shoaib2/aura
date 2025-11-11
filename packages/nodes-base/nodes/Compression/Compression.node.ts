@@ -7,7 +7,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 import { promisify } from 'util';
 
 const gunzip = promisify(fflate.gunzip);

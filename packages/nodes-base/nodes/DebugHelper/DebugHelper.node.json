@@ -1,12 +1,12 @@
 {
-	"node": "n8n-nodes-base.debughelper",
+	"node": "aura-nodes-base.debughelper",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.debughelper/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.debughelper/"
 			}
 		]
 	},

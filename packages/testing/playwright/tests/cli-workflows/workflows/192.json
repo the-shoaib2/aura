@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "f0a6807e-f707-401a-a50c-7ef643be9447"
@@ -21,7 +21,7 @@
 				"channel": "=testchannel{{Date.now()}}"
 			},
 			"name": "Mattermost",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [430, 300],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"userId": "4yp7tpa3sbgk9qrf38egttbioo"
 			},
 			"name": "Mattermost1",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [580, 300],
 			"credentials": {
@@ -61,7 +61,7 @@
 				"limit": 1
 			},
 			"name": "Mattermost2",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1650, 300],
 			"credentials": {
@@ -79,7 +79,7 @@
 				"channelId": "={{$node[\"Mattermost\"].json[\"id\"]}}"
 			},
 			"name": "Mattermost3",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1800, 300],
 			"credentials": {
@@ -97,7 +97,7 @@
 				"channelId": "={{$node[\"Mattermost\"].json[\"id\"]}}"
 			},
 			"name": "Mattermost4",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1950, 300],
 			"credentials": {
@@ -115,7 +115,7 @@
 				"channelId": "={{$node[\"Mattermost\"].json[\"id\"]}}"
 			},
 			"name": "Mattermost5",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [2100, 300],
 			"credentials": {
@@ -133,7 +133,7 @@
 				"channelId": "={{$node[\"Mattermost\"].json[\"id\"]}}"
 			},
 			"name": "Mattermost6",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [2240, 190],
 			"credentials": {
@@ -152,7 +152,7 @@
 				"otherOptions": {}
 			},
 			"name": "Mattermost7",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [730, 450],
 			"credentials": {
@@ -171,7 +171,7 @@
 				"message": "=EpheMessage{{Date.now()}}"
 			},
 			"name": "Mattermost8",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [900, 450],
 			"credentials": {
@@ -188,7 +188,7 @@
 				"postId": "={{$node[\"Mattermost7\"].json[\"id\"]}}"
 			},
 			"name": "Mattermost9",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1500, 450],
 			"credentials": {
@@ -207,7 +207,7 @@
 				"emojiName": "rocket"
 			},
 			"name": "Mattermost10",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1050, 550],
 			"credentials": {
@@ -227,7 +227,7 @@
 				"limit": 1
 			},
 			"name": "Mattermost11",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1200, 550],
 			"credentials": {
@@ -247,7 +247,7 @@
 				"emojiName": "rocket"
 			},
 			"name": "Mattermost12",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1350, 550],
 			"credentials": {
@@ -269,7 +269,7 @@
 				"additionalFields": {}
 			},
 			"name": "Mattermost13",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [440, 150],
 			"credentials": {
@@ -288,7 +288,7 @@
 				"additionalFields": {}
 			},
 			"name": "Mattermost14",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [600, 150],
 			"credentials": {
@@ -306,7 +306,7 @@
 				"email": "={{$node[\"Mattermost13\"].json[\"email\"]}}"
 			},
 			"name": "Mattermost15",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [750, 150],
 			"credentials": {
@@ -326,7 +326,7 @@
 				"additionalFields": {}
 			},
 			"name": "Mattermost16",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [900, 150],
 			"credentials": {
@@ -345,7 +345,7 @@
 				"emails": "={{$node[\"Mattermost13\"].json[\"email\"]}}"
 			},
 			"name": "Mattermost17",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1050, 150],
 			"credentials": {
@@ -363,7 +363,7 @@
 				"userId": "={{$node[\"Mattermost13\"].json[\"id\"]}}"
 			},
 			"name": "Mattermost18",
-			"type": "n8n-nodes-base.mattermost",
+			"type": "aura-nodes-base.mattermost",
 			"typeVersion": 1,
 			"position": [1200, 150],
 			"credentials": {

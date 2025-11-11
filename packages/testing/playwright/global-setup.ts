@@ -1,5 +1,5 @@
 import { request } from '@playwright/test';
-import { createN8NStack } from 'n8n-containers/n8n-test-container-creation';
+import { createN8NStack } from 'aura-containers/aura-test-container-creation';
 
 import { ApiHelpers } from './services/api-helper';
 
@@ -18,8 +18,8 @@ async function globalSetup() {
 	console.log('🚀 Starting global setup...');
 
 	// Check if N8N_BASE_URL is set
-	const n8nBaseUrl = process.env.N8N_BASE_URL;
-	if (!n8nBaseUrl) {
+	const auraBaseUrl = process.env.N8N_BASE_URL;
+	if (!auraBaseUrl) {
 		console.log('⚠️  N8N_BASE_URL environment variable is not set, skipping database reset');
 		if (process.env.CI && process.env.N8N_DOCKER_IMAGE) {
 			await pullImagesForCI();
@@ -33,12 +33,12 @@ async function globalSetup() {
 		return;
 	}
 
-	console.log(`🔄 Resetting database for ${n8nBaseUrl}...`);
+	console.log(`🔄 Resetting database for ${auraBaseUrl}...`);
 	// Quick hack till we find out a better health check for the database reset command!
 	await new Promise((resolve) => setTimeout(resolve, 3000));
 	// Create standalone API request context
 	const requestContext = await request.newContext({
-		baseURL: n8nBaseUrl,
+		baseURL: auraBaseUrl,
 	});
 
 	try {

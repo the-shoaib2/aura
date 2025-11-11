@@ -51,12 +51,12 @@ The scope should specify the place of the commit change as long as the commit cl
 
 - `API` - changes to the _public_ API
 - `benchmark` - changes to the benchmark cli
-- `core` - changes to the core / private API / backend of n8n
+- `core` - changes to the core / private API / backend of aura
 - `editor` - changes to the Editor UI
 - `* Node` - changes to a specific node or trigger node (”`*`” to be replaced with the node name, not its display name), e.g.
   - mattermost → Mattermost Node
   - microsoftToDo → Microsoft To Do Node
-  - n8n → n8n Node
+  - aura → aura Node
 
 ## Summary
 
@@ -65,7 +65,7 @@ The summary contains succinct description of the change:
 - use the imperative, present tense: "change" not "changed" nor "changes"
 - capitalize the first letter
 - _no_ dot (.) at the end
-- do _not_ include Linear ticket IDs etc. (e.g. N8N-1234)
+- do _not_ include Linear ticket IDs etc. (e.g. aura-1234)
 - suffix with “(no-changelog)” for commits / PRs that should not get mentioned in the changelog.
 
 ## Body (optional)
@@ -102,7 +102,7 @@ A Breaking Change section should start with the phrase "`BREAKING CHANGE:` " fol
 >
 > This makes locating breaking changes easier when just skimming through commit messages.
 
-> 💡 The breaking changes must also be added to the [packages/cli/BREAKING-CHANGES.md](https://github.com/n8n-io/n8n/blob/master/packages/cli/BREAKING-CHANGES.md) file located in the n8n repository.
+> 💡 The breaking changes must also be added to the [packages/cli/BREAKING-CHANGES.md](https://github.com/aura-io/aura/blob/master/packages/cli/BREAKING-CHANGES.md) file located in the aura repository.
 
 Similarly, a Deprecation section should start with "`DEPRECATED:` " followed by a short description of what is deprecated, a blank line, and a detailed description of the deprecation that also mentions the recommended update path.
 

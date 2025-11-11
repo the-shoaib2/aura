@@ -1,13 +1,13 @@
 import { computed } from 'vue';
 import { defineStore } from 'pinia';
 import { useAsyncState } from '@vueuse/core';
-import type { ListInsightsWorkflowQueryDto, InsightsDateFilterDto } from '@n8n/api-types';
+import type { ListInsightsWorkflowQueryDto, InsightsDateFilterDto } from '@aura/api-types';
 import * as insightsApi from '@/features/execution/insights/insights.api';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { transformInsightsSummary } from '@/features/execution/insights/insights.utils';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 
 export const useInsightsStore = defineStore('insights', () => {
 	const rootStore = useRootStore();

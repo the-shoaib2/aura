@@ -19,7 +19,7 @@ import {
 	deleteAgentApi,
 	updateConversationApi,
 } from './chat.api';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import {
 	emptyChatModelsResponse,
 	type ChatHubConversationModel,
@@ -35,14 +35,14 @@ import {
 	type EnrichedStructuredChunk,
 	type ChatHubMessageStatus,
 	type ChatModelDto,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import type {
 	CredentialsMap,
 	ChatMessage,
 	ChatConversation,
 	ChatStreamingState,
 } from './chat.types';
-import { retry } from '@n8n/utils/retry';
+import { retry } from '@aura/utils/retry';
 import { isMatchedAgent } from './chat.utils';
 import { createAiMessageFromStreamingState, flattenModel } from './chat.utils';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -442,7 +442,7 @@ export const useChatStore = defineStore(CHAT_STORE, () => {
 			name: 'User',
 			content: message,
 			provider: null,
-			model: model.provider === 'n8n' || model.provider === 'custom-agent' ? null : model.model,
+			model: model.provider === 'aura' || model.provider === 'custom-agent' ? null : model.model,
 			workflowId: null,
 			executionId: null,
 			agentId: null,

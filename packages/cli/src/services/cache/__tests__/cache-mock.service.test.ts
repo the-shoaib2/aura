@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 
 import { CacheService } from '@/services/cache/cache.service';

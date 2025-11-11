@@ -1,11 +1,15 @@
-import type { CreateApiKeyRequestDto, UnixTimestamp, UpdateApiKeyRequestDto } from '@n8n/api-types';
-import type { AuthenticatedRequest, User } from '@n8n/db';
-import { ApiKey, ApiKeyRepository, UserRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import type { ApiKeyScope, AuthPrincipal } from '@n8n/permissions';
-import { getApiKeyScopesForRole, getOwnerOnlyApiKeyScopes } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { EntityManager } from '@n8n/typeorm';
+import type {
+	CreateApiKeyRequestDto,
+	UnixTimestamp,
+	UpdateApiKeyRequestDto,
+} from '@aura/api-types';
+import type { AuthenticatedRequest, User } from '@aura/db';
+import { ApiKey, ApiKeyRepository, UserRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import type { ApiKeyScope, AuthPrincipal } from '@aura/permissions';
+import { getApiKeyScopesForRole, getOwnerOnlyApiKeyScopes } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { EntityManager } from '@aura/typeorm';
 import type { NextFunction, Request, Response } from 'express';
 import { TokenExpiredError } from 'jsonwebtoken';
 import type { OpenAPIV3 } from 'openapi-types';
@@ -16,10 +20,10 @@ import { LastActiveAtService } from './last-active-at.service';
 import { EventService } from '@/events/event.service';
 
 const API_KEY_AUDIENCE = 'public-api';
-const API_KEY_ISSUER = 'n8n';
+const API_KEY_ISSUER = 'aura';
 const REDACT_API_KEY_REVEAL_COUNT = 4;
 const REDACT_API_KEY_MAX_LENGTH = 10;
-const PREFIX_LEGACY_API_KEY = 'n8n_api_';
+const PREFIX_LEGACY_API_KEY = 'aura_api_';
 
 @Service()
 export class PublicApiKeyService {
@@ -186,7 +190,7 @@ export class PublicApiKeyService {
 
 	getApiKeyScopeMiddleware(endpointScope: ApiKeyScope) {
 		return async (req: Request, res: Response, next: NextFunction) => {
-			const apiKey = req.headers['x-n8n-api-key'];
+			const apiKey = req.headers['x-aura-api-key'];
 
 			if (apiKey === undefined || typeof apiKey !== 'string') {
 				res.status(401).json({ message: 'Unauthorized' });

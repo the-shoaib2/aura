@@ -1,4 +1,4 @@
-import { getPersonalProject, mockInstance, testDb } from '@n8n/backend-test-utils';
+import { getPersonalProject, mockInstance, testDb } from '@aura/backend-test-utils';
 import { nanoid } from 'nanoid';
 
 import '@/zod-alias-support';

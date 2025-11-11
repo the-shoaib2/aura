@@ -4,7 +4,7 @@ import { DirectoryLoader } from './directory-loader';
 
 /**
  * Loader for source files of nodes and credentials located in a custom dir,
- * e.g. `~/.n8n/custom`
+ * e.g. `~/.aura/custom`
  */
 export class CustomDirectoryLoader extends DirectoryLoader {
 	packageName = 'CUSTOM';

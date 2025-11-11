@@ -1,4 +1,4 @@
-import type { AllEntities, Entity, PropertiesOf } from 'n8n-workflow';
+import type { AllEntities, Entity, PropertiesOf } from 'workflow';
 
 type SeaTableMap = {
 	row: 'create' | 'get' | 'search' | 'update' | 'remove' | 'lock' | 'unlock' | 'list';

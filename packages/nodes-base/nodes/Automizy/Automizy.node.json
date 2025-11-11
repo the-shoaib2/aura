@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.automizy",
+	"node": "aura-nodes-base.automizy",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/automizy/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/automizy/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.automizy/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.automizy/"
 			}
 		]
 	}

@@ -1,9 +1,9 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { WorkflowRepository } from '@n8n/db';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { WorkflowRepository } from '@aura/db';
 import type express from 'express';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 import promClient from 'prom-client';
 
 import { EventMessageWorkflow } from '@/eventbus/event-message-classes/event-message-workflow';
@@ -60,7 +60,7 @@ describe('workflow_success_total', () => {
 
 		// ACT
 		const event = new EventMessageWorkflow({
-			eventName: 'n8n.workflow.success',
+			eventName: 'aura.workflow.success',
 			payload: { workflowId: '1234' },
 		});
 
@@ -71,7 +71,7 @@ describe('workflow_success_total', () => {
 			await promClient.register.getSingleMetricAsString('workflow_success_total');
 
 		expect(workflowSuccessCounter).toMatchInlineSnapshot(`
-"# HELP workflow_success_total Total number of n8n.workflow.success events.
+"# HELP workflow_success_total Total number of aura.workflow.success events.
 # TYPE workflow_success_total counter
 workflow_success_total{workflow_id="1234"} 1"
 `);
@@ -103,7 +103,7 @@ workflow_success_total{workflow_id="1234"} 1"
 
 		// ACT
 		const event = new EventMessageWorkflow({
-			eventName: 'n8n.workflow.success',
+			eventName: 'aura.workflow.success',
 			payload: { workflowName: 'wf_1234' },
 		});
 
@@ -114,7 +114,7 @@ workflow_success_total{workflow_id="1234"} 1"
 			await promClient.register.getSingleMetricAsString('workflow_success_total');
 
 		expect(workflowSuccessCounter).toMatchInlineSnapshot(`
-"# HELP workflow_success_total Total number of n8n.workflow.success events.
+"# HELP workflow_success_total Total number of aura.workflow.success events.
 # TYPE workflow_success_total counter
 workflow_success_total{workflow_name="wf_1234"} 1"
 `);
@@ -157,7 +157,7 @@ workflow_success_total{workflow_name="wf_1234"} 1"
 			`${customPrefix}version_info`,
 		);
 		expect(versionMetric.split('\n')).toMatchObject([
-			'# HELP custom_version_info n8n version info.',
+			'# HELP custom_version_info aura version info.',
 			'# TYPE custom_version_info gauge',
 			expect.stringMatching('custom_version_info.*'),
 		]);

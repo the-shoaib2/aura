@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const pageOperations: INodeProperties[] = [
 	{
@@ -81,7 +81,7 @@ export const pageFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The ID for the author of the object. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The ID for the author of the object. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Parent ID',
@@ -296,7 +296,7 @@ export const pageFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The ID for the author of the object. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The ID for the author of the object. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Parent ID',
@@ -620,7 +620,7 @@ export const pageFields: INodeProperties[] = [
 					loadOptionsMethod: 'getAuthors',
 				},
 				description:
-					'Limit result set to pages assigned to specific authors. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Limit result set to pages assigned to specific authors. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Before',

@@ -4,14 +4,14 @@ import {
 	SEND_AND_WAIT_OPERATION,
 	tryToParseJsonToFormFields,
 	updateDisplayOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 import type {
 	INodeProperties,
 	IExecuteFunctions,
 	IWebhookFunctions,
 	IDataObject,
 	FormFieldsParameter,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { limitWaitTimeProperties } from './descriptions';
 import {
@@ -65,12 +65,12 @@ const limitWaitTimeOption: INodeProperties = {
 };
 
 const appendAttributionOption: INodeProperties = {
-	displayName: 'Append n8n Attribution',
+	displayName: 'Append aura Attribution',
 	name: 'appendAttribution',
 	type: 'boolean',
 	default: true,
 	description:
-		'Whether to include the phrase "This message was sent automatically with n8n" to the end of the message',
+		'Whether to include the phrase "This message was sent automatically with aura" to the end of the message',
 };
 
 // Operation Properties ----------------------------------------------------------

@@ -1,16 +1,16 @@
-import { GlobalConfig } from '@n8n/config';
+import { GlobalConfig } from '@aura/config';
 import {
 	CredentialsRepository,
 	ProjectRelationRepository,
 	SharedWorkflowRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
 import { snakeCase } from 'change-case';
-import { BinaryDataConfig, InstanceSettings } from 'n8n-core';
-import type { ExecutionStatus, INodesGraphResult, ITelemetryTrackProperties } from 'n8n-workflow';
-import { TelemetryHelpers } from 'n8n-workflow';
+import { BinaryDataConfig, InstanceSettings } from 'aura-core';
+import type { ExecutionStatus, INodesGraphResult, ITelemetryTrackProperties } from 'workflow';
+import { TelemetryHelpers } from 'workflow';
 import os from 'node:os';
 import { get as pslGet } from 'psl';
 
@@ -832,8 +832,8 @@ export class TelemetryEventRelay extends EventRelay {
 		const info = {
 			version_cli: N8N_VERSION,
 			db_type: this.globalConfig.database.type,
-			n8n_version_notifications_enabled: this.globalConfig.versionNotifications.enabled,
-			n8n_disable_production_main_process:
+			aura_version_notifications_enabled: this.globalConfig.versionNotifications.enabled,
+			aura_disable_production_main_process:
 				this.globalConfig.endpoints.disableProductionWebhooksOnMainProcess,
 			system_info: {
 				os: {
@@ -860,8 +860,8 @@ export class TelemetryEventRelay extends EventRelay {
 				executions_data_prune: this.globalConfig.executions.pruneData,
 				executions_data_max_age: this.globalConfig.executions.pruneDataMaxAge,
 			},
-			n8n_deployment_type: this.globalConfig.deployment.type,
-			n8n_binary_data_mode: this.binaryDataConfig.mode,
+			aura_deployment_type: this.globalConfig.deployment.type,
+			aura_binary_data_mode: this.binaryDataConfig.mode,
 			smtp_set_up: this.globalConfig.userManagement.emails.mode === 'smtp',
 			ldap_allowed: authenticationMethod === 'ldap',
 			saml_enabled: authenticationMethod === 'saml',

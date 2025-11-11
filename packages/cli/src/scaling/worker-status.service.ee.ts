@@ -1,7 +1,7 @@
-import { WorkerStatus } from '@n8n/api-types';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Service } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
+import { WorkerStatus } from '@aura/api-types';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Service } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
 import os from 'node:os';
 
 import { N8N_VERSION } from '@/constants';

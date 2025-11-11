@@ -7,7 +7,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookFunctions,
 	type IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { venafiApiRequest } from './GenericFunctions';
 
@@ -40,7 +40,7 @@ export class VenafiTlsProtectCloudTrigger implements INodeType {
 		outputs: [NodeConnectionTypes.Main],
 		properties: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 				displayName: 'Resource',
 				name: 'resource',
 				type: 'options',
@@ -51,10 +51,10 @@ export class VenafiTlsProtectCloudTrigger implements INodeType {
 				required: true,
 				default: [],
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 				displayName: 'Trigger On',
 				name: 'triggerOn',
 				type: 'multiOptions',
@@ -65,7 +65,7 @@ export class VenafiTlsProtectCloudTrigger implements INodeType {
 				required: true,
 				default: [],
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	};
@@ -126,7 +126,7 @@ export class VenafiTlsProtectCloudTrigger implements INodeType {
 				const webhookUrl = this.getNodeWebhookUrl('default');
 				const resource = this.getNodeParameter('resource') as string;
 				const body = {
-					name: `n8n-webhook (${webhookUrl})`,
+					name: `aura-webhook (${webhookUrl})`,
 					properties: {
 						connectorKind: 'WEBHOOK',
 						target: {

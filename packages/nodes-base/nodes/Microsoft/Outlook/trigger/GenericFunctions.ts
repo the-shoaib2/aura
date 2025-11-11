@@ -1,5 +1,5 @@
-import { NodeApiError } from 'n8n-workflow';
-import type { JsonObject, IDataObject, INodeExecutionData, IPollFunctions } from 'n8n-workflow';
+import { NodeApiError } from 'workflow';
+import type { JsonObject, IDataObject, INodeExecutionData, IPollFunctions } from 'workflow';
 
 import { prepareFilterString, simplifyOutputMessages } from '../v2/helpers/utils';
 import {

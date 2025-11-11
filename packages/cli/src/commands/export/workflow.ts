@@ -1,8 +1,8 @@
-import { WorkflowRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { WorkflowRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import fs from 'fs';
-import { UserError } from 'n8n-workflow';
+import { UserError } from 'workflow';
 import path from 'path';
 import { z } from 'zod';
 

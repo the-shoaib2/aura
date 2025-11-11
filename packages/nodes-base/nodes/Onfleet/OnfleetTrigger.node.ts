@@ -6,8 +6,8 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { eventDisplay, eventNameField } from './descriptions/OnfleetWebhookDescription';
 import { onfleetApiRequest } from './GenericFunctions';
@@ -79,14 +79,14 @@ export class OnfleetTrigger implements INodeType {
 				if (webhookUrl.includes('//localhost')) {
 					throw new NodeOperationError(
 						this.getNode(),
-						'The Webhook can not work on "localhost". Please, either setup n8n on a custom domain or start with "--tunnel"!',
+						'The Webhook can not work on "localhost". Please, either setup aura on a custom domain or start with "--tunnel"!',
 					);
 				}
 				// Webhook name according to the field
-				let newWebhookName = `n8n-webhook:${webhookUrl}`;
+				let newWebhookName = `aura-webhook:${webhookUrl}`;
 
 				if (name) {
-					newWebhookName = `n8n-webhook:${name}`;
+					newWebhookName = `aura-webhook:${name}`;
 				}
 
 				const path = '/webhooks';

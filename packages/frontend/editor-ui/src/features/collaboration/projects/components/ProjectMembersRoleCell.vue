@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { type ActionDropdownItem, N8nActionDropdown, N8nIcon, N8nText } from '@n8n/design-system';
-import type { AllRolesMap, Role } from '@n8n/permissions';
+import { type ActionDropdownItem, N8nActionDropdown, N8nIcon, N8nText } from '@aura/design-system';
+import type { AllRolesMap, Role } from '@aura/permissions';
 import { ElRadio } from 'element-plus';
 import { computed } from 'vue';
 import type { ProjectMemberData } from '../projects.types';

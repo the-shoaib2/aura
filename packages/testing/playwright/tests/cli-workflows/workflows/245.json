@@ -14,7 +14,7 @@
 			},
 			"id": "6610aac2-0d86-4d20-a625-072403cc1d15",
 			"name": "AWS Bedrock Chat Model",
-			"type": "@n8n/n8n-nodes-langchain.lmChatAwsBedrock",
+			"type": "@aura/aura-nodes-langchain.lmChatAwsBedrock",
 			"typeVersion": 1,
 			"position": [680, 600],
 			"credentials": {
@@ -28,7 +28,7 @@
 			"parameters": {},
 			"id": "9e52b4d5-5e83-4d6a-a31e-e9408728bb77",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [460, 460]
 		},
@@ -39,7 +39,7 @@
 			},
 			"id": "8899ab4b-9fab-4c92-8e17-7601117fc3fc",
 			"name": "AWS Bedrock Chat",
-			"type": "@n8n/n8n-nodes-langchain.chainLlm",
+			"type": "@aura/aura-nodes-langchain.chainLlm",
 			"typeVersion": 1.5,
 			"position": [660, 460]
 		}

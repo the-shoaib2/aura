@@ -4,8 +4,8 @@ import {
 	createWorkflow,
 	testDb,
 	testModules,
-} from '@n8n/backend-test-utils';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import { DateTime } from 'luxon';
 

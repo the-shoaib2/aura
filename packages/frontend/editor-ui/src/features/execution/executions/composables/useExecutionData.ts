@@ -1,5 +1,5 @@
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import type { INode, IRunExecutionData } from 'n8n-workflow';
+import type { INode, IRunExecutionData } from 'workflow';
 import { computed, type ComputedRef } from 'vue';
 
 export function useExecutionData({ node }: { node: ComputedRef<INode | undefined> }) {

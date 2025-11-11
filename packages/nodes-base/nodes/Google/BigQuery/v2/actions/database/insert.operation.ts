@@ -1,10 +1,5 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
+import { NodeOperationError } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { generatePairedItemData, updateDisplayOptions } from '@utils/utilities';
@@ -65,7 +60,7 @@ const properties: INodeProperties[] = [
 						name: 'fieldId',
 						type: 'options',
 						description:
-							'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+							'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsDependsOn: ['projectId.value', 'datasetId.value', 'tableId.value'],
 							loadOptionsMethod: 'getSchema',

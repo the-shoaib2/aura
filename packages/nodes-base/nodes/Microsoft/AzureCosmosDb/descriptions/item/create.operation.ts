@@ -3,8 +3,8 @@ import type {
 	IExecuteSingleFunctions,
 	IHttpRequestOptions,
 	INodeProperties,
-} from 'n8n-workflow';
-import { updateDisplayOptions } from 'n8n-workflow';
+} from 'workflow';
+import { updateDisplayOptions } from 'workflow';
 
 import { processJsonInput, untilContainerSelected } from '../../helpers/utils';
 import { containerResourceLocator } from '../common';

@@ -1,6 +1,6 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import type { CredentialInformation } from 'n8n-workflow';
+import type { CredentialInformation } from 'workflow';
 import { AssertionError } from 'node:assert';
 
 import { CREDENTIAL_ERRORS } from '@/constants';

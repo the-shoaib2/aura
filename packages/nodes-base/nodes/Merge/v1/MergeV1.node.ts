@@ -7,8 +7,8 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	IPairedItemData,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, deepCopy } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, deepCopy } from 'workflow';
 
 import { oldVersionNotice } from '@utils/descriptions';
 

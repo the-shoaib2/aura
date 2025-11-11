@@ -1,6 +1,6 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { TaskRunnersConfig } from '@n8n/config';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import { TaskRunnersConfig } from '@aura/config';
 import { mock } from 'jest-mock-extended';
 import type { ChildProcess, SpawnOptions } from 'node:child_process';
 
@@ -159,7 +159,7 @@ describe('TaskRunnerProcess', () => {
 			expect(spawnMock.mock.calls[0].at(1)).toEqual([
 				'--disallow-code-generation-from-strings',
 				'--disable-proto=delete',
-				expect.stringContaining('/packages/@n8n/task-runner/dist/start.js'),
+				expect.stringContaining('/packages/@aura/task-runner/dist/start.js'),
 			]);
 		});
 
@@ -176,7 +176,7 @@ describe('TaskRunnerProcess', () => {
 			await insecureTaskRunnerProcess.start();
 
 			expect(spawnMock.mock.calls[0].at(1)).toEqual([
-				expect.stringContaining('/packages/@n8n/task-runner/dist/start.js'),
+				expect.stringContaining('/packages/@aura/task-runner/dist/start.js'),
 			]);
 		});
 	});

@@ -4,7 +4,7 @@ import {
 	type INodeProperties,
 	type IExecuteFunctions,
 	updateDisplayOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	seaTableApiRequest,
@@ -16,7 +16,7 @@ import type { IRow } from '../Interfaces';
 
 export const properties: INodeProperties[] = [
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'View Name',
 		name: 'viewName',
 		type: 'options',
@@ -25,7 +25,7 @@ export const properties: INodeProperties[] = [
 			loadOptionsMethod: 'getTableViews',
 		},
 		default: '',
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 		description:
 			'The name of SeaTable view to access, or specify by using an expression. Provide it in the way "col.name:::col.type".',
 	},

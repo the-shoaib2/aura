@@ -1,7 +1,7 @@
-import { CreateTable, DslColumn, withTransaction } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { DataSource, DataSourceOptions, EntityManager } from '@n8n/typeorm';
-import { UnexpectedError } from 'n8n-workflow';
+import { CreateTable, DslColumn, withTransaction } from '@aura/db';
+import { Service } from '@aura/di';
+import { DataSource, DataSourceOptions, EntityManager } from '@aura/typeorm';
+import { UnexpectedError } from 'workflow';
 
 import { DataTableColumn } from './data-table-column.entity';
 import { addColumnQuery, deleteColumnQuery, toDslColumns, toTableName } from './utils/sql-utils';

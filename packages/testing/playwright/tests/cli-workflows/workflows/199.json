@@ -8,17 +8,17 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "77ccc40b-307c-479e-882d-6f2700b67b8d"
 		},
 		{
 			"parameters": {
-				"email": "jan@n8n.io"
+				"email": "jan@aura.io"
 			},
 			"name": "Mailcheck",
-			"type": "n8n-nodes-base.mailcheck",
+			"type": "aura-nodes-base.mailcheck",
 			"typeVersion": 1,
 			"position": [470, 300],
 			"credentials": {

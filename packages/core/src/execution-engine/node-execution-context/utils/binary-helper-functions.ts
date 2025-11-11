@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import chardet from 'chardet';
 import FileType from 'file-type';
 import { IncomingMessage } from 'http';
@@ -11,13 +11,13 @@ import type {
 	INode,
 	ITaskDataConnections,
 	IWorkflowExecuteAdditionalData,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	NodeOperationError,
 	fileTypeFromMimeType,
 	ApplicationError,
 	UnexpectedError,
-} from 'n8n-workflow';
+} from 'workflow';
 import path from 'path';
 import type { Readable } from 'stream';
 import { URL } from 'url';
@@ -226,7 +226,7 @@ export async function copyBinaryFile(
 }
 
 /**
- * Takes a buffer and converts it into the format n8n uses. It encodes the binary data as
+ * Takes a buffer and converts it into the format aura uses. It encodes the binary data as
  * base64 and adds metadata.
  */
 

@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { Project } from '@n8n/db';
-import { ExecutionRepository } from '@n8n/db';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { Project } from '@aura/db';
+import { ExecutionRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
 import {
 	BinaryDataService,
@@ -9,8 +9,8 @@ import {
 	InstanceSettings,
 	ExecutionLifecycleHooks,
 	BinaryDataConfig,
-} from 'n8n-core';
-import { ExpressionError } from 'n8n-workflow';
+} from 'aura-core';
+import { ExpressionError } from 'workflow';
 import type {
 	IRunExecutionData,
 	ITaskData,
@@ -21,7 +21,7 @@ import type {
 	IWorkflowBase,
 	WorkflowExecuteMode,
 	ITaskStartedData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { EventService } from '@/events/event.service';
 import { ExternalHooks } from '@/external-hooks';
@@ -53,7 +53,7 @@ describe('Execution Lifecycle Hooks', () => {
 	const workflowExecutionService = mockInstance(WorkflowExecutionService);
 
 	const nodeName = 'Test Node';
-	const nodeType = 'n8n-nodes-base.testNode';
+	const nodeType = 'aura-nodes-base.testNode';
 	const nodeId = 'test-node-id';
 	const node = mock<INode>();
 	const workflowId = 'test-workflow-id';

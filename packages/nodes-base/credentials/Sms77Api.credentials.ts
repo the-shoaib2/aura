@@ -3,12 +3,12 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class Sms77Api implements ICredentialType {
 	name = 'sms77Api';
 
-	// eslint-disable-next-line n8n-nodes-base/cred-class-field-display-name-miscased
+	// eslint-disable-next-line aura-nodes-base/cred-class-field-display-name-miscased
 	displayName = 'seven API';
 
 	documentationUrl = 'sms77';

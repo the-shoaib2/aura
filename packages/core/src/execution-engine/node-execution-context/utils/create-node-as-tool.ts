@@ -1,12 +1,12 @@
 import { DynamicStructuredTool } from '@langchain/core/tools';
-import type { IDataObject, INode, INodeType, FromAIArgument } from 'n8n-workflow';
+import type { IDataObject, INode, INodeType, FromAIArgument } from 'workflow';
 import {
 	generateZodSchema,
 	NodeOperationError,
 	traverseNodeParameters,
 	NodeHelpers,
 	nodeNameToToolName,
-} from 'n8n-workflow';
+} from 'workflow';
 import { z } from 'zod';
 
 export type CreateNodeAsToolOptions = {

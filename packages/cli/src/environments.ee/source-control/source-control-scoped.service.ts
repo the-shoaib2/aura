@@ -1,4 +1,4 @@
-import { ProjectRepository, WorkflowRepository } from '@n8n/db';
+import { ProjectRepository, WorkflowRepository } from '@aura/db';
 import {
 	type AuthenticatedRequest,
 	type CredentialsEntity,
@@ -6,11 +6,11 @@ import {
 	type Project,
 	type WorkflowEntity,
 	type WorkflowTagMapping,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import { hasGlobalScope } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { FindOptionsWhere } from '@n8n/typeorm';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import { hasGlobalScope } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { FindOptionsWhere } from '@aura/typeorm';
 
 import { SourceControlContext } from './types/source-control-context';
 

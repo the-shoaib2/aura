@@ -6,8 +6,8 @@ import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
-import type { INodeTypeDescription } from 'n8n-workflow';
-import { getResourcePermissions } from '@n8n/permissions';
+import type { INodeTypeDescription } from 'workflow';
+import { getResourcePermissions } from '@aura/permissions';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
 import { canvasEventBus } from '@/features/workflows/canvas/canvas.eventBus';
 
@@ -44,11 +44,11 @@ vi.mock('@/features/shared/nodeCreator/composables/useActionsGeneration', () => 
 	}),
 }));
 
-vi.mock('@n8n/permissions', () => ({
+vi.mock('@aura/permissions', () => ({
 	getResourcePermissions: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,
@@ -192,8 +192,8 @@ describe('useNodeCommands', () => {
 
 		it('should populate add node children with node types from generateMergedNodesAndActions', () => {
 			const mockNodes = [
-				createMockNodeType('n8n-nodes-base.httpRequest', 'HTTP Request'),
-				createMockNodeType('n8n-nodes-base.slack', 'Slack'),
+				createMockNodeType('aura-nodes-base.httpRequest', 'HTTP Request'),
+				createMockNodeType('aura-nodes-base.slack', 'Slack'),
 			];
 
 			mockGenerateMergedNodesAndActionsFn.mockReturnValue({
@@ -207,8 +207,8 @@ describe('useNodeCommands', () => {
 
 			const addCommand = commands.value.find((cmd) => cmd.id === 'add-node');
 			expect(addCommand?.children).toHaveLength(2);
-			expect(addCommand?.children?.[0].id).toBe('n8n-nodes-base.httpRequest');
-			expect(addCommand?.children?.[1].id).toBe('n8n-nodes-base.slack');
+			expect(addCommand?.children?.[0].id).toBe('aura-nodes-base.httpRequest');
+			expect(addCommand?.children?.[1].id).toBe('aura-nodes-base.slack');
 
 			expect(mockGenerateMergedNodesAndActionsFn).toHaveBeenCalled();
 		});
@@ -228,11 +228,11 @@ describe('useNodeCommands', () => {
 
 		it('should populate open node children with workflow nodes', () => {
 			mockEditableWorkflow.value.nodes = [
-				{ id: 'node-1', name: 'Start', type: 'n8n-nodes-base.start', typeVersion: 1 },
+				{ id: 'node-1', name: 'Start', type: 'aura-nodes-base.start', typeVersion: 1 },
 				{
 					id: 'node-2',
 					name: 'HTTP Request',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					typeVersion: 1,
 				},
 			];
@@ -303,7 +303,7 @@ describe('useNodeCommands', () => {
 	describe('root open node items', () => {
 		beforeEach(() => {
 			mockEditableWorkflow.value.nodes = [
-				{ id: 'node-1', name: 'Start', type: 'n8n-nodes-base.start', typeVersion: 1 },
+				{ id: 'node-1', name: 'Start', type: 'aura-nodes-base.start', typeVersion: 1 },
 			];
 		});
 

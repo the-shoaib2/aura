@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "0600a6c9-83c5-4bb8-a2ee-d763406b2f9f",
 			"name": "On clicking 'execute'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [160, 2200]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "a9204c1d-11da-4f54-9a52-82992815e893",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 300]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "839119da-4372-442d-8ba6-7d57b53b7825",
 			"name": "Code1",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 500]
 		},
@@ -46,7 +46,7 @@
 			},
 			"id": "c950a588-900b-4eba-a94b-566e27a5f5b6",
 			"name": "Compare Datasets",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [940, 260]
 		},
@@ -66,7 +66,7 @@
 			},
 			"id": "b4886a20-3c69-4233-a66b-91ed19693647",
 			"name": "Compare Datasets1",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [940, 540]
 		},
@@ -76,7 +76,7 @@
 			},
 			"id": "f0a7fbcf-226a-4b19-a946-5a0d8480bbb8",
 			"name": "Code2",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 680]
 		},
@@ -86,7 +86,7 @@
 			},
 			"id": "9d510249-3eff-4264-8f93-1959480fd100",
 			"name": "Code3",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 880]
 		},
@@ -106,7 +106,7 @@
 			},
 			"id": "80782eeb-bf05-402a-a169-a44d32e189d9",
 			"name": "Compare Datasets2",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [920, 800]
 		},
@@ -116,7 +116,7 @@
 			},
 			"id": "eb4e5ee5-5f9e-413e-bd80-11d75bff9f90",
 			"name": "Code4",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [620, 1100]
 		},
@@ -126,7 +126,7 @@
 			},
 			"id": "28d3f7f4-abba-4523-9b5b-1bcf47d6dbec",
 			"name": "Code5",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [620, 1300]
 		},
@@ -147,7 +147,7 @@
 			},
 			"id": "661c9b3e-f5c7-41a2-9f48-4e2648c657d4",
 			"name": "Compare Datasets3",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [900, 1180]
 		},
@@ -157,7 +157,7 @@
 			},
 			"id": "bf4f3286-db11-4075-a10a-6c19b60ef8cf",
 			"name": "Code6",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [620, 1480]
 		},
@@ -167,7 +167,7 @@
 			},
 			"id": "731b6fc7-0a57-449e-b9c4-54f1feeec9be",
 			"name": "Code7",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [620, 1680]
 		},
@@ -187,7 +187,7 @@
 			},
 			"id": "72fcf699-62b7-42c6-b6a8-4c8af514eaa7",
 			"name": "Compare Datasets4",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [880, 1580]
 		},
@@ -197,7 +197,7 @@
 			},
 			"id": "f75820ed-4f8f-49b7-af25-3bbd0691eafd",
 			"name": "Code8",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [620, 1860]
 		},
@@ -207,7 +207,7 @@
 			},
 			"id": "abe98ef5-0b3a-4e06-8a5d-f0554e42cf33",
 			"name": "Code9",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [620, 2060]
 		},
@@ -227,7 +227,7 @@
 			},
 			"id": "0f86d545-5612-4743-8d18-593e95b1b95d",
 			"name": "Compare Datasets5",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [880, 1960]
 		},
@@ -237,7 +237,7 @@
 			},
 			"id": "c516813c-a5c7-464e-887b-447e5177c137",
 			"name": "Code10",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 2440]
 		},
@@ -247,7 +247,7 @@
 			},
 			"id": "a0986a04-da68-47e7-9a06-f7abf83604c8",
 			"name": "Code11",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 2640]
 		},
@@ -268,7 +268,7 @@
 			},
 			"id": "a60fd8e1-962e-40e9-b00d-847ef424f2be",
 			"name": "Compare Datasets6",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [920, 2560]
 		},
@@ -278,7 +278,7 @@
 			},
 			"id": "80c1f595-9d0e-4df9-b927-4b1459e217c1",
 			"name": "Code12",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 2860]
 		},
@@ -288,7 +288,7 @@
 			},
 			"id": "d9764a14-2b8b-4a12-ad06-8a4f09685e62",
 			"name": "Code13",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [640, 3060]
 		},
@@ -309,7 +309,7 @@
 			},
 			"id": "e7c46e07-4f65-4ba8-8435-2b8284567bdd",
 			"name": "Compare Datasets7",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 1,
 			"position": [920, 2980]
 		},
@@ -317,7 +317,7 @@
 			"parameters": {},
 			"id": "7a8fd2b3-a55e-43a0-af3d-5621b42bbd06",
 			"name": "No Operation, do nothing",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1200, 200]
 		},
@@ -325,7 +325,7 @@
 			"parameters": {},
 			"id": "cfe4cf23-3329-4c7d-89f1-9e358eba9265",
 			"name": "No Operation, do nothing1",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1220, 480]
 		},
@@ -333,7 +333,7 @@
 			"parameters": {},
 			"id": "4b55d3ee-ada6-4b72-beee-f9c5bbf8531b",
 			"name": "No Operation, do nothing2",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1220, 680]
 		},
@@ -341,7 +341,7 @@
 			"parameters": {},
 			"id": "b55e855b-ad71-439b-aa76-f0cb38b137d1",
 			"name": "No Operation, do nothing3",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1200, 1020]
 		},
@@ -349,7 +349,7 @@
 			"parameters": {},
 			"id": "a64cbf1e-3701-498e-b4a7-47353f15d602",
 			"name": "No Operation, do nothing4",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1200, 1260]
 		},
@@ -357,7 +357,7 @@
 			"parameters": {},
 			"id": "52b6b2e2-c8f6-4b22-a469-da437d092a5a",
 			"name": "No Operation, do nothing5",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1160, 1520]
 		},
@@ -365,7 +365,7 @@
 			"parameters": {},
 			"id": "dca4c5e9-db21-4cf3-8de4-9b9e32166ae1",
 			"name": "No Operation, do nothing6",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1140, 1860]
 		},
@@ -373,7 +373,7 @@
 			"parameters": {},
 			"id": "ee8d917b-a338-468c-9cc0-fdfbf6a76445",
 			"name": "No Operation, do nothing7",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1180, 2440]
 		},
@@ -381,7 +381,7 @@
 			"parameters": {},
 			"id": "95d18d83-79e8-427b-8745-55e2256cb7f5",
 			"name": "No Operation, do nothing8",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1220, 2900]
 		},
@@ -389,7 +389,7 @@
 			"parameters": {},
 			"id": "e191ba81-bd88-4962-bd13-36ffd752336d",
 			"name": "No Operation, do nothing9",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1220, 3100]
 		}

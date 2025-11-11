@@ -2,11 +2,11 @@ import {
 	ChatHubLLMProvider,
 	PROVIDER_CREDENTIAL_TYPE_MAP,
 	type ChatHubConversationModel,
-} from '@n8n/api-types';
-import type { User, CredentialsEntity } from '@n8n/db';
-import { Service } from '@n8n/di';
-import type { EntityManager } from '@n8n/typeorm';
-import type { INodeCredentials } from 'n8n-workflow';
+} from '@aura/api-types';
+import type { User, CredentialsEntity } from '@aura/db';
+import { Service } from '@aura/di';
+import type { EntityManager } from '@aura/typeorm';
+import type { INodeCredentials } from 'workflow';
 
 import { CredentialsFinderService } from '@/credentials/credentials-finder.service';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
@@ -65,7 +65,7 @@ export class ChatHubCredentialsService {
 		provider: ChatHubConversationModel['provider'],
 		credentials: INodeCredentials,
 	): string | null {
-		if (provider === 'n8n' || provider === 'custom-agent') {
+		if (provider === 'aura' || provider === 'custom-agent') {
 			return null;
 		}
 

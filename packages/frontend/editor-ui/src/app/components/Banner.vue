@@ -5,7 +5,7 @@
 import { ref } from 'vue';
 
 import { ElTag } from 'element-plus';
-import { N8nButton, N8nIcon, N8nLink } from '@n8n/design-system';
+import { N8nButton, N8nIcon, N8nLink } from '@aura/design-system';
 interface Props {
 	theme: 'success' | 'danger';
 	message: string;

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { saveAs } from 'file-saver';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { ViewableMimeTypes } from '@n8n/api-types';
-import { useI18n } from '@n8n/i18n';
-import type { IBinaryKeyData } from 'n8n-workflow';
-import { N8nButton, N8nText } from '@n8n/design-system';
+import { ViewableMimeTypes } from '@aura/api-types';
+import { useI18n } from '@aura/i18n';
+import type { IBinaryKeyData } from 'workflow';
+import { N8nButton, N8nText } from '@aura/design-system';
 const { binaryData } = defineProps<{ binaryData: IBinaryKeyData[] }>();
 
 const emit = defineEmits<{ preview: [index: number, key: string | number] }>();

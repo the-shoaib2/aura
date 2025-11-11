@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "ac4d8085-b10f-4579-b08d-ecf13ae71fee",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [400, 520]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "c3c13247-1b60-4713-855e-bbddec8d02d0",
 			"name": "Code2",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [660, 460]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "d8a8f3de-86cc-4a46-ac6b-db67c3442280",
 			"name": "Code3",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [660, 600]
 		},
@@ -45,7 +45,7 @@
 			},
 			"id": "b4ca1dc3-c10a-48c0-aae8-f9b3a70efdd6",
 			"name": "Compare Datasets",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2,
 			"position": [880, 540]
 		},
@@ -65,7 +65,7 @@
 			},
 			"id": "6a15ebf3-3909-4533-ac31-aaad9ee46d88",
 			"name": "Compare Datasets1",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [880, 700]
 		},
@@ -75,7 +75,7 @@
 			},
 			"id": "dfaffaee-16e9-4e27-beb1-896370744c97",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1100, 600]
 		},
@@ -85,7 +85,7 @@
 			},
 			"id": "65afc865-9046-437d-bca8-840af9996860",
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1100, 760]
 		}

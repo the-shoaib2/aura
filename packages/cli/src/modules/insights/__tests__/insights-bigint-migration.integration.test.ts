@@ -1,5 +1,5 @@
-import { createTeamProject, createWorkflow, testDb, testModules } from '@n8n/backend-test-utils';
-import { Container } from '@n8n/di';
+import { createTeamProject, createWorkflow, testDb, testModules } from '@aura/backend-test-utils';
+import { Container } from '@aura/di';
 import { DateTime } from 'luxon';
 
 import { InsightsRawRepository } from '@/modules/insights/database/repositories/insights-raw.repository';

@@ -12,9 +12,9 @@ describe('LogStreamingStore', () => {
 
 	describe('addEventName', () => {
 		it('should add a new event name', () => {
-			logStreamingStore.addEventName('n8n.node.started');
-			logStreamingStore.addEventName('n8n.node.success');
-			logStreamingStore.addEventName('n8n.node.failed');
+			logStreamingStore.addEventName('aura.node.started');
+			logStreamingStore.addEventName('aura.node.success');
+			logStreamingStore.addEventName('aura.node.failed');
 		});
 	});
 
@@ -31,7 +31,7 @@ describe('LogStreamingStore', () => {
 			expect(logStreamingStore.items.destinationId.destination.label).toBe('Test Destination');
 			expect(logStreamingStore.items.destinationId.eventGroups).toHaveLength(2);
 			const nodeEventGroup = logStreamingStore.items.destinationId.eventGroups.find(
-				(group) => group.name === 'n8n.node',
+				(group) => group.name === 'aura.node',
 			);
 			expect(nodeEventGroup).toBeDefined();
 			expect(nodeEventGroup!.children).toHaveLength(3);
@@ -41,9 +41,9 @@ describe('LogStreamingStore', () => {
 
 	describe('setSelectedInGroup', () => {
 		it('should select the group and unselect all children', () => {
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node', true);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node', true);
 			const nodeEventGroup = logStreamingStore.items.destinationId.eventGroups.find(
-				(group) => group.name === 'n8n.node',
+				(group) => group.name === 'aura.node',
 			);
 			expect(nodeEventGroup).toBeDefined();
 			expect(nodeEventGroup!.selected).toBe(true);
@@ -51,22 +51,22 @@ describe('LogStreamingStore', () => {
 		});
 
 		it('should select an event in a group and mark the group as indeterminate', () => {
-			logStreamingStore.addSelectedEvent('destinationId', 'n8n.node.started');
+			logStreamingStore.addSelectedEvent('destinationId', 'aura.node.started');
 			const nodeEventGroup = logStreamingStore.items.destinationId.eventGroups.find(
-				(group) => group.name === 'n8n.node',
+				(group) => group.name === 'aura.node',
 			);
 			expect(nodeEventGroup).toBeDefined();
 			expect(nodeEventGroup!.indeterminate).toBe(true);
-			const startedEvent = nodeEventGroup!.children.find((e) => e.name === 'n8n.node.started');
+			const startedEvent = nodeEventGroup!.children.find((e) => e.name === 'aura.node.started');
 			expect(startedEvent?.selected).toBe(true);
 		});
 
 		it('should select the group if all children are selected', () => {
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.started', true);
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.success', true);
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.failed', true);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.started', true);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.success', true);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.failed', true);
 			const nodeEventGroup = logStreamingStore.items.destinationId.eventGroups.find(
-				(group) => group.name === 'n8n.node',
+				(group) => group.name === 'aura.node',
 			);
 			expect(nodeEventGroup).toBeDefined();
 			expect(nodeEventGroup!.selected).toBe(true);
@@ -75,11 +75,11 @@ describe('LogStreamingStore', () => {
 		});
 
 		it('should deselect the group if any child is deselected', () => {
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.success', true);
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.failed', true);
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.started', false);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.success', true);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.failed', true);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.started', false);
 			const nodeEventGroup = logStreamingStore.items.destinationId.eventGroups.find(
-				(group) => group.name === 'n8n.node',
+				(group) => group.name === 'aura.node',
 			);
 			expect(nodeEventGroup).toBeDefined();
 			expect(nodeEventGroup!.selected).toBe(false);
@@ -87,11 +87,11 @@ describe('LogStreamingStore', () => {
 		});
 
 		it('should unset the group indeterminate state if no children are selected', () => {
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.success', false);
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.failed', false);
-			logStreamingStore.setSelectedInGroup('destinationId', 'n8n.node.started', false);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.success', false);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.failed', false);
+			logStreamingStore.setSelectedInGroup('destinationId', 'aura.node.started', false);
 			const nodeEventGroup = logStreamingStore.items.destinationId.eventGroups.find(
-				(group) => group.name === 'n8n.node',
+				(group) => group.name === 'aura.node',
 			);
 			expect(nodeEventGroup).toBeDefined();
 			expect(nodeEventGroup!.selected).toBe(false);

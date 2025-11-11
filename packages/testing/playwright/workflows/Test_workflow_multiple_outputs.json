@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "64b27674-3da6-46ce-9008-e173182efa48",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"position": [16, -32],
 			"typeVersion": 1
 		},
@@ -85,7 +85,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.switch",
+			"type": "aura-nodes-base.switch",
 			"position": [192, -32],
 			"id": "3863cc7a-8f45-46fc-a60c-36aad5b12877",
 			"name": "Switch",
@@ -105,7 +105,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [480, -192],
 			"id": "85940094-4656-4cdf-a871-1b3b46421de3",
 			"name": "Only Item 1",
@@ -115,7 +115,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [480, -32],
 			"id": "a7f4e2b5-8cc9-4881-aa06-38601988740e",
 			"name": "Only Item 2",
@@ -125,7 +125,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"position": [480, 128],
 			"id": "7e44ad56-415a-4991-a70e-fea86c430031",
 			"name": "Only Item 3",

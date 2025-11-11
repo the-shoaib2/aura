@@ -1,5 +1,5 @@
-/* eslint-disable n8n-nodes-base/node-param-display-name-miscased */
-import type { ILoadOptionsFunctions } from 'n8n-workflow';
+/* eslint-disable aura-nodes-base/node-param-display-name-miscased */
+import type { ILoadOptionsFunctions } from 'workflow';
 
 import { searchReviews } from '../GenericFunctions';
 

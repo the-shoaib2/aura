@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, onMounted, onBeforeUnmount } from 'vue';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
 import { useUIStore } from '@/app/stores/ui.store';
 import type { ModalKey } from '@/Interface';
 import { APP_MODALS_ELEMENT_ID } from '@/app/constants';
 import { useStyles } from '@/app/composables/useStyles';
 
 import { ElDialog } from 'element-plus';
-import { N8nHeading, N8nSpinner } from '@n8n/design-system';
+import { N8nHeading, N8nSpinner } from '@aura/design-system';
 const props = withDefaults(
 	defineProps<{
 		name: ModalKey;

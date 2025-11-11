@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.asanaTrigger",
+	"node": "aura-nodes-base.asanaTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Productivity"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/asana/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/asana/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.asanatrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.asanatrigger/"
 			}
 		]
 	}

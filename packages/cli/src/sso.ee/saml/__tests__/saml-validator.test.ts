@@ -369,7 +369,7 @@ describe('saml-validator', () => {
 				<AttributeValue>4663f730-51c5-4490-a38a-19dda804865a</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.microsoft.com/identity/claims/displayname">
-				<AttributeValue>Danny n8n</AttributeValue>
+				<AttributeValue>Danny aura</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.microsoft.com/identity/claims/identityprovider">
 				<AttributeValue>mail</AttributeValue>
@@ -381,7 +381,7 @@ describe('saml-validator', () => {
 				<AttributeValue>Martini</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">
-				<AttributeValue>danny@n8n.io</AttributeValue>
+				<AttributeValue>danny@aura.io</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
 				<AttributeValue>random_name_id</AttributeValue>
@@ -393,7 +393,7 @@ describe('saml-validator', () => {
 				<AttributeValue>Martini</AttributeValue>
 			</Attribute>
 			<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn/upn">
-				<AttributeValue>danny@n8n.io</AttributeValue>
+				<AttributeValue>danny@aura.io</AttributeValue>
 			</Attribute>
 		</AttributeStatement>
 		<AuthnStatement AuthnInstant="2024-11-13T14:51:51.267Z"

@@ -1,12 +1,12 @@
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 export class DataTableComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	async createNewDataTable(name: string) {
-		const nameInput = this.n8n.dataTable.getNewDataTableNameInput();
+		const nameInput = this.aura.dataTable.getNewDataTableNameInput();
 		await nameInput.fill(name);
-		await this.n8n.dataTable.getNewDataTableConfirmButton().click();
+		await this.aura.dataTable.getNewDataTableConfirmButton().click();
 	}
 
 	/**
@@ -21,21 +21,21 @@ export class DataTableComposer {
 		source: 'empty-state' | 'header-dropdown',
 		fromDataTableTab: boolean = true,
 	) {
-		await this.n8n.projectComposer.createProject(projectName);
-		const { projectId } = await this.n8n.projectComposer.createProject();
+		await this.aura.projectComposer.createProject(projectName);
+		const { projectId } = await this.aura.projectComposer.createProject();
 
 		if (fromDataTableTab) {
-			await this.n8n.page.goto(`projects/${projectId}/datatables`);
+			await this.aura.page.goto(`projects/${projectId}/datatables`);
 		} else {
-			await this.n8n.page.goto(`projects/${projectId}`);
+			await this.aura.page.goto(`projects/${projectId}`);
 		}
 
 		if (source === 'empty-state') {
-			await this.n8n.dataTable.clickEmptyStateButton();
+			await this.aura.dataTable.clickEmptyStateButton();
 		} else {
-			await this.n8n.dataTable.clickAddDataTableAction(fromDataTableTab);
+			await this.aura.dataTable.clickAddDataTableAction(fromDataTableTab);
 		}
-		await this.n8n.dataTableComposer.createNewDataTable(dataTableName);
-		await this.n8n.page.goto(`projects/${projectId}/datatables`);
+		await this.aura.dataTableComposer.createNewDataTable(dataTableName);
+		await this.aura.page.goto(`projects/${projectId}/datatables`);
 	}
 }

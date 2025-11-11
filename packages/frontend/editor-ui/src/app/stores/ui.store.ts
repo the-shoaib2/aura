@@ -63,7 +63,7 @@ import {
 	COMMUNITY_PACKAGE_MANAGE_ACTIONS,
 } from '@/features/settings/communityNodes/communityNodes.constants';
 import { API_KEY_CREATE_OR_EDIT_MODAL_KEY } from '@/features/settings/apiKeys/apiKeys.constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import type {
 	XYPosition,
 	Modals,
@@ -80,10 +80,10 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { applyThemeToBody, getThemeOverride, isValidTheme } from './ui.utils';
 import { computed, ref } from 'vue';
-import type { IMenuItem } from '@n8n/design-system';
+import type { IMenuItem } from '@aura/design-system';
 import type { Connection } from '@vue-flow/core';
 import { useLocalStorage, useMediaQuery } from '@vueuse/core';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
 import type { ProjectSharingData } from '@/features/collaboration/projects/projects.types';
 import identity from 'lodash/identity';
 import * as modalRegistry from '@/app/moduleInitializer/modalRegistry';

@@ -5,7 +5,7 @@ import { vi } from 'vitest';
 import { mock } from 'vitest-mock-extended';
 
 import { VIEWS } from '@/app/constants';
-import type { ITemplatesWorkflowFull } from '@n8n/rest-api-client/api/templates';
+import type { ITemplatesWorkflowFull } from '@aura/rest-api-client/api/templates';
 import { Telemetry } from '@/app/plugins/telemetry';
 import type { NodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -28,7 +28,7 @@ export const testTemplate2 = mock<ITemplatesWorkflowFull>({
 		nodes: [
 			{
 				name: 'Telegram',
-				type: 'n8n-nodes-base.telegram',
+				type: 'aura-nodes-base.telegram',
 				typeVersion: 1,
 				position: [0, 0],
 				credentials: {

@@ -3,8 +3,8 @@ import type {
 	IWorkflowDataProxyAdditionalKeys,
 	IWorkflowExecuteAdditionalData,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
-import { LoggerProxy } from 'n8n-workflow';
+} from 'workflow';
+import { LoggerProxy } from 'workflow';
 
 import { PLACEHOLDER_EMPTY_EXECUTION_ID } from '@/constants';
 

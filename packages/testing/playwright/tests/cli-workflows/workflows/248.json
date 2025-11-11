@@ -12,7 +12,7 @@
 			},
 			"id": "79cfd86e-b657-49de-bc61-13415ffa725b",
 			"name": "Embeddings OpenAI6",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [660, 1480],
 			"credentials": {
@@ -41,7 +41,7 @@
 			},
 			"id": "76ee3d77-836c-417d-8d8e-9822cddfe936",
 			"name": "Default Data Loader2",
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1,
 			"position": [640, 1620]
 		},
@@ -52,7 +52,7 @@
 			},
 			"id": "1edacf5b-b7e4-4486-b98f-c78b338ac38e",
 			"name": "Token Splitter2",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [640, 1780]
 		},
@@ -84,7 +84,7 @@
 			},
 			"id": "e49fd92f-0a97-44a4-bbf5-c9aa94496ce1",
 			"name": "Check Vector Store Populated2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1020, 1340],
 			"executeOnce": true
@@ -117,7 +117,7 @@
 			},
 			"id": "b32d000c-ed3b-48c4-99b8-98cf72cc0a88",
 			"name": "Check Vector Store Retrieval2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1880, 1340],
 			"executeOnce": true
@@ -129,7 +129,7 @@
 			},
 			"id": "fe162de8-6021-4ae6-a874-01c831f79724",
 			"name": "Question and Answer Chain2",
-			"type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+			"type": "@aura/aura-nodes-langchain.chainRetrievalQa",
 			"typeVersion": 1.5,
 			"position": [2100, 1340]
 		},
@@ -142,7 +142,7 @@
 			},
 			"id": "93ff6597-cac9-4847-8efd-e1d03520b4b9",
 			"name": "OpenAI Chat Model2",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [2120, 1500],
 			"credentials": {
@@ -156,7 +156,7 @@
 			"parameters": {},
 			"id": "8985b238-8814-4aab-bbf3-801fb52c7757",
 			"name": "Vector Store Retriever2",
-			"type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+			"type": "@aura/aura-nodes-langchain.retrieverVectorStore",
 			"typeVersion": 1,
 			"position": [2100, 1620]
 		},
@@ -167,7 +167,7 @@
 			},
 			"id": "b2ef63c3-2e18-49dc-8241-ee71eabdd6cb",
 			"name": "Embeddings OpenAI7",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [2040, 1880],
 			"credentials": {
@@ -193,7 +193,7 @@
 			},
 			"id": "046edb77-d0cd-4e8b-9db3-706c249e557f",
 			"name": "Edit Fields2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [2440, 1340]
 		},
@@ -204,7 +204,7 @@
 			},
 			"id": "2f1e6e26-d43e-4254-acef-ea69cd628a9a",
 			"name": "Embeddings OpenAI8",
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1,
 			"position": [1520, 1540],
 			"credentials": {
@@ -220,7 +220,7 @@
 			},
 			"id": "11262bc3-f1db-4162-94c8-5f2d5b279900",
 			"name": "In-Memory Vector Store2",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1,
 			"position": [2040, 1760]
 		},
@@ -228,7 +228,7 @@
 			"parameters": {},
 			"id": "f4ff0f49-ac8b-4f7c-9cd4-90f0f9534772",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [180, 1340]
 		},
@@ -238,7 +238,7 @@
 			},
 			"id": "06c12027-e965-441d-b1d8-b711eabbeb02",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [400, 1340]
 		},
@@ -248,7 +248,7 @@
 			},
 			"id": "a2510c9b-bdaa-4fa0-85e6-aa7adef9194b",
 			"name": "Wait",
-			"type": "n8n-nodes-base.wait",
+			"type": "aura-nodes-base.wait",
 			"typeVersion": 1.1,
 			"position": [1240, 1340],
 			"webhookId": "a5bb0b0d-1527-414f-9abd-46e7f2be4f7f"
@@ -261,7 +261,7 @@
 			},
 			"id": "569a716b-c369-461e-b522-4f890af4fa34",
 			"name": "In-Memory Vector Store",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1,
 			"position": [660, 1340]
 		},
@@ -273,7 +273,7 @@
 			},
 			"id": "8e51401b-9cd7-4d53-9c34-99b6e82a7b06",
 			"name": "In-Memory Vector Store1",
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1,
 			"position": [1500, 1340]
 		}

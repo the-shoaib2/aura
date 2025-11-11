@@ -1,7 +1,7 @@
 import { captor, mock } from 'jest-mock-extended';
 import type { MqttClient, OnMessageCallback } from 'mqtt';
-import { returnJsonArray } from 'n8n-core';
-import type { ICredentialDataDecryptedObject, ITriggerFunctions } from 'n8n-workflow';
+import { returnJsonArray } from 'aura-core';
+import type { ICredentialDataDecryptedObject, ITriggerFunctions } from 'workflow';
 
 import { createClient } from '../GenericFunctions';
 import { MqttTrigger } from '../MqttTrigger.node';

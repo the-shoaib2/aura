@@ -7,8 +7,8 @@ import type {
 	ILoadOptionsFunctions,
 	INodeExecutionData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function brandfetchApiRequest(
 	this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions,

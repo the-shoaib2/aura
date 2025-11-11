@@ -3,7 +3,7 @@ import { useCanvasNode } from '../../../../../composables/useCanvasNode';
 import { computed } from 'vue';
 import type { CanvasNodeDefaultRender } from '../../../../../canvas.types';
 
-import { N8nTooltip } from '@n8n/design-system';
+import { N8nTooltip } from '@aura/design-system';
 defineProps<{
 	visible: boolean;
 }>();

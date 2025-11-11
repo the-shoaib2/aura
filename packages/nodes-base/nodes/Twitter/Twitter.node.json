@@ -1,34 +1,34 @@
 {
-	"node": "n8n-nodes-base.twitter",
+	"node": "aura-nodes-base.twitter",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/twitter/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/twitter/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.twitter/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.twitter/"
 			}
 		],
 		"generic": [
 			{
 				"label": "6 e-commerce workflows to power up your Shopify s",
 				"icon": "store",
-				"url": "https://n8n.io/blog/no-code-ecommerce-workflow-automations/"
+				"url": "https://aura.io/blog/no-code-ecommerce-workflow-automations/"
 			},
 			{
 				"label": "Automate your data processing pipeline in 9 steps",
 				"icon": "⚙️",
-				"url": "https://n8n.io/blog/automate-your-data-processing-pipeline-in-9-steps-with-n8n/"
+				"url": "https://aura.io/blog/automate-your-data-processing-pipeline-in-9-steps-with-aura/"
 			},
 			{
-				"label": "5 workflow automations for Mattermost that we love at n8n",
+				"label": "5 workflow automations for Mattermost that we love at aura",
 				"icon": "🤖",
-				"url": "https://n8n.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-n8n/"
+				"url": "https://aura.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-aura/"
 			}
 		]
 	},

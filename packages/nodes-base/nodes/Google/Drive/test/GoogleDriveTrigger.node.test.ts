@@ -1,7 +1,7 @@
 import { mockDeep } from 'jest-mock-extended';
 import moment from 'moment-timezone';
-import type { IPollFunctions, INode, ILoadOptionsFunctions, IDataObject } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IPollFunctions, INode, ILoadOptionsFunctions, IDataObject } from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import { GoogleDriveTrigger } from '../GoogleDriveTrigger.node';
 import * as GenericFunctions from '../v1/GenericFunctions';
@@ -33,7 +33,7 @@ describe('GoogleDriveTrigger', () => {
 		mockNode = {
 			id: 'test-node-id',
 			name: 'Google Drive Trigger Test',
-			type: 'n8n-nodes-base.googleDriveTrigger',
+			type: 'aura-nodes-base.googleDriveTrigger',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},

@@ -4,12 +4,12 @@ import { BasePage } from '../BasePage';
 
 /**
  * Sticky note component for canvas interactions.
- * Used within CanvasPage as `n8n.canvas.sticky.*`
+ * Used within CanvasPage as `aura.canvas.sticky.*`
  *
  * @example
  * // Access via canvas page
- * await n8n.canvas.sticky.addSticky();
- * await expect(n8n.canvas.sticky.getStickies()).toHaveCount(1);
+ * await aura.canvas.sticky.addSticky();
+ * await expect(aura.canvas.sticky.getStickies()).toHaveCount(1);
  */
 export class StickyComponent extends BasePage {
 	constructor(page: Page) {

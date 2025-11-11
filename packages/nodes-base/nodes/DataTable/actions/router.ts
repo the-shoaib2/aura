@@ -3,7 +3,7 @@ import type {
 	INodeExecutionData,
 	AllEntities,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import * as row from './row/Row.resource';
 import { DATA_TABLE_ID_FIELD } from '../common/fields';

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { setupUpload } from './MediaFunctions';
 
@@ -32,7 +32,7 @@ export const mediaFields: INodeProperties[] = [
 				resource: ['media'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-weak
+		// eslint-disable-next-line aura-nodes-base/node-param-description-weak
 		description: 'The operation to perform on the media',
 	},
 ];

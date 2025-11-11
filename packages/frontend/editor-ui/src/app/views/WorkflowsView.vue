@@ -71,12 +71,12 @@ import {
 	TemplateClickSource,
 	trackTemplatesClick,
 } from '@/experiments/utils';
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
-import { useI18n } from '@n8n/i18n';
-import { getResourcePermissions } from '@n8n/permissions';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { PathItem } from '@aura/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import { useI18n } from '@aura/i18n';
+import { getResourcePermissions } from '@aura/permissions';
+import { createEventBus } from '@aura/utils/event-bus';
 import debounce from 'lodash/debounce';
-import { type IUser, PROJECT_ROOT } from 'n8n-workflow';
+import { type IUser, PROJECT_ROOT } from 'workflow';
 import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef, watch } from 'vue';
 import { type LocationQueryRaw, useRoute, useRouter } from 'vue-router';
 
@@ -97,7 +97,7 @@ import {
 	N8nSelect,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const SEARCH_DEBOUNCE_TIME = 300;
 const FILTERS_DEBOUNCE_TIME = 100;
 

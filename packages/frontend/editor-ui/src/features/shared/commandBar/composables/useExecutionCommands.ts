@@ -1,17 +1,17 @@
 import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
-import { N8nIcon } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nIcon } from '@aura/design-system';
 import { useExecutionsStore } from '@/features/execution/executions/executions.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useToast } from '@/app/composables/useToast';
 import { useMessage } from '@/app/composables/useMessage';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { getResourcePermissions } from '@n8n/permissions';
+import { getResourcePermissions } from '@aura/permissions';
 import { EnterpriseEditionFeature, MODAL_CONFIRM, VIEWS } from '@/app/constants';
 import { executionRetryMessage } from '@/features/execution/executions/executions.utils';
-import type { ExecutionSummary, AnnotationVote } from 'n8n-workflow';
+import type { ExecutionSummary, AnnotationVote } from 'workflow';
 import type { CommandGroup, CommandBarItem } from '../types';
 
 const ITEM_ID = {

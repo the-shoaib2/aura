@@ -1,8 +1,8 @@
 import 'tsconfig-paths/register';
-import { testDb } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
-import { DataSource as Connection } from '@n8n/typeorm';
+import { testDb } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
+import { DataSource as Connection } from '@aura/typeorm';
 
 export default async () => {
 	const { type: dbType } = Container.get(GlobalConfig).database;

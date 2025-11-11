@@ -1,9 +1,9 @@
-import { GlobalConfig } from '@n8n/config';
-import { isAuthProviderType, SettingsRepository, type AuthProviderType } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { isAuthProviderType, SettingsRepository, type AuthProviderType } from '@aura/db';
+import { Container } from '@aura/di';
 
 import config from '@/config';
-import { Logger } from '@n8n/backend-common';
+import { Logger } from '@aura/backend-common';
 
 /**
  * Only one authentication method can be active at a time. This function sets

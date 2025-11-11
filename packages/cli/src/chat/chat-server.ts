@@ -1,5 +1,5 @@
-import { Service } from '@n8n/di';
-import { OnShutdown } from '@n8n/decorators';
+import { Service } from '@aura/di';
+import { OnShutdown } from '@aura/decorators';
 import type { Application } from 'express';
 import type { Server as HttpServer } from 'http';
 import { ServerResponse } from 'http';

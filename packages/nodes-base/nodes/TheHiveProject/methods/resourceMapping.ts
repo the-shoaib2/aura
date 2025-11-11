@@ -4,7 +4,7 @@ import type {
 	ILoadOptionsFunctions,
 	ResourceMapperField,
 	ResourceMapperFields,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	loadAlertStatus,

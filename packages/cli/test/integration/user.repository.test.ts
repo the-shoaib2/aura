@@ -1,6 +1,6 @@
-import { randomEmail, testDb } from '@n8n/backend-test-utils';
-import { ProjectRelationRepository, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { randomEmail, testDb } from '@aura/backend-test-utils';
+import { ProjectRelationRepository, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { createAdmin, createMember, createOwner } from './shared/db/users';
 

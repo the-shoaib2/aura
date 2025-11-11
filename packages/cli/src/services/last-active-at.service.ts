@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { UserRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import type { AuthenticatedRequest } from '@aura/db';
+import { UserRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import type { NextFunction, Response } from 'express';
 import { DateTime } from 'luxon';
 

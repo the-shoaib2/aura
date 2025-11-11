@@ -1,5 +1,5 @@
-import { isContainedWithin, Logger } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
+import { isContainedWithin, Logger } from '@aura/backend-common';
+import { Container } from '@aura/di';
 import uniqBy from 'lodash/uniqBy';
 import type {
 	CodexData,
@@ -15,8 +15,8 @@ import type {
 	INodeTypeNameVersion,
 	IVersionedNodeType,
 	KnownNodesAndCredentials,
-} from 'n8n-workflow';
-import { ApplicationError, isExpression, isSubNodeType, UnexpectedError } from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, isExpression, isSubNodeType, UnexpectedError } from 'workflow';
 import { realpathSync } from 'node:fs';
 import * as path from 'path';
 
@@ -54,7 +54,7 @@ export type Types = {
 };
 
 /**
- * Base class for loading n8n nodes and credentials from a directory.
+ * Base class for loading aura nodes and credentials from a directory.
  * Handles the common functionality for resolving paths, loading classes, and managing node and credential types.
  */
 export abstract class DirectoryLoader {

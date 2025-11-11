@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { hunterApiRequest, hunterApiRequestAllItems } from './GenericFunctions';
 
@@ -13,7 +13,7 @@ export class Hunter implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Hunter',
 		name: 'hunter',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:hunter.png',
 		group: ['output'],
 		version: 1,

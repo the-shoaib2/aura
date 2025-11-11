@@ -8,7 +8,7 @@ import {
 	type IWebhookFunctions,
 	type IWebhookResponseData,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getAutomaticSecret, taigaApiRequest } from './GenericFunctions';
 import type { Operations, Resources, WebhookPayload } from './types';
@@ -51,7 +51,7 @@ export class TaigaTrigger implements INodeType {
 				name: 'projectId',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getUserProjects',
 				},
@@ -177,7 +177,7 @@ export class TaigaTrigger implements INodeType {
 				const key = getAutomaticSecret(credentials);
 
 				const body: IDataObject = {
-					name: `n8n-webhook:${webhookUrl}`,
+					name: `aura-webhook:${webhookUrl}`,
 					url: webhookUrl,
 					key,
 					project: projectId,

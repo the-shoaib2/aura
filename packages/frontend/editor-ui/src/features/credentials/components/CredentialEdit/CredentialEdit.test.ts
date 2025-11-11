@@ -2,12 +2,12 @@ import { createComponentRenderer } from '@/__tests__/render';
 import CredentialEdit from './CredentialEdit.vue';
 import { createTestingPinia } from '@pinia/testing';
 import { CREDENTIAL_EDIT_MODAL_KEY } from '../../credentials.constants';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { retry, mockedStore } from '@/__tests__/utils';
 import { useCredentialsStore } from '../../credentials.store';
 import type { ICredentialsResponse } from '../../credentials.types';
 import { within } from '@testing-library/vue';
-import type { ICredentialType } from 'n8n-workflow';
+import type { ICredentialType } from 'workflow';
 
 const oAuth2Api: ICredentialType = {
 	name: 'oAuth2Api',
@@ -117,8 +117,8 @@ const oAuth2Api: ICredentialType = {
 			doNotInherit: true,
 		},
 	],
-	iconUrl: 'icons/n8n-nodes-base/dist/nodes/GraphQL/graphql.png',
-	supportedNodes: ['n8n-nodes-base.graphql', 'n8n-nodes-base.httpRequest'],
+	iconUrl: 'icons/aura-nodes-base/dist/nodes/GraphQL/graphql.png',
+	supportedNodes: ['aura-nodes-base.graphql', 'aura-nodes-base.httpRequest'],
 };
 
 const googleOAuth2Api: ICredentialType = {
@@ -158,7 +158,7 @@ const googleOAuth2Api: ICredentialType = {
 			default: 'body',
 		},
 	],
-	iconUrl: 'icons/n8n-nodes-base/dist/credentials/icons/Google.svg',
+	iconUrl: 'icons/aura-nodes-base/dist/credentials/icons/Google.svg',
 	supportedNodes: [],
 };
 
@@ -176,11 +176,11 @@ const googleBigQueryOAuth2Api: ICredentialType = {
 				'https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/drive',
 		},
 	],
-	iconUrl: 'icons/n8n-nodes-base/dist/nodes/Google/BigQuery/googleBigQuery.svg',
-	supportedNodes: ['n8n-nodes-base.googleBigQuery'],
+	iconUrl: 'icons/aura-nodes-base/dist/nodes/Google/BigQuery/googleBigQuery.svg',
+	supportedNodes: ['aura-nodes-base.googleBigQuery'],
 };
 
-vi.mock('@n8n/permissions', () => ({
+vi.mock('@aura/permissions', () => ({
 	getResourcePermissions: vi.fn(() => ({
 		credential: {
 			create: true,
@@ -286,7 +286,7 @@ describe('CredentialEdit', () => {
 			case: 'valid credential',
 			data: {
 				clientId: 'client_id',
-				clientSecret: '__n8n_EMPTY_VALUE_7b1af746-3729-4c60-9b9b-e08eb29e58da',
+				clientSecret: '__aura_EMPTY_VALUE_7b1af746-3729-4c60-9b9b-e08eb29e58da',
 			},
 		},
 		{
@@ -296,7 +296,7 @@ describe('CredentialEdit', () => {
 				authUrl: '',
 				accessTokenUrl: '',
 				clientId: 'client_id',
-				clientSecret: '__n8n_EMPTY_VALUE_7b1af746-3729-4c60-9b9b-e08eb29e58da',
+				clientSecret: '__aura_EMPTY_VALUE_7b1af746-3729-4c60-9b9b-e08eb29e58da',
 				scope: '',
 				authQueryParameters: '',
 				authentication: '',

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { jsonParse, UnexpectedError } from 'n8n-workflow';
+import { jsonParse, UnexpectedError } from 'workflow';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 

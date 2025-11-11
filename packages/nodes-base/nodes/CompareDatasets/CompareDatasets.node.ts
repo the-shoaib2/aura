@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	checkInput,
@@ -62,7 +62,7 @@ export class CompareDatasets implements INodeType {
 								name: 'field1',
 								type: 'string',
 								default: '',
-								// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+								// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 								placeholder: 'e.g. id',
 								hint: ' Enter the field name as text',
 								requiresDataPath: 'single',
@@ -72,7 +72,7 @@ export class CompareDatasets implements INodeType {
 								name: 'field2',
 								type: 'string',
 								default: '',
-								// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+								// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 								placeholder: 'e.g. id',
 								hint: ' Enter the field name as text',
 								requiresDataPath: 'single',
@@ -182,7 +182,7 @@ export class CompareDatasets implements INodeType {
 				name: 'exceptWhenMix',
 				type: 'string',
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+				// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 				placeholder: 'e.g. id, country',
 				hint: 'Enter the names of the input fields as text, separated by commas',
 				displayOptions: {

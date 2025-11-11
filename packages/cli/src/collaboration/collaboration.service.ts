@@ -1,10 +1,10 @@
-import type { PushPayload } from '@n8n/api-types';
-import type { User } from '@n8n/db';
-import { UserRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import type { Workflow } from 'n8n-workflow';
-import { UnexpectedError } from 'n8n-workflow';
+import type { PushPayload } from '@aura/api-types';
+import type { User } from '@aura/db';
+import { UserRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import type { Workflow } from 'workflow';
+import { UnexpectedError } from 'workflow';
 
 import { CollaborationState } from '@/collaboration/collaboration.state';
 import { Push } from '@/push';

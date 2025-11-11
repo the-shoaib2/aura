@@ -6,7 +6,7 @@ import type {
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type {
 	AllFieldsUi,

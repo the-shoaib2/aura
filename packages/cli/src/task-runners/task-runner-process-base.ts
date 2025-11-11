@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { LogScope, TaskRunnersConfig } from '@n8n/config';
-import { OnShutdown } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { LogScope, TaskRunnersConfig } from '@aura/config';
+import { OnShutdown } from '@aura/decorators';
+import { Service } from '@aura/di';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 

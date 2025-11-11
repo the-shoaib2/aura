@@ -7,12 +7,12 @@ import {
 	randomCredentialPayloadWithOauthTokenData,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { Project, User, ListQueryDb } from '@n8n/db';
-import { GLOBAL_MEMBER_ROLE, ProjectRepository, SharedCredentialsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { ProjectRole } from '@n8n/permissions';
-import { In } from '@n8n/typeorm';
+} from '@aura/backend-test-utils';
+import type { Project, User, ListQueryDb } from '@aura/db';
+import { GLOBAL_MEMBER_ROLE, ProjectRepository, SharedCredentialsRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import type { ProjectRole } from '@aura/permissions';
+import { In } from '@aura/typeorm';
 
 import config from '@/config';
 import { CredentialsService } from '@/credentials/credentials.service';

@@ -1,6 +1,6 @@
-import type { IExecutionBase } from '@n8n/db';
-import type { IWorkflowBase, JsonObject } from 'n8n-workflow';
-import { EventMessageTypeNames } from 'n8n-workflow';
+import type { IExecutionBase } from '@aura/db';
+import type { IWorkflowBase, JsonObject } from 'workflow';
+import { EventMessageTypeNames } from 'workflow';
 
 import type { EventNamesWorkflowType } from '.';
 import { AbstractEventMessage, isEventMessageOptionsWithType } from './abstract-event-message';

@@ -11,7 +11,7 @@ import {
 	NodeConnectionTypes,
 	NodeHelpers,
 	WORKFLOW_TOOL_LANGCHAIN_NODE_TYPE,
-} from 'n8n-workflow';
+} from 'workflow';
 
 const nodeFactory = (data: Partial<INodeUi> = {}): INodeUi => ({
 	id: faker.string.uuid(),
@@ -187,7 +187,7 @@ describe('useContextMenu', () => {
 
 	it('should disable execute step option for sub-nodes (AI tool nodes)', () => {
 		const { open, isOpen, actions, targetNodeIds } = useContextMenu();
-		const subNode = nodeFactory({ type: 'n8n-nodes-base.hackerNewsTool' });
+		const subNode = nodeFactory({ type: 'aura-nodes-base.hackerNewsTool' });
 		vi.spyOn(workflowsStore, 'getNodeById').mockReturnValue(subNode);
 		vi.spyOn(NodeHelpers, 'isExecutable').mockReturnValueOnce(false);
 		open(mockEvent, { source: 'node-right-click', nodeId: subNode.id });

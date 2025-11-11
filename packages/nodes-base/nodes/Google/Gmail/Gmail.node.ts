@@ -1,5 +1,5 @@
-import type { INodeTypeBaseDescription, IVersionedNodeType } from 'n8n-workflow';
-import { VersionedNodeType } from 'n8n-workflow';
+import type { INodeTypeBaseDescription, IVersionedNodeType } from 'workflow';
+import { VersionedNodeType } from 'workflow';
 
 import { GmailV1 } from './v1/GmailV1.node';
 import { GmailV2 } from './v2/GmailV2.node';

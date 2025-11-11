@@ -3,20 +3,20 @@ import { ref, computed, onMounted } from 'vue';
 import snakeCase from 'lodash/snakeCase';
 import { useSessionStorage } from '@vueuse/core';
 
-import { N8nButton, N8nCircleLoader, N8nIcon, N8nInput, N8nTooltip } from '@n8n/design-system';
-import { randomInt } from 'n8n-workflow';
-import type { CodeExecutionMode, INodeExecutionData } from 'n8n-workflow';
+import { N8nButton, N8nCircleLoader, N8nIcon, N8nInput, N8nTooltip } from '@aura/design-system';
+import { randomInt } from 'workflow';
+import type { CodeExecutionMode, INodeExecutionData } from 'workflow';
 
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import type { INodeUi, Schema } from '@/Interface';
 import { generateCodeForPrompt } from '@/features/ai/assistant/assistant.api';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useDataSchema } from '@/app/composables/useDataSchema';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useMessage } from '@/app/composables/useMessage';
 import { useToast } from '@/app/composables/useToast';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { executionDataToJson } from '@/app/utils/nodeTypesUtils';
 import {
@@ -279,7 +279,7 @@ onMounted(() => {
 					data-test-id="ask-ai-prompt-counter"
 					v-text="`${prompt.length} / ${ASK_AI_MAX_PROMPT_LENGTH}`"
 				/>
-				<a href="https://docs.n8n.io/code-examples/ai-code" target="_blank" :class="$style.help">
+				<a href="https://docs.aura.io/code-examples/ai-code" target="_blank" :class="$style.help">
 					<N8nIcon icon="circle-help" color="text-light" size="large" />{{
 						i18n.baseText('codeNodeEditor.askAi.help')
 					}}

@@ -1,11 +1,11 @@
-import type { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
-import { SettingsRepository } from '@n8n/db';
+import type { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
+import { SettingsRepository } from '@aura/db';
 import type { NextFunction, Request, Response } from 'express';
 import { mock } from 'jest-mock-extended';
-import { Cipher, UnrecognizedCredentialTypeError } from 'n8n-core';
-import type { ICredentialType } from 'n8n-workflow';
+import { Cipher, UnrecognizedCredentialTypeError } from 'aura-core';
+import type { ICredentialType } from 'workflow';
 
 import type { CredentialTypes } from '@/credential-types';
 import { CredentialsOverwrites } from '@/credentials-overwrites';

@@ -3,7 +3,7 @@ import { onBeforeMount, ref, watchEffect, computed, h } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import type { IWorkflowDb, UserAction } from '@/Interface';
 import { VIEWS, WORKFLOW_HISTORY_VERSION_RESTORE } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import type {
 	WorkflowHistoryActionTypes,
@@ -11,19 +11,19 @@ import type {
 	WorkflowHistoryRequestParams,
 	WorkflowHistory,
 	WorkflowVersion,
-} from '@n8n/rest-api-client/api/workflowHistory';
+} from '@aura/rest-api-client/api/workflowHistory';
 import WorkflowHistoryList from '../components/WorkflowHistoryList.vue';
 import WorkflowHistoryContent from '../components/WorkflowHistoryContent.vue';
 import { useWorkflowHistoryStore } from '../workflowHistory.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { telemetry } from '@/app/plugins/telemetry';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { getResourcePermissions } from '@n8n/permissions';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { getResourcePermissions } from '@aura/permissions';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
-import type { IUser } from 'n8n-workflow';
+import type { IUser } from 'workflow';
 
-import { N8nBadge, N8nButton, N8nHeading } from '@n8n/design-system';
+import { N8nBadge, N8nButton, N8nHeading } from '@aura/design-system';
 type WorkflowHistoryActionRecord = {
 	[K in Uppercase<WorkflowHistoryActionTypes[number]>]: Lowercase<K>;
 };

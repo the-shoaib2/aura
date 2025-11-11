@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { jsonParse, NodeApiError } from 'workflow';
 
 import { loadOptions } from './methods';
 import { versionDescription } from './VersionDescription';

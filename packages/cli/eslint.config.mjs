@@ -1,5 +1,5 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
-import { nodeConfig } from '@n8n/eslint-config/node';
+import { nodeConfig } from '@aura/eslint-config/node';
 
 export default defineConfig(
 	globalIgnores(['scripts/**/*.mjs', 'jest.config*.js']),
@@ -8,11 +8,11 @@ export default defineConfig(
 		rules: {
 			'unicorn/filename-case': ['error', { case: 'kebabCase' }],
 
-			'n8n-local-rules/no-dynamic-import-template': 'error',
-			'n8n-local-rules/misplaced-n8n-typeorm-import': 'error',
-			'n8n-local-rules/no-type-unsafe-event-emitter': 'error',
+			'aura-local-rules/no-dynamic-import-template': 'error',
+			'aura-local-rules/misplaced-aura-typeorm-import': 'error',
+			'aura-local-rules/no-type-unsafe-event-emitter': 'error',
 			// Disabled until we have a plan on how to fix these issues long term
-			'n8n-local-rules/no-import-enterprise-edition': 'off',
+			'aura-local-rules/no-import-enterprise-edition': 'off',
 
 			// TODO: Remove this
 			'@typescript-eslint/ban-ts-comment': ['warn', { 'ts-ignore': true }],
@@ -64,13 +64,13 @@ export default defineConfig(
 			'./src/**/__tests__/**/*.ts',
 		],
 		rules: {
-			'n8n-local-rules/misplaced-n8n-typeorm-import': 'off',
+			'aura-local-rules/misplaced-aura-typeorm-import': 'off',
 		},
 	},
 	{
 		files: ['./test/**/*.ts', './src/**/__tests__/**/*.ts'],
 		rules: {
-			'n8n-local-rules/no-type-unsafe-event-emitter': 'off',
+			'aura-local-rules/no-type-unsafe-event-emitter': 'off',
 		},
 	},
 	{
@@ -91,22 +91,22 @@ export default defineConfig(
 		rules: {
 			'id-denylist': 'warn',
 			'prefer-const': 'warn',
-			'n8n-local-rules/no-dynamic-import-template': 'off',
+			'aura-local-rules/no-dynamic-import-template': 'off',
 			'import-x/no-duplicates': 'warn',
 			'import-x/no-default-export': 'warn',
 			'@typescript-eslint/no-unsafe-return': 'warn',
 			'@typescript-eslint/no-unsafe-argument': 'warn',
 			'@typescript-eslint/no-unused-expressions': 'warn',
 			'@typescript-eslint/restrict-template-expressions': 'warn',
-			'n8n-local-rules/no-uncaught-json-parse': 'warn',
+			'aura-local-rules/no-uncaught-json-parse': 'warn',
 		},
 	},
 	{
 		files: ['**/*.module.ts'],
 
 		rules: {
-			'n8n-local-rules/no-top-level-relative-imports-in-backend-module': 'error',
-			'n8n-local-rules/no-constructor-in-backend-module': 'error',
+			'aura-local-rules/no-top-level-relative-imports-in-backend-module': 'error',
+			'aura-local-rules/no-constructor-in-backend-module': 'error',
 		},
 	},
 );

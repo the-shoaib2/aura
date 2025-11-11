@@ -5,16 +5,16 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { PLACEHOLDER_EMPTY_WORKFLOW_ID, WORKFLOW_SETTINGS_MODAL_KEY } from '@/app/constants';
-import type { IWorkflowSettings } from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+import type { IWorkflowSettings } from 'workflow';
+import { deepCopy } from 'workflow';
 import { useNpsSurveyStore } from '@/app/stores/npsSurvey.store';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useWorkflowSaving } from '@/app/composables/useWorkflowSaving';
-import type { IconColor } from '@n8n/design-system';
-import { type IAccordionItem } from '@n8n/design-system/components/N8nInfoAccordion/InfoAccordion.vue';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import type { IconColor } from '@aura/design-system';
+import { type IAccordionItem } from '@aura/design-system/components/N8nInfoAccordion/InfoAccordion.vue';
+import { type IconName } from '@aura/design-system/components/N8nIcon/icons';
 
-import { N8nInfoAccordion, N8nLink, N8nTooltip } from '@n8n/design-system';
+import { N8nInfoAccordion, N8nLink, N8nTooltip } from '@aura/design-system';
 interface IWorkflowSaveSettings {
 	saveFailedExecutions: boolean;
 	saveSuccessfulExecutions: boolean;

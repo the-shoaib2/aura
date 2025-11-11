@@ -1,9 +1,9 @@
-import { CreateVariableRequestDto } from '@n8n/api-types';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { VariablesRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { IsNull } from '@n8n/typeorm';
+import { CreateVariableRequestDto } from '@aura/api-types';
+import type { AuthenticatedRequest } from '@aura/db';
+import { VariablesRepository } from '@aura/db';
+import { Container } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { IsNull } from '@aura/typeorm';
 import type { Response } from 'express';
 
 import {

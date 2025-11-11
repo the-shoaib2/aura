@@ -1,8 +1,8 @@
-import type { IAuthenticateGeneric, ICredentialType, INodeProperties, Icon } from 'n8n-workflow';
+import type { IAuthenticateGeneric, ICredentialType, INodeProperties, Icon } from 'workflow';
 
-// eslint-disable-next-line n8n-nodes-base/cred-class-name-unsuffixed
+// eslint-disable-next-line aura-nodes-base/cred-class-name-unsuffixed
 export class HttpBearerAuth implements ICredentialType {
-	// eslint-disable-next-line n8n-nodes-base/cred-class-field-name-unsuffixed
+	// eslint-disable-next-line aura-nodes-base/cred-class-field-name-unsuffixed
 	name = 'httpBearerAuth';
 
 	displayName = 'Bearer Auth';
@@ -11,7 +11,7 @@ export class HttpBearerAuth implements ICredentialType {
 
 	genericAuth = true;
 
-	icon: Icon = 'node:n8n-nodes-base.httpRequest';
+	icon: Icon = 'node:aura-nodes-base.httpRequest';
 
 	properties: INodeProperties[] = [
 		{

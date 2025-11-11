@@ -2,13 +2,13 @@
 
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { PushMessage, PushType } from '@n8n/api-types';
-import { Logger, ModuleRegistry } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { ExecutionRepository, WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { ExternalSecretsProxy, WorkflowExecute } from 'n8n-core';
-import { UnexpectedError, Workflow } from 'n8n-workflow';
+import type { PushMessage, PushType } from '@aura/api-types';
+import { Logger, ModuleRegistry } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { ExecutionRepository, WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { ExternalSecretsProxy, WorkflowExecute } from 'aura-core';
+import { UnexpectedError, Workflow } from 'workflow';
 import type {
 	IDataObject,
 	IExecuteData,
@@ -30,7 +30,7 @@ import type {
 	EnvProviderState,
 	ExecuteWorkflowData,
 	RelatedExecution,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { ActiveExecutions } from '@/active-executions';
 import { CredentialsHelper } from '@/credentials-helper';

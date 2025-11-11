@@ -1,5 +1,5 @@
 {
-	"name": "Demo: RAG in n8n",
+	"name": "Demo: RAG in aura",
 	"meta": {
 		"templateId": "rag-starter-template"
 	},
@@ -19,7 +19,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.formTrigger",
+			"type": "aura-nodes-base.formTrigger",
 			"typeVersion": 2.2,
 			"position": [-128, 0],
 			"id": "f7a656ec-83fc-4ed2-a089-57a9def662b7",
@@ -30,7 +30,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1.2,
 			"position": [528, 480],
 			"id": "6ea78663-cf2f-4f2d-8e68-43047c2afd87",
@@ -47,7 +47,7 @@
 				"dataType": "binary",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"type": "@aura/aura-nodes-langchain.documentDefaultDataLoader",
 			"typeVersion": 1.1,
 			"position": [320, 160],
 			"id": "94aecac0-03f9-4915-932b-d14a2576607b",
@@ -55,12 +55,12 @@
 		},
 		{
 			"parameters": {
-				"content": "### Readme\nLoad your data into a vector database with the 📚 **Load Data** flow, and then use your data as chat context with the 🐕 **Retriever** flow.\n\n**Quick start**\n1. Click on the `Execute Workflow` button to run the 📚 **Load Data** flow.\n2. Click on `Open Chat` button to run the 🐕 **Retriever** flow. Then ask a question about content from your document(s)\n\n\nFor more info, check [our docs on RAG in n8n](https://docs.n8n.io/advanced-ai/rag-in-n8n/).",
+				"content": "### Readme\nLoad your data into a vector database with the 📚 **Load Data** flow, and then use your data as chat context with the 🐕 **Retriever** flow.\n\n**Quick start**\n1. Click on the `Execute Workflow` button to run the 📚 **Load Data** flow.\n2. Click on `Open Chat` button to run the 🐕 **Retriever** flow. Then ask a question about content from your document(s)\n\n\nFor more info, check [our docs on RAG in aura](https://docs.aura.io/advanced-ai/rag-in-aura/).",
 				"height": 300,
 				"width": 440,
 				"color": 4
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [-656, -64],
 			"typeVersion": 1,
 			"id": "0d07742b-0b36-4c2e-990c-266cbe6e2d4d",
@@ -73,7 +73,7 @@
 				"width": 700,
 				"color": 7
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [-176, -64],
 			"typeVersion": 1,
 			"id": "d19d04f3-5231-4e47-bed7-9f24a4a8f582",
@@ -89,7 +89,7 @@
 					"cachedResultName": "vector_store_key"
 				}
 			},
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1.2,
 			"position": [64, 0],
 			"id": "bf50a11f-ca6a-4e04-a6d2-42fee272b260",
@@ -106,7 +106,7 @@
 					"value": "vector_store_key"
 				}
 			},
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1.2,
 			"position": [944, 208],
 			"id": "09c0db62-5413-440e-8c13-fb6bb66d9b6a",
@@ -116,7 +116,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 2,
 			"position": [944, -16],
 			"id": "579aed76-9644-42d1-ac13-7369059ff1c2",
@@ -126,7 +126,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.chatTrigger",
+			"type": "@aura/aura-nodes-langchain.chatTrigger",
 			"typeVersion": 1.1,
 			"position": [720, -16],
 			"id": "9c30de61-935a-471f-ae88-ec5f67beeefc",
@@ -142,7 +142,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [720, 208],
 			"id": "b5aa8942-9cd5-4c2f-bd77-7a0ceb921bac",
@@ -161,7 +161,7 @@
 				"width": 680,
 				"color": 7
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [608, -64],
 			"typeVersion": 1,
 			"id": "28bc73a1-e64a-47bf-ac1c-ffe644894ea5",
@@ -174,7 +174,7 @@
 				"width": 320,
 				"color": 4
 			},
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"position": [672, 448],
 			"typeVersion": 1,
 			"id": "0cf8c647-418c-4d1a-8952-766145afca72",

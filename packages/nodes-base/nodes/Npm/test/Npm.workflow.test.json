@@ -4,7 +4,7 @@
 		{
 			"parameters": {},
 			"name": "Execute Workflow",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [620, 440]
 		},
@@ -12,10 +12,10 @@
 			"parameters": {
 				"resource": "distTag",
 				"operation": "getMany",
-				"packageName": "n8n"
+				"packageName": "aura"
 			},
 			"name": "Get All dist-tags",
-			"type": "n8n-nodes-base.npm",
+			"type": "aura-nodes-base.npm",
 			"credentials": {
 				"npmApi": {
 					"id": "1"
@@ -26,10 +26,10 @@
 			"parameters": {
 				"resource": "package",
 				"operation": "getVersions",
-				"packageName": "n8n"
+				"packageName": "aura"
 			},
 			"name": "Get Versions",
-			"type": "n8n-nodes-base.npm",
+			"type": "aura-nodes-base.npm",
 			"credentials": {
 				"npmApi": {
 					"id": "1"
@@ -40,11 +40,11 @@
 			"parameters": {
 				"resource": "package",
 				"operation": "getMetadata",
-				"packageName": "n8n",
+				"packageName": "aura",
 				"packageVersion": "latest"
 			},
 			"name": "Get Metadata",
-			"type": "n8n-nodes-base.npm",
+			"type": "aura-nodes-base.npm",
 			"credentials": {
 				"npmApi": {
 					"id": "1"
@@ -84,7 +84,7 @@
 		"Get Metadata": [
 			{
 				"json": {
-					"name": "n8n",
+					"name": "aura",
 					"version": "0.225.2",
 					"rest": "of the properties"
 				}

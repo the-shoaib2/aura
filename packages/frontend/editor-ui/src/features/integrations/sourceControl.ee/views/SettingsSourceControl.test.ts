@@ -91,7 +91,7 @@ describe('SettingsSourceControl', () => {
 		expect(connectButton).toBeDisabled();
 
 		await userEvent.click(repoUrlInput);
-		await userEvent.type(repoUrlInput, '.com:john/n8n-data.git');
+		await userEvent.type(repoUrlInput, '.com:john/aura-data.git');
 		await userEvent.tab();
 
 		await waitFor(() => expect(connectButton).toBeEnabled());
@@ -227,7 +227,7 @@ describe('SettingsSourceControl', () => {
 				['root@192.168.1.1/repo.git', true],
 				['http://github.com/user/repository', false],
 				['https://github.com/user/repository', false],
-				['git@gitlab.com:something.net/n8n.git', true],
+				['git@gitlab.com:something.net/aura.git', true],
 			])('%s', async (url: string, isValid: boolean) => {
 				await nextTick();
 				const { container, queryByText } = renderComponent({

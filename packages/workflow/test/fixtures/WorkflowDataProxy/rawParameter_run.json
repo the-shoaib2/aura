@@ -53,7 +53,7 @@
 									"tags": { "packageName": "cli" },
 									"extra": { "workflowId": "1.2" },
 									"message": "Workflow does not exist.",
-									"stack": "Error: Workflow does not exist.\n    at getWorkflowData (/Users/miloradfilipovic/workspace/n8n/packages/cli/src/workflow-execute-additional-data.ts:124:10)\n    at Object.executeWorkflow (/Users/miloradfilipovic/workspace/n8n/packages/cli/src/workflow-execute-additional-data.ts:155:4)\n    at ExecuteContext.executeWorkflow (/Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/node-execution-context/base-execute-context.ts:120:18)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/ExecuteWorkflow/ExecuteWorkflow/ExecuteWorkflow.node.ts:397:50)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1097:8)\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1503:27\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:2064:11"
+									"stack": "Error: Workflow does not exist.\n    at getWorkflowData (/Users/miloradfilipovic/workspace/aura/packages/cli/src/workflow-execute-additional-data.ts:124:10)\n    at Object.executeWorkflow (/Users/miloradfilipovic/workspace/aura/packages/cli/src/workflow-execute-additional-data.ts:155:4)\n    at ExecuteContext.executeWorkflow (/Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/node-execution-context/base-execute-context.ts:120:18)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/ExecuteWorkflow/ExecuteWorkflow/ExecuteWorkflow.node.ts:397:50)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1097:8)\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1503:27\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:2064:11"
 								}
 							}
 						]
@@ -67,7 +67,7 @@
 				"tags": { "packageName": "cli" },
 				"extra": { "workflowId": "1.2" },
 				"message": "Workflow does not exist.",
-				"stack": "Error: Workflow does not exist.\n    at getWorkflowData (/Users/miloradfilipovic/workspace/n8n/packages/cli/src/workflow-execute-additional-data.ts:124:10)\n    at Object.executeWorkflow (/Users/miloradfilipovic/workspace/n8n/packages/cli/src/workflow-execute-additional-data.ts:155:4)\n    at ExecuteContext.executeWorkflow (/Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/node-execution-context/base-execute-context.ts:120:18)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/ExecuteWorkflow/ExecuteWorkflow/ExecuteWorkflow.node.ts:397:50)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1097:8)\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1503:27\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:2064:11"
+				"stack": "Error: Workflow does not exist.\n    at getWorkflowData (/Users/miloradfilipovic/workspace/aura/packages/cli/src/workflow-execute-additional-data.ts:124:10)\n    at Object.executeWorkflow (/Users/miloradfilipovic/workspace/aura/packages/cli/src/workflow-execute-additional-data.ts:155:4)\n    at ExecuteContext.executeWorkflow (/Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/node-execution-context/base-execute-context.ts:120:18)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/ExecuteWorkflow/ExecuteWorkflow/ExecuteWorkflow.node.ts:397:50)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1097:8)\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1503:27\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:2064:11"
 			}
 		},
 		"executionData": {
@@ -95,7 +95,7 @@
 							"mode": "once",
 							"options": {}
 						},
-						"type": "n8n-nodes-base.executeWorkflow",
+						"type": "aura-nodes-base.executeWorkflow",
 						"typeVersion": 1.2,
 						"position": [120, -100],
 						"id": "62717ac7-614d-4e3f-b2ec-1e28688068c4",

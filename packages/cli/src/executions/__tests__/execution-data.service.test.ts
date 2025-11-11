@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import { NodeOperationError } from 'n8n-workflow';
-import type { INode, WorkflowExecuteMode } from 'n8n-workflow';
+import { NodeOperationError } from 'workflow';
+import type { INode, WorkflowExecuteMode } from 'workflow';
 
 import { ExecutionDataService } from '../execution-data.service';
 

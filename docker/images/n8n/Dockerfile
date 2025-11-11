@@ -1,12 +1,12 @@
 ARG NODE_VERSION=22.21.0
-ARG N8N_VERSION=snapshot
+ARG aura_VERSION=snapshot
 ARG LAUNCHER_VERSION=1.4.1
 ARG TARGETPLATFORM
 
 # ==============================================================================
 # STAGE 1: System Dependencies & Base Setup
 # ==============================================================================
-FROM n8nio/base:${NODE_VERSION} AS system-deps
+FROM auraio/base:${NODE_VERSION} AS system-deps
 
 # ==============================================================================
 # STAGE 2: Application Artifact Processor
@@ -29,8 +29,8 @@ RUN set -e; \
         *) echo "Unsupported platform: $TARGETPLATFORM" && exit 1 ;; \
     esac; \
     mkdir /launcher-temp && cd /launcher-temp; \
-    wget -q "https://github.com/n8n-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz"; \
-    wget -q "https://github.com/n8n-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz.sha256"; \
+    wget -q "https://github.com/aura-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz"; \
+    wget -q "https://github.com/aura-io/task-runner-launcher/releases/download/${LAUNCHER_VERSION}/task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz.sha256"; \
     echo "$(cat task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz.sha256) task-runner-launcher-${LAUNCHER_VERSION}-linux-${ARCH_NAME}.tar.gz" > checksum.sha256; \
     sha256sum -c checksum.sha256; \
     mkdir -p /launcher-bin; \
@@ -42,34 +42,34 @@ RUN set -e; \
 # ==============================================================================
 FROM system-deps AS runtime
 
-ARG N8N_VERSION
-ARG N8N_RELEASE_TYPE=dev
+ARG aura_VERSION
+ARG aura_RELEASE_TYPE=dev
 ENV NODE_ENV=production
-ENV N8N_RELEASE_TYPE=${N8N_RELEASE_TYPE}
+ENV aura_RELEASE_TYPE=${aura_RELEASE_TYPE}
 ENV NODE_ICU_DATA=/usr/local/lib/node_modules/full-icu
 ENV SHELL=/bin/sh
 
 WORKDIR /home/node
 
-COPY --from=app-artifact-processor /app /usr/local/lib/node_modules/n8n
+COPY --from=app-artifact-processor /app /usr/local/lib/node_modules/aura
 COPY --from=launcher-downloader /launcher-bin/* /usr/local/bin/
-COPY docker/images/n8n/docker-entrypoint.sh /
-COPY docker/images/n8n/n8n-task-runners.json /etc/n8n-task-runners.json
+COPY docker/images/aura/docker-entrypoint.sh /
+COPY docker/images/aura/aura-task-runners.json /etc/aura-task-runners.json
 
-RUN cd /usr/local/lib/node_modules/n8n && \
+RUN cd /usr/local/lib/node_modules/aura && \
 		npm rebuild sqlite3 && \
-		ln -s /usr/local/lib/node_modules/n8n/bin/n8n /usr/local/bin/n8n && \
-    mkdir -p /home/node/.n8n && \
+		ln -s /usr/local/lib/node_modules/aura/bin/aura /usr/local/bin/aura && \
+    mkdir -p /home/node/.aura && \
     chown -R node:node /home/node
 
-RUN cd /usr/local/lib/node_modules/n8n/node_modules/pdfjs-dist && npm install @napi-rs/canvas
+RUN cd /usr/local/lib/node_modules/aura/node_modules/pdfjs-dist && npm install @napi-rs/canvas
 
 EXPOSE 5678/tcp
 USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
 
-LABEL org.opencontainers.image.title="n8n" \
+LABEL org.opencontainers.image.title="aura" \
       org.opencontainers.image.description="Workflow Automation Tool" \
-      org.opencontainers.image.source="https://github.com/n8n-io/n8n" \
-      org.opencontainers.image.url="https://n8n.io" \
-      org.opencontainers.image.version=${N8N_VERSION}
+      org.opencontainers.image.source="https://github.com/aura-io/aura" \
+      org.opencontainers.image.url="https://aura.io" \
+      org.opencontainers.image.version=${aura_VERSION}

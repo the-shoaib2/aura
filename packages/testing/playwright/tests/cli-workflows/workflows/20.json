@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "d8cbfb90-51ba-45b9-a701-1d278992b7d5"
@@ -16,11 +16,11 @@
 		{
 			"parameters": {
 				"resource": "contact",
-				"email": "nodeqa@n8n.io",
+				"email": "nodeqa@aura.io",
 				"additionalFields": {}
 			},
 			"name": "Hubspot",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [410, 260],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"filters": {}
 			},
 			"name": "Hubspot1",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1320, 260],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot2",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [710, 260],
 			"credentials": {
@@ -81,7 +81,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot3",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1000, 260],
 			"credentials": {
@@ -100,7 +100,7 @@
 				"contactId": "={{$json[\"vid\"]}}"
 			},
 			"name": "Hubspot4",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1880, 260],
 			"credentials": {
@@ -119,7 +119,7 @@
 				"additionalFields": {}
 			},
 			"name": "Hubspot5",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1600, 260],
 			"credentials": {
@@ -136,7 +136,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(1500);\n\nreturn [items[0]];"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [1140, 260],
 			"notesInFlow": true,
@@ -146,13 +146,13 @@
 		{
 			"parameters": {
 				"resource": "company",
-				"name": "n8n",
+				"name": "aura",
 				"additionalFields": {
-					"companyDomainName": "n8n.io"
+					"companyDomainName": "aura.io"
 				}
 			},
 			"name": "Hubspot6",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [410, 430],
 			"credentials": {
@@ -171,7 +171,7 @@
 				"options": {}
 			},
 			"name": "Hubspot7",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [570, 430],
 			"credentials": {
@@ -189,7 +189,7 @@
 				"limit": 1
 			},
 			"name": "Hubspot8",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [910, 430],
 			"credentials": {
@@ -204,12 +204,12 @@
 			"parameters": {
 				"resource": "company",
 				"operation": "searchByDomain",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"limit": 1,
 				"options": {}
 			},
 			"name": "Hubspot9",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [740, 430],
 			"alwaysOutputData": true,
@@ -231,7 +231,7 @@
 				}
 			},
 			"name": "Hubspot10",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1060, 430],
 			"credentials": {
@@ -250,7 +250,7 @@
 				"filters": {}
 			},
 			"name": "Hubspot11",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1220, 430],
 			"credentials": {
@@ -268,7 +268,7 @@
 				"companyId": "={{$node[\"Hubspot6\"].json[\"companyId\"]}}"
 			},
 			"name": "Hubspot12",
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 1,
 			"position": [1390, 430],
 			"credentials": {
@@ -284,7 +284,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [550, 260],
 			"typeVersion": 1,
 			"notes": "IGNORED_PROPERTIES=associated-company",
@@ -295,7 +295,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [850, 260],
 			"typeVersion": 1,
 			"id": "9276f38e-185a-4844-8764-ef4e91b0bd68"
@@ -305,7 +305,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second2",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1480, 260],
 			"typeVersion": 1,
 			"id": "ea72ad5a-b5b1-40f3-8f5f-9ac4fb5c37c4"
@@ -315,7 +315,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(500);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.5 second3",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [1730, 260],
 			"typeVersion": 1,
 			"notes": "IGNORED_PROPERTIES=associated-company",

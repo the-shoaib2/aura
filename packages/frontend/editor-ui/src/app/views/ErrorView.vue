@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import { useRouter } from 'vue-router';
 import { VIEWS } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
-import { N8nButton, N8nHeading, N8nIcon, N8nText } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nButton, N8nHeading, N8nIcon, N8nText } from '@aura/design-system';
 const router = useRouter();
 
 const props = defineProps<{

@@ -1,6 +1,6 @@
-import { createWorkflow, testDb, mockInstance } from '@n8n/backend-test-utils';
-import { SharedWorkflowRepository, WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createWorkflow, testDb, mockInstance } from '@aura/backend-test-utils';
+import { SharedWorkflowRepository, WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 
 import { ActiveWorkflowManager } from '@/active-workflow-manager';

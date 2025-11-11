@@ -13,7 +13,7 @@
 					"mode": "list"
 				}
 			},
-			"type": "n8n-nodes-base.evaluationTrigger",
+			"type": "aura-nodes-base.evaluationTrigger",
 			"typeVersion": 4.6,
 			"position": [0, 0],
 			"id": "3c9068ec-4880-4fbe-a1c8-f7a1cb3f13e9",
@@ -46,7 +46,7 @@
 					]
 				}
 			},
-			"type": "n8n-nodes-base.evaluation",
+			"type": "aura-nodes-base.evaluation",
 			"typeVersion": 4.6,
 			"position": [440, 0],
 			"id": "9e0be4fb-faa3-4344-ba80-e18ceb1d22f1",
@@ -60,7 +60,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [220, 0],
 			"id": "335047aa-fb77-43a1-8135-873d34e7ccc1",
@@ -80,7 +80,7 @@
 					]
 				}
 			},
-			"type": "n8n-nodes-base.evaluation",
+			"type": "aura-nodes-base.evaluation",
 			"typeVersion": 4.6,
 			"position": [660, 0],
 			"id": "7a795bad-08e1-4e5c-bfe4-2c43129b6da5",

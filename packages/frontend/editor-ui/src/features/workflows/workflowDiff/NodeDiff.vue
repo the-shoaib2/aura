@@ -31,7 +31,7 @@ const props = withDefaults(
 </template>
 
 <style lang="scss" module>
-/* Diff colors are now centralized in @n8n/design-system tokens */
+/* Diff colors are now centralized in @aura/design-system tokens */
 
 .codeDiff {
 	&:global(.code-diff-view) {
@@ -45,11 +45,11 @@ const props = withDefaults(
 		}
 
 		&:global([theme='dark']) {
-			/* stylelint-disable-next-line @n8n/css-var-naming */
+			/* stylelint-disable-next-line @aura/css-var-naming */
 			--fgColor-default: var(--color--text--shade-1);
-			/* stylelint-disable-next-line @n8n/css-var-naming */
+			/* stylelint-disable-next-line @aura/css-var-naming */
 			--bgColor-default: var(--color--background--light-2);
-			/* stylelint-disable-next-line @n8n/css-var-naming */
+			/* stylelint-disable-next-line @aura/css-var-naming */
 			--color-fg-subtle: var(--color--text--tint-1); // Muted text
 
 			// deletions

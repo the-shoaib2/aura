@@ -20,7 +20,7 @@
 			},
 			"id": "e0c0cf7e-aa98-4b72-9645-6e64e2902bd1",
 			"name": "Airtable",
-			"type": "n8n-nodes-base.airtable",
+			"type": "aura-nodes-base.airtable",
 			"typeVersion": 1,
 			"position": [380, 180]
 		}

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const packages = ['nodes-base', '@n8n/nodes-langchain'];
+const packages = ['nodes-base', '@aura/nodes-langchain'];
 const concurrency = 20;
 let exitCode = 0;
 
-const debug = require('debug')('n8n');
+const debug = require('debug')('aura');
 const path = require('path');
 const https = require('https');
 const glob = require('glob');
@@ -28,7 +28,7 @@ const validateUrl = async (packageName, kind, type) =>
 		const url = new URL(
 			/^https?:\/\//.test(documentationUrl)
 				? documentationUrl
-				: `https://docs.n8n.io/integrations/builtin/${kind}/${documentationUrl.toLowerCase()}/`,
+				: `https://docs.aura.io/integrations/builtin/${kind}/${documentationUrl.toLowerCase()}/`,
 		);
 		https
 			.request(

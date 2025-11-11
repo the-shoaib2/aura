@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import type { NpsSurveyState } from 'n8n-workflow';
+import type { NpsSurveyState } from 'workflow';
 
 import { UserSettingsController } from '@/controllers/user-settings.controller';
 import type { NpsSurveyRequest } from '@/requests';

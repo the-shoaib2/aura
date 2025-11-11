@@ -7,8 +7,8 @@ import type {
 	IRequestOptions,
 	IWebhookFunctions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError } from 'workflow';
 
 export async function quickbaseApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions | IHookFunctions | IWebhookFunctions,
@@ -33,7 +33,7 @@ export async function quickbaseApiRequest(
 		const options: IRequestOptions = {
 			headers: {
 				'QB-Realm-Hostname': credentials.hostname,
-				'User-Agent': 'n8n',
+				'User-Agent': 'aura',
 				Authorization: `QB-USER-TOKEN ${credentials.userToken}`,
 				'Content-Type': 'application/json',
 			},

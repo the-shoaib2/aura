@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [160, 300],
 			"id": "d8d987a3-cc5c-4ec0-b011-7bc16e31ca08"
@@ -21,7 +21,7 @@
 				"options": {}
 			},
 			"name": "Mailchimp1",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [430, 300],
 			"credentials": {
@@ -36,11 +36,11 @@
 			"parameters": {
 				"operation": "get",
 				"list": "eb9ad4be19",
-				"email": "nodeqa@n8n.io",
+				"email": "nodeqa@aura.io",
 				"options": {}
 			},
 			"name": "Mailchimp",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [590, 300],
 			"credentials": {
@@ -61,7 +61,7 @@
 				}
 			},
 			"name": "Mailchimp2",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [780, 300],
 			"credentials": {
@@ -76,12 +76,12 @@
 			"parameters": {
 				"resource": "memberTag",
 				"list": "eb9ad4be19",
-				"email": "nodeqa@n8n.io",
-				"tags": ["n8n"],
+				"email": "nodeqa@aura.io",
+				"tags": ["aura"],
 				"options": {}
 			},
 			"name": "Mailchimp4",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [790, 140],
 			"credentials": {
@@ -98,12 +98,12 @@
 				"resource": "memberTag",
 				"operation": "delete",
 				"list": "eb9ad4be19",
-				"email": "nodeqa@n8n.io",
-				"tags": ["n8n"],
+				"email": "nodeqa@aura.io",
+				"tags": ["aura"],
 				"options": {}
 			},
 			"name": "Mailchimp5",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [970, 140],
 			"credentials": {
@@ -123,7 +123,7 @@
 				"options": {}
 			},
 			"name": "Mailchimp3",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [570, 450],
 			"credentials": {
@@ -139,7 +139,7 @@
 				"functionCode": "items = [{\n  json:{\n    email: `test${Date.now().toString().substr(5)}@gmail.com`\n  }\n}\n]\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [430, 450],
 			"notesInFlow": true,
@@ -153,7 +153,7 @@
 				"email": "={{$json[\"email_address\"]}}"
 			},
 			"name": "Mailchimp6",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [730, 450],
 			"credentials": {
@@ -172,7 +172,7 @@
 				"limit": 1
 			},
 			"name": "Mailchimp7",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [430, 140],
 			"credentials": {
@@ -190,7 +190,7 @@
 				"options": {}
 			},
 			"name": "Mailchimp8",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [430, 610],
 			"credentials": {
@@ -208,7 +208,7 @@
 				"campaignId": "={{$node[\"Mailchimp8\"].json[\"id\"]}}"
 			},
 			"name": "Mailchimp9",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [580, 610],
 			"credentials": {
@@ -226,7 +226,7 @@
 				"campaignId": "={{$node[\"Mailchimp8\"].json[\"id\"]}}"
 			},
 			"name": "Mailchimp10",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [720, 610],
 			"credentials": {
@@ -244,7 +244,7 @@
 				"campaignId": "={{$node[\"Mailchimp10\"].json[\"id\"]}}"
 			},
 			"name": "Mailchimp11",
-			"type": "n8n-nodes-base.mailchimp",
+			"type": "aura-nodes-base.mailchimp",
 			"typeVersion": 1,
 			"position": [870, 610],
 			"credentials": {

@@ -1,5 +1,5 @@
-import type { Logger } from '@n8n/backend-common';
-import { InstanceSettingsConfig } from '@n8n/config';
+import type { Logger } from '@aura/backend-common';
+import { InstanceSettingsConfig } from '@aura/config';
 import { mock } from 'jest-mock-extended';
 jest.mock('node:fs', () => mock<typeof fs>());
 import * as fs from 'node:fs';
@@ -62,14 +62,14 @@ describe('InstanceSettings', () => {
 			expect(settings.instanceId).toEqual(
 				'6ce26c63596f0cc4323563c529acfca0cccb0e57f6533d79a60a42c9ff862ae7',
 			);
-			expect(mockFs.statSync).toHaveBeenCalledWith('/test/.n8n/config');
+			expect(mockFs.statSync).toHaveBeenCalledWith('/test/.aura/config');
 		});
 
 		it('should check the permissions but not fix them if settings file has incorrect permissions by default', () => {
 			mockFs.readFileSync.mockReturnValueOnce(JSON.stringify({ encryptionKey: 'test_key' }));
 			mockFs.statSync.mockReturnValueOnce({ mode: 0o644 } as fs.Stats);
 			createInstanceSettings();
-			expect(mockFs.statSync).toHaveBeenCalledWith('/test/.n8n/config');
+			expect(mockFs.statSync).toHaveBeenCalledWith('/test/.aura/config');
 			expect(mockFs.chmodSync).not.toHaveBeenCalled();
 		});
 
@@ -88,8 +88,8 @@ describe('InstanceSettings', () => {
 			createInstanceSettings({
 				enforceSettingsFilePermissions: true,
 			});
-			expect(mockFs.statSync).toHaveBeenCalledWith('/test/.n8n/config');
-			expect(mockFs.chmodSync).toHaveBeenCalledWith('/test/.n8n/config', 0o600);
+			expect(mockFs.statSync).toHaveBeenCalledWith('/test/.aura/config');
+			expect(mockFs.chmodSync).toHaveBeenCalledWith('/test/.aura/config', 0o600);
 		});
 	});
 
@@ -103,9 +103,9 @@ describe('InstanceSettings', () => {
 		it('should create a new settings file without explicit permissions if N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS is not set', () => {
 			const settings = createInstanceSettings({ encryptionKey: 'key_2' });
 			expect(settings.encryptionKey).not.toEqual('test_key');
-			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.n8n', { recursive: true });
+			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.aura', { recursive: true });
 			expect(mockFs.writeFileSync).toHaveBeenCalledWith(
-				'/test/.n8n/config',
+				'/test/.aura/config',
 				expect.stringContaining('"encryptionKey":'),
 				{
 					encoding: 'utf-8',
@@ -118,9 +118,9 @@ describe('InstanceSettings', () => {
 			process.env.N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS = 'false';
 			const settings = createInstanceSettings({ encryptionKey: 'key_2' });
 			expect(settings.encryptionKey).not.toEqual('test_key');
-			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.n8n', { recursive: true });
+			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.aura', { recursive: true });
 			expect(mockFs.writeFileSync).toHaveBeenCalledWith(
-				'/test/.n8n/config',
+				'/test/.aura/config',
 				expect.stringContaining('"encryptionKey":'),
 				{
 					encoding: 'utf-8',
@@ -136,9 +136,9 @@ describe('InstanceSettings', () => {
 				encryptionKey: 'key_2',
 			});
 			expect(settings.encryptionKey).not.toEqual('test_key');
-			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.n8n', { recursive: true });
+			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.aura', { recursive: true });
 			expect(mockFs.writeFileSync).toHaveBeenCalledWith(
-				'/test/.n8n/config',
+				'/test/.aura/config',
 				expect.stringContaining('"encryptionKey":'),
 				{
 					encoding: 'utf-8',
@@ -154,9 +154,9 @@ describe('InstanceSettings', () => {
 				'2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683',
 			);
 			expect(settings.encryptionKey).not.toEqual('test_key');
-			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.n8n', { recursive: true });
+			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.aura', { recursive: true });
 			expect(mockFs.writeFileSync).toHaveBeenCalledWith(
-				'/test/.n8n/config',
+				'/test/.aura/config',
 				expect.stringContaining('"encryptionKey":'),
 				{
 					encoding: 'utf-8',
@@ -169,9 +169,9 @@ describe('InstanceSettings', () => {
 			process.env.N8N_IGNORE_SETTINGS_FILE_PERMISSIONS = 'true';
 			const settings = createInstanceSettings({ encryptionKey: 'key_2' });
 			expect(settings.encryptionKey).not.toEqual('test_key');
-			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.n8n', { recursive: true });
+			expect(mockFs.mkdirSync).toHaveBeenCalledWith('/test/.aura', { recursive: true });
 			expect(mockFs.writeFileSync).toHaveBeenCalledWith(
-				'/test/.n8n/config',
+				'/test/.aura/config',
 				expect.stringContaining('"encryptionKey":'),
 				{
 					encoding: 'utf-8',

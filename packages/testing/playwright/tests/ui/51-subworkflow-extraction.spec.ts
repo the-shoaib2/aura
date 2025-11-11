@@ -10,57 +10,57 @@ const EDIT_FIELDS_NAMES = [
 ];
 
 test.describe('Subworkflow Extraction', () => {
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.start.fromImportedWorkflow('Subworkflow-extraction-workflow.json');
+	test.beforeEach(async ({ aura }) => {
+		await aura.start.fromImportedWorkflow('Subworkflow-extraction-workflow.json');
 
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(7);
-		await n8n.canvas.clickZoomToFitButton();
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(7);
+		await aura.canvas.clickZoomToFitButton();
 
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification(
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification(
 			'Workflow executed successfully',
 		);
 
-		await n8n.canvas.deselectAll();
+		await aura.canvas.deselectAll();
 	});
 
 	test.describe('can extract a valid selection and still execute the workflow', () => {
 		test('should extract a node and succeed execution, and then undo and succeed executions', async ({
-			n8n,
+			aura,
 		}) => {
 			for (const name of EDIT_FIELDS_NAMES) {
-				await n8n.canvas.rightClickNode(name);
+				await aura.canvas.rightClickNode(name);
 
-				await n8n.canvas.clickContextMenuAction('Convert node to sub-workflow');
-				await n8n.canvas.convertToSubworkflowModal.waitForModal();
-				await n8n.canvas.convertToSubworkflowModal.clickSubmitButton();
-				await n8n.canvas.convertToSubworkflowModal.waitForClose();
+				await aura.canvas.clickContextMenuAction('Convert node to sub-workflow');
+				await aura.canvas.convertToSubworkflowModal.waitForModal();
+				await aura.canvas.convertToSubworkflowModal.clickSubmitButton();
+				await aura.canvas.convertToSubworkflowModal.waitForClose();
 
-				await n8n.workflowComposer.executeWorkflowAndWaitForNotification(
+				await aura.workflowComposer.executeWorkflowAndWaitForNotification(
 					'Workflow executed successfully',
 				);
 			}
 
 			for (let i = 0; i < EDIT_FIELDS_NAMES.length; i++) {
-				await n8n.canvas.hitUndo();
+				await aura.canvas.hitUndo();
 
-				await n8n.workflowComposer.executeWorkflowAndWaitForNotification(
+				await aura.workflowComposer.executeWorkflowAndWaitForNotification(
 					'Workflow executed successfully',
 				);
 			}
 		});
 
-		test('should extract all nodes besides trigger and succeed execution', async ({ n8n }) => {
-			await n8n.canvas.nodeByName(EDIT_FIELDS_NAMES[0]).click();
+		test('should extract all nodes besides trigger and succeed execution', async ({ aura }) => {
+			await aura.canvas.nodeByName(EDIT_FIELDS_NAMES[0]).click();
 
-			await n8n.canvas.extendSelectionWithArrows('right');
+			await aura.canvas.extendSelectionWithArrows('right');
 
-			await n8n.canvas.openCanvasContextMenu();
-			await n8n.canvas.clickContextMenuAction('Convert 6 nodes to sub-workflow');
-			await n8n.canvas.convertToSubworkflowModal.waitForModal();
-			await n8n.canvas.convertToSubworkflowModal.clickSubmitButton();
-			await n8n.canvas.convertToSubworkflowModal.waitForClose();
+			await aura.canvas.openCanvasContextMenu();
+			await aura.canvas.clickContextMenuAction('Convert 6 nodes to sub-workflow');
+			await aura.canvas.convertToSubworkflowModal.waitForModal();
+			await aura.canvas.convertToSubworkflowModal.clickSubmitButton();
+			await aura.canvas.convertToSubworkflowModal.waitForClose();
 
-			await n8n.workflowComposer.executeWorkflowAndWaitForNotification(
+			await aura.workflowComposer.executeWorkflowAndWaitForNotification(
 				'Workflow executed successfully',
 			);
 		});

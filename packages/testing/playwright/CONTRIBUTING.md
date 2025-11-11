@@ -1,4 +1,4 @@
-# n8n Playwright Test Contribution Guide
+# aura Playwright Test Contribution Guide
 
 > For running tests, see [README.md](./README.md)
 
@@ -6,7 +6,7 @@
 
 ### Prerequisites
 - **VS Code/Cursor Extension**: Install "Playwright Test for VSCode"
-- **Local n8n Instance**: Local server or Docker
+- **Local aura Instance**: Local server or Docker
 
 ### Configuration
 Add to your `/.vscode/settings.json`:
@@ -14,7 +14,7 @@ Add to your `/.vscode/settings.json`:
 {
   "playwright.env": {
     "N8N_BASE_URL": "http://localhost:5679",  // URL to test against (Don't use 5678 as that can wipe your dev instance DB)
-    "SHOW_BROWSER": "true",                   // Show browser (useful with n8n.page.pause())
+    "SHOW_BROWSER": "true",                   // Show browser (useful with aura.page.pause())
     "RESET_E2E_DB": "true"                    // Reset DB for fresh state
   }
 }
@@ -23,7 +23,7 @@ Add to your `/.vscode/settings.json`:
 ### Running Tests
 1. **Initial Setup**: Click "Run global setup" in Playwright extension to reset database
 2. **Run Tests**: Click play button next to any test in the IDE
-3. **Debug**: Add `await n8n.page.pause()` to hijack test execution
+3. **Debug**: Add `await aura.page.pause()` to hijack test execution
 
 Troubleshooting:
 - Why can't I run my test from the UI?
@@ -151,39 +151,39 @@ async getNotificationCount(text?: string | RegExp): Promise<number> {
 // From WorkflowComposer.ts
 export class WorkflowComposer {
   async executeWorkflowAndWaitForNotification(notificationMessage: string) {
-    const responsePromise = this.n8n.page.waitForResponse(
+    const responsePromise = this.aura.page.waitForResponse(
       (response) =>
         response.url().includes('/rest/workflows/') &&
         response.url().includes('/run') &&
         response.request().method() === 'POST',
     );
 
-    await this.n8n.canvas.clickExecuteWorkflowButton();
+    await this.aura.canvas.clickExecuteWorkflowButton();
     await responsePromise;
-    await this.n8n.notifications.waitForNotificationAndClose(notificationMessage);
+    await this.aura.notifications.waitForNotificationAndClose(notificationMessage);
   }
 
   async createWorkflow(name?: string) {
-    await this.n8n.workflows.clickAddWorklowButton();
+    await this.aura.workflows.clickAddWorklowButton();
     const workflowName = name ?? 'My New Workflow';
-    await this.n8n.canvas.setWorkflowName(workflowName);
-    await this.n8n.canvas.saveWorkflow();
+    await this.aura.canvas.setWorkflowName(workflowName);
+    await this.aura.canvas.saveWorkflow();
   }
 }
 
 // From ProjectComposer.ts
 export class ProjectComposer {
   async createProject(projectName?: string) {
-    await this.n8n.page.getByTestId('universal-add').click();
+    await this.aura.page.getByTestId('universal-add').click();
     await Promise.all([
-      this.n8n.page.waitForResponse('**/rest/projects/*'),
-      this.n8n.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click(),
+      this.aura.page.waitForResponse('**/rest/projects/*'),
+      this.aura.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click(),
     ]);
-    await this.n8n.notifications.waitForNotificationAndClose('saved successfully');
-    await this.n8n.page.waitForLoadState();
+    await this.aura.notifications.waitForNotificationAndClose('saved successfully');
+    await this.aura.page.waitForLoadState();
     const projectNameUnique = projectName ?? `Project ${Date.now()}`;
-    await this.n8n.projectSettings.fillProjectName(projectNameUnique);
-    await this.n8n.projectSettings.clickSaveButton();
+    await this.aura.projectSettings.fillProjectName(projectNameUnique);
+    await this.aura.projectSettings.clickSaveButton();
     const projectId = this.extractProjectIdFromPage('projects', 'settings');
     return { projectName: projectNameUnique, projectId };
   }
@@ -276,9 +276,9 @@ export class CanvasComposer {
    * @param nodeName - The name of the node to pin the data on.
    */
   async pinNodeData(nodeName: string) {
-    await this.n8n.canvas.openNode(nodeName);
-    await this.n8n.ndv.togglePinData();
-    await this.n8n.ndv.close();
+    await this.aura.canvas.openNode(nodeName);
+    await this.aura.ndv.togglePinData();
+    await this.aura.ndv.close();
   }
 }
 
@@ -290,12 +290,12 @@ export class ProjectComposer {
     credentialFieldName: string,
     credentialValue: string,
   ) {
-    await this.n8n.sideBar.openNewCredentialDialogForProject(projectName);
-    await this.n8n.credentials.openNewCredentialDialogFromCredentialList(credentialType);
-    await this.n8n.credentials.fillCredentialField(credentialFieldName, credentialValue);
-    await this.n8n.credentials.saveCredential();
-    await this.n8n.notifications.waitForNotificationAndClose('Credential successfully created');
-    await this.n8n.credentials.closeCredentialDialog();
+    await this.aura.sideBar.openNewCredentialDialogForProject(projectName);
+    await this.aura.credentials.openNewCredentialDialogFromCredentialList(credentialType);
+    await this.aura.credentials.fillCredentialField(credentialFieldName, credentialValue);
+    await this.aura.credentials.saveCredential();
+    await this.aura.notifications.waitForNotificationAndClose('Credential successfully created');
+    await this.aura.credentials.closeCredentialDialog();
   }
 }
 ```
@@ -305,34 +305,34 @@ export class ProjectComposer {
 #### UI Tests
 ```typescript
 // ✅ GOOD: From 1-workflows.spec.ts
-test('should create a new workflow using add workflow button', async ({ n8n }) => {
-  await n8n.workflows.clickAddWorklowButton();
+test('should create a new workflow using add workflow button', async ({ aura }) => {
+  await aura.workflows.clickAddWorklowButton();
 
   const workflowName = `Test Workflow ${Date.now()}`;
-  await n8n.canvas.setWorkflowName(workflowName);
-  await n8n.canvas.clickSaveWorkflowButton();
+  await aura.canvas.setWorkflowName(workflowName);
+  await aura.canvas.clickSaveWorkflowButton();
 
   await expect(
-    n8n.notifications.notificationContainerByText('Workflow successfully created'),
+    aura.notifications.notificationContainerByText('Workflow successfully created'),
   ).toBeVisible();
 });
 
 // ✅ GOOD: From 28-debug.spec.ts - Using helper functions
-async function createBasicWorkflow(n8n, url = URLS.FAILING) {
-  await n8n.workflows.clickAddWorklowButton();
-  await n8n.canvas.addNode('Manual Trigger');
-  await n8n.canvas.addNode('HTTP Request');
-  await n8n.ndv.fillParameterInput('URL', url);
-  await n8n.ndv.close();
-  await n8n.canvas.clickSaveWorkflowButton();
-  await n8n.notifications.waitForNotificationAndClose(NOTIFICATIONS.WORKFLOW_CREATED);
+async function createBasicWorkflow(aura, url = URLS.FAILING) {
+  await aura.workflows.clickAddWorklowButton();
+  await aura.canvas.addNode('Manual Trigger');
+  await aura.canvas.addNode('HTTP Request');
+  await aura.ndv.fillParameterInput('URL', url);
+  await aura.ndv.close();
+  await aura.canvas.clickSaveWorkflowButton();
+  await aura.notifications.waitForNotificationAndClose(NOTIFICATIONS.WORKFLOW_CREATED);
 }
 
-test('should enter debug mode for failed executions', async ({ n8n }) => {
-  await createBasicWorkflow(n8n, URLS.FAILING);
-  await n8n.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.PROBLEM_IN_NODE);
-  await importExecutionForDebugging(n8n);
-  expect(n8n.page.url()).toContain('/debug');
+test('should enter debug mode for failed executions', async ({ aura }) => {
+  await createBasicWorkflow(aura, URLS.FAILING);
+  await aura.workflowComposer.executeWorkflowAndWaitForNotification(NOTIFICATIONS.PROBLEM_IN_NODE);
+  await importExecutionForDebugging(aura);
+  expect(aura.page.url()).toContain('/debug');
 });
 ```
 
@@ -425,7 +425,7 @@ const NOTIFICATIONS = {
 ```typescript
 // From test-users.ts
 export const INSTANCE_OWNER_CREDENTIALS: UserCredentials = {
-  email: 'nathan@n8n.io',
+  email: 'nathan@aura.io',
   password: DEFAULT_USER_PASSWORD,
   firstName: randFirstName(),
   lastName: randLastName(),
@@ -440,8 +440,8 @@ const workflowName = `Archive Test ${Date.now()}`;
 ```typescript
 // ✅ GOOD - From ProjectComposer.ts
 await Promise.all([
-  this.n8n.page.waitForResponse('**/rest/projects/*'),
-  this.n8n.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click(),
+  this.aura.page.waitForResponse('**/rest/projects/*'),
+  this.aura.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click(),
 ]);
 
 // From NotificationsPage.ts
@@ -478,10 +478,10 @@ async clickArchiveMenuItem() {
 ### ❌ Don't Use Raw Selectors in Tests
 ```typescript
 // BAD: From 1-workflows.spec.ts
-await expect(n8n.page.getByText('No workflows found')).toBeVisible();
+await expect(aura.page.getByText('No workflows found')).toBeVisible();
 
 // GOOD: Add getter to page object
-await expect(n8n.workflows.getEmptyStateMessage()).toBeVisible();
+await expect(aura.workflows.getEmptyStateMessage()).toBeVisible();
 ```
 
 ### ❌ Don't Create Overly Specific Methods
@@ -537,32 +537,32 @@ export class ProjectSettingsPage extends BasePage {
 // 2. Composable (ProjectComposer.ts)
 export class ProjectComposer {
   async createProject(projectName?: string) {
-    await this.n8n.page.getByTestId('universal-add').click();
+    await this.aura.page.getByTestId('universal-add').click();
     await Promise.all([
-      this.n8n.page.waitForResponse('**/rest/projects/*'),
-      this.n8n.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click(),
+      this.aura.page.waitForResponse('**/rest/projects/*'),
+      this.aura.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click(),
     ]);
-    await this.n8n.notifications.waitForNotificationAndClose('saved successfully');
-    await this.n8n.page.waitForLoadState();
+    await this.aura.notifications.waitForNotificationAndClose('saved successfully');
+    await this.aura.page.waitForLoadState();
     const projectNameUnique = projectName ?? `Project ${Date.now()}`;
-    await this.n8n.projectSettings.fillProjectName(projectNameUnique);
-    await this.n8n.projectSettings.clickSaveButton();
+    await this.aura.projectSettings.fillProjectName(projectNameUnique);
+    await this.aura.projectSettings.clickSaveButton();
     const projectId = this.extractProjectIdFromPage('projects', 'settings');
     return { projectName: projectNameUnique, projectId };
   }
 }
 
 // 3. Test (39-projects.spec.ts)
-test('should filter credentials by project ID', async ({ n8n, api }) => {
-  const { projectName, projectId } = await n8n.projectComposer.createProject();
-  await n8n.projectComposer.addCredentialToProject(
+test('should filter credentials by project ID', async ({ aura, api }) => {
+  const { projectName, projectId } = await aura.projectComposer.createProject();
+  await aura.projectComposer.addCredentialToProject(
     projectName,
     'Notion API',
     'apiKey',
     NOTION_API_KEY,
   );
 
-  const credentials = await n8n.api.credentials.getCredentialsByProject(projectId);
+  const credentials = await aura.api.credentials.getCredentialsByProject(projectId);
   expect(credentials).toHaveLength(1);
 });
 ```

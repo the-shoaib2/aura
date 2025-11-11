@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import type { IConnections, INode, INodeType, INodeTypes, IPinData, IRunData } from 'n8n-workflow';
-import { Workflow } from 'n8n-workflow';
+import type { IConnections, INode, INodeType, INodeTypes, IPinData, IRunData } from 'workflow';
+import { Workflow } from 'workflow';
 
 import { createNodeData, toIConnections, toITaskData } from './helpers';
 import { DirectedGraph } from '../directed-graph';
@@ -20,13 +20,13 @@ describe('findTriggerForPartialExecution', () => {
 
 	const createNode = (name: string, type: string, disabled = false) =>
 		mock<INode>({ name, type, disabled });
-	const manualTriggerNode = createNode('ManualTrigger', 'n8n-nodes-base.manualTrigger');
-	const disabledTriggerNode = createNode('DisabledTrigger', 'n8n-nodes-base.manualTrigger', true);
-	const pinnedTrigger = createNode('PinnedTrigger', 'n8n-nodes-base.manualTrigger');
-	const setNode = createNode('Set', 'n8n-nodes-base.set');
-	const noOpNode = createNode('No Operation', 'n8n-nodes-base.noOp');
-	const webhookNode = createNode('Webhook', 'n8n-nodes-base.webhook');
-	const webhookNode1 = createNode('Webhook1', 'n8n-nodes-base.webhook');
+	const manualTriggerNode = createNode('ManualTrigger', 'aura-nodes-base.manualTrigger');
+	const disabledTriggerNode = createNode('DisabledTrigger', 'aura-nodes-base.manualTrigger', true);
+	const pinnedTrigger = createNode('PinnedTrigger', 'aura-nodes-base.manualTrigger');
+	const setNode = createNode('Set', 'aura-nodes-base.set');
+	const noOpNode = createNode('No Operation', 'aura-nodes-base.noOp');
+	const webhookNode = createNode('Webhook', 'aura-nodes-base.webhook');
+	const webhookNode1 = createNode('Webhook1', 'aura-nodes-base.webhook');
 
 	beforeEach(() => {
 		nodeTypes.getByNameAndVersion.mockImplementation((type) => {
@@ -217,8 +217,8 @@ describe('findTriggerForPartialExecution', () => {
 
 		it('should prefer triggers that have run data', () => {
 			// ARRANGE
-			const trigger1 = createNodeData({ name: 'trigger1', type: 'n8n-nodes-base.manualTrigger' });
-			const trigger2 = createNodeData({ name: 'trigger2', type: 'n8n-nodes-base.manualTrigger' });
+			const trigger1 = createNodeData({ name: 'trigger1', type: 'aura-nodes-base.manualTrigger' });
+			const trigger2 = createNodeData({ name: 'trigger2', type: 'aura-nodes-base.manualTrigger' });
 			const node = createNodeData({ name: 'node' });
 			const workflow = new DirectedGraph()
 				.addNodes(trigger1, trigger2, node)

@@ -14,7 +14,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [500, 680],
 			"id": "18333790-db22-4235-92e6-b7dec8c20b77"
@@ -31,7 +31,7 @@
 			},
 			"id": "4d4af5e5-860d-416f-b2d7-f0f87f380355",
 			"name": "IF",
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"typeVersion": 1,
 			"position": [1080, 500],
 			"alwaysOutputData": true
@@ -49,7 +49,7 @@
 			},
 			"id": "26569caf-084d-4d5b-a575-c8e439358d10",
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1340, 480]
 		},
@@ -57,7 +57,7 @@
 			"parameters": {},
 			"id": "f4f91c8c-e695-422b-97ad-802b10c7d868",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [200, 980]
 		},
@@ -67,7 +67,7 @@
 			},
 			"id": "5eb81a1f-b845-408a-9fcc-e75e607212fa",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [840, 500]
 		},
@@ -76,7 +76,7 @@
 				"functionCode": "return [\n  {\n    'number': 1,\n    'letter': 'a'\n  },\n  {\n    'number': 2,\n    'letter': 'b'\n  },\n  {\n    'number': 3,\n    'letter': 'c'\n  }\n]"
 			},
 			"name": "Generate new items",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [840, 860],
 			"id": "dd5d92f2-5893-4591-9f22-051f50e1b348"
@@ -101,7 +101,7 @@
 			},
 			"id": "ebb23410-831b-4f8f-834a-0ca22eb7c050",
 			"name": "Set3",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1320, 860]
 		},
@@ -110,7 +110,7 @@
 				"functionCode": "return [\n  {\n    'json': {\n      'originalItem': 'third'\n    },\n    'pairedItem': 2\n  },\n  {\n    'json': {\n      'originalItem': 'first'\n    },\n    'pairedItem': 0\n  },\n  {\n    'json': {\n      'originalItem': 'second'\n    },\n    'pairedItem': 1\n  }\n]"
 			},
 			"name": "Mix up pairing",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [1080, 860],
 			"id": "33ee2a0e-edc9-4197-94a2-4f77735240ff"
@@ -123,7 +123,7 @@
 			},
 			"id": "3dc9ccfa-ef78-4022-8bbc-45ef8eb3a207",
 			"name": "Sticky Note1",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [780, 400]
 		},
@@ -133,7 +133,7 @@
 			},
 			"id": "5ba8d43b-9fa3-4ba0-9c08-3199a9d2d602",
 			"name": "cuctomers",
-			"type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+			"type": "aura-nodes-base.auraTrainingCustomerDatastore",
 			"typeVersion": 1,
 			"position": [640, 1340]
 		},
@@ -143,7 +143,7 @@
 			},
 			"id": "00114764-691d-40b4-ae11-c5206a9448e3",
 			"name": "result",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1380, 1180],
 			"alwaysOutputData": true
@@ -154,7 +154,7 @@
 			},
 			"id": "d3aa3bc3-3e5a-42d2-a26d-ea0c273ea3e8",
 			"name": "changePairedindex",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [920, 1180]
 		},
@@ -183,7 +183,7 @@
 			},
 			"id": "af18482d-4a88-4ffb-b6e3-67be45cdfad1",
 			"name": "checkWithOriginal",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1140, 1180]
 		},
@@ -193,7 +193,7 @@
 			},
 			"id": "3bad8f81-2fac-4e6e-bb7c-3a4921674005",
 			"name": "loop",
-			"type": "n8n-nodes-base.splitInBatches",
+			"type": "aura-nodes-base.splitInBatches",
 			"typeVersion": 2,
 			"position": [920, 1420]
 		},
@@ -222,7 +222,7 @@
 			},
 			"id": "865691b7-e4b8-487e-a5ec-80387118ea61",
 			"name": "testAfterLoop",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1180, 1620]
 		},
@@ -232,7 +232,7 @@
 			},
 			"id": "8c5d3a1c-e34b-4937-bc22-88b418391002",
 			"name": "result1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [1380, 1620],
 			"alwaysOutputData": true
@@ -243,7 +243,7 @@
 			},
 			"id": "ad476a3a-d491-406f-903d-022cb0f0ef3c",
 			"name": "changePairedindex1",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [1380, 1400]
 		}

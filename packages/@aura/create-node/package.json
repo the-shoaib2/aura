@@ -1,0 +1,25 @@
+{
+  "name": "@aura/create-node",
+  "version": "0.14.0",
+  "description": "Official CLI to create new community nodes for aura",
+  "bin": {
+    "create-node": "bin/create-node.cjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "start": "node bin/create-node.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aura-io/aura.git"
+  },
+  "dependencies": {
+    "@aura/node-cli": "workspace:*"
+  },
+  "devDependencies": {
+    "@aura/typescript-config": "workspace:*"
+  }
+}

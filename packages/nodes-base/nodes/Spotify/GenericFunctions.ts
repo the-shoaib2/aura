@@ -6,8 +6,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IHttpRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 /**
  * Make an API request to Spotify
@@ -24,7 +24,7 @@ export async function spotifyApiRequest(
 	const options: IHttpRequestOptions = {
 		method,
 		headers: {
-			'User-Agent': 'n8n',
+			'User-Agent': 'aura',
 			'Content-Type': 'text/plain',
 			Accept: ' application/json',
 		},

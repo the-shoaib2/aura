@@ -14,18 +14,18 @@
 				"PATH",
 				"GENERIC_TIMEZONE",
 				"NODE_OPTIONS",
-				"N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT",
-				"N8N_RUNNERS_TASK_TIMEOUT",
-				"N8N_RUNNERS_MAX_CONCURRENCY",
-				"N8N_SENTRY_DSN",
-				"N8N_VERSION",
+				"aura_RUNNERS_AUTO_SHUTDOWN_TIMEOUT",
+				"aura_RUNNERS_TASK_TIMEOUT",
+				"aura_RUNNERS_MAX_CONCURRENCY",
+				"aura_SENTRY_DSN",
+				"aura_VERSION",
 				"ENVIRONMENT",
 				"DEPLOYMENT_NAME"
 			],
 			"env-overrides": {
 				"NODE_FUNCTION_ALLOW_BUILTIN": "crypto",
 				"NODE_FUNCTION_ALLOW_EXTERNAL": "moment",
-				"N8N_RUNNERS_HEALTH_CHECK_SERVER_HOST": "0.0.0.0"
+				"aura_RUNNERS_HEALTH_CHECK_SERVER_HOST": "0.0.0.0"
 			}
 		},
 		{
@@ -36,19 +36,19 @@
 			"health-check-server-port": "5682",
 			"allowed-env": [
 				"PATH",
-				"N8N_RUNNERS_LAUNCHER_LOG_LEVEL",
-				"N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT",
-				"N8N_RUNNERS_TASK_TIMEOUT",
-				"N8N_RUNNERS_MAX_CONCURRENCY",
-				"N8N_SENTRY_DSN",
-				"N8N_VERSION",
+				"aura_RUNNERS_LAUNCHER_LOG_LEVEL",
+				"aura_RUNNERS_AUTO_SHUTDOWN_TIMEOUT",
+				"aura_RUNNERS_TASK_TIMEOUT",
+				"aura_RUNNERS_MAX_CONCURRENCY",
+				"aura_SENTRY_DSN",
+				"aura_VERSION",
 				"ENVIRONMENT",
 				"DEPLOYMENT_NAME"
 			],
 			"env-overrides": {
 				"PYTHONPATH": "/opt/runners/task-runner-python",
-				"N8N_RUNNERS_STDLIB_ALLOW": "",
-				"N8N_RUNNERS_EXTERNAL_ALLOW": ""
+				"aura_RUNNERS_STDLIB_ALLOW": "",
+				"aura_RUNNERS_EXTERNAL_ALLOW": ""
 			}
 		}
 	]

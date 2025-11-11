@@ -4,7 +4,7 @@ import type { INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { computed, ref } from 'vue';
 
-import { N8nHeading, N8nIconButton, N8nResizeWrapper } from '@n8n/design-system';
+import { N8nHeading, N8nIconButton, N8nResizeWrapper } from '@aura/design-system';
 const props = defineProps<{
 	node: INodeUi;
 }>();

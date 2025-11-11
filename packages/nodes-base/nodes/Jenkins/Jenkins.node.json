@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.jenkins",
+	"node": "aura-nodes-base.jenkins",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/jenkins/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/jenkins/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.jenkins/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.jenkins/"
 			}
 		]
 	}

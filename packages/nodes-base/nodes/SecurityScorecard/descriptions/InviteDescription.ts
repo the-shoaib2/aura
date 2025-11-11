@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const inviteOperations: INodeProperties[] = [
 	{
@@ -115,7 +115,7 @@ export const inviteFields: INodeProperties[] = [
 			},
 			{
 				displayName: 'Is Organisation Point of Contact',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description: "Is the invitee organisation's point of contact",
 				name: 'is_organization_point_of_contact',
 				type: 'boolean',

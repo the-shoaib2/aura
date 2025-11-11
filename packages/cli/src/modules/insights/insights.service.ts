@@ -1,10 +1,10 @@
-import { type InsightsSummary } from '@n8n/api-types';
-import { LicenseState, Logger } from '@n8n/backend-common';
-import { OnLeaderStepdown, OnLeaderTakeover } from '@n8n/decorators';
-import { Service } from '@n8n/di';
+import { type InsightsSummary } from '@aura/api-types';
+import { LicenseState, Logger } from '@aura/backend-common';
+import { OnLeaderStepdown, OnLeaderTakeover } from '@aura/decorators';
+import { Service } from '@aura/di';
 import { DateTime } from 'luxon';
-import { InstanceSettings } from 'n8n-core';
-import { UserError } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { UserError } from 'workflow';
 
 import type { PeriodUnit, TypeUnit } from './database/entities/insights-shared';
 import { NumberToType, TypeToNumber } from './database/entities/insights-shared';

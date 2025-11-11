@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.chargebee",
+	"node": "aura-nodes-base.chargebee",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Finance & Accounting"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/chargebee/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/chargebee/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.chargebee/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.chargebee/"
 			}
 		]
 	}

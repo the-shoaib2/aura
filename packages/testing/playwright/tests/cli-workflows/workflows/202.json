@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "b22f554d-032b-49a3-8d93-72bdf0e14c89"
@@ -19,7 +19,7 @@
 				"additionalFields": {}
 			},
 			"name": "Beeminder",
-			"type": "n8n-nodes-base.beeminder",
+			"type": "aura-nodes-base.beeminder",
 			"typeVersion": 1,
 			"position": [490, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"options": {}
 			},
 			"name": "Beeminder1",
-			"type": "n8n-nodes-base.beeminder",
+			"type": "aura-nodes-base.beeminder",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -59,7 +59,7 @@
 				}
 			},
 			"name": "Beeminder2",
-			"type": "n8n-nodes-base.beeminder",
+			"type": "aura-nodes-base.beeminder",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -77,7 +77,7 @@
 				"datapointId": "={{$node[\"Beeminder4\"].json[\"id\"]}}"
 			},
 			"name": "Beeminder3",
-			"type": "n8n-nodes-base.beeminder",
+			"type": "aura-nodes-base.beeminder",
 			"typeVersion": 1,
 			"position": [1100, 350],
 			"credentials": {
@@ -95,7 +95,7 @@
 				"additionalFields": {}
 			},
 			"name": "Beeminder4",
-			"type": "n8n-nodes-base.beeminder",
+			"type": "aura-nodes-base.beeminder",
 			"typeVersion": 1,
 			"position": [950, 350],
 			"credentials": {

@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [40, 140],
 			"id": "08d02705-0913-46e1-9916-5f319c190127",
@@ -17,7 +17,7 @@
 				"limit": 2,
 				"filters": {}
 			},
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [460, -100],
 			"id": "a3c57688-3368-48ea-977a-3092ff6da385",
@@ -31,7 +31,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [640, -100],
 			"id": "bd6ad825-697b-465f-bda8-79e4db65c18e",
@@ -44,7 +44,7 @@
 				"limit": 2,
 				"filters": {}
 			},
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [460, 80],
 			"id": "9f67f24d-6a80-4ca2-aefe-0efbf65054e2",
@@ -58,7 +58,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [640, 80],
 			"id": "c0049cfc-67b3-43c6-bdb2-0249b8531e63",
@@ -71,7 +71,7 @@
 				"id": "spotify:album:4R6FV9NSzhPihHR0h4pI93",
 				"returnAll": true
 			},
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [460, 260],
 			"id": "3f04a285-fecf-4d8b-9a54-dd45483072cb",
@@ -85,7 +85,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [640, 260],
 			"id": "e1ec2e5e-cd8b-4c45-9202-95027a50029c",
@@ -96,7 +96,7 @@
 				"resource": "album",
 				"id": "4R6FV9NSzhPihHR0h4pI93"
 			},
-			"type": "n8n-nodes-base.spotify",
+			"type": "aura-nodes-base.spotify",
 			"typeVersion": 1,
 			"position": [460, 620],
 			"id": "e2d26e12-a308-4d30-8908-46da973885ad",
@@ -110,7 +110,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [680, 620],
 			"id": "55478529-904e-4da8-9f96-1d5a391e9468",

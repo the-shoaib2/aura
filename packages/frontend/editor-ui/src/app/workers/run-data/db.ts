@@ -1,7 +1,7 @@
 import type { DatabaseConfig } from '@/app/workers/database';
 
 export const databaseConfig: DatabaseConfig = {
-	filename: 'file:n8n.sqlite3?vfs=opfs',
+	filename: 'file:aura.sqlite3?vfs=opfs',
 	tables: {
 		executions: {
 			name: 'executions',

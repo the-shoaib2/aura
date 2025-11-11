@@ -1,4 +1,4 @@
-import { NodeConnectionTypes, type INodeProperties, type INodeTypeDescription } from 'n8n-workflow';
+import { NodeConnectionTypes, type INodeProperties, type INodeTypeDescription } from 'workflow';
 import { useActionsGenerator } from './useActionsGeneration';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { createTestingPinia } from '@pinia/testing';
@@ -8,7 +8,7 @@ let posthogStore: ReturnType<typeof usePostHog>;
 
 describe('useActionsGenerator', () => {
 	const { generateMergedNodesAndActions } = useActionsGenerator();
-	const NODE_NAME = 'n8n-nodes-base.test';
+	const NODE_NAME = 'aura-nodes-base.test';
 	const baseV2NodeWoProps: INodeTypeDescription = {
 		name: NODE_NAME,
 		displayName: 'Test',

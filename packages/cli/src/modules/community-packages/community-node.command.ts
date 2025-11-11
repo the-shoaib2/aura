@@ -1,7 +1,7 @@
-import type { User } from '@n8n/db';
-import { CredentialsRepository, UserRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import type { User } from '@aura/db';
+import { CredentialsRepository, UserRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import { z } from 'zod';
 
 import { BaseCommand } from '@/commands/base-command';
@@ -33,7 +33,7 @@ const flagsSchema = z.object({
 	name: 'community-node',
 	description: 'Uninstall a community node and its credentials',
 	examples: [
-		'--uninstall --package n8n-nodes-evolution-api',
+		'--uninstall --package aura-nodes-evolution-api',
 		'--uninstall --credential evolutionApi --userId 1234',
 	],
 	flagsSchema,

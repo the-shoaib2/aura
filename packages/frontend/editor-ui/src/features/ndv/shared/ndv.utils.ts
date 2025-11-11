@@ -18,7 +18,7 @@ import {
 	displayParameter,
 	isResourceLocatorValue,
 	deepCopy,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { INodeUi, IUpdateInformation } from '@/Interface';
 import { CUSTOM_API_CALL_KEY, SWITCH_NODE_TYPE } from '@/app/constants';
 import isEqual from 'lodash/isEqual';
@@ -30,7 +30,7 @@ import { captureException } from '@sentry/vue';
 import { isPresent } from '@/app/utils/typesUtils';
 import type { Ref } from 'vue';
 import { omitKey } from '@/app/utils/objectUtils';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 
 export function getNodeSettingsInitialValues(): INodeParameters {
 	return {

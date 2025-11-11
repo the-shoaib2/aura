@@ -4,7 +4,7 @@ import {
 	getPersonalProject,
 	getAllSharedWorkflows,
 	getAllWorkflows,
-} from '@n8n/backend-test-utils';
+} from '@aura/backend-test-utils';
 import { nanoid } from 'nanoid';
 
 import '@/zod-alias-support';

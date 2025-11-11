@@ -1,4 +1,4 @@
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'workflow';
 
 export type SchemaField = {
 	name: string;

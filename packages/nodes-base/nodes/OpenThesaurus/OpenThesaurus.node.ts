@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { openThesaurusApiRequest } from './GenericFunctions';
 
@@ -13,7 +13,7 @@ export class OpenThesaurus implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'OpenThesaurus',
 		name: 'openThesaurus',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:openthesaurus.png',
 		group: ['output'],
 		version: 1,
@@ -71,7 +71,7 @@ export class OpenThesaurus implements INodeType {
 						name: 'baseform',
 						type: 'boolean',
 						default: false,
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+						// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 						description:
 							'Specifies the basic form for the search term if it is not already a basic form',
 					},
@@ -80,7 +80,7 @@ export class OpenThesaurus implements INodeType {
 						name: 'similar',
 						type: 'boolean',
 						default: false,
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+						// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 						description:
 							'This also returns up to five similarly written words for each answer. This is useful to be able to make a suggestion to the user in the event of a possible typing error.',
 					},
@@ -89,7 +89,7 @@ export class OpenThesaurus implements INodeType {
 						name: 'startswith',
 						type: 'boolean',
 						default: false,
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+						// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 						description:
 							'Like substring = true, but only finds words that begin with the specified search term',
 					},

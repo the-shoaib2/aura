@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import * as permissionsModule from '@n8n/permissions';
+import * as permissionsModule from '@aura/permissions';
 import { useDataTableNavigationCommands } from './useDataTableNavigationCommands';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
@@ -23,7 +23,7 @@ vi.mock('vue-router', () => ({
 	RouterLink: vi.fn(),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string, opts?: { interpolate?: Record<string, string> }) => {
@@ -39,7 +39,7 @@ vi.mock('@n8n/i18n', async (importOriginal) => ({
 	}),
 }));
 
-vi.mock('@n8n/permissions', async (importOriginal) => ({
+vi.mock('@aura/permissions', async (importOriginal) => ({
 	...(await importOriginal()),
 	getResourcePermissions: vi.fn(() => ({
 		dataTable: {

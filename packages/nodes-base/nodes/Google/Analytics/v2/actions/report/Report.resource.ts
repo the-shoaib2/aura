@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import * as getga4 from './get.ga4.operation';
 import * as getuniversal from './get.universal.operation';

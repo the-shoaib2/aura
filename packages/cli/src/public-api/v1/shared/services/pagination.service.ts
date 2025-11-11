@@ -1,4 +1,4 @@
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'workflow';
 
 import type {
 	CursorPagination,

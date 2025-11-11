@@ -1,34 +1,34 @@
 {
-	"node": "n8n-nodes-base.bannerbear",
+	"node": "aura-nodes-base.bannerbear",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/bannerbear/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/bannerbear/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.bannerbear/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.bannerbear/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Automate Designs with Bannerbear and n8n",
+				"label": "Automate Designs with Bannerbear and aura",
 				"icon": "🎨",
-				"url": "https://n8n.io/blog/automate-designs-with-bannerbear-and-n8n/"
+				"url": "https://aura.io/blog/automate-designs-with-bannerbear-and-aura/"
 			},
 			{
-				"label": "Automating Conference Organization Processes with n8n",
+				"label": "Automating Conference Organization Processes with aura",
 				"icon": "🙋‍♀️",
-				"url": "https://n8n.io/blog/automating-conference-organization-processes-with-n8n/"
+				"url": "https://aura.io/blog/automating-conference-organization-processes-with-aura/"
 			},
 			{
-				"label": "Benefits of automation and n8n: An interview with HubSpot's Hugh Durkin",
+				"label": "Benefits of automation and aura: An interview with HubSpot's Hugh Durkin",
 				"icon": "🎖",
-				"url": "https://n8n.io/blog/benefits-of-automation-and-n8n-an-interview-with-hubspots-hugh-durkin/"
+				"url": "https://aura.io/blog/benefits-of-automation-and-aura-an-interview-with-hubspots-hugh-durkin/"
 			}
 		]
 	}

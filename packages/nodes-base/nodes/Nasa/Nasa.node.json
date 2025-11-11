@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.nasa",
+	"node": "aura-nodes-base.nasa",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/nasa/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/nasa/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.nasa/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.nasa/"
 			}
 		]
 	}

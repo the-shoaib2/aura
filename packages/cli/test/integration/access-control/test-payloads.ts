@@ -1,4 +1,4 @@
-import { randomCredentialPayload } from '@n8n/backend-test-utils';
+import { randomCredentialPayload } from '@aura/backend-test-utils';
 
 /**
  * Test payload generators and sample data for access control tests
@@ -17,7 +17,7 @@ export function createBasicWorkflowPayload(name: string, projectId?: string) {
 				id: 'uuid-1234',
 				parameters: {},
 				name: 'Start',
-				type: 'n8n-nodes-base.start',
+				type: 'aura-nodes-base.start',
 				typeVersion: 1,
 				position: [240, 300],
 			},
@@ -44,7 +44,7 @@ export function createComplexWorkflowPayload(name: string, projectId?: string) {
 				id: 'start-node',
 				parameters: {},
 				name: 'Start',
-				type: 'n8n-nodes-base.start',
+				type: 'aura-nodes-base.start',
 				typeVersion: 1,
 				position: [240, 300],
 			},
@@ -61,7 +61,7 @@ export function createComplexWorkflowPayload(name: string, projectId?: string) {
 					},
 				},
 				name: 'Set',
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				typeVersion: 1,
 				position: [460, 300],
 			},
@@ -103,7 +103,7 @@ export function createWorkflowUpdatePayload(name: string, versionId?: string) {
 				id: 'uuid-1234',
 				parameters: {},
 				name: 'Start Updated',
-				type: 'n8n-nodes-base.start',
+				type: 'aura-nodes-base.start',
 				typeVersion: 1,
 				position: [240, 300],
 			},

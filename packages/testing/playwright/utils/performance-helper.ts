@@ -31,7 +31,7 @@ export async function getAllPerformanceMetrics(page: Page) {
 
 /**
  * Polls the memory metric from Prometheus endpoint and calculates average
- * @param baseUrl - The base URL of the n8n instance
+ * @param baseUrl - The base URL of the aura instance
  * @param durationMs - How long to poll in milliseconds
  * @param intervalMs - Interval between polls in milliseconds
  * @returns Average memory consumption in bytes
@@ -49,7 +49,7 @@ export async function pollMemoryMetric(
 			const response = await fetch(`${baseUrl}/metrics`);
 			const metricsText = await response.text();
 
-			const memoryMatch = metricsText.match(/n8n_process_resident_memory_bytes\s+(\d+(?:\.\d+)?)/);
+			const memoryMatch = metricsText.match(/aura_process_resident_memory_bytes\s+(\d+(?:\.\d+)?)/);
 			if (memoryMatch) {
 				const memoryBytes = parseFloat(memoryMatch[1]);
 				samples.push(memoryBytes);

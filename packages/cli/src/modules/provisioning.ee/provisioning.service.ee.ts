@@ -1,6 +1,6 @@
-import { ProvisioningConfigDto, ProvisioningConfigPatchDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
+import { ProvisioningConfigDto, ProvisioningConfigPatchDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
 import {
 	RoleRepository,
 	SettingsRepository,
@@ -9,17 +9,17 @@ import {
 	Role,
 	ProjectRepository,
 	ProjectRelation,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import { jsonParse } from 'n8n-workflow';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import { jsonParse } from 'workflow';
 import { PROVISIONING_PREFERENCES_DB_KEY } from './constants';
-import { Not, In } from '@n8n/typeorm';
-import { OnPubSubEvent } from '@n8n/decorators';
+import { Not, In } from '@aura/typeorm';
+import { OnPubSubEvent } from '@aura/decorators';
 import { type Publisher } from '@/scaling/pubsub/publisher.service';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 import { ZodError } from 'zod';
 import { ProjectService } from '@/services/project.service.ee';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 
 @Service()
 export class ProvisioningService {

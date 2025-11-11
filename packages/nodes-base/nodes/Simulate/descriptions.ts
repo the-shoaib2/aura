@@ -1,13 +1,13 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const iconSelector: INodeProperties = {
-	// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+	// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 	displayName: 'Icon to Display on Canvas',
 	name: 'icon',
 	type: 'options',
-	// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+	// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 	description: 'Select a type of node to show corresponding icon',
-	default: 'n8n-nodes-base.noOp',
+	default: 'aura-nodes-base.noOp',
 	typeOptions: {
 		loadOptionsMethod: 'getNodeTypes',
 	},

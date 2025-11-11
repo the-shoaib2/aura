@@ -1,6 +1,6 @@
 import type { Channel, Connection, ConsumeMessage, Message } from 'amqplib';
 import { mock, mockDeep } from 'jest-mock-extended';
-import type { INode, IRun, ITriggerFunctions, IWorkflowMetadata } from 'n8n-workflow';
+import type { INode, IRun, ITriggerFunctions, IWorkflowMetadata } from 'workflow';
 
 const mockChannel = mock<Channel>();
 const mockConnection = mock<Connection>({ createChannel: async () => mockChannel });

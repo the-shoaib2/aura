@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const emailOperations: INodeProperties[] = [
 	{
@@ -295,7 +295,7 @@ export const emailFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'The infusionsoft user to send the email on behalf of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The infusionsoft user to send the email on behalf of. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Contact IDs',

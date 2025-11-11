@@ -6,7 +6,7 @@ import {
 	type ChatModelDto,
 	type ChatSessionId,
 	type ChatMessageId,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import type {
 	ChatMessage,
 	GroupedConversations,
@@ -84,7 +84,7 @@ export function groupConversationsByDate(sessions: ChatHubSessionDto[]): Grouped
 }
 
 export function getAgentRoute(model: ChatHubConversationModel) {
-	if (model.provider === 'n8n') {
+	if (model.provider === 'aura') {
 		return {
 			name: CHAT_VIEW,
 			query: {
@@ -111,10 +111,10 @@ export function flattenModel(model: ChatHubConversationModel): FlattenedModel {
 	return {
 		provider: model.provider,
 		model:
-			model?.provider === 'n8n' || model?.provider === 'custom-agent'
+			model?.provider === 'aura' || model?.provider === 'custom-agent'
 				? null
 				: (model?.model ?? null),
-		workflowId: model?.provider === 'n8n' ? model.workflowId : null,
+		workflowId: model?.provider === 'aura' ? model.workflowId : null,
 		agentId: model?.provider === 'custom-agent' ? model.agentId : null,
 	};
 }
@@ -134,13 +134,13 @@ export function unflattenModel(messageOrSession: FlattenedModel): ChatHubConvers
 				provider: 'custom-agent',
 				agentId: messageOrSession.agentId,
 			};
-		case 'n8n':
+		case 'aura':
 			if (!messageOrSession.workflowId) {
 				return null;
 			}
 
 			return {
-				provider: 'n8n',
+				provider: 'aura',
 				workflowId: messageOrSession.workflowId,
 			};
 		default:
@@ -199,7 +199,7 @@ export function filterAndSortAgents(
 }
 
 export function stringifyModel(model: ChatHubConversationModel): string {
-	return `${model.provider}::${model.provider === 'custom-agent' ? model.agentId : model.provider === 'n8n' ? model.workflowId : model.model}`;
+	return `${model.provider}::${model.provider === 'custom-agent' ? model.agentId : model.provider === 'aura' ? model.workflowId : model.model}`;
 }
 
 export function fromStringToModel(value: string): ChatHubConversationModel | undefined {
@@ -210,16 +210,16 @@ export function fromStringToModel(value: string): ChatHubConversationModel | und
 		return undefined;
 	}
 
-	return parsedProvider === 'n8n'
-		? { provider: 'n8n', workflowId: identifier }
+	return parsedProvider === 'aura'
+		? { provider: 'aura', workflowId: identifier }
 		: parsedProvider === 'custom-agent'
 			? { provider: 'custom-agent', agentId: identifier }
 			: { provider: parsedProvider, model: identifier };
 }
 
 export function isMatchedAgent(agent: ChatModelDto, model: ChatHubConversationModel): boolean {
-	if (model.provider === 'n8n') {
-		return agent.model.provider === 'n8n' && agent.model.workflowId === model.workflowId;
+	if (model.provider === 'aura') {
+		return agent.model.provider === 'aura' && agent.model.workflowId === model.workflowId;
 	}
 
 	if (model.provider === 'custom-agent') {

@@ -1,18 +1,18 @@
-import type { FrontendSettings, UserUpdateRequestDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import type { ClientOAuth2Options } from '@n8n/client-oauth2';
-import { GlobalConfig } from '@n8n/config';
-import type { TagEntity, User, ICredentialsDb, PublicUser } from '@n8n/db';
+import type { FrontendSettings, UserUpdateRequestDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import type { ClientOAuth2Options } from '@aura/client-oauth2';
+import { GlobalConfig } from '@aura/config';
+import type { TagEntity, User, ICredentialsDb, PublicUser } from '@aura/db';
 import {
 	CredentialsRepository,
 	WorkflowRepository,
 	SettingsRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import type { IRun, IWorkflowBase, Workflow, WorkflowExecuteMode } from 'n8n-workflow';
-import { UnexpectedError } from 'n8n-workflow';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import type { IRun, IWorkflowBase, Workflow, WorkflowExecuteMode } from 'workflow';
+import { UnexpectedError } from 'workflow';
 import type clientOAuth1 from 'oauth-1.0a';
 
 import type { AbstractServer } from '@/abstract-server';
@@ -26,8 +26,8 @@ type Repositories = {
 };
 
 type ExternalHooksMap = {
-	'n8n.ready': [server: AbstractServer, config: Config];
-	'n8n.stop': never;
+	'aura.ready': [server: AbstractServer, config: Config];
+	'aura.stop': never;
 	'worker.ready': never;
 
 	'activeWorkflows.initialized': never;

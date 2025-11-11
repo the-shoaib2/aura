@@ -1,27 +1,27 @@
-import { safeJoinPath, type Logger } from '@n8n/backend-common';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { type DataSource, type EntityManager } from '@n8n/typeorm';
+import { safeJoinPath, type Logger } from '@aura/backend-common';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { type DataSource, type EntityManager } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
 import { readdir, readFile } from 'fs/promises';
-import type { Cipher } from 'n8n-core';
+import type { Cipher } from 'aura-core';
 
 import { ImportService } from '../import.service';
-import type { CredentialsRepository, TagRepository } from '@n8n/db';
+import type { CredentialsRepository, TagRepository } from '@aura/db';
 import type { ActiveWorkflowManager } from '@/active-workflow-manager';
 import type { WorkflowIndexService } from '@/modules/workflow-index/workflow-index.service';
-import type { DatabaseConfig } from '@n8n/config';
+import type { DatabaseConfig } from '@aura/config';
 
 // Mock fs/promises
 jest.mock('fs/promises');
 
 jest.mock('@/utils/compression.util');
 
-jest.mock('@n8n/backend-common', () => ({
+jest.mock('@aura/backend-common', () => ({
 	safeJoinPath: jest.fn(),
 }));
 
-// Mock @n8n/db
-jest.mock('@n8n/db', () => ({
+// Mock @aura/db
+jest.mock('@aura/db', () => ({
 	CredentialsRepository: mock<CredentialsRepository>(),
 	TagRepository: mock<TagRepository>(),
 	DataSource: mock<DataSource>(),
@@ -719,7 +719,7 @@ describe('ImportService', () => {
 			const dbMigrations = [{ id: '1', timestamp: '1000', name: 'TestMigration' }];
 
 			// @ts-expect-error Accessing private property for testing
-			mockDataSource.options = { type: 'sqlite', entityPrefix: 'n8n_' };
+			mockDataSource.options = { type: 'sqlite', entityPrefix: 'aura_' };
 
 			jest.mocked(readFile).mockResolvedValue(migrationsContent);
 			jest.mocked(mockDataSource.query).mockResolvedValue(dbMigrations);
@@ -727,7 +727,7 @@ describe('ImportService', () => {
 			await expect(importService.validateMigrations('/test/input')).resolves.not.toThrow();
 
 			expect(mockDataSource.query).toHaveBeenCalledWith(
-				'SELECT * FROM "n8n_migrations" ORDER BY timestamp DESC LIMIT 1',
+				'SELECT * FROM "aura_migrations" ORDER BY timestamp DESC LIMIT 1',
 			);
 		});
 

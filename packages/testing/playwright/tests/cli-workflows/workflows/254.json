@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "f9b7ea03-1809-4fef-80dd-521e9d60f3bc",
 			"name": "Execute Workflow Trigger",
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1,
 			"position": [240, 1100]
 		},
@@ -29,7 +29,7 @@
 			},
 			"id": "4275e044-2ce3-4942-a0ed-406bed90debc",
 			"name": "Get Weather",
-			"type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+			"type": "@aura/aura-nodes-langchain.toolWorkflow",
 			"typeVersion": 1,
 			"position": [640, 580]
 		},
@@ -49,7 +49,7 @@
 			},
 			"id": "c28a61c8-be38-4031-a456-76f936ba6721",
 			"name": "Get Events",
-			"type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+			"type": "@aura/aura-nodes-langchain.toolWorkflow",
 			"typeVersion": 1,
 			"position": [760, 580]
 		},
@@ -69,7 +69,7 @@
 			},
 			"id": "141f2081-39eb-48f4-9ade-924187116c58",
 			"name": "Edit Fields4",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1140, 900]
 		},
@@ -89,7 +89,7 @@
 			},
 			"id": "ce0ba26a-5149-436f-aaf6-dc2b64ca02b1",
 			"name": "Edit Fields5",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1140, 1080]
 		},
@@ -115,7 +115,7 @@
 			},
 			"id": "4ec6d24d-353c-4534-a9e7-5a19f62f8fde",
 			"name": "Edit Fields6",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [900, 260]
 		},
@@ -123,7 +123,7 @@
 			"parameters": {},
 			"id": "e14fcffe-bbf8-429c-b84e-aa749017fb8c",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-40, -180]
 		},
@@ -135,7 +135,7 @@
 			},
 			"id": "62fb5440-b07d-4279-9c0a-722a65fa5322",
 			"name": "Sticky Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [500, 200]
 		},
@@ -147,7 +147,7 @@
 			},
 			"id": "8020da6e-2ab4-4613-8527-b78705f72114",
 			"name": "Sticky Note1",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [480, -240]
 		},
@@ -167,7 +167,7 @@
 			},
 			"id": "2a0cdc4d-2ed8-4efe-973f-a633469c8001",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1140, 1260]
 		},
@@ -187,7 +187,7 @@
 			},
 			"id": "e4d9f9bc-45b0-41ce-8f52-539144736ed5",
 			"name": "Search Wiki",
-			"type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+			"type": "@aura/aura-nodes-langchain.toolWorkflow",
 			"typeVersion": 1,
 			"position": [640, 60]
 		},
@@ -198,7 +198,7 @@
 			},
 			"id": "466a8e57-8eb7-47a9-b0f0-f16c52b18c8f",
 			"name": "Structured Output Parser",
-			"type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+			"type": "@aura/aura-nodes-langchain.outputParserStructured",
 			"typeVersion": 1.2,
 			"position": [780, 0]
 		},
@@ -211,7 +211,7 @@
 			},
 			"id": "75babac0-cb8c-401a-a027-49b850166bf3",
 			"name": "AI Agent",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.6,
 			"position": [520, -180]
 		},
@@ -249,7 +249,7 @@
 			},
 			"id": "31344c44-bbfc-4774-92d9-b61762b43238",
 			"name": "Edit Fields7",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [880, -180]
 		},
@@ -261,7 +261,7 @@
 			},
 			"id": "54533ef5-039b-4243-a81c-9ac1265ae3ec",
 			"name": "Sticky Note2",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [500, -620]
 		},
@@ -275,7 +275,7 @@
 			},
 			"id": "35be87b4-b947-4b05-9380-23570dac701d",
 			"name": "Code Tool",
-			"type": "@n8n/n8n-nodes-langchain.toolCode",
+			"type": "@aura/aura-nodes-langchain.toolCode",
 			"typeVersion": 1.1,
 			"position": [740, -400]
 		},
@@ -301,7 +301,7 @@
 			},
 			"id": "33afa806-84d4-4c2e-a004-22e4d4808d47",
 			"name": "Edit Fields8",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [900, -560]
 		},
@@ -321,7 +321,7 @@
 			},
 			"id": "b35ef011-376c-4982-b7d9-8ad29eb65cd0",
 			"name": "Edit Fields1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [1140, 1460]
 		},
@@ -335,7 +335,7 @@
 			},
 			"id": "ed050ae2-eb67-4b1f-a87b-28bf5952e5da",
 			"name": "AI Agent1",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.6,
 			"position": [540, -560]
 		},
@@ -348,7 +348,7 @@
 			},
 			"id": "5aa82a01-8d32-4ede-a7f3-9ea2f24432d2",
 			"name": "Anthropic Chat Model2",
-			"type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+			"type": "@aura/aura-nodes-langchain.lmChatAnthropic",
 			"typeVersion": 1.2,
 			"position": [520, 460],
 			"credentials": {
@@ -367,7 +367,7 @@
 			},
 			"id": "2bfdb0c4-6bc9-481d-ad3c-51bed0925a78",
 			"name": "Anthropic Chat Model",
-			"type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+			"type": "@aura/aura-nodes-langchain.lmChatAnthropic",
 			"typeVersion": 1.2,
 			"position": [520, 20],
 			"credentials": {
@@ -386,7 +386,7 @@
 			},
 			"id": "11d7b586-bf4b-42aa-81c1-55aa0e17a3fc",
 			"name": "Anthropic Chat Model3",
-			"type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+			"type": "@aura/aura-nodes-langchain.lmChatAnthropic",
 			"typeVersion": 1.2,
 			"position": [540, -400],
 			"credentials": {
@@ -406,7 +406,7 @@
 			},
 			"id": "59f6625d-fbb2-47f8-ab09-31a6e0f3e527",
 			"name": "AI Agent4",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.6,
 			"position": [520, 260]
 		},
@@ -518,7 +518,7 @@
 			},
 			"id": "f4dde342-7945-49a1-8e98-cb967ada7afe",
 			"name": "Switch",
-			"type": "n8n-nodes-base.switch",
+			"type": "aura-nodes-base.switch",
 			"typeVersion": 3,
 			"position": [460, 1100]
 		},
@@ -530,7 +530,7 @@
 			},
 			"id": "b5dca644-99e9-4493-9e6a-1fbc03502d5a",
 			"name": "Sticky Note3",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [520, -1040]
 		},
@@ -550,7 +550,7 @@
 			},
 			"id": "2336c95b-f98a-4c4a-89df-d02c7ad00d42",
 			"name": "Edit Fields9",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [920, -980]
 		},
@@ -563,7 +563,7 @@
 			},
 			"id": "7646d5c7-3717-483f-85b5-da0f8eadf609",
 			"name": "Anthropic Chat Model4",
-			"type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+			"type": "@aura/aura-nodes-langchain.lmChatAnthropic",
 			"typeVersion": 1.2,
 			"position": [560, -820],
 			"credentials": {
@@ -580,7 +580,7 @@
 			},
 			"id": "1e1f51e8-7668-4efd-95d6-9c8e7cd5dfbc",
 			"name": "HTTP Request",
-			"type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+			"type": "@aura/aura-nodes-langchain.toolHttpRequest",
 			"typeVersion": 1.1,
 			"position": [740, -820]
 		},
@@ -594,7 +594,7 @@
 			},
 			"id": "36e3e45c-8167-4382-87fa-fed3eccc7dff",
 			"name": "AI Agent2",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.6,
 			"position": [560, -980]
 		},
@@ -606,7 +606,7 @@
 			},
 			"id": "7eace01a-7ea1-4175-a989-297a885d6f54",
 			"name": "Window Buffer Memory1",
-			"type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+			"type": "@aura/aura-nodes-langchain.memoryBufferWindow",
 			"typeVersion": 1.3,
 			"position": [500, -1240]
 		},
@@ -616,7 +616,7 @@
 			},
 			"id": "58269208-5599-4e2f-b9fe-f63ce1bd73d3",
 			"name": "Structured Output Parser1",
-			"type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+			"type": "@aura/aura-nodes-langchain.outputParserStructured",
 			"typeVersion": 1.2,
 			"position": [660, -1240]
 		},
@@ -631,7 +631,7 @@
 			},
 			"id": "66af25fe-deed-4aa1-b597-a2b8ec2aa9be",
 			"name": "AI Agent5",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.6,
 			"position": [540, -1400]
 		},
@@ -643,7 +643,7 @@
 			},
 			"id": "9dbe76ab-c191-404b-a3e6-bd81910923bc",
 			"name": "Sticky Note4",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [520, -1460]
 		},
@@ -669,7 +669,7 @@
 			},
 			"id": "02cd9756-bc75-4467-a587-e9b063219b94",
 			"name": "Edit Fields2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [1240, -1400]
 		},
@@ -682,7 +682,7 @@
 			},
 			"id": "acd4aefe-5deb-465c-81c3-28647e4a62c6",
 			"name": "Anthropic Chat Model5",
-			"type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+			"type": "@aura/aura-nodes-langchain.lmChatAnthropic",
 			"typeVersion": 1.2,
 			"position": [360, -1240],
 			"credentials": {
@@ -703,7 +703,7 @@
 			},
 			"id": "cd67dbc8-d756-4e0c-8f75-f753e61a4280",
 			"name": "AI Agent3",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.6,
 			"position": [900, -1400]
 		}

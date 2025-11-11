@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.egoi",
+	"node": "aura-nodes-base.egoi",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/egoi/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/egoi/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.egoi/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.egoi/"
 			}
 		]
 	}

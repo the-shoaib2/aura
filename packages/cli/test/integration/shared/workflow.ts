@@ -1,5 +1,5 @@
-import { WorkflowEntity } from '@n8n/db';
-import type { INode } from 'n8n-workflow';
+import { WorkflowEntity } from '@aura/db';
+import type { INode } from 'workflow';
 
 export const FIRST_CREDENTIAL_ID = '1';
 export const SECOND_CREDENTIAL_ID = '2';
@@ -13,7 +13,7 @@ const nodeWithNoCredentials: INode = {
 	id: NODE_WITH_NO_CRED,
 	name: 'Node with no Credential',
 	typeVersion: 1,
-	type: 'n8n-nodes-base.fakeNode',
+	type: 'aura-nodes-base.fakeNode',
 	position: [0, 0],
 	credentials: {},
 	parameters: {},

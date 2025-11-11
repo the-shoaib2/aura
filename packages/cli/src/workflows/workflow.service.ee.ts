@@ -1,4 +1,4 @@
-import { Logger } from '@n8n/backend-common';
+import { Logger } from '@aura/backend-common';
 import type {
 	CredentialsEntity,
 	CredentialUsedByWorkflow,
@@ -6,7 +6,7 @@ import type {
 	WorkflowEntity,
 	WorkflowWithSharingsAndCredentials,
 	WorkflowWithSharingsMetaDataAndCredentials,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	Folder,
 	Project,
@@ -15,13 +15,13 @@ import {
 	FolderRepository,
 	SharedWorkflowRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In, type EntityManager } from '@n8n/typeorm';
+} from '@aura/db';
+import { Service } from '@aura/di';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In, type EntityManager } from '@aura/typeorm';
 import omit from 'lodash/omit';
-import type { IWorkflowBase, WorkflowId } from 'n8n-workflow';
-import { NodeOperationError, PROJECT_ROOT, UserError, WorkflowActivationError } from 'n8n-workflow';
+import type { IWorkflowBase, WorkflowId } from 'workflow';
+import { NodeOperationError, PROJECT_ROOT, UserError, WorkflowActivationError } from 'workflow';
 
 import { WorkflowFinderService } from './workflow-finder.service';
 

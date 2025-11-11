@@ -75,7 +75,7 @@ export const getConfigResponse = {
 		pAtwdCV8NZId25Gk: {
 			'last use date': '2014-05-07T18:28:29',
 			'create date': '2014-04-09T17:29:16',
-			name: 'n8n',
+			name: 'aura',
 		},
 	},
 	swversion: '01012917',

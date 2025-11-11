@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.form",
+	"node": "aura-nodes-base.form",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Core Nodes"],
@@ -7,7 +7,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.form/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.form/"
 			}
 		],
 		"generic": []

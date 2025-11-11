@@ -1,12 +1,12 @@
 import get from 'lodash/get';
-import { constructExecutionMetaData } from 'n8n-core';
+import { constructExecutionMetaData } from 'aura-core';
 import {
 	NodeOperationError,
 	type IDataObject,
 	type IExecuteFunctions,
 	type IGetNodeParameterOptions,
 	type INode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { type SetNodeOptions } from '../../v2/helpers/interfaces';
 import * as utils from '../../v2/helpers/utils';
@@ -15,7 +15,7 @@ import { execute } from '../../v2/raw.mode';
 const node: INode = {
 	id: '11',
 	name: 'Set Node',
-	type: 'n8n-nodes-base.set',
+	type: 'aura-nodes-base.set',
 	typeVersion: 3,
 	position: [42, 42],
 	parameters: {

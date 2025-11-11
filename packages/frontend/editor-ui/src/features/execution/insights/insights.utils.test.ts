@@ -1,4 +1,4 @@
-import type { InsightsSummary } from '@n8n/api-types';
+import type { InsightsSummary } from '@aura/api-types';
 import {
 	transformInsightsTimeSaved,
 	transformInsightsAverageRunTime,

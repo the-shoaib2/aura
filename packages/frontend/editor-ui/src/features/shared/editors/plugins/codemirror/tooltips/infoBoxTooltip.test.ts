@@ -2,7 +2,7 @@ import { EditorState } from '@codemirror/state';
 import { EditorView, getTooltip, showTooltip, type Tooltip } from '@codemirror/view';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
-import { n8nLang } from '@/features/shared/editors/plugins/codemirror/n8nLang';
+import { auraLang } from '@/features/shared/editors/plugins/codemirror/auraLang';
 import { hoverTooltipSource, infoBoxTooltips } from './InfoBoxTooltip';
 import * as utils from '@/features/shared/editors/plugins/codemirror/completions/utils';
 import * as workflowHelpers from '@/app/composables/useWorkflowHelpers';
@@ -137,7 +137,7 @@ function cursorTooltips(docWithCursor: string) {
 	const state = EditorState.create({
 		doc,
 		selection: { anchor: cursorPosition },
-		extensions: [n8nLang(), infoBoxTooltips()],
+		extensions: [auraLang(), infoBoxTooltips()],
 	});
 	const view = new EditorView({ parent: document.createElement('div'), state });
 
@@ -154,7 +154,7 @@ function hoverTooltip(docWithCursor: string) {
 
 	const state = EditorState.create({
 		doc,
-		extensions: [n8nLang(), infoBoxTooltips()],
+		extensions: [auraLang(), infoBoxTooltips()],
 	});
 
 	const view = new EditorView({ state, parent: document.createElement('div') });

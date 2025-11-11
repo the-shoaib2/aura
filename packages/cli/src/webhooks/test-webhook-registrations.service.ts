@@ -1,6 +1,6 @@
-import { Service } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
-import type { IWebhookData, IWorkflowBase } from 'n8n-workflow';
+import { Service } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
+import type { IWebhookData, IWorkflowBase } from 'workflow';
 
 import { TEST_WEBHOOK_TIMEOUT, TEST_WEBHOOK_TIMEOUT_BUFFER } from '@/constants';
 import { CacheService } from '@/services/cache/cache.service';

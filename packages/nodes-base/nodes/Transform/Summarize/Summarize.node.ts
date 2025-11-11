@@ -6,7 +6,7 @@ import {
 	NodeConnectionTypes,
 	type NodeExecutionHint,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	type Aggregations,
@@ -154,7 +154,7 @@ export class Summarize implements INodeType {
 								name: 'separateBy',
 								type: 'options',
 								default: ',',
-								// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+								// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 								options: [
 									{
 										name: 'Comma',
@@ -281,7 +281,7 @@ export class Summarize implements INodeType {
 						],
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						displayName: 'Ignore items without valid fields to group by',
 						name: 'skipEmptySplitFields',
 						type: 'boolean',

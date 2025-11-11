@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { WorkflowDependencies, WorkflowDependencyRepository, WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import { ensureError, INode, IWorkflowBase } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { WorkflowDependencies, WorkflowDependencyRepository, WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import { ensureError, INode, IWorkflowBase } from 'workflow';
 
 import { EventService } from '@/events/event.service';
 
@@ -142,7 +142,7 @@ export class WorkflowIndexService {
 	}
 
 	private addWorkflowCallDependencies(node: INode, dependencyUpdates: WorkflowDependencies): void {
-		if (node.type !== 'n8n-nodes-base.executeWorkflow') {
+		if (node.type !== 'aura-nodes-base.executeWorkflow') {
 			return;
 		}
 		const calledWorkflowId: string | undefined = this.getCalledWorkflowIdFrom(node);
@@ -157,7 +157,7 @@ export class WorkflowIndexService {
 	}
 
 	private addWebhookPathDependencies(node: INode, dependencyUpdates: WorkflowDependencies): void {
-		if (node.type !== 'n8n-nodes-base.webhook') {
+		if (node.type !== 'aura-nodes-base.webhook') {
 			return;
 		}
 		const webhookPath = node.parameters.path as string;

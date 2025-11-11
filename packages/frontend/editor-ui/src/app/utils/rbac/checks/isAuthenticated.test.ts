@@ -1,6 +1,6 @@
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { isAuthenticated } from '@/app/utils/rbac/checks/isAuthenticated';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@aura/rest-api-client/api/users';
 
 vi.mock('@/features/settings/users/users.store', () => ({
 	useUsersStore: vi.fn(),

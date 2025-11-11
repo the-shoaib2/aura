@@ -1,16 +1,16 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { RoleRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { staticRolesWithScope } from '@n8n/permissions';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import { RoleRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { staticRolesWithScope } from '@aura/permissions';
 import { mock } from 'jest-mock-extended';
 
 import type { CacheService } from '@/services/cache/cache.service';
 import { RoleCacheService } from '@/services/role-cache.service';
 
 // Mock static function
-jest.mock('@n8n/permissions', () => ({
-	...jest.requireActual('@n8n/permissions'),
+jest.mock('@aura/permissions', () => ({
+	...jest.requireActual('@aura/permissions'),
 	staticRolesWithScope: jest.fn(),
 }));
 

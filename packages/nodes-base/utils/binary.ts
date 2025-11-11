@@ -1,7 +1,7 @@
 import iconv from 'iconv-lite';
 import get from 'lodash/get';
-import type { IBinaryData, IDataObject, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError, BINARY_ENCODING } from 'n8n-workflow';
+import type { IBinaryData, IDataObject, IExecuteFunctions, INodeExecutionData } from 'workflow';
+import { NodeOperationError, BINARY_ENCODING } from 'workflow';
 import type { TextContent as PdfTextContent } from 'pdfjs-dist/types/src/display/api';
 import type { WorkBook, WritingOptions } from 'xlsx';
 import { utils as xlsxUtils, write as xlsxWrite } from 'xlsx';

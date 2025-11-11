@@ -1,13 +1,13 @@
 export type RedisClientType = N8nRedisClientType | BullRedisClientType;
 
 /**
- * Redis client used by n8n.
+ * Redis client used by aura.
  *
- * - `subscriber(n8n)` to listen for messages from scaling mode pubsub channels
- * - `publisher(n8n)` to send messages into scaling mode pubsub channels
- * - `cache(n8n)` for caching operations (variables, resource ownership, etc.)
+ * - `subscriber(aura)` to listen for messages from scaling mode pubsub channels
+ * - `publisher(aura)` to send messages into scaling mode pubsub channels
+ * - `cache(aura)` for caching operations (variables, resource ownership, etc.)
  */
-type N8nRedisClientType = 'subscriber(n8n)' | 'publisher(n8n)' | 'cache(n8n)';
+type N8nRedisClientType = 'subscriber(aura)' | 'publisher(aura)' | 'cache(aura)';
 
 /**
  * Redis client used internally by Bull. Suffixed with `(bull)` at `ScalingService.setupQueue`.

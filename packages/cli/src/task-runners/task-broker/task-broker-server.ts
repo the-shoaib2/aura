@@ -1,6 +1,6 @@
-import { inTest, Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
+import { inTest, Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Service } from '@aura/di';
 import compression from 'compression';
 import express from 'express';
 import { rateLimit as expressRateLimit } from 'express-rate-limit';
@@ -99,7 +99,7 @@ export class TaskBrokerServer {
 		this.server.on('error', (error: Error & { code: string }) => {
 			if (error.code === 'EADDRINUSE') {
 				this.logger.info(
-					`n8n Task Broker's port ${port} is already in use. Do you have another instance of n8n running already?`,
+					`aura Task Broker's port ${port} is already in use. Do you have another instance of aura running already?`,
 				);
 				process.exit(1);
 			}
@@ -110,7 +110,7 @@ export class TaskBrokerServer {
 			this.server.listen(port, address, () => resolve());
 		});
 
-		this.logger.info(`n8n Task Broker ready on ${address}, port ${port}`);
+		this.logger.info(`aura Task Broker ready on ${address}, port ${port}`);
 	}
 
 	/** Creates WebSocket server for handling upgrade requests */

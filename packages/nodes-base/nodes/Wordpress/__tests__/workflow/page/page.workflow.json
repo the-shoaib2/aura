@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-32, 464],
 			"id": "246376de-5cc4-4fd2-9671-0a45b8bff10d",
@@ -21,7 +21,7 @@
 					"menuOrder": 1
 				}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [192, 80],
 			"id": "36cf31d4-ad52-4bbc-8abf-bd384b6968f7",
@@ -40,7 +40,7 @@
 				"pageId": "2",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [192, 272],
 			"id": "236d9c67-319b-435f-94e1-1719f2752a72",
@@ -59,7 +59,7 @@
 				"limit": 1,
 				"options": {}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [192, 464],
 			"id": "b1a3788f-9c81-4591-8a4c-e138612d3fb2",
@@ -82,7 +82,7 @@
 					"slug": "new-slug"
 				}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [192, 848],
 			"id": "cac71c1a-3367-4d5b-ba8d-d2285934be4e",
@@ -96,7 +96,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [416, 80],
 			"id": "bb846050-d39c-4e34-ad64-a97ccbbef256",
@@ -104,7 +104,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [416, 272],
 			"id": "9634f881-592c-4165-8f9c-5a1aad5f76ee",
@@ -112,7 +112,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [416, 464],
 			"id": "4343c931-3ded-4505-950c-43ba56929692",
@@ -120,7 +120,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [416, 848],
 			"id": "e159e8fa-a9c9-4f54-a941-29dc7983fd3a",
@@ -135,7 +135,7 @@
 					"before": "2026-01-01T00:00:00"
 				}
 			},
-			"type": "n8n-nodes-base.wordpress",
+			"type": "aura-nodes-base.wordpress",
 			"typeVersion": 1,
 			"position": [192, 656],
 			"id": "a08d9d51-e97f-4ea7-b189-d109b77e9f57",
@@ -149,7 +149,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [416, 656],
 			"id": "18c8cd20-de15-4ceb-9d6f-e4279532fe3c",

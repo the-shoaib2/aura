@@ -6,8 +6,8 @@ import type {
 	ILoadOptionsFunctions,
 	INodeExecutionData,
 	IWebhookFunctions,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { onfleetApiRequest, onfleetApiRequestAllItems } from './GenericFunctions';
 import type {

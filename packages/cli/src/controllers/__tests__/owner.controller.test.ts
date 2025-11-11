@@ -1,5 +1,5 @@
-import type { DismissBannerRequestDto, OwnerSetupRequestDto } from '@n8n/api-types';
-import type { Logger } from '@n8n/backend-common';
+import type { DismissBannerRequestDto, OwnerSetupRequestDto } from '@aura/api-types';
+import type { Logger } from '@aura/backend-common';
 import {
 	type AuthenticatedRequest,
 	type User,
@@ -7,7 +7,7 @@ import {
 	type SettingsRepository,
 	type UserRepository,
 	GLOBAL_OWNER_ROLE,
-} from '@n8n/db';
+} from '@aura/db';
 import type { Response } from 'express';
 import { mock } from 'jest-mock-extended';
 

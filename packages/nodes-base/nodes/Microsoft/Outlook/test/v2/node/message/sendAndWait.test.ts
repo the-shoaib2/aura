@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import { SEND_AND_WAIT_OPERATION, type IExecuteFunctions } from 'n8n-workflow';
+import { SEND_AND_WAIT_OPERATION, type IExecuteFunctions } from 'workflow';
 
 import { description } from '../../../../v2/actions/node.description';
 import { MicrosoftOutlookV2 } from '../../../../v2/MicrosoftOutlookV2.node';

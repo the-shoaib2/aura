@@ -1,5 +1,5 @@
 import chokidar from 'chokidar';
-import type { ITriggerFunctions } from 'n8n-workflow';
+import type { ITriggerFunctions } from 'workflow';
 
 import { LocalFileTrigger } from '../LocalFileTrigger.node';
 

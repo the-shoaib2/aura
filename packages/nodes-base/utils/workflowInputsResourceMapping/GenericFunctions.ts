@@ -12,8 +12,8 @@ import type {
 	WorkflowInputsData,
 	IExecuteFunctions,
 	ISupplyDataFunctions,
-} from 'n8n-workflow';
-import { jsonParse, NodeOperationError, EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE } from 'n8n-workflow';
+} from 'workflow';
+import { jsonParse, NodeOperationError, EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE } from 'workflow';
 
 import {
 	JSON_EXAMPLE,
@@ -59,7 +59,7 @@ function parseJsonSchema(schema: JSONSchema7): FieldValueOption[] | string {
 			result.push({ name, type: 'any' });
 		} else if (Array.isArray(type)) {
 			// Schema allows an array of types, but we don't
-			return `Invalid JSON schema. Array of types for property '${name}' is not supported by n8n. Either provide a single type or use type 'any' to allow any type`;
+			return `Invalid JSON schema. Array of types for property '${name}' is not supported by aura. Either provide a single type or use type 'any' to allow any type`;
 		} else if (typeof type !== 'string') {
 			return `Invalid JSON schema. Unexpected non-string type ${type} for property '${name}'`;
 		} else if (!SUPPORTED_TYPES.includes(type as never)) {

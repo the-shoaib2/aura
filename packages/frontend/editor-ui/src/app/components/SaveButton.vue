@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import KeyboardShortcutTooltip from '@/app/components/KeyboardShortcutTooltip.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed } from 'vue';
-import type { ButtonType } from '@n8n/design-system';
+import type { ButtonType } from '@aura/design-system';
 
-import { N8nButton } from '@n8n/design-system';
+import { N8nButton } from '@aura/design-system';
 const props = withDefaults(
 	defineProps<{
 		saved: boolean;

@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { UserAction } from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
+import type { UserAction } from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
 import type {
 	WorkflowHistory,
 	WorkflowVersionId,
 	WorkflowHistoryActionTypes,
 	WorkflowHistoryRequestParams,
-} from '@n8n/rest-api-client/api/workflowHistory';
+} from '@aura/rest-api-client/api/workflowHistory';
 import WorkflowHistoryListItem from './WorkflowHistoryListItem.vue';
-import type { IUser } from 'n8n-workflow';
+import type { IUser } from 'workflow';
 import { I18nT } from 'vue-i18n';
 import { useIntersectionObserver } from '@/app/composables/useIntersectionObserver';
 
-import { N8nLoading } from '@n8n/design-system';
+import { N8nLoading } from '@aura/design-system';
 const props = defineProps<{
 	items: WorkflowHistory[];
 	activeItem: WorkflowHistory | null;

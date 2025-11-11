@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "0bd35ca2-b8f6-4357-9315-f2f1d91289ae"
@@ -22,7 +22,7 @@
 				}
 			},
 			"name": "Chargebee",
-			"type": "n8n-nodes-base.chargebee",
+			"type": "aura-nodes-base.chargebee",
 			"typeVersion": 1,
 			"position": [510, 270],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"maxResults": 1
 			},
 			"name": "Chargebee1",
-			"type": "n8n-nodes-base.chargebee",
+			"type": "aura-nodes-base.chargebee",
 			"typeVersion": 1,
 			"position": [510, 420],
 			"credentials": {
@@ -55,7 +55,7 @@
 				"invoiceId": "={{$node[\"Chargebee1\"].json[\"id\"]}}"
 			},
 			"name": "Chargebee2",
-			"type": "n8n-nodes-base.chargebee",
+			"type": "aura-nodes-base.chargebee",
 			"typeVersion": 1,
 			"position": [640, 420],
 			"credentials": {
@@ -72,7 +72,7 @@
 				"operation": "cancel"
 			},
 			"name": "Chargebee3",
-			"type": "n8n-nodes-base.chargebee",
+			"type": "aura-nodes-base.chargebee",
 			"typeVersion": 1,
 			"position": [520, 120],
 			"credentials": {
@@ -89,7 +89,7 @@
 				"resource": "subscription"
 			},
 			"name": "Chargebee4",
-			"type": "n8n-nodes-base.chargebee",
+			"type": "aura-nodes-base.chargebee",
 			"typeVersion": 1,
 			"position": [670, 120],
 			"credentials": {

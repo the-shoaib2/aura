@@ -2,18 +2,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import type { CredentialsEntity, ICredentialsDb } from '@n8n/db';
+import type { CredentialsEntity, ICredentialsDb } from '@aura/db';
 import {
 	CredentialsRepository,
 	GLOBAL_ADMIN_ROLE,
 	GLOBAL_OWNER_ROLE,
 	SharedCredentialsRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
-import { PROJECT_ADMIN_ROLE_SLUG, PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { EntityNotFoundError, In } from '@n8n/typeorm';
-import { Credentials, getAdditionalKeys } from 'n8n-core';
+} from '@aura/db';
+import { Service } from '@aura/di';
+import { PROJECT_ADMIN_ROLE_SLUG, PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { EntityNotFoundError, In } from '@aura/typeorm';
+import { Credentials, getAdditionalKeys } from 'aura-core';
 import type {
 	ICredentialDataDecryptedObject,
 	ICredentialsExpressionResolveValues,
@@ -33,14 +33,8 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	IExecuteData,
 	IDataObject,
-} from 'n8n-workflow';
-import {
-	ICredentialsHelper,
-	NodeHelpers,
-	Workflow,
-	UnexpectedError,
-	isExpression,
-} from 'n8n-workflow';
+} from 'workflow';
+import { ICredentialsHelper, NodeHelpers, Workflow, UnexpectedError, isExpression } from 'workflow';
 
 import { CredentialTypes } from '@/credential-types';
 import { CredentialsOverwrites } from '@/credentials-overwrites';
@@ -176,7 +170,7 @@ export class CredentialsHelper extends ICredentialsHelper {
 		// check if the node is the mockup node used for testing
 		// if so, it means this is a credential test and not normal node execution
 		const isTestingCredentials =
-			node?.parameters?.temp === '' && node?.type === 'n8n-nodes-base.noOp';
+			node?.parameters?.temp === '' && node?.type === 'aura-nodes-base.noOp';
 
 		if (credentialType.preAuthentication) {
 			if (typeof credentialType.preAuthentication === 'function') {

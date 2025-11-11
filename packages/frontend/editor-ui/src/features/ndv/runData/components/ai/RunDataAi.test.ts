@@ -9,7 +9,7 @@ import { AGENT_NODE_TYPE, OPEN_AI_NODE_TYPE, WIKIPEDIA_TOOL_NODE_TYPE } from '@/
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { createTestingPinia } from '@pinia/testing';
 import { fireEvent, within } from '@testing-library/vue';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import { setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, it } from 'vitest';
 import RunDataAi from './RunDataAi.vue';

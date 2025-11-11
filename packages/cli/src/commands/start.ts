@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { LICENSE_FEATURES } from '@n8n/constants';
-import { ExecutionRepository, SettingsRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { LICENSE_FEATURES } from '@aura/constants';
+import { ExecutionRepository, SettingsRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import glob from 'fast-glob';
 import { createReadStream, createWriteStream, existsSync } from 'fs';
 import { mkdir } from 'fs/promises';
-import { jsonParse, randomString, type IWorkflowExecutionDataProcess } from 'n8n-workflow';
+import { jsonParse, randomString, type IWorkflowExecutionDataProcess } from 'workflow';
 import path from 'path';
 import replaceStream from 'replacestream';
 import { pipeline } from 'stream/promises';
@@ -44,14 +44,14 @@ const flagsSchema = z.object({
 	tunnel: z
 		.boolean()
 		.describe(
-			'runs the webhooks via a hooks.n8n.cloud tunnel server. Use only for testing and development!',
+			'runs the webhooks via a hooks.aura.cloud tunnel server. Use only for testing and development!',
 		)
 		.optional(),
 });
 
 @Command({
 	name: 'start',
-	description: 'Starts n8n. Makes Web-UI available and starts active workflows',
+	description: 'Starts aura. Makes Web-UI available and starts active workflows',
 	examples: ['', '--tunnel', '-o', '--tunnel -o'],
 	flagsSchema,
 })
@@ -80,12 +80,12 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 	}
 
 	/**
-	 * Stop n8n in a graceful way.
+	 * Stop aura in a graceful way.
 	 * Make for example sure that all the webhooks from third party services
 	 * get removed.
 	 */
 	async stopProcess() {
-		this.logger.info('\nStopping n8n...');
+		this.logger.info('\nStopping aura...');
 
 		try {
 			// Stop with trying to activate workflows that could not be activated
@@ -93,7 +93,7 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 
 			Container.get(WaitTracker).stopTracking();
 
-			await this.externalHooks?.run('n8n.stop');
+			await this.externalHooks?.run('aura.stop');
 
 			await this.activeWorkflowManager.removeAllTriggerAndPollerBasedWorkflows();
 
@@ -113,7 +113,7 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 			// Finally shut down Event Bus
 			await Container.get(MessageEventBus).close();
 		} catch (error) {
-			await this.exitWithCrash('There was an error shutting down n8n.', error);
+			await this.exitWithCrash('There was an error shutting down aura.', error);
 		}
 
 		await this.exitSuccessFully();
@@ -128,7 +128,7 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 			dsn: this.globalConfig.sentry.frontendDsn,
 			environment: process.env.ENVIRONMENT || 'development',
 			serverName: process.env.DEPLOYMENT_NAME,
-			release: `n8n@${N8N_VERSION}`,
+			release: `aura@${N8N_VERSION}`,
 		});
 		const b64Encode = (value: string) => Buffer.from(value).toString('base64');
 
@@ -137,8 +137,8 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 		const sentryConfigEncoded = b64Encode(frontendSentryConfig);
 
 		const configMetaTags = [
-			`<meta name="n8n:config:rest-endpoint" content="${restEndpointEncoded}">`,
-			`<meta name="n8n:config:sentry" content="${sentryConfigEncoded}">`,
+			`<meta name="aura:config:rest-endpoint" content="${restEndpointEncoded}">`,
+			`<meta name="aura:config:sentry" content="${sentryConfigEncoded}">`,
 		].join('');
 
 		return configMetaTags;
@@ -146,7 +146,7 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 
 	private async generateStaticAssets() {
 		// Read the index file and replace the path placeholder
-		const n8nPath = this.globalConfig.path;
+		const auraPath = this.globalConfig.path;
 		const hooksUrls = this.globalConfig.externalFrontendHooksUrls;
 
 		let scriptsString = '';
@@ -166,9 +166,9 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 				const streams = [
 					createReadStream(filePath, 'utf-8'),
 					replaceStream('%CONFIG_TAGS%', this.generateConfigTags(), { ignoreCase: false }),
-					replaceStream('/{{BASE_PATH}}/', n8nPath, { ignoreCase: false }),
-					replaceStream('/%7B%7BBASE_PATH%7D%7D/', n8nPath, { ignoreCase: false }),
-					replaceStream('/%257B%257BBASE_PATH%257D%257D/', n8nPath, { ignoreCase: false }),
+					replaceStream('/{{BASE_PATH}}/', auraPath, { ignoreCase: false }),
+					replaceStream('/%7B%7BBASE_PATH%7D%7D/', auraPath, { ignoreCase: false }),
+					replaceStream('/%257B%257BBASE_PATH%257D%257D/', auraPath, { ignoreCase: false }),
 				];
 				if (filePath.endsWith('index.html')) {
 					streams.push(
@@ -192,7 +192,7 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 	async init() {
 		await this.initCrashJournal();
 
-		this.logger.info('Initializing n8n process');
+		this.logger.info('Initializing aura process');
 		if (this.globalConfig.executions.mode === 'queue') {
 			const scopedLogger = this.logger.scoped('scaling');
 			scopedLogger.debug('Starting main instance in scaling mode');
@@ -270,8 +270,8 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 		Container.get(PubSubRegistry).init();
 
 		const subscriber = Container.get(Subscriber);
-		await subscriber.subscribe('n8n.commands');
-		await subscriber.subscribe('n8n.worker-response');
+		await subscriber.subscribe('aura.commands');
+		await subscriber.subscribe('aura.worker-response');
 
 		if (this.instanceSettings.isMultiMain) {
 			await Container.get(MultiMainSetup).init();
@@ -312,18 +312,18 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 				this.instanceSettings.update({ tunnelSubdomain });
 			}
 
-			const { default: localtunnel } = await import('@n8n/localtunnel');
+			const { default: localtunnel } = await import('@aura/localtunnel');
 			const { port } = this.globalConfig;
 
 			const webhookTunnel = await localtunnel(port, {
-				host: 'https://hooks.n8n.cloud',
+				host: 'https://hooks.aura.cloud',
 				subdomain: tunnelSubdomain,
 			});
 
 			process.env.WEBHOOK_URL = `${webhookTunnel.url}/`;
 			this.log(`Tunnel URL: ${process.env.WEBHOOK_URL}\n`);
 			this.log(
-				'IMPORTANT! Do not share with anybody as it would give people access to your n8n instance!',
+				'IMPORTANT! Do not share with anybody as it would give people access to your aura instance!',
 			);
 		}
 
@@ -351,7 +351,7 @@ export class Start extends BaseCommand<z.infer<typeof flagsSchema>> {
 
 		this.log(`\nEditor is now accessible via:\n${editorUrl}`);
 
-		// Allow to open n8n editor by pressing "o"
+		// Allow to open aura editor by pressing "o"
 		if (Boolean(process.stdout.isTTY) && process.stdin.setRawMode) {
 			process.stdin.setRawMode(true);
 			process.stdin.resume();

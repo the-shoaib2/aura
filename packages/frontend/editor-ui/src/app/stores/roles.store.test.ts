@@ -1,5 +1,5 @@
 import { useRolesStore } from '@/app/stores/roles.store';
-import * as rolesApi from '@n8n/rest-api-client/api/roles';
+import * as rolesApi from '@aura/rest-api-client/api/roles';
 import { createPinia, setActivePinia } from 'pinia';
 
 let rolesStore: ReturnType<typeof useRolesStore>;

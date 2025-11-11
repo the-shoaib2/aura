@@ -1,4 +1,4 @@
-import type { GenericValue } from 'n8n-workflow';
+import type { GenericValue } from 'workflow';
 
 export type BaseFacebookResponse<TData> = { data: TData };
 export type BasePaginatedFacebookResponse<TData> = BaseFacebookResponse<TData> & {

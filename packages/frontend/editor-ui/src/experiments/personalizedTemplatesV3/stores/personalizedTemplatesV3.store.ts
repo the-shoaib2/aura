@@ -5,7 +5,7 @@ import { usePostHog } from '@/app/stores/posthog.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { defineStore } from 'pinia';
 import { computed, ref, watch } from 'vue';
 
@@ -17,7 +17,7 @@ export const usePersonalizedTemplatesV3Store = defineStore(STORES.PERSONALIZED_T
 	const templatesStore = useTemplatesStore();
 	const workflowsStore = useWorkflowsStore();
 
-	const INTERACTION_STORAGE_KEY = 'n8n-personalizedTemplatesV3-hasInteracted';
+	const INTERACTION_STORAGE_KEY = 'aura-personalizedTemplatesV3-hasInteracted';
 
 	const hasInteractedWithTemplateRecommendations = ref(
 		localStorage.getItem(INTERACTION_STORAGE_KEY) === 'true',
@@ -40,8 +40,8 @@ export const usePersonalizedTemplatesV3Store = defineStore(STORES.PERSONALIZED_T
 		}
 
 		return (
-			selectedApps.includes('n8n-nodes-base.hubspot') ||
-			selectedApps.includes('n8n-nodes-base.hubspotTrigger')
+			selectedApps.includes('aura-nodes-base.hubspot') ||
+			selectedApps.includes('aura-nodes-base.hubspotTrigger')
 		);
 	});
 

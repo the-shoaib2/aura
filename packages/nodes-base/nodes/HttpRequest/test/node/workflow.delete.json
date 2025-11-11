@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "12433cfb-74d9-4bf1-9afd-0ab9afc9ef19",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [820, 360]
 		},
@@ -17,7 +17,7 @@
 			},
 			"id": "312e64ca-00bf-40e6-b21d-1f73930ef98c",
 			"name": "HTTP Request",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 3,
 			"position": [1100, 360]
 		}

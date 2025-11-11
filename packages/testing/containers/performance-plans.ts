@@ -2,7 +2,7 @@
  * Shared Performance Plan Types and Configurations
  *
  * This file provides the base performance plan definitions that can be used by:
- * - CLI tools (n8n-start-stack.ts)
+ * - CLI tools (aura-start-stack.ts)
  * - Playwright tests (cloud-only.ts)
  *
  */

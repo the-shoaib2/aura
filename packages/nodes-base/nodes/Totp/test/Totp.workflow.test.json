@@ -4,7 +4,7 @@
 			"parameters": {},
 			"id": "f2e03169-0e94-4a42-821b-3e8f67f449d7",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [580, 320]
 		},
@@ -14,7 +14,7 @@
 			},
 			"id": "831f657d-2724-4a25-bb94-cf37355654bb",
 			"name": "TOTP",
-			"type": "n8n-nodes-base.totp",
+			"type": "aura-nodes-base.totp",
 			"typeVersion": 1,
 			"position": [800, 320],
 			"credentials": {

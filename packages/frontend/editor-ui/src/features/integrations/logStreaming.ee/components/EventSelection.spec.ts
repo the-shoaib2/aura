@@ -11,19 +11,19 @@ describe('EventSelection.ee.vue', () => {
 
 	const mockEventGroups = [
 		{
-			name: 'n8n.workflow',
+			name: 'aura.workflow',
 			selected: false,
 			indeterminate: false,
-			label: 'n8n.workflow',
+			label: 'aura.workflow',
 			children: [
 				{
-					name: 'n8n.workflow.started',
+					name: 'aura.workflow.started',
 					selected: false,
 					indeterminate: false,
 					label: 'Started',
 				},
 				{
-					name: 'n8n.workflow.success',
+					name: 'aura.workflow.success',
 					selected: true,
 					indeterminate: false,
 					label: 'Success',
@@ -31,29 +31,29 @@ describe('EventSelection.ee.vue', () => {
 			],
 		},
 		{
-			name: 'n8n.node',
+			name: 'aura.node',
 			selected: true,
 			indeterminate: false,
-			label: 'n8n.node',
+			label: 'aura.node',
 			children: [
-				{ name: 'n8n.node.started', selected: false, indeterminate: false, label: 'Started' },
-				{ name: 'n8n.node.finished', selected: false, indeterminate: false, label: 'Finished' },
+				{ name: 'aura.node.started', selected: false, indeterminate: false, label: 'Started' },
+				{ name: 'aura.node.finished', selected: false, indeterminate: false, label: 'Finished' },
 			],
 		},
 		{
-			name: 'n8n.audit',
+			name: 'aura.audit',
 			selected: false,
 			indeterminate: true,
-			label: 'n8n.audit',
+			label: 'aura.audit',
 			children: [
 				{
-					name: 'n8n.audit.user.login.success',
+					name: 'aura.audit.user.login.success',
 					selected: true,
 					indeterminate: false,
 					label: 'User Login Success',
 				},
 				{
-					name: 'n8n.audit.user.login.failed',
+					name: 'aura.audit.user.login.failed',
 					selected: false,
 					indeterminate: false,
 					label: 'User Login Failed',
@@ -74,7 +74,7 @@ describe('EventSelection.ee.vue', () => {
 					anonymizeAuditMessages: false,
 				},
 				eventGroups: mockEventGroups,
-				selectedEvents: new Set(['n8n.workflow.success', 'n8n.audit.user.login.success']),
+				selectedEvents: new Set(['aura.workflow.success', 'aura.audit.user.login.success']),
 				isNew: false,
 			},
 		} as never;
@@ -198,7 +198,7 @@ describe('EventSelection.ee.vue', () => {
 			});
 
 			const checkboxes = container.querySelectorAll('.el-checkbox');
-			// n8n.workflow.success is selected (4th checkbox)
+			// aura.workflow.success is selected (4th checkbox)
 			expect(checkboxes[4]?.classList.contains('is-checked')).toBe(true);
 		});
 
@@ -231,7 +231,7 @@ describe('EventSelection.ee.vue', () => {
 	});
 
 	describe('Audit Anonymization Feature', () => {
-		it('should render anonymization checkbox only for n8n.audit group', () => {
+		it('should render anonymization checkbox only for aura.audit group', () => {
 			const { container } = renderComponent({
 				props: {
 					destinationId: 'test-destination-id',

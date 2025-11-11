@@ -4,7 +4,7 @@ import type {
 	ICredentialType,
 	INodeProperties,
 	Icon,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class KibanaApi implements ICredentialType {
 	name = 'kibanaApi';

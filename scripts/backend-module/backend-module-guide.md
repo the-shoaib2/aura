@@ -1,6 +1,6 @@
 # Backend module
 
-A backend module is a self-contained unit of backend functionality tied to a specific n8n feature.
+A backend module is a self-contained unit of backend functionality tied to a specific aura feature.
 
 Benefits of modularity:
 
@@ -41,7 +41,7 @@ This is only a template - your module may not need all of these files, or it may
 Backend modules currently live at `packages/cli/src/modules`, so imports can be:
 
 - from inside the module dir
-- from common packages like `@n8n/db`, `@n8n/backend-common`, `@n8n/backend-test-utils`, etc.
+- from common packages like `@aura/db`, `@aura/backend-common`, `@aura/backend-test-utils`, etc.
 - from `cli`
 - from third-party libs available in, or added to, `cli`
 
@@ -49,7 +49,7 @@ Modules are managed via env vars:
 
 - To enable a module (activate it on instance startup), use the env var `N8N_ENABLED_MODULES`.
 - To disable a module (skip it on instance startup), use the env var `N8N_DISABLED_MODULES`.
-- Some modules are **default modules** so they are always enabled unless specifically disabled. To enable a module by default, add it [here](https://github.com/n8n-io/n8n/blob/c0360e52afe9db37d4dd6e00955fa42b0c851904/packages/%40n8n/backend-common/src/modules/module-registry.ts#L26).
+- Some modules are **default modules** so they are always enabled unless specifically disabled. To enable a module by default, add it [here](https://github.com/aura-io/aura/blob/c0360e52afe9db37d4dd6e00955fa42b0c851904/packages/%40aura/backend-common/src/modules/module-registry.ts#L26).
 
 Modules that are under a license flag are automatically skipped on startup if the instance is not licensed to use the feature.
 
@@ -100,11 +100,11 @@ The entrypoint is responsible for providing:
 - **shutdown logic**, e.g. in insights, stop compaction timers,
 - **database entities** to register with `typeorm`, e.g. in insights, the three database entities `InsightsMetadata`, `InsightsByPeriod` and `InsightsRaw`
 - **settings** to send to the client for adjusting the UI, e.g. in insights, `{ summary: true, dashboard: false }`
-- **context** to merge an object into the workflow execution context `WorkflowExecuteAdditionalData`. This allows you to make module functionality available to `core`, namespaced under the module name. For now, you will also need to manually [update the type](https://github.com/n8n-io/n8n/blob/master/packages/core/src/execution-engine/index.ts#L7) of `WorkflowExecuteAdditionalData` to reflect the resulting context.
+- **context** to merge an object into the workflow execution context `WorkflowExecuteAdditionalData`. This allows you to make module functionality available to `core`, namespaced under the module name. For now, you will also need to manually [update the type](https://github.com/aura-io/aura/blob/master/packages/core/src/execution-engine/index.ts#L7) of `WorkflowExecuteAdditionalData` to reflect the resulting context.
 
 A module entrypoint may or may not need to implement all of these methods.
 
-Why do we use dynamic imports in entrypoint methods? `await import('...')` ensures we load module-specific logic **only when needed**, so that n8n instances which do not have a module enabled, or do not have licensed access to it, do not pay for the performance cost. Linting enforces that relative imports in the entrypoint use dynamic imports. Loading on demand is also the reason why the entrypoint does not use dependency injection, and forbids it via linting.
+Why do we use dynamic imports in entrypoint methods? `await import('...')` ensures we load module-specific logic **only when needed**, so that aura instances which do not have a module enabled, or do not have licensed access to it, do not pay for the performance cost. Linting enforces that relative imports in the entrypoint use dynamic imports. Loading on demand is also the reason why the entrypoint does not use dependency injection, and forbids it via linting.
 
 A module may be fully behind a license flag:
 
@@ -150,7 +150,7 @@ Module-level decorators to be aware of:
 
 ## Controller
 
-To register a controller with the server, simply import the controller file in the module entrypoint: 
+To register a controller with the server, simply import the controller file in the module entrypoint:
 
 ```ts
 @BackendModule({ name: 'my-feature' })
@@ -246,7 +246,7 @@ export class MyFeatureRepository extends Repository<MyFeatureEntity> {
   }
 
   async getSummary() {
-    return await /* typeorm query on entities */; 
+    return await /* typeorm query on entities */;
   }
 }
 ```
@@ -278,7 +278,7 @@ Entities must be registered with `typeorm` in the module entrypoint:
 class MyFeatureModule implements ModuleInterface {
   async entities() {
     const { MyFeatureEntity } = await import('./my-feature.entity');
-    
+
     return [MyFeatureEntity];
   }
 }
@@ -290,7 +290,7 @@ Entity-level decorators to be aware of:
 
 ## Migrations
 
-As an exception, migrations remain centralized at `@n8n/db/src/migrations`, because conditionally running migrations would introduce unwanted complexity at this time. This means that schema changes from modules are _always_ applied to the database, even when modules are disabled.
+As an exception, migrations remain centralized at `@aura/db/src/migrations`, because conditionally running migrations would introduce unwanted complexity at this time. This means that schema changes from modules are _always_ applied to the database, even when modules are disabled.
 
 ## Configuration
 
@@ -321,29 +321,29 @@ Occasionally, a module may need to define a module-specific CLI command. To do s
 
 Place unit and integration tests for a backend module at `packages/cli/src/modules/{featureName}/__tests__`. Use the `.test.ts` infix.
 
-Currently, testing utilities live partly at `cli` and partly at `@n8n/backend-test-utils`. In future, all testing utilities will be moved to common packages, to make modules more decoupled from `cli`.
+Currently, testing utilities live partly at `cli` and partly at `@aura/backend-test-utils`. In future, all testing utilities will be moved to common packages, to make modules more decoupled from `cli`.
 
 ## Future work
 
 1. A few aspects of modules continue to be defined outside a module's dir:
 
-- Add a license flag to `LICENSE_FEATURES` at `packages/@n8n/constants/src/index.ts`
+- Add a license flag to `LICENSE_FEATURES` at `packages/@aura/constants/src/index.ts`
 - Add a logging scope to `LOG_SCOPES` at `packages/cli/src/logging.config.ts`
-- Add a license check to `LicenseState` at `packages/@n8n/backend-common/src/license-state.ts`
-- Add a migration (as discussed above) at `packages/@n8n/db/src/migrations`
-- Add request payload validation using `zod` at `@n8n/api-types`
-- Add a module to default modules at `packages/@n8n/backend-common/src/modules/module-registry.ts`
+- Add a license check to `LicenseState` at `packages/@aura/backend-common/src/license-state.ts`
+- Add a migration (as discussed above) at `packages/@aura/db/src/migrations`
+- Add request payload validation using `zod` at `@aura/api-types`
+- Add a module to default modules at `packages/@aura/backend-common/src/modules/module-registry.ts`
 
 2. License events (e.g. expiration) currently do not trigger module shutdown or initialization at runtime.
 
-3. Some core functionality is yet to be moved from `cli` into common packages. This is not a blocker for module adoption, but this is desirable so that (a) modules become decoupled from `cli` in the long term, and (b) future external extensions can access some of that functionality. 
+3. Some core functionality is yet to be moved from `cli` into common packages. This is not a blocker for module adoption, but this is desirable so that (a) modules become decoupled from `cli` in the long term, and (b) future external extensions can access some of that functionality.
 
 4. Existing features that are not modules (e.g. LDAP) should be turned into modules over time.
 
 ## FAQs
 
-- **What is a good example of a backend module?** Our first backend module is the `insights` module at `packages/@n8n/modules/insights`.
-- **My feature is already a separate _package_ at `packages/@n8n/{feature}`. How does this work with modules?** If your feature is already fully decoupled from `cli`, or if you know in advance that your feature will have zero dependencies on `cli`, then you already stand to gain most of the benefits of modularity. In this case, you can add a thin module to `cli` containing an entrypoint to your feature imported from your package, so that your feature is loaded only when needed.
+- **What is a good example of a backend module?** Our first backend module is the `insights` module at `packages/@aura/modules/insights`.
+- **My feature is already a separate _package_ at `packages/@aura/{feature}`. How does this work with modules?** If your feature is already fully decoupled from `cli`, or if you know in advance that your feature will have zero dependencies on `cli`, then you already stand to gain most of the benefits of modularity. In this case, you can add a thin module to `cli` containing an entrypoint to your feature imported from your package, so that your feature is loaded only when needed.
 - **Does all new functionality need to be added as a module?** If your feature relies heavily on internals, e.g. workflow archival, then a module may not be a good fit. Consider a module first, but use your best judgment. Reach out if unsure.
 - **Are backend modules meant for use by external contributors?** No, they are meant for features developed by the core team.
 - **How do I hot reload a module?** Modules are part of `cli` so you can use the usual `watch` command.

@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.ghost",
+	"node": "aura-nodes-base.ghost",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/ghost/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/ghost/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.ghost/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.ghost/"
 			}
 		]
 	}

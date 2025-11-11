@@ -4,13 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import {
-	ApplicationError,
-	NodeApiError,
-	NodeConnectionTypes,
-	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
+import { ApplicationError, NodeApiError, NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { generateGarbageMemory, runGarbageCollector } from './functions';
 import {

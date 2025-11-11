@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class SlackApi implements ICredentialType {
 	name = 'slackApi';
@@ -32,7 +32,7 @@ export class SlackApi implements ICredentialType {
 		},
 		{
 			displayName:
-				'We strongly recommend setting up a <a href="https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.slacktrigger/#verify-the-webhook" target="_blank">signing secret</a> to ensure the authenticity of requests.',
+				'We strongly recommend setting up a <a href="https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.slacktrigger/#verify-the-webhook" target="_blank">signing secret</a> to ensure the authenticity of requests.',
 			name: 'notice',
 			type: 'notice',
 			default: '',

@@ -4,7 +4,7 @@ import {
 	type IExecuteFunctions,
 	type INodeExecutionData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DRY_RUN } from '../../common/fields';
 import { getSelectFields, getSelectFilter } from '../../common/selectMany';

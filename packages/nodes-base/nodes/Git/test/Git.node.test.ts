@@ -1,6 +1,6 @@
 import * as fsPromises from 'fs/promises';
 import { mock } from 'jest-mock-extended';
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 import type { SimpleGit } from 'simple-git';
 
 import { Git } from '../Git.node';

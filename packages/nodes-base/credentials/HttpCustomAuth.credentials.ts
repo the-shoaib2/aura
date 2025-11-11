@@ -1,6 +1,6 @@
-/* eslint-disable n8n-nodes-base/cred-class-field-name-unsuffixed */
-/* eslint-disable n8n-nodes-base/cred-class-name-unsuffixed */
-import type { ICredentialType, INodeProperties, Icon } from 'n8n-workflow';
+/* eslint-disable aura-nodes-base/cred-class-field-name-unsuffixed */
+/* eslint-disable aura-nodes-base/cred-class-name-unsuffixed */
+import type { ICredentialType, INodeProperties, Icon } from 'workflow';
 
 export class HttpCustomAuth implements ICredentialType {
 	name = 'httpCustomAuth';
@@ -11,7 +11,7 @@ export class HttpCustomAuth implements ICredentialType {
 
 	genericAuth = true;
 
-	icon: Icon = 'node:n8n-nodes-base.httpRequest';
+	icon: Icon = 'node:aura-nodes-base.httpRequest';
 
 	properties: INodeProperties[] = [
 		{

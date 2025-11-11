@@ -17,14 +17,14 @@ import type {
 } from '@/Interface';
 import { useActions } from '../composables/useActions';
 import KeyboardShortcutTooltip from '@/app/components/KeyboardShortcutTooltip.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useAssistantStore } from '@/features/ai/assistant/assistant.store';
 import { useBuilderStore } from '@/features/ai/assistant/builder.store';
 import { useChatPanelStore } from '@/features/ai/assistant/chatPanel.store';
 import { useCommandBar } from '@/features/shared/commandBar/composables/useCommandBar';
 
-import { N8nAssistantIcon, N8nButton, N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nAssistantIcon, N8nButton, N8nIconButton, N8nTooltip } from '@aura/design-system';
 
 type Props = {
 	nodeViewScale: number;

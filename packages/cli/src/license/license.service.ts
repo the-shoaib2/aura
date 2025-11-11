@@ -1,9 +1,9 @@
-import { LicenseState, Logger } from '@n8n/backend-common';
-import type { User } from '@n8n/db';
-import { WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { LicenseState, Logger } from '@aura/backend-common';
+import type { User } from '@aura/db';
+import { WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import axios, { AxiosError } from 'axios';
-import { ensureError } from 'n8n-workflow';
+import { ensureError } from 'workflow';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 import { LicenseEulaRequiredError } from '@/errors/response-errors/license-eula-required.error';
@@ -57,7 +57,7 @@ export class LicenseService {
 	}
 
 	async requestEnterpriseTrial(user: User) {
-		await axios.post('https://enterprise.n8n.io/enterprise-trial', {
+		await axios.post('https://enterprise.aura.io/enterprise-trial', {
 			licenseType: 'enterprise',
 			firstName: user.firstName,
 			lastName: user.lastName,
@@ -83,7 +83,7 @@ export class LicenseService {
 			const {
 				data: { licenseKey, ...rest },
 			} = await axios.post<{ title: string; text: string; licenseKey: string }>(
-				'https://enterprise.n8n.io/community-registered',
+				'https://enterprise.aura.io/community-registered',
 				{
 					email,
 					instanceId,

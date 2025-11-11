@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "471ee767-0f84-4092-8848-b32bfa27c904"
@@ -21,7 +21,7 @@
 				"additionalOptions": {}
 			},
 			"name": "uProc1",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [420, 300],
 			"credentials": {
@@ -36,11 +36,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlByDomain",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc2",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"additionalOptions": {}
 			},
 			"name": "uProc3",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [680, 300],
 			"credentials": {
@@ -74,11 +74,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainByUrl",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc4",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [810, 300],
 			"credentials": {
@@ -93,11 +93,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkDomainCertificate",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc5",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [940, 300],
 			"credentials": {
@@ -112,11 +112,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainCertificate",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc6",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1070, 300],
 			"credentials": {
@@ -130,11 +130,11 @@
 		{
 			"parameters": {
 				"group": "internet",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc7",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1200, 300],
 			"credentials": {
@@ -149,11 +149,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkDomainFormat",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc8",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1330, 300],
 			"credentials": {
@@ -168,11 +168,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainIsp",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc9",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1460, 300],
 			"credentials": {
@@ -187,11 +187,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkDomainMx",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc10",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1590, 300],
 			"credentials": {
@@ -206,11 +206,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlPdf",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc11",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1720, 300],
 			"credentials": {
@@ -225,12 +225,12 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkDomainRecord",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"type": "NS",
 				"additionalOptions": {}
 			},
 			"name": "uProc12",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1850, 300],
 			"credentials": {
@@ -245,12 +245,12 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainRecord",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"type": "NS",
 				"additionalOptions": {}
 			},
 			"name": "uProc13",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1980, 300],
 			"credentials": {
@@ -265,11 +265,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainRecords",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc14",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2110, 300],
 			"credentials": {
@@ -285,11 +285,11 @@
 				"group": "internet",
 				"tool": "checkDomainReverse",
 				"ip": "104.21.37.3",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc15",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2240, 300],
 			"credentials": {
@@ -304,11 +304,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainReverseIp",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc16",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2370, 300],
 			"credentials": {
@@ -323,12 +323,12 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlShareableLinks",
-				"text": "n8n rocks!",
-				"url": "https://n8n.io/",
+				"text": "aura rocks!",
+				"url": "https://aura.io/",
 				"additionalOptions": {}
 			},
 			"name": "uProc17",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2500, 300],
 			"credentials": {
@@ -343,11 +343,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainTechnologies",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc18",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2630, 300],
 			"credentials": {
@@ -362,11 +362,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlTechnologies",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc19",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2760, 300],
 			"credentials": {
@@ -381,11 +381,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainVisits",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc20",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2890, 300],
 			"credentials": {
@@ -400,11 +400,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getDomainWhois",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc21",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [3020, 300],
 			"credentials": {
@@ -423,7 +423,7 @@
 				"additionalOptions": {}
 			},
 			"name": "uProc22",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [420, 470],
 			"credentials": {
@@ -438,12 +438,12 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getFileCopiedBetweenUrls",
-				"source": "https://n8n.io/_nuxt/img/df5be1c.png",
+				"source": "https://aura.io/_nuxt/img/df5be1c.png",
 				"destination": "test",
 				"additionalOptions": {}
 			},
 			"name": "uProc23",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [550, 470],
 			"credentials": {
@@ -458,11 +458,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlAnalysis",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc24",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [680, 470],
 			"credentials": {
@@ -481,7 +481,7 @@
 				"additionalOptions": {}
 			},
 			"name": "uProc25",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [810, 470],
 			"credentials": {
@@ -497,11 +497,11 @@
 				"group": "internet",
 				"tool": "checkUrlContains",
 				"url": "104.21.37.3",
-				"regex": "n8n",
+				"regex": "aura",
 				"additionalOptions": {}
 			},
 			"name": "uProc26",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [940, 470],
 			"credentials": {
@@ -516,12 +516,12 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlContents",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"selector": "h1",
 				"additionalOptions": {}
 			},
 			"name": "uProc27",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1070, 470],
 			"credentials": {
@@ -536,11 +536,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlContentsParsed",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc28",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1200, 470],
 			"credentials": {
@@ -555,11 +555,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlDecode",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc29",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1330, 470],
 			"credentials": {
@@ -574,11 +574,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlEncode",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc30",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1460, 470],
 			"credentials": {
@@ -593,11 +593,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkUrlExist",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc31",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1590, 470],
 			"credentials": {
@@ -616,7 +616,7 @@
 				"additionalOptions": {}
 			},
 			"name": "uProc32",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1720, 470],
 			"credentials": {
@@ -631,11 +631,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkNetHostAlive",
-				"host": "https://n8n.io",
+				"host": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc33",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1850, 470],
 			"credentials": {
@@ -650,11 +650,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlListContentsParsed",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc34",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [1980, 470],
 			"credentials": {
@@ -673,7 +673,7 @@
 				"additionalOptions": {}
 			},
 			"name": "uProc35",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2110, 470],
 			"credentials": {
@@ -688,11 +688,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlParsed",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc36",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2240, 470],
 			"credentials": {
@@ -707,11 +707,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getNetScan",
-				"host": "https://n8n.io",
+				"host": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc37",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2370, 470],
 			"credentials": {
@@ -726,12 +726,12 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkNetServiceUp",
-				"host": "https://n8n.io",
+				"host": "https://aura.io",
 				"port": "80",
 				"additionalOptions": {}
 			},
 			"name": "uProc38",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2500, 470],
 			"credentials": {
@@ -746,12 +746,12 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "getUrlTables",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"table": "3",
 				"additionalOptions": {}
 			},
 			"name": "uProc39",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2630, 470],
 			"credentials": {
@@ -766,11 +766,11 @@
 			"parameters": {
 				"group": "internet",
 				"tool": "checkUrlValid",
-				"url": "https://n8n.io",
+				"url": "https://aura.io",
 				"additionalOptions": {}
 			},
 			"name": "uProc40",
-			"type": "n8n-nodes-base.uproc",
+			"type": "aura-nodes-base.uproc",
 			"typeVersion": 1,
 			"position": [2760, 470],
 			"credentials": {

@@ -1,4 +1,4 @@
-import type { FieldTypeMap } from 'n8n-workflow';
+import type { FieldTypeMap } from 'workflow';
 
 export type DataTableUserTableName = `${string}data_table_user_${string}`;
 

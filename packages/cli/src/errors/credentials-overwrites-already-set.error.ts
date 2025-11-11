@@ -1,4 +1,4 @@
-import { UserError } from 'n8n-workflow';
+import { UserError } from 'workflow';
 
 export class CredentialsOverwritesAlreadySetError extends UserError {
 	constructor() {

@@ -3,7 +3,7 @@ import {
 	type IExecuteFunctions,
 	type INodeExecutionData,
 	type WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { validateNoDisallowedMethodsInRunForEach } from './JsCodeValidator';
 import type { TextKeys } from './result-validation';

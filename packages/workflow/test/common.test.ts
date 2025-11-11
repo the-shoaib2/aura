@@ -68,7 +68,7 @@ describe('getConnectionsByDestination', () => {
 		expect(result).toEqual({});
 	});
 
-	// @issue https://linear.app/n8n/issue/N8N-7880/cannot-load-some-templates
+	// @issue https://linear.app/aura/issue/N8N-7880/cannot-load-some-templates
 	it('should handle nodes with null connections', () => {
 		const connections: IConnections = {
 			Node1: {

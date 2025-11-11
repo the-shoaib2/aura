@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.venafiTlsProtectDatacenter",
+	"node": "aura-nodes-base.venafiTlsProtectDatacenter",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/venafitlsprotectdatacenter/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/venafitlsprotectdatacenter/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.venafitlsprotectdatacenter/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.venafitlsprotectdatacenter/"
 			}
 		]
 	}

@@ -5,12 +5,8 @@ import {
 } from '@/app/constants';
 import type { INodeUi } from '@/Interface';
 import type { NodeTypeProvider } from '@/app/utils/nodeTypes/nodeTypeTransforms';
-import type {
-	INodeCredentialDescription,
-	FromAIArgument,
-	INodePropertyOptions,
-} from 'n8n-workflow';
-import { NodeHelpers, traverseNodeParameters } from 'n8n-workflow';
+import type { INodeCredentialDescription, FromAIArgument, INodePropertyOptions } from 'workflow';
+import { NodeHelpers, traverseNodeParameters } from 'workflow';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
 /**

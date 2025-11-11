@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import {
 	googleApiRequest,
@@ -79,7 +79,7 @@ export class GmailTrigger implements INodeType {
 				type: 'options',
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'OAuth2 (recommended)',
 						value: 'oAuth2',
 					},
@@ -140,7 +140,7 @@ export class GmailTrigger implements INodeType {
 						},
 						default: [],
 						description:
-							'Only return messages with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'Only return messages with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Search',
@@ -159,17 +159,17 @@ export class GmailTrigger implements INodeType {
 						hint: 'Filter emails by whether they have been read or not',
 						options: [
 							{
-								// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+								// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 								name: 'Unread and read emails',
 								value: 'both',
 							},
 							{
-								// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+								// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 								name: 'Unread emails only',
 								value: 'unread',
 							},
 							{
-								// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+								// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 								name: 'Read emails only',
 								value: 'read',
 							},

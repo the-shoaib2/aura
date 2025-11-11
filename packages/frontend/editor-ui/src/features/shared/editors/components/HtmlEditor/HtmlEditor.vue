@@ -25,15 +25,15 @@ import { computed, onBeforeUnmount, onMounted, ref, toRaw, toValue } from 'vue';
 
 import { useExpressionEditor } from '../../composables/useExpressionEditor';
 import { htmlEditorEventBus } from '@/app/event-bus';
-import { n8nCompletionSources } from '../../plugins/codemirror/completions/addCompletions';
+import { auraCompletionSources } from '../../plugins/codemirror/completions/addCompletions';
 import { dropInExpressionEditor, mappingDropCursor } from '../../plugins/codemirror/dragAndDrop';
 import {
 	expressionCloseBrackets,
 	expressionCloseBracketsConfig,
 } from '../../plugins/codemirror/expressionCloseBrackets';
 import { editorKeymap } from '../../plugins/codemirror/keymap';
-import { n8nAutocompletion } from '../../plugins/codemirror/n8nLang';
-import { autoCloseTags, htmlLanguage } from 'codemirror-lang-html-n8n';
+import { auraAutocompletion } from '../../plugins/codemirror/auraLang';
+import { autoCloseTags, htmlLanguage } from 'codemirror-lang-html-aura';
 import { codeEditorTheme } from '../CodeNodeEditor/theme';
 import type { Range, Section } from './types';
 import { nonTakenRanges, pasteHandler } from './utils';
@@ -62,10 +62,10 @@ const emit = defineEmits<{
 const htmlEditor = ref<HTMLElement>();
 const extensions = computed(() => [
 	bracketMatching(),
-	n8nAutocompletion(),
+	auraAutocompletion(),
 	new LanguageSupport(htmlLanguage, [
 		htmlLanguage.data.of({ closeBrackets: expressionCloseBracketsConfig }),
-		n8nCompletionSources().map((source) => htmlLanguage.data.of(source)),
+		auraCompletionSources().map((source) => htmlLanguage.data.of(source)),
 	]),
 	autoCloseTags,
 	expressionCloseBrackets(),

@@ -1,4 +1,4 @@
-import type { INodeProperties, IExecuteFunctions } from 'n8n-workflow';
+import type { INodeProperties, IExecuteFunctions } from 'workflow';
 
 import {
 	getSendAndWaitConfig,
@@ -29,8 +29,8 @@ export async function execute(this: IExecuteFunctions, i: number, instanceId: st
 
 	if (config.appendAttribution !== false) {
 		const attributionText = 'This message was sent automatically with';
-		const link = createUtmCampaignLink('n8n-nodes-base.microsoftTeams', instanceId);
-		const attribution = `<em>${attributionText} <a href="${link}">n8n</a></em>`;
+		const link = createUtmCampaignLink('aura-nodes-base.microsoftTeams', instanceId);
+		const attribution = `<em>${attributionText} <a href="${link}">aura</a></em>`;
 		content += `<br><br>${attribution}`;
 	}
 

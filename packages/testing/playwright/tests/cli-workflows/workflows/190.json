@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "84717a95-a963-4bf8-9398-1b47ae0ddea8"
@@ -20,7 +20,7 @@
 				"color": "FF6D5A"
 			},
 			"name": "Discourse",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [500, 250],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"updateFields": {}
 			},
 			"name": "Discourse1",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [650, 250],
 			"credentials": {
@@ -58,7 +58,7 @@
 				"limit": 1
 			},
 			"name": "Discourse2",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [800, 250],
 			"credentials": {
@@ -75,7 +75,7 @@
 				"name": "=Group{{Date.now()}}"
 			},
 			"name": "Discourse3",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [500, 410],
 			"credentials": {
@@ -94,7 +94,7 @@
 				"name": "=Up{{$node[\"Discourse3\"].json[\"name\"]}}"
 			},
 			"name": "Discourse4",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [650, 410],
 			"credentials": {
@@ -112,7 +112,7 @@
 				"name": "=Up{{$node[\"Discourse3\"].json[\"name\"]}}"
 			},
 			"name": "Discourse5",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [800, 410],
 			"credentials": {
@@ -130,7 +130,7 @@
 				"limit": 1
 			},
 			"name": "Discourse6",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [950, 410],
 			"credentials": {
@@ -148,7 +148,7 @@
 				"additionalFields": {}
 			},
 			"name": "Discourse7",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [500, 710],
 			"credentials": {
@@ -167,7 +167,7 @@
 				"updateFields": {}
 			},
 			"name": "Discourse8",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [650, 710],
 			"credentials": {
@@ -184,7 +184,7 @@
 				"postId": "={{$node[\"Discourse7\"].json[\"id\"]}}"
 			},
 			"name": "Discourse9",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [800, 710],
 			"credentials": {
@@ -201,7 +201,7 @@
 				"limit": 1
 			},
 			"name": "Discourse10",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [950, 710],
 			"credentials": {
@@ -225,7 +225,7 @@
 				}
 			},
 			"name": "Discourse11",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [500, 100],
 			"credentials": {
@@ -244,7 +244,7 @@
 				"username": "={{$node[\"Set\"].json[\"username\"]}}"
 			},
 			"name": "Discourse12",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [650, 100],
 			"alwaysOutputData": true,
@@ -265,7 +265,7 @@
 				"limit": 1
 			},
 			"name": "Discourse13",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [800, 100],
 			"credentials": {
@@ -283,7 +283,7 @@
 				"groupId": "={{$node[\"Discourse3\"].json[\"id\"]}}"
 			},
 			"name": "Discourse14",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [650, 560],
 			"credentials": {
@@ -302,7 +302,7 @@
 				"groupId": "={{$node[\"Discourse3\"].json[\"id\"]}}"
 			},
 			"name": "Discourse15",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [800, 560],
 			"credentials": {
@@ -326,7 +326,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [360, 100],
 			"id": "9be1116c-5e9e-491d-8ab1-038416cf9560"

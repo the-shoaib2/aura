@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { SimplifiedNodeType } from '@/Interface';
 import { getNodeIconSource, type NodeIconSource } from '@/app/utils/nodeIcon';
-import type { VersionNode } from '@n8n/rest-api-client/api/versions';
-import type { INode } from 'n8n-workflow';
+import type { VersionNode } from '@aura/rest-api-client/api/versions';
+import type { INode } from 'workflow';
 import { computed } from 'vue';
 
-import { N8nNodeIcon } from '@n8n/design-system';
+import { N8nNodeIcon } from '@aura/design-system';
 type Props = {
 	size?: number;
 	disabled?: boolean;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import type { CredentialsEntity } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { CredentialsEntity } from '@aura/db';
+import { Container } from '@aura/di';
 import type express from 'express';
 import { z } from 'zod';
 

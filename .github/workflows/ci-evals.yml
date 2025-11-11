@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'packages/@n8n/ai-workflow-builder.ee/**'
+      - 'packages/@aura/ai-workflow-builder.ee/**'
       - '.github/workflows/ci-evals.yml'
   workflow_dispatch:
     inputs:
@@ -23,7 +23,7 @@ jobs:
     name: Run Evaluations
     runs-on: blacksmith-2vcpu-ubuntu-2204
     env:
-      N8N_AI_ANTHROPIC_KEY: ${{ secrets.EVALS_ANTHROPIC_KEY }}
+      aura_AI_ANTHROPIC_KEY: ${{ secrets.EVALS_ANTHROPIC_KEY }}
       LANGSMITH_TRACING: true
       LANGSMITH_ENDPOINT: ${{ secrets.EVALS_LANGSMITH_ENDPOINT }}
       LANGSMITH_API_KEY: ${{ secrets.EVALS_LANGSMITH_API_KEY }}
@@ -38,9 +38,9 @@ jobs:
 
       - name: Export Node Types
         run: |
-          ./packages/cli/bin/n8n export:nodes --output ./packages/@n8n/ai-workflow-builder.ee/evaluations/nodes.json
+          ./packages/cli/bin/aura export:nodes --output ./packages/@aura/ai-workflow-builder.ee/evaluations/nodes.json
 
       - name: Run Evaluations
-        working-directory: packages/@n8n/ai-workflow-builder.ee/evaluations
+        working-directory: packages/@aura/ai-workflow-builder.ee/evaluations
         run: |
           pnpm eval:langsmith --repetitions 3

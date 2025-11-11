@@ -1,4 +1,4 @@
-import type { LdapConfig } from '@n8n/constants';
+import type { LdapConfig } from '@aura/constants';
 
 export const LDAP_LOGIN_LABEL = 'sso.ldap.loginLabel';
 

@@ -19,7 +19,7 @@ export default defineConfig({
 		outDir: resolve(cwd, 'dist', 'frontend'),
 		lib: {
 			entry: resolve(cwd, 'src', 'frontend', 'index.ts'),
-			name: 'n8nFrontEndSdk',
+			name: 'auraFrontEndSdk',
 			fileName: 'index',
 		},
 		rollupOptions: {

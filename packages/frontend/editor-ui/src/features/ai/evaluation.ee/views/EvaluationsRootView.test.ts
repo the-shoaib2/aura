@@ -14,7 +14,7 @@ import { waitFor } from '@testing-library/vue';
 import type { TestRunRecord } from '../evaluation.api';
 import { PLACEHOLDER_EMPTY_WORKFLOW_ID } from '@/app/constants';
 import { useTelemetry } from '@/app/composables/useTelemetry';
-import { EVALUATION_NODE_TYPE, EVALUATION_TRIGGER_NODE_TYPE, NodeHelpers } from 'n8n-workflow';
+import { EVALUATION_NODE_TYPE, EVALUATION_TRIGGER_NODE_TYPE, NodeHelpers } from 'workflow';
 import { mockNodeTypeDescription } from '@/__tests__/mocks';
 import type { SourceControlPreferences } from '@/features/integrations/sourceControl.ee/sourceControl.types';
 
@@ -34,7 +34,7 @@ vi.mock('@/app/stores/nodeTypes.store', () => ({
 	})),
 }));
 
-vi.mock('@n8n/i18n', async (importOriginal) => {
+vi.mock('@aura/i18n', async (importOriginal) => {
 	return {
 		...(await importOriginal()),
 		useI18n: () => ({

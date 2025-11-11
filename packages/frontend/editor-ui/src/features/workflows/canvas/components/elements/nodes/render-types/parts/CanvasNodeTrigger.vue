@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import KeyboardShortcutTooltip from '@/app/components/KeyboardShortcutTooltip.vue';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 import { CHAT_TRIGGER_NODE_TYPE } from '@/app/constants';
 import { useLogsStore } from '@/app/stores/logs.store';
@@ -9,7 +9,7 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { computed, useCssModule } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { N8nButton, N8nIcon } from '@n8n/design-system';
+import { N8nButton, N8nIcon } from '@aura/design-system';
 const {
 	name,
 	type,
@@ -129,7 +129,7 @@ async function handleClickExecute() {
 		transition:
 			translate 0.1s ease-in,
 			opacity 0.1s ease-in;
-		/* stylelint-disable-next-line @n8n/css-var-naming */
+		/* stylelint-disable-next-line @aura/css-var-naming */
 		transform: scale(var(--canvas-zoom-compensation-factor, 1));
 		transform-origin: center right;
 	}

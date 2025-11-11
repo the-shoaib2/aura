@@ -5,7 +5,7 @@ import { useDocumentVisibility } from '@vueuse/core';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { useCollaborationStore } from '../collaboration.store';
 
-import { N8nUserStack } from '@n8n/design-system';
+import { N8nUserStack } from '@aura/design-system';
 const collaborationStore = useCollaborationStore();
 const usersStore = useUsersStore();
 

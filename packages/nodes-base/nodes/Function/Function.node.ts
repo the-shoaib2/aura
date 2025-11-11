@@ -1,5 +1,5 @@
-import type { NodeVMOptions } from '@n8n/vm2';
-import { NodeVM } from '@n8n/vm2';
+import type { NodeVMOptions } from '@aura/vm2';
+import { NodeVM } from '@aura/vm2';
 import type {
 	IExecuteFunctions,
 	IBinaryKeyData,
@@ -7,8 +7,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, deepCopy, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, deepCopy, NodeOperationError } from 'workflow';
 
 import { vmResolver } from '../Code/JavaScriptSandbox';
 
@@ -46,7 +46,7 @@ export class Function implements INodeType {
 				},
 				type: 'string',
 				default: `// Code here will run only once, no matter how many input items there are.
-// More info and help:https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.function/
+// More info and help:https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.function/
 // Tip: You can use luxon for dates and $jmespath for querying JSON structures
 
 // Loop over inputs and add a new field called 'myNewField' to the JSON of each one

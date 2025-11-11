@@ -1,5 +1,5 @@
-import type { GlobalConfig } from '@n8n/config';
-import type { Project, User, WorkflowEntity, WorkflowRepository } from '@n8n/db';
+import type { GlobalConfig } from '@aura/config';
+import type { Project, User, WorkflowEntity, WorkflowRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
 import {
 	NodeConnectionTypes,
@@ -9,7 +9,7 @@ import {
 	type IWorkflowBase,
 	type IWorkflowExecuteAdditionalData,
 	type ExecutionError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { IWorkflowErrorData } from '@/interfaces';
 import type { NodeTypes } from '@/node-types';
@@ -21,7 +21,7 @@ import type { WorkflowRequest } from '../workflow.request';
 
 const webhookNode: INode = {
 	name: 'Webhook',
-	type: 'n8n-nodes-base.webhook',
+	type: 'aura-nodes-base.webhook',
 	id: '111f1db0-e7be-44c5-9ce9-3e35362490f0',
 	parameters: {},
 	typeVersion: 1,
@@ -37,7 +37,7 @@ const secondWebhookNode = {
 
 const executeWorkflowTriggerNode: INode = {
 	name: 'Execute Workflow Trigger',
-	type: 'n8n-nodes-base.executeWorkflowTrigger',
+	type: 'aura-nodes-base.executeWorkflowTrigger',
 	id: '78d63bca-bb6c-4568-948f-8ed9aacb1fe9',
 	parameters: {},
 	typeVersion: 1,
@@ -46,7 +46,7 @@ const executeWorkflowTriggerNode: INode = {
 
 const respondToWebhookNode: INode = {
 	name: 'Respond to Webhook',
-	type: 'n8n-nodes-base.respondToWebhook',
+	type: 'aura-nodes-base.respondToWebhook',
 	id: '66d63bca-bb6c-4568-948f-8ed9aacb1fe9',
 	parameters: {},
 	typeVersion: 1,
@@ -55,7 +55,7 @@ const respondToWebhookNode: INode = {
 
 const hackerNewsNode: INode = {
 	name: 'Hacker News',
-	type: 'n8n-nodes-base.hackerNews',
+	type: 'aura-nodes-base.hackerNews',
 	id: '55d63bca-bb6c-4568-948f-8ed9aacb1fe9',
 	parameters: {},
 	typeVersion: 1,
@@ -64,7 +64,7 @@ const hackerNewsNode: INode = {
 
 const secondHackerNewsNode: INode = {
 	name: 'Hacker News 2',
-	type: 'n8n-nodes-base.hackerNews',
+	type: 'aura-nodes-base.hackerNews',
 	id: '55d63bca-bb6c-4568-948f-8ed9aacb1fe3',
 	parameters: {},
 	typeVersion: 1,
@@ -171,13 +171,13 @@ describe('WorkflowExecutionService', () => {
 		[
 			{
 				name: 'trigger',
-				type: 'n8n-nodes-base.airtableTrigger',
+				type: 'aura-nodes-base.airtableTrigger',
 				// Avoid mock constructor evaluated as true
 				disabled: undefined,
 			},
 			{
 				name: 'webhook',
-				type: 'n8n-nodes-base.webhook',
+				type: 'aura-nodes-base.webhook',
 				disabled: undefined,
 			},
 		].forEach((triggerNode: Partial<INode>) => {
@@ -235,7 +235,7 @@ describe('WorkflowExecutionService', () => {
 				position: [1, 2],
 				parameters: {},
 				name: 'pinned',
-				type: 'n8n-nodes-base.airtableTrigger',
+				type: 'aura-nodes-base.airtableTrigger',
 			};
 
 			const unexecutedTrigger: INode = {
@@ -244,7 +244,7 @@ describe('WorkflowExecutionService', () => {
 				position: [1, 2],
 				parameters: {},
 				name: 'to-start-from',
-				type: 'n8n-nodes-base.airtableTrigger',
+				type: 'aura-nodes-base.airtableTrigger',
 			};
 
 			const runPayload: WorkflowRequest.ManualRunPayload = {
@@ -302,7 +302,7 @@ describe('WorkflowExecutionService', () => {
 				position: [1, 2],
 				parameters: {},
 				name: 'pinned',
-				type: 'n8n-nodes-base.airtableTrigger',
+				type: 'aura-nodes-base.airtableTrigger',
 			};
 
 			const unexecutedTrigger: INode = {
@@ -311,7 +311,7 @@ describe('WorkflowExecutionService', () => {
 				position: [1, 2],
 				parameters: {},
 				name: 'to-start-from',
-				type: 'n8n-nodes-base.airtableTrigger',
+				type: 'aura-nodes-base.airtableTrigger',
 			};
 
 			const runPayload: WorkflowRequest.ManualRunPayload = {
@@ -504,7 +504,7 @@ describe('WorkflowExecutionService', () => {
 			const workflowRunnerMock = mock<WorkflowRunner>();
 			workflowRunnerMock.run.mockResolvedValue('fake-execution-id');
 
-			const errorTriggerType = 'n8n-nodes-base.errorTrigger';
+			const errorTriggerType = 'aura-nodes-base.errorTrigger';
 			const globalConfig = mock<GlobalConfig>({
 				nodes: {
 					errorTriggerType,

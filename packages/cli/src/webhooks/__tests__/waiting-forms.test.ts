@@ -1,7 +1,7 @@
-import type { IExecutionResponse, ExecutionRepository } from '@n8n/db';
+import type { IExecutionResponse, ExecutionRepository } from '@aura/db';
 import type express from 'express';
 import { mock } from 'jest-mock-extended';
-import { FORM_NODE_TYPE, WAITING_FORMS_EXECUTION_STATUS, type Workflow } from 'n8n-workflow';
+import { FORM_NODE_TYPE, WAITING_FORMS_EXECUTION_STATUS, type Workflow } from 'workflow';
 
 import { WaitingForms } from '@/webhooks/waiting-forms';
 

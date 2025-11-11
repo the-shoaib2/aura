@@ -4,7 +4,7 @@ import {
 	type INodeProperties,
 	type IExecuteFunctions,
 	updateDisplayOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	seaTableApiRequest,
@@ -25,9 +25,9 @@ export const properties: INodeProperties[] = [
 		},
 		required: true,
 		default: '',
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-options
 		description:
-			'Select the column to be searched. Not all column types are supported for search. Choose from the list, or specify a name using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
+			'Select the column to be searched. Not all column types are supported for search. Choose from the list, or specify a name using an <a href="https://docs.aura.io/code-examples/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Search Term',

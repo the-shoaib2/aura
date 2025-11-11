@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 const i18n = useI18n();
 
@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
 	<div>
-		<span v-n8n-html="errorMessage" data-test-id="sanitized-error-message"></span>
+		<span v-aura-html="errorMessage" data-test-id="sanitized-error-message"></span>
 		<br />
 		<a data-action="openNodeDetail" :data-action-parameter-node="nodeName">{{
 			i18n.baseText('node.executionError.openNode')

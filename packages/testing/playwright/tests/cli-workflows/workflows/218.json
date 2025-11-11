@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "f26a5bfe-df4f-4716-aa45-f2fe142d5845"
@@ -23,7 +23,7 @@
 					"modificationsValues": [
 						{
 							"name": "message",
-							"text": "Testing n8n qa",
+							"text": "Testing aura qa",
 							"color": "#0911A0",
 							"background": "#EEEEEE"
 						}
@@ -31,7 +31,7 @@
 				}
 			},
 			"name": "Bannerbear",
-			"type": "n8n-nodes-base.bannerbear",
+			"type": "aura-nodes-base.bannerbear",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -48,7 +48,7 @@
 				"imageId": "={{$node[\"Bannerbear\"].json[\"uid\"]}}"
 			},
 			"name": "Bannerbear1",
-			"type": "n8n-nodes-base.bannerbear",
+			"type": "aura-nodes-base.bannerbear",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -65,7 +65,7 @@
 				"operation": "getAll"
 			},
 			"name": "Bannerbear2",
-			"type": "n8n-nodes-base.bannerbear",
+			"type": "aura-nodes-base.bannerbear",
 			"typeVersion": 1,
 			"position": [900, 400],
 			"credentials": {
@@ -82,7 +82,7 @@
 				"templateId": "0MkzgpZ46zEDyVrmlP"
 			},
 			"name": "Bannerbear3",
-			"type": "n8n-nodes-base.bannerbear",
+			"type": "aura-nodes-base.bannerbear",
 			"typeVersion": 1,
 			"position": [900, 250],
 			"credentials": {

@@ -1,6 +1,6 @@
-import { GlobalConfig } from '@n8n/config';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Get, Post, RestController } from '@n8n/decorators';
+import { GlobalConfig } from '@aura/config';
+import { AuthenticatedRequest } from '@aura/db';
+import { Get, Post, RestController } from '@aura/decorators';
 import { NextFunction, Response } from 'express';
 import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
 
@@ -46,7 +46,7 @@ export class TelemetryController {
 	})
 	async sourceConfig(_: Request, res: Response) {
 		try {
-			const response = await fetch('https://api-rs.n8n.io/sourceConfig', {
+			const response = await fetch('https://api-rs.aura.io/sourceConfig', {
 				headers: {
 					authorization:
 						'Basic ' + btoa(`${this.globalConfig.diagnostics.frontendConfig.split(';')[0]}:`),

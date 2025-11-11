@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const disableDotNotationBoolean: INodeProperties = {
 	displayName: 'Disable Dot Notation',

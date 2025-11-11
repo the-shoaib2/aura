@@ -1,1 +1,9 @@
-<mj-image src="cid:n8n-logo" href="https://n8n.io/" align="left" width="125px" alt="n8n" padding-top="20px" padding-bottom="40px" />
+<mj-image
+	src="cid:aura-logo"
+	href="https://aura.io/"
+	align="left"
+	width="125px"
+	alt="aura"
+	padding-top="20px"
+	padding-bottom="40px"
+/>

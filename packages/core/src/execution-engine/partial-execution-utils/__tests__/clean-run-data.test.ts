@@ -9,7 +9,7 @@
 // XX denotes that the node is disabled
 // PD denotes that the node has pinned data
 
-import { NodeConnectionTypes, type IRunData } from 'n8n-workflow';
+import { NodeConnectionTypes, type IRunData } from 'workflow';
 
 import { createNodeData, toITaskData } from './helpers';
 import { cleanRunData } from '../clean-run-data';

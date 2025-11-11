@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const ticketDescription: INodeProperties[] = [
 	// ----------------------------------
@@ -69,7 +69,7 @@ export const ticketDescription: INodeProperties[] = [
 		},
 		placeholder: 'First-Level Helpdesk',
 		description:
-			'Group that will own the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Group that will own the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		default: '',
 		required: true,
 		displayOptions: {
@@ -87,9 +87,9 @@ export const ticketDescription: INodeProperties[] = [
 			loadOptionsMethod: 'loadCustomerEmails',
 		},
 		description:
-			'Email address of the customer concerned in the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Email address of the customer concerned in the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		default: '',
-		placeholder: 'hello@n8n.io',
+		placeholder: 'hello@aura.io',
 		required: true,
 		displayOptions: {
 			show: {
@@ -103,7 +103,7 @@ export const ticketDescription: INodeProperties[] = [
 		name: 'id',
 		type: 'string',
 		description:
-			'Ticket to retrieve. Specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Ticket to retrieve. Specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		default: '',
 		required: true,
 		displayOptions: {
@@ -119,7 +119,7 @@ export const ticketDescription: INodeProperties[] = [
 		type: 'string',
 		default: '',
 		description:
-			'Ticket to delete. Specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Ticket to delete. Specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		required: true,
 		displayOptions: {
 			show: {
@@ -277,7 +277,7 @@ export const ticketDescription: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'Name of the custom field to set. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'Name of the custom field to set. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Value',

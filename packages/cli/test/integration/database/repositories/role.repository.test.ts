@@ -1,7 +1,7 @@
-import { testDb, linkUserToProject, createTeamProject } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { AuthRolesService, RoleRepository, ScopeRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { testDb, linkUserToProject, createTeamProject } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { AuthRolesService, RoleRepository, ScopeRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import {
 	createRole,

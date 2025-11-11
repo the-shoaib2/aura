@@ -37,7 +37,7 @@ export const addCommentLink = {
 		}`,
 	variables: {
 		issueId: 'test-17',
-		url: 'https://n8n.io',
+		url: 'https://aura.io',
 	},
 };
 

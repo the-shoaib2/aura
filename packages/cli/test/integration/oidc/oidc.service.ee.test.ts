@@ -9,10 +9,10 @@ jest.mock('openid-client', () => ({
 	fetchUserInfo: fetchUserInfoMock,
 }));
 
-import type { OidcConfigDto } from '@n8n/api-types';
-import { testDb } from '@n8n/backend-test-utils';
-import { type User, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { OidcConfigDto } from '@aura/api-types';
+import { testDb } from '@aura/backend-test-utils';
+import { type User, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import type * as mocked_oidc_client from 'openid-client';
 const real_odic_client = jest.requireActual('openid-client');
 
@@ -21,9 +21,9 @@ import { ForbiddenError } from '@/errors/response-errors/forbidden.error';
 import { OIDC_CLIENT_SECRET_REDACTED_VALUE } from '@/sso.ee/oidc/constants';
 import { OidcService } from '@/sso.ee/oidc/oidc.service.ee';
 import { createUser } from '@test-integration/db/users';
-import { UserError } from 'n8n-workflow';
+import { UserError } from 'workflow';
 import { JwtService } from '@/services/jwt.service';
-import { GlobalConfig } from '@n8n/config';
+import { GlobalConfig } from '@aura/config';
 import { ProvisioningService } from '@/modules/provisioning.ee/provisioning.service.ee';
 
 beforeAll(async () => {
@@ -54,7 +54,7 @@ describe('OIDC service', () => {
 			expect(oidcService.getRedactedConfig()).toEqual({
 				clientId: '',
 				clientSecret: OIDC_CLIENT_SECRET_REDACTED_VALUE,
-				discoveryEndpoint: 'http://n8n.io/not-set',
+				discoveryEndpoint: 'http://aura.io/not-set',
 				loginEnabled: false,
 				prompt: 'select_account',
 			});
@@ -65,7 +65,7 @@ describe('OIDC service', () => {
 			expect(config).toEqual({
 				clientId: '',
 				clientSecret: '',
-				discoveryEndpoint: new URL('http://n8n.io/not-set'),
+				discoveryEndpoint: new URL('http://aura.io/not-set'),
 				loginEnabled: false,
 				prompt: 'select_account',
 			});
@@ -179,9 +179,9 @@ describe('OIDC service', () => {
 
 			const mockConfiguration = new real_odic_client.Configuration(
 				{
-					issuer: 'https://example.com/auth/realms/n8n',
+					issuer: 'https://example.com/auth/realms/aura',
 					client_id: 'initial-client-id',
-					redirect_uris: ['http://n8n.io/sso/oidc/callback'],
+					redirect_uris: ['http://aura.io/sso/oidc/callback'],
 					response_types: ['code'],
 					scopes: ['openid', 'profile', 'email'],
 					authorization_endpoint: 'https://example.com/auth',
@@ -209,9 +209,9 @@ describe('OIDC service', () => {
 
 			const newMockConfiguration = new real_odic_client.Configuration(
 				{
-					issuer: 'https://newprovider.example.com/auth/realms/n8n',
+					issuer: 'https://newprovider.example.com/auth/realms/aura',
 					client_id: 'new-client-id',
-					redirect_uris: ['http://n8n.io/sso/oidc/callback'],
+					redirect_uris: ['http://aura.io/sso/oidc/callback'],
 					response_types: ['code'],
 					scopes: ['openid', 'profile', 'email'],
 					authorization_endpoint: 'https://newprovider.example.com/auth',
@@ -239,9 +239,9 @@ describe('OIDC service', () => {
 	it('should generate a valid authentication URL', async () => {
 		const mockConfiguration = new real_odic_client.Configuration(
 			{
-				issuer: 'https://example.com/auth/realms/n8n',
+				issuer: 'https://example.com/auth/realms/aura',
 				client_id: 'test-client-id',
-				redirect_uris: ['http://n8n.io/sso/oidc/callback'],
+				redirect_uris: ['http://aura.io/sso/oidc/callback'],
 				response_types: ['code'],
 				scopes: ['openid', 'profile', 'email'],
 				authorization_endpoint: 'https://example.com/auth',
@@ -272,7 +272,7 @@ describe('OIDC service', () => {
 		expect(authUrl.url.searchParams.get('prompt')).toBeDefined();
 		expect(authUrl.url.searchParams.get('prompt')).toEqual('consent');
 		expect(authUrl.url.searchParams.get('state')).toBeDefined();
-		expect(authUrl.url.searchParams.get('state')?.startsWith('n8n_state:')).toBe(true);
+		expect(authUrl.url.searchParams.get('state')?.startsWith('aura_state:')).toBe(true);
 
 		expect(authUrl.state).toBeDefined();
 		expect(authUrl.nonce).toBeDefined();
@@ -282,9 +282,9 @@ describe('OIDC service', () => {
 		beforeAll(async () => {
 			const mockConfiguration = new real_odic_client.Configuration(
 				{
-					issuer: 'https://example.com/auth/realms/n8n',
+					issuer: 'https://example.com/auth/realms/aura',
 					client_id: 'test-client-id',
-					redirect_uris: ['http://n8n.io/sso/oidc/callback'],
+					redirect_uris: ['http://aura.io/sso/oidc/callback'],
 					response_types: ['code'],
 					scopes: ['openid', 'profile', 'email'],
 					authorization_endpoint: 'https://example.com/auth',
@@ -328,7 +328,7 @@ describe('OIDC service', () => {
 			expect(authUrl.url.searchParams.get('prompt')).toBeDefined();
 			expect(authUrl.url.searchParams.get('prompt')).toEqual('consent');
 			expect(authUrl.url.searchParams.get('state')).toBeDefined();
-			expect(authUrl.url.searchParams.get('state')?.startsWith('n8n_state:')).toBe(true);
+			expect(authUrl.url.searchParams.get('state')?.startsWith('aura_state:')).toBe(true);
 
 			expect(authUrl.state).toBeDefined();
 			expect(authUrl.nonce).toBeDefined();
@@ -340,7 +340,7 @@ describe('OIDC service', () => {
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
 			Container.get(ProvisioningService).provisioningConfig.scopesProvisionInstanceRole = false;
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
-			Container.get(ProvisioningService).provisioningConfig.scopesName = 'n8n_test_scope';
+			Container.get(ProvisioningService).provisioningConfig.scopesName = 'aura_test_scope';
 			const authUrl = await oidcService.generateLoginUrl();
 
 			validateUrl(authUrl);
@@ -353,11 +353,11 @@ describe('OIDC service', () => {
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
 			Container.get(ProvisioningService).provisioningConfig.scopesProvisionInstanceRole = false;
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
-			Container.get(ProvisioningService).provisioningConfig.scopesName = 'n8n_test_scope';
+			Container.get(ProvisioningService).provisioningConfig.scopesName = 'aura_test_scope';
 			const authUrl = await oidcService.generateLoginUrl();
 
 			validateUrl(authUrl);
-			expect(authUrl.url.searchParams.get('scope')).toEqual('openid email profile n8n_test_scope');
+			expect(authUrl.url.searchParams.get('scope')).toEqual('openid email profile aura_test_scope');
 		});
 
 		it('should include the provisioning scope if instance provisioning is enabled', async () => {
@@ -366,11 +366,11 @@ describe('OIDC service', () => {
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
 			Container.get(ProvisioningService).provisioningConfig.scopesProvisionInstanceRole = true;
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
-			Container.get(ProvisioningService).provisioningConfig.scopesName = 'n8n_test_scope';
+			Container.get(ProvisioningService).provisioningConfig.scopesName = 'aura_test_scope';
 			const authUrl = await oidcService.generateLoginUrl();
 
 			validateUrl(authUrl);
-			expect(authUrl.url.searchParams.get('scope')).toEqual('openid email profile n8n_test_scope');
+			expect(authUrl.url.searchParams.get('scope')).toEqual('openid email profile aura_test_scope');
 		});
 
 		it('should include the provisioning scope if project and instance provisioning is enabled', async () => {
@@ -379,11 +379,11 @@ describe('OIDC service', () => {
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
 			Container.get(ProvisioningService).provisioningConfig.scopesProvisionInstanceRole = true;
 			// @ts-expect-error - provisioningConfig is private and only accessible within the class
-			Container.get(ProvisioningService).provisioningConfig.scopesName = 'n8n_test_scope';
+			Container.get(ProvisioningService).provisioningConfig.scopesName = 'aura_test_scope';
 			const authUrl = await oidcService.generateLoginUrl();
 
 			validateUrl(authUrl);
-			expect(authUrl.url.searchParams.get('scope')).toEqual('openid email profile n8n_test_scope');
+			expect(authUrl.url.searchParams.get('scope')).toEqual('openid email profile aura_test_scope');
 		});
 	});
 
@@ -403,7 +403,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -449,7 +449,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -487,7 +487,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject-1',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -525,7 +525,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject-3',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -563,7 +563,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject-3',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -600,7 +600,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject-invalid',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -645,7 +645,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject-multi',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -769,7 +769,7 @@ describe('OIDC service', () => {
 				claims: () => {
 					return {
 						sub: 'mock-subject-userinfo-error',
-						iss: 'https://example.com/auth/realms/n8n',
+						iss: 'https://example.com/auth/realms/aura',
 						aud: 'test-client-id',
 						iat: Math.floor(Date.now() / 1000) - 1000,
 						exp: Math.floor(Date.now() / 1000) + 3600,
@@ -825,7 +825,7 @@ describe('OIDC service', () => {
 		});
 
 		it('should throw an error for an invalid random part of the state', () => {
-			const invalid = Container.get(JwtService).sign({ state: 'n8n_state:invalid-state' });
+			const invalid = Container.get(JwtService).sign({ state: 'aura_state:invalid-state' });
 			expect(() => oidcService.verifyState(invalid)).toThrow(BadRequestError);
 		});
 
@@ -839,7 +839,7 @@ describe('OIDC service', () => {
 		});
 
 		it('should throw an error for an invalid random part of the nonce', () => {
-			const invalid = Container.get(JwtService).sign({ nonce: 'n8n_nonce:invalid-nonce' });
+			const invalid = Container.get(JwtService).sign({ nonce: 'aura_nonce:invalid-nonce' });
 			expect(() => oidcService.verifyNonce(invalid)).toThrow(BadRequestError);
 		});
 	});

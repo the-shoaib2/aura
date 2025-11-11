@@ -1,11 +1,11 @@
-import { Logger } from '@n8n/backend-common';
-import { ExecutionsConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import { ExecutionRepository, DbConnection } from '@n8n/db';
-import { OnLeaderStepdown, OnLeaderTakeover, OnShutdown } from '@n8n/decorators';
-import { Service } from '@n8n/di';
-import { BinaryDataService, InstanceSettings } from 'n8n-core';
-import { ensureError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { ExecutionsConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import { ExecutionRepository, DbConnection } from '@aura/db';
+import { OnLeaderStepdown, OnLeaderTakeover, OnShutdown } from '@aura/decorators';
+import { Service } from '@aura/di';
+import { BinaryDataService, InstanceSettings } from 'aura-core';
+import { ensureError } from 'workflow';
 import { strict } from 'node:assert';
 
 /**

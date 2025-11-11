@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const cloneFields: INodeProperties[] = [
 	{
@@ -11,7 +11,7 @@ export const cloneFields: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'https://github.com/n8n-io/n8n',
+		placeholder: 'https://github.com/aura-io/aura',
 		description: 'The URL or path of the repository to clone',
 		required: true,
 	},

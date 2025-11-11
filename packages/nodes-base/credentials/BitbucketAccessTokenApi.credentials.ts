@@ -4,7 +4,7 @@ import type {
 	ICredentialType,
 	IHttpRequestOptions,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class BitbucketAccessTokenApi implements ICredentialType {
 	name = 'bitbucketAccessTokenApi';

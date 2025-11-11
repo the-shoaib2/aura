@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import type { ExecutionSummary } from 'n8n-workflow';
-import { useI18n } from '@n8n/i18n';
-import { getResourcePermissions } from '@n8n/permissions';
+import type { ExecutionSummary } from 'workflow';
+import { useI18n } from '@aura/i18n';
+import { getResourcePermissions } from '@aura/permissions';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useRoute } from 'vue-router';
 
 import { ElDropdown } from 'element-plus';
-import { N8nBadge, N8nButton, N8nHeading, N8nText } from '@n8n/design-system';
+import { N8nBadge, N8nButton, N8nHeading, N8nText } from '@aura/design-system';
 const props = defineProps<{
 	execution: ExecutionSummary & {
 		customData?: Record<string, string>;
@@ -102,7 +102,7 @@ function onDropdownVisibleChange(visible: boolean) {
 						data-test-id="execution-annotation-data-empty"
 					>
 						<N8nText color="text-base" size="small" align="center">
-							<span v-n8n-html="i18n.baseText('executionAnnotationView.data.notFound')" />
+							<span v-aura-html="i18n.baseText('executionAnnotationView.data.notFound')" />
 						</N8nText>
 					</div>
 				</div>

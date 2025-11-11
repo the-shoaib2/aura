@@ -7,7 +7,7 @@
 				"text": "What happened yesterday?",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.7,
 			"position": [140, -60],
 			"id": "17f481ed-343f-4e0f-ace0-ec1a6937f57d",
@@ -17,7 +17,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [100, 180],
 			"id": "af60b8a2-f065-46e5-92c6-2b3f54e8b48d",
@@ -34,7 +34,7 @@
 				"name": "search_vector_store",
 				"description": "Retrieves data about past events"
 			},
-			"type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+			"type": "@aura/aura-nodes-langchain.toolVectorStore",
 			"typeVersion": 1,
 			"position": [400, 160],
 			"id": "3d2dc985-7dc5-4996-90c5-85e777070315",
@@ -44,7 +44,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+			"type": "@aura/aura-nodes-langchain.embeddingsOpenAi",
 			"typeVersion": 1.1,
 			"position": [360, 520],
 			"id": "55cfa84c-b2f6-40aa-9eef-43fec740ba6c",
@@ -61,7 +61,7 @@
 				"model": "=gpt-4o-mini123",
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [620, 360],
 			"id": "46468ea7-318b-4893-b387-b8cc1cca1355",
@@ -75,7 +75,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+			"type": "@aura/aura-nodes-langchain.vectorStoreInMemory",
 			"typeVersion": 1,
 			"position": [300, 320],
 			"id": "e3a35d71-b47d-46fc-976e-eb671cc9c3fc",
@@ -83,7 +83,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-60, -60],
 			"id": "b42f6a79-4b29-4e17-95ab-5c4fbeda3683",

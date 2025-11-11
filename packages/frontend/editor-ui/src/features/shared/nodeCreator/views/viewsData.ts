@@ -59,13 +59,13 @@ import {
 	HUMAN_IN_THE_LOOP_CATEGORY,
 	TEMPLATE_CATEGORY_AI,
 } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import type { SimplifiedNodeType } from '@/Interface';
-import type { INodeTypeDescription, NodeConnectionType, Themed } from 'n8n-workflow';
-import { EVALUATION_TRIGGER_NODE_TYPE, NodeConnectionTypes } from 'n8n-workflow';
+import type { INodeTypeDescription, NodeConnectionType, Themed } from 'workflow';
+import { EVALUATION_TRIGGER_NODE_TYPE, NodeConnectionTypes } from 'workflow';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
-import type { BaseTextKey } from '@n8n/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import camelCase from 'lodash/camelCase';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useEvaluationStore } from '@/features/ai/evaluation.ee/evaluation.store';
@@ -145,7 +145,7 @@ function getEvaluationNode(
 	nodeTypesStore: ReturnType<typeof useNodeTypesStore>,
 	isEvaluationVariantEnabled: boolean,
 ) {
-	const evaluationNodeStore = nodeTypesStore.getNodeType('n8n-nodes-base.evaluation');
+	const evaluationNodeStore = nodeTypesStore.getNodeType('aura-nodes-base.evaluation');
 
 	if (!isEvaluationVariantEnabled || !evaluationNodeStore) {
 		return [];

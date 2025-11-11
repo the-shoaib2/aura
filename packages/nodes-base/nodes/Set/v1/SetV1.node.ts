@@ -6,8 +6,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, deepCopy } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, deepCopy } from 'workflow';
 
 const versionDescription: INodeTypeDescription = {
 	displayName: 'Set',
@@ -60,7 +60,7 @@ const versionDescription: INodeTypeDescription = {
 							name: 'value',
 							type: 'boolean',
 							default: false,
-							// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+							// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 							description: 'The boolean value to write in the property',
 						},
 					],
@@ -124,7 +124,7 @@ const versionDescription: INodeTypeDescription = {
 					name: 'dotNotation',
 					type: 'boolean',
 					default: true,
-					// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+					// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 					description:
 						'<p>By default, dot-notation is used in property names. This means that "a.b" will set the property "b" underneath "a" so { "a": { "b": value} }.<p></p>If that is not intended this can be deactivated, it will then set { "a.b": value } instead.</p>.',
 				},

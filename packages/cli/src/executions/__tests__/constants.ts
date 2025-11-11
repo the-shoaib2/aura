@@ -1,5 +1,5 @@
-import type { IWorkflowBase } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import type { IWorkflowBase } from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 /**
  * Workflow producing an execution whose data will be truncated by an instance crash.
@@ -10,7 +10,7 @@ export const OOM_WORKFLOW: Partial<IWorkflowBase> = {
 			parameters: {},
 			id: '48ce17fe-9651-42ae-910c-48602a00f0bb',
 			name: 'When clicking "Execute workflow"',
-			type: 'n8n-nodes-base.manualTrigger',
+			type: 'aura-nodes-base.manualTrigger',
 			typeVersion: 1,
 			position: [640, 260],
 		},
@@ -21,7 +21,7 @@ export const OOM_WORKFLOW: Partial<IWorkflowBase> = {
 			},
 			id: '07a48151-96d3-45eb-961c-1daf85fbe052',
 			name: 'DebugHelper',
-			type: 'n8n-nodes-base.debugHelper',
+			type: 'aura-nodes-base.debugHelper',
 			typeVersion: 1,
 			position: [840, 260],
 		},
@@ -84,7 +84,7 @@ export const IN_PROGRESS_EXECUTION_DATA = {
 					},
 					id: '07a48151-96d3-45eb-961c-1daf85fbe052',
 					name: 'DebugHelper',
-					type: 'n8n-nodes-base.debugHelper',
+					type: 'aura-nodes-base.debugHelper',
 					typeVersion: 1,
 					position: [840, 260],
 				},

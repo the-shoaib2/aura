@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "4653989b-2d73-400a-b9e3-05248cca34be"
@@ -18,7 +18,7 @@
 				"resource": "account"
 			},
 			"name": "Matrix",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [450, 100],
 			"credentials": {
@@ -35,7 +35,7 @@
 				"roomName": "=Room{{Date.now()}}"
 			},
 			"name": "Matrix1",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -54,7 +54,7 @@
 				"userId": "@node8qa:matrix.org"
 			},
 			"name": "Matrix2",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [1000, 200],
 			"alwaysOutputData": true,
@@ -75,7 +75,7 @@
 				"reason": "test"
 			},
 			"name": "Matrix3",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [1200, 200],
 			"alwaysOutputData": true,
@@ -94,7 +94,7 @@
 				"roomId": "={{$node[\"Matrix1\"].json[\"room_id\"]}}"
 			},
 			"name": "Matrix4",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [1440, 420],
 			"alwaysOutputData": true,
@@ -113,7 +113,7 @@
 				"filters": {}
 			},
 			"name": "Matrix5",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [700, 420],
 			"alwaysOutputData": true,
@@ -131,7 +131,7 @@
 				"text": "=Test {{Date.now()}}"
 			},
 			"name": "Matrix6",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [600, 200],
 			"alwaysOutputData": true,
@@ -151,7 +151,7 @@
 				"otherOptions": {}
 			},
 			"name": "Matrix7",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [800, 200],
 			"alwaysOutputData": true,
@@ -169,7 +169,7 @@
 				"roomId": "={{$node[\"Matrix1\"].json[\"room_id\"]}}"
 			},
 			"name": "Matrix8",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [820, 620],
 			"alwaysOutputData": true,
@@ -183,10 +183,10 @@
 		},
 		{
 			"parameters": {
-				"filePath": "/tmp/n8n-logo.png"
+				"filePath": "/tmp/aura-logo.png"
 			},
 			"name": "Read Binary File",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
 			"position": [600, 620],
 			"id": "07201442-b394-41cb-90e7-1a3f3f5e414f"
@@ -198,7 +198,7 @@
 				"eventId": "={{$node[\"Matrix8\"].json[\"event_id\"]}}"
 			},
 			"name": "Matrix9",
-			"type": "n8n-nodes-base.matrix",
+			"type": "aura-nodes-base.matrix",
 			"typeVersion": 1,
 			"position": [1020, 620],
 			"alwaysOutputData": true,
@@ -215,7 +215,7 @@
 				"mode": "chooseBranch"
 			},
 			"name": "Merge",
-			"type": "n8n-nodes-base.merge",
+			"type": "aura-nodes-base.merge",
 			"typeVersion": 2.1,
 			"position": [1240, 420],
 			"id": "a3b8276c-5961-4508-a8c1-5d9144436ff5"

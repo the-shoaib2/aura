@@ -1,8 +1,8 @@
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
 
 /**
- * @deprecated Do not add new environment variables to this file. Please use the `@n8n/config` package instead.
+ * @deprecated Do not add new environment variables to this file. Please use the `@aura/config` package instead.
  */
 export const schema = {
 	userManagement: {
@@ -10,7 +10,7 @@ export const schema = {
 		 * @important Do not remove until after cloud hooks are updated to stop using convict config.
 		 */
 		isInstanceOwnerSetUp: {
-			// n8n loads this setting from DB on startup
+			// aura loads this setting from DB on startup
 			doc: "Whether the instance owner's account has been set up",
 			format: Boolean,
 			default: false,

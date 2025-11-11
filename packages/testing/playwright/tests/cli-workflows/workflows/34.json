@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "afcd2eb5-ee88-4fd8-ad2a-122f2ee05b6d"
@@ -22,7 +22,7 @@
 				"additionalFields": {}
 			},
 			"name": "Strava",
-			"type": "n8n-nodes-base.strava",
+			"type": "aura-nodes-base.strava",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -42,7 +42,7 @@
 				}
 			},
 			"name": "Strava1",
-			"type": "n8n-nodes-base.strava",
+			"type": "aura-nodes-base.strava",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -59,7 +59,7 @@
 				"limit": 1
 			},
 			"name": "Strava2",
-			"type": "n8n-nodes-base.strava",
+			"type": "aura-nodes-base.strava",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -77,7 +77,7 @@
 				"activityId": "={{$node[\"Strava\"].json[\"id\"]}}"
 			},
 			"name": "Strava3",
-			"type": "n8n-nodes-base.strava",
+			"type": "aura-nodes-base.strava",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -95,7 +95,7 @@
 				"limit": 1
 			},
 			"name": "Strava4",
-			"type": "n8n-nodes-base.strava",
+			"type": "aura-nodes-base.strava",
 			"typeVersion": 1,
 			"position": [600, 460],
 			"alwaysOutputData": true,
@@ -114,7 +114,7 @@
 				"limit": 1
 			},
 			"name": "Strava5",
-			"type": "n8n-nodes-base.strava",
+			"type": "aura-nodes-base.strava",
 			"typeVersion": 1,
 			"position": [750, 460],
 			"alwaysOutputData": true,
@@ -133,7 +133,7 @@
 				"limit": 1
 			},
 			"name": "Strava6",
-			"type": "n8n-nodes-base.strava",
+			"type": "aura-nodes-base.strava",
 			"typeVersion": 1,
 			"position": [900, 460],
 			"alwaysOutputData": true,

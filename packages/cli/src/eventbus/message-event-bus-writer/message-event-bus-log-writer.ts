@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { inTest, Logger, safeJoinPath } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { inTest, Logger, safeJoinPath } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import { once as eventOnce } from 'events';
 import { createReadStream, existsSync, rmSync } from 'fs';
 import remove from 'lodash/remove';
-import { InstanceSettings } from 'n8n-core';
-import { EventMessageTypeNames, jsonParse } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { EventMessageTypeNames, jsonParse } from 'workflow';
 import { parse } from 'path';
 import readline from 'readline';
 import { Worker } from 'worker_threads';
@@ -85,7 +85,7 @@ export class MessageEventBusLogWriter {
 			MessageEventBusLogWriter.instance = new MessageEventBusLogWriter();
 			MessageEventBusLogWriter.options = {
 				logFullBasePath: safeJoinPath(
-					options?.logBasePath ?? Container.get(InstanceSettings).n8nFolder,
+					options?.logBasePath ?? Container.get(InstanceSettings).auraFolder,
 					options?.logBaseName ?? Container.get(GlobalConfig).eventBus.logWriter.logBaseName,
 				),
 				keepNumberOfFiles:
@@ -218,20 +218,20 @@ export class MessageEventBusLogWriter {
 							if (msg?.eventName && msg.payload?.executionId) {
 								const executionId = msg.payload.executionId as string;
 								switch (msg.eventName) {
-									case 'n8n.workflow.started':
+									case 'aura.workflow.started':
 										if (!Object.keys(results.unfinishedExecutions).includes(executionId)) {
 											results.unfinishedExecutions[executionId] = [];
 										}
 										results.unfinishedExecutions[executionId] = [msg];
 										break;
-									case 'n8n.workflow.success':
-									case 'n8n.workflow.failed':
-									case 'n8n.execution.throttled':
-									case 'n8n.execution.started-during-bootup':
+									case 'aura.workflow.success':
+									case 'aura.workflow.failed':
+									case 'aura.execution.throttled':
+									case 'aura.execution.started-during-bootup':
 										delete results.unfinishedExecutions[executionId];
 										break;
-									case 'n8n.node.started':
-									case 'n8n.node.finished':
+									case 'aura.node.started':
+									case 'aura.node.finished':
 										if (!Object.keys(results.unfinishedExecutions).includes(executionId)) {
 											results.unfinishedExecutions[executionId] = [];
 										}

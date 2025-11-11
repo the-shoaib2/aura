@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import {
 	CRON_NODE_TYPE,
@@ -19,7 +19,7 @@ import {
 	type NodeConnectionType,
 	NodeConnectionTypes,
 	NodeHelpers,
-} from 'n8n-workflow';
+} from 'workflow';
 import { computed, ref, watch } from 'vue';
 import InputNodeSelect from './InputNodeSelect.vue';
 import NodeExecuteButton from '@/app/components/NodeExecuteButton.vue';
@@ -33,7 +33,7 @@ import { type SearchShortcut } from '@/features/workflows/canvas/canvas.types';
 import { useRouter } from 'vue-router';
 import { useRunWorkflow } from '@/app/composables/useRunWorkflow';
 
-import { N8nIcon, N8nRadioButtons, N8nText, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nRadioButtons, N8nText, N8nTooltip } from '@aura/design-system';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 type MappingMode = 'debugging' | 'mapping';
 
@@ -592,7 +592,7 @@ function handleChangeCollapsingColumn(columnName: string | null) {
 							#persistentTooltipContent
 						>
 							<div
-								v-n8n-html="
+								v-aura-html="
 									i18n.baseText('dataMapping.dragFromPreviousHint', {
 										interpolate: { name: focusedMappableInput },
 									})
@@ -623,7 +623,7 @@ function handleChangeCollapsingColumn(columnName: string | null) {
 						<I18nT tag="span" keypath="ndv.input.notConnected.v2.description" scope="global">
 							<template #link>
 								<a
-									href="https://docs.n8n.io/workflows/connections/"
+									href="https://docs.aura.io/workflows/connections/"
 									target="_blank"
 									@click="onConnectionHelpClick"
 								>
@@ -644,7 +644,7 @@ function handleChangeCollapsingColumn(columnName: string | null) {
 					<N8nText tag="div">
 						{{ i18n.baseText('ndv.input.notConnected.message') }}
 						<a
-							href="https://docs.n8n.io/workflows/connections/"
+							href="https://docs.aura.io/workflows/connections/"
 							target="_blank"
 							@click="onConnectionHelpClick"
 						>
@@ -657,7 +657,7 @@ function handleChangeCollapsingColumn(columnName: string | null) {
 
 		<template #node-waiting>
 			<NDVEmptyState :title="i18n.baseText('ndv.output.waitNodeWaiting.title')" wide>
-				<span v-n8n-html="waitingMessage"></span>
+				<span v-aura-html="waitingMessage"></span>
 			</NDVEmptyState>
 		</template>
 

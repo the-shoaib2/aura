@@ -1,15 +1,15 @@
-import { ApiKey, ApiKeyRepository, User, UserRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { EntityManager } from '@n8n/typeorm';
+import { ApiKey, ApiKeyRepository, User, UserRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { EntityManager } from '@aura/typeorm';
 import { randomUUID } from 'crypto';
-import { ApiKeyAudience } from 'n8n-workflow';
+import { ApiKeyAudience } from 'workflow';
 
 import { JwtService } from '@/services/jwt.service';
 
 import { AccessTokenRepository } from './database/repositories/oauth-access-token.repository';
 
 const API_KEY_AUDIENCE: ApiKeyAudience = 'mcp-server-api';
-const API_KEY_ISSUER = 'n8n';
+const API_KEY_ISSUER = 'aura';
 const REDACT_API_KEY_REVEAL_COUNT = 4;
 const REDACT_API_KEY_MAX_LENGTH = 10;
 const API_KEY_LABEL = 'MCP Server API Key';

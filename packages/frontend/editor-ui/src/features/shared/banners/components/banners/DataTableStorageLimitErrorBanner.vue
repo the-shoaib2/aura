@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import BaseBanner from './BaseBanner.vue';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
 

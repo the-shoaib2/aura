@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import type { IExecutionResponse } from '@n8n/db';
-import { ExecutionRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import type { IExecutionResponse } from '@aura/db';
+import { ExecutionRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import crypto from 'crypto';
 import type express from 'express';
 import {
@@ -9,7 +9,7 @@ import {
 	WAITING_TOKEN_QUERY_PARAM,
 	prepareUrlForSigning,
 	generateUrlSignature,
-} from 'n8n-core';
+} from 'aura-core';
 import {
 	FORM_NODE_TYPE,
 	type INodes,
@@ -17,7 +17,7 @@ import {
 	SEND_AND_WAIT_OPERATION,
 	WAIT_NODE_TYPE,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { sanitizeWebhookRequest } from './webhook-request-sanitizer';
 import { WebhookService } from './webhook.service';
@@ -35,7 +35,7 @@ import * as WorkflowExecuteAdditionalData from '@/workflow-execute-additional-da
 
 /**
  * Service for handling the execution of webhooks of Wait nodes that use the
- * [Resume On Webhook Call](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/#on-webhook-call)
+ * [Resume On Webhook Call](https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/#on-webhook-call)
  * feature.
  */
 @Service()
@@ -96,7 +96,7 @@ export class WaitingWebhooks implements IWebhookManager {
 
 			if (typeof actualToken !== 'string') return false;
 
-			// req.host is set correctly even when n8n is behind a reverse proxy
+			// req.host is set correctly even when aura is behind a reverse proxy
 			// as long as N8N_PROXY_HOPS is set correctly
 			const parsedUrl = new URL(req.url, `http://${req.host}`);
 			parsedUrl.searchParams.delete(WAITING_TOKEN_QUERY_PARAM);

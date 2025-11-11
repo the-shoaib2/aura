@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.supabase",
+	"node": "aura-nodes-base.supabase",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/supabase/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/supabase/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.supabase/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.supabase/"
 			}
 		]
 	}

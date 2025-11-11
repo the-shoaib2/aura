@@ -1,5 +1,5 @@
 import { indexedDbCache } from '@/app/plugins/cache';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'workflow';
 import { ref } from 'vue';
 
 const actionTypes = ['evaluations', 'errorWorkflow', 'timeSaved', 'mcp-access'] as const;
@@ -21,7 +21,7 @@ export interface WorkflowSettings {
 export function useWorkflowSettingsCache() {
 	const isCacheLoading = ref<boolean>(true);
 	const cachePromise = ref(
-		indexedDbCache('n8n-local', 'workflows').finally(() => {
+		indexedDbCache('aura-local', 'workflows').finally(() => {
 			isCacheLoading.value = false;
 		}),
 	);

@@ -9,9 +9,9 @@ import { MODAL_CONFIRM } from '@/app/constants';
 import { useSourceControlStore } from '../sourceControl.store';
 import type { SshKeyTypes, SourceControlPreferences } from '../sourceControl.types';
 import type { TupleToUnion } from '@/app/utils/typeHelpers';
-import type { Rule, RuleGroup } from '@n8n/design-system/types';
-import { useI18n } from '@n8n/i18n';
-import type { Validatable } from '@n8n/design-system';
+import type { Rule, RuleGroup } from '@aura/design-system/types';
+import { useI18n } from '@aura/i18n';
+import type { Validatable } from '@aura/design-system';
 import { computed, onMounted, reactive, ref, watch } from 'vue';
 import { I18nT } from 'vue-i18n';
 
@@ -25,7 +25,7 @@ import {
 	N8nHeading,
 	N8nNotice,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const locale = useI18n();
 const sourceControlStore = useSourceControlStore();
 const pageRedirectionHelper = usePageRedirectionHelper();

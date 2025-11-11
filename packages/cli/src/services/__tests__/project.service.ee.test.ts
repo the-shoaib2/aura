@@ -1,6 +1,6 @@
-import type { ProjectRelation } from '@n8n/api-types';
-import type { ModuleRegistry } from '@n8n/backend-common';
-import type { DatabaseConfig } from '@n8n/config';
+import type { ProjectRelation } from '@aura/api-types';
+import type { ModuleRegistry } from '@aura/backend-common';
+import type { DatabaseConfig } from '@aura/config';
 import {
 	type Project,
 	type ProjectRepository,
@@ -8,9 +8,9 @@ import {
 	type ProjectRelationRepository,
 	type SharedCredentials,
 	PROJECT_ADMIN_ROLE,
-} from '@n8n/db';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
-import type { EntityManager } from '@n8n/typeorm';
+} from '@aura/db';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
+import type { EntityManager } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
 
 import type { CacheService } from '../cache/cache.service';

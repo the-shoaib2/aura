@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, INodeProperties } from 'workflow';
 
 import { updateDisplayOptions } from '../../../../../utils/utilities';
 import {
@@ -58,7 +53,7 @@ const properties: INodeProperties[] = [
 				],
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 				displayName: 'Message to Reply to',
 				name: 'message_reference',
 				type: 'string',

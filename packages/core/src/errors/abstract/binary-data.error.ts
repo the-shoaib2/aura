@@ -1,3 +1,3 @@
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 
 export abstract class BinaryDataError extends ApplicationError {}

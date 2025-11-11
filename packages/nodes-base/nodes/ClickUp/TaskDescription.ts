@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const taskOperations: INodeProperties[] = [
 	{
@@ -68,7 +68,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'team',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -86,7 +86,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'space',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -118,7 +118,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'folder',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -138,7 +138,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'list',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -158,7 +158,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'list',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -205,7 +205,7 @@ export const taskFields: INodeProperties[] = [
 				name: 'assignees',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getAssignees',
 					loadOptionsDependsOn: ['list'],
@@ -220,7 +220,7 @@ export const taskFields: INodeProperties[] = [
 					alwaysOpenEditWindow: true,
 				},
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 				description:
 					'Custom fields to set as JSON in the format: <code>[ {"id": "", "value": ""} ]</code>',
 			},
@@ -288,7 +288,7 @@ export const taskFields: INodeProperties[] = [
 				name: 'status',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getStatuses',
 					loadOptionsDependsOn: ['list'],
@@ -305,7 +305,7 @@ export const taskFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'The array of tags applied to this task. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The array of tags applied to this task. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Time Estimate',
@@ -493,7 +493,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'team',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -511,7 +511,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'space',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -543,7 +543,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'folder',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -563,7 +563,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'list',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -583,7 +583,7 @@ export const taskFields: INodeProperties[] = [
 		name: 'list',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		displayOptions: {
 			show: {
@@ -653,7 +653,7 @@ export const taskFields: INodeProperties[] = [
 				name: 'assignees',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getAssignees',
 					loadOptionsDependsOn: ['list'],
@@ -685,7 +685,7 @@ export const taskFields: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'The ID of the field to add custom field to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'The ID of the field to add custom field to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Operator',
@@ -791,7 +791,7 @@ export const taskFields: INodeProperties[] = [
 				name: 'includeClosed',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'The response does by default not include closed tasks. Set this to true and dont send a status filter to include closed tasks.',
 			},
@@ -824,7 +824,7 @@ export const taskFields: INodeProperties[] = [
 				name: 'statuses',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getStatuses',
 					loadOptionsDependsOn: ['list'],
@@ -848,7 +848,7 @@ export const taskFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'The array of tags applied to this task. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The array of tags applied to this task. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	},
@@ -960,7 +960,7 @@ export const taskFields: INodeProperties[] = [
 			},
 		},
 		default: false,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description:
 			'The value is JSON and will be parsed as such. Is needed if for example needed for labels which expects the value to be an array.',
 	},

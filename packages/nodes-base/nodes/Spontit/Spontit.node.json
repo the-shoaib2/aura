@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.spontit",
+	"node": "aura-nodes-base.spontit",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/spontit/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/spontit/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.spontit/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.spontit/"
 			}
 		]
 	}

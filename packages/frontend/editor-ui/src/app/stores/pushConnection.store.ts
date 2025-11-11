@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia';
 import { computed, ref, watch } from 'vue';
-import type { PushMessage } from '@n8n/api-types';
+import type { PushMessage } from '@aura/api-types';
 
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { useSettingsStore } from './settings.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useWebSocketClient } from '@/app/push-connection/useWebSocketClient';
 import { useEventSourceClient } from '@/app/push-connection/useEventSourceClient';
 import { useLocalStorage } from '@vueuse/core';

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 import { ElPagination } from 'element-plus';
-import { N8nOption, N8nSelect } from '@n8n/design-system';
+import { N8nOption, N8nSelect } from '@aura/design-system';
 const { pageSize, total, currentPage } = defineProps<{
 	pageSize: number;
 	total: number;

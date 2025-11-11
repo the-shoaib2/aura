@@ -6,7 +6,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookResponseData,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { eventsDescription } from './descriptions/EventsDescription';
 
@@ -34,7 +34,7 @@ export class TheHiveTrigger implements INodeType {
 		properties: [
 			{
 				displayName:
-					'You must set up the webhook in TheHive — instructions <a href="https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.thehivetrigger/#configure-a-webhook-in-thehive" target="_blank">here</a>',
+					'You must set up the webhook in TheHive — instructions <a href="https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.thehivetrigger/#configure-a-webhook-in-thehive" target="_blank">here</a>',
 				name: 'notice',
 				type: 'notice',
 				default: '',

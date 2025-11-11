@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "0615b7a0-0786-4868-b269-2a2b0cb2a2fc"
@@ -19,7 +19,7 @@
 				"additionalFields": {}
 			},
 			"name": "Autopilot",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -36,7 +36,7 @@
 				"contactId": "={{$node[\"Autopilot\"].json[\"contact_id\"]}}"
 			},
 			"name": "Autopilot1",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"credentials": {
@@ -53,7 +53,7 @@
 				"limit": 1
 			},
 			"name": "Autopilot2",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [800, 300],
 			"credentials": {
@@ -70,7 +70,7 @@
 				"contactId": "={{$node[\"Autopilot\"].json[\"contact_id\"]}}"
 			},
 			"name": "Autopilot3",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"credentials": {
@@ -87,7 +87,7 @@
 				"name": "=List{{Date.now()}}"
 			},
 			"name": "Autopilot4",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [500, 100],
 			"credentials": {
@@ -106,7 +106,7 @@
 				"limit": 1
 			},
 			"name": "Autopilot5",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [650, 100],
 			"credentials": {
@@ -124,7 +124,7 @@
 				"contactId": "={{$node[\"Autopilot\"].json[\"contact_id\"]}}"
 			},
 			"name": "Autopilot6",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [950, 450],
 			"credentials": {
@@ -143,7 +143,7 @@
 				"contactId": "={{$node[\"Autopilot\"].json[\"contact_id\"]}}"
 			},
 			"name": "Autopilot7",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [1100, 450],
 			"credentials": {
@@ -162,7 +162,7 @@
 				"limit": 1
 			},
 			"name": "Autopilot8",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [1250, 450],
 			"credentials": {
@@ -181,7 +181,7 @@
 				"contactId": "={{$node[\"Autopilot\"].json[\"contact_id\"]}}"
 			},
 			"name": "Autopilot9",
-			"type": "n8n-nodes-base.autopilot",
+			"type": "aura-nodes-base.autopilot",
 			"typeVersion": 1,
 			"position": [1400, 450],
 			"credentials": {

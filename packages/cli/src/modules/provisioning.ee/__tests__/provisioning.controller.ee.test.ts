@@ -1,11 +1,11 @@
-import type { LicenseState } from '@n8n/backend-common';
+import type { LicenseState } from '@aura/backend-common';
 import { mock } from 'jest-mock-extended';
 
 import { ProvisioningController } from '../provisioning.controller.ee';
 import { type ProvisioningService } from '@/modules/provisioning.ee/provisioning.service.ee';
 import { type Response } from 'express';
-import { type AuthenticatedRequest } from '@n8n/db';
-import { type ProvisioningConfigDto } from '@n8n/api-types';
+import { type AuthenticatedRequest } from '@aura/db';
+import { type ProvisioningConfigDto } from '@aura/api-types';
 
 const provisioningService = mock<ProvisioningService>();
 const licenseState = mock<LicenseState>();
@@ -35,9 +35,9 @@ describe('ProvisioningController', () => {
 			const configResponse: ProvisioningConfigDto = {
 				scopesProvisionInstanceRole: true,
 				scopesProvisionProjectRoles: true,
-				scopesName: 'n8n_test_scope',
-				scopesInstanceRoleClaimName: 'n8n_test_instance_role',
-				scopesProjectsRolesClaimName: 'n8n_test_projects_roles',
+				scopesName: 'aura_test_scope',
+				scopesInstanceRoleClaimName: 'aura_test_instance_role',
+				scopesProjectsRolesClaimName: 'aura_test_projects_roles',
 			};
 
 			licenseState.isProvisioningLicensed.mockReturnValue(true);
@@ -67,9 +67,9 @@ describe('ProvisioningController', () => {
 			const configResponse: ProvisioningConfigDto = {
 				scopesProvisionInstanceRole: false,
 				scopesProvisionProjectRoles: false,
-				scopesName: 'n8n_test_scope',
-				scopesInstanceRoleClaimName: 'n8n_test_instance_role',
-				scopesProjectsRolesClaimName: 'n8n_test_projects_roles',
+				scopesName: 'aura_test_scope',
+				scopesInstanceRoleClaimName: 'aura_test_instance_role',
+				scopesProjectsRolesClaimName: 'aura_test_projects_roles',
 			};
 
 			licenseState.isProvisioningLicensed.mockReturnValue(true);

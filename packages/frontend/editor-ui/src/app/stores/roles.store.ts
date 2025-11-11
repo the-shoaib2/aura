@@ -1,9 +1,9 @@
-import { type AllRolesMap, type Role, PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
+import { type AllRolesMap, type Role, PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
-import * as rolesApi from '@n8n/rest-api-client/api/roles';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import type { CreateRoleDto, UpdateRoleDto } from '@n8n/api-types';
+import * as rolesApi from '@aura/rest-api-client/api/roles';
+import { useRootStore } from '@aura/stores/useRootStore';
+import type { CreateRoleDto, UpdateRoleDto } from '@aura/api-types';
 
 export const useRolesStore = defineStore('roles', () => {
 	const rootStore = useRootStore();

@@ -45,7 +45,7 @@ const renderModal = createComponentRenderer(PersonalizationModal, {
 describe('PersonalizationModal', () => {
 	it('mounts', () => {
 		const { getByTitle } = renderModal({ pinia: createTestingPinia() });
-		expect(getByTitle('Customize n8n to you')).toBeInTheDocument();
+		expect(getByTitle('Customize aura to you')).toBeInTheDocument();
 	});
 
 	describe('Company field', () => {
@@ -78,7 +78,7 @@ describe('PersonalizationModal', () => {
 			const companyTypeSelect = getByTestId(COMPANY_TYPE_KEY);
 
 			const nonWorkOption = [...(await getDropdownItems(companyTypeSelect))].find(
-				(node) => node.textContent === "I'm not using n8n for work",
+				(node) => node.textContent === "I'm not using aura for work",
 			) as Element;
 
 			await userEvent.click(nonWorkOption);
@@ -128,7 +128,7 @@ describe('PersonalizationModal', () => {
 		const companyTypeSelect = getByTestId(COMPANY_TYPE_KEY);
 
 		const anyWorkOption = [...(await getDropdownItems(companyTypeSelect))].find(
-			(node) => node.textContent !== "I'm not using n8n for work",
+			(node) => node.textContent !== "I'm not using aura for work",
 		) as Element;
 
 		await userEvent.click(anyWorkOption);

@@ -1,7 +1,7 @@
-import { Logger } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { Container } from '@aura/di';
 import axios from 'axios';
-import { ErrorReporter } from 'n8n-core';
+import { ErrorReporter } from 'aura-core';
 
 interface ResponseData<T> {
 	data: Array<Entity<T>>;

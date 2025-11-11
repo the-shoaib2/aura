@@ -12,7 +12,7 @@ import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { INodeUi, IWorkflowDb, IWorkflowSettings } from '@/Interface';
 import type { IExecutionResponse } from '@/features/execution/executions/executions.types';
 
-import { deepCopy, SEND_AND_WAIT_OPERATION } from 'n8n-workflow';
+import { deepCopy, SEND_AND_WAIT_OPERATION } from 'workflow';
 import type {
 	IPinData,
 	IConnection,
@@ -20,15 +20,15 @@ import type {
 	INodeExecutionData,
 	INode,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 import { stringSizeInBytes } from '@/app/utils/typesUtils';
 import { dataPinningEventBus } from '@/app/event-bus';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { PushPayload } from '@n8n/api-types';
+import type { PushPayload } from '@aura/api-types';
 import { flushPromises } from '@vue/test-utils';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { mock } from 'vitest-mock-extended';
-import * as apiUtils from '@n8n/rest-api-client';
+import * as apiUtils from '@aura/rest-api-client';
 import {
 	createTestNode,
 	createTestTaskData,
@@ -86,7 +86,7 @@ vi.mock('@/features/integrations/sourceControl.ee/sourceControl.store', () => ({
 	})),
 }));
 
-vi.mock('@n8n/permissions', () => ({
+vi.mock('@aura/permissions', () => ({
 	getResourcePermissions: vi.fn((scopes: string[] = []) => ({
 		workflow: {
 			update: scopes.includes('workflow:update'),
@@ -192,7 +192,7 @@ describe('useWorkflowsStore', () => {
 				{
 					id: 'start',
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					parameters: {},
 					position: [0, 0],
@@ -200,7 +200,7 @@ describe('useWorkflowsStore', () => {
 				{
 					id: 'fetch',
 					name: 'Fetch',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					typeVersion: 1,
 					parameters: {},
 					issues: {
@@ -216,7 +216,7 @@ describe('useWorkflowsStore', () => {
 				{
 					id: 'orphan',
 					name: 'Disconnected',
-					type: 'n8n-nodes-base.set',
+					type: 'aura-nodes-base.set',
 					typeVersion: 1,
 					parameters: {},
 					issues: {
@@ -227,7 +227,7 @@ describe('useWorkflowsStore', () => {
 				{
 					id: 'disabled',
 					name: 'Disabled Node',
-					type: 'n8n-nodes-base.set',
+					type: 'aura-nodes-base.set',
 					typeVersion: 1,
 					disabled: true,
 					parameters: {},
@@ -861,7 +861,7 @@ describe('useWorkflowsStore', () => {
 			useWorkflowState().setWorkflowExecutionData(executionResponse);
 
 			workflowsStore.nodesByName[successEvent.nodeName] = mock<INodeUi>({
-				type: 'n8n-nodes-base.manualTrigger',
+				type: 'aura-nodes-base.manualTrigger',
 			});
 
 			// ACT
@@ -887,7 +887,7 @@ describe('useWorkflowsStore', () => {
 				parameters: {},
 				id: '554c7ff4-7ee2-407c-8931-e34234c5056a',
 				name: 'Edit Fields',
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				position: [680, 180],
 				typeVersion: 3.4,
 			});
@@ -911,11 +911,11 @@ describe('useWorkflowsStore', () => {
 			});
 			expect(track).toHaveBeenCalledWith('Manual exec errored', {
 				error_title: 'invalid syntax',
-				node_type: 'n8n-nodes-base.set',
+				node_type: 'aura-nodes-base.set',
 				node_type_version: 3.4,
 				node_id: '554c7ff4-7ee2-407c-8931-e34234c5056a',
 				node_graph_string:
-					'{"node_types":["n8n-nodes-base.set"],"node_connections":[],"nodes":{"0":{"id":"554c7ff4-7ee2-407c-8931-e34234c5056a","type":"n8n-nodes-base.set","version":3.4,"position":[680,180]}},"notes":{},"is_pinned":false}',
+					'{"node_types":["aura-nodes-base.set"],"node_connections":[],"nodes":{"0":{"id":"554c7ff4-7ee2-407c-8931-e34234c5056a","type":"aura-nodes-base.set","version":3.4,"position":[680,180]}},"notes":{},"is_pinned":false}',
 			});
 		});
 
@@ -975,7 +975,7 @@ describe('useWorkflowsStore', () => {
 			useWorkflowState().setWorkflowExecutionData(runWithExistingRunData);
 
 			workflowsStore.nodesByName[successEvent.nodeName] = mock<INodeUi>({
-				type: 'n8n-nodes-base.manualTrigger',
+				type: 'aura-nodes-base.manualTrigger',
 			});
 
 			// ACT
@@ -1030,7 +1030,7 @@ describe('useWorkflowsStore', () => {
 			useWorkflowState().setWorkflowExecutionData(runWithExistingRunData);
 
 			workflowsStore.nodesByName[successEvent.nodeName] = mock<INodeUi>({
-				type: 'n8n-nodes-base.manualTrigger',
+				type: 'aura-nodes-base.manualTrigger',
 			});
 
 			// ACT
@@ -1058,19 +1058,19 @@ describe('useWorkflowsStore', () => {
 				mock<INode>({
 					id: setNodeId,
 					name: 'Edit Fields',
-					type: 'n8n-nodes-base.set',
+					type: 'aura-nodes-base.set',
 				}),
 				mock<INode>({
 					id: credentialOnlyNodeId,
 					name: 'AlienVault Request',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					extendsCredential: 'alienVaultApi',
 				}),
 			]);
 
 			expect(workflowsStore.workflow.nodes[0].id).toEqual(setNodeId);
 			expect(workflowsStore.workflow.nodes[1].id).toEqual(credentialOnlyNodeId);
-			expect(workflowsStore.workflow.nodes[1].type).toEqual('n8n-creds-base.alienVaultApi');
+			expect(workflowsStore.workflow.nodes[1].type).toEqual('aura-creds-base.alienVaultApi');
 			expect(workflowsStore.nodeMetadata).toEqual({
 				'AlienVault Request': { pristine: true },
 				'Edit Fields': { pristine: true },
@@ -1422,7 +1422,7 @@ describe('useWorkflowsStore', () => {
 				parameters: {},
 				id: '554c7ff4-7ee2-407c-8931-e34234c5056a',
 				name: nodeName,
-				type: 'n8n-nodes-base.set',
+				type: 'aura-nodes-base.set',
 				position: [680, 180],
 				typeVersion: 3.4,
 			});
@@ -1541,17 +1541,17 @@ describe('useWorkflowsStore', () => {
 			workflowsStore.setNodes([
 				createTestNode({
 					name: 'Current Node',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 				createTestNode({
 					name: 'Slack Node 1',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 				createTestNode({
 					name: 'Slack Node 2',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 			]);
@@ -1589,12 +1589,12 @@ describe('useWorkflowsStore', () => {
 			workflowsStore.setNodes([
 				createTestNode({
 					name: 'Current Node',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 				createTestNode({
 					name: 'Node With Existing Cred',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 					credentials: {
 						slackApi: existingCredential,
@@ -1602,7 +1602,7 @@ describe('useWorkflowsStore', () => {
 				}),
 				createTestNode({
 					name: 'Node Without Cred',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 			]);
@@ -1634,24 +1634,24 @@ describe('useWorkflowsStore', () => {
 			workflowsStore.setNodes([
 				createTestNode({
 					name: 'Current Node',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 				createTestNode({
 					name: 'Slack Node',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 				createTestNode({
 					name: 'HTTP Node',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					typeVersion: 1,
 				}),
 			]);
 
 			// Mock getNodeType to return different credentials for different node types
 			getNodeType.mockImplementation((nodeType: string) => {
-				if (nodeType === 'n8n-nodes-base.slack') {
+				if (nodeType === 'aura-nodes-base.slack') {
 					return {
 						credentials: [{ name: 'slackApi', required: true }],
 						inputs: [],
@@ -1688,18 +1688,18 @@ describe('useWorkflowsStore', () => {
 			workflowsStore.setNodes([
 				createTestNode({
 					name: 'Current Node',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 				createTestNode({
 					name: 'Node Without Creds Support',
-					type: 'n8n-nodes-base.noOp',
+					type: 'aura-nodes-base.noOp',
 					typeVersion: 1,
 				}),
 			]);
 
 			getNodeType.mockImplementation((nodeType: string) => {
-				if (nodeType === 'n8n-nodes-base.slack') {
+				if (nodeType === 'aura-nodes-base.slack') {
 					return {
 						credentials: [{ name: 'slackApi', required: true }],
 						inputs: [],
@@ -1735,7 +1735,7 @@ describe('useWorkflowsStore', () => {
 			workflowsStore.setNodes([
 				createTestNode({
 					name: 'Current Node',
-					type: 'n8n-nodes-base.slack',
+					type: 'aura-nodes-base.slack',
 					typeVersion: 1,
 				}),
 			]);
@@ -1920,7 +1920,7 @@ describe('useWorkflowsStore', () => {
 function getMockEditFieldsNode(): Partial<INodeTypeDescription> {
 	return {
 		displayName: 'Edit Fields (Set)',
-		name: 'n8n-nodes-base.set',
+		name: 'aura-nodes-base.set',
 		icon: 'fa:pen',
 		group: ['input'],
 		description: 'Modify, add, or remove item fields',
@@ -2021,7 +2021,7 @@ function generateMockExecutionEvents() {
 					},
 					id: '9fb34d2d-7191-48de-8f18-91a6a28d0230',
 					name: 'Edit Fields',
-					type: 'n8n-nodes-base.set',
+					type: 'aura-nodes-base.set',
 					typeVersion: 3.4,
 					position: [1120, 180],
 				},

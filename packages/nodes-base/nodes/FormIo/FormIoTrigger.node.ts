@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookResponseData,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { formIoApiRequest } from './GenericFunctions';
 
@@ -51,7 +51,7 @@ export class FormIoTrigger implements INodeType {
 				required: true,
 				default: '',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 			},
 			{
 				displayName: 'Form Name or ID',
@@ -64,7 +64,7 @@ export class FormIoTrigger implements INodeType {
 				required: true,
 				default: '',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 			},
 			{
 				displayName: 'Trigger Events',
@@ -159,7 +159,7 @@ export class FormIoTrigger implements INodeType {
 				const payload = {
 					data: {
 						name: 'webhook',
-						title: `webhook-n8n:${webhookUrl}`,
+						title: `webhook-aura:${webhookUrl}`,
 						method,
 						handler: ['after'],
 						priority: 0,

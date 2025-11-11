@@ -5,7 +5,7 @@ import { useProjectsStore } from './projects.store';
 import * as projectsApi from './projects.api';
 import type { Project, ProjectListItem } from './projects.types';
 import { ProjectTypes } from './projects.types';
-import type { ProjectRole, Scope } from '@n8n/permissions';
+import type { ProjectRole, Scope } from '@aura/permissions';
 
 // Minimal router mock to satisfy useRoute usage in the store
 vi.mock('vue-router', async (importOriginal) => ({

@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class DropcontactApi implements ICredentialType {
 	name = 'dropcontactApi';
@@ -26,7 +26,7 @@ export class DropcontactApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				'user-agent': 'n8n',
+				'user-agent': 'aura',
 				'X-Access-Token': '={{$credentials.apiKey}}',
 			},
 		},

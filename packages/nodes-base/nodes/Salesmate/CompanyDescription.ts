@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const companyOperations: INodeProperties[] = [
 	{
@@ -69,7 +69,7 @@ export const companyFields: INodeProperties[] = [
 		name: 'owner',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		default: '',
 		typeOptions: {
 			loadOptionsMethod: 'getUsers',
@@ -265,7 +265,7 @@ export const companyFields: INodeProperties[] = [
 				name: 'owner',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				default: '',
 				typeOptions: {
 					loadOptionsMethod: 'getUsers',
@@ -586,7 +586,7 @@ export const companyFields: INodeProperties[] = [
 										displayName: 'Condition',
 										name: 'condition',
 										type: 'options',
-										// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+										// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 										options: [
 											{
 												name: 'Equals',

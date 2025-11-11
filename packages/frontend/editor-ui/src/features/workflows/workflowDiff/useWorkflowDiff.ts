@@ -4,8 +4,8 @@ import type { MaybeRefOrGetter, Ref, ComputedRef } from 'vue';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { toValue, computed, ref, watchEffect, shallowRef } from 'vue';
 import { useCanvasMapping } from '@/features/workflows/canvas/composables/useCanvasMapping';
-import type { Workflow, IConnections, INodeTypeDescription, NodeDiff } from 'n8n-workflow';
-import { compareWorkflowsNodes, NodeDiffStatus } from 'n8n-workflow';
+import type { Workflow, IConnections, INodeTypeDescription, NodeDiff } from 'workflow';
+import { compareWorkflowsNodes, NodeDiffStatus } from 'workflow';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
 export function mapConnections(connections: CanvasConnection[]) {

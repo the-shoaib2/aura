@@ -3,11 +3,11 @@ import {
 	PasswordUpdateRequestDto,
 	SettingsUpdateRequestDto,
 	UserUpdateRequestDto,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import type { User, PublicUser } from '@n8n/db';
-import { UserRepository, AuthenticatedRequest } from '@n8n/db';
-import { Body, Patch, Post, RestController } from '@n8n/decorators';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import type { User, PublicUser } from '@aura/db';
+import { UserRepository, AuthenticatedRequest } from '@aura/db';
+import { Body, Patch, Post, RestController } from '@aura/decorators';
 import { plainToInstance } from 'class-transformer';
 import { Response } from 'express';
 

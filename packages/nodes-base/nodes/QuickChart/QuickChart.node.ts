@@ -6,8 +6,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { jsonParse, NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import {
 	CHART_TYPE_OPTIONS,

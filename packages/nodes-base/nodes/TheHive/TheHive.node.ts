@@ -10,7 +10,7 @@ import {
 	type INodePropertyOptions,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { alertFields, alertOperations } from './descriptions/AlertDescription';
 import { caseFields, caseOperations } from './descriptions/CaseDescription';
@@ -436,7 +436,7 @@ export class TheHive implements INodeType {
 
 					/*
 						Execute responder feature differs from Cortex execute responder
-						if it doesn't interfere with n8n standards then we should keep it
+						if it doesn't interfere with aura standards then we should keep it
 					*/
 
 					if (operation === 'executeResponder') {

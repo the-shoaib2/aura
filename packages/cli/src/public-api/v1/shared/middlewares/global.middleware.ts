@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
-import type { BooleanLicenseFeature } from '@n8n/constants';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { ApiKeyScope, Scope } from '@n8n/permissions';
+import type { BooleanLicenseFeature } from '@aura/constants';
+import type { AuthenticatedRequest } from '@aura/db';
+import { Container } from '@aura/di';
+import type { ApiKeyScope, Scope } from '@aura/permissions';
 import type express from 'express';
 import type { NextFunction } from 'express';
 
@@ -114,7 +114,7 @@ export const validLicenseWithUserQuota = (
 	const license = Container.get(License);
 	if (license.getUsersLimit() !== UNLIMITED_USERS_QUOTA) {
 		return res.status(403).json({
-			message: '/users path can only be used with a valid license. See https://n8n.io/pricing/',
+			message: '/users path can only be used with a valid license. See https://aura.io/pricing/',
 		});
 	}
 

@@ -5,8 +5,8 @@ import type {
 	ILoadOptionsFunctions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function codaApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions,
@@ -23,7 +23,7 @@ export async function codaApiRequest(
 	let options: IRequestOptions = {
 		headers: {
 			Authorization: `Bearer ${credentials.accessToken}`,
-			'User-Agent': 'n8n',
+			'User-Agent': 'aura',
 		},
 		method,
 		qs,

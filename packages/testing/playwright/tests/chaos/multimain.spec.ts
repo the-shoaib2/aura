@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/base';
 
 test('Leader election @mode:multi-main @chaostest', async ({ chaos }) => {
 	// First get the container (try main 1 first)
-	const namePattern = 'n8n-main-*';
+	const namePattern = 'aura-main-*';
 
 	const findContainerByLog = await chaos.waitForLog('Leader is now this', {
 		namePattern,

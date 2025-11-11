@@ -1,5 +1,5 @@
 import moment from 'moment-timezone';
-import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'workflow';
 
 import {
 	extractPageId,
@@ -195,7 +195,7 @@ export async function getTimezones(this: ILoadOptionsFunctions): Promise<INodePr
 	returnData.unshift({
 		name: 'Default',
 		value: 'default',
-		description: 'Timezone set in n8n',
+		description: 'Timezone set in aura',
 	});
 	return returnData;
 }

@@ -1,6 +1,6 @@
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import type { INodeUi } from '@/Interface';
-import type { WorkflowDataCreate } from '@n8n/rest-api-client/api/workflows';
+import type { WorkflowDataCreate } from '@aura/rest-api-client/api/workflows';
 
 export const DUMMY_PIN_DATA = [
 	{
@@ -21,14 +21,14 @@ export const SAMPLE_SUBWORKFLOW_WORKFLOW: WorkflowDataCreate = {
 			id: SAMPLE_SUBWORKFLOW_TRIGGER_ID,
 			typeVersion: 1.1,
 			name: 'When Executed by Another Workflow',
-			type: 'n8n-nodes-base.executeWorkflowTrigger',
+			type: 'aura-nodes-base.executeWorkflowTrigger',
 			position: [260, 340],
 			parameters: {},
 		},
 		{
 			id: 'b5942df6-0160-4ef7-965d-57583acdc8aa',
 			name: 'Replace me with your logic',
-			type: 'n8n-nodes-base.noOp',
+			type: 'aura-nodes-base.noOp',
 			position: [520, 340],
 			parameters: {},
 		},
@@ -61,7 +61,7 @@ export const SAMPLE_EVALUATION_WORKFLOW: WorkflowDataCreate = {
 			},
 			id: 'c20c82d6-5f71-4fb6-a398-a10a6e6944c5',
 			name: 'When called by a test run',
-			type: 'n8n-nodes-base.executeWorkflowTrigger',
+			type: 'aura-nodes-base.executeWorkflowTrigger',
 			typeVersion: 1.1,
 			position: [80, 440],
 		},
@@ -69,7 +69,7 @@ export const SAMPLE_EVALUATION_WORKFLOW: WorkflowDataCreate = {
 			parameters: {},
 			id: '4e14d09a-2699-4659-9a20-e4f4965f473e',
 			name: 'Replace me',
-			type: 'n8n-nodes-base.noOp',
+			type: 'aura-nodes-base.noOp',
 			typeVersion: 1,
 			position: [340, 440],
 		},
@@ -87,7 +87,7 @@ export const SAMPLE_EVALUATION_WORKFLOW: WorkflowDataCreate = {
 					],
 				},
 			},
-			type: 'n8n-nodes-base.evaluationMetrics',
+			type: 'aura-nodes-base.evaluationMetrics',
 			id: '33e2e94a-ec48-4e7b-b750-f56718d5105c',
 			name: 'Return metric(s)',
 			typeVersion: 1,
@@ -103,7 +103,7 @@ export const SAMPLE_EVALUATION_WORKFLOW: WorkflowDataCreate = {
 			},
 			id: '55e5e311-e285-4000-bd1e-900bc3a07da3',
 			name: 'Sticky Note',
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [0, 140],
 		},
@@ -117,7 +117,7 @@ export const SAMPLE_EVALUATION_WORKFLOW: WorkflowDataCreate = {
 			},
 			id: 'ea74e341-ff9c-456a-83f0-c10758f0844a',
 			name: 'Sticky Note1',
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [280, 140],
 		},
@@ -131,7 +131,7 @@ export const SAMPLE_EVALUATION_WORKFLOW: WorkflowDataCreate = {
 			},
 			id: '9b3c3408-19e1-43d5-b2bb-29d61bd129b8',
 			name: 'Sticky Note2',
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [540, 140],
 		},
@@ -144,7 +144,7 @@ export const SAMPLE_EVALUATION_WORKFLOW: WorkflowDataCreate = {
 			},
 			id: '0fc1356e-6238-4557-a920-e50806c1ec13',
 			name: 'Sticky Note3',
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [0, 0],
 		},

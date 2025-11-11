@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "74887071-8225-4c30-8b67-c3bc2cbbbb3c"
@@ -30,7 +30,7 @@
 				}
 			},
 			"name": "PostHog",
-			"type": "n8n-nodes-base.postHog",
+			"type": "aura-nodes-base.postHog",
 			"typeVersion": 1,
 			"position": [500, 150],
 			"credentials": {
@@ -62,7 +62,7 @@
 				}
 			},
 			"name": "PostHog1",
-			"type": "n8n-nodes-base.postHog",
+			"type": "aura-nodes-base.postHog",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -92,7 +92,7 @@
 				}
 			},
 			"name": "PostHog2",
-			"type": "n8n-nodes-base.postHog",
+			"type": "aura-nodes-base.postHog",
 			"typeVersion": 1,
 			"position": [500, 450],
 			"credentials": {
@@ -115,7 +115,7 @@
 				}
 			},
 			"name": "PostHog3",
-			"type": "n8n-nodes-base.postHog",
+			"type": "aura-nodes-base.postHog",
 			"typeVersion": 1,
 			"position": [500, 600],
 			"credentials": {
@@ -139,7 +139,7 @@
 				}
 			},
 			"name": "PostHog4",
-			"type": "n8n-nodes-base.postHog",
+			"type": "aura-nodes-base.postHog",
 			"typeVersion": 1,
 			"position": [650, 600],
 			"credentials": {

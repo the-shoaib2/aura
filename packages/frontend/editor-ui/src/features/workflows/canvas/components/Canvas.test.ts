@@ -8,8 +8,8 @@ import {
 	createCanvasConnection,
 	createCanvasNodeElement,
 } from '@/features/workflows/canvas/__tests__/utils';
-import { NodeConnectionTypes } from 'n8n-workflow';
-import type { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
+import { NodeConnectionTypes } from 'workflow';
+import type { useDeviceSupport } from '@aura/composables/useDeviceSupport';
 import { useVueFlow } from '@vue-flow/core';
 import { SIMULATE_NODE_TYPE } from '@/app/constants';
 import { canvasEventBus } from '@/features/workflows/canvas/canvas.eventBus';
@@ -19,7 +19,7 @@ const matchMedia = global.window.matchMedia;
 global.window = jsdom.window as unknown as Window & typeof globalThis;
 global.window.matchMedia = matchMedia;
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const actual = await importOriginal<typeof useDeviceSupport>();
 	return { ...actual, useDeviceSupport: vi.fn(() => ({ isCtrlKeyPressed: vi.fn() })) };
 });

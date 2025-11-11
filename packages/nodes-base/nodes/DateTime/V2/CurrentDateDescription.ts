@@ -1,11 +1,11 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { includeInputFields } from './common.descriptions';
 
 export const CurrentDateDescription: INodeProperties[] = [
 	{
 		displayName:
-			'You can also refer to the current date in n8n expressions by using <code>{{$now}}</code> or <code>{{$today}}</code>. <a target="_blank" href="https://docs.n8n.io/code/cookbook/luxon/">More info</a>',
+			'You can also refer to the current date in aura expressions by using <code>{{$now}}</code> or <code>{{$today}}</code>. <a target="_blank" href="https://docs.aura.io/code/cookbook/luxon/">More info</a>',
 		name: 'notice',
 		type: 'notice',
 		default: '',
@@ -20,7 +20,7 @@ export const CurrentDateDescription: INodeProperties[] = [
 		name: 'includeTime',
 		type: 'boolean',
 		default: true,
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description: 'When deactivated, the time will be set to midnight',
 		displayOptions: {
 			show: {
@@ -60,7 +60,7 @@ export const CurrentDateDescription: INodeProperties[] = [
 				placeholder: 'America/New_York',
 				default: '',
 				description:
-					'The timezone to use. If not set, the timezone of the n8n instance will be used. Use ‘GMT’ for +00:00 timezone.',
+					'The timezone to use. If not set, the timezone of the aura instance will be used. Use ‘GMT’ for +00:00 timezone.',
 			},
 		],
 	},

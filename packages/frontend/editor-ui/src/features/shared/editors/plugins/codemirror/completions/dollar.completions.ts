@@ -1,4 +1,4 @@
-import { i18n } from '@n8n/i18n';
+import { i18n } from '@aura/i18n';
 import {
 	autocompletableNodeNames,
 	receivesNoBinaryData,
@@ -66,7 +66,7 @@ export function dollarOptions(context: CompletionContext): Completion[] {
 				info: createInfoBoxRenderer({
 					name: '$pageCount',
 					returnType: 'number',
-					docURL: 'https://docs.n8n.io/code/builtin/http-node-variables/',
+					docURL: 'https://docs.aura.io/code/builtin/http-node-variables/',
 					description: i18n.baseText('codeNodeEditor.completer.$pageCount'),
 				}),
 			},
@@ -76,7 +76,7 @@ export function dollarOptions(context: CompletionContext): Completion[] {
 				info: createInfoBoxRenderer({
 					name: '$response',
 					returnType: 'HTTPResponse',
-					docURL: 'https://docs.n8n.io/code/builtin/http-node-variables/',
+					docURL: 'https://docs.aura.io/code/builtin/http-node-variables/',
 					description: i18n.baseText('codeNodeEditor.completer.$response'),
 				}),
 			},
@@ -86,7 +86,7 @@ export function dollarOptions(context: CompletionContext): Completion[] {
 				info: createInfoBoxRenderer({
 					name: '$request',
 					returnType: 'Object',
-					docURL: 'https://docs.n8n.io/code/builtin/http-node-variables/',
+					docURL: 'https://docs.aura.io/code/builtin/http-node-variables/',
 					description: i18n.baseText('codeNodeEditor.completer.$request'),
 				}),
 			},

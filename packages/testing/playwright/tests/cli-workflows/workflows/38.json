@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "fc3fb55c-91d4-4865-8bed-bb672fcf6ed8"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "Medium",
-			"type": "n8n-nodes-base.medium",
+			"type": "aura-nodes-base.medium",
 			"typeVersion": 1,
 			"position": [500, 250],
 			"credentials": {
@@ -41,7 +41,7 @@
 				"limit": 1
 			},
 			"name": "Medium1",
-			"type": "n8n-nodes-base.medium",
+			"type": "aura-nodes-base.medium",
 			"typeVersion": 1,
 			"position": [500, 400],
 			"credentials": {

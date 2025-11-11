@@ -11,7 +11,7 @@ const ALLOWED_HEADER_KEYS = ['displayName', 'description'];
 const PURPLE_ANSI_COLOR_CODE = 35;
 
 function getNodeTranslationPaths() {
-	const nodeDistPaths = require(`${packageDir}/package.json`).n8n.nodes;
+	const nodeDistPaths = require(`${packageDir}/package.json`).aura.nodes;
 	const { N8N_DEFAULT_LOCALE: locale } = process.env;
 
 	return nodeDistPaths.reduce((acc, cur) => {

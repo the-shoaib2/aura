@@ -4,13 +4,13 @@ import {
 	createWorkflowWithTrigger,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { Project, TagEntity, User } from '@n8n/db';
-import { ProjectRepository, WorkflowHistoryRepository, SharedWorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
-import type { INode } from 'n8n-workflow';
+} from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { Project, TagEntity, User } from '@aura/db';
+import { ProjectRepository, WorkflowHistoryRepository, SharedWorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
+import type { INode } from 'workflow';
 
 import { ActiveWorkflowManager } from '@/active-workflow-manager';
 import { STARTING_NODES } from '@/constants';
@@ -612,7 +612,7 @@ describe('POST /workflows/:id/activate', () => {
 						name: 'Start',
 						parameters: {},
 						position: [-20, 260],
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 					},
 				],
@@ -818,7 +818,7 @@ describe('POST /workflows', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -878,7 +878,7 @@ describe('POST /workflows', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -924,7 +924,7 @@ describe('POST /workflows', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -961,7 +961,7 @@ describe('POST /workflows', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Hacker News',
-					type: 'n8n-nodes-base.hackerNews',
+					type: 'aura-nodes-base.hackerNews',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -996,7 +996,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -1023,7 +1023,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -1052,7 +1052,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -1060,7 +1060,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Cron',
-					type: 'n8n-nodes-base.cron',
+					type: 'aura-nodes-base.cron',
 					typeVersion: 1,
 					position: [400, 300],
 				},
@@ -1121,7 +1121,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -1129,7 +1129,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Cron',
-					type: 'n8n-nodes-base.cron',
+					type: 'aura-nodes-base.cron',
 					typeVersion: 1,
 					position: [400, 300],
 				},
@@ -1176,7 +1176,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -1184,7 +1184,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Cron',
-					type: 'n8n-nodes-base.cron',
+					type: 'aura-nodes-base.cron',
 					typeVersion: 1,
 					position: [400, 300],
 				},
@@ -1223,7 +1223,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-1',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},
@@ -1231,7 +1231,7 @@ describe('PUT /workflows/:id', () => {
 					id: 'uuid-2',
 					parameters: {},
 					name: 'Cron',
-					type: 'n8n-nodes-base.cron',
+					type: 'aura-nodes-base.cron',
 					typeVersion: 1,
 					position: [400, 300],
 				},
@@ -1661,7 +1661,7 @@ return [
 				{
 					id: 'code-node-1',
 					name: 'Code',
-					type: 'n8n-nodes-base.code',
+					type: 'aura-nodes-base.code',
 					typeVersion: 2,
 					position: [250, 300],
 					parameters: {
@@ -1699,7 +1699,7 @@ return [
 
 		const createdWorkflowId = createResponse.body.id;
 		const codeNode = createResponse.body.nodes.find(
-			(node: INode) => node.type === 'n8n-nodes-base.code',
+			(node: INode) => node.type === 'aura-nodes-base.code',
 		);
 
 		expect(codeNode).toBeDefined();
@@ -1719,7 +1719,7 @@ return [
 		expect(getResponse.statusCode).toBe(200);
 
 		const retrievedCodeNode = getResponse.body.nodes.find(
-			(node: INode) => node.type === 'n8n-nodes-base.code',
+			(node: INode) => node.type === 'aura-nodes-base.code',
 		);
 
 		expect(retrievedCodeNode).toBeDefined();
@@ -1743,7 +1743,7 @@ return [
 				{
 					id: 'code-node-1',
 					name: 'Code',
-					type: 'n8n-nodes-base.code',
+					type: 'aura-nodes-base.code',
 					typeVersion: 2,
 					position: [250, 300],
 					parameters: {
@@ -1790,7 +1790,7 @@ return [{ json: result }];
 				{
 					id: 'code-node-1',
 					name: 'Code',
-					type: 'n8n-nodes-base.code',
+					type: 'aura-nodes-base.code',
 					typeVersion: 2,
 					position: [250, 300],
 					parameters: {
@@ -1826,7 +1826,7 @@ return [{ json: result }];
 		expect(updateResponse.body.name).toBe('Updated Code Node Workflow');
 
 		const updatedCodeNode = updateResponse.body.nodes.find(
-			(node: INode) => node.type === 'n8n-nodes-base.code',
+			(node: INode) => node.type === 'aura-nodes-base.code',
 		);
 
 		expect(updatedCodeNode).toBeDefined();
@@ -1845,7 +1845,7 @@ return [{ json: result }];
 		expect(getResponse.statusCode).toBe(200);
 
 		const retrievedUpdatedNode = getResponse.body.nodes.find(
-			(node: INode) => node.type === 'n8n-nodes-base.code',
+			(node: INode) => node.type === 'aura-nodes-base.code',
 		);
 
 		expect(retrievedUpdatedNode).toBeDefined();

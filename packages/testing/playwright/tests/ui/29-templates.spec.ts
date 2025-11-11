@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 import type { TestRequirements } from '../../Types';
 import allTemplatesSearchResponse from '../../workflows/all_templates_search_response.json';
 import onboardingWorkflow from '../../workflows/Onboarding_workflow.json';
@@ -7,12 +7,12 @@ import salesTemplatesSearchResponse from '../../workflows/sales_templates_search
 import workflowTemplate from '../../workflows/Workflow_template_write_http_query.json';
 
 const TEMPLATE_HOST = {
-	N8N_API: 'https://api.n8n.io/api/',
+	N8N_API: 'https://api.aura.io/api/',
 	CUSTOM: 'random.domain',
 } as const;
 
 const URLS = {
-	N8N_WORKFLOWS: 'https://n8n.io/workflows',
+	N8N_WORKFLOWS: 'https://aura.io/workflows',
 } as const;
 
 const TEMPLATE_ID = '1';
@@ -43,8 +43,8 @@ const COLLECTIONS = [
  * Prevents the browser's "before unload" confirmation dialog
  * Used when navigating away from workflows with unsaved changes in tests
  */
-function preventNavigation(n8n: n8nPage) {
-	return n8n.page.evaluate(() => {
+function preventNavigation(aura: auraPage) {
+	return aura.page.evaluate(() => {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		(window as any).preventNodeViewBeforeUnload = true;
 	});
@@ -114,8 +114,8 @@ function createCustomTemplateHostRequirements(hostname: string): TestRequirement
  * - Collections API filters by category
  * - Search API returns different results based on category
  */
-async function setupDynamicTemplateRoutes(n8n: n8nPage, hostname: string) {
-	await n8n.page.route(`https://${hostname}/api/templates/collections*`, (route) => {
+async function setupDynamicTemplateRoutes(aura: auraPage, hostname: string) {
+	await aura.page.route(`https://${hostname}/api/templates/collections*`, (route) => {
 		const url = new URL(route.request().url());
 		const categoryParam = url.searchParams.get('category[]');
 		const response = categoryParam === String(SALES_CATEGORY_ID) ? [] : COLLECTIONS;
@@ -126,7 +126,7 @@ async function setupDynamicTemplateRoutes(n8n: n8nPage, hostname: string) {
 		});
 	});
 
-	await n8n.page.route(`https://${hostname}/api/templates/search*`, (route) => {
+	await aura.page.route(`https://${hostname}/api/templates/search*`, (route) => {
 		const url = new URL(route.request().url());
 		const category = url.searchParams.get('category');
 		const response =
@@ -140,28 +140,28 @@ async function setupDynamicTemplateRoutes(n8n: n8nPage, hostname: string) {
 }
 
 test.describe('Workflow templates', () => {
-	test.describe('For api.n8n.io', () => {
+	test.describe('For api.aura.io', () => {
 		test('Opens website when clicking templates sidebar link', async ({
-			n8n,
+			aura,
 			setupRequirements,
 		}) => {
 			await setupRequirements(createTemplateHostRequirements());
-			await n8n.navigate.toWorkflows();
+			await aura.navigate.toWorkflows();
 
-			const templatesLink = n8n.sideBar.getTemplatesLink();
+			const templatesLink = aura.sideBar.getTemplatesLink();
 			await expect(templatesLink).toBeVisible();
 
 			const href = await templatesLink.getAttribute('href');
 			expect(href).toContain(URLS.N8N_WORKFLOWS);
 
 			const url = new URL(href!);
-			const origin = await n8n.page.evaluate(() => window.location.origin);
+			const origin = await aura.page.evaluate(() => window.location.origin);
 
 			const utmInstance = url.searchParams.get('utm_instance');
 			expect(utmInstance).toBeTruthy();
 			expect(decodeURIComponent(utmInstance!)).toContain(origin);
 
-			const utmVersion = url.searchParams.get('utm_n8n_version');
+			const utmVersion = url.searchParams.get('utm_aura_version');
 			expect(utmVersion).toBeTruthy();
 			expect(utmVersion).toMatch(/[0-9]+\.[0-9]+\.[0-9]+/);
 
@@ -173,13 +173,13 @@ test.describe('Workflow templates', () => {
 		});
 
 		test('Redirects to website when visiting templates page directly', async ({
-			n8n,
+			aura,
 			setupRequirements,
 		}) => {
 			await setupRequirements(createTemplateHostRequirements());
-			await n8n.navigate.toTemplates();
+			await aura.navigate.toTemplates();
 
-			await expect(n8n.page.getByRole('heading', { name: /workflow.*templates/i })).toBeVisible({
+			await expect(aura.page.getByRole('heading', { name: /workflow.*templates/i })).toBeVisible({
 				timeout: 10000,
 			});
 		});
@@ -188,119 +188,119 @@ test.describe('Workflow templates', () => {
 	test.describe('For a custom template host', () => {
 		const hostname = TEMPLATE_HOST.CUSTOM;
 
-		test.beforeEach(async ({ n8n, setupRequirements }) => {
+		test.beforeEach(async ({ aura, setupRequirements }) => {
 			await setupRequirements(createCustomTemplateHostRequirements(hostname));
-			await setupDynamicTemplateRoutes(n8n, hostname);
+			await setupDynamicTemplateRoutes(aura, hostname);
 		});
 
-		test('can open onboarding flow', async ({ n8n }) => {
-			await preventNavigation(n8n);
+		test('can open onboarding flow', async ({ aura }) => {
+			await preventNavigation(aura);
 
 			await Promise.all([
-				n8n.page.waitForResponse(`https://${hostname}/api/workflows/templates/${TEMPLATE_ID}`),
-				n8n.page.waitForResponse('**/rest/workflows'),
-				n8n.navigate.toOnboardingTemplate(TEMPLATE_ID),
+				aura.page.waitForResponse(`https://${hostname}/api/workflows/templates/${TEMPLATE_ID}`),
+				aura.page.waitForResponse('**/rest/workflows'),
+				aura.navigate.toOnboardingTemplate(TEMPLATE_ID),
 			]);
 
-			await expect(n8n.page).toHaveURL(/.*\/workflow\/.*onboardingId=1$/);
+			await expect(aura.page).toHaveURL(/.*\/workflow\/.*onboardingId=1$/);
 
-			const workflowNameOnboarding = await n8n.canvas.getWorkflowName().getAttribute('title');
+			const workflowNameOnboarding = await aura.canvas.getWorkflowName().getAttribute('title');
 			expect(workflowNameOnboarding).toContain(`Demo: ${onboardingWorkflow.name}`);
 
-			await expect(n8n.canvas.getCanvasNodes()).toHaveCount(4);
-			await expect(n8n.canvas.sticky.getStickies()).toHaveCount(1);
+			await expect(aura.canvas.getCanvasNodes()).toHaveCount(4);
+			await expect(aura.canvas.sticky.getStickies()).toHaveCount(1);
 		});
 
-		test('can import template', async ({ n8n }) => {
-			await preventNavigation(n8n);
+		test('can import template', async ({ aura }) => {
+			await preventNavigation(aura);
 
 			await Promise.all([
-				n8n.page.waitForResponse(`https://${hostname}/api/workflows/templates/${TEMPLATE_ID}`),
-				n8n.page.waitForResponse('**/rest/workflows/**'),
-				n8n.navigate.toTemplateImport(TEMPLATE_ID),
+				aura.page.waitForResponse(`https://${hostname}/api/workflows/templates/${TEMPLATE_ID}`),
+				aura.page.waitForResponse('**/rest/workflows/**'),
+				aura.navigate.toTemplateImport(TEMPLATE_ID),
 			]);
 
-			await expect(n8n.page).toHaveURL(/\/workflow\/new\?templateId=1/);
-			await expect(n8n.canvas.getCanvasNodes()).toHaveCount(4);
-			await expect(n8n.canvas.sticky.getStickies()).toHaveCount(1);
+			await expect(aura.page).toHaveURL(/\/workflow\/new\?templateId=1/);
+			await expect(aura.canvas.getCanvasNodes()).toHaveCount(4);
+			await expect(aura.canvas.sticky.getStickies()).toHaveCount(1);
 
-			const workflowName = await n8n.canvas.getWorkflowName().getAttribute('title');
+			const workflowName = await aura.canvas.getWorkflowName().getAttribute('title');
 			expect(workflowName).toContain(onboardingWorkflow.name);
 		});
 
-		test('should save template id with the workflow', async ({ n8n }) => {
-			await n8n.templatesComposer.importFirstTemplate();
+		test('should save template id with the workflow', async ({ aura }) => {
+			await aura.templatesComposer.importFirstTemplate();
 
-			const saveRequest = await n8n.workflowComposer.saveWorkflowAndWaitForRequest();
-			await expect(n8n.canvas.getWorkflowSaveButton()).toContainText(NOTIFICATIONS.SAVED);
+			const saveRequest = await aura.workflowComposer.saveWorkflowAndWaitForRequest();
+			await expect(aura.canvas.getWorkflowSaveButton()).toContainText(NOTIFICATIONS.SAVED);
 
 			const requestBody = saveRequest.postDataJSON();
 			expect(requestBody.meta.templateId).toBe(TEMPLATE_ID);
 		});
 
-		test('can open template with images and hides workflow screenshots', async ({ n8n }) => {
-			await n8n.navigate.toTemplate(TEMPLATE_ID);
-			await expect(n8n.templates.getDescription()).toBeVisible();
-			await expect(n8n.templates.getDescription().locator('img')).toHaveCount(1);
+		test('can open template with images and hides workflow screenshots', async ({ aura }) => {
+			await aura.navigate.toTemplate(TEMPLATE_ID);
+			await expect(aura.templates.getDescription()).toBeVisible();
+			await expect(aura.templates.getDescription().locator('img')).toHaveCount(1);
 		});
 
-		test('renders search elements correctly', async ({ n8n }) => {
-			await n8n.navigate.toTemplates();
+		test('renders search elements correctly', async ({ aura }) => {
+			await aura.navigate.toTemplates();
 
-			await expect(n8n.templates.getSearchInput()).toBeVisible();
-			await expect(n8n.templates.getAllCategoriesFilter()).toBeVisible();
+			await expect(aura.templates.getSearchInput()).toBeVisible();
+			await expect(aura.templates.getAllCategoriesFilter()).toBeVisible();
 
-			const categoryFilterCount = await n8n.templates.getCategoryFilters().count();
+			const categoryFilterCount = await aura.templates.getCategoryFilters().count();
 			expect(categoryFilterCount).toBeGreaterThan(1);
 
-			const templateCardCount = await n8n.templates.getTemplateCards().count();
+			const templateCardCount = await aura.templates.getTemplateCards().count();
 			expect(templateCardCount).toBeGreaterThan(0);
 		});
 
-		test('can filter templates by category', async ({ n8n }) => {
-			await n8n.navigate.toTemplates();
-			await expect(n8n.templates.getTemplatesLoadingContainer()).toBeHidden();
-			await expect(n8n.templates.getCategoryFilter(TEST_CATEGORY)).toBeVisible();
+		test('can filter templates by category', async ({ aura }) => {
+			await aura.navigate.toTemplates();
+			await expect(aura.templates.getTemplatesLoadingContainer()).toBeHidden();
+			await expect(aura.templates.getCategoryFilter(TEST_CATEGORY)).toBeVisible();
 
-			const initialTemplateText = await n8n.templates.getTemplateCountLabel().textContent();
+			const initialTemplateText = await aura.templates.getTemplateCountLabel().textContent();
 			const initialTemplateCount = parseCount(initialTemplateText);
 
-			const initialCollectionText = await n8n.templates.getCollectionCountLabel().textContent();
+			const initialCollectionText = await aura.templates.getCollectionCountLabel().textContent();
 			const initialCollectionCount = parseCount(initialCollectionText);
 
-			await n8n.templates.clickCategoryFilter(TEST_CATEGORY);
-			await expect(n8n.templates.getTemplatesLoadingContainer()).toBeHidden();
+			await aura.templates.clickCategoryFilter(TEST_CATEGORY);
+			await expect(aura.templates.getTemplatesLoadingContainer()).toBeHidden();
 
-			const finalTemplateText = await n8n.templates.getTemplateCountLabel().textContent();
+			const finalTemplateText = await aura.templates.getTemplateCountLabel().textContent();
 			const finalTemplateCount = parseCount(finalTemplateText);
 			expect(finalTemplateCount).toBeLessThan(initialTemplateCount);
 
-			const finalCollectionText = await n8n.templates.getCollectionCountLabel().textContent();
+			const finalCollectionText = await aura.templates.getCollectionCountLabel().textContent();
 			const finalCollectionCount = parseCount(finalCollectionText);
 			expect(finalCollectionCount).toBeLessThan(initialCollectionCount);
 		});
 
-		test('should preserve search query in URL', async ({ n8n }) => {
-			await n8n.navigate.toTemplates();
-			await expect(n8n.templates.getTemplatesLoadingContainer()).toBeHidden();
-			await expect(n8n.templates.getCategoryFilter(TEST_CATEGORY)).toBeVisible();
+		test('should preserve search query in URL', async ({ aura }) => {
+			await aura.navigate.toTemplates();
+			await expect(aura.templates.getTemplatesLoadingContainer()).toBeHidden();
+			await expect(aura.templates.getCategoryFilter(TEST_CATEGORY)).toBeVisible();
 
-			await n8n.templates.clickCategoryFilter(TEST_CATEGORY);
-			await n8n.templates.getSearchInput().fill('auto');
+			await aura.templates.clickCategoryFilter(TEST_CATEGORY);
+			await aura.templates.getSearchInput().fill('auto');
 
-			await expect(n8n.page).toHaveURL(/\?categories=/);
-			await expect(n8n.page).toHaveURL(/&search=/);
+			await expect(aura.page).toHaveURL(/\?categories=/);
+			await expect(aura.page).toHaveURL(/&search=/);
 
-			await n8n.page.reload();
+			await aura.page.reload();
 
-			await expect(n8n.page).toHaveURL(/\?categories=/);
-			await expect(n8n.page).toHaveURL(/&search=/);
+			await expect(aura.page).toHaveURL(/\?categories=/);
+			await expect(aura.page).toHaveURL(/&search=/);
 
-			const salesFilterLabel = n8n.templates.getCategoryFilter(TEST_CATEGORY).locator('label');
+			const salesFilterLabel = aura.templates.getCategoryFilter(TEST_CATEGORY).locator('label');
 			await expect(salesFilterLabel).toHaveClass(/is-checked/);
-			await expect(n8n.templates.getSearchInput()).toHaveValue('auto');
+			await expect(aura.templates.getSearchInput()).toHaveValue('auto');
 
-			await expect(n8n.templates.getCategoryFilters().nth(1)).toHaveText('Sales');
+			await expect(aura.templates.getCategoryFilters().nth(1)).toHaveText('Sales');
 		});
 	});
 });

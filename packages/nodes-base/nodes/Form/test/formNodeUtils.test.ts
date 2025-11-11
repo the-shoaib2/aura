@@ -7,7 +7,7 @@ import {
 	type NodeTypeAndVersion,
 	NodeOperationError,
 	FORM_TRIGGER_NODE_TYPE,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { renderFormNode, getFormTriggerNode } from '../utils/formNodeUtils';
 
@@ -116,7 +116,7 @@ describe('formNodeUtils', () => {
 			formSubmittedHeader: undefined,
 			formSubmittedText: 'Your response has been recorded',
 			formTitle: 'Test Title',
-			n8nWebsiteLink: 'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger',
+			auraWebsiteLink: 'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger',
 			testRun: true,
 			useResponseData: true,
 		});
@@ -144,7 +144,7 @@ describe('formNodeUtils', () => {
 			};
 			const otherNode: NodeTypeAndVersion = {
 				name: 'OtherNode',
-				type: 'n8n-nodes-base.other',
+				type: 'aura-nodes-base.other',
 				typeVersion: 1,
 				disabled: false,
 			};
@@ -205,7 +205,7 @@ describe('formNodeUtils', () => {
 		it('should throw NodeOperationError when no form trigger nodes are found', () => {
 			const otherNode: NodeTypeAndVersion = {
 				name: 'OtherNode',
-				type: 'n8n-nodes-base.other',
+				type: 'aura-nodes-base.other',
 				typeVersion: 1,
 				disabled: false,
 			};
@@ -271,13 +271,13 @@ describe('formNodeUtils', () => {
 			};
 			const webhookNode: NodeTypeAndVersion = {
 				name: 'WebhookNode',
-				type: 'n8n-nodes-base.webhook',
+				type: 'aura-nodes-base.webhook',
 				typeVersion: 1,
 				disabled: false,
 			};
 			const httpNode: NodeTypeAndVersion = {
 				name: 'HttpNode',
-				type: 'n8n-nodes-base.httpRequest',
+				type: 'aura-nodes-base.httpRequest',
 				typeVersion: 1,
 				disabled: false,
 			};

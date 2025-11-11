@@ -1,7 +1,7 @@
-import { getPersonalProject, createWorkflow, testDb } from '@n8n/backend-test-utils';
-import type { Project, User, Folder } from '@n8n/db';
-import { FolderRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { getPersonalProject, createWorkflow, testDb } from '@aura/backend-test-utils';
+import type { Project, User, Folder } from '@aura/db';
+import { FolderRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { DateTime } from 'luxon';
 
 import { createFolder } from '@test-integration/db/folders';

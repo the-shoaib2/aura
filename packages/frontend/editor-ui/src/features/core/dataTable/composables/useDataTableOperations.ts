@@ -8,7 +8,7 @@ import type {
 	DataTableRow,
 } from '@/features/core/dataTable/dataTable.types';
 import { ref, type Ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import type {
 	CellKeyDownEvent,
 	CellValueChangedEvent,
@@ -21,7 +21,7 @@ import { MODAL_CONFIRM } from '@/app/constants';
 import { isDataTableValue, isAGGridCellType } from '@/features/core/dataTable/typeGuards';
 import { useDataTableTypes } from '@/features/core/dataTable/composables/useDataTableTypes';
 import { areValuesEqual } from '@/features/core/dataTable/utils/typeUtils';
-import { ResponseError } from '@n8n/rest-api-client';
+import { ResponseError } from '@aura/rest-api-client';
 
 export type UseDataTableOperationsParams = {
 	colDefs: Ref<ColDef[]>;

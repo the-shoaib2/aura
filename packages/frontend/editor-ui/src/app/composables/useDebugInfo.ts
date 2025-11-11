@@ -1,11 +1,11 @@
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
-import type { WorkflowSettings } from 'n8n-workflow';
+import { useDeviceSupport } from '@aura/composables/useDeviceSupport';
+import type { WorkflowSettings } from 'workflow';
 
 type DebugInfo = {
 	core: {
-		n8nVersion: string;
+		auraVersion: string;
 		platform: 'docker (cloud)' | 'docker (self-hosted)' | 'npm';
 		nodeJsVersion: string;
 		nodeEnv: string | undefined;
@@ -51,7 +51,7 @@ export function useDebugInfo() {
 
 	const coreInfo = (skipSensitive?: boolean) => {
 		const info = {
-			n8nVersion: rootStore.versionCli,
+			auraVersion: rootStore.versionCli,
 			platform:
 				settingsStore.isDocker && settingsStore.deploymentType === 'cloud'
 					? 'docker (cloud)'

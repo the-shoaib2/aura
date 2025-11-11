@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { createComponentRenderer } from '@/__tests__/render';
 import WorkflowDiffModal from '@/features/workflows/workflowDiff/WorkflowDiffModal.vue';
 import { createTestingPinia } from '@pinia/testing';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
@@ -74,7 +74,7 @@ const mockWorkflow = createTestWorkflow({
 		{
 			id: 'node1',
 			name: 'Start',
-			type: 'n8n-nodes-base.start',
+			type: 'aura-nodes-base.start',
 			typeVersion: 1,
 			position: [250, 300],
 			parameters: {},
@@ -82,7 +82,7 @@ const mockWorkflow = createTestWorkflow({
 		{
 			id: 'node2',
 			name: 'End',
-			type: 'n8n-nodes-base.end',
+			type: 'aura-nodes-base.end',
 			typeVersion: 1,
 			position: [450, 300],
 			parameters: {},

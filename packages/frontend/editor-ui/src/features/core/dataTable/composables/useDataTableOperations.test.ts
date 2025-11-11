@@ -12,7 +12,7 @@ import type {
 import { setActivePinia } from 'pinia';
 import { createTestingPinia } from '@pinia/testing';
 import { useDataTableStore } from '@/features/core/dataTable/dataTable.store';
-import { ResponseError } from '@n8n/rest-api-client';
+import { ResponseError } from '@aura/rest-api-client';
 import { useMessage } from '@/app/composables/useMessage';
 import { useToast } from '@/app/composables/useToast';
 import { useTelemetry } from '@/app/composables/useTelemetry';
@@ -42,7 +42,7 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 	})),
 }));
 
-vi.mock('@n8n/i18n', () => ({
+vi.mock('@aura/i18n', () => ({
 	useI18n: vi.fn(() => ({
 		baseText: vi.fn((key: string) => key),
 	})),

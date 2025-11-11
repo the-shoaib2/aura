@@ -12,7 +12,7 @@ import type {
 	INodeExecutionData,
 	INodeListSearchResult,
 	INodePropertyOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 type OktaUser = {
 	status: string;

@@ -4,7 +4,7 @@
 		{
 			"parameters": {},
 			"name": "On clicking 'execute'",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"position": [700, 420],
 			"typeVersion": 1,
 			"id": "bc5de3f0-e5f1-4fc0-ab50-ef91bada8b35"
@@ -16,7 +16,7 @@
 			},
 			"id": "01b5727e-79a2-4cc1-b52f-32ea1ba67a6f",
 			"name": "Markdown1",
-			"type": "n8n-nodes-base.markdown",
+			"type": "aura-nodes-base.markdown",
 			"typeVersion": 1,
 			"position": [1200, 420]
 		},
@@ -30,7 +30,7 @@
 			},
 			"id": "43950238-9726-403e-a17a-a9cab8089041",
 			"name": "Markdown",
-			"type": "n8n-nodes-base.markdown",
+			"type": "aura-nodes-base.markdown",
 			"typeVersion": 1,
 			"position": [1500, 700]
 		},
@@ -40,7 +40,7 @@
 			},
 			"id": "d1f890b1-c484-441f-be70-7b35959ba9b4",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [940, 420]
 		},
@@ -53,7 +53,7 @@
 			},
 			"id": "b9f9b71d-8b27-45a3-92cc-51e1138f688b",
 			"name": "Markdown2",
-			"type": "n8n-nodes-base.markdown",
+			"type": "aura-nodes-base.markdown",
 			"typeVersion": 1,
 			"position": [1200, 220]
 		},
@@ -73,7 +73,7 @@
 			},
 			"id": "9e1f3ade-067b-40b0-b702-be077e3ab653",
 			"name": "Markdown3",
-			"type": "n8n-nodes-base.markdown",
+			"type": "aura-nodes-base.markdown",
 			"typeVersion": 1,
 			"position": [1200, 20]
 		},
@@ -85,7 +85,7 @@
 			},
 			"id": "b7db1d99-8af5-404d-aa82-14690f879b4d",
 			"name": "Markdown4",
-			"type": "n8n-nodes-base.markdown",
+			"type": "aura-nodes-base.markdown",
 			"typeVersion": 1,
 			"position": [1500, 520]
 		}

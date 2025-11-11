@@ -3,23 +3,23 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	ITriggerResponse,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 type eventType = 'Instance started' | 'Workflow activated' | 'Workflow updated' | undefined;
 
 export class N8nTrigger implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'n8n Trigger',
-		name: 'n8nTrigger',
-		icon: 'file:n8nTrigger.svg',
+		displayName: 'aura Trigger',
+		name: 'auraTrigger',
+		icon: 'file:auraTrigger.svg',
 		group: ['trigger'],
 		version: 1,
-		description: 'Handle events and perform actions on your n8n instance',
+		description: 'Handle events and perform actions on your aura instance',
 		eventTriggerDescription: '',
 		mockManualExecution: true,
 		defaults: {
-			name: 'n8n Trigger',
+			name: 'aura Trigger',
 		},
 		inputs: [],
 		outputs: [NodeConnectionTypes.Main],
@@ -33,7 +33,7 @@ export class N8nTrigger implements INodeType {
 				description: `Specifies under which conditions an execution should happen:
 				<ul>
 					<li><b>Active Workflow Updated</b>: Triggers when this workflow is updated</li>
-					<li><b>Instance Started</b>:  Triggers when this n8n instance is started or re-started</li>
+					<li><b>Instance Started</b>:  Triggers when this aura instance is started or re-started</li>
 					<li><b>Workflow Activated</b>: Triggers when this workflow is activated</li>
 				</ul>`,
 				options: [
@@ -45,7 +45,7 @@ export class N8nTrigger implements INodeType {
 					{
 						name: 'Instance Started',
 						value: 'init',
-						description: 'Triggers when this n8n instance is started or re-started',
+						description: 'Triggers when this aura instance is started or re-started',
 					},
 					{
 						name: 'Workflow Activated',

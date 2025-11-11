@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "c7c0cf66-790a-4da7-81c8-ba9e4bbcec9a",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [720, 300]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "cec18624-ced0-4de1-8987-d4b184b136b9",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [1020, 200]
 		},
@@ -25,7 +25,7 @@
 			},
 			"id": "754d549c-82ce-4625-ba2b-6f8edcbf715e",
 			"name": "Code1",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [1020, 400]
 		},
@@ -43,7 +43,7 @@
 			},
 			"id": "1b3660a2-a490-4524-a8ac-cd42fa2b340b",
 			"name": "Compare Datasets",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.2,
 			"position": [1300, 420]
 		},
@@ -61,7 +61,7 @@
 			},
 			"id": "17e9b83b-828c-41a0-a7ba-e33cc66d37ad",
 			"name": "Any skipped",
-			"type": "n8n-nodes-base.compareDatasets",
+			"type": "aura-nodes-base.compareDatasets",
 			"typeVersion": 2.1,
 			"position": [1300, 180],
 			"continueOnFail": true
@@ -70,7 +70,7 @@
 			"parameters": {},
 			"id": "551ed574-607a-4d98-9b06-350df92c805e",
 			"name": "No Operation, do nothing",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1540, 200]
 		},
@@ -78,7 +78,7 @@
 			"parameters": {},
 			"id": "00e75760-d88e-413c-b276-c759db72411f",
 			"name": "No Operation, do nothing1",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1540, 360]
 		}

@@ -5,14 +5,14 @@ import type {
 	INodeProperties,
 	IDisplayOptions,
 	IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	NodeConnectionTypes,
 	WAIT_INDEFINITELY,
 	FORM_TRIGGER_NODE_TYPE,
 	tryToParseDateTime,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { validateWaitAmount, validateWaitUnit } from './validation';
 import { updateDisplayOptions } from '../../utils/utilities';
@@ -428,7 +428,7 @@ export class Wait extends Webhook {
 			// ----------------------------------
 			{
 				displayName:
-					'The webhook URL will be generated at run time. It can be referenced with the <strong>$execution.resumeUrl</strong> variable. Send it somewhere before getting to this node. <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/?utm_source=n8n_app&utm_medium=node_settings_modal-credential_link&utm_campaign=n8n-nodes-base.wait" target="_blank">More info</a>',
+					'The webhook URL will be generated at run time. It can be referenced with the <strong>$execution.resumeUrl</strong> variable. Send it somewhere before getting to this node. <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/?utm_source=aura_app&utm_medium=node_settings_modal-credential_link&utm_campaign=aura-nodes-base.wait" target="_blank">More info</a>',
 				name: 'webhookNotice',
 				type: 'notice',
 				displayOptions: displayOnWebhook,
@@ -436,7 +436,7 @@ export class Wait extends Webhook {
 			},
 			{
 				displayName:
-					'The form url will be generated at run time. It can be referenced with the <strong>$execution.resumeFormUrl</strong> variable. Send it somewhere before getting to this node. <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/?utm_source=n8n_app&utm_medium=node_settings_modal-credential_link&utm_campaign=n8n-nodes-base.wait" target="_blank">More info</a>',
+					'The form url will be generated at run time. It can be referenced with the <strong>$execution.resumeFormUrl</strong> variable. Send it somewhere before getting to this node. <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/?utm_source=aura_app&utm_medium=node_settings_modal-credential_link&utm_campaign=aura-nodes-base.wait" target="_blank">More info</a>',
 				name: 'formNotice',
 				type: 'notice',
 				displayOptions: displayOnFormSubmission,

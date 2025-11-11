@@ -1,8 +1,8 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
-import type { Project, User, WorkflowEntity } from '@n8n/db';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
+import type { Project, User, WorkflowEntity } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { INode, Workflow } from 'n8n-workflow';
+import type { INode, Workflow } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import {
@@ -163,7 +163,7 @@ describe('SubworkflowPolicyChecker', () => {
 			ownershipService.getPersonalProjectOwnerCached.mockResolvedValueOnce(subworkflowProjectOwner);
 			accessService.hasReadAccess.mockResolvedValueOnce(true);
 
-			const instanceUrl = 'https://n8n.test.com';
+			const instanceUrl = 'https://aura.test.com';
 			urlService.getInstanceBaseUrl.mockReturnValueOnce(instanceUrl);
 
 			const check = checker.check(

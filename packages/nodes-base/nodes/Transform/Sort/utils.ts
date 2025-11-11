@@ -1,6 +1,6 @@
-import { NodeVM } from '@n8n/vm2';
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import { NodeVM } from '@aura/vm2';
+import type { IExecuteFunctions, INodeExecutionData } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 const returnRegExp = /\breturn\b/g;
 export function sortByCode(

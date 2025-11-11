@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import type { IExecuteFunctions, IWorkflowDataProxyData, INode } from 'n8n-workflow';
+import type { IExecuteFunctions, IWorkflowDataProxyData, INode } from 'workflow';
 
 import { ExecuteWorkflow } from './ExecuteWorkflow.node';
 import { getWorkflowInfo } from './GenericFunctions';

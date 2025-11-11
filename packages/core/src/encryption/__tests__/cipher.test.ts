@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 
 import { InstanceSettings } from '@/instance-settings';
 import { mockInstance } from '@test/utils';

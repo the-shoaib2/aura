@@ -8,7 +8,7 @@
 			"parameters": {},
 			"id": "df260de7-6f28-4d07-b7b5-29588e27335b",
 			"name": "When clicking \"Execute workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [780, 500]
 		},
@@ -20,7 +20,7 @@
 			},
 			"id": "9e9a0708-86dc-474f-a60e-4315e757c08e",
 			"name": "DebugHelper",
-			"type": "n8n-nodes-base.debugHelper",
+			"type": "aura-nodes-base.debugHelper",
 			"typeVersion": 1,
 			"position": [1000, 500]
 		}

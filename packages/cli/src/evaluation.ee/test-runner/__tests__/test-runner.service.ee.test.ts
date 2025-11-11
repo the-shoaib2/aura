@@ -1,20 +1,16 @@
-import { mockLogger, mockInstance } from '@n8n/backend-test-utils';
-import { ExecutionsConfig } from '@n8n/config';
+import { mockLogger, mockInstance } from '@aura/backend-test-utils';
+import { ExecutionsConfig } from '@aura/config';
 import type {
 	TestRun,
 	TestCaseExecutionRepository,
 	TestRunRepository,
 	WorkflowRepository,
-} from '@n8n/db';
+} from '@aura/db';
 import { readFileSync } from 'fs';
 import { mock } from 'jest-mock-extended';
-import type { ErrorReporter } from 'n8n-core';
-import {
-	EVALUATION_NODE_TYPE,
-	EVALUATION_TRIGGER_NODE_TYPE,
-	NodeConnectionTypes,
-} from 'n8n-workflow';
-import type { IWorkflowBase, IRun, ExecutionError } from 'n8n-workflow';
+import type { ErrorReporter } from 'aura-core';
+import { EVALUATION_NODE_TYPE, EVALUATION_TRIGGER_NODE_TYPE, NodeConnectionTypes } from 'workflow';
+import type { IWorkflowBase, IRun, ExecutionError } from 'workflow';
 import path from 'path';
 
 import type { ActiveExecutions } from '@/active-executions';
@@ -83,7 +79,7 @@ describe('TestRunnerService', () => {
 					{
 						id: 'node2',
 						name: 'Regular Node',
-						type: 'n8n-nodes-base.noOp',
+						type: 'aura-nodes-base.noOp',
 						typeVersion: 1,
 						position: [100, 0],
 						parameters: {},
@@ -108,7 +104,7 @@ describe('TestRunnerService', () => {
 					{
 						id: 'node1',
 						name: 'Regular Node 1',
-						type: 'n8n-nodes-base.noOp',
+						type: 'aura-nodes-base.noOp',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},
@@ -116,7 +112,7 @@ describe('TestRunnerService', () => {
 					{
 						id: 'node2',
 						name: 'Regular Node 2',
-						type: 'n8n-nodes-base.set',
+						type: 'aura-nodes-base.set',
 						typeVersion: 1,
 						position: [100, 0],
 						parameters: {},
@@ -394,7 +390,7 @@ describe('TestRunnerService', () => {
 					{
 						id: 'node1',
 						name: 'Regular Node',
-						type: 'n8n-nodes-base.noOp',
+						type: 'aura-nodes-base.noOp',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},
@@ -912,7 +908,7 @@ describe('TestRunnerService', () => {
 					{
 						id: 'node1',
 						name: 'Regular Node',
-						type: 'n8n-nodes-base.noOp',
+						type: 'aura-nodes-base.noOp',
 						typeVersion: 1,
 						position: [0, 0],
 						parameters: {},
@@ -1244,7 +1240,7 @@ describe('TestRunnerService', () => {
 						{
 							id: 'model1',
 							name: 'OpenAI Model',
-							type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+							type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 							typeVersion: 1,
 							position: [0, 0],
 							parameters: {},
@@ -1375,7 +1371,7 @@ describe('TestRunnerService', () => {
 						{
 							id: 'model1',
 							name: 'OpenAI Model',
-							type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+							type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 							typeVersion: 1,
 							position: [0, 0],
 							parameters: {},
@@ -1434,7 +1430,7 @@ describe('TestRunnerService', () => {
 							{
 								id: 'model1',
 								name: 'OpenAI Model',
-								type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+								type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 								typeVersion: 1,
 								position: [0, 0],
 								parameters: {},
@@ -1494,7 +1490,7 @@ describe('TestRunnerService', () => {
 							{
 								id: 'model1',
 								name: 'OpenAI Model',
-								type: '@n8n/n8n-nodes-langchain.lmChatOpenAi',
+								type: '@aura/aura-nodes-langchain.lmChatOpenAi',
 								typeVersion: 1,
 								position: [0, 0],
 								parameters: {},

@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.emailReadImap",
+	"node": "aura-nodes-base.emailReadImap",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Core Nodes"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/imap/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/imap/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.emailimap/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.emailimap/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Build your own virtual assistant with n8n: A step by step guide",
+				"label": "Build your own virtual assistant with aura: A step by step guide",
 				"icon": "👦",
-				"url": "https://n8n.io/blog/build-your-own-virtual-assistant-with-n8n-a-step-by-step-guide/"
+				"url": "https://aura.io/blog/build-your-own-virtual-assistant-with-aura-a-step-by-step-guide/"
 			}
 		]
 	},

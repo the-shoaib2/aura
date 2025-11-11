@@ -4,7 +4,7 @@
 			"parameters": {},
 			"id": "6dde1608-135f-441d-8438-40f605e4dae3",
 			"name": "Execute Workflow Trigger",
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"type": "aura-nodes-base.executeWorkflowTrigger",
 			"typeVersion": 1,
 			"position": [-180, -40]
 		},
@@ -29,7 +29,7 @@
 			},
 			"id": "dfc71b70-7b7a-4dde-914f-cc4ffc99b18c",
 			"name": "Success",
-			"type": "n8n-nodes-base.evaluationMetrics",
+			"type": "aura-nodes-base.evaluationMetrics",
 			"typeVersion": 1,
 			"position": [620, -40]
 		},
@@ -48,7 +48,7 @@
 			},
 			"id": "5ef5be33-37e0-4c95-81c8-3fd677bdca88",
 			"name": "First Metric",
-			"type": "n8n-nodes-base.evaluationMetrics",
+			"type": "aura-nodes-base.evaluationMetrics",
 			"typeVersion": 1,
 			"position": [160, -40]
 		}

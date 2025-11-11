@@ -1,6 +1,6 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { sleep } from 'n8n-workflow';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { sleep } from 'workflow';
 
 import config from '@/config';
 import { CacheService } from '@/services/cache/cache.service';

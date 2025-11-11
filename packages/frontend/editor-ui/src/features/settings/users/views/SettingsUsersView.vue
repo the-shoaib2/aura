@@ -7,14 +7,14 @@ import {
 	type UsersListSortOptions,
 	type User,
 	USERS_LIST_SORT_OPTIONS,
-} from '@n8n/api-types';
-import type { UserAction } from '@n8n/design-system';
-import type { TableOptions } from '@n8n/design-system/components/N8nDataTableServer';
+} from '@aura/api-types';
+import type { UserAction } from '@aura/design-system';
+import type { TableOptions } from '@aura/design-system/components/N8nDataTableServer';
 import { EnterpriseEditionFeature } from '@/app/constants';
 import { DELETE_USER_MODAL_KEY, INVITE_USER_MODAL_KEY } from '../users.constants';
 import EnterpriseEdition from '@/app/components/EnterpriseEdition.ee.vue';
 import type { InvitableRoleName } from '../users.types';
-import type { IUser } from '@n8n/rest-api-client/api/users';
+import type { IUser } from '@aura/rest-api-client/api/users';
 import { useToast } from '@/app/composables/useToast';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useSettingsStore } from '@/app/stores/settings.store';
@@ -22,7 +22,7 @@ import { useUsersStore } from '../users.store';
 import { useSSOStore } from '@/features/settings/sso/sso.store';
 import { hasPermission } from '@/app/utils/rbac/permissions';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { usePageRedirectionHelper } from '@/app/composables/usePageRedirectionHelper';
 import SettingsUsersTable from '../components/SettingsUsersTable.vue';
@@ -40,7 +40,7 @@ import {
 	N8nNotice,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 const clipboard = useClipboard();
 const { showToast, showError } = useToast();
 

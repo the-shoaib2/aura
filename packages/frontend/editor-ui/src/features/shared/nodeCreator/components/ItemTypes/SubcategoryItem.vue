@@ -2,10 +2,10 @@
 import type { SubcategoryItemProps } from '@/Interface';
 import camelCase from 'lodash/camelCase';
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import type { BaseTextKey } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 
-import { N8nNodeCreatorNode, N8nNodeIcon } from '@n8n/design-system';
+import { N8nNodeCreatorNode, N8nNodeIcon } from '@aura/design-system';
 export interface Props {
 	item: SubcategoryItemProps;
 }

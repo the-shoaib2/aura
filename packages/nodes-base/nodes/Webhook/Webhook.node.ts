@@ -1,4 +1,4 @@
-/* eslint-disable n8n-nodes-base/node-execute-block-wrong-error-thrown */
+/* eslint-disable aura-nodes-base/node-execute-block-wrong-error-thrown */
 import { createWriteStream } from 'fs';
 import { rm, stat } from 'fs/promises';
 import isbot from 'isbot';
@@ -10,8 +10,8 @@ import type {
 	IWebhookResponseData,
 	MultiPartFormData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError, Node } from 'n8n-workflow';
+} from 'workflow';
+import { BINARY_ENCODING, NodeOperationError, Node } from 'workflow';
 import { pipeline } from 'stream/promises';
 import { file as tmpFile } from 'tmp-promise';
 import { v4 as uuid } from 'uuid';
@@ -140,7 +140,7 @@ export class Webhook extends Node {
 			responseModePropertyStreaming,
 			{
 				displayName:
-					'Insert a \'Respond to Webhook\' node to control when and how you respond. <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/" target="_blank">More details</a>',
+					'Insert a \'Respond to Webhook\' node to control when and how you respond. <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.respondtowebhook/" target="_blank">More details</a>',
 				name: 'webhookNotice',
 				type: 'notice',
 				displayOptions: {
@@ -152,7 +152,7 @@ export class Webhook extends Node {
 			},
 			{
 				displayName:
-					'Insert a node that supports streaming (e.g. \'AI Agent\') and enable streaming to stream directly to the response while the workflow is executed. <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/" target="_blank">More details</a>',
+					'Insert a node that supports streaming (e.g. \'AI Agent\') and enable streaming to stream directly to the response while the workflow is executed. <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.respondtowebhook/" target="_blank">More details</a>',
 				name: 'webhookStreamingNotice',
 				type: 'notice',
 				displayOptions: {
@@ -207,7 +207,7 @@ export class Webhook extends Node {
 		const { typeVersion: nodeVersion, type: nodeType } = context.getNode();
 		const responseMode = context.getNodeParameter('responseMode', 'onReceived') as string;
 
-		if (nodeVersion >= 2 && nodeType === 'n8n-nodes-base.webhook') {
+		if (nodeVersion >= 2 && nodeType === 'aura-nodes-base.webhook') {
 			checkResponseModeConfiguration(context);
 		}
 
@@ -381,7 +381,7 @@ export class Webhook extends Node {
 		const options = context.getNodeParameter('options', {}) as IDataObject;
 
 		// TODO: create empty binaryData placeholder, stream into that path, and then finalize the binaryData
-		const binaryFile = await tmpFile({ prefix: 'n8n-webhook-' });
+		const binaryFile = await tmpFile({ prefix: 'aura-webhook-' });
 
 		try {
 			await pipeline(req, createWriteStream(binaryFile.path));

@@ -1,11 +1,11 @@
-import { Logger } from '@n8n/backend-common';
-import { ExecutionsConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { ExecutionsConfig } from '@aura/config';
+import { Service } from '@aura/di';
 import type { Redis as SingleNodeClient, Cluster as MultiNodeClient } from 'ioredis';
 import debounce from 'lodash/debounce';
-import { InstanceSettings } from 'n8n-core';
-import { jsonParse } from 'n8n-workflow';
-import type { LogMetadata } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { jsonParse } from 'workflow';
+import type { LogMetadata } from 'workflow';
 
 import { RedisClientService } from '@/services/redis-client.service';
 
@@ -31,7 +31,7 @@ export class Subscriber {
 
 		this.logger = this.logger.scoped(['scaling', 'pubsub']);
 
-		this.client = this.redisClientService.createClient({ type: 'subscriber(n8n)' });
+		this.client = this.redisClientService.createClient({ type: 'subscriber(aura)' });
 
 		const handlerFn = (msg: PubSub.Command | PubSub.WorkerResponse) => {
 			const eventName = 'command' in msg ? msg.command : msg.response;

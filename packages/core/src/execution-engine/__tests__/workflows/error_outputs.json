@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "a94bc1fb-1f39-404b-b149-a76c4fbaed25",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-60, 780]
 		},
@@ -23,7 +23,7 @@
 			},
 			"id": "6ba26bdf-91e2-4f18-8f4c-09e98aa4a9df",
 			"name": "Success",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [820, 1180]
 		},
@@ -41,7 +41,7 @@
 			},
 			"id": "e3d1eadf-0994-4806-97ce-c5c5f673c624",
 			"name": "Error",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [820, 1360]
 		},
@@ -51,7 +51,7 @@
 			},
 			"id": "01adfc2d-141d-4843-b2d6-04115a476bc1",
 			"name": "Mock Data",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [160, 780]
 		},
@@ -63,7 +63,7 @@
 			},
 			"id": "8ca689eb-7910-43ad-bd10-fae35a8fc203",
 			"name": "Sticky Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [460, 1100]
 		},
@@ -75,7 +75,7 @@
 			},
 			"id": "a17460d6-b0c0-432d-ac6f-8ff684357c8d",
 			"name": "Sticky Note1",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [460, 460]
 		},
@@ -93,7 +93,7 @@
 			},
 			"id": "46df5463-4289-4e61-9f80-87e035931bda",
 			"name": "Combined",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [800, 560]
 		},
@@ -104,7 +104,7 @@
 			},
 			"id": "a4708520-aaca-4618-b7a2-94da268fba37",
 			"name": "Throw Error",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [480, 1280],
 			"errorOutput": true,
@@ -118,7 +118,7 @@
 			},
 			"id": "f0a450cd-4124-490d-964f-a71b645f770c",
 			"name": "Sticky Note2",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [460, 780]
 		},
@@ -129,7 +129,7 @@
 			},
 			"id": "823f12e6-cbfc-4545-8505-fab158d1effe",
 			"name": "Throw Error2",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [500, 880],
 			"onError": "continueRegularOutput"
@@ -148,7 +148,7 @@
 			},
 			"id": "8f88d130-9a13-4236-81c0-157f8a8990c0",
 			"name": "Combined1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [800, 880]
 		},
@@ -159,7 +159,7 @@
 			},
 			"id": "1a3f4beb-0d1e-44fe-a411-5bd1096ffd74",
 			"name": "Throw Error1",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [500, 560],
 			"continueOnFail": true
@@ -178,7 +178,7 @@
 			},
 			"id": "c617a3d7-15e3-49b4-a7dd-d45c5e059a22",
 			"name": "Success1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [820, 1640]
 		},
@@ -190,7 +190,7 @@
 			},
 			"id": "046de2cf-970a-4925-b87d-16e8cca511fd",
 			"name": "Sticky Note3",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [460, 1560]
 		},
@@ -201,7 +201,7 @@
 			},
 			"id": "9ec21de1-dfca-4fff-b5a7-a56364239d7b",
 			"name": "Throw Error3",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [480, 1740],
 			"errorOutput": true,
@@ -213,7 +213,7 @@
 			},
 			"id": "e3605953-75cf-4036-99f7-05e3971a6a75",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [1040, 1820],
 			"onError": "continueErrorOutput"
@@ -232,7 +232,7 @@
 			},
 			"id": "a71cfb77-adfd-4c77-9a8e-7e58cbd0931b",
 			"name": "Success2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [1320, 1680]
 		},
@@ -250,7 +250,7 @@
 			},
 			"id": "ea9d02e9-1716-4f69-a14a-9133f5184886",
 			"name": "Error2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [1320, 1900]
 		},
@@ -268,7 +268,7 @@
 			},
 			"id": "17780679-f7a3-4b1b-b6ee-f3f61e0843ad",
 			"name": "Error1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [820, 1820]
 		}

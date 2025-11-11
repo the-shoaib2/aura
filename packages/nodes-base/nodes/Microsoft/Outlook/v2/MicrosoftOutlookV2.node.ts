@@ -3,7 +3,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { description } from './actions/node.description';
 import { router } from './actions/router';

@@ -1,6 +1,6 @@
-import type { ExecutionMetadata } from '@n8n/db';
-import { ExecutionMetadataRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import type { ExecutionMetadata } from '@aura/db';
+import { ExecutionMetadataRepository } from '@aura/db';
+import { Service } from '@aura/di';
 
 @Service()
 export class ExecutionMetadataService {

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const conversationOperations: INodeProperties[] = [
 	{
@@ -61,7 +61,7 @@ export const conversationFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of a mailbox where the conversation is being created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of a mailbox where the conversation is being created. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Status',
@@ -144,7 +144,7 @@ export const conversationFields: INodeProperties[] = [
 				resource: ['conversation'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description:
 			'By default the response only contain the ID to resource. If this option gets activated, it will resolve the data automatically.',
 	},
@@ -218,7 +218,7 @@ export const conversationFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'List of tags to be added to the conversation. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'List of tags to be added to the conversation. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'User ID',
@@ -572,7 +572,7 @@ export const conversationFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'Filter conversation by tags. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Filter conversation by tags. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	},

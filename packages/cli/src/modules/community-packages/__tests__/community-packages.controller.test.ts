@@ -1,4 +1,4 @@
-import type { CommunityNodeType } from '@n8n/api-types';
+import type { CommunityNodeType } from '@aura/api-types';
 import { mock } from 'jest-mock-extended';
 
 import { CommunityPackagesController } from '@/modules/community-packages/community-packages.controller';
@@ -31,18 +31,18 @@ describe('CommunityPackagesController', () => {
 		it('should throw error if verify in options but no checksum', async () => {
 			const request = mock<NodeRequest.Post>({
 				user: { id: 'user123' },
-				body: { name: 'n8n-nodes-test', verify: true },
+				body: { name: 'aura-nodes-test', verify: true },
 			});
 			communityNodeTypesService.findVetted.mockReturnValue(undefined);
 			await expect(controller.installPackage(request)).rejects.toThrow(
-				'Package n8n-nodes-test is not vetted for installation',
+				'Package aura-nodes-test is not vetted for installation',
 			);
 		});
 
 		it('should have correct version', async () => {
 			const request = mock<NodeRequest.Post>({
 				user: { id: 'user123' },
-				body: { name: 'n8n-nodes-test', verify: true, version: '1.0.0' },
+				body: { name: 'aura-nodes-test', verify: true, version: '1.0.0' },
 			});
 			communityNodeTypesService.findVetted.mockReturnValue(
 				mock<CommunityNodeType>({
@@ -50,8 +50,8 @@ describe('CommunityPackagesController', () => {
 				}),
 			);
 			communityPackagesService.parseNpmPackageName.mockReturnValue({
-				rawString: 'n8n-nodes-test',
-				packageName: 'n8n-nodes-test',
+				rawString: 'aura-nodes-test',
+				packageName: 'aura-nodes-test',
 				version: '1.1.1',
 			});
 			communityPackagesService.isPackageInstalled.mockResolvedValue(false);
@@ -68,7 +68,7 @@ describe('CommunityPackagesController', () => {
 			await controller.installPackage(request);
 
 			expect(communityPackagesService.installPackage).toHaveBeenCalledWith(
-				'n8n-nodes-test',
+				'aura-nodes-test',
 				'1.0.0',
 				'checksum',
 			);
@@ -85,7 +85,7 @@ describe('CommunityPackagesController', () => {
 		it('should use the version from the request body when updating a package', async () => {
 			const req = mock<NodeRequest.Update>({
 				body: {
-					name: 'n8n-nodes-test',
+					name: 'aura-nodes-test',
 					version: '2.0.0',
 					checksum: 'a893hfdsy7399',
 				},
@@ -111,7 +111,7 @@ describe('CommunityPackagesController', () => {
 			const result = await controller.updatePackage(req);
 
 			expect(communityPackagesService.updatePackage).toHaveBeenCalledWith(
-				'n8n-nodes-test',
+				'aura-nodes-test',
 				previouslyInstalledPackage,
 				'2.0.0',
 				'a893hfdsy7399',

@@ -2,7 +2,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-180, -520],
 			"id": "8218dacc-3b5f-460a-a773-817faf012ba9",
@@ -19,7 +19,7 @@
 				},
 				"requestOptions": {}
 			},
-			"type": "n8n-nodes-base.azureCosmosDb",
+			"type": "aura-nodes-base.azureCosmosDb",
 			"typeVersion": 1,
 			"position": [-80, -360],
 			"id": "4f60d430-3c90-4838-b9d1-8c9637e745b6",

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { appendAttributionOption } from '../../utils/descriptions';
 
@@ -533,7 +533,7 @@ export const respondWithOptions: INodeProperties = {
 					},
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					displayName: 'URL to Redirect to',
 					name: 'redirectUrl',
 					description:
@@ -541,7 +541,7 @@ export const respondWithOptions: INodeProperties = {
 					type: 'string',
 					default: '',
 					validateType: 'url',
-					placeholder: 'e.g. http://www.n8n.io',
+					placeholder: 'e.g. http://www.aura.io',
 					displayOptions: {
 						show: {
 							respondWith: ['redirect'],
@@ -555,5 +555,5 @@ export const respondWithOptions: INodeProperties = {
 
 export const appendAttributionToForm: INodeProperties = {
 	...appendAttributionOption,
-	description: 'Whether to include the link “Form automated with n8n” at the bottom of the form',
+	description: 'Whether to include the link “Form automated with aura” at the bottom of the form',
 };

@@ -1,9 +1,9 @@
-import { inProduction, Logger } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
+import { inProduction, Logger } from '@aura/backend-common';
+import { Container } from '@aura/di';
 import { existsSync } from 'fs';
 import { mkdir, utimes, open, rm } from 'fs/promises';
-import { InstanceSettings } from 'n8n-core';
-import { sleep } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { sleep } from 'workflow';
 import { join, dirname } from 'path';
 
 export const touchFile = async (filePath: string): Promise<void> => {
@@ -17,8 +17,8 @@ export const touchFile = async (filePath: string): Promise<void> => {
 	}
 };
 
-const { n8nFolder } = Container.get(InstanceSettings);
-const journalFile = join(n8nFolder, 'crash.journal');
+const { auraFolder } = Container.get(InstanceSettings);
+const journalFile = join(auraFolder, 'crash.journal');
 
 export const init = async () => {
 	if (!inProduction) return;

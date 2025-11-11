@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 import { regions } from './types';
 
 export const awsRegionProperty: INodeProperties = {
@@ -23,7 +23,7 @@ export const awsCustomEndpoints: INodeProperties[] = [
 		displayName: 'Rekognition Endpoint',
 		name: 'rekognitionEndpoint',
 		description:
-			'If you use Amazon VPC to host n8n, you can establish a connection between your VPC and Rekognition using a VPC endpoint. Leave blank to use the default endpoint.',
+			'If you use Amazon VPC to host aura, you can establish a connection between your VPC and Rekognition using a VPC endpoint. Leave blank to use the default endpoint.',
 		type: 'string',
 		displayOptions: {
 			show: {
@@ -37,7 +37,7 @@ export const awsCustomEndpoints: INodeProperties[] = [
 		displayName: 'Lambda Endpoint',
 		name: 'lambdaEndpoint',
 		description:
-			'If you use Amazon VPC to host n8n, you can establish a connection between your VPC and Lambda using a VPC endpoint. Leave blank to use the default endpoint.',
+			'If you use Amazon VPC to host aura, you can establish a connection between your VPC and Lambda using a VPC endpoint. Leave blank to use the default endpoint.',
 		type: 'string',
 		displayOptions: {
 			show: {
@@ -51,7 +51,7 @@ export const awsCustomEndpoints: INodeProperties[] = [
 		displayName: 'SNS Endpoint',
 		name: 'snsEndpoint',
 		description:
-			'If you use Amazon VPC to host n8n, you can establish a connection between your VPC and SNS using a VPC endpoint. Leave blank to use the default endpoint.',
+			'If you use Amazon VPC to host aura, you can establish a connection between your VPC and SNS using a VPC endpoint. Leave blank to use the default endpoint.',
 		type: 'string',
 		displayOptions: {
 			show: {
@@ -65,7 +65,7 @@ export const awsCustomEndpoints: INodeProperties[] = [
 		displayName: 'SES Endpoint',
 		name: 'sesEndpoint',
 		description:
-			'If you use Amazon VPC to host n8n, you can establish a connection between your VPC and SES using a VPC endpoint. Leave blank to use the default endpoint.',
+			'If you use Amazon VPC to host aura, you can establish a connection between your VPC and SES using a VPC endpoint. Leave blank to use the default endpoint.',
 		type: 'string',
 		displayOptions: {
 			show: {
@@ -79,7 +79,7 @@ export const awsCustomEndpoints: INodeProperties[] = [
 		displayName: 'SQS Endpoint',
 		name: 'sqsEndpoint',
 		description:
-			'If you use Amazon VPC to host n8n, you can establish a connection between your VPC and SQS using a VPC endpoint. Leave blank to use the default endpoint.',
+			'If you use Amazon VPC to host aura, you can establish a connection between your VPC and SQS using a VPC endpoint. Leave blank to use the default endpoint.',
 		type: 'string',
 		displayOptions: {
 			show: {
@@ -93,7 +93,7 @@ export const awsCustomEndpoints: INodeProperties[] = [
 		displayName: 'S3 Endpoint',
 		name: 's3Endpoint',
 		description:
-			'If you use Amazon VPC to host n8n, you can establish a connection between your VPC and S3 using a VPC endpoint. Leave blank to use the default endpoint.',
+			'If you use Amazon VPC to host aura, you can establish a connection between your VPC and S3 using a VPC endpoint. Leave blank to use the default endpoint.',
 		type: 'string',
 		displayOptions: {
 			show: {

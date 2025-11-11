@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.totp",
+	"node": "aura-nodes-base.totp",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Core Nodes"],
@@ -9,7 +9,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.totp/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.totp/"
 			}
 		]
 	}

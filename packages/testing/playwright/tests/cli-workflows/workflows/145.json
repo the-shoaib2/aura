@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "81f5cd1e-3133-46d5-a1e2-70790d6d338a"
@@ -19,7 +19,7 @@
 				"url": "https://example.com/"
 			},
 			"name": "Peekalink",
-			"type": "n8n-nodes-base.peekalink",
+			"type": "aura-nodes-base.peekalink",
 			"typeVersion": 1,
 			"position": [550, 250],
 			"credentials": {
@@ -35,7 +35,7 @@
 				"url": "https://example.com/"
 			},
 			"name": "Peekalink1",
-			"type": "n8n-nodes-base.peekalink",
+			"type": "aura-nodes-base.peekalink",
 			"typeVersion": 1,
 			"position": [550, 400],
 			"credentials": {

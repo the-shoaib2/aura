@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	INodeExecutionData,
-	INodeProperties,
-	IExecuteFunctions,
-} from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData, INodeProperties, IExecuteFunctions } from 'workflow';
 
 import { generatePairedItemData, updateDisplayOptions } from '../../../../../utils/utilities';
 import type { IRecord } from '../../helpers/interfaces';
@@ -54,7 +49,7 @@ const properties: INodeProperties[] = [
 		placeholder: 'Add option',
 		options: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 				displayName: 'Download Attachments',
 				name: 'downloadFields',
 				type: 'multiOptions',
@@ -63,11 +58,11 @@ const properties: INodeProperties[] = [
 					loadOptionsDependsOn: ['base.value', 'table.value'],
 				},
 				default: [],
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-multi-options
 				description: "The fields of type 'attachment' that should be downloaded",
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 				displayName: 'Output Fields',
 				name: 'fields',
 				type: 'multiOptions',
@@ -76,7 +71,7 @@ const properties: INodeProperties[] = [
 					loadOptionsDependsOn: ['base.value', 'table.value'],
 				},
 				default: [],
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options
+				// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-multi-options
 				description: 'The fields you want to include in the output',
 			},
 			viewRLC,
@@ -98,7 +93,7 @@ const properties: INodeProperties[] = [
 				displayName: 'Property',
 				values: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 						displayName: 'Field',
 						name: 'field',
 						type: 'options',
@@ -108,7 +103,7 @@ const properties: INodeProperties[] = [
 						},
 						default: '',
 						description:
-							'Name of the field to sort on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'Name of the field to sort on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Direction',

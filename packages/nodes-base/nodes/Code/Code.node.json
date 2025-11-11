@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.code",
+	"node": "aura-nodes-base.code",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "The Code node allows you to execute JavaScript in your workflow.",
@@ -7,7 +7,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.code/"
 			}
 		]
 	},

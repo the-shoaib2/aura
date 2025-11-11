@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [50, 550],
 			"id": "a2295ea9-244a-4306-8154-22eb9bbcb44e"
@@ -16,14 +16,14 @@
 		{
 			"parameters": {
 				"resource": "connection",
-				"service": "n8n",
+				"service": "aura",
 				"externalid": "={{Date.now()}}",
 				"name": "=Name{{Date.now()}}",
-				"logoUrl": "https://n8n.io/_nuxt/img/df5be1c.png",
-				"linkUrl": "https://n8n.io/"
+				"logoUrl": "https://aura.io/_nuxt/img/df5be1c.png",
+				"linkUrl": "https://aura.io/"
 			},
 			"name": "ActiveCampaign",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"credentials": {
@@ -44,7 +44,7 @@
 				}
 			},
 			"name": "ActiveCampaign1",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"credentials": {
@@ -62,7 +62,7 @@
 				"connectionId": "={{$node[\"ActiveCampaign\"].json[\"connection\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign2",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -80,7 +80,7 @@
 				"limit": 1
 			},
 			"name": "ActiveCampaign3",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -98,7 +98,7 @@
 				"connectionId": "={{$node[\"ActiveCampaign\"].json[\"connection\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign4",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -115,7 +115,7 @@
 				"additionalFields": {}
 			},
 			"name": "ActiveCampaign5",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [250, 470],
 			"credentials": {
@@ -139,7 +139,7 @@
 				"additionalFields": {}
 			},
 			"name": "ActiveCampaign7",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [400, 550],
 			"credentials": {
@@ -156,7 +156,7 @@
 				"limit": 1
 			},
 			"name": "ActiveCampaign8",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [250, 650],
 			"credentials": {
@@ -174,7 +174,7 @@
 				"additionalFields": {}
 			},
 			"name": "ActiveCampaign9",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [250, 800],
 			"credentials": {
@@ -193,7 +193,7 @@
 				"updateFields": {}
 			},
 			"name": "ActiveCampaign10",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [400, 800],
 			"credentials": {
@@ -211,7 +211,7 @@
 				"tagId": "={{$node[\"ActiveCampaign9\"].json[\"id\"]}}"
 			},
 			"name": "ActiveCampaign11",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [550, 800],
 			"credentials": {
@@ -229,7 +229,7 @@
 				"limit": 1
 			},
 			"name": "ActiveCampaign12",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [700, 800],
 			"credentials": {
@@ -247,7 +247,7 @@
 				"tagId": "={{$node[\"ActiveCampaign9\"].json[\"id\"]}}"
 			},
 			"name": "ActiveCampaign13",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [850, 800],
 			"credentials": {
@@ -268,7 +268,7 @@
 				}
 			},
 			"name": "ActiveCampaign14",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [550, 550],
 			"credentials": {
@@ -286,7 +286,7 @@
 				"dealId": "={{$node[\"ActiveCampaign7\"].json[\"deal\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign15",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [700, 550],
 			"credentials": {
@@ -305,7 +305,7 @@
 				"dealNote": "TestNote"
 			},
 			"name": "ActiveCampaign16",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [850, 550],
 			"credentials": {
@@ -325,7 +325,7 @@
 				"dealNote": "UpdatedNote"
 			},
 			"name": "ActiveCampaign17",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1000, 550],
 			"credentials": {
@@ -343,7 +343,7 @@
 				"limit": 1
 			},
 			"name": "ActiveCampaign18",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1150, 550],
 			"credentials": {
@@ -361,7 +361,7 @@
 				"dealId": "={{$node[\"ActiveCampaign7\"].json[\"deal\"][\"id\"]}}"
 			},
 			"name": "ActiveCampaign19",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1300, 550],
 			"credentials": {
@@ -378,7 +378,7 @@
 				"contactId": "={{$node[\"ActiveCampaign5\"].json[\"id\"]}}"
 			},
 			"name": "ActiveCampaign6",
-			"type": "n8n-nodes-base.activeCampaign",
+			"type": "aura-nodes-base.activeCampaign",
 			"typeVersion": 1,
 			"position": [1450, 470],
 			"credentials": {

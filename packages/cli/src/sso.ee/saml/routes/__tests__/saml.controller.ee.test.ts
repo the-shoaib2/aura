@@ -1,4 +1,4 @@
-import { GLOBAL_OWNER_ROLE, type User } from '@n8n/db';
+import { GLOBAL_OWNER_ROLE, type User } from '@aura/db';
 import { type Response } from 'express';
 import { mock } from 'jest-mock-extended';
 

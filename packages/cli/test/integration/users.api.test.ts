@@ -8,8 +8,8 @@ import {
 	randomCredentialPayload,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { PublicUser, User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { PublicUser, User } from '@aura/db';
 import {
 	FolderRepository,
 	GLOBAL_ADMIN_ROLE,
@@ -20,8 +20,8 @@ import {
 	SharedCredentialsRepository,
 	SharedWorkflowRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import { v4 as uuid } from 'uuid';
 
 import { RESPONSE_ERROR_MESSAGES } from '@/constants';
@@ -66,26 +66,26 @@ describe('GET /users', () => {
 
 		owner = await createUser({
 			role: GLOBAL_OWNER_ROLE,
-			email: 'owner@n8n.io',
+			email: 'owner@aura.io',
 			firstName: 'OwnerFirstName',
 			lastName: 'OwnerLastName',
 		});
 		member1 = await createUser({
 			role: GLOBAL_MEMBER_ROLE,
-			email: 'member1@n8n.io',
+			email: 'member1@aura.io',
 			firstName: 'Member1FirstName',
 			lastName: 'Member1LastName',
 			mfaEnabled: true,
 		});
 		member2 = await createUser({
 			role: GLOBAL_MEMBER_ROLE,
-			email: 'member2@n8n.io',
+			email: 'member2@aura.io',
 			firstName: 'Member2FirstName',
 			lastName: 'Member2LastName',
 		});
 		await createUser({
 			role: GLOBAL_ADMIN_ROLE,
-			email: 'admin@n8n.io',
+			email: 'admin@aura.io',
 			firstName: 'AdminFirstName',
 			lastName: 'AdminLastName',
 			mfaEnabled: true,
@@ -580,7 +580,7 @@ describe('GET /users', () => {
 			beforeAll(async () => {
 				pendingUser = await createUser({
 					role: { slug: 'global:member' },
-					email: 'pending@n8n.io',
+					email: 'pending@aura.io',
 					firstName: 'PendingFirstName',
 					lastName: 'PendingLastName',
 					password: null,
@@ -727,14 +727,14 @@ describe('GET /users', () => {
 			test('should sort by firstName and lastName combined', async () => {
 				const user1 = await createUser({
 					role: { slug: 'global:member' },
-					email: 'memberz1@n8n.io',
+					email: 'memberz1@aura.io',
 					firstName: 'ZZZFirstName',
 					lastName: 'ZZZLastName',
 				});
 
 				const user2 = await createUser({
 					role: { slug: 'global:member' },
-					email: 'memberz2@n8n.io',
+					email: 'memberz2@aura.io',
 					firstName: 'ZZZFirstName',
 					lastName: 'ZZYLastName',
 				});
@@ -820,7 +820,7 @@ describe('GET /users', () => {
 				expect(users).toBeInstanceOf(Array);
 
 				// Verify that admin fields ARE present for owners
-				const userWithMfa = users.find((u: any) => u.email === 'member1@n8n.io');
+				const userWithMfa = users.find((u: any) => u.email === 'member1@aura.io');
 				expect(userWithMfa).toHaveProperty('mfaEnabled', true);
 				expect(userWithMfa).toHaveProperty('isOwner');
 				expect(userWithMfa).toHaveProperty('signInType');

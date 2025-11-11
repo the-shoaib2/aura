@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const postOperations: INodeProperties[] = [
 	{
@@ -189,7 +189,7 @@ export const postFields: INodeProperties[] = [
 				name: 'authors',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getAuthors',
 				},
@@ -289,7 +289,7 @@ export const postFields: INodeProperties[] = [
 				name: 'tags',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getTags',
 				},
@@ -398,7 +398,7 @@ export const postFields: INodeProperties[] = [
 				name: 'fields',
 				type: 'string',
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-url
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-url
 				description:
 					'Limit the fields returned in the response object. E.g. for posts fields=title,url.',
 			},
@@ -443,7 +443,7 @@ export const postFields: INodeProperties[] = [
 				name: 'fields',
 				type: 'string',
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-url
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-url
 				description:
 					'Limit the fields returned in the response object. E.g. for posts fields=title,url.',
 			},
@@ -539,7 +539,7 @@ export const postFields: INodeProperties[] = [
 				name: 'fields',
 				type: 'string',
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-url
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-url
 				description:
 					'Limit the fields returned in the response object. E.g. for posts fields=title,url.',
 			},
@@ -604,7 +604,7 @@ export const postFields: INodeProperties[] = [
 				name: 'fields',
 				type: 'string',
 				default: '',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-url
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-url
 				description:
 					'Limit the fields returned in the response object. E.g. for posts fields=title,url.',
 			},
@@ -695,7 +695,7 @@ export const postFields: INodeProperties[] = [
 				name: 'authors',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getAuthors',
 				},
@@ -829,7 +829,7 @@ export const postFields: INodeProperties[] = [
 				name: 'tags',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				typeOptions: {
 					loadOptionsMethod: 'getTags',
 				},

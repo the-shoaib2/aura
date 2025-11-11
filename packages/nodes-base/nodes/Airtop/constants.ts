@@ -1,9 +1,9 @@
 import { readFileSync } from 'fs';
-import type { n8n } from 'n8n-core';
-import { jsonParse } from 'n8n-workflow';
+import type { aura } from 'aura-core';
+import { jsonParse } from 'workflow';
 import { join, resolve } from 'path';
 
-// Helper function to get n8n version that can be mocked in tests
+// Helper function to get aura version that can be mocked in tests
 export const getN8NVersion = (): string => {
 	if (process.env.N8N_VERSION) {
 		return process.env.N8N_VERSION;
@@ -12,8 +12,8 @@ export const getN8NVersion = (): string => {
 	try {
 		const PACKAGE_DIR = resolve(__dirname, '../../../');
 		const packageJsonPath = join(PACKAGE_DIR, 'package.json');
-		const n8nPackageJson = jsonParse<n8n.PackageJson>(readFileSync(packageJsonPath, 'utf8'));
-		return n8nPackageJson.version;
+		const auraPackageJson = jsonParse<aura.PackageJson>(readFileSync(packageJsonPath, 'utf8'));
+		return auraPackageJson.version;
 	} catch (error) {
 		// Fallback version
 		return '0.0.0';

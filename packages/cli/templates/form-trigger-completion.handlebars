@@ -4,7 +4,7 @@
 <head>
 	<meta charset='UTF-8' />
 	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-	<link rel='icon' type='image/png' href='https://n8n.io/favicon.ico' />
+	<link rel='icon' type='image/png' href='https://aura.io/favicon.ico' />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
 	<title>{{formTitle}}</title>
@@ -71,14 +71,14 @@
 			margin-bottom: var(--card-margin-bottom);
 		}
 
-		.n8n-link a {
+		.aura-link a {
 			color: var(--color-link);
 			font-weight: var(--font-weight-bold);
 			font-size: var(--font-size-link);
 			text-decoration: none;
 		}
 
-		.n8n-link svg {
+		.aura-link svg {
 			display: inline-block;
 			vertical-align: middle;
 		}
@@ -119,8 +119,8 @@
 						</div>
 					</div>
 					{{#if appendAttribution}}
-						<div class='n8n-link'>
-							<a href={{n8nWebsiteLink}} target='_blank'>
+						<div class='aura-link'>
+							<a href={{auraWebsiteLink}} target='_blank'>
 								Form automated with
 								<svg
 									width='73'
@@ -164,7 +164,7 @@
 			if (!interval) return;
 
 			try {
-				const response = await fetch(`${ window.location.href }/n8n-execution-status`);
+				const response = await fetch(`${ window.location.href }/aura-execution-status`);
 				const text = (await response.text()).trim();
 
 				if (text === "form-waiting") {

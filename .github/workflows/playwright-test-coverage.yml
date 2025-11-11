@@ -26,11 +26,11 @@ jobs:
           build-command: pnpm turbo build:playwright
 
       - name: Build with Coverage
-        run: pnpm --filter n8n-editor-ui build:coverage
+        run: pnpm --filter aura-editor-ui build:coverage
 
       - name: Run Coverage Tests
         run: |
-          pnpm --filter n8n-playwright test:local \
+          pnpm --filter aura-playwright test:local \
             --workers=${{ env.PLAYWRIGHT_WORKERS }}
         env:
           CURRENTS_RECORD_KEY: ${{ secrets.CURRENTS_RECORD_KEY }}
@@ -39,7 +39,7 @@ jobs:
           QA_PERFORMANCE_METRICS_WEBHOOK_PASSWORD: ${{ secrets.QA_PERFORMANCE_METRICS_WEBHOOK_PASSWORD }}
 
       - name: Generate Coverage Report
-        run: pnpm --filter n8n-playwright coverage:report
+        run: pnpm --filter aura-playwright coverage:report
 
       - name: Upload Coverage Report
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

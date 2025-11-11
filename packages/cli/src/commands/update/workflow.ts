@@ -1,6 +1,6 @@
-import { WorkflowRepository } from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+import { WorkflowRepository } from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
 import { z } from 'zod';
 
 import { BaseCommand } from '../base-command';
@@ -58,8 +58,10 @@ export class UpdateWorkflowCommand extends BaseCommand<z.infer<typeof flagsSchem
 			}
 		}
 
-		this.logger.info('Activation or deactivation will not take effect if n8n is running.');
-		this.logger.info('Please restart n8n for changes to take effect if n8n is currently running.');
+		this.logger.info('Activation or deactivation will not take effect if aura is running.');
+		this.logger.info(
+			'Please restart aura for changes to take effect if aura is currently running.',
+		);
 	}
 
 	async catch(error: Error) {

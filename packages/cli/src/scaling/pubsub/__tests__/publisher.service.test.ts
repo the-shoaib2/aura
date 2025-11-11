@@ -1,8 +1,8 @@
-import { mockInstance, mockLogger } from '@n8n/backend-test-utils';
-import { ExecutionsConfig } from '@n8n/config';
+import { mockInstance, mockLogger } from '@aura/backend-test-utils';
+import { ExecutionsConfig } from '@aura/config';
 import type { Redis as SingleNodeClient } from 'ioredis';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 
 import type { RedisClientService } from '@/services/redis-client.service';
 
@@ -71,7 +71,7 @@ describe('Publisher', () => {
 			expect(client.publish).not.toHaveBeenCalled();
 		});
 
-		it('should publish command into `n8n.commands` pubsub channel', async () => {
+		it('should publish command into `aura.commands` pubsub channel', async () => {
 			const publisher = new Publisher(
 				logger,
 				redisClientService,
@@ -83,7 +83,7 @@ describe('Publisher', () => {
 			await publisher.publishCommand(msg);
 
 			expect(client.publish).toHaveBeenCalledWith(
-				'n8n.commands',
+				'aura.commands',
 				JSON.stringify({ ...msg, senderId: hostId, selfSend: false, debounce: true }),
 			);
 		});
@@ -100,7 +100,7 @@ describe('Publisher', () => {
 			await publisher.publishCommand(msg);
 
 			expect(client.publish).toHaveBeenCalledWith(
-				'n8n.commands',
+				'aura.commands',
 				JSON.stringify({
 					...msg,
 					_isMockObject: true,
@@ -123,7 +123,7 @@ describe('Publisher', () => {
 			await publisher.publishCommand(msg);
 
 			expect(client.publish).toHaveBeenCalledWith(
-				'n8n.commands',
+				'aura.commands',
 				JSON.stringify({
 					...msg,
 					_isMockObject: true,
@@ -136,7 +136,7 @@ describe('Publisher', () => {
 	});
 
 	describe('publishWorkerResponse', () => {
-		it('should publish worker response into `n8n.worker-response` pubsub channel', async () => {
+		it('should publish worker response into `aura.worker-response` pubsub channel', async () => {
 			const publisher = new Publisher(
 				logger,
 				redisClientService,
@@ -149,7 +149,7 @@ describe('Publisher', () => {
 
 			await publisher.publishWorkerResponse(msg);
 
-			expect(client.publish).toHaveBeenCalledWith('n8n.worker-response', JSON.stringify(msg));
+			expect(client.publish).toHaveBeenCalledWith('aura.worker-response', JSON.stringify(msg));
 		});
 	});
 });

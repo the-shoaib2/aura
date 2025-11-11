@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 450],
 			"id": "8213c874-bb15-4a4e-af12-efe5b749179c"
@@ -20,7 +20,7 @@
 				"name": "testFolder"
 			},
 			"name": "Google Drive",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [500, 290],
 			"credentials": {
@@ -46,7 +46,7 @@
 				"options": {}
 			},
 			"name": "Google Drive1",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [670, 290],
 			"credentials": {
@@ -65,7 +65,7 @@
 				"fileId": "={{$node[\"Google Drive\"].json[\"id\"]}}"
 			},
 			"name": "Google Drive2",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [830, 290],
 			"credentials": {
@@ -84,7 +84,7 @@
 				"parents": []
 			},
 			"name": "Google Drive3",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [500, 450],
 			"credentials": {
@@ -109,7 +109,7 @@
 				"options": {}
 			},
 			"name": "Google Drive4",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [650, 450],
 			"credentials": {
@@ -128,7 +128,7 @@
 				"options": {}
 			},
 			"name": "Google Drive5",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [800, 450],
 			"credentials": {
@@ -146,7 +146,7 @@
 				"fileId": "={{$node[\"Google Drive3\"].json[\"id\"]}}"
 			},
 			"name": "Google Drive6",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [960, 450],
 			"credentials": {
@@ -165,7 +165,7 @@
 				"options": {}
 			},
 			"name": "Google Drive7",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1100, 450],
 			"credentials": {
@@ -183,7 +183,7 @@
 				"fileId": "={{$node[\"Google Drive3\"].json[\"id\"]}}"
 			},
 			"name": "Google Drive8",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1240, 450],
 			"credentials": {
@@ -201,7 +201,7 @@
 				"fileId": "={{$node[\"Google Drive7\"].json[\"id\"]}}"
 			},
 			"name": "Google Drive9",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1380, 450],
 			"credentials": {
@@ -219,7 +219,7 @@
 				"options": {}
 			},
 			"name": "Google Drive10",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [500, 610],
 			"credentials": {

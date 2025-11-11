@@ -2,11 +2,11 @@ import type {
 	AiApplySuggestionRequestDto,
 	AiAskRequestDto,
 	AiChatRequestDto,
-} from '@n8n/api-types';
-import { GlobalConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
-import { AiAssistantClient } from '@n8n_io/ai-assistant-sdk';
-import { assert, type IUser } from 'n8n-workflow';
+} from '@aura/api-types';
+import { GlobalConfig } from '@aura/config';
+import { Service } from '@aura/di';
+import { AiAssistantClient } from '@aura_io/ai-assistant-sdk';
+import { assert, type IUser } from 'workflow';
 
 import { N8N_VERSION } from '../constants';
 import { License } from '../license';
@@ -35,7 +35,7 @@ export class AiService {
 		this.client = new AiAssistantClient({
 			licenseCert,
 			consumerId,
-			n8nVersion: N8N_VERSION,
+			auraVersion: N8N_VERSION,
 			baseUrl,
 			logLevel,
 		});

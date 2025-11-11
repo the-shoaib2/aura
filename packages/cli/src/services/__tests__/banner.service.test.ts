@@ -1,8 +1,8 @@
-import type { BannerName } from '@n8n/api-types';
-import type { SettingsRepository } from '@n8n/db';
+import type { BannerName } from '@aura/api-types';
+import type { SettingsRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { ErrorReporter } from 'n8n-core';
-import { UnexpectedError } from 'n8n-workflow';
+import type { ErrorReporter } from 'aura-core';
+import { UnexpectedError } from 'workflow';
 
 import { BannerService } from '@/services/banner.service';
 

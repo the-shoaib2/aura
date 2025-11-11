@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from '@n8n/typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from '@aura/typeorm';
 
 @Entity()
 export class InsightsMetadata extends BaseEntity {

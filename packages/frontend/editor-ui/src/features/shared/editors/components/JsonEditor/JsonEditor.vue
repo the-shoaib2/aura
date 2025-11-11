@@ -16,7 +16,7 @@ import {
 } from '@codemirror/view';
 
 import { editorKeymap } from '../../plugins/codemirror/keymap';
-import { n8nAutocompletion } from '../../plugins/codemirror/n8nLang';
+import { auraAutocompletion } from '../../plugins/codemirror/auraLang';
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { codeEditorTheme } from '../CodeNodeEditor/theme';
 import { mappingDropCursor } from '../../plugins/codemirror/dragAndDrop';
@@ -56,7 +56,7 @@ const extensions = computed(() => {
 			Prec.highest(keymap.of(editorKeymap)),
 			createLinter(jsonParseLinter()),
 			lintGutter(),
-			n8nAutocompletion(),
+			auraAutocompletion(),
 			indentOnInput(),
 			highlightActiveLine(),
 			highlightActiveLineGutter(),

@@ -1,8 +1,8 @@
-import { UserUpdateRequestDto } from '@n8n/api-types';
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { AuthenticatedRequest, User, PublicUser } from '@n8n/db';
-import { GLOBAL_OWNER_ROLE, InvalidAuthTokenRepository, UserRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { UserUpdateRequestDto } from '@aura/api-types';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { AuthenticatedRequest, User, PublicUser } from '@aura/db';
+import { GLOBAL_OWNER_ROLE, InvalidAuthTokenRepository, UserRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import type { Response } from 'express';
 import { mock, anyObject } from 'jest-mock-extended';
 import jwt from 'jsonwebtoken';
@@ -213,7 +213,7 @@ describe('MeController', () => {
 						new UserUpdateRequestDto({
 							email: 'michel-new@email.com',
 							firstName: 'Michel',
-							lastName: 'n8n',
+							lastName: 'aura',
 						}),
 					),
 				).rejects.toThrowError(new BadRequestError('Current password is required to change email'));
@@ -232,7 +232,7 @@ describe('MeController', () => {
 					controller.updateCurrentUser(req, mock(), {
 						email: 'michel-new@email.com',
 						firstName: 'Michel',
-						lastName: 'n8n',
+						lastName: 'aura',
 						currentPassword: 123 as any,
 					} as any),
 				).rejects.toThrowError(new BadRequestError('Current password is required to change email'));
@@ -253,7 +253,7 @@ describe('MeController', () => {
 						mock({
 							email: 'michel-new@email.com',
 							firstName: 'Michel',
-							lastName: 'n8n',
+							lastName: 'aura',
 							currentPassword: 'wrong-password',
 						}),
 					),
@@ -283,7 +283,7 @@ describe('MeController', () => {
 					mock({
 						email: 'michel-new@email.com',
 						firstName: 'Michel',
-						lastName: 'n8n',
+						lastName: 'aura',
 						currentPassword: oldPasswordPlain,
 					}),
 				);
@@ -311,7 +311,7 @@ describe('MeController', () => {
 					new UserUpdateRequestDto({
 						email: 'michel@email.com',
 						firstName: 'Michel',
-						lastName: 'n8n',
+						lastName: 'aura',
 					}),
 				);
 
@@ -480,7 +480,7 @@ describe('MeController', () => {
 			req.body = {
 				version: 'v4',
 				personalization_survey_submitted_at: '2024-08-06T12:19:51.268Z',
-				personalization_survey_n8n_version: '1.0.0',
+				personalization_survey_aura_version: '1.0.0',
 				companySize: '<20',
 				otherCompanyIndustryExtended: ['test'],
 				automationGoalSm: ['test'],
@@ -505,7 +505,7 @@ describe('MeController', () => {
 			const req = mock<MeRequest.SurveyAnswers>();
 			req.body = {
 				version: 'v4',
-				personalization_survey_n8n_version: '1.0.0',
+				personalization_survey_aura_version: '1.0.0',
 				personalization_survey_submitted_at: new Date().toISOString(),
 				[fieldName]: ['<script>alert("XSS")</script>'],
 			};
@@ -525,7 +525,7 @@ describe('MeController', () => {
 			const req = mock<MeRequest.SurveyAnswers>();
 			req.body = {
 				version: 'v4',
-				personalization_survey_n8n_version: '1.0.0',
+				personalization_survey_aura_version: '1.0.0',
 				personalization_survey_submitted_at: new Date().toISOString(),
 				[fieldName]: '<script>alert("XSS")</script>',
 			};

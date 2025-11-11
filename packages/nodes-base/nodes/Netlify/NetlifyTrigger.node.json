@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.netlifyTrigger",
+	"node": "aura-nodes-base.netlifyTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/netlify/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/netlify/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.netlifytrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.netlifytrigger/"
 			}
 		]
 	}

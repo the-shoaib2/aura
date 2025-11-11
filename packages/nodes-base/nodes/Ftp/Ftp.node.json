@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.ftp",
+	"node": "aura-nodes-base.ftp",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Core Nodes", "Data & Storage", "Development", "Utility"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/ftp/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/ftp/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ftp/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.ftp/"
 			}
 		]
 	},

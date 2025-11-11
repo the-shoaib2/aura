@@ -1,4 +1,4 @@
-/* eslint-disable n8n-nodes-base/node-param-display-name-miscased */
+/* eslint-disable aura-nodes-base/node-param-display-name-miscased */
 
 export const microsoftEntraApiResponse = {
 	postGroup: {

@@ -1,11 +1,11 @@
 import { DateTime } from 'luxon';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { useCloudPlanStore } from '@/app/stores/cloudPlan.store';
 import { useStorage } from '@/app/composables/useStorage';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { getBecomeCreatorCta } from '@n8n/rest-api-client/api/ctas';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { getBecomeCreatorCta } from '@aura/rest-api-client/api/ctas';
 
 const LOCAL_STORAGE_KEY = 'N8N_BECOME_TEMPLATE_CREATOR_CTA_DISMISSED_AT';
 const RESHOW_DISMISSED_AFTER_DAYS = 30;

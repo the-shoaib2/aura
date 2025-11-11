@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import type { NodeIconSource } from '@/app/utils/nodeIcon';
-import { N8nInlineTextEdit } from '@n8n/design-system';
+import { N8nInlineTextEdit } from '@aura/design-system';
 import { useElementSize } from '@vueuse/core';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'workflow';
 import { useTemplateRef } from 'vue';
 
 type Props = {

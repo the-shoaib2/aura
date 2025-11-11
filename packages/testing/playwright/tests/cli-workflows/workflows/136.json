@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "c3bbbd0f-e93f-46ff-b36c-0ed72f1d207a"
@@ -19,7 +19,7 @@
 				"body": "=Body{{Date.now()}}"
 			},
 			"name": "Pushbullet",
-			"type": "n8n-nodes-base.pushbullet",
+			"type": "aura-nodes-base.pushbullet",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"dismissed": true
 			},
 			"name": "Pushbullet1",
-			"type": "n8n-nodes-base.pushbullet",
+			"type": "aura-nodes-base.pushbullet",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -55,7 +55,7 @@
 				"filters": {}
 			},
 			"name": "Pushbullet2",
-			"type": "n8n-nodes-base.pushbullet",
+			"type": "aura-nodes-base.pushbullet",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -72,7 +72,7 @@
 				"pushId": "={{$node[\"Pushbullet\"].json[\"iden\"]}}"
 			},
 			"name": "Pushbullet3",
-			"type": "n8n-nodes-base.pushbullet",
+			"type": "aura-nodes-base.pushbullet",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {

@@ -1,11 +1,11 @@
-import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@aura/backend-test-utils';
 import { mock } from 'jest-mock-extended';
 import type {
 	INodeListSearchResult,
 	IWorkflowExecuteAdditionalData,
 	ResourceMapperFields,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { DynamicNodeParametersService } from '@/services/dynamic-node-parameters.service';
 import * as AdditionalData from '@/workflow-execute-additional-data';

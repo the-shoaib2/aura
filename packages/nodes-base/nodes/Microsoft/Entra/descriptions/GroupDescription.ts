@@ -6,8 +6,8 @@ import type {
 	IN8nHttpFullResponse,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { handleErrorPostReceive, microsoftApiRequest } from '../GenericFunctions';
 
@@ -664,11 +664,11 @@ const getFields: INodeProperties[] = [
 		type: 'options',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 		displayName: 'Fields',
 		name: 'fields',
 		default: [],
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-multi-options
 		description: 'The fields to add to the output',
 		displayOptions: {
 			show: {
@@ -841,11 +841,11 @@ const getAllFields: INodeProperties[] = [
 		type: 'options',
 	},
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 		displayName: 'Fields',
 		name: 'fields',
 		default: [],
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options
+		// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-dynamic-multi-options
 		description: 'The fields to add to the output',
 		displayOptions: {
 			show: {

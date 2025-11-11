@@ -8,21 +8,21 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [-60, 280],
 			"id": "8033ed4d-ce87-413e-a813-6a86713e471d"
 		},
 		{
 			"parameters": {
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"additionalFields": {
-					"companyName": "n8n",
-					"twitter": "n8n_io"
+					"companyName": "aura",
+					"twitter": "aura_io"
 				}
 			},
 			"name": "Clearbit",
-			"type": "n8n-nodes-base.clearbit",
+			"type": "aura-nodes-base.clearbit",
 			"typeVersion": 1,
 			"position": [150, 200],
 			"credentials": {
@@ -36,10 +36,10 @@
 		{
 			"parameters": {
 				"operation": "autocomplete",
-				"name": "n8n"
+				"name": "aura"
 			},
 			"name": "Clearbit1",
-			"type": "n8n-nodes-base.clearbit",
+			"type": "aura-nodes-base.clearbit",
 			"typeVersion": 1,
 			"position": [350, 200],
 			"credentials": {
@@ -53,13 +53,13 @@
 		{
 			"parameters": {
 				"resource": "person",
-				"email": "jan@n8n.io",
+				"email": "jan@aura.io",
 				"additionalFields": {
-					"company": "n8n"
+					"company": "aura"
 				}
 			},
 			"name": "Clearbit2",
-			"type": "n8n-nodes-base.clearbit",
+			"type": "aura-nodes-base.clearbit",
 			"typeVersion": 1,
 			"position": [150, 350],
 			"credentials": {

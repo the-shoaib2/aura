@@ -1,13 +1,9 @@
-import { ExecutionRepository } from '@n8n/db';
-import type { IExecutionResponse, Project } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { ExecuteContext, isEngineRequest } from 'n8n-core';
-import type {
-	IBinaryKeyData,
-	INodeExecutionData,
-	IWorkflowExecutionDataProcess,
-} from 'n8n-workflow';
-import { Workflow, BINARY_ENCODING, UnexpectedError } from 'n8n-workflow';
+import { ExecutionRepository } from '@aura/db';
+import type { IExecutionResponse, Project } from '@aura/db';
+import { Service } from '@aura/di';
+import { ExecuteContext, isEngineRequest } from 'aura-core';
+import type { IBinaryKeyData, INodeExecutionData, IWorkflowExecutionDataProcess } from 'workflow';
+import { Workflow, BINARY_ENCODING, UnexpectedError } from 'workflow';
 
 import { NotFoundError } from '../errors/response-errors/not-found.error';
 import * as WorkflowExecuteAdditionalData from '../workflow-execute-additional-data';

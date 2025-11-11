@@ -1,6 +1,6 @@
 import * as a from 'assert';
-import type { IConnections, INode, WorkflowParameters, NodeConnectionType } from 'n8n-workflow';
-import { NodeConnectionTypes, Workflow } from 'n8n-workflow';
+import type { IConnections, INode, WorkflowParameters, NodeConnectionType } from 'workflow';
+import { NodeConnectionTypes, Workflow } from 'workflow';
 
 export type GraphConnection = {
 	from: INode;
@@ -20,7 +20,7 @@ type RemoveNodeBaseOptions = {
 /**
  * Represents a directed graph as an adjacency list, e.g. one list for the
  * vertices and one list for the edges.
- * To integrate easier with the n8n codebase vertices are called nodes and
+ * To integrate easier with the aura codebase vertices are called nodes and
  * edges are called connections.
  *
  * The reason why this exists next to the Workflow class is that the workflow

@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import type { User } from '@n8n/db';
-import { SharedWorkflowRepository, WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { hasGlobalScope } from '@n8n/permissions';
+import { Logger } from '@aura/backend-common';
+import type { User } from '@aura/db';
+import { SharedWorkflowRepository, WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { hasGlobalScope } from '@aura/permissions';
 
 import { ActivationErrorsService } from '@/activation-errors.service';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';

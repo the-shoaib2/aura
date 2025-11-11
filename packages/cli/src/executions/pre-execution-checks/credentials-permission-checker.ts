@@ -1,9 +1,9 @@
-import type { Project } from '@n8n/db';
-import { SharedCredentialsRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { hasGlobalScope } from '@n8n/permissions';
-import type { INode } from 'n8n-workflow';
-import { UserError } from 'n8n-workflow';
+import type { Project } from '@aura/db';
+import { SharedCredentialsRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { hasGlobalScope } from '@aura/permissions';
+import type { INode } from 'workflow';
+import { UserError } from 'workflow';
 
 import { OwnershipService } from '@/services/ownership.service';
 import { ProjectService } from '@/services/project.service.ee';

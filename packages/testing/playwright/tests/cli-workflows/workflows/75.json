@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [150, 300],
 			"id": "2e356688-aa17-4377-99a8-85bdf89f4804"
@@ -23,7 +23,7 @@
 				"additionalFields": {}
 			},
 			"name": "Harvest",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [400, 230],
 			"credentials": {
@@ -46,7 +46,7 @@
 				}
 			},
 			"name": "Harvest1",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1310, 230],
 			"credentials": {
@@ -66,7 +66,7 @@
 				"filters": {}
 			},
 			"name": "Harvest2",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1460, 230],
 			"credentials": {
@@ -86,7 +86,7 @@
 				"id": "={{$node[\"Harvest\"].json[\"id\"]}}"
 			},
 			"name": "Harvest3",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1610, 230],
 			"credentials": {
@@ -106,7 +106,7 @@
 				"id": "={{$node[\"Harvest\"].json[\"id\"]}}"
 			},
 			"name": "Harvest4",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1760, 230],
 			"credentials": {
@@ -124,7 +124,7 @@
 				"accountId": 1416330
 			},
 			"name": "Harvest5",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [400, 440],
 			"credentials": {
@@ -146,7 +146,7 @@
 				"additionalFields": {}
 			},
 			"name": "Harvest6",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -169,7 +169,7 @@
 				}
 			},
 			"name": "Harvest7",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"credentials": {
@@ -189,7 +189,7 @@
 				"id": "={{$node[\"Harvest6\"].json[\"id\"]}}"
 			},
 			"name": "Harvest8",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -209,7 +209,7 @@
 				"filters": {}
 			},
 			"name": "Harvest9",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"credentials": {
@@ -229,7 +229,7 @@
 				"id": "={{$node[\"Harvest6\"].json[\"id\"]}}"
 			},
 			"name": "Harvest10",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1150, 300],
 			"credentials": {
@@ -252,7 +252,7 @@
 				}
 			},
 			"name": "Harvest11",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [550, 140],
 			"credentials": {
@@ -275,7 +275,7 @@
 				}
 			},
 			"name": "Harvest12",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [700, 140],
 			"credentials": {
@@ -295,7 +295,7 @@
 				"filters": {}
 			},
 			"name": "Harvest13",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [850, 140],
 			"credentials": {
@@ -315,7 +315,7 @@
 				"id": "={{$node[\"Harvest11\"].json[\"id\"]}}"
 			},
 			"name": "Harvest14",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1000, 140],
 			"credentials": {
@@ -335,7 +335,7 @@
 				"id": "={{$node[\"Harvest11\"].json[\"id\"]}}"
 			},
 			"name": "Harvest15",
-			"type": "n8n-nodes-base.harvest",
+			"type": "aura-nodes-base.harvest",
 			"typeVersion": 1,
 			"position": [1150, 140],
 			"credentials": {

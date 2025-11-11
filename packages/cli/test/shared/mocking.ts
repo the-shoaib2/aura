@@ -1,7 +1,7 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { DataSource, EntityManager, type EntityMetadata } from '@n8n/typeorm';
+import { mockInstance } from '@aura/backend-test-utils';
+import { DataSource, EntityManager, type EntityMetadata } from '@aura/typeorm';
 import { mock } from 'jest-mock-extended';
-import type { Cipher, Class } from 'n8n-core';
+import type { Cipher, Class } from 'aura-core';
 
 export const mockEntityManager = (entityClass: Class) => {
 	const entityManager = mockInstance(EntityManager);

@@ -4,9 +4,9 @@ import ChatAgentAvatar from '@/features/ai/chatHub/components/ChatAgentAvatar.vu
 import ChatSidebarLink from '@/features/ai/chatHub/components/ChatSidebarLink.vue';
 import { useAgent } from '@/features/ai/chatHub/composables/useAgent';
 import { CHAT_CONVERSATION_VIEW } from '@/features/ai/chatHub/constants';
-import { type ChatHubSessionDto } from '@n8n/api-types';
-import { N8nInput } from '@n8n/design-system';
-import type { ActionDropdownItem } from '@n8n/design-system/types';
+import { type ChatHubSessionDto } from '@aura/api-types';
+import { N8nInput } from '@aura/design-system';
+import type { ActionDropdownItem } from '@aura/design-system/types';
 import { computed, nextTick, ref, useTemplateRef, watch } from 'vue';
 
 const { session, isRenaming, active } = defineProps<{

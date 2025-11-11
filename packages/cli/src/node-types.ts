@@ -1,11 +1,11 @@
-import { Service } from '@n8n/di';
-import type { NeededNodeType } from '@n8n/task-runner';
+import { Service } from '@aura/di';
+import type { NeededNodeType } from '@aura/task-runner';
 import type { Dirent } from 'fs';
 import { readdir } from 'fs/promises';
-import { RoutingNode } from 'n8n-core';
-import type { ExecuteContext } from 'n8n-core';
-import type { INodeType, INodeTypeDescription, INodeTypes, IVersionedNodeType } from 'n8n-workflow';
-import { NodeHelpers, UnexpectedError, UserError } from 'n8n-workflow';
+import { RoutingNode } from 'aura-core';
+import type { ExecuteContext } from 'aura-core';
+import type { INodeType, INodeTypeDescription, INodeTypes, IVersionedNodeType } from 'workflow';
+import { NodeHelpers, UnexpectedError, UserError } from 'workflow';
 import { join, dirname } from 'path';
 
 import { LoadNodesAndCredentials } from './load-nodes-and-credentials';
@@ -102,7 +102,7 @@ export class NodeTypes implements INodeTypes {
 	}) {
 		const nodeDir = dirname(nodeSourcePath);
 		const maxVersion = await this.getMaxVersion(nodeDir);
-		const nodeType = longNodeType.replace('n8n-nodes-base.', '');
+		const nodeType = longNodeType.replace('aura-nodes-base.', '');
 
 		return maxVersion
 			? join(nodeDir, `v${maxVersion}`, 'translations', locale, `${nodeType}.json`)
@@ -141,9 +141,9 @@ export class NodeTypes implements INodeTypes {
 			const descriptionCopy = { ...description };
 
 			// TODO: do we still need this?
-			descriptionCopy.name = descriptionCopy.name.startsWith('n8n-nodes')
+			descriptionCopy.name = descriptionCopy.name.startsWith('aura-nodes')
 				? descriptionCopy.name
-				: `n8n-nodes-base.${descriptionCopy.name}`; // nodes-base nodes are unprefixed
+				: `aura-nodes-base.${descriptionCopy.name}`; // nodes-base nodes are unprefixed
 
 			return descriptionCopy;
 		});

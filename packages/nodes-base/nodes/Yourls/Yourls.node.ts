@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { yourlsApiRequest } from './GenericFunctions';
 import { urlFields, urlOperations } from './UrlDescription';
@@ -14,7 +14,7 @@ export class Yourls implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Yourls',
 		name: 'yourls',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:yourls.png',
 		group: ['input'],
 		version: 1,

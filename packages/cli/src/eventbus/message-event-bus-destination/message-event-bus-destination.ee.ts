@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { EventDestinationsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { INodeCredentials, MessageEventBusDestinationOptions } from 'n8n-workflow';
-import { MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { EventDestinationsRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import type { INodeCredentials, MessageEventBusDestinationOptions } from 'workflow';
+import { MessageEventBusDestinationTypeNames } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { License } from '@/license';

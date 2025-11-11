@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 export class MauticOAuth2Api implements ICredentialType {
 	name = 'mauticOAuth2Api';

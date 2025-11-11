@@ -1,5 +1,5 @@
-import { createWorkflow, testDb, mockInstance } from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
+import { createWorkflow, testDb, mockInstance } from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
 import { readFileSync } from 'fs';
 import { mock } from 'jest-mock-extended';
 import {
@@ -9,7 +9,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 import { agent as testAgent } from 'supertest';
 
 import { NodeTypes } from '@/node-types';

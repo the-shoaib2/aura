@@ -7,7 +7,7 @@
 			"parameters": {},
 			"id": "6dace68e-0727-472d-a212-00863acb64d6",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-340, 660]
 		},
@@ -21,7 +21,7 @@
 			},
 			"id": "2465a943-0d2c-480d-a98a-a67e92151367",
 			"name": "Discourse",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [-120, 660]
 		},
@@ -51,7 +51,7 @@
 			},
 			"id": "ce1b80bb-08db-42cf-b7d9-56df74044f5c",
 			"name": "Filter",
-			"type": "n8n-nodes-base.filter",
+			"type": "aura-nodes-base.filter",
 			"typeVersion": 1,
 			"position": [600, 640]
 		},
@@ -63,7 +63,7 @@
 			},
 			"id": "ad3c141b-7aee-449b-8254-f21815a3d124",
 			"name": "Discourse1",
-			"type": "n8n-nodes-base.discourse",
+			"type": "aura-nodes-base.discourse",
 			"typeVersion": 1,
 			"position": [340, 840]
 		},
@@ -74,7 +74,7 @@
 			},
 			"id": "97fa87d0-ba76-4156-aa40-6bccd4775cdc",
 			"name": "Loop Over Items",
-			"type": "n8n-nodes-base.splitInBatches",
+			"type": "aura-nodes-base.splitInBatches",
 			"typeVersion": 3,
 			"position": [100, 660],
 			"disabled": true
@@ -86,7 +86,7 @@
 			},
 			"id": "4f7f4b5d-2e02-4479-a4ee-9818f5b3e6de",
 			"name": "Wait",
-			"type": "n8n-nodes-base.wait",
+			"type": "aura-nodes-base.wait",
 			"typeVersion": 1,
 			"position": [580, 840],
 			"webhookId": "6bbd5e21-6022-475d-ace1-2aeb73e899d2"
@@ -95,7 +95,7 @@
 			"parameters": {},
 			"id": "a6cfc3b9-0d7a-4d4e-99c4-eba5085947d0",
 			"name": "No Operation, do nothing",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [340, 640]
 		},
@@ -105,7 +105,7 @@
 			},
 			"id": "580c80dc-cf95-413c-9465-29c9dc66ef6e",
 			"name": "Sticky Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [640, 420]
 		}
@@ -199,7 +199,7 @@
 					"id": 1,
 					"username": "User",
 					"name": "User",
-					"avatar_template": "/user_avatar/community.n8n.io/user/{size}/2.png",
+					"avatar_template": "/user_avatar/community.aura.io/user/{size}/2.png",
 					"last_posted_at": "2023-11-02T16:16:05.615Z",
 					"last_seen_at": "2023-11-02T16:15:42.734Z",
 					"created_at": "2023-11-01T15:16:53.268Z",
@@ -257,7 +257,7 @@
 					"system_avatar_upload_id": null,
 					"system_avatar_template": "/letter_avatar_proxy/v4/letter/c/3be4f8/{size}.png",
 					"custom_avatar_upload_id": 31486,
-					"custom_avatar_template": "/user_avatar/community.n8n.io/user/{size}/2.png",
+					"custom_avatar_template": "/user_avatar/community.aura.io/user/{size}/2.png",
 					"muted_usernames": [],
 					"ignored_usernames": [],
 					"allowed_pm_usernames": [],
@@ -401,7 +401,7 @@
 					"id": 1,
 					"username": "User",
 					"name": "User",
-					"avatar_template": "/user_avatar/community.n8n.io/user/{size}/2.png",
+					"avatar_template": "/user_avatar/community.aura.io/user/{size}/2.png",
 					"last_posted_at": "2023-11-02T16:16:05.615Z",
 					"last_seen_at": "2023-11-02T16:15:42.734Z",
 					"created_at": "2023-11-01T15:16:53.268Z",
@@ -459,7 +459,7 @@
 					"system_avatar_upload_id": null,
 					"system_avatar_template": "/letter_avatar_proxy/v4/letter/c/3be4f8/{size}.png",
 					"custom_avatar_upload_id": 31486,
-					"custom_avatar_template": "/user_avatar/community.n8n.io/user/{size}/2.png",
+					"custom_avatar_template": "/user_avatar/community.aura.io/user/{size}/2.png",
 					"muted_usernames": [],
 					"ignored_usernames": [],
 					"allowed_pm_usernames": [],

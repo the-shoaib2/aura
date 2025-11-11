@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "490486f2-7ea9-410e-9281-84cd27836115"
@@ -19,7 +19,7 @@
 				"options": {}
 			},
 			"name": "Move Binary Data",
-			"type": "n8n-nodes-base.moveBinaryData",
+			"type": "aura-nodes-base.moveBinaryData",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"id": "9ddb3642-7086-4f67-8b20-9255bc2b99cc"
@@ -29,7 +29,7 @@
 				"functionCode": "item = {\n  name:'test',\n  indexes:[1,2,3],\n  subobj:{\n    name:'subtest'\n  }\n};\nreturn item;"
 			},
 			"name": "FunctionItem",
-			"type": "n8n-nodes-base.functionItem",
+			"type": "aura-nodes-base.functionItem",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"notesInFlow": true,
@@ -41,7 +41,7 @@
 				"options": {}
 			},
 			"name": "Move Binary Data1",
-			"type": "n8n-nodes-base.moveBinaryData",
+			"type": "aura-nodes-base.moveBinaryData",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"id": "43d6faba-afc5-45bd-b477-a28054b75ddf"
@@ -51,7 +51,7 @@
 				"functionCode": "if(JSON.stringify($node['FunctionItem'].json)!==JSON.stringify($node['Move Binary Data1'].json)){\n  throw new Error('Problem in move binary node');\n}\n\nreturn items;"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"notesInFlow": true,

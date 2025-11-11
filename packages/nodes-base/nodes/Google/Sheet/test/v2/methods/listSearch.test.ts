@@ -1,5 +1,5 @@
-import type { ILoadOptionsFunctions } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { ILoadOptionsFunctions } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { sheetsSearch, spreadSheetsSearch } from '../../../v2/methods/listSearch';
 import { apiRequest } from '../../../v2/transport';

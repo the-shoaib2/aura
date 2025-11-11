@@ -1,5 +1,5 @@
-import type { InsightsDateRange } from '@n8n/api-types';
-import { mockInstance, createWorkflow, createTeamProject, testDb } from '@n8n/backend-test-utils';
+import type { InsightsDateRange } from '@aura/api-types';
+import { mockInstance, createWorkflow, createTeamProject, testDb } from '@aura/backend-test-utils';
 import { DateTime } from 'luxon';
 
 import { Telemetry } from '@/telemetry';
@@ -8,7 +8,7 @@ import { createCompactedInsightsEvent } from '@/modules/insights/database/entiti
 import { createUser } from '../shared/db/users';
 import type { SuperAgentTest } from '../shared/types';
 import * as utils from '../shared/utils';
-import { GLOBAL_ADMIN_ROLE, GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE } from '@n8n/db';
+import { GLOBAL_ADMIN_ROLE, GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE } from '@aura/db';
 
 mockInstance(Telemetry);
 

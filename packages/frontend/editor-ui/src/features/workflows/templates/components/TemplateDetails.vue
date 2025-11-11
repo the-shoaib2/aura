@@ -8,16 +8,16 @@ import type {
 	ITemplatesCollectionFull,
 	ITemplatesNode,
 	ITemplatesWorkflow,
-} from '@n8n/rest-api-client/api/templates';
-import type { ITag } from '@n8n/rest-api-client/api/tags';
+} from '@aura/rest-api-client/api/templates';
+import type { ITag } from '@aura/rest-api-client/api/tags';
 import { useTemplatesStore } from '../templates.store';
 import TimeAgo from '@/app/components/TimeAgo.vue';
 import { isFullTemplatesCollection, isTemplatesWorkflow } from '../utils/typeGuards';
 import { useRouter } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { computed } from 'vue';
 
-import { N8nLoading, N8nTags, N8nText } from '@n8n/design-system';
+import { N8nLoading, N8nTags, N8nText } from '@aura/design-system';
 const props = defineProps<{
 	template: ITemplatesWorkflow | ITemplatesCollection | ITemplatesCollectionFull | null;
 	blockTitle: string;
@@ -89,7 +89,7 @@ const redirectToSearchPage = (node: ITemplatesNode) => {
 					{{ i18n.baseText('template.details.created') }}
 					<TimeAgo :date="template.createdAt" />
 					{{ i18n.baseText('template.details.by') }}
-					{{ template.user ? template.user.username : 'n8n team' }}
+					{{ template.user ? template.user.username : 'aura team' }}
 				</N8nText>
 			</div>
 			<div :class="$style.text">

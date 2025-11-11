@@ -1,6 +1,6 @@
-import type { WorkflowHistory } from '@n8n/db';
-import { WorkflowHistoryRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { WorkflowHistory } from '@aura/db';
+import { WorkflowHistoryRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { v4 as uuid } from 'uuid';
 
 export async function createWorkflowHistoryItem(
@@ -16,7 +16,7 @@ export async function createWorkflowHistoryItem(
 				name: 'Start',
 				parameters: {},
 				position: [-20, 260],
-				type: 'n8n-nodes-base.start',
+				type: 'aura-nodes-base.start',
 				typeVersion: 1,
 			},
 		],

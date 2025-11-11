@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const campaignOperations: INodeProperties[] = [
 	{
@@ -66,7 +66,7 @@ export const campaignFields: INodeProperties[] = [
 		default: [],
 		required: true,
 		description:
-			'The ID of the campaign to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The ID of the campaign to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		displayOptions: {
 			show: {
 				resource: ['campaign'],
@@ -303,7 +303,7 @@ export const campaignFields: INodeProperties[] = [
 		default: '',
 		required: true,
 		description:
-			'The ID of the campaign to duplicate. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The ID of the campaign to duplicate. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		typeOptions: {
 			loadOptionsMethod: 'getCampaigns',
 		},

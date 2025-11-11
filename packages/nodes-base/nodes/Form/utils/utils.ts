@@ -8,7 +8,7 @@ import type {
 	IWebhookFunctions,
 	FormFieldsParameter,
 	NodeTypeAndVersion,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	FORM_NODE_TYPE,
 	FORM_TRIGGER_NODE_TYPE,
@@ -16,7 +16,7 @@ import {
 	WAIT_NODE_TYPE,
 	WorkflowConfigurationError,
 	jsonParse,
-} from 'n8n-workflow';
+} from 'workflow';
 import sanitize from 'sanitize-html';
 
 import { getResolvables } from '../../../utils/utilities';
@@ -133,7 +133,7 @@ export function sanitizeCustomCss(css: string | undefined): string | undefined {
 
 export function createDescriptionMetadata(description: string) {
 	return description === ''
-		? 'n8n form'
+		? 'aura form'
 		: description.replace(/^\s*\n+|<\/?[^>]+(>|$)/g, '').slice(0, 150);
 }
 
@@ -167,7 +167,7 @@ export function prepareFormData({
 	customCss?: string;
 }) {
 	const utm_campaign = instanceId ? `&utm_campaign=${instanceId}` : '';
-	const n8nWebsiteLink = `https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger${utm_campaign}`;
+	const auraWebsiteLink = `https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger${utm_campaign}`;
 
 	if (formSubmittedText === undefined) {
 		formSubmittedText = 'Your response has been recorded';
@@ -180,7 +180,7 @@ export function prepareFormData({
 		formDescriptionMetadata: createDescriptionMetadata(formDescription),
 		formSubmittedHeader,
 		formSubmittedText,
-		n8nWebsiteLink,
+		auraWebsiteLink,
 		formFields: [],
 		useResponseData,
 		appendAttribution,
@@ -258,7 +258,7 @@ export const validateResponseModeConfiguration = (context: IWebhookFunctions) =>
 	const nodeVersion = context.getNode().typeVersion;
 
 	const isRespondToWebhookConnected = connectedNodes.some(
-		(node) => node.type === 'n8n-nodes-base.respondToWebhook',
+		(node) => node.type === 'aura-nodes-base.respondToWebhook',
 	);
 
 	if (!isRespondToWebhookConnected && responseMode === 'responseNode') {
@@ -287,11 +287,11 @@ export const validateResponseModeConfiguration = (context: IWebhookFunctions) =>
 		throw new NodeOperationError(
 			context.getNode(),
 			new Error(
-				'The "Respond to Webhook" node is not supported in workflows initiated by the "n8n Form Trigger"',
+				'The "Respond to Webhook" node is not supported in workflows initiated by the "aura Form Trigger"',
 			),
 			{
 				description:
-					'To configure your response, add an "n8n Form" node and set the "Page Type" to "Form Ending"',
+					'To configure your response, add an "aura Form" node and set the "Page Type" to "Form Ending"',
 			},
 		);
 	}

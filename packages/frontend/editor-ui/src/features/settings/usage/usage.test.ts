@@ -1,8 +1,8 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { useUsageStore } from '@/features/settings/usage/usage.store';
-import * as usageApi from '@n8n/rest-api-client/api/usage';
+import * as usageApi from '@aura/rest-api-client/api/usage';
 
-vi.mock('@n8n/rest-api-client/api/usage');
+vi.mock('@aura/rest-api-client/api/usage');
 
 // Mock settings store getSettings and getModuleSettings
 vi.mock('@/app/stores/settings.store', async () => {

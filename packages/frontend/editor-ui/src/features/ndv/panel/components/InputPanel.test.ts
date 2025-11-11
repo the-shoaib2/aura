@@ -9,7 +9,7 @@ import {
 	type IConnections,
 	type INodeExecutionData,
 	type IRunData,
-} from 'n8n-workflow';
+} from 'workflow';
 import { setActivePinia } from 'pinia';
 import { mockedStore } from '@/__tests__/utils';
 import { useWorkflowState } from '@/app/composables/useWorkflowState';

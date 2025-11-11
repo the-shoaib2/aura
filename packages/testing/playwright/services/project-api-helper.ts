@@ -1,4 +1,4 @@
-import type { Folder } from '@n8n/db';
+import type { Folder } from '@aura/db';
 import { nanoid } from 'nanoid';
 
 import type { ApiHelpers } from './api-helper';

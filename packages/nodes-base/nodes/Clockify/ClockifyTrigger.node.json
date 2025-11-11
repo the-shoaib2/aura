@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.clockifyTrigger",
+	"node": "aura-nodes-base.clockifyTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Utility", "Productivity"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/clockify/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/clockify/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.clockifytrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.clockifytrigger/"
 			}
 		]
 	}

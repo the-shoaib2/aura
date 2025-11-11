@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "b7004365-30c6-4792-80ca-7c9ee2eb87a4"
@@ -20,7 +20,7 @@
 				"message": "=Message{{Date.now()}}"
 			},
 			"name": "Twilio",
-			"type": "n8n-nodes-base.twilio",
+			"type": "aura-nodes-base.twilio",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {

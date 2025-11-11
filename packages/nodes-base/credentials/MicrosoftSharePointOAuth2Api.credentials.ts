@@ -1,4 +1,4 @@
-import type { Icon, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { Icon, ICredentialType, INodeProperties } from 'workflow';
 
 export class MicrosoftSharePointOAuth2Api implements ICredentialType {
 	name = 'microsoftSharePointOAuth2Api';

@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.autopilot",
+	"node": "aura-nodes-base.autopilot",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/autopilot/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/autopilot/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.autopilot/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.autopilot/"
 			}
 		]
 	}

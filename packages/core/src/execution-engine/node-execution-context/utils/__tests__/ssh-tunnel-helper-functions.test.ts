@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import type { SSHCredentials } from 'n8n-workflow';
+import type { SSHCredentials } from 'workflow';
 
 import { mockInstance } from '@test/utils';
 

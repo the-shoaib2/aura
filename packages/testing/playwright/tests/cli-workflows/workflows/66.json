@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "0da0a738-e19c-4837-af8b-0a1ae6cd7943"
@@ -22,7 +22,7 @@
 				"filters": {}
 			},
 			"name": "Storyblok",
-			"type": "n8n-nodes-base.storyblok",
+			"type": "aura-nodes-base.storyblok",
 			"typeVersion": 1,
 			"position": [440, 300],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"storyId": "={{$node[\"Storyblok\"].json[\"id\"]}}"
 			},
 			"name": "Storyblok1",
-			"type": "n8n-nodes-base.storyblok",
+			"type": "aura-nodes-base.storyblok",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -60,7 +60,7 @@
 				"options": {}
 			},
 			"name": "Storyblok2",
-			"type": "n8n-nodes-base.storyblok",
+			"type": "aura-nodes-base.storyblok",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -79,7 +79,7 @@
 				"storyId": "={{$node[\"Storyblok\"].json[\"id\"]}}"
 			},
 			"name": "Storyblok3",
-			"type": "n8n-nodes-base.storyblok",
+			"type": "aura-nodes-base.storyblok",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {

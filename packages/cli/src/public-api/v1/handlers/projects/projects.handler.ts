@@ -4,10 +4,10 @@ import {
 	CreateProjectDto,
 	DeleteProjectDto,
 	UpdateProjectWithRelationsDto,
-} from '@n8n/api-types';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { ProjectRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/api-types';
+import type { AuthenticatedRequest } from '@aura/db';
+import { ProjectRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import type { Response } from 'express';
 
 import { ProjectController } from '@/controllers/project.controller';

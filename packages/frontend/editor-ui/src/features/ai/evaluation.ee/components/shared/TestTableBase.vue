@@ -6,7 +6,7 @@ import { nextTick, ref, useCssModule, watch } from 'vue';
 import type { RouteLocationRaw } from 'vue-router';
 
 import { ElTable, ElTableColumn } from 'element-plus';
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 /**
  * A reusable table component for displaying evaluation results data
  * @template T - The type of data being displayed in the table rows

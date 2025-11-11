@@ -13,12 +13,12 @@ import { useToast } from '@/app/composables/useToast';
 //@ts-ignore
 import QrcodeVue from 'qrcode.vue';
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import router from '@/router';
 import { I18nT } from 'vue-i18n';
 
-import { N8nButton, N8nInfoTip, N8nInput, N8nInputLabel, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nInfoTip, N8nInput, N8nInputLabel, N8nText } from '@aura/design-system';
 // ---------------------------------------------------------------------------
 // #region Reactive properties
 // ---------------------------------------------------------------------------
@@ -88,7 +88,7 @@ const onSaveClick = () => {
 };
 
 const onDownloadClick = () => {
-	const filename = 'n8n-recovery-codes.txt';
+	const filename = 'aura-recovery-codes.txt';
 	const temporalElement = document.createElement('a');
 	temporalElement.setAttribute(
 		'href',

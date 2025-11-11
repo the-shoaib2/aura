@@ -1,4 +1,4 @@
-import type { N8nInput } from '@n8n/design-system';
+import type { N8nInput } from '@aura/design-system';
 import type {
 	ExecutionError,
 	GenericValue,
@@ -9,7 +9,7 @@ import type {
 	NodeConnectionType,
 	NodeParameterValue,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { RouteLocation } from 'vue-router';
 import type {
 	INodeCreateElement,
@@ -18,8 +18,8 @@ import type {
 	IWorkflowDb,
 	NodeFilterType,
 } from '@/Interface';
-import type { IPersonalizationLatestVersion } from '@n8n/rest-api-client/api/users';
-import type { IWorkflowTemplateNode } from '@n8n/rest-api-client/api/templates';
+import type { IPersonalizationLatestVersion } from '@aura/rest-api-client/api/users';
+import type { IWorkflowTemplateNode } from '@aura/rest-api-client/api/templates';
 import type { ComponentPublicInstance } from 'vue';
 import type { useWebhooksStore } from '@/app/stores/webhooks.store';
 

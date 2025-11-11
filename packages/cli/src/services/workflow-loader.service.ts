@@ -1,6 +1,6 @@
-import { WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { UserError, type IWorkflowBase, type IWorkflowLoader } from 'n8n-workflow';
+import { WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { UserError, type IWorkflowBase, type IWorkflowLoader } from 'workflow';
 
 @Service()
 export class WorkflowLoaderService implements IWorkflowLoader {

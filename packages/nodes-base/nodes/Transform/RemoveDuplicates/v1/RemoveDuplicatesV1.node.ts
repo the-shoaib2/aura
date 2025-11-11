@@ -1,11 +1,11 @@
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import type {
 	INodeTypeBaseDescription,
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { removeDuplicateInputItems } from '../utils';
 

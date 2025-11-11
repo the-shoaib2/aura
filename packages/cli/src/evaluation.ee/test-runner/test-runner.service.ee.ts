@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { ExecutionsConfig } from '@n8n/config';
-import type { User, TestRun } from '@n8n/db';
-import { TestCaseExecutionRepository, TestRunRepository, WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
+import { Logger } from '@aura/backend-common';
+import { ExecutionsConfig } from '@aura/config';
+import type { User, TestRun } from '@aura/db';
+import { TestCaseExecutionRepository, TestRunRepository, WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
 import {
 	EVALUATION_NODE_TYPE,
 	EVALUATION_TRIGGER_NODE_TYPE,
@@ -12,7 +12,7 @@ import {
 	metricRequiresModelConnection,
 	DEFAULT_EVALUATION_METRIC,
 	ManualExecutionCancelledError,
-} from 'n8n-workflow';
+} from 'workflow';
 import type {
 	IDataObject,
 	IRun,
@@ -22,7 +22,7 @@ import type {
 	AssignmentCollectionValue,
 	GenericValue,
 	IExecuteData,
-} from 'n8n-workflow';
+} from 'workflow';
 import assert from 'node:assert';
 import { JsonObject } from 'openid-client';
 

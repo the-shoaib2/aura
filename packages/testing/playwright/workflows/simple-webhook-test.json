@@ -10,7 +10,7 @@
 			},
 			"id": "webhook-trigger",
 			"name": "Webhook",
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 1,
 			"position": [300, 300],
 			"webhookId": "test-webhook-id"
@@ -37,7 +37,7 @@
 			},
 			"id": "set-response",
 			"name": "Set Response",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [500, 300]
 		}

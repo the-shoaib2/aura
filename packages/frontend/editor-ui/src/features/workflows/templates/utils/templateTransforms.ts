@@ -1,7 +1,7 @@
 import type {
 	IWorkflowTemplateNode,
 	IWorkflowTemplateNodeCredentials,
-} from '@n8n/rest-api-client/api/templates';
+} from '@aura/rest-api-client/api/templates';
 
 import type { NodeTypeProvider } from '@/app/utils/nodeTypes/nodeTypeTransforms';
 import { getNodeTypeDisplayableCredentials } from '@/app/utils/nodes/nodeTransforms';
@@ -10,7 +10,7 @@ import type {
 	INodeCredentialDescription,
 	INodeCredentials,
 	INodeCredentialsDetails,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export type IWorkflowTemplateNodeWithCredentials = IWorkflowTemplateNode &
 	Required<Pick<IWorkflowTemplateNode, 'credentials'>>;
@@ -40,7 +40,7 @@ export const keyFromCredentialTypeAndName = (
 
 /**
  * Normalizes the credentials of a template node. Templates created with
- * different versions of n8n may have different credential formats.
+ * different versions of aura may have different credential formats.
  */
 export const normalizeTemplateNodeCredentials = (
 	credentials?: IWorkflowTemplateNodeCredentials,

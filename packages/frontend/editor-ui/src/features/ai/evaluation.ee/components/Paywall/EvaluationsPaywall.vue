@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { COMMUNITY_PLUS_ENROLLMENT_MODAL } from '@/features/settings/usage/usage.constants';
 import { useUIStore } from '@/app/stores/ui.store';
 
-import { N8nActionBox } from '@n8n/design-system';
+import { N8nActionBox } from '@aura/design-system';
 const i18n = useI18n();
 const uiStore = useUIStore();
 

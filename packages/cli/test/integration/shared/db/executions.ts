@@ -1,13 +1,13 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { ExecutionEntity, ExecutionData } from '@n8n/db';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { ExecutionEntity, ExecutionData } from '@aura/db';
 import {
 	ExecutionDataRepository,
 	ExecutionMetadataRepository,
 	ExecutionRepository,
 	AnnotationTagRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { AnnotationVote, ExecutionStatus, IWorkflowBase } from 'n8n-workflow';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import type { AnnotationVote, ExecutionStatus, IWorkflowBase } from 'workflow';
 
 import { ExecutionService } from '@/executions/execution.service';
 import { Telemetry } from '@/telemetry';

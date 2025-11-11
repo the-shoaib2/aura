@@ -11,14 +11,14 @@ import {
 	N8nOption,
 	N8nSelect,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 import { computed, ref, watch } from 'vue';
 import { useUIStore } from '@/app/stores/ui.store';
 import AgentEditorModal from '@/features/ai/chatHub/components/AgentEditorModal.vue';
 import ChatAgentCard from '@/features/ai/chatHub/components/ChatAgentCard.vue';
 import { useChatCredentials } from '@/features/ai/chatHub/composables/useChatCredentials';
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { type ChatHubConversationModel } from '@n8n/api-types';
+import { type ChatHubConversationModel } from '@aura/api-types';
 import { filterAndSortAgents, stringifyModel } from '@/features/ai/chatHub/chat.utils';
 import type { ChatAgentFilter } from '@/features/ai/chatHub/chat.types';
 import { useChatHubSidebarState } from '@/features/ai/chatHub/composables/useChatHubSidebarState';
@@ -47,7 +47,7 @@ const { credentialsByProvider } = useChatCredentials(usersStore.currentUserId ??
 
 const readyToShowList = computed(() => chatStore.agentsReady);
 const allModels = computed(() =>
-	chatStore.agents.n8n.models.concat(chatStore.agents['custom-agent'].models),
+	chatStore.agents.aura.models.concat(chatStore.agents['custom-agent'].models),
 );
 
 const agents = computed(() => filterAndSortAgents(allModels.value, agentFilter.value));
@@ -55,7 +55,7 @@ const agents = computed(() => filterAndSortAgents(allModels.value, agentFilter.v
 const providerOptions = [
 	{ label: 'All', value: '' },
 	{ label: 'Custom agents', value: 'custom-agent' },
-	{ label: 'n8n workflows', value: 'n8n' },
+	{ label: 'aura workflows', value: 'aura' },
 ] as const;
 
 const sortOptions = [
@@ -70,7 +70,7 @@ function handleCreateAgent() {
 }
 
 async function handleEditAgent(model: ChatHubConversationModel) {
-	if (model.provider === 'n8n') {
+	if (model.provider === 'aura') {
 		const routeData = router.resolve({
 			name: VIEWS.WORKFLOW,
 			params: {
@@ -140,7 +140,7 @@ watch(
 			<div :class="$style.headerContent">
 				<N8nText tag="h1" size="xlarge" bold>Custom Agents</N8nText>
 				<N8nText color="text-light">
-					Use n8n workflow agents or create custom AI agents with specific instructions and
+					Use aura workflow agents or create custom AI agents with specific instructions and
 					behaviors
 				</N8nText>
 			</div>

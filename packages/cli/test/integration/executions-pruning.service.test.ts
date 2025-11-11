@@ -1,11 +1,11 @@
-import { mockLogger, createWorkflow, testDb, mockInstance } from '@n8n/backend-test-utils';
-import { ExecutionsConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import type { ExecutionEntity } from '@n8n/db';
-import { ExecutionRepository, DbConnection } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { BinaryDataService, InstanceSettings } from 'n8n-core';
-import type { ExecutionStatus, IWorkflowBase } from 'n8n-workflow';
+import { mockLogger, createWorkflow, testDb, mockInstance } from '@aura/backend-test-utils';
+import { ExecutionsConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import type { ExecutionEntity } from '@aura/db';
+import { ExecutionRepository, DbConnection } from '@aura/db';
+import { Container } from '@aura/di';
+import { BinaryDataService, InstanceSettings } from 'aura-core';
+import type { ExecutionStatus, IWorkflowBase } from 'workflow';
 
 import { ExecutionsPruningService } from '@/services/pruning/executions-pruning.service';
 

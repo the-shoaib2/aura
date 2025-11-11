@@ -1,4 +1,4 @@
-import type { ILoadOptionsFunctions } from 'n8n-workflow';
+import type { ILoadOptionsFunctions } from 'workflow';
 
 import { googleApiRequest, googleApiRequestAllItems } from '../GenericFunctions';
 import { searchUsers, searchGroups, searchDevices } from '../SearchFunctions';

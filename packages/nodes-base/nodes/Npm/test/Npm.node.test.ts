@@ -13,12 +13,12 @@ describe('Test npm Node', () => {
 		const { registryUrl } = credentials.npmApi;
 		const mock = nock(registryUrl); //.matchHeader('Authorization', `Bearer ${accessToken}`);
 
-		mock.get('/-/package/n8n/dist-tags').reply(200, {
+		mock.get('/-/package/aura/dist-tags').reply(200, {
 			latest: '0.225.2',
 			next: '0.226.2',
 		});
 
-		mock.get('/n8n').reply(200, {
+		mock.get('/aura').reply(200, {
 			time: {
 				'0.225.2': '2023-04-25T09:45:36.407Z',
 				'0.226.2': '2023-05-03T09:41:30.844Z',
@@ -26,8 +26,8 @@ describe('Test npm Node', () => {
 			},
 		});
 
-		mock.get('/n8n/latest').reply(200, {
-			name: 'n8n',
+		mock.get('/aura/latest').reply(200, {
+			name: 'aura',
 			version: '0.225.2',
 			rest: 'of the properties',
 		});

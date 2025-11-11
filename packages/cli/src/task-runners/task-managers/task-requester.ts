@@ -1,8 +1,8 @@
-import { Service } from '@n8n/di';
-import type { TaskResultData, RequesterMessage, BrokerMessage, TaskData } from '@n8n/task-runner';
-import { AVAILABLE_RPC_METHODS } from '@n8n/task-runner';
-import { isSerializedBuffer, toBuffer } from 'n8n-core';
-import { createResultOk, createResultError } from 'n8n-workflow';
+import { Service } from '@aura/di';
+import type { TaskResultData, RequesterMessage, BrokerMessage, TaskData } from '@aura/task-runner';
+import { AVAILABLE_RPC_METHODS } from '@aura/task-runner';
+import { isSerializedBuffer, toBuffer } from 'aura-core';
+import { createResultOk, createResultError } from 'workflow';
 import type {
 	EnvProviderState,
 	IExecuteFunctions,
@@ -17,7 +17,7 @@ import type {
 	IDataObject,
 	IWorkflowExecuteAdditionalData,
 	Result,
-} from 'n8n-workflow';
+} from 'workflow';
 import { nanoid } from 'nanoid';
 
 import { EventService } from '@/events/event.service';

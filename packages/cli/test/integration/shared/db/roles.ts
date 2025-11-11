@@ -1,6 +1,6 @@
-import { Role, RoleRepository, Scope, ScopeRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { Scope as ScopeType } from '@n8n/permissions';
+import { Role, RoleRepository, Scope, ScopeRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import type { Scope as ScopeType } from '@aura/permissions';
 
 /**
  * Creates a test role with given parameters

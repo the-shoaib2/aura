@@ -26,7 +26,7 @@ toNumber.doc = {
 	section: 'cast',
 	returnType: 'number',
 	docURL:
-		'https://docs.n8n.io/code/builtin/data-transformation-functions/booleans/#boolean-toNumber',
+		'https://docs.aura.io/code/builtin/data-transformation-functions/booleans/#boolean-toNumber',
 };
 
 export const booleanExtensions: ExtensionMap = {

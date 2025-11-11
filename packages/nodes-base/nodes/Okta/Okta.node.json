@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.okta",
+	"node": "aura-nodes-base.okta",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
@@ -7,12 +7,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/okta/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/okta/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.okta/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.okta/"
 			}
 		],
 		"generic": []

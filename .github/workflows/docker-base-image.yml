@@ -5,10 +5,10 @@ on:
     branches:
       - master
     paths:
-      - 'docker/images/n8n-base/Dockerfile'
+      - 'docker/images/aura-base/Dockerfile'
   pull_request:
     paths:
-      - 'docker/images/n8n-base/Dockerfile'
+      - 'docker/images/aura-base/Dockerfile'
   workflow_dispatch:
     inputs:
       push:
@@ -51,7 +51,7 @@ jobs:
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
           context: .
-          file: ./docker/images/n8n-base/Dockerfile
+          file: ./docker/images/aura-base/Dockerfile
           build-args: |
             NODE_VERSION=${{ matrix.node_version }}
           platforms: linux/amd64,linux/arm64

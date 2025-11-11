@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.mondayCom",
+	"node": "aura-nodes-base.mondayCom",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Productivity"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/mondaycom/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/mondaycom/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.mondaycom/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.mondaycom/"
 			}
 		]
 	}

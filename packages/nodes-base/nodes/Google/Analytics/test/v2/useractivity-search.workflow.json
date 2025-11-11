@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "trigger-id",
@@ -21,7 +21,7 @@
 					"activityTypes": ["PAGEVIEW", "EVENT"]
 				}
 			},
-			"type": "n8n-nodes-base.googleAnalytics",
+			"type": "aura-nodes-base.googleAnalytics",
 			"typeVersion": 2,
 			"position": [200, 0],
 			"id": "useractivity-search-node",

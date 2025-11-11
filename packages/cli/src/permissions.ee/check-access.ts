@@ -1,8 +1,8 @@
-import type { User } from '@n8n/db';
-import { ProjectRepository, SharedCredentialsRepository, SharedWorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { hasGlobalScope, type Scope } from '@n8n/permissions';
-import { UnexpectedError } from 'n8n-workflow';
+import type { User } from '@aura/db';
+import { ProjectRepository, SharedCredentialsRepository, SharedWorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { hasGlobalScope, type Scope } from '@aura/permissions';
+import { UnexpectedError } from 'workflow';
 
 import { NotFoundError } from '@/errors/response-errors/not-found.error';
 import { RoleService } from '@/services/role.service';

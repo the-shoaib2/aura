@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { useClipboard } from '@/app/composables/useClipboard';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import { type ParsedAiContent } from '@/app/utils/aiUtils';
-import { type IDataObject } from 'n8n-workflow';
+import { type IDataObject } from 'workflow';
 import VueMarkdown from 'vue-markdown-render';
 import hljs from 'highlight.js/lib/core';
 import { computed } from 'vue';
 import { createSearchHighlightPlugin } from '@/features/ndv/runData/components/ai/utils';
 
-import { N8nIconButton } from '@n8n/design-system';
+import { N8nIconButton } from '@aura/design-system';
 import TextWithHighlights from './TextWithHighlights.vue';
 
 const {

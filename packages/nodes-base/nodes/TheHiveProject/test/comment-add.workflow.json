@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [0, 0],
 			"id": "manual-trigger",
@@ -21,7 +21,7 @@
 				},
 				"message": "This is a test comment for the case"
 			},
-			"type": "n8n-nodes-base.theHiveProject",
+			"type": "aura-nodes-base.theHiveProject",
 			"typeVersion": 1,
 			"position": [200, 0],
 			"id": "thehive-node",

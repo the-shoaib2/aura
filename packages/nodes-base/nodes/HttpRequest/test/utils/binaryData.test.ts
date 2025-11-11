@@ -1,4 +1,4 @@
-import type { IBinaryData, IRequestOptions } from 'n8n-workflow';
+import type { IBinaryData, IRequestOptions } from 'workflow';
 
 import { setFilename } from '../../V3/utils/binaryData';
 

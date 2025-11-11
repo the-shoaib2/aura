@@ -1,4 +1,4 @@
-import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
+import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'workflow';
 
 import { auditFields, auditOperations } from './AuditDescription';
 import { credentialFields, credentialOperations } from './CredentialDescription';
@@ -7,27 +7,27 @@ import { workflowFields, workflowOperations } from './WorkflowDescription';
 import { searchWorkflows } from './WorkflowLocator';
 
 /**
- * The n8n node provides access to the n8n API.
+ * The aura node provides access to the aura API.
  *
- * See: https://docs.n8n.io/api/api-reference/
+ * See: https://docs.aura.io/api/api-reference/
  */
 export class N8n implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'n8n',
-		name: 'n8n',
-		icon: 'file:n8n.svg',
+		displayName: 'aura',
+		name: 'aura',
+		icon: 'file:aura.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Handle events and perform actions on your n8n instance',
+		description: 'Handle events and perform actions on your aura instance',
 		defaults: {
-			name: 'n8n',
+			name: 'aura',
 		},
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
-				name: 'n8nApi',
+				name: 'auraApi',
 				required: true,
 			},
 		],

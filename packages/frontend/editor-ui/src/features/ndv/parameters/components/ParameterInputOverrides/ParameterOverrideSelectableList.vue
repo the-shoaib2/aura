@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { IUpdateInformation } from '@/Interface';
 
-import { type INodeProperties } from 'n8n-workflow';
+import { type INodeProperties } from 'workflow';
 import { buildValueFromOverride, type FromAIOverride } from '../../utils/fromAIOverride.utils';
 import { computed } from 'vue';
-import { N8nSelectableList } from '@n8n/design-system';
+import { N8nSelectableList } from '@aura/design-system';
 import ParameterInputFull from '../ParameterInputFull.vue';
 
 type Props = {

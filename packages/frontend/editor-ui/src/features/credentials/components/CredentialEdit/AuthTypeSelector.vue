@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ParameterInputFull from '@/features/ndv/parameters/components/ParameterInputFull.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import type { IUpdateInformation, NodeAuthenticationOption } from '@/Interface';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -15,11 +15,11 @@ import type {
 	INodeProperties,
 	INodeTypeDescription,
 	NodeParameterValue,
-} from 'n8n-workflow';
+} from 'workflow';
 import { computed, onMounted, ref } from 'vue';
 
 import { ElRadio } from 'element-plus';
-import { N8nInputLabel } from '@n8n/design-system';
+import { N8nInputLabel } from '@aura/design-system';
 export interface Props {
 	credentialType: ICredentialType;
 }

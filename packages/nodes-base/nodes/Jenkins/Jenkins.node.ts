@@ -10,8 +10,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes } from 'workflow';
 
 import { jenkinsApiRequest, tolerateTrailingSlash } from './GenericFunctions';
 
@@ -137,7 +137,7 @@ export class Jenkins implements INodeType {
 				required: true,
 				default: '',
 				description:
-					'Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 
 			// --------------------------------------------------------------------------------------------------------
@@ -169,7 +169,7 @@ export class Jenkins implements INodeType {
 								name: 'name',
 								type: 'options',
 								description:
-									'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 								typeOptions: {
 									loadOptionsMethod: 'getJobParameters',
 									loadOptionsDependsOn: ['job'],
@@ -354,7 +354,7 @@ export class Jenkins implements INodeType {
 				required: true,
 				default: '',
 				description:
-					'Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Return All',

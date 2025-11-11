@@ -1,4 +1,4 @@
-import type { INode, INodeParameterResourceLocator, INodeProperties } from 'n8n-workflow';
+import type { INode, INodeParameterResourceLocator, INodeProperties } from 'workflow';
 
 export const TEST_MODEL_VALUE: INodeParameterResourceLocator = {
 	__rl: true,
@@ -71,7 +71,7 @@ export const TEST_PARAMETER_ADD_RESOURCE: INodeProperties = {
 };
 
 export const TEST_NODE_MULTI_MODE: INode = {
-	type: 'n8n-nodes-base.airtable',
+	type: 'aura-nodes-base.airtable',
 	typeVersion: 2.1,
 	position: [80, -260],
 	id: '377e4287-b1e0-44cc-ba0f-7bb3d676d60c',

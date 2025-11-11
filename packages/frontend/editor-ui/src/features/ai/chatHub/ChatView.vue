@@ -22,8 +22,8 @@ import {
 	type ChatMessageId,
 	type ChatHubSendMessageRequest,
 	type ChatModelDto,
-} from '@n8n/api-types';
-import { N8nIconButton, N8nScrollArea } from '@n8n/design-system';
+} from '@aura/api-types';
+import { N8nIconButton, N8nScrollArea } from '@aura/design-system';
 import { useLocalStorage, useMediaQuery, useScroll } from '@vueuse/core';
 import { v4 as uuidv4 } from 'uuid';
 import { computed, nextTick, ref, useTemplateRef, watch } from 'vue';
@@ -94,7 +94,7 @@ const modelFromQuery = computed<ChatModelDto | null>(() => {
 	}
 
 	if (typeof workflowId === 'string') {
-		return chatStore.getAgent({ provider: 'n8n', workflowId }) ?? null;
+		return chatStore.getAgent({ provider: 'aura', workflowId }) ?? null;
 	}
 
 	return null;
@@ -135,7 +135,7 @@ const credentialsForSelectedProvider = computed<ChatHubSendMessageRequest['crede
 			return null;
 		}
 
-		if (provider === 'custom-agent' || provider === 'n8n') {
+		if (provider === 'custom-agent' || provider === 'aura') {
 			return {};
 		}
 

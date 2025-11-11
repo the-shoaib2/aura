@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const threadOperations: INodeProperties[] = [
 	{
@@ -77,7 +77,7 @@ export const threadFields: INodeProperties[] = [
 	/*                                 thread:reply                               */
 	/* -------------------------------------------------------------------------- */
 	{
-		// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+		// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 		displayName: 'Message Snippet or ID',
 		name: 'messageId',
 		type: 'options',
@@ -87,7 +87,7 @@ export const threadFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		displayOptions: {
 			show: {
 				resource: ['thread'],
@@ -341,7 +341,7 @@ export const threadFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'Only return threads with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Only return threads with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Search',
@@ -360,17 +360,17 @@ export const threadFields: INodeProperties[] = [
 				hint: 'Filter emails by whether they have been read or not',
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Unread and read emails',
 						value: 'both',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Unread emails only',
 						value: 'unread',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Read emails only',
 						value: 'read',
 					},
@@ -427,6 +427,6 @@ export const threadFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 	},
 ];

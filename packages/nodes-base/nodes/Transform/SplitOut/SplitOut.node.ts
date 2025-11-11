@@ -1,6 +1,6 @@
 import get from 'lodash/get';
 import unset from 'lodash/unset';
-import { NodeOperationError, deepCopy, NodeConnectionTypes } from 'n8n-workflow';
+import { NodeOperationError, deepCopy, NodeConnectionTypes } from 'workflow';
 import type {
 	IBinaryData,
 	IDataObject,
@@ -8,7 +8,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { prepareFieldsArray } from '../utils/utils';
 import { FieldsTracker } from './utils';

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { type UsersList } from '@n8n/api-types';
-import { useI18n } from '@n8n/i18n';
+import { type UsersList } from '@aura/api-types';
+import { useI18n } from '@aura/i18n';
 import { formatTimeAgo } from '@/app/utils/formatters/dateFormatter';
 
 const i18n = useI18n();

@@ -8,7 +8,7 @@
 			},
 			"id": "143572ab-f85b-4a6f-8ca7-4a5cea00a9fe",
 			"name": "Webhook",
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 1.1,
 			"position": [860, 140],
 			"webhookId": "86f05bcc-44a4-44f7-b774-7002fc2eddfc"
@@ -39,7 +39,7 @@
 			},
 			"id": "50542b55-4237-4c18-9e3a-5d146372c270",
 			"name": "If",
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"typeVersion": 2,
 			"position": [1080, 140]
 		},
@@ -47,7 +47,7 @@
 			"parameters": {},
 			"id": "c6365289-0383-4d73-bd5f-a52b6a6e1eeb",
 			"name": "No Operation, do nothing",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1420, 20]
 		},
@@ -67,7 +67,7 @@
 			},
 			"id": "8fd60b5e-19eb-47f4-a3e2-3822c722a68a",
 			"name": "Edit Fields1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1860, 220]
 		},
@@ -75,7 +75,7 @@
 			"parameters": {},
 			"id": "96ac4860-81eb-4d47-9a6e-7c717d910fcd",
 			"name": "NoOp1",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1420, 220]
 		},
@@ -83,7 +83,7 @@
 			"parameters": {},
 			"id": "5b550207-3f4f-4519-b272-ff02d9d28ffc",
 			"name": "NoOp3",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [2040, 220]
 		},
@@ -91,7 +91,7 @@
 			"parameters": {},
 			"id": "9f450e47-902e-413e-99ce-ea93f6bc375e",
 			"name": "NoOp2",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1640, 220]
 		},
@@ -111,7 +111,7 @@
 			},
 			"id": "7acd1642-a6ef-4c33-a562-95b19fedbded",
 			"name": "Edit Fields",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [2220, 220]
 		},
@@ -131,7 +131,7 @@
 			},
 			"id": "adc93a3b-2825-4ddf-9a17-fe61b5861d43",
 			"name": "Edit Fields2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1460, 440]
 		},
@@ -139,7 +139,7 @@
 			"parameters": {},
 			"id": "1cd5d8dc-cd08-4596-9435-d48a6e20996d",
 			"name": "NoOp",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1700, 480]
 		},
@@ -149,7 +149,7 @@
 			},
 			"id": "658c3a31-b640-4338-8b22-6d0a17ab5b80",
 			"name": "Sticky Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [940, 480]
 		}
@@ -165,7 +165,7 @@
 						"accept-language": "en-US,en;q=0.5",
 						"accept-encoding": "gzip, deflate, br",
 						"connection": "keep-alive",
-						"cookie": "n8n-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1YWQzODQ1LWFmMTAtNDc2OC04ZDU4LTBmNDE3YTVlNDkxNSIsImVtYWlsIjoiamFuQG44bi5pbyIsInBhc3N3b3JkIjoiMzhjMTFiMDEwMjRlMDhiZTE0ZGExZjhmOWVjNGFmOTQxZmQwOGUyMzJmNWEzYmMyNjBmOTI1ZjIxNTBhNTZlYSIsImlhdCI6MTcwNzA3ODgxMSwiZXhwIjoxNzA3NjgzNjExfQ.bhbh8gCbLYAY87kPqZSGZeMBq7_4d9IgKnsrJ0UV4Iw",
+						"cookie": "aura-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1YWQzODQ1LWFmMTAtNDc2OC04ZDU4LTBmNDE3YTVlNDkxNSIsImVtYWlsIjoiamFuQG44bi5pbyIsInBhc3N3b3JkIjoiMzhjMTFiMDEwMjRlMDhiZTE0ZGExZjhmOWVjNGFmOTQxZmQwOGUyMzJmNWEzYmMyNjBmOTI1ZjIxNTBhNTZlYSIsImlhdCI6MTcwNzA3ODgxMSwiZXhwIjoxNzA3NjgzNjExfQ.bhbh8gCbLYAY87kPqZSGZeMBq7_4d9IgKnsrJ0UV4Iw",
 						"upgrade-insecure-requests": "1",
 						"sec-fetch-dest": "document",
 						"sec-fetch-mode": "navigate",

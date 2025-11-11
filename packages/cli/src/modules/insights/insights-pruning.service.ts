@@ -1,6 +1,6 @@
-import { LicenseState, Logger } from '@n8n/backend-common';
-import { Time } from '@n8n/constants';
-import { Service } from '@n8n/di';
+import { LicenseState, Logger } from '@aura/backend-common';
+import { Time } from '@aura/constants';
+import { Service } from '@aura/di';
 import { strict } from 'assert';
 
 import { InsightsByPeriodRepository } from './database/repositories/insights-by-period.repository';

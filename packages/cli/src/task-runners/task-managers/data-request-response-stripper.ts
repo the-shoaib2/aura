@@ -1,11 +1,11 @@
-import type { DataRequestResponse, BrokerMessage } from '@n8n/task-runner';
+import type { DataRequestResponse, BrokerMessage } from '@aura/task-runner';
 import type {
 	EnvProviderState,
 	IPinData,
 	IRunData,
 	IRunExecutionData,
 	ITaskDataConnections,
-} from 'n8n-workflow';
+} from 'workflow';
 import * as a from 'node:assert/strict';
 
 /**

@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import { mkdtempSync, readFileSync } from 'fs';
 import { IncomingMessage } from 'http';
 import { mock } from 'jest-mock-extended';
@@ -7,7 +7,7 @@ import type {
 	INode,
 	ITaskDataConnections,
 	IWorkflowExecuteAdditionalData,
-} from 'n8n-workflow';
+} from 'workflow';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { Readable } from 'stream';
@@ -38,7 +38,7 @@ const bufferToIncomingMessage = (buffer: Buffer, encoding = 'utf-8') => {
 };
 
 describe('test binary data helper methods', () => {
-	const temporaryDir = mkdtempSync(join(tmpdir(), 'n8n'));
+	const temporaryDir = mkdtempSync(join(tmpdir(), 'aura'));
 	const binaryDataConfig = mock<BinaryDataConfig>({
 		mode: 'default',
 		availableModes: ['default', 'filesystem'],
@@ -726,7 +726,7 @@ describe('getBinaryHelperFunctions', () => {
 });
 
 describe('createBinarySignedUrl', () => {
-	const restApiUrl = 'https://n8n.host/rest';
+	const restApiUrl = 'https://aura.host/rest';
 
 	it('should get a signed url', async () => {
 		const additionalData = { restApiUrl } as IWorkflowExecuteAdditionalData;

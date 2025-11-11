@@ -4,7 +4,7 @@ import type { Router } from 'vue-router';
 import { VIEWS } from '@/app/constants';
 
 import type { IWorkflowDb, WorkflowListResource } from '@/Interface';
-import type { NodeParameterValue } from 'n8n-workflow';
+import type { NodeParameterValue } from 'workflow';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
 
@@ -102,7 +102,7 @@ export function useWorkflowResourcesLocator(router: Router) {
 		const nodeName = ndvStore.activeNodeName;
 		if (
 			nodeName === 'Execute Workflow' ||
-			nodeName === 'Call n8n Workflow Tool' ||
+			nodeName === 'Call aura Workflow Tool' ||
 			(nodeName?.startsWith("Call '") && nodeName?.endsWith("'"))
 		) {
 			const baseName = getWorkflowBaseName(workflowId);

@@ -10,7 +10,7 @@ import {
 	type INodeTypeDescription,
 	NodeConnectionTypes,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { TodoistProjectType } from './Service';
 import {
@@ -103,7 +103,7 @@ const versionDescription: INodeTypeDescription = {
 			name: 'resource',
 			type: 'options',
 			noDataExpression: true,
-			// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+			// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 			options: [
 				{
 					name: 'Task',
@@ -514,7 +514,7 @@ const versionDescription: INodeTypeDescription = {
 			},
 			default: '',
 			description:
-				'Section to which you want move the task. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+				'Section to which you want move the task. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		},
 		{
 			displayName: 'Additional Fields',
@@ -540,7 +540,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: '',
 					description:
-						'The destination section. The task becomes the last root task of the section. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'The destination section. The task becomes the last root task of the section. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Parent Name or ID',
@@ -552,12 +552,12 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: '',
 					description:
-						'The destination parent task. The task becomes the last child task of the parent task. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'The destination parent task. The task becomes the last child task of the parent task. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 			],
 		},
 		{
-			// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+			// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 			displayName: 'Label Names',
 			name: 'labels',
 			type: 'multiOptions',
@@ -572,7 +572,7 @@ const versionDescription: INodeTypeDescription = {
 			},
 			default: [],
 			description:
-				'Optional labels that will be assigned to a created task. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+				'Optional labels that will be assigned to a created task. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		},
 		{
 			displayName: 'Content',
@@ -641,7 +641,7 @@ const versionDescription: INodeTypeDescription = {
 					name: 'auto_reminder',
 					type: 'boolean',
 					default: false,
-					// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+					// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 					description:
 						'When this option is enabled, the default reminder will be added to the new item if it has a due date with time set',
 				},
@@ -700,7 +700,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: {},
 					description:
-						'The parent task you want to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'The parent task you want to operate on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Priority',
@@ -723,7 +723,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: {},
 					description:
-						'The section you want to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'The section you want to operate on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Order',
@@ -849,7 +849,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: {},
 					description:
-						'Filter tasks by label. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'Filter tasks by label. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Lang',
@@ -869,7 +869,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: '',
 					description:
-						'Filter tasks by parent task ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'Filter tasks by parent task ID. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Project Name or ID',
@@ -880,7 +880,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: '',
 					description:
-						'Filter tasks by project ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'Filter tasks by project ID. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 				{
 					displayName: 'Section Name or ID',
@@ -892,7 +892,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: '',
 					description:
-						'Filter tasks by section ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'Filter tasks by section ID. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 			],
 		},
@@ -955,12 +955,12 @@ const versionDescription: INodeTypeDescription = {
 						'2-letter code specifying language in case due_string is not written in English',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options
 					displayName: 'Label Names',
 					name: 'labels',
 					type: 'multiOptions',
 					description:
-						'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+						'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 					typeOptions: {
 						loadOptionsMethod: 'getLabels',
 					},
@@ -1296,7 +1296,7 @@ const versionDescription: INodeTypeDescription = {
 					},
 					default: '',
 					description:
-						'Filter sections by project. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+						'Filter sections by project. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				},
 			],
 		},

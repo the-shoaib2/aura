@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { ExecutionRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { ExecutionRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import capitalize from 'lodash/capitalize';
-import type { WorkflowExecuteMode as ExecutionMode } from 'n8n-workflow';
+import type { WorkflowExecuteMode as ExecutionMode } from 'workflow';
 
 import { InvalidConcurrencyLimitError } from '@/errors/invalid-concurrency-limit.error';
 import { UnknownExecutionModeError } from '@/errors/unknown-execution-mode.error';

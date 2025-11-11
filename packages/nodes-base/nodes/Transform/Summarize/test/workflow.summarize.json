@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-160, 340],
 			"id": "0cc16e22-72e3-4f2c-a920-b1613fd4bcaf",
@@ -15,7 +15,7 @@
 			},
 			"id": "5a71d6f2-96fb-4616-94b7-5644c71e3bfb",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [60, 340]
 		},
@@ -46,7 +46,7 @@
 			},
 			"id": "281b21e0-5737-4150-bce8-8331a3f83366",
 			"name": "Summarize1",
-			"type": "n8n-nodes-base.summarize",
+			"type": "aura-nodes-base.summarize",
 			"typeVersion": 1,
 			"position": [280, -60]
 		},
@@ -79,7 +79,7 @@
 			},
 			"id": "04bf538c-24d4-46d8-9c43-76ebc4fe7368",
 			"name": "Summarize2",
-			"type": "n8n-nodes-base.summarize",
+			"type": "aura-nodes-base.summarize",
 			"typeVersion": 1,
 			"position": [280, 140]
 		},
@@ -118,7 +118,7 @@
 			},
 			"id": "e6f750f2-15c1-4de9-80a1-a255649d6e99",
 			"name": "Summarize3",
-			"type": "n8n-nodes-base.summarize",
+			"type": "aura-nodes-base.summarize",
 			"typeVersion": 1,
 			"position": [280, 340]
 		},
@@ -134,7 +134,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.summarize",
+			"type": "aura-nodes-base.summarize",
 			"typeVersion": 1.1,
 			"position": [280, 540],
 			"id": "bfe0521a-c060-454f-99bb-b682aab44f63",
@@ -154,7 +154,7 @@
 					"disableDotNotation": true
 				}
 			},
-			"type": "n8n-nodes-base.summarize",
+			"type": "aura-nodes-base.summarize",
 			"typeVersion": 1.1,
 			"position": [280, 740],
 			"id": "b2c05f23-449f-49aa-80a3-4e1cd9156aa1",

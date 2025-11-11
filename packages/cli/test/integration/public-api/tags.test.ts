@@ -1,7 +1,7 @@
-import { testDb } from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
-import { TagRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { testDb } from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
+import { TagRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { createTag } from '../shared/db/tags';
 import { createMemberWithApiKey, createOwnerWithApiKey } from '../shared/db/users';

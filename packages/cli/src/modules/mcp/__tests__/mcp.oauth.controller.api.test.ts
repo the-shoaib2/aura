@@ -1,5 +1,5 @@
-import { testDb } from '@n8n/backend-test-utils';
-import type { User } from '@n8n/db';
+import { testDb } from '@aura/backend-test-utils';
+import type { User } from '@aura/db';
 
 import { createOwner } from '@test-integration/db/users';
 import { setupTestServer } from '@test-integration/utils';

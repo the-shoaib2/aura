@@ -1,8 +1,8 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
 import type express from 'express';
 import { mock, type MockProxy } from 'jest-mock-extended';
-import { BinaryDataService, ErrorReporter } from 'n8n-core';
+import { BinaryDataService, ErrorReporter } from 'aura-core';
 import type {
 	Workflow,
 	INode,
@@ -13,7 +13,7 @@ import type {
 	IWorkflowBase,
 	IRunExecutionData,
 	IExecuteData,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	createDeferredPromise,
 	FORM_NODE_TYPE,
@@ -21,7 +21,7 @@ import {
 	CHAT_TRIGGER_NODE_TYPE,
 	WorkflowConfigurationError,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 import type { Readable } from 'stream';
 import { finished } from 'stream/promises';
 

@@ -1,4 +1,4 @@
-import type { NodeExecuteAfterData } from '@n8n/api-types/push/execution';
+import type { NodeExecuteAfterData } from '@aura/api-types/push/execution';
 import { useSchemaPreviewStore } from '@/features/ndv/runData/schemaPreview.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 

@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "6c90bf81-0c0e-4c5f-9f0c-297f06d9668a",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-400, 400]
 		},
@@ -15,7 +15,7 @@
 			},
 			"id": "2e0011d5-c6a0-4a40-ab8c-9d011cde40d5",
 			"name": "Code",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 1,
 			"position": [-180, 400]
 		},
@@ -26,7 +26,7 @@
 			},
 			"id": "e7eac465-8fe6-498c-9942-ebd47df537c1",
 			"name": "Item Lists",
-			"type": "n8n-nodes-base.splitOut",
+			"type": "aura-nodes-base.splitOut",
 			"typeVersion": 1,
 			"position": [80, 160]
 		},
@@ -38,7 +38,7 @@
 			},
 			"id": "09b7fe15-dbad-4ca6-bf1e-3093139d14e5",
 			"name": "Item Lists1",
-			"type": "n8n-nodes-base.splitOut",
+			"type": "aura-nodes-base.splitOut",
 			"typeVersion": 1,
 			"position": [80, 320]
 		},
@@ -48,16 +48,11 @@
 				"include": "selectedOtherFields",
 				"fieldsToInclude": ["data3"],
 
-
-
-
-
-
 				"options": {}
 			},
 			"id": "7ea63dc7-8141-4233-af47-9894919c7fe4",
 			"name": "Item Lists2",
-			"type": "n8n-nodes-base.splitOut",
+			"type": "aura-nodes-base.splitOut",
 			"typeVersion": 1,
 			"position": [80, 480]
 		},
@@ -70,7 +65,7 @@
 			},
 			"id": "89c3c1b4-9577-480a-931f-3b34450b23cb",
 			"name": "Item Lists3",
-			"type": "n8n-nodes-base.splitOut",
+			"type": "aura-nodes-base.splitOut",
 			"typeVersion": 1,
 			"position": [80, 660]
 		}

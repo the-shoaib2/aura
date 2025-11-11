@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Third-Party License Generator for n8n
+ * Third-Party License Generator for aura
  *
  * Generates THIRD_PARTY_LICENSES.md by scanning all dependencies using license-checker,
  * extracting license information, and formatting it into a markdown report.
@@ -21,7 +21,14 @@ const rootDir = path.join(scriptDir, '..');
 const config = {
 	tempLicenseFile: 'licenses.json',
 	outputFile: 'THIRD_PARTY_LICENSES.md',
-	invalidLicenseFiles: ['readme.md', 'readme.txt', 'readme', 'package.json', 'changelog.md', 'history.md'],
+	invalidLicenseFiles: [
+		'readme.md',
+		'readme.txt',
+		'readme',
+		'package.json',
+		'changelog.md',
+		'history.md',
+	],
 	validLicenseFiles: ['license', 'licence', 'copying', 'copyright', 'unlicense'],
 	paths: {
 		root: rootDir,
@@ -33,7 +40,6 @@ const config = {
 };
 
 // #region ===== Helper Functions =====
-
 
 async function generateLicenseData() {
 	echo(chalk.yellow('📊 Running license-checker...'));
@@ -73,14 +79,14 @@ function parsePackageKey(packageKey) {
 }
 
 function shouldExcludePackage(packageName) {
-	const n8nPatterns = [
-		/^@n8n\//,      // @n8n/package
-		/^@n8n_/,       // @n8n_io/package  
-		/^n8n-/,        // n8n-package
-		/-n8n/          // package-n8n
+	const auraPatterns = [
+		/^@aura\//, // @aura/package
+		/^@aura_/, // @aura_io/package
+		/^aura-/, // aura-package
+		/-aura/, // package-aura
 	];
-	
-	return n8nPatterns.some(pattern => pattern.test(packageName));
+
+	return auraPatterns.some((pattern) => pattern.test(packageName));
 }
 
 function isValidLicenseFile(filePath) {
@@ -89,8 +95,8 @@ function isValidLicenseFile(filePath) {
 	const fileName = path.basename(filePath).toLowerCase();
 
 	// Exclude non-license files
-	const isInvalidFile = config.invalidLicenseFiles.some((invalid) => 
-		fileName === invalid || fileName.endsWith(invalid)
+	const isInvalidFile = config.invalidLicenseFiles.some(
+		(invalid) => fileName === invalid || fileName.endsWith(invalid),
 	);
 	if (isInvalidFile) return false;
 
@@ -100,11 +106,14 @@ function isValidLicenseFile(filePath) {
 
 function getFallbackLicenseText(licenseType, packages = []) {
 	const fallbacks = {
-		'CC-BY-3.0': 'Creative Commons Attribution 3.0 Unported License\n\nFull license text available at: https://creativecommons.org/licenses/by/3.0/legalcode',
-		'LGPL-3.0-or-later': 'GNU Lesser General Public License v3.0 or later\n\nFull license text available at: https://www.gnu.org/licenses/lgpl-3.0.html',
-		'PSF': 'Python Software Foundation License\n\nFull license text available at: https://docs.python.org/3/license.html',
-		'(MIT OR CC0-1.0)': 'Licensed under MIT OR CC0-1.0\n\nMIT License full text available at: https://opensource.org/licenses/MIT\nCC0 1.0 Universal full text available at: https://creativecommons.org/publicdomain/zero/1.0/legalcode',
-		'UNKNOWN': `License information not available for the following packages:\n${packages.map(pkg => `- ${pkg.name} ${pkg.version}`).join('\n')}\n\nPlease check individual package repositories for license details.`,
+		'CC-BY-3.0':
+			'Creative Commons Attribution 3.0 Unported License\n\nFull license text available at: https://creativecommons.org/licenses/by/3.0/legalcode',
+		'LGPL-3.0-or-later':
+			'GNU Lesser General Public License v3.0 or later\n\nFull license text available at: https://www.gnu.org/licenses/lgpl-3.0.html',
+		PSF: 'Python Software Foundation License\n\nFull license text available at: https://docs.python.org/3/license.html',
+		'(MIT OR CC0-1.0)':
+			'Licensed under MIT OR CC0-1.0\n\nMIT License full text available at: https://opensource.org/licenses/MIT\nCC0 1.0 Universal full text available at: https://creativecommons.org/publicdomain/zero/1.0/legalcode',
+		UNKNOWN: `License information not available for the following packages:\n${packages.map((pkg) => `- ${pkg.name} ${pkg.version}`).join('\n')}\n\nPlease check individual package repositories for license details.`,
 	};
 
 	// Check for custom licenses that start with "Custom:"
@@ -116,11 +125,7 @@ function getFallbackLicenseText(licenseType, packages = []) {
 }
 
 function cleanLicenseText(text) {
-	return text
-		.replaceAll('\\n', '\n')
-		.replaceAll('\\"', '"')
-		.replaceAll('\r\n', '\n')
-		.trim();
+	return text.replaceAll('\\n', '\n').replaceAll('\\"', '"').replaceAll('\r\n', '\n').trim();
 }
 
 function addPackageToGroup(licenseGroups, licenseType, packageInfo) {
@@ -134,8 +139,12 @@ function processLicenseText(licenseTexts, licenseType, pkg) {
 	if (!licenseTexts.has(licenseType)) {
 		licenseTexts.set(licenseType, null);
 	}
-	
-	if (!licenseTexts.get(licenseType) && pkg.licenseText?.trim() && isValidLicenseFile(pkg.licenseFile)) {
+
+	if (
+		!licenseTexts.get(licenseType) &&
+		pkg.licenseText?.trim() &&
+		isValidLicenseFile(pkg.licenseFile)
+	) {
 		licenseTexts.set(licenseType, cleanLicenseText(pkg.licenseText));
 	}
 }
@@ -143,7 +152,7 @@ function processLicenseText(licenseTexts, licenseType, pkg) {
 function applyFallbackLicenseTexts(licenseTexts, licenseGroups) {
 	const missingTexts = [];
 	const fallbacksUsed = [];
-	
+
 	for (const [licenseType, text] of licenseTexts.entries()) {
 		if (!text || !text.trim()) {
 			const packagesForLicense = licenseGroups.get(licenseType) || [];
@@ -161,12 +170,14 @@ function applyFallbackLicenseTexts(licenseTexts, licenseGroups) {
 }
 
 function logProcessingResults(processedCount, licenseGroupCount, fallbacksUsed, missingTexts) {
-	echo(chalk.cyan(`📦 Processed ${processedCount} packages in ${licenseGroupCount} license groups`));
-	
+	echo(
+		chalk.cyan(`📦 Processed ${processedCount} packages in ${licenseGroupCount} license groups`),
+	);
+
 	if (fallbacksUsed.length > 0) {
 		echo(chalk.blue(`ℹ️  Used fallback texts for: ${fallbacksUsed.join(', ')}`));
 	}
-	
+
 	if (missingTexts.length > 0) {
 		echo(chalk.yellow(`⚠️  Still missing license texts for: ${missingTexts.join(', ')}`));
 	} else {
@@ -232,7 +243,7 @@ function createPackageSection(licenseType, packages) {
 
 function createLicenseTextSection(licenseType, licenseText) {
 	let section = `## ${licenseType} License Text\n\n`;
-	
+
 	if (licenseText && licenseText.trim()) {
 		section += `\`\`\`\n${licenseText}\n\`\`\`\n\n`;
 	} else {
@@ -245,9 +256,9 @@ function createLicenseTextSection(licenseType, licenseText) {
 function createDocumentHeader() {
 	return `# Third-Party Licenses
 
-This file lists third-party software components included in n8n and their respective license terms.
+This file lists third-party software components included in aura and their respective license terms.
 
-The n8n software includes open source packages, libraries, and modules, each of which is subject to its own license. The following sections list those dependencies and provide required attributions and license texts.
+The aura software includes open source packages, libraries, and modules, each of which is subject to its own license. The following sections list those dependencies and provide required attributions and license texts.
 
 `;
 }
@@ -267,7 +278,7 @@ function buildMarkdownDocument(packages) {
 
 	// Second: Add license texts section
 	document += '# License Texts\n\n';
-	
+
 	for (const licenseType of sortedLicenseTypes) {
 		const licenseText = licenseTexts.get(licenseType);
 		document += createLicenseTextSection(licenseType, licenseText);
@@ -279,7 +290,7 @@ function buildMarkdownDocument(packages) {
 // #endregion ===== Document Generation =====
 
 async function generateThirdPartyLicenses() {
-	echo(chalk.blue('🚀 Generating third-party licenses for n8n...'));
+	echo(chalk.blue('🚀 Generating third-party licenses for aura...'));
 
 	try {
 		const licensesJsonPath = await generateLicenseData();

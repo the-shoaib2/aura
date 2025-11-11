@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref, computed, watch } from 'vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useToast } from '@/app/composables/useToast';
 import type { IWorkflowDb } from '@/Interface';
-import type { IWorkflowTemplate } from '@n8n/rest-api-client/api/templates';
+import type { IWorkflowTemplate } from '@aura/rest-api-client/api/templates';
 import { useExecutionsStore } from '@/features/execution/executions/executions.store';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 
-import { N8nLoading, N8nSpinner } from '@n8n/design-system';
+import { N8nLoading, N8nSpinner } from '@aura/design-system';
 const props = withDefaults(
 	defineProps<{
 		loading?: boolean;
@@ -142,7 +142,7 @@ const receiveMessage = ({ data }: MessageEvent) => {
 	}
 	try {
 		const json = JSON.parse(data);
-		if (json.command === 'n8nReady') {
+		if (json.command === 'auraReady') {
 			onReady();
 		} else if (json.command === 'openNDV') {
 			onOpenNDV();

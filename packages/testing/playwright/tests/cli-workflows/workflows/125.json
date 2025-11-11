@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "17ac71e5-e7ee-46e2-bc71-65bcfb5d4a52"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Postgres",
-			"type": "n8n-nodes-base.postgres",
+			"type": "aura-nodes-base.postgres",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -50,7 +50,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 300],
 			"id": "b64bd579-b602-4ec5-8fcb-3e49514517a7"
@@ -63,7 +63,7 @@
 				"additionalFields": {}
 			},
 			"name": "Postgres1",
-			"type": "n8n-nodes-base.postgres",
+			"type": "aura-nodes-base.postgres",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"credentials": {
@@ -88,7 +88,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [700, 300],
 			"id": "a6b9b7f5-453f-494d-b1db-7f4745f81233"
@@ -100,7 +100,7 @@
 				"additionalFields": {}
 			},
 			"name": "Postgres2",
-			"type": "n8n-nodes-base.postgres",
+			"type": "aura-nodes-base.postgres",
 			"typeVersion": 1,
 			"position": [1000, 300],
 			"credentials": {
@@ -120,7 +120,7 @@
 				}
 			},
 			"name": "Postgres3",
-			"type": "n8n-nodes-base.postgres",
+			"type": "aura-nodes-base.postgres",
 			"typeVersion": 1,
 			"position": [1150, 300],
 			"credentials": {

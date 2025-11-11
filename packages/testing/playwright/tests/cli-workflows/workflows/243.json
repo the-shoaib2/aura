@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "35b58a63-6835-4724-807f-47e24215f4c2",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [840, 900]
 		},
@@ -21,7 +21,7 @@
 			},
 			"id": "9dd9723f-2e8f-463b-b88e-20ba4298f538",
 			"name": "OpenAI Chat Model2",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1060, 1040],
 			"credentials": {
@@ -36,7 +36,7 @@
 			"parameters": {},
 			"id": "223ed022-94bd-4b31-bf12-5c79d9b635a9",
 			"name": "Calculator2",
-			"type": "@n8n/n8n-nodes-langchain.toolCalculator",
+			"type": "@aura/aura-nodes-langchain.toolCalculator",
 			"typeVersion": 1,
 			"position": [1220, 1060]
 		},
@@ -62,7 +62,7 @@
 			},
 			"id": "473e1db4-8d90-49e3-99ae-444d7c5d8cf0",
 			"name": "Edit Fields2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1380, 900]
 		},
@@ -77,7 +77,7 @@
 			},
 			"id": "3fa65db7-000e-427f-aab9-14af134d0d78",
 			"name": "AI Agent2",
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.4,
 			"position": [1040, 900]
 		}

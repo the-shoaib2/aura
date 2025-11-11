@@ -1,7 +1,7 @@
-import { defineBackendExtension } from '@n8n/extension-sdk/backend';
+import { defineBackendExtension } from '@aura/extension-sdk/backend';
 
 export default defineBackendExtension({
-	setup(n8n) {
-		console.log(n8n);
+	setup(aura) {
+		console.log(aura);
 	},
 });

@@ -5,8 +5,8 @@ import type {
 	IN8nHttpFullResponse,
 	INodeExecutionData,
 	NodeApiError,
-} from 'n8n-workflow';
-import { jsonParse, NodeOperationError, OperationalError } from 'n8n-workflow';
+} from 'workflow';
+import { jsonParse, NodeOperationError, OperationalError } from 'workflow';
 
 import { HeaderConstants } from './constants';
 import { ErrorMap } from './errorHandler';

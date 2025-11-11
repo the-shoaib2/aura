@@ -1,10 +1,10 @@
-import { createWorkflow, testDb, mockInstance } from '@n8n/backend-test-utils';
-import { ExecutionRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createWorkflow, testDb, mockInstance } from '@aura/backend-test-utils';
+import { ExecutionRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { stringify } from 'flatted';
 import { mock } from 'jest-mock-extended';
-import { InstanceSettings } from 'n8n-core';
-import { randomInt } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { randomInt } from 'workflow';
 import assert from 'node:assert';
 
 import { ARTIFICIAL_TASK_DATA } from '@/constants';
@@ -283,7 +283,7 @@ describe('ExecutionRecoveryService', () => {
 				 */
 
 				const startOfLastNodeRun = messages
-					.find((m) => m.eventName === 'n8n.node.started' && m.payload.nodeName === 'DebugHelper')
+					.find((m) => m.eventName === 'aura.node.started' && m.payload.nodeName === 'DebugHelper')
 					?.ts.toJSDate();
 
 				expect(amendedExecution).toEqual(
@@ -340,12 +340,12 @@ describe('ExecutionRecoveryService', () => {
 				const messages = setupMessages(execution.id, workflow.name);
 				messages.push(
 					new EventMessageNode({
-						eventName: 'n8n.node.finished',
+						eventName: 'aura.node.finished',
 						payload: {
 							executionId: execution.id,
 							workflowName: workflow.name,
 							nodeName: 'DebugHelper',
-							nodeType: 'n8n-nodes-base.debugHelper',
+							nodeType: 'aura-nodes-base.debugHelper',
 							nodeId: '123',
 						},
 					}),
@@ -363,7 +363,7 @@ describe('ExecutionRecoveryService', () => {
 				 * Assert
 				 */
 				const endOfLastNoderun = messages
-					.find((m) => m.eventName === 'n8n.node.finished' && m.payload.nodeName === 'DebugHelper')
+					.find((m) => m.eventName === 'aura.node.finished' && m.payload.nodeName === 'DebugHelper')
 					?.ts.toJSDate();
 
 				expect(amendedExecution).toEqual(

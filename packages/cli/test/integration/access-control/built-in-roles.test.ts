@@ -5,13 +5,13 @@ import {
 	createWorkflow,
 	randomCredentialPayload,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { Project, User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { Project, User } from '@aura/db';
 import {
 	PROJECT_ADMIN_ROLE_SLUG,
 	PROJECT_EDITOR_ROLE_SLUG,
 	PROJECT_VIEWER_ROLE_SLUG,
-} from '@n8n/permissions';
+} from '@aura/permissions';
 
 import { UserManagementMailer } from '@/user-management/email';
 
@@ -99,7 +99,7 @@ describe('Built-in Role Matrix Testing', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -191,7 +191,7 @@ describe('Built-in Role Matrix Testing', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -293,7 +293,7 @@ describe('Built-in Role Matrix Testing', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},
@@ -362,7 +362,7 @@ describe('Built-in Role Matrix Testing', () => {
 						id: 'uuid-1234',
 						parameters: {},
 						name: 'Start',
-						type: 'n8n-nodes-base.start',
+						type: 'aura-nodes-base.start',
 						typeVersion: 1,
 						position: [240, 300],
 					},

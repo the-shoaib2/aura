@@ -5,19 +5,19 @@ import {
 	getWorkflowById,
 	newWorkflow,
 	testDb,
-} from '@n8n/backend-test-utils';
-import { DatabaseConfig } from '@n8n/config';
-import type { Project, User } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import { DatabaseConfig } from '@aura/config';
+import type { Project, User } from '@aura/db';
 import {
 	TagEntity,
 	CredentialsRepository,
 	TagRepository,
 	SharedWorkflowRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import type { ActiveWorkflowManager } from '@/active-workflow-manager';
@@ -133,16 +133,16 @@ describe('ImportService', () => {
 
 	test('should leave intact new-format credentials', async () => {
 		const credential = {
-			n8nApi: { id: '123', name: 'n8n API' },
+			auraApi: { id: '123', name: 'aura API' },
 		};
 
 		const nodes: INode[] = [
 			{
 				id: uuid(),
-				name: 'n8n',
+				name: 'aura',
 				parameters: {},
 				position: [0, 0],
-				type: 'n8n-nodes-base.n8n',
+				type: 'aura-nodes-base.aura',
 				typeVersion: 1,
 				credentials: credential,
 			},

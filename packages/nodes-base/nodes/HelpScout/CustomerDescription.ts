@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const customerOperations: INodeProperties[] = [
 	{
@@ -62,7 +62,7 @@ export const customerFields: INodeProperties[] = [
 				resource: ['customer'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+		// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 		description:
 			'By default the response only contain the ID to resource. If this option gets activated, it will resolve the data automatically.',
 	},
@@ -206,7 +206,7 @@ export const customerFields: INodeProperties[] = [
 						name: 'country',
 						type: 'options',
 						description:
-							'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+							'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getCountriesCodes',
 						},

@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "f53b691d-beaa-4d60-a9da-d7380bc4c69a",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-460, 80]
 		},
@@ -20,7 +20,7 @@
 				"hasOutputParser": true,
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.8,
 			"position": [-140, 80],
 			"id": "2ae90e1d-1333-4988-ac49-5e7e8f3026ff",
@@ -30,7 +30,7 @@
 			"parameters": {
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+			"type": "@aura/aura-nodes-langchain.outputParserAutofixing",
 			"typeVersion": 1,
 			"position": [100, 360],
 			"id": "7e2efbb9-41b2-4c6a-a811-3a4d62181ff5",
@@ -41,7 +41,7 @@
 				"schemaType": "manual",
 				"inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"resolution\": {\n      \"type\": \"string\",\n      \"description\": \"The customer-facing resolution or response that should be communicated to the customer\"\n    },\n    \"reasoning\": {\n      \"type\": \"string\",\n      \"description\": \"Detailed explanation of the solution and reasoning for internal use\"\n    }\n  },\n  \"additionalProperties\": true,\n  \"required\": [\"resolution\", \"reasoning\"]\n}"
 			},
-			"type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+			"type": "@aura/aura-nodes-langchain.outputParserStructured",
 			"typeVersion": 1.2,
 			"position": [240, 500],
 			"id": "6405c53c-46c2-4c64-84c7-a7db2b127ca6",
@@ -52,7 +52,7 @@
 				"sessionIdType": "customKey",
 				"sessionKey": "memory7"
 			},
-			"type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+			"type": "@aura/aura-nodes-langchain.memoryBufferWindow",
 			"typeVersion": 1.3,
 			"position": [-120, 360],
 			"id": "0b93b732-9529-45c6-a914-83c500ee3a36",
@@ -67,7 +67,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1.2,
 			"position": [40, 500],
 			"id": "3ebb149d-a83d-4ec1-8e79-e67f87fc5091",
@@ -86,7 +86,7 @@
 				"hasOutputParser": true,
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.agent",
+			"type": "@aura/aura-nodes-langchain.agent",
 			"typeVersion": 1.8,
 			"position": [260, 80],
 			"id": "8237c156-5ec1-4bf9-84a1-ad408d3b6152",
@@ -100,7 +100,7 @@
 			},
 			"id": "fb77496b-6d07-4a3c-90a8-bb8788a5f588",
 			"name": "Sticky Note4",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [-300, -40]
 		},
@@ -114,7 +114,7 @@
 				},
 				"options": {}
 			},
-			"type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+			"type": "@aura/aura-nodes-langchain.lmChatAnthropic",
 			"typeVersion": 1.3,
 			"position": [-340, 360],
 			"id": "b32382ad-d5c6-4b80-b315-5ba9ce48c994",

@@ -1,5 +1,5 @@
 import { useBeforeUnload } from '@/app/composables/useBeforeUnload';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { VIEWS } from '@/app/constants';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useCanvasStore } from '@/app/stores/canvas.store';

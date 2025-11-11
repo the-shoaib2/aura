@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "c685e7cb-90e2-42d3-87d4-c8f8143c5a8c"
@@ -27,7 +27,7 @@
 				"additionalFields": {}
 			},
 			"name": "PayPal",
-			"type": "n8n-nodes-base.payPal",
+			"type": "aura-nodes-base.payPal",
 			"typeVersion": 1,
 			"position": [450, 200],
 			"credentials": {
@@ -45,7 +45,7 @@
 				"limit": 1
 			},
 			"name": "PayPal1",
-			"type": "n8n-nodes-base.payPal",
+			"type": "aura-nodes-base.payPal",
 			"typeVersion": 1,
 			"position": [600, 200],
 			"credentials": {
@@ -63,7 +63,7 @@
 				"payoutItemId": "={{$node[\"PayPal1\"].json[\"payout_item_id\"]}}"
 			},
 			"name": "PayPal2",
-			"type": "n8n-nodes-base.payPal",
+			"type": "aura-nodes-base.payPal",
 			"typeVersion": 1,
 			"position": [750, 250],
 			"credentials": {
@@ -82,7 +82,7 @@
 				"payoutItemId": "={{$node[\"PayPal1\"].json[\"payout_item_id\"]}}"
 			},
 			"name": "PayPal3",
-			"type": "n8n-nodes-base.payPal",
+			"type": "aura-nodes-base.payPal",
 			"typeVersion": 1,
 			"position": [900, 250],
 			"credentials": {

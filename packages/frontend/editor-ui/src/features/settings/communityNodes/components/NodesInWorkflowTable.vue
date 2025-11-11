@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue';
-import type { TableHeader } from '@n8n/design-system/components/N8nDataTableServer';
+import type { TableHeader } from '@aura/design-system/components/N8nDataTableServer';
 import type { RouteLocationRaw } from 'vue-router';
 import { VIEWS } from '@/app/constants';
 import type { WorkflowResource } from '@/Interface';
 import ProjectCardBadge from '@/features/collaboration/projects/components/ProjectCardBadge.vue';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { ResourceType } from '@/features/collaboration/projects/projects.utils';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 
-import { N8nDataTableServer, N8nText } from '@n8n/design-system';
+import { N8nDataTableServer, N8nText } from '@aura/design-system';
 type WorkflowData = WorkflowResource[];
 
 type WorkflowDataItem = WorkflowData[number];
@@ -101,7 +101,7 @@ const getWorkflowLink = (workflowId: string): RouteLocationRaw => ({
 
 <style scoped>
 /* Use deep selector to access internal scroll container in N8nDataTableServer */
-:deep(.n8n-data-table-server-wrapper .table-scroll) {
+:deep(.aura-data-table-server-wrapper .table-scroll) {
 	max-height: 275px;
 	overflow-y: auto;
 	overflow-x: hidden;

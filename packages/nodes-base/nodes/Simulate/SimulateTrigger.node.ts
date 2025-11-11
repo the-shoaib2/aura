@@ -1,4 +1,4 @@
-import { sleep, NodeOperationError, jsonParse, NodeConnectionTypes } from 'n8n-workflow';
+import { sleep, NodeOperationError, jsonParse, NodeConnectionTypes } from 'workflow';
 import type {
 	IDataObject,
 	ITriggerFunctions,
@@ -6,7 +6,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	ITriggerResponse,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	executionDurationProperty,
@@ -33,7 +33,7 @@ export class SimulateTrigger implements INodeType {
 		inputs: [],
 		outputs: [NodeConnectionTypes.Main],
 		properties: [
-			{ ...iconSelector, default: 'n8n-nodes-base.manualTrigger' },
+			{ ...iconSelector, default: 'aura-nodes-base.manualTrigger' },
 			subtitleProperty,
 			{ ...jsonOutputProperty, displayName: 'Output (JSON)' },
 			executionDurationProperty,

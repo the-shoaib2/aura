@@ -1,5 +1,5 @@
-import { GlobalConfig } from '@n8n/config';
-import { Container, Service } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Container, Service } from '@aura/di';
 
 import type {
 	DisconnectAnalyzer,

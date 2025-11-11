@@ -2,11 +2,11 @@ import { computed, reactive } from 'vue';
 import { defineStore } from 'pinia';
 import { EnterpriseEditionFeature } from '@/app/constants';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import * as vcApi from './sourceControl.api';
 import type { SourceControlPreferences, SshKeyTypes } from './sourceControl.types';
 import type { TupleToUnion } from '@/app/utils/typeHelpers';
-import type { SourceControlledFile } from '@n8n/api-types';
+import type { SourceControlledFile } from '@aura/api-types';
 
 export const useSourceControlStore = defineStore('sourceControl', () => {
 	const rootStore = useRootStore();

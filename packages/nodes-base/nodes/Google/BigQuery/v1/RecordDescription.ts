@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const recordOperations: INodeProperties[] = [
 	{
@@ -49,7 +49,7 @@ export const recordFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the project to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the project to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Dataset Name or ID',
@@ -68,7 +68,7 @@ export const recordFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the dataset to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the dataset to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Table Name or ID',
@@ -87,7 +87,7 @@ export const recordFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the table to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the table to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Columns',
@@ -169,7 +169,7 @@ export const recordFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the project to retrieve all rows from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the project to retrieve all rows from. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Dataset Name or ID',
@@ -188,7 +188,7 @@ export const recordFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the dataset to retrieve all rows from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the dataset to retrieve all rows from. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Table Name or ID',
@@ -207,7 +207,7 @@ export const recordFields: INodeProperties[] = [
 		},
 		default: '',
 		description:
-			'ID of the table to retrieve all rows from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the table to retrieve all rows from. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Return All',

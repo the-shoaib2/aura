@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "5363525f-2065-4132-82cc-808941e51d47",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-380, -40]
 		},
@@ -23,7 +23,7 @@
 			},
 			"id": "9e6fa15e-f6d8-4764-815b-832ff00c531c",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [-80, -40]
 		},
@@ -42,7 +42,7 @@
 			},
 			"id": "4893a819-9f21-446a-b89f-3079d87d5f40",
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [140, -40]
 		},
@@ -61,7 +61,7 @@
 			},
 			"id": "8e6b36ca-4f50-4a51-b42f-8098d71248bf",
 			"name": "Set2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [540, -40]
 		},
@@ -73,7 +73,7 @@
 			},
 			"id": "12610911-6841-486e-924a-af66cececdca",
 			"name": "Sticky Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [-146, -120]
 		},
@@ -85,7 +85,7 @@
 			},
 			"id": "e5896250-3e0f-47ac-b47f-9f24bac4f52f",
 			"name": "Sticky Note1",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [420, -120]
 		}

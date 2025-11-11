@@ -1,8 +1,8 @@
 import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import * as provisioningApi from '@n8n/rest-api-client/api/provisioning';
-import type { ProvisioningConfig } from '@n8n/rest-api-client/api/provisioning';
+import { useRootStore } from '@aura/stores/useRootStore';
+import * as provisioningApi from '@aura/rest-api-client/api/provisioning';
+import type { ProvisioningConfig } from '@aura/rest-api-client/api/provisioning';
 
 export const useProvisioningStore = defineStore('provisioning', () => {
 	const rootStore = useRootStore();

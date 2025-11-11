@@ -4,16 +4,16 @@ import {
 	getAllProjectRelations,
 	createWorkflow,
 	testDb,
-} from '@n8n/backend-test-utils';
-import { SharedWorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/backend-test-utils';
+import { SharedWorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { License } from '@/license';
 import { ProjectService } from '@/services/project.service.ee';
 import { LicenseMocker } from '@test-integration/license';
 
 import { createUser } from './shared/db/users';
-import { LicenseState } from '@n8n/backend-common';
+import { LicenseState } from '@aura/backend-common';
 
 describe('ProjectService', () => {
 	let projectService: ProjectService;

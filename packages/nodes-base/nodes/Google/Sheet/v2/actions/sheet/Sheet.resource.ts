@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import * as append from './append.operation';
 import * as appendOrUpdate from './appendOrUpdate.operation';

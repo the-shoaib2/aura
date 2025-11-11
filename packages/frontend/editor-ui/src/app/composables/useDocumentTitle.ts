@@ -2,7 +2,7 @@ import type { WorkflowTitleStatus } from '@/Interface';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import type { Ref } from 'vue';
 
-const DEFAULT_TITLE = 'n8n';
+const DEFAULT_TITLE = 'aura';
 const DEFAULT_TAGLINE = 'Workflow Automation';
 
 export function useDocumentTitle(windowRef?: Ref<Window | undefined>) {

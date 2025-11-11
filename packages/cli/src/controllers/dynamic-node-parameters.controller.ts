@@ -3,10 +3,10 @@ import {
 	ResourceLocatorRequestDto,
 	ResourceMapperFieldsRequestDto,
 	ActionResultRequestDto,
-} from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Post, RestController, Body } from '@n8n/decorators';
-import type { INodePropertyOptions, NodeParameterValueType } from 'n8n-workflow';
+} from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
+import { Post, RestController, Body } from '@aura/decorators';
+import type { INodePropertyOptions, NodeParameterValueType } from 'workflow';
 
 import { DynamicNodeParametersService } from '@/services/dynamic-node-parameters.service';
 import { getBase } from '@/workflow-execute-additional-data';

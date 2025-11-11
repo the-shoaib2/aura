@@ -1,11 +1,11 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { includeInputFields } from './common.descriptions';
 
 export const FormatDateDescription: INodeProperties[] = [
 	{
 		displayName:
-			"You can also do this using an expression, e.g. <code>{{your_date.format('yyyy-MM-dd')}}</code>. <a target='_blank' href='https://docs.n8n.io/code/cookbook/luxon/'>More info</a>",
+			"You can also do this using an expression, e.g. <code>{{your_date.format('yyyy-MM-dd')}}</code>. <a target='_blank' href='https://docs.aura.io/code/cookbook/luxon/'>More info</a>",
 		name: 'notice',
 		type: 'notice',
 		default: '',
@@ -36,7 +36,7 @@ export const FormatDateDescription: INodeProperties[] = [
 				operation: ['formatDate'],
 			},
 		},
-		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+		// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Custom Format',
@@ -126,7 +126,7 @@ export const FormatDateDescription: INodeProperties[] = [
 				type: 'string',
 				default: 'e.g yyyyMMdd',
 				hint: 'Tokens are case sensitive',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
+				// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-id
 				description:
 					'Format in which the input \'Date\' is, it\'s helpful when the format is not recognized automatically. Use those <a href="https://moment.github.io/luxon/#/formatting?id=table-of-tokens&id=table-of-tokens" target="_blank">tokens</a> to define the format.',
 			},

@@ -1,11 +1,6 @@
-import { NodeVM } from '@n8n/vm2';
-import type {
-	IExecuteFunctions,
-	IBinaryData,
-	INodeExecutionData,
-	GenericValue,
-} from 'n8n-workflow';
-import { ApplicationError, NodeOperationError } from 'n8n-workflow';
+import { NodeVM } from '@aura/vm2';
+import type { IExecuteFunctions, IBinaryData, INodeExecutionData, GenericValue } from 'workflow';
+import { ApplicationError, NodeOperationError } from 'workflow';
 
 export const prepareFieldsArray = (fields: string | string[], fieldName = 'Fields') => {
 	if (typeof fields === 'string') {

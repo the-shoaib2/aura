@@ -1,5 +1,5 @@
-import type { IRunExecutionData } from 'n8n-workflow';
-import { LoggerProxy as Logger } from 'n8n-workflow';
+import type { IRunExecutionData } from 'workflow';
+import { LoggerProxy as Logger } from 'workflow';
 
 import { InvalidExecutionMetadataError } from '@/errors/invalid-execution-metadata.error';
 

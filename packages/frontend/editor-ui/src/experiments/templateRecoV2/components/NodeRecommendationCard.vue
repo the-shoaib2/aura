@@ -5,7 +5,7 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { computed, onMounted } from 'vue';
 import { usePersonalizedTemplatesV2Store } from '../stores/templateRecoV2.store';
 import NodeIcon from '@/app/components/NodeIcon.vue';
-import { N8nCard, N8nText } from '@n8n/design-system';
+import { N8nCard, N8nText } from '@aura/design-system';
 
 const props = defineProps<{
 	nodeName: string;

@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import type { IExecuteFunctions, INode } from 'n8n-workflow';
+import type { IExecuteFunctions, INode } from 'workflow';
 
 import { execute } from '../../../v2/actions/sheet/append.operation';
 import type { GoogleSheet } from '../../../v2/helpers/GoogleSheet';

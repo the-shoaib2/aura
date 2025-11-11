@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [300, 350],
 			"id": "4dbeace0-2f7c-4987-b559-b94bf635956b"
@@ -18,7 +18,7 @@
 				"resource": "company"
 			},
 			"name": "ProfitWell",
-			"type": "n8n-nodes-base.profitWell",
+			"type": "aura-nodes-base.profitWell",
 			"typeVersion": 1,
 			"position": [500, 270],
 			"credentials": {
@@ -35,7 +35,7 @@
 				"options": {}
 			},
 			"name": "ProfitWell1",
-			"type": "n8n-nodes-base.profitWell",
+			"type": "aura-nodes-base.profitWell",
 			"typeVersion": 1,
 			"position": [500, 420],
 			"credentials": {
@@ -54,7 +54,7 @@
 				"options": {}
 			},
 			"name": "ProfitWell2",
-			"type": "n8n-nodes-base.profitWell",
+			"type": "aura-nodes-base.profitWell",
 			"typeVersion": 1,
 			"position": [650, 420],
 			"credentials": {

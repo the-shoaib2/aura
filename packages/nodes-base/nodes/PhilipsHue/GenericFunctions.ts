@@ -5,8 +5,8 @@ import type {
 	ILoadOptionsFunctions,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function philipsHueApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions,
@@ -52,14 +52,14 @@ export async function philipsHueApiRequest(
 
 export async function getUser(this: IExecuteFunctions | ILoadOptionsFunctions): Promise<any> {
 	const { whitelist } = await philipsHueApiRequest.call(this, 'GET', '/api/0/config', {}, {});
-	//check if there is a n8n user
+	//check if there is a aura user
 	for (const user of Object.keys(whitelist as IDataObject)) {
-		if (whitelist[user].name === 'n8n') {
+		if (whitelist[user].name === 'aura') {
 			return user;
 		}
 	}
-	// n8n user was not fount then create the user
+	// aura user was not fount then create the user
 	await philipsHueApiRequest.call(this, 'PUT', '/api/0/config', { linkbutton: true });
-	const { success } = await philipsHueApiRequest.call(this, 'POST', '/api', { devicetype: 'n8n' });
+	const { success } = await philipsHueApiRequest.call(this, 'POST', '/api', { devicetype: 'aura' });
 	return success.username;
 }

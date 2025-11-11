@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties, Icon } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties, Icon } from 'workflow';
 
 //https://developers.google.com/youtube/v3/guides/auth/client-side-web-apps#identify-access-scopes
 const scopes = [
@@ -12,7 +12,7 @@ const scopes = [
 export class YouTubeOAuth2Api implements ICredentialType {
 	name = 'youTubeOAuth2Api';
 
-	icon: Icon = 'node:n8n-nodes-base.youTube';
+	icon: Icon = 'node:aura-nodes-base.youTube';
 
 	extends = ['googleOAuth2Api'];
 

@@ -14,7 +14,7 @@ import {
 	validateNodeParameters,
 	assertParamIsNumber,
 	assertParamIsArray,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { Datapoint } from './Beeminder.node.functions';
 import {
@@ -51,7 +51,7 @@ export class Beeminder implements INodeType {
 			name: 'Beeminder',
 		},
 		usableAsTool: true,
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:beeminder.png',
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
@@ -200,7 +200,7 @@ export class Beeminder implements INodeType {
 						resource: ['goal'],
 					},
 				},
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+				// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 				options: [
 					{
 						name: 'Create',
@@ -300,7 +300,7 @@ export class Beeminder implements INodeType {
 				},
 				default: '',
 				description:
-					'The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				required: true,
 			},
 			{
@@ -318,7 +318,7 @@ export class Beeminder implements INodeType {
 				},
 				default: '',
 				description:
-					'The name of the goal to derail. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The name of the goal to derail. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				required: true,
 			},
 			{
@@ -336,7 +336,7 @@ export class Beeminder implements INodeType {
 				},
 				default: '',
 				description:
-					'The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 				required: true,
 			},
 			{
@@ -408,7 +408,7 @@ export class Beeminder implements INodeType {
 						operation: ['create'],
 					},
 				},
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+				// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 				options: [
 					{
 						name: 'Hustler',

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Build n8n Docker image locally
+ * Build Aura Docker image locally
  *
  * This script simulates the CI build process for local testing.
- * Default output: 'n8nio/n8n:local'
+ * Default output: 'auraio/aura:local'
  * Override with IMAGE_BASE_NAME and IMAGE_TAG environment variables.
  */
 
@@ -120,8 +120,8 @@ const isInScriptsDir = path.basename(__dirname) === 'scripts';
 const rootDir = isInScriptsDir ? path.join(__dirname, '..') : __dirname;
 
 const config = {
-	dockerfilePath: path.join(rootDir, 'docker/images/n8n/Dockerfile'),
-	imageBaseName: process.env.IMAGE_BASE_NAME || 'n8nio/n8n',
+	dockerfilePath: path.join(rootDir, 'docker/images/aura/Dockerfile'),
+	imageBaseName: process.env.IMAGE_BASE_NAME || 'auraio/aura',
 	imageTag: process.env.IMAGE_TAG || 'local',
 	buildContext: rootDir,
 	compiledAppDir: path.join(rootDir, 'compiled'),
@@ -135,7 +135,7 @@ const config = {
 const platform = getDockerPlatform();
 
 async function main() {
-	echo(chalk.blue.bold('===== Docker Build for n8n ====='));
+	echo(chalk.blue.bold('===== Docker Build for Aura ====='));
 	echo(`INFO: Image: ${config.fullImageName}`);
 	echo(`INFO: Platform: ${platform}`);
 	echo(chalk.gray('-'.repeat(47)));
@@ -160,7 +160,7 @@ async function main() {
 async function checkPrerequisites() {
 	if (!(await fs.pathExists(config.compiledAppDir))) {
 		echo(chalk.red(`Error: Compiled app directory not found at ${config.compiledAppDir}`));
-		echo(chalk.yellow('Please run build-n8n.mjs first!'));
+		echo(chalk.yellow('Please run the build script first!'));
 		process.exit(1);
 	}
 

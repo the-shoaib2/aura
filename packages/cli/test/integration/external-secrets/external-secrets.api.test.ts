@@ -1,10 +1,10 @@
-import { LicenseState } from '@n8n/backend-common';
-import { mockLogger, mockInstance } from '@n8n/backend-test-utils';
-import { SettingsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { LicenseState } from '@aura/backend-common';
+import { mockLogger, mockInstance } from '@aura/backend-test-utils';
+import { SettingsRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import { Cipher } from 'n8n-core';
-import type { IDataObject } from 'n8n-workflow';
+import { Cipher } from 'aura-core';
+import type { IDataObject } from 'workflow';
 
 import config from '@/config';
 import { CREDENTIAL_BLANKING_VALUE } from '@/constants';

@@ -1,4 +1,4 @@
-import type { TestWebhookDeleted } from '@n8n/api-types/push/webhook';
+import type { TestWebhookDeleted } from '@aura/api-types/push/webhook';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { WorkflowState } from '@/app/composables/useWorkflowState';
 

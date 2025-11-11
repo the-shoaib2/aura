@@ -1,15 +1,15 @@
 import type { VIEWS } from '@/app/constants';
 import { DEFAULT_NEW_WORKFLOW_NAME, PLACEHOLDER_EMPTY_WORKFLOW_ID } from '@/app/constants';
 import { BUILDER_ENABLED_VIEWS } from './constants';
-import { STORES } from '@n8n/stores';
-import type { ChatUI } from '@n8n/design-system/types/assistant';
-import { isToolMessage, isWorkflowUpdatedMessage } from '@n8n/design-system/types/assistant';
+import { STORES } from '@aura/stores';
+import type { ChatUI } from '@aura/design-system/types/assistant';
+import { isToolMessage, isWorkflowUpdatedMessage } from '@aura/design-system/types/assistant';
 import { defineStore } from 'pinia';
 import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useSettingsStore } from '@/app/stores/settings.store';
-import { assert } from '@n8n/utils/assert';
-import { useI18n } from '@n8n/i18n';
+import { assert } from '@aura/utils/assert';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useBuilderMessages } from './composables/useBuilderMessages';
@@ -20,10 +20,10 @@ import {
 	getSessionsMetadata,
 } from '@/features/ai/assistant/assistant.api';
 import { generateMessageId, createBuilderPayload } from './builder.utils';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import type { WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import { useRootStore } from '@aura/stores/useRootStore';
+import type { WorkflowDataUpdate } from '@aura/rest-api-client/api/workflows';
 import pick from 'lodash/pick';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'workflow';
 import { useToast } from '@/app/composables/useToast';
 import { injectWorkflowState } from '@/app/composables/useWorkflowState';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';

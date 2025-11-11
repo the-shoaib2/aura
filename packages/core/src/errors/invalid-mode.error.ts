@@ -1,4 +1,4 @@
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 
 import { CONFIG_MODES } from '../binary-data/utils';
 

@@ -3,9 +3,9 @@ import {
 	getPersonalProject,
 	linkUserToProject,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import type { Project, User, Role } from '@n8n/db';
-import { GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { Project, User, Role } from '@aura/db';
+import { GLOBAL_MEMBER_ROLE, GLOBAL_OWNER_ROLE } from '@aura/db';
 
 import { UserManagementMailer } from '@/user-management/email';
 

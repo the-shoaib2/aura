@@ -1,4 +1,4 @@
-import type { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'workflow';
 
 export class RecordedFutureApi implements ICredentialType {
 	name = 'recordedFutureApi';

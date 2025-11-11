@@ -1,8 +1,8 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
 import type RudderStack from '@rudderstack/rudder-sdk-node';
 import { mock } from 'jest-mock-extended';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 
 import { PostHogClient } from '@/posthog';
 import { Telemetry } from '@/telemetry';
@@ -31,7 +31,7 @@ describe('Telemetry', () => {
 
 		jest.useFakeTimers();
 		jest.setSystemTime(testDateTime);
-		globalConfig.deployment.type = 'n8n-testing';
+		globalConfig.deployment.type = 'aura-testing';
 	});
 
 	afterAll(async () => {
@@ -139,7 +139,7 @@ describe('Telemetry', () => {
 			expect(execBuffer['1'].manual_error?.count).toBe(2);
 			expect(execBuffer['1'].manual_error?.first).toEqual(execTime1);
 
-			payload.error_node_type = 'n8n-nodes-base.node-type';
+			payload.error_node_type = 'aura-nodes-base.node-type';
 			fakeJestSystemTime('2022-01-01 13:00:00');
 			telemetry.trackWorkflowExecution(payload);
 			fakeJestSystemTime('2022-01-01 12:30:00');
@@ -176,8 +176,8 @@ describe('Telemetry', () => {
 			expect(execBuffer['1'].prod_success?.count).toBe(1);
 			expect(execBuffer['1'].prod_success?.first).toEqual(execTime1);
 
-			// successful execution n8n node
-			payload.error_node_type = 'n8n-nodes-base.merge';
+			// successful execution aura node
+			payload.error_node_type = 'aura-nodes-base.merge';
 			payload.workflow_id = '2';
 
 			telemetry.trackWorkflowExecution(payload);
@@ -196,12 +196,12 @@ describe('Telemetry', () => {
 			expect(execBuffer['2'].prod_success?.first).toEqual(execTime1);
 
 			// additional successful execution
-			payload.error_node_type = 'n8n-nodes-base.merge';
+			payload.error_node_type = 'aura-nodes-base.merge';
 			payload.workflow_id = '2';
 
 			telemetry.trackWorkflowExecution(payload);
 
-			payload.error_node_type = 'n8n-nodes-base.merge';
+			payload.error_node_type = 'aura-nodes-base.merge';
 			payload.workflow_id = '1';
 
 			telemetry.trackWorkflowExecution(payload);
@@ -246,9 +246,9 @@ describe('Telemetry', () => {
 			expect(execBuffer['1'].prod_success?.first).toEqual(execTime1);
 			expect(execBuffer['2'].prod_success?.first).toEqual(execTime1);
 
-			// failed execution n8n node
+			// failed execution aura node
 			payload.success = false;
-			payload.error_node_type = 'n8n-nodes-base.merge';
+			payload.error_node_type = 'aura-nodes-base.merge';
 			payload.is_manual = true;
 			telemetry.trackWorkflowExecution(payload);
 
@@ -276,7 +276,7 @@ describe('Telemetry', () => {
 				is_manual: true,
 				success: false,
 				crashed: true,
-				error_node_type: 'n8n-nodes-base.node-type',
+				error_node_type: 'aura-nodes-base.node-type',
 			};
 
 			// Manual crashed execution
@@ -292,7 +292,7 @@ describe('Telemetry', () => {
 			fakeJestSystemTime('2022-01-01 13:30:00');
 			telemetry.trackWorkflowExecution(payload);
 
-			// Should fire "Workflow execution errored" events for manual crashed executions with n8n-nodes-base
+			// Should fire "Workflow execution errored" events for manual crashed executions with aura-nodes-base
 			expect(spyTrack).toHaveBeenCalledTimes(2);
 
 			const execBuffer = telemetry.getCountsBuffer();
@@ -315,7 +315,7 @@ describe('Telemetry', () => {
 				is_manual: true,
 				success: false,
 				crashed: true,
-				error_node_type: 'n8n-nodes-base.node-type',
+				error_node_type: 'aura-nodes-base.node-type',
 			};
 
 			const payload2 = {
@@ -323,7 +323,7 @@ describe('Telemetry', () => {
 				is_manual: false,
 				success: false,
 				crashed: true,
-				error_node_type: 'n8n-nodes-base.another-node',
+				error_node_type: 'aura-nodes-base.another-node',
 			};
 
 			const execTime1 = fakeJestSystemTime('2022-01-01 12:00:00');
@@ -332,7 +332,7 @@ describe('Telemetry', () => {
 			const execTime2 = fakeJestSystemTime('2022-01-01 13:00:00');
 			telemetry.trackWorkflowExecution(payload2);
 
-			// Should fire one "Workflow execution errored" event for manual crashed execution with n8n-nodes-base
+			// Should fire one "Workflow execution errored" event for manual crashed execution with aura-nodes-base
 			expect(spyTrack).toHaveBeenCalledTimes(1);
 
 			const execBuffer = telemetry.getCountsBuffer();

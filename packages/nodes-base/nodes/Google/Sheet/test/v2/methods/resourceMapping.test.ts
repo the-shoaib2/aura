@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import type { ILoadOptionsFunctions, INode } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, INode } from 'workflow';
 
 import { getMappingColumns } from '../../../v2/methods/resourceMapping';
 

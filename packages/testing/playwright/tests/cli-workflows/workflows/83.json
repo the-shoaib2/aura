@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "2abda6cf-70a8-40c3-9446-4f7f8233e54a"
@@ -18,7 +18,7 @@
 				"url": "https://www.producthunt.com/feed"
 			},
 			"name": "RSS Feed Read",
-			"type": "n8n-nodes-base.rssFeedRead",
+			"type": "aura-nodes-base.rssFeedRead",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"id": "46f4bb0e-011d-499c-92bd-7b1e6c814133"
@@ -28,7 +28,7 @@
 				"functionCode": "if(items.length !== 50){\n  throw new Error('Invalid RSS feed result');\n}else{\nreturn [];\n}\n"
 			},
 			"name": "Function",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"notesInFlow": true,

@@ -14,6 +14,6 @@ jobs:
     uses: ./.github/workflows/playwright-test-reusable.yml
     with:
       test-mode: docker-build
-      test-command: pnpm --filter=n8n-playwright test:performance
+      test-command: pnpm --filter=aura-playwright test:performance
       shards: '[1]'
     secrets: inherit

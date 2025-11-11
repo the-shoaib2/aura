@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "f6b07b0d-8721-49de-8c02-39987174e2c4"
@@ -21,7 +21,7 @@
 				}
 			},
 			"name": "Rundeck",
-			"type": "n8n-nodes-base.rundeck",
+			"type": "aura-nodes-base.rundeck",
 			"typeVersion": 1,
 			"position": [550, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"jobid": "4dc20913-c26f-4060-afe9-6bb26dfd1a10"
 			},
 			"name": "Rundeck1",
-			"type": "n8n-nodes-base.rundeck",
+			"type": "aura-nodes-base.rundeck",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {

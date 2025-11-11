@@ -6,8 +6,8 @@ import type {
 	ITriggerResponse,
 	IDeferredPromise,
 	IRun,
-} from 'n8n-workflow';
-import { deepCopy, jsonParse, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { deepCopy, jsonParse, NodeConnectionTypes, NodeOperationError } from 'workflow';
 import type { ConnectionOptions, EventContext, Message, ReceiverOptions } from 'rhea';
 import { create_container } from 'rhea';
 
@@ -48,7 +48,7 @@ export class AmqpTrigger implements INodeType {
 				name: 'clientname',
 				type: 'string',
 				default: '',
-				placeholder: 'e.g. n8n',
+				placeholder: 'e.g. aura',
 				description: 'Leave empty for non-durable topic subscriptions or queues',
 				hint: 'for durable/persistent topic subscriptions',
 			},
@@ -259,7 +259,7 @@ export class AmqpTrigger implements INodeType {
 		};
 		connection.open_receiver(clientOptions);
 
-		// The "closeFunction" function gets called by n8n whenever
+		// The "closeFunction" function gets called by aura whenever
 		// the workflow gets deactivated and can so clean up.
 		async function closeFunction() {
 			container.removeAllListeners('receiver_open');
@@ -267,7 +267,7 @@ export class AmqpTrigger implements INodeType {
 			connection.close();
 		}
 
-		// The "manualTriggerFunction" function gets called by n8n
+		// The "manualTriggerFunction" function gets called by aura
 		// when a user is in the workflow editor and starts the
 		// workflow manually.
 		// for AMQP it doesn't make much sense to wait here but

@@ -7,7 +7,7 @@ import { waitFor } from '@testing-library/vue';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { CONFIRM_PASSWORD_MODAL_KEY } from '@/app/constants';
 import { confirmPasswordEventBus } from '../auth.eventBus';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 
 const renderModal = createComponentRenderer(ConfirmPasswordModal);
 

@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 250],
 			"id": "bf5f914e-83a9-4ad6-a539-d2eda48cf8ea"
@@ -21,7 +21,7 @@
 				"options": {}
 			},
 			"name": "Quick Base",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [450, 90],
 			"credentials": {
@@ -42,7 +42,7 @@
 				}
 			},
 			"name": "Quick Base1",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [590, 240],
 			"credentials": {
@@ -66,7 +66,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [450, 240],
 			"id": "c4613406-ddd6-4f8e-bef9-cf65f1250840"
@@ -83,7 +83,7 @@
 				}
 			},
 			"name": "Quick Base2",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [890, 240],
 			"credentials": {
@@ -107,7 +107,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [740, 240],
 			"id": "72a5922b-dbb9-4e44-85d1-6bb89eef35b0"
@@ -122,7 +122,7 @@
 				}
 			},
 			"name": "Quick Base3",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [1040, 240],
 			"credentials": {
@@ -144,7 +144,7 @@
 				}
 			},
 			"name": "Quick Base4",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [1340, 240],
 			"credentials": {
@@ -168,7 +168,7 @@
 				"options": {}
 			},
 			"name": "Set2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1190, 240],
 			"id": "7df37b96-5357-4f1b-ae79-deaa537b7a79"
@@ -183,7 +183,7 @@
 				"limit": 1
 			},
 			"name": "Quick Base5",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [450, 390],
 			"credentials": {
@@ -201,7 +201,7 @@
 				"reportId": "1"
 			},
 			"name": "Quick Base6",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [600, 390],
 			"credentials": {
@@ -220,7 +220,7 @@
 				"fieldId": "9"
 			},
 			"name": "Quick Base7",
-			"type": "n8n-nodes-base.quickbase",
+			"type": "aura-nodes-base.quickbase",
 			"typeVersion": 1,
 			"position": [450, 540],
 			"credentials": {

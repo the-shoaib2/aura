@@ -1,9 +1,9 @@
-import type { CreateCredentialDto } from '@n8n/api-types';
+import type { CreateCredentialDto } from '@aura/api-types';
 
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 export class CredentialsComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Create a credential through the Credentials list UI.
@@ -15,13 +15,13 @@ export class CredentialsComposer {
 		options?: { name?: string; projectId?: string; closeDialog?: boolean },
 	) {
 		if (options?.projectId) {
-			await this.n8n.navigate.toCredentials(options.projectId);
+			await this.aura.navigate.toCredentials(options.projectId);
 		} else {
-			await this.n8n.navigate.toCredentials();
+			await this.aura.navigate.toCredentials();
 		}
 
-		await this.n8n.credentials.addResource.credential();
-		await this.n8n.credentials.createCredentialFromCredentialPicker(credentialType, fields, {
+		await this.aura.credentials.addResource.credential();
+		await this.aura.credentials.createCredentialFromCredentialPicker(credentialType, fields, {
 			name: options?.name,
 			closeDialog: options?.closeDialog,
 		});
@@ -35,8 +35,8 @@ export class CredentialsComposer {
 		fields: Record<string, string>,
 		options?: { name?: string; closeDialog?: boolean },
 	) {
-		await this.n8n.ndv.clickCreateNewCredential();
-		await this.n8n.canvas.credentialModal.addCredential(fields, {
+		await this.aura.ndv.clickCreateNewCredential();
+		await this.aura.canvas.credentialModal.addCredential(fields, {
 			name: options?.name,
 			closeDialog: options?.closeDialog,
 		});
@@ -46,7 +46,7 @@ export class CredentialsComposer {
 	 * Create a credential directly via API. Returns created credential object.
 	 */
 	async createFromApi(payload: CreateCredentialDto & { projectId?: string }) {
-		return await this.n8n.api.credentials.createCredential(payload);
+		return await this.aura.api.credentials.createCredential(payload);
 	}
 
 	/**
@@ -55,11 +55,11 @@ export class CredentialsComposer {
 	 * @param projectNameOrEmail - The destination project name or user email
 	 */
 	async moveToProject(credentialName: string, projectNameOrEmail: string): Promise<void> {
-		const credentialCard = this.n8n.credentials.cards.getCredential(credentialName);
-		await this.n8n.credentials.cards.openCardActions(credentialCard);
-		await this.n8n.credentials.cards.getCardAction('move').click();
-		await this.n8n.resourceMoveModal.getProjectSelectCredential().locator('input').click();
-		await this.n8n.resourceMoveModal.selectProjectOption(projectNameOrEmail);
-		await this.n8n.resourceMoveModal.clickMoveCredentialButton();
+		const credentialCard = this.aura.credentials.cards.getCredential(credentialName);
+		await this.aura.credentials.cards.openCardActions(credentialCard);
+		await this.aura.credentials.cards.getCardAction('move').click();
+		await this.aura.resourceMoveModal.getProjectSelectCredential().locator('input').click();
+		await this.aura.resourceMoveModal.selectProjectOption(projectNameOrEmail);
+		await this.aura.resourceMoveModal.clickMoveCredentialButton();
 	}
 }

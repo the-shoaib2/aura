@@ -1,4 +1,4 @@
-/* eslint-disable n8n-nodes-base/node-param-display-name-miscased */
+/* eslint-disable aura-nodes-base/node-param-display-name-miscased */
 import { mock } from 'jest-mock-extended';
 import type {
 	AssignmentCollectionValue,
@@ -6,8 +6,8 @@ import type {
 	IExecuteFunctions,
 	INode,
 	INodeExecutionData,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 import { prepareReturnItem } from '../utils';
 import type { SetNodeOptions } from '../interfaces';

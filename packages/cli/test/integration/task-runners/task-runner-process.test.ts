@@ -1,4 +1,4 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 
 import { TaskBrokerWsServer } from '@/task-runners/task-broker/task-broker-ws-server';
 import { TaskBroker } from '@/task-runners/task-broker/task-broker.service';

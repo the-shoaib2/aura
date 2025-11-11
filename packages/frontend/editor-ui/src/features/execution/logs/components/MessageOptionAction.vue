@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useAttrs } from 'vue';
-import { type IconName } from '@n8n/design-system/components/N8nIcon/icons';
+import { type IconName } from '@aura/design-system/components/N8nIcon/icons';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 defineProps<{ label: string; icon: IconName; placement: 'left' | 'right' | 'top' | 'bottom' }>();
 
 const attrs = useAttrs();

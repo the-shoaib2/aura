@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { bannerbearApiRequest, keysToSnakeCase } from './GenericFunctions';
 import { imageFields, imageOperations } from './ImageDescription';
@@ -17,7 +17,7 @@ export class Bannerbear implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Bannerbear',
 		name: 'bannerbear',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:bannerbear.png',
 		group: ['output'],
 		version: 1,

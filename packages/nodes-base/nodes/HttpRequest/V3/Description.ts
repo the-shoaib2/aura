@@ -1,9 +1,9 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { optimizeResponseProperties } from '../shared/optimizeResponse';
 
 const preBuiltAgentsCallout: INodeProperties = {
-	// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+	// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 	displayName: 'Try the HTTP request tool with our pre-built',
 	name: 'preBuiltAgentsCalloutHttpRequest',
 	type: 'callout',
@@ -364,8 +364,8 @@ export const mainProperties: INodeProperties[] = [
 				value: 'json',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				name: 'n8n Binary File',
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
+				name: 'aura Binary File',
 				value: 'binaryData',
 			},
 			{
@@ -397,7 +397,7 @@ export const mainProperties: INodeProperties[] = [
 			},
 		],
 		default: 'keypair',
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-json
+		// eslint-disable-next-line aura-nodes-base/node-param-description-miscased-json
 		description:
 			'The body can be specified using explicit fields (<code>keypair</code>) or using a JavaScript object (<code>json</code>)',
 	},
@@ -435,7 +435,7 @@ export const mainProperties: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						description:
-							'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Value',
@@ -494,8 +494,8 @@ export const mainProperties: INodeProperties[] = [
 						type: 'options',
 						options: [
 							{
-								// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-								name: 'n8n Binary File',
+								// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
+								name: 'aura Binary File',
 								value: 'formBinaryData',
 							},
 							{
@@ -511,7 +511,7 @@ export const mainProperties: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						description:
-							'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Value',
@@ -598,7 +598,7 @@ export const mainProperties: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						description:
-							'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'ID of the field to set. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Value',
@@ -698,7 +698,7 @@ export const mainProperties: INodeProperties[] = [
 									'Input will be split in batches to throttle requests. -1 for disabled. 0 will be treated as 1.',
 							},
 							{
-								// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+								// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 								displayName: 'Batch Interval (ms)',
 								name: 'batchInterval',
 								type: 'number',
@@ -719,7 +719,7 @@ export const mainProperties: INodeProperties[] = [
 				type: 'boolean',
 				noDataExpression: true,
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-ignore-ssl-issues
+				// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-ignore-ssl-issues
 				description:
 					'Whether to download the response even if SSL certificate validation is not possible',
 			},
@@ -736,19 +736,19 @@ export const mainProperties: INodeProperties[] = [
 					{
 						name: 'No Brackets',
 						value: 'repeat',
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-lowercase-first-char
+						// eslint-disable-next-line aura-nodes-base/node-param-description-lowercase-first-char
 						description: 'e.g. foo=bar&foo=qux',
 					},
 					{
 						name: 'Brackets Only',
 						value: 'brackets',
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-lowercase-first-char
+						// eslint-disable-next-line aura-nodes-base/node-param-description-lowercase-first-char
 						description: 'e.g. foo[]=bar&foo[]=qux',
 					},
 					{
 						name: 'Brackets with Indices',
 						value: 'indices',
-						// eslint-disable-next-line n8n-nodes-base/node-param-description-lowercase-first-char
+						// eslint-disable-next-line aura-nodes-base/node-param-description-lowercase-first-char
 						description: 'e.g. foo[0]=bar&foo[1]=qux',
 					},
 				],
@@ -966,7 +966,7 @@ export const mainProperties: INodeProperties[] = [
 							},
 							{
 								displayName:
-									'Use the $response variables to access the data of the previous response. Refer to the <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/#pagination/?utm_source=n8n_app&utm_medium=node_settings_modal-credential_link&utm_campaign=n8n-nodes-base.httprequest" target="_blank">docs</a> for more info about pagination/',
+									'Use the $response variables to access the data of the previous response. Refer to the <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.httprequest/#pagination/?utm_source=aura_app&utm_medium=node_settings_modal-credential_link&utm_campaign=aura-nodes-base.httprequest" target="_blank">docs</a> for more info about pagination/',
 								name: 'webhookNotice',
 								displayOptions: {
 									hide: {
@@ -987,7 +987,7 @@ export const mainProperties: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'Should evaluate to the URL of the next page. <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/#pagination" target="_blank">More info</a>.',
+									'Should evaluate to the URL of the next page. <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.httprequest/#pagination" target="_blank">More info</a>.',
 							},
 							{
 								displayName: 'Parameters',
@@ -1111,7 +1111,7 @@ export const mainProperties: INodeProperties[] = [
 								},
 								default: '',
 								description:
-									'Should evaluate to true when pagination is complete. <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/#pagination" target="_blank">More info</a>.',
+									'Should evaluate to true when pagination is complete. <a href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.httprequest/#pagination" target="_blank">More info</a>.',
 							},
 							{
 								displayName: 'Limit Pages Fetched',
@@ -1145,7 +1145,7 @@ export const mainProperties: INodeProperties[] = [
 								description: 'Maximum amount of request to be make',
 							},
 							{
-								// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+								// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 								displayName: 'Interval Between Requests (ms)',
 								name: 'requestInterval',
 								type: 'number',

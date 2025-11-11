@@ -1,4 +1,4 @@
-import { randomEmail, randomName, randomValidPassword } from '@n8n/backend-test-utils';
+import { randomEmail, randomName, randomValidPassword } from '@aura/backend-test-utils';
 import {
 	AuthIdentity,
 	AuthIdentityRepository,
@@ -7,17 +7,17 @@ import {
 	GLOBAL_OWNER_ROLE,
 	type Role,
 	UserRepository,
-} from '@n8n/db';
-import { type User } from '@n8n/db';
-import { Container } from '@n8n/di';
-import type { ApiKeyScope } from '@n8n/permissions';
-import { getApiKeyScopesForRole } from '@n8n/permissions';
+} from '@aura/db';
+import { type User } from '@aura/db';
+import { Container } from '@aura/di';
+import type { ApiKeyScope } from '@aura/permissions';
+import { getApiKeyScopesForRole } from '@aura/permissions';
 import { hash } from 'bcryptjs';
 
 import { MfaService } from '@/mfa/mfa.service';
 import { TOTPService } from '@/mfa/totp.service';
 import { PublicApiKeyService } from '@/services/public-api-key.service';
-import type { DeepPartial } from '@n8n/typeorm';
+import type { DeepPartial } from '@aura/typeorm';
 
 type ApiKeyOptions = {
 	expiresAt?: number | null;

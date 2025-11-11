@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 const resource = ['project'];
 
@@ -302,7 +302,7 @@ export const projectFields: INodeProperties[] = [
 				name: 'cost_budget_include_expenses',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'Option for budget of Total Project Fees projects to include tracked expenses. Defaults to false.',
 			},
@@ -478,7 +478,7 @@ export const projectFields: INodeProperties[] = [
 				name: 'cost_budget_include_expenses',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description:
 					'Option for budget of Total Project Fees projects to include tracked expenses. Defaults to false.',
 			},

@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 import { EditFieldsNode } from '../../pages/nodes/EditFieldsNode';
 
 const cowBase64 =
@@ -9,19 +9,19 @@ const cowBase64 =
 
 test.describe('Webhook Trigger node', () => {
 	test.describe.configure({ mode: 'serial' });
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.start.fromBlankCanvas();
+	test.beforeEach(async ({ aura }) => {
+		await aura.start.fromBlankCanvas();
 	});
 
 	const HTTP_METHODS = ['GET', 'POST', 'DELETE', 'HEAD', 'PATCH', 'PUT'];
 	for (const httpMethod of HTTP_METHODS) {
-		test(`should listen for a ${httpMethod} request`, async ({ n8n }) => {
+		test(`should listen for a ${httpMethod} request`, async ({ aura }) => {
 			const webhookPath = nanoid();
-			await n8n.canvas.addNode('Webhook');
-			await n8n.ndv.setupHelper.webhook({ httpMethod, path: webhookPath });
-			await n8n.ndv.execute();
-			await expect(n8n.ndv.getWebhookTestEvent()).toBeVisible();
-			const response = await n8n.api.request.fetch(`/webhook-test/${webhookPath}`, {
+			await aura.canvas.addNode('Webhook');
+			await aura.ndv.setupHelper.webhook({ httpMethod, path: webhookPath });
+			await aura.ndv.execute();
+			await expect(aura.ndv.getWebhookTestEvent()).toBeVisible();
+			const response = await aura.api.request.fetch(`/webhook-test/${webhookPath}`, {
 				method: httpMethod,
 			});
 			expect(response.ok()).toBe(true);
@@ -29,23 +29,23 @@ test.describe('Webhook Trigger node', () => {
 	}
 
 	test('should listen for a GET request and respond with Respond to Webhook node', async ({
-		n8n,
+		aura,
 	}) => {
 		const webhookPath = nanoid();
 
-		await n8n.canvas.addNode('Webhook');
-		await n8n.ndv.setupHelper.webhook({
+		await aura.canvas.addNode('Webhook');
+		await aura.ndv.setupHelper.webhook({
 			httpMethod: 'GET',
 			path: webhookPath,
 			responseMode: "Using 'Respond to Webhook' Node",
 		});
-		await n8n.ndv.close();
-		await addEditFieldsNode(n8n);
-		await n8n.canvas.addNode('Respond to Webhook', { closeNDV: true });
+		await aura.ndv.close();
+		await addEditFieldsNode(aura);
+		await aura.canvas.addNode('Respond to Webhook', { closeNDV: true });
 
-		await n8n.canvas.clickExecuteWorkflowButton();
-		await expect(n8n.canvas.waitingForTriggerEvent()).toBeVisible();
-		const response = await n8n.api.request.get(`/webhook-test/${webhookPath}`);
+		await aura.canvas.clickExecuteWorkflowButton();
+		await expect(aura.canvas.waitingForTriggerEvent()).toBeVisible();
+		const response = await aura.api.request.get(`/webhook-test/${webhookPath}`);
 		expect(response.ok()).toBe(true);
 
 		const responseData = await response.json();
@@ -53,39 +53,39 @@ test.describe('Webhook Trigger node', () => {
 	});
 
 	test('should listen for a GET request and respond with custom status code 201', async ({
-		n8n,
+		aura,
 	}) => {
 		const webhookPath = nanoid();
 
-		await n8n.canvas.addNode('Webhook');
-		await n8n.ndv.setupHelper.webhook({ httpMethod: 'GET', path: webhookPath });
+		await aura.canvas.addNode('Webhook');
+		await aura.ndv.setupHelper.webhook({ httpMethod: 'GET', path: webhookPath });
 
-		await n8n.ndv.setOptionalParameter('Response Code', 'responseCode', '201');
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getWebhookTestEvent()).toBeVisible();
+		await aura.ndv.setOptionalParameter('Response Code', 'responseCode', '201');
+		await aura.ndv.execute();
+		await expect(aura.ndv.getWebhookTestEvent()).toBeVisible();
 
-		const response = await n8n.api.request.get(`/webhook-test/${webhookPath}`);
+		const response = await aura.api.request.get(`/webhook-test/${webhookPath}`);
 		expect(response.status()).toBe(201);
 	});
 
-	test('should listen for a GET request and respond with last node', async ({ n8n }) => {
+	test('should listen for a GET request and respond with last node', async ({ aura }) => {
 		const webhookPath = nanoid();
 
-		await n8n.canvas.addNode('Webhook');
-		await n8n.ndv.setupHelper.webhook({
+		await aura.canvas.addNode('Webhook');
+		await aura.ndv.setupHelper.webhook({
 			httpMethod: 'GET',
 			path: webhookPath,
 			responseMode: 'When Last Node Finishes',
 		});
-		await n8n.ndv.close();
+		await aura.ndv.close();
 
-		await addEditFieldsNode(n8n);
+		await addEditFieldsNode(aura);
 
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await expect(n8n.canvas.waitingForTriggerEvent()).toBeVisible();
+		await expect(aura.canvas.waitingForTriggerEvent()).toBeVisible();
 
-		const response = await n8n.api.request.get(`/webhook-test/${webhookPath}`);
+		const response = await aura.api.request.get(`/webhook-test/${webhookPath}`);
 		expect(response.ok()).toBe(true);
 
 		const responseData = await response.json();
@@ -93,65 +93,65 @@ test.describe('Webhook Trigger node', () => {
 	});
 
 	test('should listen for a GET request and respond with last node binary data', async ({
-		n8n,
+		aura,
 	}) => {
 		const webhookPath = nanoid();
 
-		await n8n.canvas.addNode('Webhook');
-		await n8n.ndv.setupHelper.webhook({
+		await aura.canvas.addNode('Webhook');
+		await aura.ndv.setupHelper.webhook({
 			httpMethod: 'GET',
 			path: webhookPath,
 			responseMode: 'When Last Node Finishes',
 		});
-		await n8n.ndv.selectOptionInParameterDropdown('responseData', 'First Entry Binary');
-		await n8n.ndv.close();
+		await aura.ndv.selectOptionInParameterDropdown('responseData', 'First Entry Binary');
+		await aura.ndv.close();
 
-		await n8n.canvas.addNode('Edit Fields (Set)');
-		const editFieldsNode = new EditFieldsNode(n8n.page);
+		await aura.canvas.addNode('Edit Fields (Set)');
+		const editFieldsNode = new EditFieldsNode(aura.page);
 		await editFieldsNode.setSingleFieldValue('data', 'string', cowBase64);
-		await n8n.ndv.close();
+		await aura.ndv.close();
 
-		await n8n.canvas.addNode('Convert to File', { action: 'Convert to JSON' });
-		await n8n.ndv.selectOptionInParameterDropdown('mode', 'Each Item to Separate File');
-		await n8n.ndv.close();
+		await aura.canvas.addNode('Convert to File', { action: 'Convert to JSON' });
+		await aura.ndv.selectOptionInParameterDropdown('mode', 'Each Item to Separate File');
+		await aura.ndv.close();
 
-		await n8n.canvas.clickExecuteWorkflowButton();
+		await aura.canvas.clickExecuteWorkflowButton();
 
-		await expect(n8n.canvas.waitingForTriggerEvent()).toBeVisible();
+		await expect(aura.canvas.waitingForTriggerEvent()).toBeVisible();
 
-		const response = await n8n.api.request.get(`/webhook-test/${webhookPath}`);
+		const response = await aura.api.request.get(`/webhook-test/${webhookPath}`);
 		expect(response.ok()).toBe(true);
 
 		const responseData = await response.json();
 		expect('data' in responseData).toBe(true);
 	});
 
-	test('should listen for a GET request and respond with an empty body', async ({ n8n }) => {
+	test('should listen for a GET request and respond with an empty body', async ({ aura }) => {
 		const webhookPath = nanoid();
 
-		await n8n.canvas.addNode('Webhook');
-		await n8n.ndv.setupHelper.webhook({
+		await aura.canvas.addNode('Webhook');
+		await aura.ndv.setupHelper.webhook({
 			httpMethod: 'GET',
 			path: webhookPath,
 			responseMode: 'When Last Node Finishes',
 		});
-		await n8n.ndv.selectOptionInParameterDropdown('responseData', 'No Response Body');
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getWebhookTestEvent()).toBeVisible();
+		await aura.ndv.selectOptionInParameterDropdown('responseData', 'No Response Body');
+		await aura.ndv.execute();
+		await expect(aura.ndv.getWebhookTestEvent()).toBeVisible();
 
-		const response = await n8n.api.request.get(`/webhook-test/${webhookPath}`);
+		const response = await aura.api.request.get(`/webhook-test/${webhookPath}`);
 		expect(response.ok()).toBe(true);
 
 		const responseData = await response.text();
 		expect(responseData).toBe('');
 	});
 
-	test('should listen for a GET request with Basic Authentication', async ({ n8n }) => {
+	test('should listen for a GET request with Basic Authentication', async ({ aura }) => {
 		const webhookPath = nanoid();
 		const credentialName = `test-${nanoid()}`;
 		const user = `test-${nanoid()}`;
 		const password = `test-${nanoid()}`;
-		await n8n.credentialsComposer.createFromApi({
+		await aura.credentialsComposer.createFromApi({
 			type: 'httpBasicAuth',
 			name: credentialName,
 			data: {
@@ -160,24 +160,24 @@ test.describe('Webhook Trigger node', () => {
 			},
 		});
 
-		await n8n.canvas.addNode('Webhook');
-		await n8n.ndv.setupHelper.webhook({
+		await aura.canvas.addNode('Webhook');
+		await aura.ndv.setupHelper.webhook({
 			httpMethod: 'GET',
 			path: webhookPath,
 			authentication: 'Basic Auth',
 		});
 
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getWebhookTestEvent()).toBeVisible();
+		await aura.ndv.execute();
+		await expect(aura.ndv.getWebhookTestEvent()).toBeVisible();
 
-		const failResponse = await n8n.api.request.get(`/webhook-test/${webhookPath}`, {
+		const failResponse = await aura.api.request.get(`/webhook-test/${webhookPath}`, {
 			headers: {
 				Authorization: 'Basic ' + Buffer.from('wrong:wrong').toString('base64'),
 			},
 		});
 		expect(failResponse.status()).toBe(403);
 
-		const successResponse = await n8n.api.request.get(`/webhook-test/${webhookPath}`, {
+		const successResponse = await aura.api.request.get(`/webhook-test/${webhookPath}`, {
 			headers: {
 				Authorization: 'Basic ' + Buffer.from(`${user}:${password}`).toString('base64'),
 			},
@@ -185,12 +185,12 @@ test.describe('Webhook Trigger node', () => {
 		expect(successResponse.ok()).toBe(true);
 	});
 
-	test('should listen for a GET request with Header Authentication', async ({ n8n, api }) => {
+	test('should listen for a GET request with Header Authentication', async ({ aura, api }) => {
 		const webhookPath = nanoid();
 		const credentialName = `test-${nanoid()}`;
 		const name = `test-${nanoid()}`;
 		const value = `test-${nanoid()}`;
-		await n8n.credentialsComposer.createFromApi({
+		await aura.credentialsComposer.createFromApi({
 			type: 'httpHeaderAuth',
 			name: credentialName,
 			data: {
@@ -199,15 +199,15 @@ test.describe('Webhook Trigger node', () => {
 			},
 		});
 
-		await n8n.canvas.addNode('Webhook');
-		await n8n.ndv.setupHelper.webhook({
+		await aura.canvas.addNode('Webhook');
+		await aura.ndv.setupHelper.webhook({
 			httpMethod: 'GET',
 			path: webhookPath,
 			authentication: 'Header Auth',
 		});
 
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.getWebhookTestEvent()).toBeVisible();
+		await aura.ndv.execute();
+		await expect(aura.ndv.getWebhookTestEvent()).toBeVisible();
 
 		const failResponse = await api.request.get(`/webhook-test/${webhookPath}`, {
 			headers: {
@@ -226,11 +226,11 @@ test.describe('Webhook Trigger node', () => {
 	});
 });
 
-async function addEditFieldsNode(n8n: n8nPage): Promise<void> {
-	await n8n.canvas.addNode('Edit Fields (Set)');
+async function addEditFieldsNode(aura: auraPage): Promise<void> {
+	await aura.canvas.addNode('Edit Fields (Set)');
 
-	const editFieldsNode = new EditFieldsNode(n8n.page);
+	const editFieldsNode = new EditFieldsNode(aura.page);
 	await editFieldsNode.setSingleFieldValue('MyValue', 'number', 1234);
 
-	await n8n.ndv.close();
+	await aura.ndv.close();
 }

@@ -1,5 +1,5 @@
 import 'vue-router';
-import type { I18nClass } from '@n8n/i18n';
+import type { I18nClass } from '@aura/i18n';
 import type { Route, Router, RouteLocation } from 'vue-router';
 import type { Telemetry } from '@/app/plugins/telemetry';
 import type { VIEWS } from '@/app/constants';

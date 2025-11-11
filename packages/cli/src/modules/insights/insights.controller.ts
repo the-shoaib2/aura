@@ -3,12 +3,12 @@ import type {
 	InsightsByWorkflow,
 	InsightsSummary,
 	RestrictedInsightsByTime,
-} from '@n8n/api-types';
-import { InsightsDateFilterDto, ListInsightsWorkflowQueryDto } from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Get, GlobalScope, Licensed, Query, RestController } from '@n8n/decorators';
+} from '@aura/api-types';
+import { InsightsDateFilterDto, ListInsightsWorkflowQueryDto } from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
+import { Get, GlobalScope, Licensed, Query, RestController } from '@aura/decorators';
 import { DateTime } from 'luxon';
-import { UserError } from 'n8n-workflow';
+import { UserError } from 'workflow';
 import { z } from 'zod';
 
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';

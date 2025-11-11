@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	INodeExecutionData,
-	INodeProperties,
-	IExecuteFunctions,
-} from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData, INodeProperties, IExecuteFunctions } from 'workflow';
 
 import {
 	generatePairedItemData,

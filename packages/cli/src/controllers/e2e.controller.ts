@@ -1,16 +1,16 @@
-import type { PushMessage } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import type { BooleanLicenseFeature, NumericLicenseFeature } from '@n8n/constants';
-import { LICENSE_FEATURES, LICENSE_QUOTAS, UNLIMITED_LICENSE_QUOTA } from '@n8n/constants';
+import type { PushMessage } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import type { BooleanLicenseFeature, NumericLicenseFeature } from '@aura/constants';
+import { LICENSE_FEATURES, LICENSE_QUOTAS, UNLIMITED_LICENSE_QUOTA } from '@aura/constants';
 import {
 	GLOBAL_ADMIN_ROLE,
 	GLOBAL_MEMBER_ROLE,
 	GLOBAL_OWNER_ROLE,
 	SettingsRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Get, Patch, Post, RestController } from '@n8n/decorators';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Get, Patch, Post, RestController } from '@aura/decorators';
+import { Container } from '@aura/di';
 import { Request } from 'express';
 import { v4 as uuid } from 'uuid';
 
@@ -25,7 +25,7 @@ import { Push } from '@/push';
 import { CacheService } from '@/services/cache/cache.service';
 import { FrontendService } from '@/services/frontend.service';
 import { PasswordUtility } from '@/services/password.utility';
-import { ExecutionsConfig } from '@n8n/config';
+import { ExecutionsConfig } from '@aura/config';
 
 if (!inE2ETests) {
 	Container.get(Logger).error('E2E endpoints only allowed during E2E tests');

@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import { UnrecognizedCredentialTypeError } from 'n8n-core';
-import type { ICredentialType, LoadedClass } from 'n8n-workflow';
+import { UnrecognizedCredentialTypeError } from 'aura-core';
+import type { ICredentialType, LoadedClass } from 'workflow';
 
 import { CredentialTypes } from '@/credential-types';
 import type { LoadNodesAndCredentials } from '@/load-nodes-and-credentials';

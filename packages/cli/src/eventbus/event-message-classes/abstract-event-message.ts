@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { DateTime } from 'luxon';
-import type { EventMessageTypeNames, JsonObject } from 'n8n-workflow';
+import type { EventMessageTypeNames, JsonObject } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import type { EventNamesTypes } from '.';
@@ -93,7 +93,7 @@ export abstract class AbstractEventMessage {
 
 	/**
 	 * Creates a new instance of Event Message
-	 * @param props.eventName The specific events name e.g. "n8n.workflow.workflowStarted"
+	 * @param props.eventName The specific events name e.g. "aura.workflow.workflowStarted"
 	 * @param props.level The log level, defaults to. "info"
 	 * @param props.severity The severity of the event e.g. "normal"
 	 * @returns instance of EventMessage

@@ -1,5 +1,5 @@
-import type { TaskRunnersConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
+import type { TaskRunnersConfig } from '@aura/config';
+import { Time } from '@aura/constants';
 import { mock } from 'jest-mock-extended';
 import type WebSocket from 'ws';
 

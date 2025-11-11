@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import { OperationalError, type Logger } from 'n8n-workflow';
+import { OperationalError, type Logger } from 'workflow';
 
 import { ConnectionPoolManager } from '@utils/connection-pool-manager';
 

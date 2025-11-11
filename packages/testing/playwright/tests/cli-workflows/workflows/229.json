@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 450],
 			"id": "af503bcd-fa8c-4eaa-9c50-632c7692c6e8"
@@ -20,7 +20,7 @@
 				"options": {}
 			},
 			"name": "Google Drive",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [500, 290],
 			"id": "8b134518-c868-4ea9-8811-0a687f2485af",
@@ -45,7 +45,7 @@
 				"options": {}
 			},
 			"name": "Google Drive1",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [670, 290],
 			"id": "b31303e6-a55d-4844-b829-35ec7b5ecfef",
@@ -63,7 +63,7 @@
 				"fileId": "={{$node[\"Google Drive\"].json[\"id\"]}}"
 			},
 			"name": "Google Drive2",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [830, 290],
 			"id": "6868f66e-f772-4219-b633-774b1c2b621f",
@@ -81,7 +81,7 @@
 				"options": {}
 			},
 			"name": "Google Drive3",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [500, 460],
 			"id": "5a748249-c5e0-4d69-93dc-175b9f8d6416",
@@ -105,7 +105,7 @@
 				"options": {}
 			},
 			"name": "Google Drive4",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [660, 460],
 			"id": "de39ddca-a217-4c46-b4d9-52a7eba74223",
@@ -123,7 +123,7 @@
 				"options": {}
 			},
 			"name": "Google Drive5",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [820, 460],
 			"id": "46ef5f25-0096-4ee9-9930-ad476fcd0cb3",
@@ -141,7 +141,7 @@
 				"options": {}
 			},
 			"name": "Google Drive6",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [960, 460],
 			"id": "a169ecfe-389b-41a3-8e27-e1f8e85afbc9",
@@ -159,7 +159,7 @@
 				"options": {}
 			},
 			"name": "Google Drive7",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1100, 460],
 			"id": "f4a9acb4-c943-4e96-b830-6081a55ef14b",
@@ -176,7 +176,7 @@
 				"fileId": "={{$node[\"Google Drive3\"].json[\"id\"]}}"
 			},
 			"name": "Google Drive8",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1240, 460],
 			"id": "b8dcbf39-f49f-4a58-8101-8effab64eb3e",
@@ -193,7 +193,7 @@
 				"fileId": "={{$node[\"Google Drive7\"].json[\"id\"]}}"
 			},
 			"name": "Google Drive9",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1380, 460],
 			"id": "bea4ea40-6bd8-4378-a0b0-ad17b9bd237f",
@@ -212,7 +212,7 @@
 			},
 			"id": "4a46fffc-779d-4d3e-865c-dd165caf1b0e",
 			"name": "Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [340, 160]
 		},
@@ -226,7 +226,7 @@
 				}
 			},
 			"name": "Google Drive10",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1400, 980],
 			"id": "b93f0486-16e4-4d59-9894-7e57cabb3a29",
@@ -244,7 +244,7 @@
 				"options": {}
 			},
 			"name": "Google Drive11",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [520, 820],
 			"id": "9785352c-2a2d-4ca1-baa7-0a310fd04413",
@@ -273,7 +273,7 @@
 				"options": {}
 			},
 			"name": "Google Drive12",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [680, 820],
 			"id": "a3fba084-d9c2-4311-a893-f2280313a784",
@@ -295,7 +295,7 @@
 				}
 			},
 			"name": "Google Drive13",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [840, 820],
 			"id": "2f78286f-efd2-4284-b5d4-7f58abebf896",
@@ -313,7 +313,7 @@
 				"options": {}
 			},
 			"name": "Google Drive14",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [520, 980],
 			"id": "c85b7694-685b-4fb3-bd63-46c2d5099c2e",
@@ -341,7 +341,7 @@
 				"options": {}
 			},
 			"name": "Google Drive15",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [680, 980],
 			"id": "be2a8cd4-1e04-47cf-8073-109b7f7af275",
@@ -359,7 +359,7 @@
 				"options": {}
 			},
 			"name": "Google Drive16",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [840, 980],
 			"id": "47d4441f-8694-46fa-8100-8b9119782ec1",
@@ -381,7 +381,7 @@
 				"options": {}
 			},
 			"name": "Google Drive17",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [980, 980],
 			"id": "e4717e9d-3336-4654-9a1c-9839d6e52f92",
@@ -403,7 +403,7 @@
 				"options": {}
 			},
 			"name": "Google Drive18",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1120, 980],
 			"id": "91da5b53-a560-49dd-aac0-fe16f6c5fc09",
@@ -424,7 +424,7 @@
 				}
 			},
 			"name": "Google Drive19",
-			"type": "n8n-nodes-base.googleDrive",
+			"type": "aura-nodes-base.googleDrive",
 			"typeVersion": 1,
 			"position": [1260, 980],
 			"id": "560163a2-ece9-48c4-a3c2-bdc8387626c1",
@@ -443,7 +443,7 @@
 			},
 			"id": "3c49a1f7-7b5a-42fd-9b27-0b80f853e879",
 			"name": "Note1",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"typeVersion": 1,
 			"position": [340, 680]
 		}

@@ -4,7 +4,7 @@ import type {
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
 	INode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { webflowApiRequest, webflowApiRequestAllItems } from '../GenericFunctions';
 
@@ -75,7 +75,7 @@ describe('Webflow -> webflowApiRequest', () => {
 	const node: INode = {
 		id: '8e3c489c-4905-4bc4-9fc6-f1912d0766ec',
 		name: 'Webflow',
-		type: 'n8n-nodes-base.webflow',
+		type: 'aura-nodes-base.webflow',
 		typeVersion: 2,
 		position: [0, 0],
 		credentials: {

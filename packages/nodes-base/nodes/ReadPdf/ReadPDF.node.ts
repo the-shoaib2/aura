@@ -5,7 +5,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { extractDataFromPDF } from '@utils/binary';
 
@@ -13,7 +13,7 @@ export class ReadPDF implements INodeType {
 	description: INodeTypeDescription = {
 		hidden: true,
 		displayName: 'Read PDF',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-name-miscased
+		// eslint-disable-next-line aura-nodes-base/node-class-description-name-miscased
 		name: 'readPDF',
 		icon: 'fa:file-pdf',
 		group: ['input'],

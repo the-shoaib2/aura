@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, IDataObject } from 'n8n-workflow';
+import type { IExecuteFunctions, IDataObject } from 'workflow';
 
 import {
 	validateSessionAndWindowId,

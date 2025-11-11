@@ -1,5 +1,5 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
-import { NodeConnectionTypes, type WorkflowTestData } from 'n8n-workflow';
+import { NodeConnectionTypes, type WorkflowTestData } from 'workflow';
 
 import { apiUrl } from '../Peekalink.node';
 
@@ -30,7 +30,7 @@ describe('Peekalink Node', () => {
 							parameters: {},
 							id: '8b7bb389-e4ef-424a-bca1-e7ead60e43eb',
 							name: 'When clicking "Execute Workflow"',
-							type: 'n8n-nodes-base.manualTrigger',
+							type: 'aura-nodes-base.manualTrigger',
 							typeVersion: 1,
 							position: [740, 380],
 						},
@@ -41,7 +41,7 @@ describe('Peekalink Node', () => {
 							},
 							id: '7354367e-39a7-4fc1-8cdd-442f0b0c7b62',
 							name: 'Peekalink',
-							type: 'n8n-nodes-base.peekalink',
+							type: 'aura-nodes-base.peekalink',
 							typeVersion: 1,
 							position: [960, 380],
 							credentials: {
@@ -101,7 +101,7 @@ describe('Peekalink Node', () => {
 							parameters: {},
 							id: '8b7bb389-e4ef-424a-bca1-e7ead60e43eb',
 							name: 'When clicking "Execute Workflow"',
-							type: 'n8n-nodes-base.manualTrigger',
+							type: 'aura-nodes-base.manualTrigger',
 							typeVersion: 1,
 							position: [740, 380],
 						},
@@ -112,7 +112,7 @@ describe('Peekalink Node', () => {
 							},
 							id: '7354367e-39a7-4fc1-8cdd-442f0b0c7b62',
 							name: 'Peekalink',
-							type: 'n8n-nodes-base.peekalink',
+							type: 'aura-nodes-base.peekalink',
 							typeVersion: 1,
 							position: [960, 380],
 							credentials: {

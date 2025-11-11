@@ -13,8 +13,8 @@ import type {
 	IPollFunctions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeOperationError } from 'workflow';
 import MailComposer from 'nodemailer/lib/mail-composer';
 
 import type { IEmail } from '../../../utils/sendAndWait/interfaces';
@@ -433,7 +433,7 @@ export function prepareEmailBody(
 
 	if (appendAttribution) {
 		const attributionText = 'This email was sent automatically with ';
-		const link = createUtmCampaignLink('n8n-nodes-base.gmail', instanceId);
+		const link = createUtmCampaignLink('aura-nodes-base.gmail', instanceId);
 		if (emailType === 'html') {
 			message = `
 			${message}
@@ -441,10 +441,10 @@ export function prepareEmailBody(
 			<br>
 			---
 			<br>
-			<em>${attributionText}<a href="${link}" target="_blank">n8n</a></em>
+			<em>${attributionText}<a href="${link}" target="_blank">aura</a></em>
 			`;
 		} else {
-			message = `${message}\n\n---\n${attributionText}n8n\n${'https://n8n.io'}`;
+			message = `${message}\n\n---\n${attributionText}aura\n${'https://aura.io'}`;
 		}
 	}
 

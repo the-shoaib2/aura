@@ -3,7 +3,7 @@ import { createTestingPinia } from '@pinia/testing';
 import type { MockInstance } from 'vitest';
 import { within, waitFor } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 import { createComponentRenderer } from '@/__tests__/render';
 import { getDropdownItems, mockedStore, type MockedStore } from '@/__tests__/utils';
 import { EnterpriseEditionFeature } from '@/app/constants';

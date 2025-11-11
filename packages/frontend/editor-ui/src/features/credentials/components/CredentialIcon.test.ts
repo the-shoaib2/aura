@@ -1,12 +1,12 @@
 import { createTestingPinia, type TestingPinia } from '@pinia/testing';
-import type { ICredentialType, INodeTypeDescription } from 'n8n-workflow';
+import type { ICredentialType, INodeTypeDescription } from 'workflow';
 import { mock } from 'vitest-mock-extended';
 
 import CredentialIcon from './CredentialIcon.vue';
 
 import { createComponentRenderer } from '@/__tests__/render';
 import { useCredentialsStore } from '../credentials.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 
 describe('CredentialIcon', () => {
@@ -17,7 +17,7 @@ describe('CredentialIcon', () => {
 				N8nTooltip: true,
 				N8nNodeIcon: {
 					template: `
-						<svg v-if="type === 'icon'" class="n8n-icon" :data-icon="name"></svg>
+						<svg v-if="type === 'icon'" class="aura-icon" :data-icon="name"></svg>
 					`,
 					props: ['type', 'src', 'name', 'color', 'size'],
 				},
@@ -31,7 +31,7 @@ describe('CredentialIcon', () => {
 	});
 
 	it('shows correct icon when iconUrl is set on credential', () => {
-		const testIconUrl = 'icons/n8n-nodes-base/dist/nodes/Test/test.svg';
+		const testIconUrl = 'icons/aura-nodes-base/dist/nodes/Test/test.svg';
 		useCredentialsStore().setCredentialTypes([
 			mock<ICredentialType>({
 				name: 'test',
@@ -65,17 +65,17 @@ describe('CredentialIcon', () => {
 			},
 		});
 
-		const icon = container.querySelector('.n8n-icon');
+		const icon = container.querySelector('.aura-icon');
 		expect(icon).toBeInTheDocument();
 		expect(icon?.getAttribute('data-icon')).toBe('clock');
 	});
 
 	it('shows correct icon when credential has an icon with node: prefix', () => {
-		const testIconUrl = 'icons/n8n-nodes-base/dist/nodes/Test/test.svg';
+		const testIconUrl = 'icons/aura-nodes-base/dist/nodes/Test/test.svg';
 		useCredentialsStore().setCredentialTypes([
 			mock<ICredentialType>({
 				name: 'test',
-				icon: 'node:n8n-nodes-base.test',
+				icon: 'node:aura-nodes-base.test',
 				iconColor: 'azure',
 			}),
 		]);
@@ -83,7 +83,7 @@ describe('CredentialIcon', () => {
 		useNodeTypesStore().setNodeTypes([
 			mock<INodeTypeDescription>({
 				version: 1,
-				name: 'n8n-nodes-base.test',
+				name: 'aura-nodes-base.test',
 				iconUrl: testIconUrl,
 			}),
 		]);
@@ -102,7 +102,7 @@ describe('CredentialIcon', () => {
 		useCredentialsStore().setCredentialTypes([
 			mock<ICredentialType>({
 				name: 'test',
-				icon: 'node:n8n-nodes-base.test',
+				icon: 'node:aura-nodes-base.test',
 				iconColor: 'azure',
 			}),
 		]);

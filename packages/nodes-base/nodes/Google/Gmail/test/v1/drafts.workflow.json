@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [980, 560],
 			"id": "388c50bd-918f-48d5-8fa2-eba4d3e36ab6",
@@ -14,7 +14,7 @@
 				"operation": "toJson",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [1420, 860],
 			"id": "1c1112be-de7c-441e-865c-48044601cb40",
@@ -34,7 +34,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [1200, 860],
 			"id": "381ca2b8-026a-487a-9f5f-5ef2edb9aa1d",
@@ -45,8 +45,8 @@
 				"subject": "Test Subject",
 				"message": "Test Message",
 				"additionalFields": {
-					"ccList": ["test_cc@n8n.io"],
-					"bccList": ["test_bcc@n8n.io"],
+					"ccList": ["test_cc@aura.io"],
+					"bccList": ["test_bcc@aura.io"],
 					"attachmentsUi": {
 						"attachmentsBinary": [
 							{
@@ -56,7 +56,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [1640, 860],
 			"id": "0119d458-2782-4fea-abe9-8ac8cabe77aa",
@@ -75,7 +75,7 @@
 				"limit": 2,
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [1200, 260],
 			"id": "94698cf7-7ce2-4d89-8b04-51c59acf3373",
@@ -93,7 +93,7 @@
 				"operation": "delete",
 				"messageId": "test"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [1200, 460],
 			"id": "2b518238-3c18-4527-8315-5d2f5d664af7",
@@ -112,7 +112,7 @@
 				"messageId": "test",
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 1,
 			"position": [1200, 660],
 			"id": "9d33ea25-6866-4e74-9a53-042fbe70655a",

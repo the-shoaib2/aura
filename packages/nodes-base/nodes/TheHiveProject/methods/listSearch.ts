@@ -1,4 +1,4 @@
-import type { IDataObject, ILoadOptionsFunctions, INodeListSearchResult } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodeListSearchResult } from 'workflow';
 
 import { theHiveApiRequest } from '../transport';
 

@@ -7,7 +7,7 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	NodeParameterValueType,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { NodeExecutionContext } from './node-execution-context';
 import { getDataTableHelperFunctions } from './utils/data-table-helper-functions';

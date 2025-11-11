@@ -166,7 +166,7 @@ describe('WorkflowCard', () => {
 	});
 
 	it('should render name and personal project name', () => {
-		const projectName = 'John Doe <john@n8n.io>';
+		const projectName = 'John Doe <john@aura.io>';
 		const data = createWorkflow({
 			homeProject: {
 				name: projectName,

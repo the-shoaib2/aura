@@ -5,8 +5,8 @@ import type {
 	IHttpRequestMethods,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 /**
  * Make an API request to seven
@@ -23,7 +23,7 @@ export async function sms77ApiRequest(
 ): Promise<any> {
 	const options: IRequestOptions = {
 		headers: {
-			SentWith: 'n8n',
+			SentWith: 'aura',
 		},
 		qs,
 		uri: `https://gateway.seven.io/api${endpoint}`,

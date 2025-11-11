@@ -1,5 +1,5 @@
-import { LicenseMetricsRepository, WorkflowRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { LicenseMetricsRepository, WorkflowRepository } from '@aura/db';
+import { Service } from '@aura/di';
 
 @Service()
 export class LicenseMetricsService {

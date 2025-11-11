@@ -1,4 +1,4 @@
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'workflow';
 
 export interface IAirtopSessionResponse extends IDataObject {
 	data: {

@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class FreshworksCrmApi implements ICredentialType {
 	name = 'freshworksCrmApi';
@@ -26,9 +26,9 @@ export class FreshworksCrmApi implements ICredentialType {
 			name: 'domain',
 			type: 'string',
 			default: '',
-			placeholder: 'n8n-org',
+			placeholder: 'aura-org',
 			description:
-				'Domain in the Freshworks CRM org URL. For example, in <code>https://n8n-org.myfreshworks.com</code>, the domain is <code>n8n-org</code>.',
+				'Domain in the Freshworks CRM org URL. For example, in <code>https://aura-org.myfreshworks.com</code>, the domain is <code>aura-org</code>.',
 		},
 	];
 

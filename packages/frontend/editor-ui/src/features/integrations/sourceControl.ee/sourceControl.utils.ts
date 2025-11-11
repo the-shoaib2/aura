@@ -1,8 +1,8 @@
 import { h, nextTick } from 'vue';
 import type { Router } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
-import { type SourceControlledFile, SOURCE_CONTROL_FILE_STATUS } from '@n8n/api-types';
-import type { BaseTextKey } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
+import { type SourceControlledFile, SOURCE_CONTROL_FILE_STATUS } from '@aura/api-types';
+import type { BaseTextKey } from '@aura/i18n';
 import { VIEWS } from '@/app/constants';
 import groupBy from 'lodash/groupBy';
 import type { useToast } from '@/app/composables/useToast';

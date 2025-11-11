@@ -67,7 +67,7 @@ ifEmpty.doc = {
 		{ name: 'value', type: 'any' },
 		{ name: 'defaultValue', type: 'any' },
 	],
-	docURL: 'https://docs.n8n.io/code/builtin/convenience',
+	docURL: 'https://docs.aura.io/code/builtin/convenience',
 };
 
 export const extendedFunctions = {

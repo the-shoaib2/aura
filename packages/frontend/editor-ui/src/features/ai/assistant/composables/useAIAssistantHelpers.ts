@@ -1,4 +1,4 @@
-import { deepCopy } from 'n8n-workflow';
+import { deepCopy } from 'workflow';
 import type {
 	IDataObject,
 	IRunExecutionData,
@@ -6,7 +6,7 @@ import type {
 	NodeError,
 	NodeOperationError,
 	INode,
-} from 'n8n-workflow';
+} from 'workflow';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
@@ -19,7 +19,7 @@ import type { ChatRequest } from '../assistant.types';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { useDataSchema } from '@/app/composables/useDataSchema';
 import { AI_ASSISTANT_MAX_CONTENT_LENGTH, VIEWS } from '@/app/constants';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import type { IWorkflowDb } from '@/Interface';
 import { getObjectSizeInKB } from '@/app/utils/objectUtils';
 

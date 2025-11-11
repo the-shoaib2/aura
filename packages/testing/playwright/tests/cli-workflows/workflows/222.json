@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "3fd92007-e246-4af4-a0bd-af520944645a"
@@ -21,7 +21,7 @@
 				}
 			},
 			"name": "Lemlist",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [590, 300],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"limit": 1
 			},
 			"name": "Lemlist1",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -54,7 +54,7 @@
 				"resource": "team"
 			},
 			"name": "Lemlist2",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [450, 150],
 			"credentials": {
@@ -73,7 +73,7 @@
 				"additionalFields": {}
 			},
 			"name": "Lemlist3",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [600, 150],
 			"credentials": {
@@ -91,7 +91,7 @@
 				"email": "={{$node[\"Lemlist3\"].json[\"email\"]}}"
 			},
 			"name": "Lemlist4",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [750, 150],
 			"credentials": {
@@ -110,7 +110,7 @@
 				"email": "={{$node[\"Lemlist3\"].json[\"email\"]}}"
 			},
 			"name": "Lemlist5",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [900, 150],
 			"credentials": {
@@ -129,7 +129,7 @@
 				"email": "={{$node[\"Lemlist3\"].json[\"email\"]}}"
 			},
 			"name": "Lemlist6",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [1050, 150],
 			"credentials": {
@@ -146,7 +146,7 @@
 				"email": "=fakeemail{{Date.now()}}@mail.test"
 			},
 			"name": "Lemlist7",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"credentials": {
@@ -164,7 +164,7 @@
 				"limit": 1
 			},
 			"name": "Lemlist9",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"credentials": {
@@ -182,7 +182,7 @@
 				"email": "={{$node[\"Lemlist7\"].json[\"email\"]}}"
 			},
 			"name": "Lemlist10",
-			"type": "n8n-nodes-base.lemlist",
+			"type": "aura-nodes-base.lemlist",
 			"typeVersion": 1,
 			"position": [750, 450],
 			"credentials": {

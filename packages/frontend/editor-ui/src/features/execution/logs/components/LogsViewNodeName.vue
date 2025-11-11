@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { N8nText } from '@n8n/design-system';
+import { N8nText } from '@aura/design-system';
 
 const { name, isError, isDeleted } = defineProps<{
 	name: string;

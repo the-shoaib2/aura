@@ -1,7 +1,7 @@
-import { ImportWorkflowFromUrlDto, ROLE, TransferWorkflowBodyDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { Project } from '@n8n/db';
+import { ImportWorkflowFromUrlDto, ROLE, TransferWorkflowBodyDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import type { Project } from '@aura/db';
 import {
 	SharedWorkflow,
 	WorkflowEntity,
@@ -11,7 +11,7 @@ import {
 	SharedWorkflowRepository,
 	WorkflowRepository,
 	AuthenticatedRequest,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	Body,
 	Delete,
@@ -24,13 +24,13 @@ import {
 	Put,
 	Query,
 	RestController,
-} from '@n8n/decorators';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In, type FindOptionsRelations } from '@n8n/typeorm';
+} from '@aura/decorators';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In, type FindOptionsRelations } from '@aura/typeorm';
 import axios from 'axios';
 import express from 'express';
-import { UnexpectedError } from 'n8n-workflow';
+import { UnexpectedError } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import { WorkflowExecutionService } from './workflow-execution.service';
@@ -264,7 +264,7 @@ export class WorkflowsController {
 			throw new BadRequestError('The URL does not point to valid JSON file!');
 		}
 
-		// Do a very basic check if it is really a n8n-workflow-json
+		// Do a very basic check if it is really a workflow-json
 		if (
 			workflowData?.nodes === undefined ||
 			!Array.isArray(workflowData.nodes) ||
@@ -273,7 +273,7 @@ export class WorkflowsController {
 			Array.isArray(workflowData.connections)
 		) {
 			throw new BadRequestError(
-				'The data in the file does not seem to be a n8n workflow JSON file!',
+				'The data in the file does not seem to be a aura workflow JSON file!',
 			);
 		}
 

@@ -7,7 +7,7 @@ import { useTelemetry } from '@/app/composables/useTelemetry';
 import { EnterpriseEditionFeature } from '@/app/constants';
 import type { IWorkflowDb, IWorkflowShortResponse } from '@/Interface';
 import type { ExecutionFilterMetadata, ExecutionFilterType } from '../executions.types';
-import { i18n as locale } from '@n8n/i18n';
+import { i18n as locale } from '@aura/i18n';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { isEmpty } from '@/app/utils/typesUtils';
 import type { Placement } from '@floating-ui/core';
@@ -25,7 +25,7 @@ import {
 	N8nPopover,
 	N8nSelect,
 	N8nTooltip,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 export type ExecutionFilterProps = {
 	workflows?: Array<IWorkflowDb | IWorkflowShortResponse>;
 	popoverPlacement?: Placement;

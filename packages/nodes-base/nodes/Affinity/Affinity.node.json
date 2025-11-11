@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.affinity",
+	"node": "aura-nodes-base.affinity",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Sales"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/affinity/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/affinity/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.affinity/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.affinity/"
 			}
 		]
 	}

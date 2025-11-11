@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const projectOperations: INodeProperties[] = [
 	{
@@ -67,7 +67,7 @@ export const projectFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the organization the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the organization the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Project Slug Name or ID',
@@ -86,7 +86,7 @@ export const projectFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the project to retrieve. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the project to retrieve. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Team Slug Name or ID',
@@ -105,7 +105,7 @@ export const projectFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the team to create a new project for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the team to create a new project for. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Name',
@@ -199,7 +199,7 @@ export const projectFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the organization the project belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the organization the project belong to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Project Slug Name or ID',
@@ -218,7 +218,7 @@ export const projectFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the project to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the project to update. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Update Fields',
@@ -238,7 +238,7 @@ export const projectFields: INodeProperties[] = [
 				name: 'isBookmarked',
 				type: 'boolean',
 				default: false,
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description: 'The new platform for the updated project',
 			},
 			{
@@ -305,7 +305,7 @@ export const projectFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the organization the project belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the organization the project belong to. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Project Slug Name or ID',
@@ -324,6 +324,6 @@ export const projectFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'The slug of the project to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'The slug of the project to delete. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 ];

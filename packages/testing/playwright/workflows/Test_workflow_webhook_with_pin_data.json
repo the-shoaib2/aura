@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "0a60e507-7f34-41c0-a0f9-697d852033b6",
 			"name": "When clicking ‘Execute workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [780, 320]
 		},
@@ -17,7 +17,7 @@
 			},
 			"id": "66425ce3-450d-4aa6-a53b-a701ab89c2de",
 			"name": "Webhook",
-			"type": "n8n-nodes-base.webhook",
+			"type": "aura-nodes-base.webhook",
 			"typeVersion": 1.1,
 			"position": [780, 540],
 			"webhookId": "b0d79ddb-df2d-49b1-8555-9fa2b482608f"
@@ -37,7 +37,7 @@
 			},
 			"id": "3211b3c5-49e9-4694-8f86-7a5783bc653a",
 			"name": "Init Data",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [1000, 320]
 		},
@@ -55,7 +55,7 @@
 			},
 			"id": "97b31120-4720-4632-9d35-356f345119f7",
 			"name": "Pin Data",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.2,
 			"position": [1240, 320]
 		},
@@ -63,7 +63,7 @@
 			"parameters": {},
 			"id": "1ee7be4f-7006-43bf-bb0c-29db3058a399",
 			"name": "End",
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1460, 320]
 		}

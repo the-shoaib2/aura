@@ -1,4 +1,4 @@
-import type { ChatHubProvider } from '@n8n/api-types';
+import type { ChatHubProvider } from '@aura/api-types';
 
 // Route and view identifiers
 export const CHAT_VIEW = 'chat';
@@ -11,7 +11,7 @@ export const providerDisplayNames: Record<ChatHubProvider, string> = {
 	openai: 'OpenAI',
 	anthropic: 'Anthropic',
 	google: 'Google',
-	n8n: 'n8n',
+	aura: 'aura',
 	'custom-agent': 'Custom Agent',
 };
 

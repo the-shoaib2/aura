@@ -1,4 +1,4 @@
-import type { WorkflowEntity } from '@n8n/db';
+import type { WorkflowEntity } from '@aura/db';
 import {
 	generateNanoId,
 	ProjectRepository,
@@ -6,14 +6,14 @@ import {
 	WorkflowRepository,
 	UserRepository,
 	GLOBAL_OWNER_ROLE,
-} from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
+} from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
 import glob from 'fast-glob';
 import fs from 'fs';
-import type { IWorkflowBase, WorkflowId } from 'n8n-workflow';
-import { jsonParse, UserError } from 'n8n-workflow';
+import type { IWorkflowBase, WorkflowId } from 'workflow';
+import { jsonParse, UserError } from 'workflow';
 import { z } from 'zod';
 
 import { BaseCommand } from '../base-command';

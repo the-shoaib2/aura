@@ -4,10 +4,10 @@ import {
 	runSingleMigration,
 	undoLastSingleMigration,
 	type TestMigrationContext,
-} from '@n8n/backend-test-utils';
-import { DbConnection } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { DataSource } from '@n8n/typeorm';
+} from '@aura/backend-test-utils';
+import { DbConnection } from '@aura/db';
+import { Container } from '@aura/di';
+import { DataSource } from '@aura/typeorm';
 
 const MIGRATION_NAME = 'UniqueRoleNames1760020838000';
 

@@ -6,7 +6,7 @@ import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 
 import { EXECUTE_WORKFLOW_NODE_TYPE, WORKFLOW_TOOL_LANGCHAIN_NODE_TYPE } from './constants';
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 import { NodeConnectionTypes } from './interfaces';
 import type {
 	FieldType,
@@ -1589,7 +1589,7 @@ function resolveResourceAndOperation(
 	nodeParameters: INodeParameters,
 	nodeTypeDescription: INodeTypeDescription,
 ) {
-	if (nodeTypeDescription.name === 'n8n-nodes-base.code') {
+	if (nodeTypeDescription.name === 'aura-nodes-base.code') {
 		const language = nodeParameters.language as string;
 		const langProp = nodeTypeDescription.properties.find((p) => p.name === 'language');
 		if (langProp?.options && isINodePropertyOptionsList(langProp.options)) {

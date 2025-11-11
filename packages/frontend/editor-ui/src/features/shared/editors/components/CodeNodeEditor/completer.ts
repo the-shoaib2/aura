@@ -9,7 +9,7 @@ import { useBaseCompletions } from './completions/base.completions';
 import { jsSnippets } from './completions/js.snippets';
 
 import type { EditorView } from '@codemirror/view';
-import type { CodeExecutionMode } from 'n8n-workflow';
+import type { CodeExecutionMode } from 'workflow';
 import { useExecutionCompletions } from './completions/execution.completions';
 import { useItemFieldCompletions } from './completions/itemField.completions';
 import { useItemIndexCompletions } from './completions/itemIndex.completions';
@@ -277,7 +277,7 @@ export const useCompleter = (
 	}
 
 	/**
-	 * Collect uses of variables pointing to n8n syntax if they have been extended.
+	 * Collect uses of variables pointing to aura syntax if they have been extended.
 	 *
 	 * x.first().
 	 * x.first().json.

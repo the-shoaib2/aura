@@ -3,7 +3,7 @@ import type { INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { computed, ref, watch } from 'vue';
-import { NodeHelpers } from 'n8n-workflow';
+import { NodeHelpers } from 'workflow';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
 import NodeIcon from '@/app/components/NodeIcon.vue';
 import TitledList from '@/app/components/TitledList.vue';
@@ -12,13 +12,13 @@ import type {
 	INodeInputConfiguration,
 	INodeTypeDescription,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 import { useDebounce } from '@/app/composables/useDebounce';
 import { OnClickOutside } from '@vueuse/components';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 
-import { N8nIconButton, N8nTooltip } from '@n8n/design-system';
+import { N8nIconButton, N8nTooltip } from '@aura/design-system';
 interface Props {
 	rootNode: INodeUi;
 }
@@ -422,7 +422,7 @@ defineExpose({
 	user-select: none;
 	justify-content: space-between;
 	display: grid;
-	/* stylelint-disable-next-line @n8n/css-var-naming */
+	/* stylelint-disable-next-line @aura/css-var-naming */
 	grid-template-columns: repeat(var(--possible-connections), 1fr);
 }
 .connectionType {
@@ -505,7 +505,7 @@ defineExpose({
 .connectedNodes {
 	display: flex;
 	justify-content: center;
-	/* stylelint-disable-next-line @n8n/css-var-naming */
+	/* stylelint-disable-next-line @aura/css-var-naming */
 	margin-right: calc(
 		(var(--nodes-length) - 1) * (-1 * (var(--node--size) - var(--collapsed--offset)))
 	);
@@ -531,7 +531,7 @@ defineExpose({
 	}
 
 	&:not(:first-child) {
-		/* stylelint-disable-next-line @n8n/css-var-naming */
+		/* stylelint-disable-next-line @aura/css-var-naming */
 		transform: translateX(
 			calc(var(--node-index) * (-1 * (var(--node--size) - var(--collapsed--offset))))
 		);

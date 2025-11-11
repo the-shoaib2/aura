@@ -27,7 +27,7 @@ describe('CanvasRunWorkflowButton', () => {
 		const wrapper = renderComponent({
 			global: {
 				stubs: {
-					N8nButton: { template: '<n8n-button-stub><slot /></n8n-button-stub>' },
+					N8nButton: { template: '<aura-button-stub><slot /></aura-button-stub>' },
 				},
 			},
 		});

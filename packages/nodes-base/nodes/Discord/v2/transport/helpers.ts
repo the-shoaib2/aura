@@ -5,7 +5,7 @@ import type {
 	IHookFunctions,
 	ILoadOptionsFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export const getCredentialsType = (authentication: string) => {
 	let credentialType = '';

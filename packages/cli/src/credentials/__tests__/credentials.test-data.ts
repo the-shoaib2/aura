@@ -1,7 +1,7 @@
-import type { CreateCredentialDto } from '@n8n/api-types';
-import type { Scope } from '@n8n/permissions';
+import type { CreateCredentialDto } from '@aura/api-types';
+import type { Scope } from '@aura/permissions';
 import { nanoId, date } from 'minifaker';
-import { randomString } from 'n8n-workflow';
+import { randomString } from 'workflow';
 
 type NewCredentialWithSCopes = {
 	scopes: Scope[];

@@ -4,21 +4,21 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class N8nTrainingCustomerMessenger implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Customer Messenger (n8n training)',
-		name: 'n8nTrainingCustomerMessenger',
+		displayName: 'Customer Messenger (aura training)',
+		name: 'auraTrainingCustomerMessenger',
 		icon: {
-			light: 'file:n8nTrainingCustomerMessenger.svg',
-			dark: 'file:n8nTrainingCustomerMessenger.dark.svg',
+			light: 'file:auraTrainingCustomerMessenger.svg',
+			dark: 'file:auraTrainingCustomerMessenger.dark.svg',
 		},
 		group: ['transform'],
 		version: 1,
-		description: 'Dummy node used for n8n training',
+		description: 'Dummy node used for aura training',
 		defaults: {
-			name: 'Customer Messenger (n8n training)',
+			name: 'Customer Messenger (aura training)',
 		},
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],

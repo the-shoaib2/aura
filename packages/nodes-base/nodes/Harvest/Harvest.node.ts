@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { clientFields, clientOperations } from './ClientDescription';
 import { companyOperations } from './CompanyDescription';
@@ -26,7 +26,7 @@ export class Harvest implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Harvest',
 		name: 'harvest',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:harvest.png',
 		group: ['input'],
 		version: 1,
@@ -143,7 +143,7 @@ export class Harvest implements INodeType {
 				name: 'accountId',
 				type: 'options',
 				description:
-					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				required: true,
 				typeOptions: {
 					loadOptionsMethod: 'getAccounts',

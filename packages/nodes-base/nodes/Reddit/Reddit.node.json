@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.reddit",
+	"node": "aura-nodes-base.reddit",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/reddit/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/reddit/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.reddit/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.reddit/"
 			}
 		]
 	}

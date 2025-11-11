@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "86b8149f-b0a0-489c-bb62-e59142988996",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [400, 220]
 		},
@@ -16,7 +16,7 @@
 			},
 			"id": "30c5546e-bdcc-44ff-bfca-89c5fb97b678",
 			"name": "Split In Batches",
-			"type": "n8n-nodes-base.splitInBatches",
+			"type": "aura-nodes-base.splitInBatches",
 			"typeVersion": 2,
 			"position": [1100, 220]
 		},
@@ -26,7 +26,7 @@
 					"string": [
 						{
 							"name": "data[0]",
-							"value": "n8n"
+							"value": "aura"
 						},
 						{
 							"name": "data[1]",
@@ -38,7 +38,7 @@
 			},
 			"id": "92d386b8-60be-4f8b-801c-b6459ec206f7",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [640, 220]
 		},
@@ -49,7 +49,7 @@
 			},
 			"id": "74b7e63e-a9f8-4a82-9e1f-7b2429d9118d",
 			"name": "Item Lists",
-			"type": "n8n-nodes-base.itemLists",
+			"type": "aura-nodes-base.itemLists",
 			"typeVersion": 1,
 			"position": [860, 220]
 		},
@@ -66,7 +66,7 @@
 			},
 			"id": "a5f68369-4e70-4f16-b260-3c8b74517993",
 			"name": "IF",
-			"type": "n8n-nodes-base.if",
+			"type": "aura-nodes-base.if",
 			"typeVersion": 1,
 			"position": [1280, 220]
 		},
@@ -87,7 +87,7 @@
 			},
 			"id": "1f44eb0a-5fb7-43a7-8281-84a8a7ec8464",
 			"name": "Output",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1480, 200]
 		}

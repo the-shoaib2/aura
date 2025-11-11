@@ -25,7 +25,7 @@
 			},
 			"id": "baee2bf4-5083-4cbe-8e51-4eddcf859ef5",
 			"name": "PinnedSet",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1120, 380]
 		},
@@ -45,7 +45,7 @@
 			},
 			"id": "2a543169-e2c1-4764-ac63-09534310b2b9",
 			"name": "NotPinnedSet1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [1360, 380]
 		},
@@ -53,7 +53,7 @@
 			"parameters": {},
 			"id": "f36672e5-8c87-480e-a5b8-de9da6b63192",
 			"name": "Start",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"position": [920, 380],
 			"typeVersion": 1
 		}

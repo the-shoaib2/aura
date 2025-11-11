@@ -1,6 +1,6 @@
-import type { CreateRoleDto, UpdateRoleDto } from '@n8n/api-types';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { type Role } from '@n8n/permissions';
+import type { CreateRoleDto, UpdateRoleDto } from '@aura/api-types';
+import { mockInstance } from '@aura/backend-test-utils';
+import { type Role } from '@aura/permissions';
 
 import { RoleService } from '@/services/role.service';
 

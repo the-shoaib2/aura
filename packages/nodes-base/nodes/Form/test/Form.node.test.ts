@@ -7,7 +7,7 @@ import type {
 	INodeExecutionData,
 	IWebhookFunctions,
 	NodeTypeAndVersion,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { Form } from '../Form.node';
 
@@ -42,7 +42,7 @@ describe('Form Node', () => {
 		it('should put execution to wait if operation is not completion', async () => {
 			mockExecuteFunctions.getNodeParameter.mockReturnValue('page');
 			mockExecuteFunctions.getParentNodes.mockReturnValue([
-				mock<NodeTypeAndVersion>({ type: 'n8n-nodes-base.formTrigger' }),
+				mock<NodeTypeAndVersion>({ type: 'aura-nodes-base.formTrigger' }),
 			]);
 			mockExecuteFunctions.getChildNodes.mockReturnValue([]);
 			mockExecuteFunctions.getNode.mockReturnValue(mock<INode>());
@@ -55,10 +55,10 @@ describe('Form Node', () => {
 		it('should throw an error if completion is not the last Form node', async () => {
 			mockExecuteFunctions.getNodeParameter.mockReturnValue('completion');
 			mockExecuteFunctions.getParentNodes.mockReturnValue([
-				mock<NodeTypeAndVersion>({ type: 'n8n-nodes-base.formTrigger' }),
+				mock<NodeTypeAndVersion>({ type: 'aura-nodes-base.formTrigger' }),
 			]);
 			mockExecuteFunctions.getChildNodes.mockReturnValue([
-				mock<NodeTypeAndVersion>({ type: 'n8n-nodes-base.form' }),
+				mock<NodeTypeAndVersion>({ type: 'aura-nodes-base.form' }),
 			]);
 			mockExecuteFunctions.getNode.mockReturnValue(mock<INode>());
 
@@ -71,7 +71,7 @@ describe('Form Node', () => {
 			const inputData: INodeExecutionData[] = [{ json: { test: 'data' } }];
 			mockExecuteFunctions.getNodeParameter.mockReturnValue('completion');
 			mockExecuteFunctions.getParentNodes.mockReturnValue([
-				mock<NodeTypeAndVersion>({ type: 'n8n-nodes-base.formTrigger' }),
+				mock<NodeTypeAndVersion>({ type: 'aura-nodes-base.formTrigger' }),
 			]);
 			mockExecuteFunctions.getChildNodes.mockReturnValue([]);
 			mockExecuteFunctions.getInputData.mockReturnValue(inputData);
@@ -99,7 +99,7 @@ describe('Form Node', () => {
 			mockWebhookFunctions.getRequestObject.mockReturnValue({ method: 'GET' } as Request);
 			mockWebhookFunctions.getParentNodes.mockReturnValue([
 				{
-					type: 'n8n-nodes-base.formTrigger',
+					type: 'aura-nodes-base.formTrigger',
 					name: 'Form Trigger',
 					typeVersion: 2.1,
 					disabled: false,
@@ -164,7 +164,7 @@ describe('Form Node', () => {
 				],
 				formSubmittedText: 'Your response has been recorded',
 				formTitle: 'Form Title',
-				n8nWebsiteLink: 'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger',
+				auraWebsiteLink: 'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger',
 				testRun: true,
 				useResponseData: true,
 				formSubmittedHeader: undefined,
@@ -175,7 +175,7 @@ describe('Form Node', () => {
 			mockWebhookFunctions.getRequestObject.mockReturnValue({ method: 'POST' } as Request);
 			mockWebhookFunctions.getParentNodes.mockReturnValue([
 				{
-					type: 'n8n-nodes-base.formTrigger',
+					type: 'aura-nodes-base.formTrigger',
 					name: 'Form Trigger',
 					typeVersion: 2.1,
 					disabled: false,
@@ -281,7 +281,7 @@ describe('Form Node', () => {
 				});
 				mockWebhookFunctions.getParentNodes.mockReturnValue([
 					{
-						type: 'n8n-nodes-base.formTrigger',
+						type: 'aura-nodes-base.formTrigger',
 						name: 'Form Trigger',
 						typeVersion: 2.1,
 						disabled: false,
@@ -319,7 +319,7 @@ describe('Form Node', () => {
 			mockWebhookFunctions.getRequestObject.mockReturnValue({ method: 'GET' } as Request);
 			mockWebhookFunctions.getParentNodes.mockReturnValue([
 				{
-					type: 'n8n-nodes-base.formTrigger',
+					type: 'aura-nodes-base.formTrigger',
 					name: 'Form Trigger',
 					typeVersion: 2.1,
 					disabled: false,
@@ -366,7 +366,7 @@ describe('Form Node', () => {
 			});
 			mockWebhookFunctions.getParentNodes.mockReturnValue([
 				{
-					type: 'n8n-nodes-base.formTrigger',
+					type: 'aura-nodes-base.formTrigger',
 					name: 'Form Trigger',
 					typeVersion: 2.1,
 					disabled: false,
@@ -403,7 +403,7 @@ describe('Form Node', () => {
 				if (paramName === 'respondWith') return 'text';
 				if (paramName === 'completionTitle') return 'Test Title';
 				if (paramName === 'completionMessage') return 'Test Message';
-				if (paramName === 'redirectUrl') return 'https://n8n.io';
+				if (paramName === 'redirectUrl') return 'https://aura.io';
 				if (paramName === 'formFields.values') return [];
 				if (paramName === 'responseText') return '';
 
@@ -411,7 +411,7 @@ describe('Form Node', () => {
 			});
 			mockWebhookFunctions.getParentNodes.mockReturnValue([
 				{
-					type: 'n8n-nodes-base.formTrigger',
+					type: 'aura-nodes-base.formTrigger',
 					name: 'Form Trigger',
 					typeVersion: 2.1,
 					disabled: false,
@@ -437,7 +437,7 @@ describe('Form Node', () => {
 				appendAttribution: 'test',
 				formTitle: 'test',
 				message: 'Test Message',
-				redirectUrl: 'https://n8n.io',
+				redirectUrl: 'https://aura.io',
 				responseText: '',
 				title: 'Test Title',
 				responseBinary: encodeURIComponent(JSON.stringify('')),

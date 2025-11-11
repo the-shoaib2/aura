@@ -1,5 +1,5 @@
-import type { INodeTypeBaseDescription, IVersionedNodeType } from 'n8n-workflow';
-import { VersionedNodeType } from 'n8n-workflow';
+import type { INodeTypeBaseDescription, IVersionedNodeType } from 'workflow';
+import { VersionedNodeType } from 'workflow';
 
 import { DiscordV1 } from './v1/DiscordV1.node';
 import { DiscordV2 } from './v2/DiscordV2.node';

@@ -6,7 +6,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	activityFields,
@@ -46,7 +46,7 @@ export class MonicaCrm implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Monica CRM',
 		name: 'monicaCrm',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:monicaCrm.png',
 		group: ['transform'],
 		version: 1,

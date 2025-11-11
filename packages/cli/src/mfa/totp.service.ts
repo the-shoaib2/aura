@@ -1,4 +1,4 @@
-import { Service } from '@n8n/di';
+import { Service } from '@aura/di';
 import OTPAuth from 'otpauth';
 
 @Service()
@@ -8,7 +8,7 @@ export class TOTPService {
 	}
 
 	generateTOTPUri({
-		issuer = 'n8n',
+		issuer = 'aura',
 		secret,
 		label,
 	}: {

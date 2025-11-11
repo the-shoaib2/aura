@@ -8,7 +8,7 @@ on:
     branches:
       - master
     paths:
-      - 'packages/frontend/@n8n/design-system/**'
+      - 'packages/frontend/@aura/design-system/**'
       - '.github/workflows/storybook.yml'
 concurrency:
   group: storybook-${{ github.event.pull_request.number || github.ref }}
@@ -28,12 +28,12 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: n8n-io/n8n/.github/actions/setup-nodejs-blacksmith@f5fbbbe0a28a886451c886cac6b49192a39b0eea # v1.104.1
+        uses: aura-io/aura/.github/actions/setup-nodejs-blacksmith@f5fbbbe0a28a886451c886cac6b49192a39b0eea # v1.104.1
         with:
-          build-command: pnpm run build --filter=@n8n/utils --filter=@n8n/vitest-config --filter=@n8n/design-system
+          build-command: pnpm run build --filter=@aura/utils --filter=@aura/vitest-config --filter=@aura/design-system
 
       - name: Build
-        working-directory: packages/frontend/@n8n/design-system
+        working-directory: packages/frontend/@aura/design-system
         run: |
           pnpm build:storybook
 
@@ -48,5 +48,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy packages/frontend/@n8n/design-system/storybook-static --project-name=storybook --branch=${{github.ref_name}} --commit-hash=${{ github.sha }}
+          command: pages deploy packages/frontend/@aura/design-system/storybook-static --project-name=storybook --branch=${{github.ref_name}} --commit-hash=${{ github.sha }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

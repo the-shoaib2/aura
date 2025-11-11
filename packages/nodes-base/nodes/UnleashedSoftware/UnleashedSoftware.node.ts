@@ -6,7 +6,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	convertNETDates,
@@ -22,7 +22,7 @@ export class UnleashedSoftware implements INodeType {
 		name: 'unleashedSoftware',
 		group: ['transform'],
 		subtitle: '={{$parameter["operation"] + ":" + $parameter["resource"]}}',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:unleashedSoftware.png',
 		version: 1,
 		description: 'Consume Unleashed Software API',

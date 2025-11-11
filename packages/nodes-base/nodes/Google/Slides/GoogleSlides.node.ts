@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { googleApiRequest } from './GenericFunctions';
 
@@ -74,7 +74,7 @@ export class GoogleSlides implements INodeType {
 				type: 'options',
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'OAuth2 (recommended)',
 						value: 'oAuth2',
 					},
@@ -284,7 +284,7 @@ export class GoogleSlides implements INodeType {
 									loadOptionsDependsOn: ['presentationId'],
 								},
 								description:
-									'If non-empty, limits the matches to slide elements only on the given slides. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+									'If non-empty, limits the matches to slide elements only on the given slides. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 							},
 							{
 								displayName: 'Search For',
@@ -339,7 +339,7 @@ export class GoogleSlides implements INodeType {
 						operation: ['getThumbnail'],
 					},
 				},
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+				// eslint-disable-next-line aura-nodes-base/node-param-description-boolean-without-whether
 				description: 'Name of the binary property to which to write the data of the read page',
 			},
 			{

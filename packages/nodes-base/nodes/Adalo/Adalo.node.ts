@@ -5,7 +5,7 @@ import {
 	type IHttpRequestOptions,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { collectionFields } from './CollectionDescription';
 import type { FieldsUiValues } from './types';

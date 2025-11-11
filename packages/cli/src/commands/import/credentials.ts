@@ -5,17 +5,17 @@ import {
 	SharedCredentials,
 	ProjectRepository,
 	GLOBAL_OWNER_ROLE,
-} from '@n8n/db';
-import { Command } from '@n8n/decorators';
-import { Container } from '@n8n/di';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import type { EntityManager } from '@n8n/typeorm';
+} from '@aura/db';
+import { Command } from '@aura/decorators';
+import { Container } from '@aura/di';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import type { EntityManager } from '@aura/typeorm';
 import glob from 'fast-glob';
 import fs from 'fs';
-import { Cipher } from 'n8n-core';
-import type { ICredentialsEncrypted } from 'n8n-workflow';
-import { jsonParse, UserError } from 'n8n-workflow';
+import { Cipher } from 'aura-core';
+import type { ICredentialsEncrypted } from 'workflow';
+import { jsonParse, UserError } from 'workflow';
 import { z } from 'zod';
 
 import { BaseCommand } from '../base-command';

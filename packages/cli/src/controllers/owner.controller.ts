@@ -1,12 +1,12 @@
-import { DismissBannerRequestDto, OwnerSetupRequestDto } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
+import { DismissBannerRequestDto, OwnerSetupRequestDto } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
 import {
 	AuthenticatedRequest,
 	GLOBAL_OWNER_ROLE,
 	SettingsRepository,
 	UserRepository,
-} from '@n8n/db';
-import { Body, GlobalScope, Post, RestController } from '@n8n/decorators';
+} from '@aura/db';
+import { Body, GlobalScope, Post, RestController } from '@aura/decorators';
 import { Response } from 'express';
 
 import { AuthService } from '@/auth/auth.service';
@@ -34,7 +34,7 @@ export class OwnerController {
 	) {}
 
 	/**
-	 * Promote a shell into the owner of the n8n instance,
+	 * Promote a shell into the owner of the aura instance,
 	 * and enable `isInstanceOwnerSetUp` setting.
 	 */
 	@Post('/setup', { skipAuth: true })

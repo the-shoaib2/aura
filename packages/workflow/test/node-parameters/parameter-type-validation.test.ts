@@ -12,7 +12,7 @@ describe('Type assertion functions', () => {
 	const mockNode: INode = {
 		id: 'test-node-id',
 		name: 'TestNode',
-		type: 'n8n-nodes-base.testNode',
+		type: 'aura-nodes-base.testNode',
 		typeVersion: 1,
 		position: [0, 0],
 		parameters: {},

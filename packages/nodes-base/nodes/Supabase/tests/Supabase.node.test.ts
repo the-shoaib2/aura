@@ -7,7 +7,7 @@ import {
 	type INodeExecutionData,
 	type IPairedItemData,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import * as utils from '../GenericFunctions';
 import { Supabase } from '../Supabase.node';

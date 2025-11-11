@@ -1,19 +1,19 @@
-import type { User, ICredentialsDb } from '@n8n/db';
+import type { User, ICredentialsDb } from '@aura/db';
 import {
 	CredentialsEntity,
 	SharedCredentials,
 	CredentialsRepository,
 	ProjectRepository,
 	SharedCredentialsRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
-import { Credentials } from 'n8n-core';
+} from '@aura/db';
+import { Container } from '@aura/di';
+import { Credentials } from 'aura-core';
 import type {
 	DisplayCondition,
 	IDataObject,
 	INodeProperties,
 	INodePropertyOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { EventService } from '@/events/event.service';
 import { ExternalHooks } from '@/external-hooks';

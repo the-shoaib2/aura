@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "7192e181-4384-430d-a25c-25beb0ae6b1f",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-100, 1040]
 		},
@@ -45,7 +45,7 @@
 			},
 			"id": "dc933b29-a770-43b8-aa20-a8e82b0d034f",
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [60, 1040]
 		},
@@ -56,7 +56,7 @@
 			},
 			"id": "2bcbc9d8-af2f-4c44-b47e-80a9462350d0",
 			"name": "Date & Time",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [360, 560]
 		},
@@ -75,7 +75,7 @@
 			},
 			"id": "c1b947a8-45c6-4c6a-b4ce-467d57de6d50",
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [580, 560]
 		},
@@ -86,7 +86,7 @@
 			},
 			"id": "a91fc3d9-afb8-4c78-ad0b-2078639708da",
 			"name": "Date & Time1",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [360, 740]
 		},
@@ -105,7 +105,7 @@
 			},
 			"id": "370b58aa-555f-4dc7-9c48-564bddfcbe33",
 			"name": "Set2",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [580, 740]
 		},
@@ -116,7 +116,7 @@
 			},
 			"id": "91d1e77d-3d25-4e87-9af8-f756ace4abcf",
 			"name": "Date & Time2",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [360, 940]
 		},
@@ -135,7 +135,7 @@
 			},
 			"id": "77cdf5fa-641e-46e1-8cb9-00160773b4b2",
 			"name": "Set3",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [580, 940]
 		},
@@ -146,7 +146,7 @@
 			},
 			"id": "084e7b19-f03e-42a9-b4df-865f2f6610de",
 			"name": "Date & Time3",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [360, 1120]
 		},
@@ -165,7 +165,7 @@
 			},
 			"id": "eb46b668-2ebc-47ee-adca-a8f99205ac26",
 			"name": "Set4",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [580, 1120]
 		},
@@ -176,7 +176,7 @@
 			},
 			"id": "9cb46fb5-e6e4-4fb3-859a-8cd26bebf1c9",
 			"name": "Date & Time4",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [360, 1300]
 		},
@@ -195,7 +195,7 @@
 			},
 			"id": "0d09dc35-d572-41f5-984c-30a66184b80a",
 			"name": "Set5",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [580, 1300]
 		},
@@ -206,7 +206,7 @@
 			},
 			"id": "208e26b1-db01-417b-b21f-fcb8198a1e27",
 			"name": "Date & Time5",
-			"type": "n8n-nodes-base.dateTime",
+			"type": "aura-nodes-base.dateTime",
 			"typeVersion": 1,
 			"position": [360, 1480]
 		},
@@ -225,7 +225,7 @@
 			},
 			"id": "1076029a-91a7-4121-aadc-e9dde57b3d56",
 			"name": "Set6",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 2,
 			"position": [580, 1480]
 		}

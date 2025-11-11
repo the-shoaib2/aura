@@ -20,12 +20,12 @@ import type {
 	InsightsByTime,
 	InsightsByWorkflow,
 	InsightsSummaryType,
-} from '@n8n/api-types';
+} from '@aura/api-types';
 import { INSIGHT_TYPES } from '@/features/execution/insights/insights.constants';
 import type { InsightsSummaryDisplay } from '@/features/execution/insights/insights.types';
 import { vi } from 'vitest';
 
-const { emitters, addEmitter } = useEmitters<'n8nDataTableServer'>();
+const { emitters, addEmitter } = useEmitters<'auraDataTableServer'>();
 
 const mockRoute = reactive<{
 	params: {
@@ -49,7 +49,7 @@ vi.mock('vue-chartjs', () => ({
 	},
 }));
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,
@@ -60,7 +60,7 @@ vi.mock('@n8n/design-system', async (importOriginal) => {
 				itemsLength: { type: Number, required: true },
 			},
 			setup(_, { emit }) {
-				addEmitter('n8nDataTableServer', emit);
+				addEmitter('auraDataTableServer', emit);
 			},
 			template: '<div data-test-id="insights-table"><slot /></div>',
 		}),
@@ -325,7 +325,7 @@ describe('InsightsDashboard', () => {
 					props: { insightType: INSIGHT_TYPES.TOTAL },
 				}),
 			).not.toThrow();
-			expect(document.title).toBe('Insights - n8n');
+			expect(document.title).toBe('Insights - aura');
 			expect(screen.getByRole('heading', { level: 2, name: 'Insights' })).toBeInTheDocument();
 		});
 
@@ -507,7 +507,7 @@ describe('InsightsDashboard', () => {
 
 			await waitAllPromises();
 
-			emitters.n8nDataTableServer.emit('update:options', {
+			emitters.auraDataTableServer.emit('update:options', {
 				page: 1,
 				itemsPerPage: 50,
 				sortBy: [{ id: 'total', desc: true }],
@@ -531,7 +531,7 @@ describe('InsightsDashboard', () => {
 			await waitAllPromises();
 
 			await waitFor(() => {
-				emitters.n8nDataTableServer.emit('update:options', {
+				emitters.auraDataTableServer.emit('update:options', {
 					page: 0,
 					itemsPerPage: 25,
 					sortBy: [{ id: 'failed', desc: false }],
@@ -555,7 +555,7 @@ describe('InsightsDashboard', () => {
 			await waitAllPromises();
 
 			await waitFor(() => {
-				emitters.n8nDataTableServer.emit('update:options', {
+				emitters.auraDataTableServer.emit('update:options', {
 					page: 0,
 					itemsPerPage: 25,
 					sortBy: [],
@@ -664,7 +664,7 @@ describe('InsightsDashboard', () => {
 			await waitAllPromises();
 			vi.clearAllMocks();
 
-			emitters.n8nDataTableServer.emit('update:options', {
+			emitters.auraDataTableServer.emit('update:options', {
 				page: 1,
 				itemsPerPage: 50,
 				sortBy: [{ id: 'failed', desc: true }],

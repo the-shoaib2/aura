@@ -8,7 +8,7 @@ on:
       image:
         description: 'Docker image to test against'
         required: false
-        default: 'n8nio/n8n:nightly'
+        default: 'auraio/aura:nightly'
         type: string
   push:
     branches:
@@ -24,6 +24,6 @@ jobs:
     uses: ./.github/workflows/playwright-test-reusable.yml
     with:
       test-mode: docker-pull
-      docker-image: ${{ github.event.inputs.image || 'n8nio/n8n:nightly' }}
-      test-command: pnpm --filter=n8n-playwright test:container:${{ matrix.config }}
+      docker-image: ${{ github.event.inputs.image || 'auraio/aura:nightly' }}
+      test-command: pnpm --filter=aura-playwright test:container:${{ matrix.config }}
     secrets: inherit

@@ -1,5 +1,5 @@
 import type { RouteLocationRaw } from 'vue-router';
-import type { TabOptions } from '@n8n/design-system';
+import type { TabOptions } from '@aura/design-system';
 
 export type DynamicTabOptions = TabOptions<string> & {
 	dynamicRoute?: {

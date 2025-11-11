@@ -1,5 +1,5 @@
-import { mockLogger } from '@n8n/backend-test-utils';
-import type { Settings, SettingsRepository } from '@n8n/db';
+import { mockLogger } from '@aura/backend-test-utils';
+import type { Settings, SettingsRepository } from '@aura/db';
 import { captor, mock } from 'jest-mock-extended';
 
 import type { License } from '@/license';

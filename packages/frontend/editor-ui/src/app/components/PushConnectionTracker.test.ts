@@ -1,6 +1,6 @@
 import { createComponentRenderer } from '@/__tests__/render';
 import PushConnectionTracker from '@/app/components/PushConnectionTracker.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 

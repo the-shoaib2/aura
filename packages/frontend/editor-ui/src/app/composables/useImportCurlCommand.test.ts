@@ -320,7 +320,7 @@ describe('useImportCurlCommand', () => {
 			const curl =
 				'curl -X POST https://reqbin.com/echo \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "redirect_uri=https://test.app.n8n.cloud/webhook-test/12345" \
+  -d "redirect_uri=https://test.app.aura.cloud/webhook-test/12345" \
   -d "client_secret=secret%3D%3D"';
 
 			const parameters = toHttpNodeParameters(curl);
@@ -333,7 +333,7 @@ describe('useImportCurlCommand', () => {
 				parameters: [
 					{
 						name: 'redirect_uri',
-						value: 'https://test.app.n8n.cloud/webhook-test/12345',
+						value: 'https://test.app.aura.cloud/webhook-test/12345',
 					},
 					{
 						name: 'client_secret',

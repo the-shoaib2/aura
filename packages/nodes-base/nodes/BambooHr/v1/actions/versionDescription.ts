@@ -1,5 +1,5 @@
-/* eslint-disable n8n-nodes-base/node-filename-against-convention */
-import { NodeConnectionTypes, type INodeTypeDescription } from 'n8n-workflow';
+/* eslint-disable aura-nodes-base/node-filename-against-convention */
+import { NodeConnectionTypes, type INodeTypeDescription } from 'workflow';
 
 import * as companyReport from './companyReport';
 import * as employee from './employee';
@@ -20,7 +20,7 @@ export const versionDescription: INodeTypeDescription = {
 	description: 'Consume BambooHR API',
 	displayName: 'BambooHR',
 	group: ['transform'],
-	// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+	// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 	icon: 'file:bambooHr.png',
 	inputs: [NodeConnectionTypes.Main],
 	name: 'bambooHr',

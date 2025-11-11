@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "987fdc91-f1a7-4882-9975-3d41e183b7f3",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [780, 400]
 		},
@@ -29,7 +29,7 @@
 			},
 			"id": "afe2a25a-d7a3-41f5-a9be-7a2ea3bb260d",
 			"name": "iCalendar",
-			"type": "n8n-nodes-base.iCal",
+			"type": "aura-nodes-base.iCal",
 			"typeVersion": 1,
 			"position": [1080, 400]
 		}

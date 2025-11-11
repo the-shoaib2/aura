@@ -1,13 +1,13 @@
 import type { Plugin } from 'vue';
 import { AxiosError } from 'axios';
-import { ResponseError } from '@n8n/rest-api-client';
+import { ResponseError } from '@aura/rest-api-client';
 import * as Sentry from '@sentry/vue';
-import { getAndParseConfigFromMetaTag } from '@n8n/stores/metaTagConfig';
+import { getAndParseConfigFromMetaTag } from '@aura/stores/metaTagConfig';
 
 const ignoredErrors = [
 	{ instanceof: AxiosError },
 	{ instanceof: ResponseError, message: /ECONNREFUSED/ },
-	{ instanceof: ResponseError, message: "Can't connect to n8n." },
+	{ instanceof: ResponseError, message: "Can't connect to aura." },
 	{ instanceof: ResponseError, message: 'Unauthorized' },
 	{ instanceof: RangeError, message: /Position \d+ is out of range for changeset of length \d+/ },
 	{ instanceof: RangeError, message: /Invalid change range \d+ to \d+/ },

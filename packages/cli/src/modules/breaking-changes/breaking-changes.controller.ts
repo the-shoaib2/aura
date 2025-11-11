@@ -3,9 +3,9 @@ import {
 	BreakingChangeLightReportResult,
 	BreakingChangeReportResult,
 	BreakingChangeWorkflowRuleResult,
-} from '@n8n/api-types';
-import { AuthenticatedRequest } from '@n8n/db';
-import { Get, RestController, GlobalScope, Query, Post, Param } from '@n8n/decorators';
+} from '@aura/api-types';
+import { AuthenticatedRequest } from '@aura/db';
+import { Get, RestController, GlobalScope, Query, Post, Param } from '@aura/decorators';
 
 import { NotFoundError } from '@/errors/response-errors/not-found.error';
 

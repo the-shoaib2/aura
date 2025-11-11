@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 const i18 = useI18n();
 </script>
 
@@ -9,7 +9,7 @@ const i18 = useI18n();
 		{{ i18.baseText('nodeView.toSeeTheLatestStatus') }}.
 		<br />
 		<a
-			href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.wait/"
+			href="https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.wait/"
 			target="_blank"
 		>
 			{{ i18.baseText('nodeView.moreInfo') }}

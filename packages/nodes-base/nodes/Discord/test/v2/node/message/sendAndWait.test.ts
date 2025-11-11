@@ -1,6 +1,6 @@
 import type { MockProxy } from 'jest-mock-extended';
 import { mock } from 'jest-mock-extended';
-import { SEND_AND_WAIT_OPERATION, type IExecuteFunctions } from 'n8n-workflow';
+import { SEND_AND_WAIT_OPERATION, type IExecuteFunctions } from 'workflow';
 
 import { versionDescription } from '../../../../v2/actions/versionDescription';
 import { DiscordV2 } from '../../../../v2/DiscordV2.node';
@@ -88,7 +88,7 @@ describe('Test DiscordV2, message => sendAndWait', () => {
 					{
 						color: 5814783,
 						description:
-							'my message\n\n_This message was sent automatically with _[n8n](https://n8n.io/?utm_source=n8n-internal&utm_medium=powered_by&utm_campaign=n8n-nodes-base.discord_instanceId)',
+							'my message\n\n_This message was sent automatically with _[aura](https://aura.io/?utm_source=aura-internal&utm_medium=powered_by&utm_campaign=aura-nodes-base.discord_instanceId)',
 					},
 				],
 			},

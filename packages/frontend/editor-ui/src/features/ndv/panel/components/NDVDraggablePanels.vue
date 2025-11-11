@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useStorage } from '@/app/composables/useStorage';
 
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'workflow';
 import PanelDragButton from './PanelDragButton.vue';
 
 import { LOCAL_STORAGE_MAIN_PANEL_RELATIVE_WIDTH, MAIN_NODE_PANEL_WIDTH } from '@/app/constants';
@@ -14,7 +14,7 @@ import { ref, onMounted, onBeforeUnmount, computed, watch, nextTick } from 'vue'
 import { useUIStore } from '@/app/stores/ui.store';
 import { useThrottleFn } from '@vueuse/core';
 
-import { N8nResizeWrapper } from '@n8n/design-system';
+import { N8nResizeWrapper } from '@aura/design-system';
 const SIDE_MARGIN = 24;
 const SIDE_PANELS_MARGIN = 80;
 const MIN_PANEL_WIDTH = 310;

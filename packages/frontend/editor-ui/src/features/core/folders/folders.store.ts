@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import type { IUsedCredential } from '@/features/credentials/credentials.types';
 import type {
 	ChangeLocationSearchResult,
@@ -12,10 +12,10 @@ import type {
 import * as foldersApi from './folders.api';
 import * as workflowsApi from '@/app/api/workflows';
 import * as workflowsEEApi from '@/app/api/workflows.ee';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { ref } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import type { PathItem } from '@n8n/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
+import { useI18n } from '@aura/i18n';
+import type { PathItem } from '@aura/design-system/components/N8nBreadcrumbs/Breadcrumbs.vue';
 
 const BREADCRUMBS_MIN_LOADING_TIME = 300;
 

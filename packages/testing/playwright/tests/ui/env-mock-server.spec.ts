@@ -32,21 +32,21 @@ test.describe('Proxy server @capability:proxy', () => {
 		expect(await proxyServer.wasRequestMade({ method: 'GET', path: '/health' })).toBe(true);
 	});
 
-	test('should run a simple workflow calling http endpoint', async ({ n8n, proxyServer }) => {
+	test('should run a simple workflow calling http endpoint', async ({ aura, proxyServer }) => {
 		const mockResponse = { data: 'Hello from ProxyServer!', test: '1' };
 
 		// Create expectation in mockserver to handle the request
 		await proxyServer.createGetExpectation('/data', mockResponse, { test: '1' });
 
-		await n8n.canvas.openNewWorkflow();
+		await aura.canvas.openNewWorkflow();
 
 		// This is calling a random endpoint http://mock-api.com
-		await n8n.canvas.importWorkflow('Simple_workflow_with_http_node.json', 'Test');
+		await aura.canvas.importWorkflow('Simple_workflow_with_http_node.json', 'Test');
 
 		// Execute workflow - this should now proxy through mockserver
-		await n8n.workflowComposer.executeWorkflowAndWaitForNotification('Successful');
-		await n8n.canvas.openNode('HTTP Request');
-		await expect(n8n.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('Hello from ProxyServer!');
+		await aura.workflowComposer.executeWorkflowAndWaitForNotification('Successful');
+		await aura.canvas.openNode('HTTP Request');
+		await expect(aura.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('Hello from ProxyServer!');
 
 		// Verify the request was handled by mockserver
 		expect(
@@ -68,13 +68,13 @@ test.describe('Proxy server @capability:proxy', () => {
 		expect(await proxyServer.wasRequestMade({ method: 'GET', path: '/mock-endpoint' })).toBe(true);
 	});
 
-	test('should run a simple workflow proxying HTTPS request', async ({ n8n }) => {
-		await n8n.canvas.openNewWorkflow();
-		await n8n.canvas.importWorkflow('Simple_workflow_with_http_node.json', 'Test');
+	test('should run a simple workflow proxying HTTPS request', async ({ aura }) => {
+		await aura.canvas.openNewWorkflow();
+		await aura.canvas.importWorkflow('Simple_workflow_with_http_node.json', 'Test');
 
-		await n8n.canvas.openNode('HTTP Request');
-		await n8n.ndv.setParameterInput('url', 'https://jsonplaceholder.typicode.com/todos/1');
-		await n8n.ndv.execute();
-		await expect(n8n.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('1');
+		await aura.canvas.openNode('HTTP Request');
+		await aura.ndv.setParameterInput('url', 'https://jsonplaceholder.typicode.com/todos/1');
+		await aura.ndv.execute();
+		await expect(aura.ndv.outputPanel.getTbodyCell(0, 0)).toContainText('1');
 	});
 });

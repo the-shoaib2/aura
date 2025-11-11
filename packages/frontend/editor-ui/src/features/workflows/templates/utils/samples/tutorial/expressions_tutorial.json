@@ -9,7 +9,7 @@
 			"id": "2c20bdef-e54e-46ab-9c63-5cf521ec749e",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Start Tutorial",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-7360, 992],
@@ -20,7 +20,7 @@
 			"id": "25703548-3e48-4951-9e3b-1d7815e15af5",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-7616, 592],
@@ -28,7 +28,7 @@
 				"color": 5,
 				"width": 640,
 				"height": 560,
-				"content": "# Tutorial - Mastering n8n Expressions\n\nWelcome! You know what JSON is. Now, let's learn how to **use it**. This workflow teaches you how to pull data from one node and use it in another using n8n's powerful expressions.\n\n**What is an Expression?**\nAn expression is a small piece of code inside double curly braces `{{ }}` that gets replaced with a dynamic value when the workflow runs. It's the \"glue\" that connects your nodes.\n\n**How to use this tutorial:**\n1.  The first node, **\"Source Data\"**, contains all the data we will use. Execute it once to see what's inside.\n2.  Follow the path from top to bottom. Each node is a new lesson.\n3.  Read the sticky note for each lesson, then look at the node's configuration and its output to understand the concept."
+				"content": "# Tutorial - Mastering aura Expressions\n\nWelcome! You know what JSON is. Now, let's learn how to **use it**. This workflow teaches you how to pull data from one node and use it in another using aura's powerful expressions.\n\n**What is an Expression?**\nAn expression is a small piece of code inside double curly braces `{{ }}` that gets replaced with a dynamic value when the workflow runs. It's the \"glue\" that connects your nodes.\n\n**How to use this tutorial:**\n1.  The first node, **\"Source Data\"**, contains all the data we will use. Execute it once to see what's inside.\n2.  Follow the path from top to bottom. Each node is a new lesson.\n3.  Read the sticky note for each lesson, then look at the node's configuration and its output to understand the concept."
 			},
 			"typeVersion": 1
 		},
@@ -36,7 +36,7 @@
 			"id": "b875f86c-a790-49bc-96a0-e1ccc72a5e80",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Source Data",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-6720, 992],
@@ -66,7 +66,7 @@
 							"id": "fghij",
 							"name": "skills",
 							"type": "array",
-							"value": "[\"JavaScript\",\"Python\",\"n8n\"]"
+							"value": "[\"JavaScript\",\"Python\",\"aura\"]"
 						},
 						{
 							"id": "klmno",
@@ -89,7 +89,7 @@
 			"id": "108d6d9a-6e98-491d-87c1-78d3680f0c40",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note1",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-6944, 640],
@@ -105,7 +105,7 @@
 			"id": "54723ed3-94c5-4104-b1c5-3ac70c262b87",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "1. The Basics",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-6192, 992],
@@ -128,7 +128,7 @@
 			"id": "81dc9611-b9b5-41c3-a5ab-460cb0dc1ca6",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note2",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-6400, 576],
@@ -136,7 +136,7 @@
 				"color": 2,
 				"width": 500,
 				"height": 580,
-				"content": "## Lesson 1: Accessing a Simple Value\n\nThis is the most common thing you'll do in n8n.\n\n**The Goal:** Get the user's name from the \"Source Data\" node.\n\n**The Expression:** `{{ $('Source Data').item.json.name }}`\n\n**Breakdown:**\n- `{{ ... }}`: Tells n8n \"this is a dynamic expression\".\n- `$('Source Data')`: Selects the node we want data from.\n- `.item.json`: Narrows it down to the JSON data of the current item.\n- `.name`: Selects the specific **key** we want the value of.\n\n**Other Possibility:**\n`{{ $json.name }}` would also work in this case, as `$json` accesses the data from the previous node."
+				"content": "## Lesson 1: Accessing a Simple Value\n\nThis is the most common thing you'll do in aura.\n\n**The Goal:** Get the user's name from the \"Source Data\" node.\n\n**The Expression:** `{{ $('Source Data').item.json.name }}`\n\n**Breakdown:**\n- `{{ ... }}`: Tells aura \"this is a dynamic expression\".\n- `$('Source Data')`: Selects the node we want data from.\n- `.item.json`: Narrows it down to the JSON data of the current item.\n- `.name`: Selects the specific **key** we want the value of.\n\n**Other Possibility:**\n`{{ $json.name }}` would also work in this case, as `$json` accesses the data from the previous node."
 			},
 			"typeVersion": 1
 		},
@@ -144,7 +144,7 @@
 			"id": "b91f6099-5207-4000-9a0e-e6374718c123",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "3. Working with Arrays",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-4960, 992],
@@ -167,7 +167,7 @@
 			"id": "2074d65b-2d6b-41af-a4f9-fa9a195a1bf8",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note3",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-5168, 624],
@@ -183,7 +183,7 @@
 			"id": "8ccc139f-0e8c-4c25-9d04-cecf2b335934",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "4. Going Deeper",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-4400, 992],
@@ -206,7 +206,7 @@
 			"id": "34264c0c-8282-4b57-a066-0548a31cbf1a",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note4",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-4608, 672],
@@ -222,7 +222,7 @@
 			"id": "4c41fb6a-5f93-408f-9583-1e118d139dcf",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "5. The Combo Move",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-3808, 992],
@@ -245,7 +245,7 @@
 			"id": "2123cd02-5cb6-4dd7-89e5-7af1c6edf234",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note5",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-4048, 672],
@@ -261,7 +261,7 @@
 			"id": "f25a5a9d-518d-4a4a-b2ad-36fd0e1f5bd2",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "6. A Touch of Magic",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-3200, 992],
@@ -296,7 +296,7 @@
 			"id": "0ebf5e6b-feb8-4f32-9979-9d7555b461ed",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note6",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-3440, 640],
@@ -312,7 +312,7 @@
 			"id": "81d8c2d6-95cc-47e3-b0f0-9c698a120d1c",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "9. The \"All Items\" View",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-1264, 992],
@@ -336,7 +336,7 @@
 			"id": "609e27f8-1702-493e-bc8b-cbade4561bd2",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note7",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-1696, 640],
@@ -352,7 +352,7 @@
 			"id": "d6afc595-c6f0-47b2-894e-b03d6a0227ee",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Final Exam",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-688, 992],
@@ -364,7 +364,7 @@
 							"id": "12345",
 							"name": "final_summary",
 							"type": "string",
-							"value": "=User {{ $('2. The n8n Selectors').last().json.user_name_from_first }} is {{ $('Source Data').last().json.age }}.\n\nTheir best skill is {{ $('3. Working with Arrays').last().json.second_skill }}.\n\nTheir first project was {{ $('Source Data').last().json.projects[0].name }}, which is now {{ $('5. The Combo Move').last().json.first_project_status }}.\n\nAll skills: {{ $('9. The \"All Items\" View').last().json.all_skills_string }}."
+							"value": "=User {{ $('2. The aura Selectors').last().json.user_name_from_first }} is {{ $('Source Data').last().json.age }}.\n\nTheir best skill is {{ $('3. Working with Arrays').last().json.second_skill }}.\n\nTheir first project was {{ $('Source Data').last().json.projects[0].name }}, which is now {{ $('5. The Combo Move').last().json.first_project_status }}.\n\nAll skills: {{ $('9. The \"All Items\" View').last().json.all_skills_string }}."
 						}
 					]
 				}
@@ -375,7 +375,7 @@
 			"id": "99a7fb24-491c-436e-a775-6fabdc2c4004",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note8",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-896, 736],
@@ -383,15 +383,15 @@
 				"color": 6,
 				"width": 520,
 				"height": 420,
-				"content": "## 🎓 FINAL EXAM: Putting It All Together\n\nThis node uses everything we've learned to build a final summary object.\n\nLook at the expressions for each field. They pull data from different nodes and use different techniques you've just practiced.\n\n**Congratulations! You now have the foundational knowledge to link data and build powerful, dynamic workflows in n8n.**"
+				"content": "## 🎓 FINAL EXAM: Putting It All Together\n\nThis node uses everything we've learned to build a final summary object.\n\nLook at the expressions for each field. They pull data from different nodes and use different techniques you've just practiced.\n\n**Congratulations! You now have the foundational knowledge to link data and build powerful, dynamic workflows in aura.**"
 			},
 			"typeVersion": 1
 		},
 		{
 			"id": "c3f2fd66-784d-4675-8cb3-72dd33e6ee4e",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
-			"name": "2. The n8n Selectors",
-			"type": "n8n-nodes-base.set",
+			"name": "2. The aura Selectors",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-5568, 992],
@@ -414,14 +414,14 @@
 			"id": "bade9e22-6e9d-4f25-a1b7-974cbf2d5c61",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note9",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-5872, 528],
 			"parameters": {
 				"width": 680,
 				"height": 620,
-				"content": "## Lesson 2: The n8n Selectors (`.first()`, `.last()`, `.all()`)\n\nIn the last lesson, we used `.item`. When there is only one output item from a node, this is equivalent to `.last()`. Using `.last()` explicitly is often safer and clearer.\n\n**The Goal:** Get the user's name using the `.last()` selector.\n\n**The Expression:** `{{ $('Source Data').last().json.name }}`\n\n**Why is this better?**\nIf a node ever returns multiple items, `.last()` guarantees you only get data from the very last one.\n\nIf you ever need to match the selected data with the input items, this is where `.item` cannot be replaced.\n\n**Other Selectors:**\n- **`.first()`**: Gets the data from the first item.\n- **`.all()`**: Gets data from ALL items, returning it as an array of objects. (This is different from `$items`!)"
+				"content": "## Lesson 2: The aura Selectors (`.first()`, `.last()`, `.all()`)\n\nIn the last lesson, we used `.item`. When there is only one output item from a node, this is equivalent to `.last()`. Using `.last()` explicitly is often safer and clearer.\n\n**The Goal:** Get the user's name using the `.last()` selector.\n\n**The Expression:** `{{ $('Source Data').last().json.name }}`\n\n**Why is this better?**\nIf a node ever returns multiple items, `.last()` guarantees you only get data from the very last one.\n\nIf you ever need to match the selected data with the input items, this is where `.item` cannot be replaced.\n\n**Other Selectors:**\n- **`.first()`**: Gets the data from the first item.\n- **`.all()`**: Gets data from ALL items, returning it as an array of objects. (This is different from `$items`!)"
 			},
 			"typeVersion": 1
 		},
@@ -429,7 +429,7 @@
 			"id": "7c4b718e-fca8-4dbe-8b3b-d6aeeaa78d6d",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "7. Inspecting Objects",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-2640, 992],
@@ -452,7 +452,7 @@
 			"id": "089b02d1-e43b-4baf-8bcf-b2dd7a95df92",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note10",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-2832, 640],
@@ -468,7 +468,7 @@
 			"id": "81a16f66-4fca-47af-841c-91e16ff9587e",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "8. Utility Functions",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-2064, 992],
@@ -497,7 +497,7 @@
 			"id": "b7aea910-5fd6-420f-9814-77afb8ab9517",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note11",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-2304, 640],
@@ -512,7 +512,7 @@
 			"id": "2b83f9a2-7c71-43bb-b940-d0c3204cf6a2",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Split Out Skills",
-			"type": "n8n-nodes-base.splitOut",
+			"type": "aura-nodes-base.splitOut",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-1488, 992],
@@ -527,7 +527,7 @@
 			"id": "933a0592-2deb-4db7-b801-d52dbbed1252",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note12",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-352, -128],
@@ -535,7 +535,7 @@
 				"color": 3,
 				"width": 540,
 				"height": 1280,
-				"content": "## Was this helpful? Let me know!\n[![clic](https://supastudio.ia2s.app/storage/v1/object/public/assets/n8n/clic_down_lucas.gif)](https://n8n.ac)\n\nI really hope this tutorial helped you understand n8n Expressions better. Your feedback is incredibly valuable and helps me create better resources for the n8n community.\n\n### **Share Your Thoughts & Ideas**\n\nWhether you have a suggestion, found a typo, or just want to say thanks, I'd love to hear from you!\nHere's a simple n8n form built for this purpose:\n\n#### ➡️ **[Click here to give feedback](https://api.ia2s.app/form/templates/feedback?template=Expressions%20Tutorial)**\n\n### **Ready to Build Something Great?**\n\nIf you're looking to take your n8n skills or business automation to the next level, I can help.\n\n**🎓 n8n Coaching:** Want to become an n8n pro? I offer one-on-one coaching sessions to help you master workflows, tackle specific problems, and build with confidence.\n#### ➡️ **[Book a Coaching Session](https://api.ia2s.app/form/templates/coaching?template=Expressions%20Tutorial)**\n\n**💼 n8n Consulting:** Have a complex project, an integration challenge, or need a custom workflow built for your business? Let's work together to create a powerful automation solution.\n#### ➡️ **[Inquire About Consulting Services](https://api.ia2s.app/form/templates/consulting?template=Expressions%20Tutorial)**\n\n---\n\nHappy Automating!\nLucas Peyrin | [n8n Academy](https://n8n.ac)"
+				"content": "## Was this helpful? Let me know!\n[![clic](https://supastudio.ia2s.app/storage/v1/object/public/assets/aura/clic_down_lucas.gif)](https://aura.ac)\n\nI really hope this tutorial helped you understand aura Expressions better. Your feedback is incredibly valuable and helps me create better resources for the aura community.\n\n### **Share Your Thoughts & Ideas**\n\nWhether you have a suggestion, found a typo, or just want to say thanks, I'd love to hear from you!\nHere's a simple aura form built for this purpose:\n\n#### ➡️ **[Click here to give feedback](https://api.ia2s.app/form/templates/feedback?template=Expressions%20Tutorial)**\n\n### **Ready to Build Something Great?**\n\nIf you're looking to take your aura skills or business automation to the next level, I can help.\n\n**🎓 aura Coaching:** Want to become an aura pro? I offer one-on-one coaching sessions to help you master workflows, tackle specific problems, and build with confidence.\n#### ➡️ **[Book a Coaching Session](https://api.ia2s.app/form/templates/coaching?template=Expressions%20Tutorial)**\n\n**💼 aura Consulting:** Have a complex project, an integration challenge, or need a custom workflow built for your business? Let's work together to create a powerful automation solution.\n#### ➡️ **[Inquire About Consulting Services](https://api.ia2s.app/form/templates/consulting?template=Expressions%20Tutorial)**\n\n---\n\nHappy Automating!\nLucas Peyrin | [aura Academy](https://aura.ac)"
 			},
 			"typeVersion": 1
 		},
@@ -543,7 +543,7 @@
 			"id": "efc93cff-1e16-46fc-a839-7cca5ccd27f8",
 			"cid": "Ikx1Y2FzIFBleXJpbiI",
 			"name": "Sticky Note15",
-			"type": "n8n-nodes-base.stickyNote",
+			"type": "aura-nodes-base.stickyNote",
 			"notes": "© 2025 Lucas Peyrin",
 			"creator": "Lucas Peyrin",
 			"position": [-896, 304],
@@ -551,7 +551,7 @@
 				"color": 6,
 				"width": 512,
 				"height": 408,
-				"content": "## [>> Go to Eval Workflow <<](https://n8n.io/workflows/6236)\n\nVerify your skills with a complete eval workflow to put your Expression Skills to the test.\n[![Test Skills](https://supastudio.ia2s.app/storage/v1/object/public/assets/n8n/test_your_skillls_button.gif)](https://n8n.io/workflows/6236)"
+				"content": "## [>> Go to Eval Workflow <<](https://aura.io/workflows/6236)\n\nVerify your skills with a complete eval workflow to put your Expression Skills to the test.\n[![Test Skills](https://supastudio.ia2s.app/storage/v1/object/public/assets/aura/test_your_skillls_button.gif)](https://aura.io/workflows/6236)"
 			},
 			"typeVersion": 1
 		}
@@ -572,7 +572,7 @@
 			"main": [
 				[
 					{
-						"node": "2. The n8n Selectors",
+						"node": "2. The aura Selectors",
 						"type": "main",
 						"index": 0
 					}
@@ -634,7 +634,7 @@
 				]
 			]
 		},
-		"2. The n8n Selectors": {
+		"2. The aura Selectors": {
 			"main": [
 				[
 					{

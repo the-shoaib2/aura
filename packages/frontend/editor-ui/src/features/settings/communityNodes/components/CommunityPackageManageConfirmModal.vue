@@ -6,19 +6,19 @@ import {
 } from '../communityNodes.constants';
 import { useToast } from '@/app/composables/useToast';
 import { useCommunityNodesStore } from '../communityNodes.store';
-import { createEventBus } from '@n8n/utils/event-bus';
-import { useI18n } from '@n8n/i18n';
+import { createEventBus } from '@aura/utils/event-bus';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { computed, onMounted, ref } from 'vue';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import type { CommunityNodeType } from '@n8n/api-types';
+import type { CommunityNodeType } from '@aura/api-types';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import semver from 'semver';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { WorkflowResource } from '@/Interface';
 
-import { N8nButton, N8nNotice, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nNotice, N8nText } from '@aura/design-system';
 import NodesInWorkflowTable from './NodesInWorkflowTable.vue';
 
 export type CommunityPackageManageMode = 'uninstall' | 'update' | 'view-documentation';

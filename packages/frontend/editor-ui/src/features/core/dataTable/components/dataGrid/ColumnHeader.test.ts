@@ -7,7 +7,7 @@ import ColumnHeader, {
 } from '@/features/core/dataTable/components/dataGrid/ColumnHeader.vue';
 
 // Mock N8nActionDropdown to make it easy to trigger item selection
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,

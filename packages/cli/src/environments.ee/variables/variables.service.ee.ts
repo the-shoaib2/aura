@@ -1,9 +1,9 @@
-import { CreateVariableRequestDto, UpdateVariableRequestDto } from '@n8n/api-types';
-import { LicenseState } from '@n8n/backend-common';
-import type { User, Variables } from '@n8n/db';
-import { generateNanoId, VariablesRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { hasGlobalScope, Scope } from '@n8n/permissions';
+import { CreateVariableRequestDto, UpdateVariableRequestDto } from '@aura/api-types';
+import { LicenseState } from '@aura/backend-common';
+import type { User, Variables } from '@aura/db';
+import { generateNanoId, VariablesRepository } from '@aura/db';
+import { Service } from '@aura/di';
+import { hasGlobalScope, Scope } from '@aura/permissions';
 
 import { FeatureNotLicensedError } from '@/errors/feature-not-licensed.error';
 import { ForbiddenError } from '@/errors/response-errors/forbidden.error';

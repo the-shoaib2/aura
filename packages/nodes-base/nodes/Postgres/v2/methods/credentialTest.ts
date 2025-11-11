@@ -2,7 +2,7 @@ import type {
 	ICredentialsDecrypted,
 	ICredentialTestFunctions,
 	INodeCredentialTestResult,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { configurePostgres } from '../../transport';
 import type { PgpConnection, PostgresNodeCredentials } from '../helpers/interfaces';

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useUIStore } from '@/app/stores/ui.store';
 import { onBeforeUnmount, onMounted } from 'vue';
-import type { EventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
 import { ElDrawer } from 'element-plus';
 
 const props = withDefaults(

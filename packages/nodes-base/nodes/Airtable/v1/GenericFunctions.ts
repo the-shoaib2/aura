@@ -8,7 +8,7 @@ import type {
 	IPairedItemData,
 	IRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'workflow';
 
 interface IAttachment {
 	url: string;

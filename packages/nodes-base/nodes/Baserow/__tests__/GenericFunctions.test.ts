@@ -1,5 +1,5 @@
-/* eslint-disable n8n-nodes-base/node-param-display-name-miscased */
-import { NodeApiError } from 'n8n-workflow';
+/* eslint-disable aura-nodes-base/node-param-display-name-miscased */
+import { NodeApiError } from 'workflow';
 
 import {
 	baserowApiRequest,
@@ -16,7 +16,7 @@ describe('Baserow > GenericFunctions', () => {
 			request: jest.fn(),
 		},
 		getCredentials: jest.fn().mockResolvedValue({
-			username: 'nathan@n8n.io',
+			username: 'nathan@aura.io',
 			password: 'this-is-a-fake-password',
 			host: 'https://api.baserow.io',
 		}),
@@ -75,7 +75,7 @@ describe('Baserow > GenericFunctions', () => {
 		it('should return a token', async () => {
 			mockExecuteFunctions.helpers.request.mockResolvedValue({ token: 'mockToken' });
 			const result = await getJwtToken.call(mockExecuteFunctions, {
-				username: 'nathan@n8n.io',
+				username: 'nathan@aura.io',
 				password: 'this-is-a-fake-password',
 				host: 'https://api.baserow.io',
 			});
@@ -86,7 +86,7 @@ describe('Baserow > GenericFunctions', () => {
 			mockExecuteFunctions.helpers.request.mockRejectedValue({ error: 'fail' });
 			await expect(
 				getJwtToken.call(mockExecuteFunctions, {
-					username: 'nathan@n8n.io',
+					username: 'nathan@aura.io',
 					password: 'this-is-a-fake-password',
 					host: 'https://api.baserow.io',
 				}),

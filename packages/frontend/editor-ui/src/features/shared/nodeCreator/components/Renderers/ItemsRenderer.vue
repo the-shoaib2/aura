@@ -15,7 +15,7 @@ import CategorizedItemsRenderer from './CategorizedItemsRenderer.vue';
 import { useViewStacks } from '../../composables/useViewStacks';
 import OpenTemplateItem from '../ItemTypes/OpenTemplateItem.vue';
 
-import { N8nLoading } from '@n8n/design-system';
+import { N8nLoading } from '@aura/design-system';
 export interface Props {
 	elements?: INodeCreateElement[];
 	activeIndex?: number;

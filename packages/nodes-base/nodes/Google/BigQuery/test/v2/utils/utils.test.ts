@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
-import { constructExecutionMetaData } from 'n8n-core';
-import type { IDataObject, IExecuteFunctions, INode } from 'n8n-workflow';
+import { constructExecutionMetaData } from 'aura-core';
+import type { IDataObject, IExecuteFunctions, INode } from 'workflow';
 
 import { prepareOutput } from '../../../v2/helpers/utils';
 
@@ -163,7 +163,7 @@ describe('Google BigQuery v2 Utils', () => {
 												},
 											},
 											{
-												v: 'n8n-nodes-base.zendeskTrigger',
+												v: 'aura-nodes-base.zendeskTrigger',
 											},
 											{
 												v: {
@@ -241,7 +241,7 @@ describe('Google BigQuery v2 Utils', () => {
 									],
 								},
 							],
-							type: 'n8n-nodes-base.zendeskTrigger',
+							type: 'aura-nodes-base.zendeskTrigger',
 							parameters: [
 								{
 									conditions: [

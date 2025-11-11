@@ -25,7 +25,7 @@ describe('Test DiscordV2, member => getAll', () => {
 			{
 				user: {
 					id: '1070667629972430879',
-					username: 'n8n-node-overhaul',
+					username: 'aura-node-overhaul',
 					avatar: null,
 					discriminator: '1037',
 					public_flags: 0,

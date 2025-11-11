@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-80, 260],
 			"id": "4dbe018c-edec-46d3-b18d-f4517435e1f8",
@@ -11,7 +11,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, -400],
 			"id": "512f2fec-df9f-46ac-8df3-e84fd352f7ff",
@@ -24,7 +24,7 @@
 				"comment": "test",
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, -400],
 			"id": "be60984b-28a5-4c5a-8926-87824300e63e",
@@ -45,7 +45,7 @@
 					"parentId": "ff12069e-fac8-4b18-8455-cc6b29fa1e77"
 				}
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, -220],
 			"id": "328939ed-41ac-442e-819c-f470ce0986b4",
@@ -59,7 +59,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, -220],
 			"id": "d28e9fe2-4a7b-4714-aa15-a6c6732c4e0d",
@@ -69,9 +69,9 @@
 			"parameters": {
 				"operation": "addLink",
 				"issueId": "test-17",
-				"link": "https://n8n.io"
+				"link": "https://aura.io"
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, -20],
 			"id": "6ec9fdbc-eed8-4e9a-850b-973f72f6f3a5",
@@ -85,7 +85,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, -20],
 			"id": "229e5b09-8867-44f5-a71c-da31d97ab1b5",
@@ -102,7 +102,7 @@
 					"stateId": "65a87a3a-5729-4d82-96bf-badccbeb49af"
 				}
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, 160],
 			"id": "3262089e-902a-4922-b5e9-1bd2dae4915f",
@@ -116,7 +116,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, 160],
 			"id": "3515db04-1fb9-4c15-904b-1a34c7bd63fb",
@@ -127,7 +127,7 @@
 				"operation": "getAll",
 				"limit": 1
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, 520],
 			"id": "912a5680-2d83-4d24-921b-f622cc8be0be",
@@ -144,7 +144,7 @@
 				"operation": "get",
 				"issueId": "test-18"
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, 340],
 			"id": "8604ce38-89aa-4793-bd2d-13c7d4fce215",
@@ -158,7 +158,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, 520],
 			"id": "d01f72ce-4f5f-4a3f-9805-7975e67d041d",
@@ -166,7 +166,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, 340],
 			"id": "a2ad027f-8507-4488-84f5-f339ad826120",
@@ -185,7 +185,7 @@
 					"title": "New Title"
 				}
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, 700],
 			"id": "141d4f10-6812-40b4-a146-fa9cf929f86a",
@@ -199,7 +199,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, 700],
 			"id": "b08bba99-9d96-43be-8875-c72c7b51f734",
@@ -210,7 +210,7 @@
 				"operation": "delete",
 				"issueId": "test-18"
 			},
-			"type": "n8n-nodes-base.linear",
+			"type": "aura-nodes-base.linear",
 			"typeVersion": 1,
 			"position": [200, 880],
 			"id": "d30a2ff2-f8cd-4277-b5c1-6f2df7985872",
@@ -224,7 +224,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [400, 880],
 			"id": "8769421e-01ea-41ee-9e35-432408879869",

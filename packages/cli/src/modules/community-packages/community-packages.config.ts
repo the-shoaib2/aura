@@ -1,4 +1,4 @@
-import { Config, Env } from '@n8n/config';
+import { Config, Env } from '@aura/config';
 
 @Config
 export class CommunityPackagesConfig {
@@ -18,7 +18,7 @@ export class CommunityPackagesConfig {
 	@Env('N8N_UNVERIFIED_PACKAGES_ENABLED')
 	unverifiedEnabled: boolean = true;
 
-	/** Whether to enable and show search suggestion of packages verified by n8n */
+	/** Whether to enable and show search suggestion of packages verified by aura */
 	@Env('N8N_VERIFIED_PACKAGES_ENABLED')
 	verifiedEnabled: boolean = true;
 

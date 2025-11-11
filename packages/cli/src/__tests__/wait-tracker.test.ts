@@ -1,9 +1,9 @@
-import { mockLogger } from '@n8n/backend-test-utils';
-import type { Project, IExecutionResponse, ExecutionRepository } from '@n8n/db';
+import { mockLogger } from '@aura/backend-test-utils';
+import type { Project, IExecutionResponse, ExecutionRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
-import type { IRun, IWorkflowBase } from 'n8n-workflow';
-import { createDeferredPromise } from 'n8n-workflow';
+import type { InstanceSettings } from 'aura-core';
+import type { IRun, IWorkflowBase } from 'workflow';
+import { createDeferredPromise } from 'workflow';
 
 import type { ActiveExecutions } from '@/active-executions';
 import type { MultiMainSetup } from '@/scaling/multi-main-setup.ee';

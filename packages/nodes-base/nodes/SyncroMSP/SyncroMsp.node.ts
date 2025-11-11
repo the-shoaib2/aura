@@ -1,5 +1,5 @@
-import type { INodeTypeBaseDescription, IVersionedNodeType } from 'n8n-workflow';
-import { VersionedNodeType } from 'n8n-workflow';
+import type { INodeTypeBaseDescription, IVersionedNodeType } from 'workflow';
+import { VersionedNodeType } from 'workflow';
 
 import { SyncroMspV1 } from './v1/SyncroMspV1.node';
 
@@ -8,7 +8,7 @@ export class SyncroMsp extends VersionedNodeType {
 		const baseDescription: INodeTypeBaseDescription = {
 			displayName: 'SyncroMSP',
 			name: 'syncroMsp',
-			// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+			// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 			icon: 'file:syncromsp.png',
 			group: ['output'],
 			subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',

@@ -1,10 +1,10 @@
-import type { DataRequestResponse, PartialAdditionalData, TaskData } from '@n8n/task-runner';
+import type { DataRequestResponse, PartialAdditionalData, TaskData } from '@aura/task-runner';
 import type {
 	IRunExecutionData,
 	IWorkflowExecuteAdditionalData,
 	Workflow,
 	WorkflowParameters,
-} from 'n8n-workflow';
+} from 'workflow';
 
 /**
  * Transforms TaskData to DataRequestResponse. The main purpose of the

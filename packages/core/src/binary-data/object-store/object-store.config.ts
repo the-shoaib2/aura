@@ -1,4 +1,4 @@
-import { Config, Env, Nested } from '@n8n/config';
+import { Config, Env, Nested } from '@aura/config';
 import { z } from 'zod';
 
 const protocolSchema = z.enum(['http', 'https']);
@@ -7,11 +7,11 @@ export type Protocol = z.infer<typeof protocolSchema>;
 
 @Config
 class ObjectStoreBucketConfig {
-	/** Name of the n8n bucket in S3-compatible external storage */
+	/** Name of the aura bucket in S3-compatible external storage */
 	@Env('N8N_EXTERNAL_STORAGE_S3_BUCKET_NAME')
 	name: string = '';
 
-	/** Region of the n8n bucket in S3-compatible external storage @example "us-east-1" */
+	/** Region of the aura bucket in S3-compatible external storage @example "us-east-1" */
 	@Env('N8N_EXTERNAL_STORAGE_S3_BUCKET_REGION')
 	region: string = '';
 }

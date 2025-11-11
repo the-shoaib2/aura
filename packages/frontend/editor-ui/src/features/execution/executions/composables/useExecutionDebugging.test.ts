@@ -9,7 +9,7 @@ import {
 import { useExecutionDebugging } from './useExecutionDebugging';
 import type { INodeUi } from '@/Interface';
 import type { IExecutionResponse } from '../executions.types';
-import type { Workflow } from 'n8n-workflow';
+import type { Workflow } from 'workflow';
 import { useToast } from '@/app/composables/useToast';
 
 vi.mock('@/app/composables/useToast', () => {

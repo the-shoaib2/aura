@@ -15,10 +15,10 @@ import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useStorage } from '@/app/composables/useStorage';
 import { useExecutionsStore } from '@/features/execution/executions/executions.store';
 import { useRouter } from 'vue-router';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 
 import { ElCheckbox } from 'element-plus';
-import { N8nButton, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nText } from '@aura/design-system';
 const checked = ref(false);
 
 const executionsStore = useExecutionsStore();

@@ -8,10 +8,10 @@ const requirements: TestRequirements = {
 			versionCli: '1.0.0',
 			versionNotifications: {
 				enabled: true,
-				endpoint: 'https://api.n8n.io/api/versions/',
+				endpoint: 'https://api.aura.io/api/versions/',
 				whatsNewEnabled: true,
-				whatsNewEndpoint: 'https://api.n8n.io/api/whats-new',
-				infoUrl: 'https://docs.n8n.io/getting-started/installation/updating.html',
+				whatsNewEndpoint: 'https://api.aura.io/api/whats-new',
+				infoUrl: 'https://docs.aura.io/getting-started/installation/updating.html',
 			},
 		},
 	},
@@ -24,7 +24,7 @@ const requirements: TestRequirements = {
 					nodes: [],
 					createdAt: '2025-06-01T00:00:00Z',
 					description: 'Current version',
-					documentationUrl: 'https://docs.n8n.io',
+					documentationUrl: 'https://docs.aura.io',
 					hasBreakingChange: false,
 					hasSecurityFix: false,
 					hasSecurityIssue: false,
@@ -35,7 +35,7 @@ const requirements: TestRequirements = {
 					nodes: [],
 					createdAt: '2025-06-15T00:00:00Z',
 					description: 'Version 1.0.1',
-					documentationUrl: 'https://docs.n8n.io',
+					documentationUrl: 'https://docs.aura.io',
 					hasBreakingChange: false,
 					hasSecurityFix: false,
 					hasSecurityIssue: false,
@@ -46,7 +46,7 @@ const requirements: TestRequirements = {
 					nodes: [],
 					createdAt: '2025-06-30T00:00:00Z',
 					description: 'Version 1.0.2',
-					documentationUrl: 'https://docs.n8n.io',
+					documentationUrl: 'https://docs.aura.io',
 					hasBreakingChange: false,
 					hasSecurityFix: false,
 					hasSecurityIssue: false,
@@ -58,19 +58,19 @@ const requirements: TestRequirements = {
 };
 
 test.describe('Versions', () => {
-	test('should open updates panel', async ({ n8n, setupRequirements }) => {
+	test('should open updates panel', async ({ aura, setupRequirements }) => {
 		await setupRequirements(requirements);
-		await n8n.goHome();
-		await n8n.sideBar.expand();
-		await n8n.versions.openWhatsNewMenu();
-		await expect(n8n.versions.getVersionUpdatesPanelOpenButton()).toContainText(
+		await aura.goHome();
+		await aura.sideBar.expand();
+		await aura.versions.openWhatsNewMenu();
+		await expect(aura.versions.getVersionUpdatesPanelOpenButton()).toContainText(
 			'2 versions behind',
 		);
 
-		await n8n.versions.openVersionUpdatesPanel();
-		await expect(n8n.versions.getVersionCard()).toHaveCount(2);
+		await aura.versions.openVersionUpdatesPanel();
+		await expect(aura.versions.getVersionCard()).toHaveCount(2);
 
-		await n8n.versions.closeVersionUpdatesPanel();
-		await expect(n8n.versions.getVersionUpdatesPanel()).toBeHidden();
+		await aura.versions.closeVersionUpdatesPanel();
+		await expect(aura.versions.getVersionUpdatesPanel()).toBeHidden();
 	});
 });

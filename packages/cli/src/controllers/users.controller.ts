@@ -5,9 +5,9 @@ import {
 	userBaseSchema,
 	UsersListFilterDto,
 	usersListSchema,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import type { PublicUser } from '@n8n/db';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import type { PublicUser } from '@aura/db';
 import {
 	Project,
 	User,
@@ -19,7 +19,7 @@ import {
 	AuthenticatedRequest,
 	GLOBAL_ADMIN_ROLE,
 	GLOBAL_OWNER_ROLE,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	GlobalScope,
 	Delete,
@@ -30,8 +30,8 @@ import {
 	Body,
 	Param,
 	Query,
-} from '@n8n/decorators';
-import { hasGlobalScope } from '@n8n/permissions';
+} from '@aura/decorators';
+import { hasGlobalScope } from '@aura/permissions';
 import { Response } from 'express';
 
 import { AuthService } from '@/auth/auth.service';

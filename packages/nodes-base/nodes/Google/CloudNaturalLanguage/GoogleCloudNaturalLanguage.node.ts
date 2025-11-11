@@ -4,7 +4,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { googleApiRequest } from './GenericFunctions';
 import type { IData } from './Interface';
@@ -13,7 +13,7 @@ export class GoogleCloudNaturalLanguage implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Google Cloud Natural Language',
 		name: 'googleCloudNaturalLanguage',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:googlecloudnaturallanguage.png',
 		group: ['input', 'output'],
 		version: 1,

@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import { spawn } from 'child_process';
 import glob from 'fast-glob';
 import { copyFile, mkdir, readFile, writeFile } from 'fs/promises';
-import { InstanceSettings } from 'n8n-core';
-import { jsonParse } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import { jsonParse } from 'workflow';
 import { join, dirname, resolve as resolvePath } from 'path';
 import { file as tmpFile } from 'tmp-promise';
 
@@ -19,7 +19,7 @@ import type { IBuildOptions } from './Interfaces';
 
 export async function createCustomTsconfig() {
 	// Get path to simple tsconfig file which should be used for build
-	const tsconfigPath = join(dirname(require.resolve('n8n-node-dev/src')), 'tsconfig-build.json');
+	const tsconfigPath = join(dirname(require.resolve('aura-node-dev/src')), 'tsconfig-build.json');
 
 	// Read the tsconfig file
 	const tsConfigString = await readFile(tsconfigPath, { encoding: 'utf8' });
@@ -68,7 +68,7 @@ export async function buildFiles({
 		}),
 	);
 
-	// Supply a node base path so that it finds n8n-core and n8n-workflow
+	// Supply a node base path so that it finds aura-core and workflow
 	const nodeModulesPath = join(__dirname, '../../node_modules/');
 	let buildCommand = `${tscPath} --p ${
 		tsconfigData.path

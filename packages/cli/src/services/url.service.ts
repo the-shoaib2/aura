@@ -1,9 +1,9 @@
-import { GlobalConfig } from '@n8n/config';
-import { Service } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Service } from '@aura/di';
 
 @Service()
 export class UrlService {
-	/** Returns the base URL n8n is reachable from */
+	/** Returns the base URL aura is reachable from */
 	readonly baseUrl: string;
 
 	constructor(private readonly globalConfig: GlobalConfig) {
@@ -19,11 +19,12 @@ export class UrlService {
 		return urlBaseWebhook;
 	}
 
-	/** Return the n8n instance base URL without trailing slash */
+	/** Return the aura instance base URL without trailing slash */
 	getInstanceBaseUrl(): string {
-		const n8nBaseUrl = this.trimQuotes(this.globalConfig.editorBaseUrl) || this.getWebhookBaseUrl();
+		const auraBaseUrl =
+			this.trimQuotes(this.globalConfig.editorBaseUrl) || this.getWebhookBaseUrl();
 
-		return n8nBaseUrl.endsWith('/') ? n8nBaseUrl.slice(0, n8nBaseUrl.length - 1) : n8nBaseUrl;
+		return auraBaseUrl.endsWith('/') ? auraBaseUrl.slice(0, auraBaseUrl.length - 1) : auraBaseUrl;
 	}
 
 	private generateBaseUrl(): string {

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const organizationOperations: INodeProperties[] = [
 	{
@@ -101,7 +101,7 @@ export const organizationFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'Persons that the new organization will be associated with. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Persons that the new organization will be associated with. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	},
@@ -158,7 +158,7 @@ export const organizationFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'Persons that the new organization will be associated with. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Persons that the new organization will be associated with. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	},

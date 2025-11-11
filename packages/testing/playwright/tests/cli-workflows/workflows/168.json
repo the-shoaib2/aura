@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [400, 480],
 			"id": "47dbd966-77aa-4bda-96ed-e97f6a5981fd"
@@ -20,7 +20,7 @@
 				"filters": {}
 			},
 			"name": "Demio",
-			"type": "n8n-nodes-base.demio",
+			"type": "aura-nodes-base.demio",
 			"typeVersion": 1,
 			"position": [650, 420],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"additionalFields": {}
 			},
 			"name": "Demio1",
-			"type": "n8n-nodes-base.demio",
+			"type": "aura-nodes-base.demio",
 			"typeVersion": 1,
 			"position": [790, 420],
 			"credentials": {
@@ -57,7 +57,7 @@
 				"additionalFields": {}
 			},
 			"name": "Demio2",
-			"type": "n8n-nodes-base.demio",
+			"type": "aura-nodes-base.demio",
 			"typeVersion": 1,
 			"position": [940, 420],
 			"credentials": {
@@ -76,7 +76,7 @@
 				"filters": {}
 			},
 			"name": "Demio3",
-			"type": "n8n-nodes-base.demio",
+			"type": "aura-nodes-base.demio",
 			"typeVersion": 1,
 			"position": [650, 570],
 			"credentials": {

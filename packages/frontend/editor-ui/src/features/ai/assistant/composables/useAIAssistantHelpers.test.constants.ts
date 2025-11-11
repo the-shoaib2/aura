@@ -1,6 +1,6 @@
 import { VIEWS } from '@/app/constants';
 import type { ChatRequest } from '../assistant.types';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 export const PAYLOAD_SIZE_FOR_1_PASS = 4;
 export const PAYLOAD_SIZE_FOR_2_PASSES = 2;
@@ -45,7 +45,7 @@ export const ERROR_HELPER_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 				includeOtherFields: false,
 				options: {},
 			},
-			type: 'n8n-nodes-base.set',
+			type: 'aura-nodes-base.set',
 			typeVersion: 3.4,
 			id: '6dc70bf3-ba54-4481-b9f5-ce255bdd5fb8',
 			name: 'This is fine',
@@ -65,7 +65,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 			currentView: {
 				name: VIEWS.WORKFLOW,
 				description:
-					'The user is currently looking at the current workflow in n8n editor, without any specific node selected.',
+					'The user is currently looking at the current workflow in aura editor, without any specific node selected.',
 			},
 			activeNodeInfo: {
 				node: {
@@ -90,7 +90,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 						includeOtherFields: false,
 						options: {},
 					},
-					type: 'n8n-nodes-base.set',
+					type: 'aura-nodes-base.set',
 					typeVersion: 3.4,
 					id: '8eac1591-ddc6-4d93-bec7-998cbfe27cc7',
 					name: 'Edit Fields1',
@@ -101,7 +101,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 						name: 'NodeOperationError',
 						message: "Referenced node doesn't exist",
 						stack:
-							"NodeOperationError: Referenced node doesn't exist\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/Set/v2/manual.mode.ts:256:9)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/Set/v2/SetV2.node.ts:351:48)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1097:31)\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1505:38\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:2066:11",
+							"NodeOperationError: Referenced node doesn't exist\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/Set/v2/manual.mode.ts:256:9)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/Set/v2/SetV2.node.ts:351:48)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1097:31)\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1505:38\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:2066:11",
 					},
 				},
 				referencedNodes: [],
@@ -155,7 +155,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 						},
 						id: 'c457ff96-3b0c-4dbc-b47f-dc88396a46ae',
 						name: 'When clicking ‘Execute workflow’',
-						type: 'n8n-nodes-base.manualTrigger',
+						type: 'aura-nodes-base.manualTrigger',
 						position: [-60, 200],
 						typeVersion: 1,
 					},
@@ -167,7 +167,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 						},
 						id: '60ddc045-d4e3-4b62-9832-12ecf78937a6',
 						name: 'Bad request no chat found',
-						type: 'n8n-nodes-base.telegram',
+						type: 'aura-nodes-base.telegram',
 						typeVersion: 1.1,
 						position: [540, 0],
 						issues: {},
@@ -190,7 +190,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 							includeOtherFields: false,
 							options: {},
 						},
-						type: 'n8n-nodes-base.set',
+						type: 'aura-nodes-base.set',
 						typeVersion: 3.4,
 						position: [200, 200],
 						id: '0a831739-13cd-4541-b20b-7db73abbcaf0',
@@ -207,7 +207,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 								value: '',
 							},
 						},
-						type: 'n8n-nodes-base.slack',
+						type: 'aura-nodes-base.slack',
 						typeVersion: 2.2,
 						position: [540, 200],
 						id: 'aff7471e-b2bc-4274-abe1-97897a17eaa6',
@@ -238,7 +238,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 							includeOtherFields: false,
 							options: {},
 						},
-						type: 'n8n-nodes-base.set',
+						type: 'aura-nodes-base.set',
 						typeVersion: 3.4,
 						position: [540, 400],
 						id: '8eac1591-ddc6-4d93-bec7-998cbfe27cc7',
@@ -264,7 +264,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 							includeOtherFields: false,
 							options: {},
 						},
-						type: 'n8n-nodes-base.set',
+						type: 'aura-nodes-base.set',
 						typeVersion: 3.4,
 						position: [440, 560],
 						id: '34e56e14-d1a9-4a73-9208-15d39771a9ba',
@@ -370,7 +370,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 										includeOtherFields: false,
 										options: {},
 									},
-									type: 'n8n-nodes-base.set',
+									type: 'aura-nodes-base.set',
 									typeVersion: 3.4,
 									position: [540, 400],
 									id: '8eac1591-ddc6-4d93-bec7-998cbfe27cc7',
@@ -379,7 +379,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 								messages: [],
 								message: "Referenced node doesn't exist",
 								stack:
-									"NodeOperationError: Referenced node doesn't exist\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/Set/v2/manual.mode.ts:256:9)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/Set/v2/SetV2.node.ts:351:48)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1097:31)\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1505:38\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:2066:11",
+									"NodeOperationError: Referenced node doesn't exist\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/Set/v2/manual.mode.ts:256:9)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/Set/v2/SetV2.node.ts:351:48)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1097:31)\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1505:38\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:2066:11",
 							},
 						},
 					],
@@ -416,7 +416,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 							includeOtherFields: false,
 							options: {},
 						},
-						type: 'n8n-nodes-base.set',
+						type: 'aura-nodes-base.set',
 						typeVersion: 3.4,
 						position: [540, 400],
 						id: '8eac1591-ddc6-4d93-bec7-998cbfe27cc7',
@@ -425,7 +425,7 @@ export const SUPPORT_CHAT_TEST_PAYLOAD: ChatRequest.RequestPayload = {
 					messages: [],
 					message: "Referenced node doesn't exist",
 					stack:
-						"NodeOperationError: Referenced node doesn't exist\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/Set/v2/manual.mode.ts:256:9)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/n8n/packages/nodes-base/nodes/Set/v2/SetV2.node.ts:351:48)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1097:31)\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:1505:38\n    at /Users/miloradfilipovic/workspace/n8n/packages/core/src/execution-engine/workflow-execute.ts:2066:11",
+						"NodeOperationError: Referenced node doesn't exist\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/Set/v2/manual.mode.ts:256:9)\n    at ExecuteContext.execute (/Users/miloradfilipovic/workspace/aura/packages/nodes-base/nodes/Set/v2/SetV2.node.ts:351:48)\n    at WorkflowExecute.runNode (/Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1097:31)\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:1505:38\n    at /Users/miloradfilipovic/workspace/aura/packages/core/src/execution-engine/workflow-execute.ts:2066:11",
 				},
 				lastNodeExecuted: 'Edit Fields1',
 			},

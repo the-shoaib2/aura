@@ -4,9 +4,9 @@ import ts from 'typescript';
 import type { IndexedDbCache } from '@/app/plugins/cache';
 
 import globalTypes from './type-declarations/globals.d.ts?raw';
-import n8nTypes from './type-declarations/n8n.d.ts?raw';
+import auraTypes from './type-declarations/aura.d.ts?raw';
 
-import type { CodeExecutionMode } from 'n8n-workflow';
+import type { CodeExecutionMode } from 'workflow';
 import { wrapInFunction } from './utils';
 
 type EnvOptions = {
@@ -45,7 +45,7 @@ export async function setupTypescriptEnv({ cache, code, mode }: EnvOptions) {
 
 	removeUnusedLibs(fsMap);
 
-	fsMap.set(TYPESCRIPT_FILES.N8N_TYPES, n8nTypes);
+	fsMap.set(TYPESCRIPT_FILES.N8N_TYPES, auraTypes);
 	fsMap.set(TYPESCRIPT_FILES.GLOBAL_TYPES, globalTypes);
 
 	fsMap.set(code.fileName, wrapInFunction(code.content, mode));

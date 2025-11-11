@@ -1,7 +1,7 @@
 import { type Response } from 'express';
 import { mock } from 'jest-mock-extended';
-import { randomString } from 'n8n-workflow';
-import type { IHttpRequestMethods } from 'n8n-workflow';
+import { randomString } from 'workflow';
+import type { IHttpRequestMethods } from 'workflow';
 
 import { ResponseError } from '@/errors/response-errors/abstract/response.error';
 import { createWebhookHandlerFor } from '@/webhooks/webhook-request-handler';

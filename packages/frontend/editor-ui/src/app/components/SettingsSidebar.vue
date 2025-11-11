@@ -5,12 +5,12 @@ import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUIStore } from '@/app/stores/ui.store';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { hasPermission } from '@/app/utils/rbac/permissions';
-import { useI18n } from '@n8n/i18n';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useI18n } from '@aura/i18n';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { N8nIcon, N8nLink, N8nMenuItem, N8nText, type IMenuItem } from '@n8n/design-system';
+import { N8nIcon, N8nLink, N8nMenuItem, N8nText, type IMenuItem } from '@aura/design-system';
 const emit = defineEmits<{
 	return: [];
 }>();
@@ -62,7 +62,7 @@ const sidebarMenuItems = computed<IMenuItem[]>(() => {
 		{
 			id: 'settings-api',
 			icon: 'plug',
-			label: i18n.baseText('settings.n8napi'),
+			label: i18n.baseText('settings.auraapi'),
 			position: 'top',
 			available: settingsStore.isPublicApiEnabled && canUserAccessRouteByName(VIEWS.API_SETTINGS),
 			route: { to: { name: VIEWS.API_SETTINGS } },

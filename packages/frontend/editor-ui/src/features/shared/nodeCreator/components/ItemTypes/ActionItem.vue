@@ -10,7 +10,7 @@ import { useViewStacks } from '../../composables/useViewStacks';
 import { useActions } from '../../composables/useActions';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 
-import { N8nNodeCreatorNode } from '@n8n/design-system';
+import { N8nNodeCreatorNode } from '@aura/design-system';
 export interface Props {
 	nodeType: SimplifiedNodeType;
 	action: ActionTypeDescription;

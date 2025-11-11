@@ -3,7 +3,7 @@ import nock from 'nock';
 
 describe('GraphQL Node', () => {
 	describe('valid request', () => {
-		const baseUrl = 'https://api.n8n.io/';
+		const baseUrl = 'https://api.aura.io/';
 		nock(baseUrl)
 			.matchHeader('accept', 'application/json')
 			.matchHeader('content-type', 'application/json')
@@ -20,7 +20,7 @@ describe('GraphQL Node', () => {
 							{
 								id: '1',
 								attributes: {
-									name: 'n8n-nodes-base.activeCampaign',
+									name: 'aura-nodes-base.activeCampaign',
 									displayName: 'ActiveCampaign',
 									description: 'Create and edit data in ActiveCampaign',
 									group: '["transform"]',
@@ -32,12 +32,12 @@ describe('GraphQL Node', () => {
 											resources: {
 												primaryDocumentation: [
 													{
-														url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.activecampaign/',
+														url: 'https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.activecampaign/',
 													},
 												],
 												credentialDocumentation: [
 													{
-														url: 'https://docs.n8n.io/integrations/builtin/credentials/activecampaign/',
+														url: 'https://docs.aura.io/integrations/builtin/credentials/activecampaign/',
 													},
 												],
 											},

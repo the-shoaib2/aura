@@ -1,5 +1,5 @@
-import { TaskRunnersConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { TaskRunnersConfig } from '@aura/config';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 import type {
 	IExecuteFunctions,
@@ -11,8 +11,8 @@ import type {
 	ITaskDataConnections,
 	IWorkflowExecuteAdditionalData,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
-import { createEnvProviderState, NodeConnectionTypes, Workflow } from 'n8n-workflow';
+} from 'workflow';
+import { createEnvProviderState, NodeConnectionTypes, Workflow } from 'workflow';
 
 import { LocalTaskRequester } from '@/task-runners/task-managers/local-task-requester';
 import { TaskRunnerModule } from '@/task-runners/task-runner-module';
@@ -51,7 +51,7 @@ describe('JS TaskRunner execution on internal mode', () => {
 			parameters: {
 				jsCode,
 			},
-			type: 'n8n-nodes-base.code',
+			type: 'aura-nodes-base.code',
 			typeVersion: 2,
 			position: [200, 80],
 			id: 'b35fd455-32e4-4d52-b840-36aa28dd1910',
@@ -64,7 +64,7 @@ describe('JS TaskRunner execution on internal mode', () => {
 			nodes: [
 				{
 					parameters: {},
-					type: 'n8n-nodes-base.manualTrigger',
+					type: 'aura-nodes-base.manualTrigger',
 					typeVersion: 1,
 					position: [0, 0],
 					id: 'a39a566a-283a-433e-88bc-b3857aab706f',

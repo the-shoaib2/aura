@@ -1,4 +1,4 @@
-import type { Project } from '@n8n/db';
+import type { Project } from '@aura/db';
 import { nanoId, date, firstName, lastName, email } from 'minifaker';
 import 'minifaker/locales/en';
 

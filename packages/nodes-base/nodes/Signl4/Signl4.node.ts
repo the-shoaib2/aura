@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { SIGNL4ApiRequest } from './GenericFunctions';
 
@@ -13,7 +13,7 @@ export class Signl4 implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'SIGNL4',
 		name: 'signl4',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:signl4.png',
 		group: ['transform'],
 		version: 1,
@@ -274,7 +274,7 @@ export class Signl4 implements INodeType {
 
 						data['X-S4-Status'] = 'new';
 
-						data['X-S4-SourceSystem'] = 'n8n';
+						data['X-S4-SourceSystem'] = 'aura';
 
 						// Attachments
 						const attachments = additionalFields.attachmentsUi as IDataObject;
@@ -324,7 +324,7 @@ export class Signl4 implements INodeType {
 
 						data['X-S4-Status'] = 'resolved';
 
-						data['X-S4-SourceSystem'] = 'n8n';
+						data['X-S4-SourceSystem'] = 'aura';
 
 						responseData = await SIGNL4ApiRequest.call(
 							this,

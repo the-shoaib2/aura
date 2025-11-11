@@ -5,7 +5,7 @@ import {
 	type IExecuteFunctions,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	INPUT_SOURCE,
@@ -26,7 +26,7 @@ export class ExecuteWorkflowTrigger implements INodeType {
 		group: ['trigger'],
 		version: [1, 1.1],
 		description:
-			'Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows.',
+			'Helpers for calling other aura workflows. Used for designing modular, microservice-like workflows.',
 		eventTriggerDescription: '',
 		maxNodes: 1,
 		defaults: {
@@ -83,25 +83,25 @@ export class ExecuteWorkflowTrigger implements INodeType {
 				default: '',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 				displayName: 'Input data mode',
 				name: INPUT_SOURCE,
 				type: 'options',
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Define using fields below',
 						value: WORKFLOW_INPUTS,
 						description: 'Provide input fields via UI',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Define using JSON example',
 						value: JSON_EXAMPLE,
 						description: 'Generate a schema from an example JSON object',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Accept all data',
 						value: PASSTHROUGH,
 						description: 'Use all incoming data from the parent workflow',

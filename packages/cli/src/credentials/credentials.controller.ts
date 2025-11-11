@@ -3,15 +3,15 @@ import {
 	CredentialsGetManyRequestQuery,
 	CredentialsGetOneRequestQuery,
 	GenerateCredentialNameRequestQuery,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
 import {
 	SharedCredentials,
 	ProjectRelationRepository,
 	SharedCredentialsRepository,
 	AuthenticatedRequest,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	Delete,
 	Get,
@@ -24,12 +24,12 @@ import {
 	Body,
 	Param,
 	Query,
-} from '@n8n/decorators';
-import { PROJECT_OWNER_ROLE_SLUG } from '@n8n/permissions';
-// eslint-disable-next-line n8n-local-rules/misplaced-n8n-typeorm-import
-import { In } from '@n8n/typeorm';
-import { deepCopy } from 'n8n-workflow';
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
+} from '@aura/decorators';
+import { PROJECT_OWNER_ROLE_SLUG } from '@aura/permissions';
+// eslint-disable-next-line aura-local-rules/misplaced-aura-typeorm-import
+import { In } from '@aura/typeorm';
+import { deepCopy } from 'workflow';
+import type { ICredentialDataDecryptedObject } from 'workflow';
 import { z } from 'zod';
 
 import { CredentialsFinderService } from './credentials-finder.service';

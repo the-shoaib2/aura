@@ -1,5 +1,5 @@
 {
-	"extends": "@n8n/typescript-config/tsconfig.common.json",
+	"extends": "@aura/typescript-config/tsconfig.common.json",
 	"compilerOptions": {
 		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 		"moduleResolution": "bundler",

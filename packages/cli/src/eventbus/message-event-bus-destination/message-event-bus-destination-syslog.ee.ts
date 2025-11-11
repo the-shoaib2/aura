@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Logger } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { Container } from '@aura/di';
 import type {
 	MessageEventBusDestinationOptions,
 	MessageEventBusDestinationSyslogOptions,
-} from 'n8n-workflow';
-import { MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+} from 'workflow';
+import { MessageEventBusDestinationTypeNames } from 'workflow';
 import syslog from 'syslog-client';
 
 import { MessageEventBusDestination } from './message-event-bus-destination.ee';
@@ -48,7 +48,7 @@ export class MessageEventBusDestinationSyslog
 		this.port = options.port ?? 514;
 		this.protocol = options.protocol ?? 'udp';
 		this.facility = options.facility ?? syslog.Facility.Local0;
-		this.app_name = options.app_name ?? 'n8n';
+		this.app_name = options.app_name ?? 'aura';
 		this.eol = options.eol ?? '\n';
 		this.expectedStatusCode = options.expectedStatusCode ?? 200;
 

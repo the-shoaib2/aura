@@ -5,7 +5,7 @@
 			"parameters": {},
 			"id": "12433cfb-74d9-4bf1-9afd-0ab9afc9ef19",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [820, 360]
 		},
@@ -34,7 +34,7 @@
 			},
 			"id": "07670093-862f-403f-96a5-ddf7fdb0d225",
 			"name": "HTTP Request",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 3,
 			"position": [1140, 200]
 		},
@@ -49,7 +49,7 @@
 			},
 			"id": "db088210-2204-422c-823a-101afa464384",
 			"name": "HTTP Request1",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 3,
 			"position": [1140, 440]
 		}

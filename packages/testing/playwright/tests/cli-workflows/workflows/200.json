@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "1424805b-9720-4fc3-99a3-96b39b1b2d4c"
@@ -21,7 +21,7 @@
 				"additionalFields": {}
 			},
 			"name": "Pipedrive",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [500, 200],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"activityId": "={{$node[\"Pipedrive\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive1",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [650, 200],
 			"credentials": {
@@ -63,7 +63,7 @@
 				}
 			},
 			"name": "Pipedrive2",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [800, 200],
 			"credentials": {
@@ -81,7 +81,7 @@
 				"limit": 1
 			},
 			"name": "Pipedrive3",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [950, 200],
 			"credentials": {
@@ -99,7 +99,7 @@
 				"activityId": "={{$node[\"Pipedrive\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive4",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1100, 200],
 			"credentials": {
@@ -118,7 +118,7 @@
 				}
 			},
 			"name": "Pipedrive5",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [500, 350],
 			"credentials": {
@@ -135,7 +135,7 @@
 				"dealId": "={{$node[\"Pipedrive5\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive6",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [650, 350],
 			"credentials": {
@@ -156,7 +156,7 @@
 				}
 			},
 			"name": "Pipedrive7",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [800, 350],
 			"credentials": {
@@ -173,7 +173,7 @@
 				"dealId": "={{$node[\"Pipedrive5\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive8",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [950, 350],
 			"credentials": {
@@ -190,7 +190,7 @@
 				"limit": 1
 			},
 			"name": "Pipedrive9",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1100, 350],
 			"credentials": {
@@ -207,7 +207,7 @@
 				"dealId": "={{$node[\"Pipedrive5\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive10",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1250, 350],
 			"credentials": {
@@ -224,7 +224,7 @@
 				"dealId": "={{$node[\"Pipedrive8\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive11",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1400, 350],
 			"credentials": {
@@ -241,7 +241,7 @@
 				"additionalFields": {}
 			},
 			"name": "Pipedrive12",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [800, 500],
 			"credentials": {
@@ -266,7 +266,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [500, 500],
 			"id": "aa58167e-6c9e-4be6-9049-f280204d8eba"
@@ -282,7 +282,7 @@
 				}
 			},
 			"name": "Move Binary Data",
-			"type": "n8n-nodes-base.moveBinaryData",
+			"type": "aura-nodes-base.moveBinaryData",
 			"typeVersion": 1,
 			"position": [650, 500],
 			"id": "3ba06dd7-c49e-4b72-9785-2e5e3fc01f53"
@@ -294,7 +294,7 @@
 				"fileId": "={{$node[\"Pipedrive12\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive13",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [950, 500],
 			"credentials": {
@@ -312,7 +312,7 @@
 				"fileId": "={{$node[\"Pipedrive12\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive14",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1100, 500],
 			"credentials": {
@@ -330,7 +330,7 @@
 				"fileId": "={{$node[\"Pipedrive12\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive15",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1250, 500],
 			"credentials": {
@@ -350,7 +350,7 @@
 				}
 			},
 			"name": "Pipedrive16",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [500, 650],
 			"credentials": {
@@ -368,7 +368,7 @@
 				"organizationId": "={{$node[\"Pipedrive16\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive17",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [670, 650],
 			"credentials": {
@@ -391,7 +391,7 @@
 				}
 			},
 			"name": "Pipedrive18",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [820, 650],
 			"credentials": {
@@ -409,7 +409,7 @@
 				"limit": 1
 			},
 			"name": "Pipedrive19",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [970, 650],
 			"credentials": {
@@ -427,7 +427,7 @@
 				"organizationId": "={{$node[\"Pipedrive16\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive20",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1120, 650],
 			"credentials": {
@@ -447,7 +447,7 @@
 				}
 			},
 			"name": "Pipedrive21",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [650, 800],
 			"credentials": {
@@ -465,7 +465,7 @@
 				"noteId": "={{$node[\"Pipedrive21\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive22",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [800, 800],
 			"credentials": {
@@ -486,7 +486,7 @@
 				}
 			},
 			"name": "Pipedrive23",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [950, 800],
 			"credentials": {
@@ -505,7 +505,7 @@
 				"limit": 1
 			},
 			"name": "Pipedrive24",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1100, 800],
 			"credentials": {
@@ -523,7 +523,7 @@
 				"noteId": "={{$node[\"Pipedrive21\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive25",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1250, 800],
 			"credentials": {
@@ -544,7 +544,7 @@
 				}
 			},
 			"name": "Pipedrive26",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [500, 50],
 			"credentials": {
@@ -562,7 +562,7 @@
 				"personId": "={{$node[\"Pipedrive26\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive27",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [650, 50],
 			"credentials": {
@@ -584,7 +584,7 @@
 				}
 			},
 			"name": "Pipedrive28",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [800, 50],
 			"credentials": {
@@ -603,7 +603,7 @@
 				"additionalFields": {}
 			},
 			"name": "Pipedrive29",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [950, 50],
 			"credentials": {
@@ -623,7 +623,7 @@
 				"additionalFields": {}
 			},
 			"name": "Pipedrive30",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1100, 50],
 			"alwaysOutputData": true,
@@ -642,7 +642,7 @@
 				"personId": "={{$node[\"Pipedrive26\"].json[\"id\"]}}"
 			},
 			"name": "Pipedrive31",
-			"type": "n8n-nodes-base.pipedrive",
+			"type": "aura-nodes-base.pipedrive",
 			"typeVersion": 1,
 			"position": [1250, 50],
 			"credentials": {

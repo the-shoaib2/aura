@@ -10,8 +10,8 @@ import type {
 	IRequestOptions,
 	IHttpRequestMethods,
 	IDataObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 /**
  * Make an authenticated REST API request to Emelia, used for trigger node.

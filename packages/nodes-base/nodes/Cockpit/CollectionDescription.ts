@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const collectionOperations: INodeProperties[] = [
 	{
@@ -19,7 +19,7 @@ export const collectionOperations: INodeProperties[] = [
 				action: 'Create a collection entry',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
+				// eslint-disable-next-line aura-nodes-base/node-param-option-name-wrong-for-get-many
 				name: 'Get Many Entries',
 				value: 'getAll',
 				description: 'Get many collection entries',
@@ -52,7 +52,7 @@ export const collectionFields: INodeProperties[] = [
 		},
 		required: true,
 		description:
-			'Name of the collection to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'Name of the collection to operate on. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 	},
 
 	// Collection:entry:getAll

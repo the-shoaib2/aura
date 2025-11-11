@@ -9,7 +9,7 @@
 			"parameters": {},
 			"id": "0d9a3d32-b54b-4353-8886-50390461f967",
 			"name": "When clicking \"Test workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [660, 380]
 		},
@@ -19,7 +19,7 @@
 			},
 			"id": "a5c7a7c0-442c-4ffd-bbf2-1ee98bab0a23",
 			"name": "Set Article",
-			"type": "n8n-nodes-base.code",
+			"type": "aura-nodes-base.code",
 			"typeVersion": 2,
 			"position": [1080, 380]
 		},
@@ -32,7 +32,7 @@
 			},
 			"id": "3b01b603-8e9e-4f91-bd86-04820f2234dc",
 			"name": "OpenAI Chat Model1",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1480, 520],
 			"credentials": {
@@ -49,7 +49,7 @@
 			},
 			"id": "b4c73920-090e-4668-9fa7-7ea124373409",
 			"name": "Token Splitter",
-			"type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+			"type": "@aura/aura-nodes-langchain.textSplitterTokenSplitter",
 			"typeVersion": 1,
 			"position": [1620, 520]
 		},
@@ -69,7 +69,7 @@
 			},
 			"id": "ca8694fd-7788-41f1-8aa7-11c9c1682358",
 			"name": "Set Baseline",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.3,
 			"position": [880, 380]
 		},
@@ -82,7 +82,7 @@
 			},
 			"id": "57a4de1c-f385-439b-8809-8a1172bab713",
 			"name": "OpenAI Chat Model8",
-			"type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+			"type": "@aura/aura-nodes-langchain.lmChatOpenAi",
 			"typeVersion": 1,
 			"position": [1800, 520],
 			"credentials": {
@@ -99,7 +99,7 @@
 			},
 			"id": "5ad67153-eef9-4d4a-94af-4974d33c2076",
 			"name": "Summary - Advanced",
-			"type": "@n8n/n8n-nodes-langchain.chainSummarization",
+			"type": "@aura/aura-nodes-langchain.chainSummarization",
 			"typeVersion": 2,
 			"position": [1460, 380]
 		},
@@ -134,7 +134,7 @@
 			},
 			"id": "cdad3056-57aa-4d84-98b2-5077793b883f",
 			"name": "Evaluate to Baseline3",
-			"type": "@n8n/n8n-nodes-langchain.code",
+			"type": "@aura/aura-nodes-langchain.code",
 			"typeVersion": 1,
 			"position": [1780, 380]
 		}

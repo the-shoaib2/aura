@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { WorkflowHistory, WorkflowVersion } from '@n8n/rest-api-client/api/workflowHistory';
+import type { WorkflowHistory, WorkflowVersion } from '@aura/rest-api-client/api/workflowHistory';
 
 export const workflowHistoryDataFactory: () => WorkflowHistory = () => ({
 	versionId: faker.string.nanoid(),

@@ -1,7 +1,7 @@
 import { capitalCase } from 'change-case';
 import omit from 'lodash/omit';
 import pickBy from 'lodash/pickBy';
-import { NodeApiError } from 'n8n-workflow';
+import { NodeApiError } from 'workflow';
 import type {
 	IDataObject,
 	IExecuteFunctions,
@@ -12,7 +12,7 @@ import type {
 	INodePropertyOptions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { CustomField, GeneralAddress, Ref } from './descriptions/Shared.interface';
 import type { DateFieldsUi, Option, QuickBooksOAuth2Credentials, TransactionReport } from './types';
@@ -44,7 +44,7 @@ export async function quickBooksApiRequest(
 
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'aura',
 		},
 		method,
 		uri: `${credentials.environment === 'sandbox' ? sandboxUrl : productionUrl}${endpoint}`,

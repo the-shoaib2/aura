@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.theHive",
+	"node": "aura-nodes-base.theHive",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/thehive/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/thehive/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.thehive/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.thehive/"
 			}
 		]
 	}

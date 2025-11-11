@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "768b2ddf-9888-4361-8f1e-3a4dff195e6b"
@@ -27,7 +27,7 @@
 				}
 			},
 			"name": "Cockpit",
-			"type": "n8n-nodes-base.cockpit",
+			"type": "aura-nodes-base.cockpit",
 			"typeVersion": 1,
 			"position": [550, 180],
 			"credentials": {
@@ -53,7 +53,7 @@
 				}
 			},
 			"name": "Cockpit1",
-			"type": "n8n-nodes-base.cockpit",
+			"type": "aura-nodes-base.cockpit",
 			"typeVersion": 1,
 			"position": [700, 180],
 			"credentials": {
@@ -71,7 +71,7 @@
 				"options": {}
 			},
 			"name": "Cockpit2",
-			"type": "n8n-nodes-base.cockpit",
+			"type": "aura-nodes-base.cockpit",
 			"typeVersion": 1,
 			"position": [850, 180],
 			"credentials": {
@@ -88,7 +88,7 @@
 				"singleton": "FixedSingleton"
 			},
 			"name": "Cockpit3",
-			"type": "n8n-nodes-base.cockpit",
+			"type": "aura-nodes-base.cockpit",
 			"typeVersion": 1,
 			"position": [550, 350],
 			"credentials": {
@@ -117,7 +117,7 @@
 				}
 			},
 			"name": "Cockpit4",
-			"type": "n8n-nodes-base.cockpit",
+			"type": "aura-nodes-base.cockpit",
 			"typeVersion": 1,
 			"position": [550, 500],
 			"credentials": {

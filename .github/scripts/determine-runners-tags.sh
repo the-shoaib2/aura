@@ -3,32 +3,32 @@ set -euo pipefail
 
 # Script to determine Docker tags for runners images (Alpine and distroless variants)
 #
-# Usage: determine-runners-tags.sh RELEASE_TYPE N8N_VERSION_TAG GHCR_BASE DOCKER_BASE PLATFORM GITHUB_OUTPUT
+# Usage: determine-runners-tags.sh RELEASE_TYPE aura_VERSION_TAG GHCR_BASE DOCKER_BASE PLATFORM GITHUB_OUTPUT
 #
 # Example:
 #   determine-runners-tags.sh \
 #     "stable" \
 #     "1.123.0" \
-#     "ghcr.io/n8n-io/runners" \
-#     "n8nio/runners" \
+#     "ghcr.io/aura-io/runners" \
+#     "auraio/runners" \
 #     "amd64" \
 #     "$GITHUB_OUTPUT"
 #
 # Output (written to GITHUB_OUTPUT):
 #   Alpine variant:
-#     tags=ghcr.io/n8n-io/runners:1.123.0-amd64, n8nio/runners:1.123.0-amd64
-#     ghcr_platform_tag=ghcr.io/n8n-io/runners:1.123.0-amd64
-#     dockerhub_platform_tag=n8nio/runners:1.123.0-amd64
-#     primary_ghcr_manifest_tag=ghcr.io/n8n-io/runners:1.123.0
+#     tags=ghcr.io/aura-io/runners:1.123.0-amd64, auraio/runners:1.123.0-amd64
+#     ghcr_platform_tag=ghcr.io/aura-io/runners:1.123.0-amd64
+#     dockerhub_platform_tag=auraio/runners:1.123.0-amd64
+#     primary_ghcr_manifest_tag=ghcr.io/aura-io/runners:1.123.0
 #
 #   Distroless variant:
-#     tags_distroless=ghcr.io/n8n-io/runners:1.123.0-distroless-amd64, n8nio/runners:1.123.0-distroless-amd64
-#     ghcr_platform_tag_distroless=ghcr.io/n8n-io/runners:1.123.0-distroless-amd64
-#     dockerhub_platform_tag_distroless=n8nio/runners:1.123.0-distroless-amd64
-#     primary_ghcr_manifest_tag_distroless=ghcr.io/n8n-io/runners:1.123.0-distroless
+#     tags_distroless=ghcr.io/aura-io/runners:1.123.0-distroless-amd64, auraio/runners:1.123.0-distroless-amd64
+#     ghcr_platform_tag_distroless=ghcr.io/aura-io/runners:1.123.0-distroless-amd64
+#     dockerhub_platform_tag_distroless=auraio/runners:1.123.0-distroless-amd64
+#     primary_ghcr_manifest_tag_distroless=ghcr.io/aura-io/runners:1.123.0-distroless
 
 RELEASE_TYPE="${1:?Missing RELEASE_TYPE argument}"
-N8N_VERSION_TAG="${2:?Missing N8N_VERSION_TAG argument}"
+aura_VERSION_TAG="${2:?Missing aura_VERSION_TAG argument}"
 GHCR_BASE="${3:?Missing GHCR_BASE argument}"
 DOCKER_BASE="${4:?Missing DOCKER_BASE argument}"
 PLATFORM="${5:?Missing PLATFORM argument}"
@@ -44,9 +44,9 @@ generate_tags() {
 
   case "$RELEASE_TYPE" in
     "stable")
-      PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${N8N_VERSION_TAG}${VARIANT_SUFFIX}"
+      PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${aura_VERSION_TAG}${VARIANT_SUFFIX}"
       GHCR_TAGS_FOR_PUSH="${PRIMARY_GHCR_MANIFEST_TAG_VALUE}-${PLATFORM}"
-      DOCKER_TAGS_FOR_PUSH="${DOCKER_BASE}:${N8N_VERSION_TAG}${VARIANT_SUFFIX}-${PLATFORM}"
+      DOCKER_TAGS_FOR_PUSH="${DOCKER_BASE}:${aura_VERSION_TAG}${VARIANT_SUFFIX}-${PLATFORM}"
       ;;
     "nightly")
       PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:nightly${VARIANT_SUFFIX}"
@@ -54,13 +54,13 @@ generate_tags() {
       DOCKER_TAGS_FOR_PUSH="${DOCKER_BASE}:nightly${VARIANT_SUFFIX}-${PLATFORM}"
       ;;
     "branch")
-      PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${N8N_VERSION_TAG}${VARIANT_SUFFIX}"
+      PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${aura_VERSION_TAG}${VARIANT_SUFFIX}"
       GHCR_TAGS_FOR_PUSH="${PRIMARY_GHCR_MANIFEST_TAG_VALUE}-${PLATFORM}"
       DOCKER_TAGS_FOR_PUSH=""
       ;;
     "dev"|*)
-      if [[ "$N8N_VERSION_TAG" == pr-* ]]; then
-        PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${N8N_VERSION_TAG}${VARIANT_SUFFIX}"
+      if [[ "$aura_VERSION_TAG" == pr-* ]]; then
+        PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${aura_VERSION_TAG}${VARIANT_SUFFIX}"
         GHCR_TAGS_FOR_PUSH="${PRIMARY_GHCR_MANIFEST_TAG_VALUE}-${PLATFORM}"
         DOCKER_TAGS_FOR_PUSH=""
       else

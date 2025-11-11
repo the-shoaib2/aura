@@ -1,15 +1,15 @@
-import type { SamlPreferences } from '@n8n/api-types';
-import { mockInstance, mockLogger } from '@n8n/backend-test-utils';
-import type { GlobalConfig } from '@n8n/config';
-import { SettingsRepository } from '@n8n/db';
-import type { UserRepository, Settings } from '@n8n/db';
-import { Container } from '@n8n/di';
+import type { SamlPreferences } from '@aura/api-types';
+import { mockInstance, mockLogger } from '@aura/backend-test-utils';
+import type { GlobalConfig } from '@aura/config';
+import { SettingsRepository } from '@aura/db';
+import type { UserRepository, Settings } from '@aura/db';
+import { Container } from '@aura/di';
 import axios from 'axios';
 import type express from 'express';
 import type { HttpProxyAgent } from 'http-proxy-agent';
 import type { HttpsProxyAgent } from 'https-proxy-agent';
 import { mock } from 'jest-mock-extended';
-import type { InstanceSettings } from 'n8n-core';
+import type { InstanceSettings } from 'aura-core';
 import type { IdentityProviderInstance, ServiceProviderInstance } from 'samlify';
 
 import { SAML_PREFERENCES_DB_KEY } from '../constants';
@@ -215,7 +215,7 @@ describe('SamlService', () => {
 			provisioningService,
 		);
 		// Mock GlobalConfig container access
-		Container.set(require('@n8n/config').GlobalConfig, globalConfig);
+		Container.set(require('@aura/config').GlobalConfig, globalConfig);
 	});
 
 	describe('getAttributesFromLoginResponse', () => {
@@ -369,8 +369,8 @@ describe('SamlService', () => {
 				firstName: '',
 				lastName: '',
 				userPrincipalName: 'foo@bar.com',
-				n8nInstanceRole: 'global:admin',
-				n8nProjectRoles: ['rgjhURvl0rnEQL3v:viewer', 'ussa2R6P7aDtuRaZ:viewer'],
+				auraInstanceRole: 'global:admin',
+				auraProjectRoles: ['rgjhURvl0rnEQL3v:viewer', 'ussa2R6P7aDtuRaZ:viewer'],
 			};
 			const mockUser = {
 				id: '123',
@@ -386,11 +386,11 @@ describe('SamlService', () => {
 
 			expect(provisioningService.provisionInstanceRoleForUser).toHaveBeenCalledWith(
 				mockUser,
-				samlAttributes.n8nInstanceRole,
+				samlAttributes.auraInstanceRole,
 			);
 			expect(provisioningService.provisionProjectRolesForUser).toHaveBeenCalledWith(
 				mockUser.id,
-				samlAttributes.n8nProjectRoles,
+				samlAttributes.auraProjectRoles,
 			);
 		});
 	});

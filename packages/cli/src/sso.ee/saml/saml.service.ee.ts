@@ -1,14 +1,14 @@
-import type { SamlPreferences, SamlPreferencesAttributeMapping } from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import type { Settings, User } from '@n8n/db';
-import { isValidEmail, SettingsRepository, UserRepository } from '@n8n/db';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import type { SamlPreferences, SamlPreferencesAttributeMapping } from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import type { Settings, User } from '@aura/db';
+import { isValidEmail, SettingsRepository, UserRepository } from '@aura/db';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import axios from 'axios';
 import type express from 'express';
-import { createHttpProxyAgent, createHttpsProxyAgent, InstanceSettings } from 'n8n-core';
-import { jsonParse, UnexpectedError } from 'n8n-workflow';
+import { createHttpProxyAgent, createHttpsProxyAgent, InstanceSettings } from 'aura-core';
+import { jsonParse, UnexpectedError } from 'workflow';
 import { type IdentityProviderInstance, type ServiceProviderInstance } from 'samlify';
 import type { BindingContext, PostBindingContext } from 'samlify/types/src/entity';
 
@@ -258,13 +258,16 @@ export class SamlService {
 	}
 
 	private async applySsoProvisioning(user: User, attributes: SamlPreferencesAttributeMapping) {
-		if (attributes?.n8nInstanceRole) {
-			await this.provisioningService.provisionInstanceRoleForUser(user, attributes.n8nInstanceRole);
+		if (attributes?.auraInstanceRole) {
+			await this.provisioningService.provisionInstanceRoleForUser(
+				user,
+				attributes.auraInstanceRole,
+			);
 		}
-		if (attributes?.n8nProjectRoles) {
+		if (attributes?.auraProjectRoles) {
 			await this.provisioningService.provisionProjectRolesForUser(
 				user.id,
-				attributes.n8nProjectRoles,
+				attributes.auraProjectRoles,
 			);
 		}
 	}

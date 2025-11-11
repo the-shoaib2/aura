@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const workItemOperations: INodeProperties[] = [
 	{
@@ -65,7 +65,7 @@ export const workItemFields: INodeProperties[] = [
 		default: [],
 		required: true,
 		description:
-			'ID of the space to retrieve the work items from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the space to retrieve the work items from. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		displayOptions: {
 			show: {
 				resource: ['workItem'],
@@ -84,7 +84,7 @@ export const workItemFields: INodeProperties[] = [
 		default: [],
 		required: true,
 		description:
-			'ID of the status to set on the item to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the status to set on the item to create. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		displayOptions: {
 			show: {
 				resource: ['workItem'],
@@ -163,7 +163,7 @@ export const workItemFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'ID of the label to set on the item to create. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'ID of the label to set on the item to create. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Member Names or IDs',
@@ -174,7 +174,7 @@ export const workItemFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'ID of the user to assign to the item to create. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'ID of the user to assign to the item to create. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 		],
 	},
@@ -210,7 +210,7 @@ export const workItemFields: INodeProperties[] = [
 		default: [],
 		required: true,
 		description:
-			'ID of the space to retrieve the work items from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'ID of the space to retrieve the work items from. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		displayOptions: {
 			show: {
 				resource: ['workItem'],
@@ -338,7 +338,7 @@ export const workItemFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'ID of the status to set on the item to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'ID of the status to set on the item to update. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Title',

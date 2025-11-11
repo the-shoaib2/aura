@@ -4,7 +4,7 @@ import ProjectBreadcrumb from './ProjectBreadcrumb.vue';
 import { ProjectTypes } from '@/features/collaboration/projects/projects.types';
 import { createTestProject } from '@/features/collaboration/projects/__tests__/utils';
 
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: vi.fn((key) => {
@@ -26,7 +26,7 @@ const mockComponents = {
 		props: ['icon', 'borderLess', 'size', 'title'],
 	},
 	N8nText: {
-		template: '<span class="n8n-text" data-test-id="project-label"><slot /></span>',
+		template: '<span class="aura-text" data-test-id="project-label"><slot /></span>',
 		props: ['size', 'color'],
 	},
 };

@@ -2,16 +2,16 @@
 import { computed, onBeforeMount, onBeforeUnmount, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useOrchestrationStore } from '../orchestration.store';
 import { useDocumentTitle } from '@/app/composables/useDocumentTitle';
 import { usePushConnection } from '@/app/composables/usePushConnection';
 import { usePushConnectionStore } from '@/app/stores/pushConnection.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import WorkerCard from './WorkerCard.vue';
 
-import { N8nHeading, N8nSpinner } from '@n8n/design-system';
+import { N8nHeading, N8nSpinner } from '@aura/design-system';
 import PushConnectionTracker from '@/app/components/PushConnectionTracker.vue';
 withDefaults(
 	defineProps<{

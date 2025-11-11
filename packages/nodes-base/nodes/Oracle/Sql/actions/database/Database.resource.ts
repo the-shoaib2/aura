@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import * as deleteTable from './deleteTable.operation';
 import * as execute from './executeQuery.operation';
@@ -36,10 +36,10 @@ export const description: INodeProperties[] = [
 				action: 'Insert rows in a table',
 			},
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-upsert
+				// eslint-disable-next-line aura-nodes-base/node-param-option-name-wrong-for-upsert
 				name: 'Insert or Update',
 				value: 'upsert',
-				// eslint-disable-next-line n8n-nodes-base/node-param-description-wrong-for-upsert
+				// eslint-disable-next-line aura-nodes-base/node-param-description-wrong-for-upsert
 				description: 'Insert or update rows in a table',
 				action: 'Insert or update rows in a table',
 			},

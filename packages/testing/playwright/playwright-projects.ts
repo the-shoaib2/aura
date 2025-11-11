@@ -1,5 +1,5 @@
 import type { Project } from '@playwright/test';
-import type { N8NConfig } from 'n8n-containers/n8n-test-container-creation';
+import type { N8NConfig } from 'aura-containers/aura-test-container-creation';
 
 // Tags that require test containers environment
 // These tests won't be run against local

@@ -3,11 +3,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { Logger, isObjectLiteral } from '@n8n/backend-common';
-import type { User } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger, isObjectLiteral } from '@aura/backend-common';
+import type { User } from '@aura/db';
+import { Service } from '@aura/di';
 import get from 'lodash/get';
-import { CredentialTestContext, ErrorReporter, ExecuteContext, RoutingNode } from 'n8n-core';
+import { CredentialTestContext, ErrorReporter, ExecuteContext, RoutingNode } from 'aura-core';
 import type {
 	ICredentialsDecrypted,
 	ICredentialTestFunction,
@@ -26,8 +26,8 @@ import type {
 	ICredentialTestFunctions,
 	IDataObject,
 	IExecuteData,
-} from 'n8n-workflow';
-import { VersionedNodeType, NodeHelpers, Workflow, UnexpectedError } from 'n8n-workflow';
+} from 'workflow';
+import { VersionedNodeType, NodeHelpers, Workflow, UnexpectedError } from 'workflow';
 
 import { RESPONSE_ERROR_MESSAGES } from '../constants';
 import { CredentialsHelper } from '../credentials-helper';
@@ -255,7 +255,7 @@ export class CredentialsTester {
 		if (credentialTestFunction.nodeType) {
 			nodeType = credentialTestFunction.nodeType;
 		} else {
-			nodeType = this.nodeTypes.getByNameAndVersion('n8n-nodes-base.noOp');
+			nodeType = this.nodeTypes.getByNameAndVersion('aura-nodes-base.noOp');
 		}
 
 		const node: INode = {

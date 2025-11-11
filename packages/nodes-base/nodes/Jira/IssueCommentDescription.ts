@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const issueCommentOperations: INodeProperties[] = [
 	{
@@ -63,7 +63,7 @@ export const issueCommentFields: INodeProperties[] = [
 			},
 		},
 		default: '',
-		// eslint-disable-next-line n8n-nodes-base/node-param-description-lowercase-first-char
+		// eslint-disable-next-line aura-nodes-base/node-param-description-lowercase-first-char
 		description: 'issueComment Key',
 	},
 	{

@@ -1,3 +1,3 @@
 @echo off
 
-node "%~dp0\n8n-node-dev" %*
+node "%~dp0\aura-node-dev" %*

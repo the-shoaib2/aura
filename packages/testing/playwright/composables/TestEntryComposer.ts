@@ -1,6 +1,6 @@
 import type { Page } from '@playwright/test';
 
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 import type { TestUser } from '../services/user-api-helper';
 
 /**
@@ -8,24 +8,24 @@ import type { TestUser } from '../services/user-api-helper';
  * For API-only testing, use the standalone `api` fixture directly instead.
  */
 export class TestEntryComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Start UI test from the home page and navigate to canvas
 	 */
 	async fromHome() {
-		await this.n8n.goHome();
-		await this.n8n.page.waitForURL('/home/workflows');
+		await this.aura.goHome();
+		await this.aura.page.waitForURL('/home/workflows');
 	}
 
 	/**
 	 * Start UI test from a blank canvas (assumes already on canvas)
 	 */
 	async fromBlankCanvas() {
-		await this.n8n.goHome();
-		await this.n8n.workflows.addResource.workflow();
+		await this.aura.goHome();
+		await this.aura.workflows.addResource.workflow();
 		// Verify we're on canvas
-		await this.n8n.canvas.canvasPane().isVisible();
+		await this.aura.canvas.canvasPane().isVisible();
 	}
 
 	/**
@@ -33,23 +33,23 @@ export class TestEntryComposer {
 	 */
 	async fromNewProjectBlankCanvas() {
 		// Enable features to allow us to create a new project
-		await this.n8n.api.enableFeature('projectRole:admin');
-		await this.n8n.api.enableFeature('projectRole:editor');
-		await this.n8n.api.setMaxTeamProjectsQuota(-1);
+		await this.aura.api.enableFeature('projectRole:admin');
+		await this.aura.api.enableFeature('projectRole:editor');
+		await this.aura.api.setMaxTeamProjectsQuota(-1);
 
 		// Create a project using the API
-		const response = await this.n8n.api.projects.createProject();
+		const response = await this.aura.api.projects.createProject();
 
 		const projectId = response.id;
-		await this.n8n.page.goto(`workflow/new?projectId=${projectId}`);
-		await this.n8n.canvas.canvasPane().isVisible();
+		await this.aura.page.goto(`workflow/new?projectId=${projectId}`);
+		await this.aura.canvas.canvasPane().isVisible();
 		return projectId;
 	}
 
 	async fromNewProject() {
-		const response = await this.n8n.api.projects.createProject();
+		const response = await this.aura.api.projects.createProject();
 		const projectId = response.id;
-		await this.n8n.navigate.toProject(projectId);
+		await this.aura.navigate.toProject(projectId);
 		return projectId;
 	}
 
@@ -58,24 +58,24 @@ export class TestEntryComposer {
 	 * Returns the workflow import result for use in the test
 	 */
 	async fromImportedWorkflow(workflowFile: string) {
-		const workflowImportResult = await this.n8n.api.workflows.importWorkflowFromFile(workflowFile);
-		await this.n8n.page.goto(`workflow/${workflowImportResult.workflowId}`);
+		const workflowImportResult = await this.aura.api.workflows.importWorkflowFromFile(workflowFile);
+		await this.aura.page.goto(`workflow/${workflowImportResult.workflowId}`);
 		return workflowImportResult;
 	}
 
 	/**
 	 * Start UI test on a new page created by an action
 	 * @param action - The action that will create a new page
-	 * @returns n8nPage instance for the new page
+	 * @returns auraPage instance for the new page
 	 */
-	async fromNewPage(action: () => Promise<void>): Promise<n8nPage> {
-		const newPagePromise = this.n8n.page.waitForEvent('popup');
+	async fromNewPage(action: () => Promise<void>): Promise<auraPage> {
+		const newPagePromise = this.aura.page.waitForEvent('popup');
 		await action();
 		const newPage = await newPagePromise;
 		await newPage.waitForLoadState('domcontentloaded');
 		// Use the constructor from the current instance to avoid circular dependency
-		const n8nPageConstructor = this.n8n.constructor as new (page: Page) => n8nPage;
-		return new n8nPageConstructor(newPage);
+		const auraPageConstructor = this.aura.constructor as new (page: Page) => auraPage;
+		return new auraPageConstructor(newPage);
 	}
 
 	/**
@@ -83,24 +83,24 @@ export class TestEntryComposer {
 	 * Allow project creation, sharing, and folder creation
 	 */
 	async withProjectFeatures() {
-		await this.n8n.api.enableFeature('sharing');
-		await this.n8n.api.enableFeature('folders');
-		await this.n8n.api.enableFeature('advancedPermissions');
-		await this.n8n.api.enableFeature('projectRole:admin');
-		await this.n8n.api.enableFeature('projectRole:editor');
-		await this.n8n.api.setMaxTeamProjectsQuota(-1);
+		await this.aura.api.enableFeature('sharing');
+		await this.aura.api.enableFeature('folders');
+		await this.aura.api.enableFeature('advancedPermissions');
+		await this.aura.api.enableFeature('projectRole:admin');
+		await this.aura.api.enableFeature('projectRole:editor');
+		await this.aura.api.setMaxTeamProjectsQuota(-1);
 	}
 
 	/**
 	 * Create a new isolated user context with fresh page and authentication
 	 * @param user - User with email and password
-	 * @returns Fresh n8nPage instance with user authentication
+	 * @returns Fresh auraPage instance with user authentication
 	 */
-	async withUser(user: Pick<TestUser, 'email' | 'password'>): Promise<n8nPage> {
-		const browser = this.n8n.page.context().browser()!;
+	async withUser(user: Pick<TestUser, 'email' | 'password'>): Promise<auraPage> {
+		const browser = this.aura.page.context().browser()!;
 		const context = await browser.newContext();
 		const page = await context.newPage();
-		const newN8n = new (this.n8n.constructor as new (page: Page) => n8nPage)(page);
+		const newN8n = new (this.aura.constructor as new (page: Page) => auraPage)(page);
 		await newN8n.api.login({ email: user.email, password: user.password });
 		return newN8n;
 	}

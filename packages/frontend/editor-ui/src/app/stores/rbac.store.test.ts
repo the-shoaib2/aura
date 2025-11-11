@@ -1,11 +1,12 @@
 import { createPinia, setActivePinia } from 'pinia';
 import { useRBACStore } from '@/app/stores/rbac.store';
-import type { Scope } from '@n8n/permissions';
-import { hasScope } from '@n8n/permissions';
+import type { Scope } from '@aura/permissions';
+import { hasScope } from '@aura/permissions';
 
-vi.mock('@n8n/permissions', async () => {
+vi.mock('@aura/permissions', async () => {
 	// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-	const { hasScope } = await vi.importActual<typeof import('@n8n/permissions')>('@n8n/permissions');
+	const { hasScope } =
+		await vi.importActual<typeof import('@aura/permissions')>('@aura/permissions');
 	return {
 		hasScope: vi.fn().mockImplementation(hasScope),
 	};

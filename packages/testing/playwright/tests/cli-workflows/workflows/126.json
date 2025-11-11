@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "76f28c5d-1894-4d95-ab23-4e6e39bf69e9"
@@ -24,7 +24,7 @@
 				}
 			},
 			"name": "Kafka",
-			"type": "n8n-nodes-base.kafka",
+			"type": "aura-nodes-base.kafka",
 			"typeVersion": 1,
 			"position": [710, 300],
 			"credentials": {
@@ -48,7 +48,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"id": "2d1bf06b-6d8e-4f82-b56f-7fde44b74007"

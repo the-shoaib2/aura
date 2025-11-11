@@ -22,7 +22,7 @@ function main() {
 		console.error('❌ No coverage data found in .nyc_output/ui');
 		console.log('\nTo generate coverage data:');
 		console.log(
-			'1. Build editor-ui with coverage: COVERAGE_ENABLED=true pnpm --filter n8n-editor-ui build',
+			'1. Build editor-ui with coverage: COVERAGE_ENABLED=true pnpm --filter aura-editor-ui build',
 		);
 		console.log('2. Run Playwright tests: COVERAGE_ENABLED=true pnpm test:local');
 		process.exit(1);

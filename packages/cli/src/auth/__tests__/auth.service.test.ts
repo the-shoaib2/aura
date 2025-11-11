@@ -1,11 +1,11 @@
-import type { GlobalConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
+import type { GlobalConfig } from '@aura/config';
+import { Time } from '@aura/constants';
 import type {
 	AuthenticatedRequest,
 	User,
 	InvalidAuthTokenRepository,
 	UserRepository,
-} from '@n8n/db';
+} from '@aura/db';
 import type { NextFunction, Response } from 'express';
 import { mock } from 'jest-mock-extended';
 import jwt from 'jsonwebtoken';
@@ -191,7 +191,7 @@ describe('AuthService', () => {
 			await middleware(req, res, next);
 
 			expect(next).toHaveBeenCalled();
-			expect(res.cookie).toHaveBeenCalledWith('n8n-auth', expect.any(String), {
+			expect(res.cookie).toHaveBeenCalledWith('aura-auth', expect.any(String), {
 				httpOnly: true,
 				maxAge: 604800000,
 				sameSite: 'lax',
@@ -512,7 +512,7 @@ describe('AuthService', () => {
 		it('should issue a cookie with the correct options', () => {
 			authService.issueCookie(res, user, false, browserId);
 
-			expect(res.cookie).toHaveBeenCalledWith('n8n-auth', validToken, {
+			expect(res.cookie).toHaveBeenCalledWith('aura-auth', validToken, {
 				httpOnly: true,
 				maxAge: 604800000,
 				sameSite: 'lax',
@@ -523,7 +523,7 @@ describe('AuthService', () => {
 		it('should issue a cookie with the correct options, when 2FA was used', () => {
 			authService.issueCookie(res, user, true, browserId);
 
-			expect(res.cookie).toHaveBeenCalledWith('n8n-auth', validTokenWithMfa, {
+			expect(res.cookie).toHaveBeenCalledWith('aura-auth', validTokenWithMfa, {
 				httpOnly: true,
 				maxAge: 604800000,
 				sameSite: 'lax',
@@ -536,7 +536,7 @@ describe('AuthService', () => {
 
 			authService.issueCookie(res, user, false, browserId);
 
-			expect(res.cookie).toHaveBeenCalledWith('n8n-auth', validToken, {
+			expect(res.cookie).toHaveBeenCalledWith('aura-auth', validToken, {
 				httpOnly: true,
 				maxAge: 604800000,
 				sameSite: 'none',
@@ -650,7 +650,7 @@ describe('AuthService', () => {
 				user,
 				{ usedMfa: false },
 			]);
-			expect(res.cookie).toHaveBeenCalledWith('n8n-auth', expect.any(String), {
+			expect(res.cookie).toHaveBeenCalledWith('aura-auth', expect.any(String), {
 				httpOnly: true,
 				maxAge: 604800000,
 				sameSite: 'lax',
@@ -709,10 +709,10 @@ describe('AuthService', () => {
 
 	describe('generatePasswordResetUrl', () => {
 		it('should generate a valid url', () => {
-			urlService.getInstanceBaseUrl.mockReturnValue('https://n8n.instance');
+			urlService.getInstanceBaseUrl.mockReturnValue('https://aura.instance');
 			const url = authService.generatePasswordResetUrl(user);
 			expect(url).toEqual(
-				'https://n8n.instance/change-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMiLCJoYXNoIjoibUpBWXg0V2I3ayIsImlhdCI6MTcwNjc1MDYyNSwiZXhwIjoxNzA2NzUxODI1fQ.rg90I7MKjc_KC77mov59XYAeRc-CoW9ka4mt1dCfrnk&mfaEnabled=false',
+				'https://aura.instance/change-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMiLCJoYXNoIjoibUpBWXg0V2I3ayIsImlhdCI6MTcwNjc1MDYyNSwiZXhwIjoxNzA2NzUxODI1fQ.rg90I7MKjc_KC77mov59XYAeRc-CoW9ka4mt1dCfrnk&mfaEnabled=false',
 			);
 		});
 	});

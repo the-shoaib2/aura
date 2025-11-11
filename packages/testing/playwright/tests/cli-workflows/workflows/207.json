@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "71dbf38c-e75d-48af-b045-fa5e0e30d2a5"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Keap",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [650, 180],
 			"credentials": {
@@ -38,7 +38,7 @@
 				"productId": "={{$node[\"Keap\"].json[\"id\"]}}"
 			},
 			"name": "Keap1",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [810, 180],
 			"credentials": {
@@ -57,7 +57,7 @@
 				"filters": {}
 			},
 			"name": "Keap2",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [970, 180],
 			"credentials": {
@@ -75,7 +75,7 @@
 				"productId": "={{$node[\"Keap\"].json[\"id\"]}}"
 			},
 			"name": "Keap3",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [1120, 180],
 			"credentials": {
@@ -94,7 +94,7 @@
 				"additionalFields": {}
 			},
 			"name": "Keap4",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [650, 350],
 			"credentials": {
@@ -113,7 +113,7 @@
 				"filters": {}
 			},
 			"name": "Keap5",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [800, 350],
 			"credentials": {
@@ -137,7 +137,7 @@
 				}
 			},
 			"name": "Keap6",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [950, 350],
 			"credentials": {
@@ -163,7 +163,7 @@
 				}
 			},
 			"name": "Keap7",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [490, 280],
 			"credentials": {
@@ -194,7 +194,7 @@
 				}
 			},
 			"name": "Keap8",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [810, 30],
 			"credentials": {
@@ -212,7 +212,7 @@
 				"orderId": "={{$node[\"Keap8\"].json[\"id\"]}}"
 			},
 			"name": "Keap9",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [970, 30],
 			"credentials": {
@@ -231,7 +231,7 @@
 				"options": {}
 			},
 			"name": "Keap10",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [1130, 30],
 			"credentials": {
@@ -249,7 +249,7 @@
 				"orderId": "={{$node[\"Keap8\"].json[\"id\"]}}"
 			},
 			"name": "Keap11",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [1290, 30],
 			"credentials": {
@@ -270,7 +270,7 @@
 				"fileData": "IyB0aGlzIGlzIGEgdGVzdCBmaWxl"
 			},
 			"name": "Keap12",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [650, 520],
 			"credentials": {
@@ -289,7 +289,7 @@
 				"filters": {}
 			},
 			"name": "Keap13",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [810, 520],
 			"credentials": {
@@ -306,7 +306,7 @@
 				"fileId": "={{$node[\"Keap12\"].json[\"file_descriptor\"][\"id\"]}}"
 			},
 			"name": "Keap14",
-			"type": "n8n-nodes-base.keap",
+			"type": "aura-nodes-base.keap",
 			"typeVersion": 1,
 			"position": [970, 520],
 			"credentials": {

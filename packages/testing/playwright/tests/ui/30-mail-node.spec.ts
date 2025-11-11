@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/base';
 
 test.use({ addContainerCapability: { email: true } });
 
-test('EmailSend node sends via SMTP @capability:email', async ({ api, n8n, chaos }) => {
+test('EmailSend node sends via SMTP @capability:email', async ({ api, aura, chaos }) => {
 	// Sign in to use internal APIs for creating credentials and workflows
 
 	// Create SMTP credential targeting Mailpit
@@ -28,22 +28,22 @@ test('EmailSend node sends via SMTP @capability:email', async ({ api, n8n, chaos
 			{
 				id: '1',
 				name: 'Manual Trigger',
-				type: 'n8n-nodes-base.manualTrigger',
+				type: 'aura-nodes-base.manualTrigger',
 				typeVersion: 1,
 				position: [0, 0],
 			},
 			{
 				id: '2',
 				name: 'Email',
-				type: 'n8n-nodes-base.emailSend',
+				type: 'aura-nodes-base.emailSend',
 				typeVersion: 2,
 				position: [300, 0],
 				parameters: {
-					fromEmail: 'test@n8n.local',
+					fromEmail: 'test@aura.local',
 					toEmail,
 					subject,
 					emailFormat: 'text',
-					text: 'Hello from n8n E2E test',
+					text: 'Hello from aura E2E test',
 				},
 				credentials: {
 					smtp: {
@@ -68,8 +68,8 @@ test('EmailSend node sends via SMTP @capability:email', async ({ api, n8n, chaos
 	);
 
 	// Execute the workflow via UI API endpoint by navigating to the canvas and clicking run
-	await n8n.page.goto(`/workflow/${workflowId}`);
-	await n8n.workflowComposer.executeWorkflowAndWaitForNotification(
+	await aura.page.goto(`/workflow/${workflowId}`);
+	await aura.workflowComposer.executeWorkflowAndWaitForNotification(
 		'Workflow executed successfully',
 	);
 

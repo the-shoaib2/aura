@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useUsersStore } from '@/features/settings/users/users.store';
-import { N8nHeading } from '@n8n/design-system';
+import { N8nHeading } from '@aura/design-system';
 import { computed } from 'vue';
 
 defineProps<{ isMobileDevice: boolean }>();

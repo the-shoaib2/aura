@@ -1,8 +1,8 @@
-import { ModuleRegistry, Logger } from '@n8n/backend-common';
-import { type AuthenticatedRequest, WorkflowEntity } from '@n8n/db';
-import { Body, Post, Get, Patch, RestController, GlobalScope, Param } from '@n8n/decorators';
+import { ModuleRegistry, Logger } from '@aura/backend-common';
+import { type AuthenticatedRequest, WorkflowEntity } from '@aura/db';
+import { Body, Post, Get, Patch, RestController, GlobalScope, Param } from '@aura/decorators';
 import type { Response } from 'express';
-import { WEBHOOK_NODE_TYPE } from 'n8n-workflow';
+import { WEBHOOK_NODE_TYPE } from 'workflow';
 
 import { UpdateMcpSettingsDto } from './dto/update-mcp-settings.dto';
 import { UpdateWorkflowAvailabilityDto } from './dto/update-workflow-availability.dto';

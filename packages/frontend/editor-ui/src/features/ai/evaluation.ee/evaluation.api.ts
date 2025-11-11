@@ -1,6 +1,6 @@
-import type { IRestApiContext } from '@n8n/rest-api-client';
-import { makeRestApiRequest, request } from '@n8n/rest-api-client';
-import type { JsonObject } from 'n8n-workflow';
+import type { IRestApiContext } from '@aura/rest-api-client';
+import { makeRestApiRequest, request } from '@aura/rest-api-client';
+import type { JsonObject } from 'workflow';
 
 export interface TestRunRecord {
 	id: string;

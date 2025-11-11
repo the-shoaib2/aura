@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
 import type { MqttClient } from 'mqtt';
-import type { ICredentialDataDecryptedObject, IExecuteFunctions } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject, IExecuteFunctions } from 'workflow';
 
 import { createClient } from '../GenericFunctions';
 import { Mqtt } from '../Mqtt.node';

@@ -1,4 +1,4 @@
-import { mockInstance } from '@n8n/backend-test-utils';
+import { mockInstance } from '@aura/backend-test-utils';
 import type { NextFunction } from 'express';
 import { mock } from 'jest-mock-extended';
 

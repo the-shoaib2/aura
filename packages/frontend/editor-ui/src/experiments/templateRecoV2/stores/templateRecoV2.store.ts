@@ -3,7 +3,7 @@ import { TEMPLATE_RECO_V2, VIEWS } from '@/app/constants';
 import { useCloudPlanStore } from '@/app/stores/cloudPlan.store';
 import { usePostHog } from '@/app/stores/posthog.store';
 import { useTemplatesStore } from '@/features/workflows/templates/templates.store';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import { defineStore } from 'pinia';
 import { computed } from 'vue';
 import { NODE_DATA, type PredefinedNodeData } from '../nodes/predefinedData';

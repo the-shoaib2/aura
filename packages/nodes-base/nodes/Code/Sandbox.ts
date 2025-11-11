@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	ISupplyDataFunctions,
 	IWorkflowDataProxyData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { validateRunCodeAllItems, validateRunCodeEachItem } from './result-validation';
 

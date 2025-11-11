@@ -8,7 +8,7 @@ import type {
 	INodeTypes,
 	Expression,
 	IWorkflowExecuteAdditionalData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getWebhookDescription, getNodeWebhookUrl } from '../webhook-helper-functions';
 

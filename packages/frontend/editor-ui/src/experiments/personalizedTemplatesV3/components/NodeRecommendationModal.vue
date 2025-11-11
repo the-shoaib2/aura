@@ -2,12 +2,12 @@
 import Modal from '@/app/components/Modal.vue';
 import { EXPERIMENT_TEMPLATE_RECO_V3_KEY, TEMPLATES_URLS } from '@/app/constants';
 import { useUIStore } from '@/app/stores/ui.store';
-import type { ITemplatesWorkflowFull } from '@n8n/rest-api-client';
+import type { ITemplatesWorkflowFull } from '@aura/rest-api-client';
 import { ref, watchEffect } from 'vue';
 import { usePersonalizedTemplatesV3Store } from '../stores/personalizedTemplatesV3.store';
 import TemplateCard from './TemplateCard.vue';
-import { useI18n } from '@n8n/i18n';
-import { N8nCard, N8nIcon, N8nSpinner, N8nText } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nCard, N8nIcon, N8nSpinner, N8nText } from '@aura/design-system';
 
 const uiStore = useUIStore();
 const {

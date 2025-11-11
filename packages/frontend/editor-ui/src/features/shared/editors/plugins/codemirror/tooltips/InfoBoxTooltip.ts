@@ -99,7 +99,7 @@ const createStringReader = (str: string) => (node?: SyntaxNode | null) => {
 };
 
 function getJsNodeAtPosition(state: EditorState, pos: number, anchor?: number) {
-	// Syntax node in the n8n language (Resolvable | Plaintext)
+	// Syntax node in the aura language (Resolvable | Plaintext)
 	const rootNode = syntaxTree(state).resolveInner(pos, -1);
 
 	if (rootNode.name !== 'Resolvable') {

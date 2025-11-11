@@ -43,4 +43,4 @@ jobs:
 
       - name: Destroy cloud env
         run: pnpm destroy-cloud-env
-        working-directory: packages/@n8n/benchmark
+        working-directory: packages/@aura/benchmark

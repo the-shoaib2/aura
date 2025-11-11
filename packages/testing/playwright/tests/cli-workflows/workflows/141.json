@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "13273e42-d319-4d4b-8a72-4c034ed61bac"
@@ -22,7 +22,7 @@
 				}
 			},
 			"name": "Microsoft Excel",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [500, 300],
 			"credentials": {
@@ -40,7 +40,7 @@
 				"filters": {}
 			},
 			"name": "Microsoft Excel1",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [790, 300],
 			"credentials": {
@@ -60,7 +60,7 @@
 				"filters": {}
 			},
 			"name": "Microsoft Excel2",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [500, 450],
 			"alwaysOutputData": true,
@@ -81,7 +81,7 @@
 				"range": "A1:D2"
 			},
 			"name": "Microsoft Excel3",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [790, 450],
 			"credentials": {
@@ -104,7 +104,7 @@
 				"options": {}
 			},
 			"name": "Microsoft Excel4",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [500, 150],
 			"credentials": {
@@ -125,7 +125,7 @@
 				"limit": 1
 			},
 			"name": "Microsoft Excel5",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [800, 150],
 			"credentials": {
@@ -146,7 +146,7 @@
 				"limit": 1
 			},
 			"name": "Microsoft Excel6",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [1100, 150],
 			"credentials": {
@@ -166,7 +166,7 @@
 				"additionalFields": {}
 			},
 			"name": "Microsoft Excel7",
-			"type": "n8n-nodes-base.microsoftExcel",
+			"type": "aura-nodes-base.microsoftExcel",
 			"typeVersion": 1,
 			"position": [1400, 150],
 			"credentials": {
@@ -213,7 +213,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [1250, 150],
 			"id": "eb3f568f-c6f6-4a53-b6de-8de28f762848"
@@ -223,7 +223,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.8 second",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [650, 450],
 			"typeVersion": 1,
 			"id": "5a289dee-eba5-467f-a7b3-552d94867c0f"
@@ -233,7 +233,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.8 second1",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [650, 300],
 			"typeVersion": 1,
 			"id": "0ca0ff2b-609a-42a3-a1cf-2bbc8f127f01"
@@ -243,7 +243,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.8 second2",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [650, 150],
 			"typeVersion": 1,
 			"id": "0bb04e5a-6001-4bc1-a1dd-32b16f3f0ec0"
@@ -253,7 +253,7 @@
 				"functionCode": "function sleep(milliseconds) {\n  return new Promise(\n    resolve => setTimeout(resolve, milliseconds)\n  );\n}\n\nawait sleep(800);\n\n// Output data\nreturn items;"
 			},
 			"name": "Sleep 0.8 second3",
-			"type": "n8n-nodes-base.function",
+			"type": "aura-nodes-base.function",
 			"position": [950, 150],
 			"typeVersion": 1,
 			"id": "9704ee84-3b4f-419c-aaa3-3e58c16b7ca9"

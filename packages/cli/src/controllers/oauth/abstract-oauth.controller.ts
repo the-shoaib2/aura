@@ -1,14 +1,14 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import type { AuthenticatedRequest, CredentialsEntity, ICredentialsDb } from '@n8n/db';
-import { CredentialsRepository } from '@n8n/db';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import type { AuthenticatedRequest, CredentialsEntity, ICredentialsDb } from '@aura/db';
+import { CredentialsRepository } from '@aura/db';
+import { Service } from '@aura/di';
 import Csrf from 'csrf';
 import type { Response } from 'express';
-import { Credentials } from 'n8n-core';
-import type { ICredentialDataDecryptedObject, IWorkflowExecuteAdditionalData } from 'n8n-workflow';
-import { jsonParse, UnexpectedError } from 'n8n-workflow';
+import { Credentials } from 'aura-core';
+import type { ICredentialDataDecryptedObject, IWorkflowExecuteAdditionalData } from 'workflow';
+import { jsonParse, UnexpectedError } from 'workflow';
 
 import { RESPONSE_ERROR_MESSAGES } from '@/constants';
 import { CredentialsFinderService } from '@/credentials/credentials-finder.service';
@@ -35,7 +35,7 @@ type CsrfStateParam = {
 const MAX_CSRF_AGE = 5 * Time.minutes.toMilliseconds;
 
 export function shouldSkipAuthOnOAuthCallback() {
-	// TODO: Flip this flag in v2 https://linear.app/n8n/issue/CAT-329
+	// TODO: Flip this flag in v2 https://linear.app/aura/issue/CAT-329
 	const value = process.env.N8N_SKIP_AUTH_ON_OAUTH_CALLBACK?.toLowerCase() ?? 'true';
 	return value === 'true';
 }

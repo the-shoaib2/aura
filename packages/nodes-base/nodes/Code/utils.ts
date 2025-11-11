@@ -1,4 +1,4 @@
-import type { INodeExecutionData, IDataObject, IExecuteFunctions } from 'n8n-workflow';
+import type { INodeExecutionData, IDataObject, IExecuteFunctions } from 'workflow';
 
 export function isObject(maybe: unknown): maybe is { [key: string]: unknown } {
 	return (
@@ -48,7 +48,7 @@ export const addPostExecutionWarning = (
 	) {
 		context.addExecutionHints({
 			message:
-				'To make sure expressions after this node work, return the input items that produced each output item. <a target="_blank" href="https://docs.n8n.io/data/data-mapping/data-item-linking/item-linking-code-node/">More info</a>',
+				'To make sure expressions after this node work, return the input items that produced each output item. <a target="_blank" href="https://docs.aura.io/data/data-mapping/data-item-linking/item-linking-code-node/">More info</a>',
 			location: 'outputPane',
 		});
 	}

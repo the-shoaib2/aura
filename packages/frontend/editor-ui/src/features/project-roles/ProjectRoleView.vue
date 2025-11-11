@@ -11,9 +11,9 @@ import {
 	N8nLoading,
 	N8nText,
 	N8nTooltip,
-} from '@n8n/design-system';
-import { useI18n } from '@n8n/i18n';
-import type { Role } from '@n8n/permissions';
+} from '@aura/design-system';
+import { useI18n } from '@aura/i18n';
+import type { Role } from '@aura/permissions';
 import { useAsyncState } from '@vueuse/core';
 import isEqual from 'lodash/isEqual';
 import sortBy from 'lodash/sortBy';

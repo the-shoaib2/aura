@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import { mockDeep } from 'jest-mock-extended';
-import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IExecuteFunctions, ILoadOptionsFunctions, INode } from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import type { RecurringEventInstance } from '../EventInterface';
 import {
@@ -130,7 +130,7 @@ describe('googleApiRequest', () => {
 		mockNode = {
 			id: 'test-node',
 			name: 'Test Google Calendar Node',
-			type: 'n8n-nodes-base.googleCalendar',
+			type: 'aura-nodes-base.googleCalendar',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},
@@ -286,7 +286,7 @@ describe('googleApiRequestAllItems', () => {
 		mockExecuteFunctions.getNode.mockReturnValue({
 			id: 'test-node',
 			name: 'Test Node',
-			type: 'n8n-nodes-base.googleCalendar',
+			type: 'aura-nodes-base.googleCalendar',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},
@@ -435,7 +435,7 @@ describe('getCalendars', () => {
 		mockLoadOptionsFunctions.getNode.mockReturnValue({
 			id: 'test-node',
 			name: 'Test Node',
-			type: 'n8n-nodes-base.googleCalendar',
+			type: 'aura-nodes-base.googleCalendar',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},
@@ -725,7 +725,7 @@ describe('googleApiRequestWithRetries', () => {
 		mockNode = {
 			id: 'test-node',
 			name: 'Test Node',
-			type: 'n8n-nodes-base.googleCalendar',
+			type: 'aura-nodes-base.googleCalendar',
 			typeVersion: 1,
 			position: [0, 0],
 			parameters: {},

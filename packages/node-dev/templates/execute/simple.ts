@@ -1,14 +1,9 @@
-import {
-	IExecuteFunctions,
-	INodeExecutionData,
-	INodeType,
-	INodeTypeDescription,
-} from 'n8n-workflow';
+import { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription } from 'workflow';
 
 export class ClassNameReplace implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'DisplayNameReplace',
-		name: 'N8nNameReplace',
+		name: 'auraNameReplace',
 		group: ['transform'],
 		version: 1,
 		description: 'NodeDescriptionReplace',

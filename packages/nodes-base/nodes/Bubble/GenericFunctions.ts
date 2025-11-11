@@ -6,8 +6,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 /**
  * Make an authenticated API request to Bubble.
@@ -32,7 +32,7 @@ export async function bubbleApiRequest(
 
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'aura',
 			Authorization: `Bearer ${apiToken}`,
 		},
 		method,

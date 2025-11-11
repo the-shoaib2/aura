@@ -4,7 +4,7 @@ import type { AxiosError } from 'axios';
 import { parseString } from 'xml2js';
 
 import { NodeError } from './abstract/node.error';
-import type { ErrorLevel } from '@n8n/errors';
+import type { ErrorLevel } from '@aura/errors';
 import {
 	NO_OP_NODE_TYPE,
 	UNKNOWN_ERROR_DESCRIPTION,

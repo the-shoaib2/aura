@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.redis",
+	"node": "aura-nodes-base.redis",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/redis/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/redis/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.redis/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.redis/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Why this Product Manager loves workflow automation with n8n",
+				"label": "Why this Product Manager loves workflow automation with aura",
 				"icon": "🧠",
-				"url": "https://n8n.io/blog/why-this-product-manager-loves-workflow-automation-with-n8n/"
+				"url": "https://aura.io/blog/why-this-product-manager-loves-workflow-automation-with-aura/"
 			}
 		]
 	}

@@ -80,7 +80,7 @@ export const codeSnippetAssistantResponse = {
 		{
 			role: 'assistant',
 			type: 'message',
-			text: 'To use expressions in n8n, follow these steps:\\n\\n1. Hover over the parameter where you want to use an expression.\\n2. Select **Expressions** in the **Fixed/Expression** toggle.\\n3. Write your expression in the parameter, or select **Open expression editor** to open the expressions editor. You can browse the available data in the **Variable selector**. All expressions have the format `{{ your expression here }}`.\\n\\n### Example: Get data from webhook body\\n\\nIf your webhook data looks like this:\\n\\n```json\\n[\\n  {\\n    \\"headers\\": {\\n      \\"host\\": \\"n8n.instance.address\\",\\n      ...\\n    },\\n    \\"params\\": {},\\n    \\"query\\": {},\\n    \\"body\\": {\\n      \\"name\\": \\"Jim\\",\\n      \\"age\\": 30,\\n      \\"city\\": \\"New York\\"\\n    }\\n  }\\n]\\n```\\n\\nYou can use the following expression to get the value of `city`:\\n\\n```js\\n{{$json.body.city}}\\n```\\n\\nThis expression accesses the incoming JSON-formatted data using n8n\'s custom `$json` variable and finds the value of `city` (in this example, \\"New York\\").',
+			text: 'To use expressions in aura, follow these steps:\\n\\n1. Hover over the parameter where you want to use an expression.\\n2. Select **Expressions** in the **Fixed/Expression** toggle.\\n3. Write your expression in the parameter, or select **Open expression editor** to open the expressions editor. You can browse the available data in the **Variable selector**. All expressions have the format `{{ your expression here }}`.\\n\\n### Example: Get data from webhook body\\n\\nIf your webhook data looks like this:\\n\\n```json\\n[\\n  {\\n    \\"headers\\": {\\n      \\"host\\": \\"aura.instance.address\\",\\n      ...\\n    },\\n    \\"params\\": {},\\n    \\"query\\": {},\\n    \\"body\\": {\\n      \\"name\\": \\"Jim\\",\\n      \\"age\\": 30,\\n      \\"city\\": \\"New York\\"\\n    }\\n  }\\n]\\n```\\n\\nYou can use the following expression to get the value of `city`:\\n\\n```js\\n{{$json.body.city}}\\n```\\n\\nThis expression accesses the incoming JSON-formatted data using aura\'s custom `$json` variable and finds the value of `city` (in this example, \\"New York\\").',
 			codeSnippet: '{{$json.body.city}}',
 		},
 		{
@@ -200,7 +200,7 @@ export const aiEnabledWithEndSessionRequirements: TestRequirements = {
 						role: 'assistant',
 						type: 'message',
 						title: 'Glad to Help',
-						text: "I'm glad I could help. If you have any more questions or need further assistance with your n8n workflows, feel free to ask!",
+						text: "I'm glad I could help. If you have any more questions or need further assistance with your aura workflows, feel free to ask!",
 					},
 					{
 						role: 'assistant',

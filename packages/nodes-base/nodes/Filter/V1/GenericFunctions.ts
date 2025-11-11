@@ -1,6 +1,6 @@
 import moment from 'moment-timezone';
-import type { INode, NodeParameterValue } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { INode, NodeParameterValue } from 'workflow';
+import { NodeOperationError } from 'workflow';
 
 const isDateObject = (value: NodeParameterValue) =>
 	Object.prototype.toString.call(value) === '[object Date]';

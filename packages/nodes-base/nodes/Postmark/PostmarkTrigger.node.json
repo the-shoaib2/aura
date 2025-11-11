@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.postmarkTrigger",
+	"node": "aura-nodes-base.postmarkTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/postmark/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/postmark/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.postmarktrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.postmarktrigger/"
 			}
 		]
 	}

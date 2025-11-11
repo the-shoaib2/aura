@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.wufooTrigger",
+	"node": "aura-nodes-base.wufooTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/wufoo/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/wufoo/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.wufootrigger/"
+				"url": "https://docs.aura.io/integrations/builtin/trigger-nodes/aura-nodes-base.wufootrigger/"
 			}
 		]
 	},

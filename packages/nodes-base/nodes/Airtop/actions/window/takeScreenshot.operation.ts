@@ -1,9 +1,4 @@
-import type {
-	IExecuteFunctions,
-	INodeExecutionData,
-	IBinaryData,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, IBinaryData, INodeProperties } from 'workflow';
 
 import {
 	validateSessionAndWindowId,

@@ -1,8 +1,8 @@
-import { testDb } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import { SettingsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { Cipher } from 'n8n-core';
+import { testDb } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import { SettingsRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { Cipher } from 'aura-core';
 
 import { CredentialsOverwrites } from '@/credentials-overwrites';
 import { CredentialTypes } from '@/credential-types';

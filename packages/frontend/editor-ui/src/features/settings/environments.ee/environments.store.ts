@@ -6,8 +6,8 @@ import type {
 	UpdateEnvironmentVariable,
 } from './environments.types';
 import * as environmentsApi from './environments.api';
-import { useRootStore } from '@n8n/stores/useRootStore';
-import { ExpressionError } from 'n8n-workflow';
+import { useRootStore } from '@aura/stores/useRootStore';
+import { ExpressionError } from 'workflow';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 
 export const useEnvironmentsStore = defineStore('environments', () => {

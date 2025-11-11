@@ -1,19 +1,19 @@
-import { Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
+import { Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
 import type {
 	CreateExecutionPayload,
 	ExecutionSummaries,
 	IExecutionResponse,
 	IGetExecutionsQueryFilter,
 	User,
-} from '@n8n/db';
+} from '@aura/db';
 import {
 	AnnotationTagMappingRepository,
 	ExecutionAnnotationRepository,
 	ExecutionRepository,
 	WorkflowRepository,
-} from '@n8n/db';
-import { Service } from '@n8n/di';
+} from '@aura/db';
+import { Service } from '@aura/di';
 import { validate as jsonSchemaValidate } from 'jsonschema';
 import type {
 	ExecutionError,
@@ -23,7 +23,7 @@ import type {
 	IWorkflowBase,
 	IWorkflowExecutionDataProcess,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	ExecutionStatusList,
 	ManualExecutionCancelledError,
@@ -31,7 +31,7 @@ import {
 	UserError,
 	Workflow,
 	WorkflowOperationError,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { ActiveExecutions } from '@/active-executions';
 import { ConcurrencyControlService } from '@/concurrency/concurrency-control.service';

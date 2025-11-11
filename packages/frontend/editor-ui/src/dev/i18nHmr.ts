@@ -1,17 +1,16 @@
-import { i18n, i18nInstance, setLanguage, updateLocaleMessages } from '@n8n/i18n';
-import type { LocaleMessages } from '@n8n/i18n/types';
-import { locale as designLocale } from '@n8n/design-system';
+import { i18n, i18nInstance, setLanguage, updateLocaleMessages } from '@aura/i18n';
+import type { LocaleMessages } from '@aura/i18n/types';
+import { locale as designLocale } from '@aura/design-system';
 
 const hot = import.meta.hot;
 const DEFAULT_LOCALE = 'en';
 
 if (hot) {
 	// Eagerly import locale JSONs so this module becomes their HMR owner
-	// Use relative path: from src/dev/ go up to frontend/, then into @n8n/i18n/src/locales/
-	const localeModules = import.meta.glob('@n8n/i18n/src/locales/*.json', { eager: true }) as Record<
-		string,
-		{ default?: LocaleMessages }
-	>;
+	// Use relative path: from src/dev/ go up to frontend/, then into @aura/i18n/src/locales/
+	const localeModules = import.meta.glob('@aura/i18n/src/locales/*.json', {
+		eager: true,
+	}) as Record<string, { default?: LocaleMessages }>;
 	const localePaths = Object.keys(localeModules);
 
 	const lcOf = (p: string) => p.match(/\/locales\/([^/]+)\.json$/)?.[1] ?? DEFAULT_LOCALE;
@@ -49,7 +48,7 @@ if (hot) {
 	});
 
 	// 2) Handle explicit locale update events (fetch ensures latest content)
-	hot.on('n8n:locale-update', async (payload: { locales?: string[]; file?: string }) => {
+	hot.on('aura:locale-update', async (payload: { locales?: string[]; file?: string }) => {
 		if (payload.file) await fetchAndApply(payload.file);
 		refresh();
 	});

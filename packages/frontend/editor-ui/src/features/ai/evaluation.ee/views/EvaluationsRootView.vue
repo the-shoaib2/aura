@@ -6,7 +6,7 @@ import { PLACEHOLDER_EMPTY_WORKFLOW_ID, EVALUATIONS_DOCS_URL } from '@/app/const
 import { useCanvasOperations } from '@/app/composables/useCanvasOperations';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useEvaluationStore } from '../evaluation.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import { useSourceControlStore } from '@/features/integrations/sourceControl.ee/sourceControl.store';
@@ -15,7 +15,7 @@ import { computed, watch } from 'vue';
 import EvaluationsPaywall from '../components/Paywall/EvaluationsPaywall.vue';
 import SetupWizard from '../components/SetupWizard/SetupWizard.vue';
 
-import { N8nCallout, N8nLink, N8nText } from '@n8n/design-system';
+import { N8nCallout, N8nLink, N8nText } from '@aura/design-system';
 const props = defineProps<{
 	name: string;
 }>();
@@ -157,7 +157,7 @@ watch(
 						width="500"
 						height="280"
 						src="https://www.youtube.com/embed/5LlF196PKaE"
-						title="n8n Evaluation quickstart"
+						title="aura Evaluation quickstart"
 						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						referrerpolicy="strict-origin-when-cross-origin"

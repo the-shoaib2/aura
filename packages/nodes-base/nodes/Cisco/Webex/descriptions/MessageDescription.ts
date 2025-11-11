@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import {
 	getActionInheritedProperties,
@@ -80,7 +80,7 @@ export const messageFields: INodeProperties[] = [
 		name: 'roomId',
 		type: 'options',
 		description:
-			'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 		typeOptions: {
 			loadOptionsMethod: 'getRooms',
 		},
@@ -416,7 +416,7 @@ export const messageFields: INodeProperties[] = [
 		displayName: 'Room Name or ID',
 		name: 'roomId',
 		description:
-			'List messages in a room, by ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+			'List messages in a room, by ID. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 		type: 'options',
 		typeOptions: {
 			loadOptionsMethod: 'getRooms',

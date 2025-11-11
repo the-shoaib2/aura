@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const contactOperations: INodeProperties[] = [
 	{
@@ -102,7 +102,7 @@ export const contactDescription: INodeProperties[] = [
 								name: 'country_id',
 								type: 'options',
 								description:
-									'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 								default: '',
 								typeOptions: {
 									loadOptionsMethod: 'getCountries',
@@ -113,7 +113,7 @@ export const contactDescription: INodeProperties[] = [
 								name: 'state_id',
 								type: 'options',
 								description:
-									'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 								default: '',
 								typeOptions: {
 									loadOptionsMethod: 'getStates',
@@ -258,7 +258,7 @@ export const contactDescription: INodeProperties[] = [
 				name: 'fieldsList',
 				type: 'multiOptions',
 				description:
-					'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+					'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 				default: [],
 				typeOptions: {
 					loadOptionsMethod: 'getModelFields',
@@ -321,7 +321,7 @@ export const contactDescription: INodeProperties[] = [
 								name: 'country_id',
 								type: 'options',
 								description:
-									'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 								default: '',
 								typeOptions: {
 									loadOptionsMethod: 'getCountries',
@@ -332,7 +332,7 @@ export const contactDescription: INodeProperties[] = [
 								name: 'state_id',
 								type: 'options',
 								description:
-									'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+									'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 								default: '',
 								typeOptions: {
 									loadOptionsMethod: 'getStates',

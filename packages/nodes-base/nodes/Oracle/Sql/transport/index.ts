@@ -3,7 +3,7 @@ import type {
 	ICredentialTestFunctions,
 	ILoadOptionsFunctions,
 	ITriggerFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 import oracledb from 'oracledb';
 
 import { ConnectionPoolManager } from '@utils/connection-pool-manager';

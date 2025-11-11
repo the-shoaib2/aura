@@ -1,5 +1,10 @@
-import { Service } from '@n8n/di';
-import { LoadOptionsContext, RoutingNode, LocalLoadOptionsContext, ExecuteContext } from 'n8n-core';
+import { Service } from '@aura/di';
+import {
+	LoadOptionsContext,
+	RoutingNode,
+	LocalLoadOptionsContext,
+	ExecuteContext,
+} from 'aura-core';
 import type {
 	ILoadOptions,
 	ILoadOptionsFunctions,
@@ -20,15 +25,15 @@ import type {
 	IDataObject,
 	ILocalLoadOptionsFunctions,
 	IExecuteData,
-} from 'n8n-workflow';
-import { Workflow, UnexpectedError } from 'n8n-workflow';
+} from 'workflow';
+import { Workflow, UnexpectedError } from 'workflow';
 
 import { NodeTypes } from '@/node-types';
 
 import { WorkflowLoaderService } from './workflow-loader.service';
-import { User } from '@n8n/db';
+import { User } from '@aura/db';
 import { userHasScopes } from '@/permissions.ee/check-access';
-import { Logger } from '@n8n/backend-common';
+import { Logger } from '@aura/backend-common';
 
 type LocalResourceMappingMethod = (
 	this: ILocalLoadOptionsFunctions,

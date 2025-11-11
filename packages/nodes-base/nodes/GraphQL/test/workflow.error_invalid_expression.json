@@ -13,7 +13,7 @@
 			},
 			"id": "7aece03f-e0d9-4f49-832c-fc6465613ca7",
 			"name": "Test: Errors on unsuccessful Expression validation",
-			"type": "n8n-nodes-base.graphql",
+			"type": "aura-nodes-base.graphql",
 			"typeVersion": 1,
 			"position": [660, 200],
 			"onError": "continueRegularOutput"

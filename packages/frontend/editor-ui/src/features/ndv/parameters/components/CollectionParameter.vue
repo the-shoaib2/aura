@@ -8,17 +8,17 @@ import type {
 	INodeProperties,
 	INodePropertyCollection,
 	INodePropertyOptions,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'workflow';
+import { deepCopy } from 'workflow';
 
 import get from 'lodash/get';
 
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeHelpers } from '@/app/composables/useNodeHelpers';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { storeToRefs } from 'pinia';
 
-import { N8nButton, N8nOption, N8nSelect, N8nText } from '@n8n/design-system';
+import { N8nButton, N8nOption, N8nSelect, N8nText } from '@aura/design-system';
 const selectedOption = ref<string | undefined>(undefined);
 export interface Props {
 	hideDelete?: boolean;

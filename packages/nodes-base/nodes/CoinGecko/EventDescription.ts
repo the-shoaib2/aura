@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const eventOperations: INodeProperties[] = [
 	{
@@ -69,7 +69,7 @@ export const eventFields: INodeProperties[] = [
 		},
 		options: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 				displayName: 'Country Code',
 				name: 'country_code',
 				type: 'options',
@@ -78,7 +78,7 @@ export const eventFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'Country code of event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Country code of event. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'From Date',
@@ -103,7 +103,7 @@ export const eventFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'Type of event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Type of event. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Upcoming Events Only',

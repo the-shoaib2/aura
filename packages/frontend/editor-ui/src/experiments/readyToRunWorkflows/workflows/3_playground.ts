@@ -1,4 +1,4 @@
-import type { WorkflowDataCreate } from '@n8n/rest-api-client';
+import type { WorkflowDataCreate } from '@aura/rest-api-client';
 
 export const PLAYGROUND_3: WorkflowDataCreate = {
 	meta: {
@@ -14,7 +14,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				jsCode:
 					'const today = new Date().toISOString().slice(0, 10);\nconst daily = $json.daily;\nconst index = daily.time.indexOf(today);\n\nif (index === -1) {\n  throw new Error("Today\'s forecast not found in response.");\n}\n\nreturn [{\n  date: today,\n  temp_max: daily.temperature_2m_max[index],\n  temp_min: daily.temperature_2m_min[index]\n}];\n',
 			},
-			type: 'n8n-nodes-base.code',
+			type: 'aura-nodes-base.code',
 			typeVersion: 2,
 			position: [336, -128],
 			id: 'd6463e70-9921-4e6f-acaa-c8d6153254ea',
@@ -23,12 +23,12 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 		{
 			parameters: {
 				content:
-					'**Tip: n8n 🧡 LLM**\n\nUse the n8n Assistant or ChatGPT, Claude, etc. to explain, edit, or create Javascript code for you.',
+					'**Tip: aura 🧡 LLM**\n\nUse the aura Assistant or ChatGPT, Claude, etc. to explain, edit, or create Javascript code for you.',
 				height: 112,
 				width: 272,
 				color: 5,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [240, 96],
 			id: '30ebd1b4-55c2-45fd-ae30-2b974eee226f',
@@ -37,12 +37,12 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 		{
 			parameters: {
 				content:
-					'## ▶ Start here \n\n1. Click the orange `Execute Worfklow` button \n2. Double-click nodes to view data flows\n3. Note: The form doesn’t show up because it runs with [pinned](https://docs.n8n.io/data/data-pinning/) test data (purple highlights)\n3. Unpin the data to run the form normally',
+					'## ▶ Start here \n\n1. Click the orange `Execute Worfklow` button \n2. Double-click nodes to view data flows\n3. Note: The form doesn’t show up because it runs with [pinned](https://docs.aura.io/data/data-pinning/) test data (purple highlights)\n3. Unpin the data to run the form normally',
 				height: 208,
 				width: 352,
 				color: 4,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-1056, -512],
 			id: '152278ea-a817-4f6d-8053-f129d9038604',
@@ -56,7 +56,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				width: 272,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [240, -272],
 			id: '5fcff69f-e059-4827-9241-081e4a7e4a6b',
@@ -70,7 +70,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				width: 272,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-704, -272],
 			id: '28813de7-3311-4c46-8b88-946c4c14a99e',
@@ -84,7 +84,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				width: 272,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-96, -272],
 			id: 'bc28c149-c4bd-4d68-b597-f7cf2f0ab0c4',
@@ -97,7 +97,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				width: 256,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-400, -272],
 			id: '1d23e68c-5d5c-4383-b6b8-ca552ad3a889',
@@ -118,7 +118,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				},
 				options: {},
 			},
-			type: 'n8n-nodes-base.formTrigger',
+			type: 'aura-nodes-base.formTrigger',
 			typeVersion: 2.2,
 			position: [-944, -128],
 			id: 'beba8fc9-9213-43bb-8f78-08800d629270',
@@ -127,7 +127,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 		},
 		{
 			parameters: {},
-			type: 'n8n-nodes-base.limit',
+			type: 'aura-nodes-base.limit',
 			typeVersion: 1,
 			position: [-320, -128],
 			id: 'aa0b1683-0586-465a-bcf2-38cf0617a6fc',
@@ -144,7 +144,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 					},
 				},
 			},
-			type: 'n8n-nodes-base.httpRequest',
+			type: 'aura-nodes-base.httpRequest',
 			typeVersion: 4.2,
 			position: [0, -128],
 			id: '73b40790-3ef6-4091-9cd3-cab673276a7a',
@@ -158,7 +158,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				width: 288,
 				color: 5,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-1056, 96],
 			id: 'd9390b71-3bf2-4094-b603-3f43988675e9',
@@ -173,7 +173,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 					},
 				},
 			},
-			type: 'n8n-nodes-base.httpRequest',
+			type: 'aura-nodes-base.httpRequest',
 			typeVersion: 4.2,
 			position: [-624, -128],
 			id: 'e3ce382a-c21b-4ee8-b366-b28cfe2b1b37',
@@ -186,7 +186,7 @@ export const PLAYGROUND_3: WorkflowDataCreate = {
 				width: 288,
 				color: 7,
 			},
-			type: 'n8n-nodes-base.stickyNote',
+			type: 'aura-nodes-base.stickyNote',
 			typeVersion: 1,
 			position: [-1056, -272],
 			id: '305eea3e-c853-4a8c-a7d4-dd10d81bf099',

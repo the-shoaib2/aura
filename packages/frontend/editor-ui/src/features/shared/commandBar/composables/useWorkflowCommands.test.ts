@@ -29,7 +29,7 @@ vi.mock('vue-router', () => ({
 	useRoute: () => ({}),
 	RouterLink: vi.fn(),
 }));
-vi.mock('@n8n/i18n', async (importOriginal) => ({
+vi.mock('@aura/i18n', async (importOriginal) => ({
 	...(await importOriginal()),
 	useI18n: () => ({
 		baseText: (key: string) => key,
@@ -138,7 +138,7 @@ describe('useWorkflowCommands', () => {
 				{
 					id: 'node1',
 					name: 'node1',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					position: [0, 0],
 					parameters: {},
 					credentials: {
@@ -160,7 +160,7 @@ describe('useWorkflowCommands', () => {
 				{
 					id: 'node1',
 					name: 'node1',
-					type: 'n8n-nodes-base.httpRequest',
+					type: 'aura-nodes-base.httpRequest',
 					position: [0, 0],
 					parameters: {},
 					credentials: {
@@ -355,7 +355,7 @@ describe('useWorkflowCommands', () => {
 				{
 					id: 'node1',
 					name: 'node1',
-					type: 'n8n-nodes-base.executeWorkflow',
+					type: 'aura-nodes-base.executeWorkflow',
 					position: [0, 0],
 					parameters: {
 						workflowId: {

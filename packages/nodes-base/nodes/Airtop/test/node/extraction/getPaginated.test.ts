@@ -1,4 +1,4 @@
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'workflow';
 import nock from 'nock';
 
 import * as getPaginated from '../../../actions/extraction/getPaginated.operation';

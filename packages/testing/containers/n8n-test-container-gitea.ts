@@ -1,12 +1,12 @@
 import type { StartedNetwork, StartedTestContainer } from 'testcontainers';
 import { GenericContainer, Wait } from 'testcontainers';
 
-import { createSilentLogConsumer } from './n8n-test-container-utils';
+import { createSilentLogConsumer } from './aura-test-container-utils';
 
 // Test credentials only
 const DEFAULT_ADMIN = 'giteaadmin';
 const DEFAULT_PASSWORD = 'giteapassword';
-const DEFAULT_REPO = 'n8n-test-repo';
+const DEFAULT_REPO = 'aura-test-repo';
 const DEFAULT_EMAIL = 'admin@example.com';
 const DEFAULT_BRANCHES = ['development', 'staging', 'production'];
 

@@ -2,7 +2,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [580, 1460],
 			"id": "974c3af2-835d-47c5-b3ee-879daeb475dc",
@@ -19,7 +19,7 @@
 					"defaultLanguage": "en"
 				}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 1060],
 			"id": "df81d20e-4c27-4839-873c-3a90b1d9356c",
@@ -42,7 +42,7 @@
 					"privacyStatus": "private"
 				}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 1260],
 			"id": "ab9110d9-552d-4e7e-bc8f-78763a2a6395",
@@ -61,7 +61,7 @@
 				"playlistId": "playlist_id_1",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 1460],
 			"id": "e3939be4-1319-421e-96ca-282fea9f0a9e",
@@ -79,7 +79,7 @@
 				"filters": {},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 1660],
 			"id": "4ea4cd62-6f2f-4e71-ae5e-6ef50718956b",
@@ -98,7 +98,7 @@
 				"playlistId": "playlist_id_1",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.youTube",
+			"type": "aura-nodes-base.youTube",
 			"typeVersion": 1,
 			"position": [800, 1860],
 			"id": "8bf6c082-bd4a-45d1-8625-46062fe7aeed",
@@ -112,7 +112,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1020, 1060],
 			"id": "fe18eabc-0dc5-4ac8-8fe3-9a72558811cc",
@@ -120,7 +120,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1020, 1260],
 			"id": "be72d8a0-a83e-46e7-94f0-13e11c93e965",
@@ -128,7 +128,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1020, 1460],
 			"id": "6555e151-2214-46bf-8ca5-1a03a929236e",
@@ -136,7 +136,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1020, 1660],
 			"id": "f9ac55b1-ff4e-4f98-8c75-05c3f456682c",
@@ -144,7 +144,7 @@
 		},
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.noOp",
+			"type": "aura-nodes-base.noOp",
 			"typeVersion": 1,
 			"position": [1020, 1860],
 			"id": "f2091eb1-cc41-468d-9c3b-6217a9124c85",

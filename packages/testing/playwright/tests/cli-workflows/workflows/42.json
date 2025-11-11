@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [360, 250],
 			"id": "8a9cccfd-ef20-48c6-b6fa-f21c15ab3ee9"
@@ -20,7 +20,7 @@
 				"additionalFields": {}
 			},
 			"name": "Google Tasks",
-			"type": "n8n-nodes-base.googleTasks",
+			"type": "aura-nodes-base.googleTasks",
 			"typeVersion": 1,
 			"position": [550, 250],
 			"credentials": {
@@ -42,7 +42,7 @@
 				}
 			},
 			"name": "Google Tasks1",
-			"type": "n8n-nodes-base.googleTasks",
+			"type": "aura-nodes-base.googleTasks",
 			"typeVersion": 1,
 			"position": [720, 250],
 			"credentials": {
@@ -61,7 +61,7 @@
 				"taskId": "={{$node[\"Google Tasks\"].json[\"id\"]}}"
 			},
 			"name": "Google Tasks2",
-			"type": "n8n-nodes-base.googleTasks",
+			"type": "aura-nodes-base.googleTasks",
 			"typeVersion": 1,
 			"position": [1070, 250],
 			"credentials": {
@@ -80,7 +80,7 @@
 				"taskId": "={{$node[\"Google Tasks\"].json[\"id\"]}}"
 			},
 			"name": "Google Tasks3",
-			"type": "n8n-nodes-base.googleTasks",
+			"type": "aura-nodes-base.googleTasks",
 			"typeVersion": 1,
 			"position": [1230, 250],
 			"credentials": {
@@ -100,7 +100,7 @@
 				"additionalFields": {}
 			},
 			"name": "Google Tasks4",
-			"type": "n8n-nodes-base.googleTasks",
+			"type": "aura-nodes-base.googleTasks",
 			"typeVersion": 1,
 			"position": [890, 250],
 			"credentials": {

@@ -1,8 +1,8 @@
-import { createTeamProject, createWorkflow, testDb } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { ExecutionSummaries } from '@n8n/db';
-import { ExecutionMetadataRepository, ExecutionRepository, WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { createTeamProject, createWorkflow, testDb } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { ExecutionSummaries } from '@aura/db';
+import { ExecutionMetadataRepository, ExecutionRepository, WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
 
 import { ExecutionService } from '@/executions/execution.service';

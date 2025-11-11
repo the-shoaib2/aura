@@ -1,10 +1,10 @@
-import type { ImapSimple, ImapSimpleOptions, Message, SearchCriteria } from '@n8n/imap';
-import { connect as imapConnect, getParts } from '@n8n/imap';
+import type { ImapSimple, ImapSimpleOptions, Message, SearchCriteria } from '@aura/imap';
+import { connect as imapConnect, getParts } from '@aura/imap';
 import find from 'lodash/find';
 import isEmpty from 'lodash/isEmpty';
 import type { Source as ParserSource } from 'mailparser';
 import { simpleParser } from 'mailparser';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+import { NodeConnectionTypes, NodeOperationError } from 'workflow';
 import type {
 	ITriggerFunctions,
 	IBinaryData,
@@ -19,7 +19,7 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	ITriggerResponse,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export async function parseRawEmail(
 	this: ITriggerFunctions,
@@ -327,7 +327,7 @@ export class EmailReadImapV1 implements INodeType {
 				attachmentPromise = imapConnection
 					.getPartData(message, attachmentPart)
 					.then(async (partData) => {
-						// Return it in the format n8n expects
+						// Return it in the format aura expects
 						return await this.helpers.prepareBinaryData(
 							partData.buffer,
 							attachmentPart.disposition.params.filename as string,
@@ -556,7 +556,7 @@ export class EmailReadImapV1 implements INodeType {
 							this.logger.error('Email Read Imap node encountered an error fetching new emails', {
 								error,
 							});
-							// Wait with resolving till the returnedPromise got resolved, else n8n will be unhappy
+							// Wait with resolving till the returnedPromise got resolved, else aura will be unhappy
 							// if it receives an error before the workflow got activated
 							await returnedPromise.promise.then(() => {
 								this.emitError(error as Error);

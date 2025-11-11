@@ -1,4 +1,4 @@
-import { ApplicationError } from '@n8n/errors';
+import { ApplicationError } from '@aura/errors';
 import { mock } from 'jest-mock-extended';
 import type {
 	Workflow,
@@ -10,7 +10,7 @@ import type {
 	INodeTypes,
 	ITriggerFunctions,
 	IRun,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { ExecutionLifecycleHooks } from '../execution-lifecycle-hooks';
 import { TriggersAndPollers } from '../triggers-and-pollers';

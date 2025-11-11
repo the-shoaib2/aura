@@ -1,4 +1,4 @@
-import { Service } from '@n8n/di';
+import { Service } from '@aura/di';
 import fs from 'node:fs/promises';
 import type { Readable } from 'node:stream';
 import { v4 as uuid } from 'uuid';

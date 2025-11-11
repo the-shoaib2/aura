@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "134a1cd7-83e3-4237-b289-20302a26d111"
@@ -21,7 +21,7 @@
 				}
 			},
 			"name": "HelpScout",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"customerId": "={{$node[\"HelpScout\"].json[\"id\"]}}"
 			},
 			"name": "HelpScout1",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -60,7 +60,7 @@
 				}
 			},
 			"name": "HelpScout2",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -79,7 +79,7 @@
 				"options": {}
 			},
 			"name": "HelpScout3",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -96,7 +96,7 @@
 				"operation": "properties"
 			},
 			"name": "HelpScout4",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -126,7 +126,7 @@
 				}
 			},
 			"name": "HelpScout5",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"credentials": {
@@ -144,7 +144,7 @@
 				"conversationId": "={{$node[\"HelpScout5\"].json[\"id\"]}}"
 			},
 			"name": "HelpScout6",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [750, 450],
 			"credentials": {
@@ -163,7 +163,7 @@
 				"options": {}
 			},
 			"name": "HelpScout7",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [900, 450],
 			"credentials": {
@@ -180,7 +180,7 @@
 				"conversationId": "={{$node[\"HelpScout5\"].json[\"id\"]}}"
 			},
 			"name": "HelpScout8",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [1050, 450],
 			"credentials": {
@@ -198,7 +198,7 @@
 				"limit": 1
 			},
 			"name": "HelpScout9",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [450, 150],
 			"credentials": {
@@ -215,7 +215,7 @@
 				"mailboxId": "={{$node[\"HelpScout9\"].json[\"id\"]}}"
 			},
 			"name": "HelpScout10",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [600, 150],
 			"credentials": {
@@ -237,7 +237,7 @@
 				}
 			},
 			"name": "HelpScout11",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [750, 600],
 			"credentials": {
@@ -256,7 +256,7 @@
 				"limit": 1
 			},
 			"name": "HelpScout12",
-			"type": "n8n-nodes-base.helpScout",
+			"type": "aura-nodes-base.helpScout",
 			"typeVersion": 1,
 			"position": [900, 600],
 			"credentials": {

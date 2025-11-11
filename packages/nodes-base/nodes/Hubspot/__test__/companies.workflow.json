@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-400, 480],
 			"id": "b126b31f-c64f-472f-98ed-6ab9f0eb4e52",
@@ -19,7 +19,7 @@
 					"mode": "id"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [-180, -120],
 			"id": "7262d6df-23f4-425e-94c2-6ce67d1bc138",
@@ -59,7 +59,7 @@
 					"yearFounded": "2000"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [-180, 80],
 			"id": "2827f172-451b-4bab-bd91-36a2d0bc7013",
@@ -82,7 +82,7 @@
 				},
 				"additionalFields": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [-180, 480],
 			"id": "efbb6c5a-5061-4c6f-82a3-ae388f9e7690",
@@ -108,7 +108,7 @@
 					}
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [-180, 680],
 			"id": "dc51cf19-947d-41d6-b2d2-908796039dc6",
@@ -129,7 +129,7 @@
 					"since": "2025-04-10T00:00:00"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [-180, 880],
 			"id": "af703bd7-ec3f-426e-a903-96d67410ee44",
@@ -145,10 +145,10 @@
 			"parameters": {
 				"resource": "company",
 				"operation": "searchByDomain",
-				"domain": "n8n.io",
+				"domain": "aura.io",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [-180, 1080],
 			"id": "43db81bf-9f5f-4458-bd8f-c36c7162e53b",
@@ -174,7 +174,7 @@
 					"city": "Gent"
 				}
 			},
-			"type": "n8n-nodes-base.hubspot",
+			"type": "aura-nodes-base.hubspot",
 			"typeVersion": 2.1,
 			"position": [-180, 280],
 			"id": "6c5c0be3-53ad-4eae-a535-6b19448fefb6",

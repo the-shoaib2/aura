@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.elasticsearch",
+	"node": "aura-nodes-base.elasticsearch",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Data & Storage"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/elasticsearch/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/elasticsearch/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.elasticsearch/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.elasticsearch/"
 			}
 		]
 	}

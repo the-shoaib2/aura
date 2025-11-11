@@ -1,7 +1,7 @@
 import { Request } from 'mssql';
 import type { IResult } from 'mssql';
 import type mssql from 'mssql';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'workflow';
 
 import {
 	configurePool,

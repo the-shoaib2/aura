@@ -90,7 +90,7 @@ export class DataTableDetails extends BasePage {
 
 		const typeSelect = this.page
 			.getByTestId('add-column-popover-content')
-			.locator('.n8n-select')
+			.locator('.aura-select')
 			.first();
 		await typeSelect.click();
 

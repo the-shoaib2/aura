@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { AnnotationVote } from 'n8n-workflow';
+import type { AnnotationVote } from 'workflow';
 
-import { N8nIconButton } from '@n8n/design-system';
+import { N8nIconButton } from '@aura/design-system';
 defineProps<{
 	vote: AnnotationVote | null;
 }>();

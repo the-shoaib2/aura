@@ -1,6 +1,6 @@
 import { type MockProxy, mock } from 'jest-mock-extended';
-import type { IExecuteFunctions, INodeProperties, IWebhookFunctions } from 'n8n-workflow';
-import { NodeOperationError, WAIT_INDEFINITELY } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeProperties, IWebhookFunctions } from 'workflow';
+import { NodeOperationError, WAIT_INDEFINITELY } from 'workflow';
 
 import { configureWaitTillDate } from '../configureWaitTillDate.util';
 import {
@@ -231,7 +231,7 @@ describe('Send and Wait utils tests', () => {
 				formDescriptionMetadata: 'Test message',
 				formSubmittedHeader: 'Got it, thanks',
 				formSubmittedText: 'This page can be closed now',
-				n8nWebsiteLink: 'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger',
+				auraWebsiteLink: 'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger',
 				formFields: [
 					{
 						id: 'field-0',
@@ -310,7 +310,7 @@ describe('Send and Wait utils tests', () => {
 				formDescriptionMetadata: 'Test description',
 				formSubmittedHeader: 'Got it, thanks',
 				formSubmittedText: 'This page can be closed now',
-				n8nWebsiteLink: 'https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger',
+				auraWebsiteLink: 'https://aura.io/?utm_source=aura-internal&utm_medium=form-trigger',
 				formFields: [
 					{
 						id: 'field-0',

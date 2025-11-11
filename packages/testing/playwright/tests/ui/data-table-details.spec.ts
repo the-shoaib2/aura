@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 
 import { test, expect } from '../../fixtures/base';
-import type { n8nPage } from '../../pages/n8nPage';
+import type { auraPage } from '../../pages/auraPage';
 
 test.describe('Data Table details view', () => {
 	let testDataTableName: string;
@@ -35,7 +35,7 @@ test.describe('Data Table details view', () => {
 	];
 
 	const addColumnsAndGetIds = async (
-		n8n: n8nPage,
+		aura: auraPage,
 		method: 'header' | 'table',
 	): Promise<{
 		nameColumn: string;
@@ -45,32 +45,32 @@ test.describe('Data Table details view', () => {
 	}> => {
 		const addColumnFn =
 			method === 'header'
-				? n8n.dataTableDetails.addColumn.bind(n8n.dataTableDetails)
-				: n8n.dataTableDetails.addColumn.bind(n8n.dataTableDetails);
+				? aura.dataTableDetails.addColumn.bind(aura.dataTableDetails)
+				: aura.dataTableDetails.addColumn.bind(aura.dataTableDetails);
 
 		await addColumnFn(COLUMN_NAMES.name, 'string', method);
 		await addColumnFn(COLUMN_NAMES.age, 'number', method);
 		await addColumnFn(COLUMN_NAMES.active, 'boolean', method);
 		await addColumnFn(COLUMN_NAMES.birthday, 'date', method);
 
-		const visibleColumns = n8n.dataTableDetails.getVisibleColumns();
+		const visibleColumns = aura.dataTableDetails.getVisibleColumns();
 		await expect(visibleColumns).toHaveCount(7);
 
-		await expect(n8n.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.name)).toBeVisible();
-		await expect(n8n.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.age)).toBeVisible();
-		await expect(n8n.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.active)).toBeVisible();
-		await expect(n8n.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.birthday)).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.name)).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.age)).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.active)).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName(COLUMN_NAMES.birthday)).toBeVisible();
 
 		return {
-			nameColumn: await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name),
-			ageColumn: await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.age),
-			activeColumn: await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.active),
-			birthdayColumn: await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.birthday),
+			nameColumn: await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name),
+			ageColumn: await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.age),
+			activeColumn: await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.active),
+			birthdayColumn: await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.birthday),
 		};
 	};
 
 	const fillRowData = async (
-		n8n: n8nPage,
+		aura: auraPage,
 		rowIndex: number,
 		columnIds: {
 			nameColumn: string;
@@ -81,17 +81,17 @@ test.describe('Data Table details view', () => {
 		data: { name: string; age: string; active: string; birthday: string },
 		skipFirstDoubleClick: boolean = false,
 	) => {
-		await n8n.dataTableDetails.setCellValue(rowIndex, columnIds.nameColumn, data.name, 'string', {
+		await aura.dataTableDetails.setCellValue(rowIndex, columnIds.nameColumn, data.name, 'string', {
 			skipDoubleClick: skipFirstDoubleClick,
 		});
-		await n8n.dataTableDetails.setCellValue(rowIndex, columnIds.ageColumn, data.age, 'number');
-		await n8n.dataTableDetails.setCellValue(
+		await aura.dataTableDetails.setCellValue(rowIndex, columnIds.ageColumn, data.age, 'number');
+		await aura.dataTableDetails.setCellValue(
 			rowIndex,
 			columnIds.activeColumn,
 			data.active,
 			'boolean',
 		);
-		await n8n.dataTableDetails.setCellValue(
+		await aura.dataTableDetails.setCellValue(
 			rowIndex,
 			columnIds.birthdayColumn,
 			data.birthday,
@@ -100,7 +100,7 @@ test.describe('Data Table details view', () => {
 	};
 
 	const verifyCellValues = async (
-		n8n: n8nPage,
+		aura: auraPage,
 		columnIds: {
 			nameColumn: string;
 			ageColumn: string;
@@ -109,28 +109,28 @@ test.describe('Data Table details view', () => {
 		},
 		testData: Array<{ name: string; age: string; active: string; birthday: string }>,
 	) => {
-		const firstRowNameValue = await n8n.dataTableDetails.getCellValue(
+		const firstRowNameValue = await aura.dataTableDetails.getCellValue(
 			0,
 			columnIds.nameColumn,
 			'string',
 		);
 		expect(firstRowNameValue).toContain(testData[0].name);
 
-		const secondRowAgeValue = await n8n.dataTableDetails.getCellValue(
+		const secondRowAgeValue = await aura.dataTableDetails.getCellValue(
 			1,
 			columnIds.ageColumn,
 			'number',
 		);
 		expect(secondRowAgeValue).toContain(testData[1].age);
 
-		const thirdRowActiveValue = await n8n.dataTableDetails.getCellValue(
+		const thirdRowActiveValue = await aura.dataTableDetails.getCellValue(
 			2,
 			columnIds.activeColumn,
 			'boolean',
 		);
 		expect(thirdRowActiveValue).toBe(testData[2].active);
 
-		const firstRowBirthdayValue = await n8n.dataTableDetails.getCellValue(
+		const firstRowBirthdayValue = await aura.dataTableDetails.getCellValue(
 			0,
 			columnIds.birthdayColumn,
 			'date',
@@ -138,208 +138,212 @@ test.describe('Data Table details view', () => {
 		expect(firstRowBirthdayValue).toContain(testData[0].birthday);
 	};
 
-	test.beforeEach(async ({ n8n, api }) => {
+	test.beforeEach(async ({ aura, api }) => {
 		await api.enableFeature('sharing');
 		await api.enableFeature('folders');
 		await api.enableFeature('advancedPermissions');
 		await api.enableFeature('projectRole:admin');
 		await api.enableFeature('projectRole:editor');
 		await api.setMaxTeamProjectsQuota(-1);
-		await n8n.goHome();
+		await aura.goHome();
 
 		testDataTableName = `Data Table ${nanoid(8)}`;
-		await n8n.page.goto('projects/home/datatables');
-		await n8n.dataTable.clickAddDataTableAction();
-		await n8n.dataTableComposer.createNewDataTable(testDataTableName);
+		await aura.page.goto('projects/home/datatables');
+		await aura.dataTable.clickAddDataTableAction();
+		await aura.dataTableComposer.createNewDataTable(testDataTableName);
 	});
 
-	test('Should display empty state with default columns', async ({ n8n }) => {
-		const dataTableDetailsContainer = n8n.dataTableDetails.getPageWrapper();
+	test('Should display empty state with default columns', async ({ aura }) => {
+		const dataTableDetailsContainer = aura.dataTableDetails.getPageWrapper();
 		await expect(dataTableDetailsContainer).toBeVisible();
 
-		const emptyStateMessage = n8n.dataTableDetails.getNoRowsMessage();
+		const emptyStateMessage = aura.dataTableDetails.getNoRowsMessage();
 		await expect(emptyStateMessage).toBeVisible();
 
-		const visibleColumns = n8n.dataTableDetails.getVisibleColumns();
+		const visibleColumns = aura.dataTableDetails.getVisibleColumns();
 		await expect(visibleColumns).toHaveCount(3);
 
-		await expect(n8n.dataTableDetails.getColumnHeaderByName('id')).toBeVisible();
-		await expect(n8n.dataTableDetails.getColumnHeaderByName('createdAt')).toBeVisible();
-		await expect(n8n.dataTableDetails.getColumnHeaderByName('updatedAt')).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName('id')).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName('createdAt')).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName('updatedAt')).toBeVisible();
 	});
 
 	test('Should add columns of different types and rows from the header buttons', async ({
-		n8n,
+		aura,
 	}) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		const columnIds = await addColumnsAndGetIds(n8n, 'header');
+		const columnIds = await addColumnsAndGetIds(aura, 'header');
 		const testData = generateTestData();
 
-		await n8n.dataTableDetails.addRow();
-		await expect(n8n.dataTableDetails.getNoRowsMessage()).toBeHidden();
-		await fillRowData(n8n, 0, columnIds, testData[0], true);
+		await aura.dataTableDetails.addRow();
+		await expect(aura.dataTableDetails.getNoRowsMessage()).toBeHidden();
+		await fillRowData(aura, 0, columnIds, testData[0], true);
 
-		await n8n.dataTableDetails.addRow();
-		await fillRowData(n8n, 1, columnIds, testData[1], true);
+		await aura.dataTableDetails.addRow();
+		await fillRowData(aura, 1, columnIds, testData[1], true);
 
-		await n8n.dataTableDetails.addRow();
-		await fillRowData(n8n, 2, columnIds, testData[2], true);
+		await aura.dataTableDetails.addRow();
+		await fillRowData(aura, 2, columnIds, testData[2], true);
 
-		await verifyCellValues(n8n, columnIds, testData);
+		await verifyCellValues(aura, columnIds, testData);
 	});
 
-	test('Should add columns of different types and rows from the table buttons', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test('Should add columns of different types and rows from the table buttons', async ({
+		aura,
+	}) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		const columnIds = await addColumnsAndGetIds(n8n, 'table');
+		const columnIds = await addColumnsAndGetIds(aura, 'table');
 		const testData = generateTestData();
 
-		await n8n.dataTableDetails.addRowFromTable();
-		await expect(n8n.dataTableDetails.getNoRowsMessage()).toBeHidden();
-		await fillRowData(n8n, 0, columnIds, testData[0], true);
+		await aura.dataTableDetails.addRowFromTable();
+		await expect(aura.dataTableDetails.getNoRowsMessage()).toBeHidden();
+		await fillRowData(aura, 0, columnIds, testData[0], true);
 
-		await n8n.dataTableDetails.addRowFromTable();
-		await fillRowData(n8n, 1, columnIds, testData[1], true);
+		await aura.dataTableDetails.addRowFromTable();
+		await fillRowData(aura, 1, columnIds, testData[1], true);
 
-		await n8n.dataTableDetails.addRowFromTable();
-		await fillRowData(n8n, 2, columnIds, testData[2], true);
+		await aura.dataTableDetails.addRowFromTable();
+		await fillRowData(aura, 2, columnIds, testData[2], true);
 
-		await verifyCellValues(n8n, columnIds, testData);
+		await verifyCellValues(aura, columnIds, testData);
 	});
 
-	test('Should automatically move to second page when adding 21st row', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test('Should automatically move to second page when adding 21st row', async ({ aura }) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
 
 		for (let i = 0; i < 20; i++) {
-			await n8n.dataTableDetails.addRow();
+			await aura.dataTableDetails.addRow();
 		}
 
-		const rowsOnPage1 = n8n.dataTableDetails.getDataRows();
+		const rowsOnPage1 = aura.dataTableDetails.getDataRows();
 		await expect(rowsOnPage1).toHaveCount(20);
 
-		await n8n.dataTableDetails.addRow();
+		await aura.dataTableDetails.addRow();
 
-		const rowsOnPage2 = n8n.dataTableDetails.getDataRows();
+		const rowsOnPage2 = aura.dataTableDetails.getDataRows();
 		await expect(rowsOnPage2).toHaveCount(1);
 	});
 
-	test('Should select and delete rows', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test('Should select and delete rows', async ({ aura }) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
-		const nameColumn = await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name);
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
+		const nameColumn = await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name);
 
 		const rowData = ['Row 1', 'Row 2', 'Row 3', 'Row 4', 'Row 5'];
 		for (let i = 0; i < rowData.length; i++) {
-			await n8n.dataTableDetails.addRow();
-			await n8n.dataTableDetails.setCellValue(i, nameColumn, rowData[i], 'string', {
+			await aura.dataTableDetails.addRow();
+			await aura.dataTableDetails.setCellValue(i, nameColumn, rowData[i], 'string', {
 				skipDoubleClick: true,
 			});
 		}
 
-		const initialRows = n8n.dataTableDetails.getDataRows();
+		const initialRows = aura.dataTableDetails.getDataRows();
 		await expect(initialRows).toHaveCount(5);
 
-		await n8n.dataTableDetails.selectRow(1);
-		await n8n.dataTableDetails.selectRow(3);
+		await aura.dataTableDetails.selectRow(1);
+		await aura.dataTableDetails.selectRow(3);
 
-		const selectedItemsInfo = n8n.dataTableDetails.getSelectedItemsInfo();
+		const selectedItemsInfo = aura.dataTableDetails.getSelectedItemsInfo();
 		await expect(selectedItemsInfo).toBeVisible();
 		await expect(selectedItemsInfo).toContainText('2');
 
-		await n8n.dataTableDetails.deleteSelectedRows();
+		await aura.dataTableDetails.deleteSelectedRows();
 
-		const remainingRows = n8n.dataTableDetails.getDataRows();
+		const remainingRows = aura.dataTableDetails.getDataRows();
 		await expect(remainingRows).toHaveCount(3);
 
 		await expect(selectedItemsInfo).toBeHidden();
 
-		const row0Value = await n8n.dataTableDetails.getCellValue(0, nameColumn, 'string');
+		const row0Value = await aura.dataTableDetails.getCellValue(0, nameColumn, 'string');
 		expect(row0Value).toContain('Row 1');
 
-		const row1Value = await n8n.dataTableDetails.getCellValue(1, nameColumn, 'string');
+		const row1Value = await aura.dataTableDetails.getCellValue(1, nameColumn, 'string');
 		expect(row1Value).toContain('Row 3');
 
-		const row2Value = await n8n.dataTableDetails.getCellValue(2, nameColumn, 'string');
+		const row2Value = await aura.dataTableDetails.getCellValue(2, nameColumn, 'string');
 		expect(row2Value).toContain('Row 5');
 	});
 
-	test('Should clear selection', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test('Should clear selection', async ({ aura }) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
-		const nameColumn = await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name);
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
+		const nameColumn = await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name);
 
 		for (let i = 0; i < 3; i++) {
-			await n8n.dataTableDetails.addRow();
-			await n8n.dataTableDetails.setCellValue(i, nameColumn, `Row ${i + 1}`, 'string', {
+			await aura.dataTableDetails.addRow();
+			await aura.dataTableDetails.setCellValue(i, nameColumn, `Row ${i + 1}`, 'string', {
 				skipDoubleClick: true,
 			});
 		}
 
-		await n8n.dataTableDetails.selectRow(0);
-		await n8n.dataTableDetails.selectRow(1);
-		await n8n.dataTableDetails.selectRow(2);
+		await aura.dataTableDetails.selectRow(0);
+		await aura.dataTableDetails.selectRow(1);
+		await aura.dataTableDetails.selectRow(2);
 
-		const selectedItemsInfo = n8n.dataTableDetails.getSelectedItemsInfo();
+		const selectedItemsInfo = aura.dataTableDetails.getSelectedItemsInfo();
 		await expect(selectedItemsInfo).toBeVisible();
 		await expect(selectedItemsInfo).toContainText('3');
 
-		await n8n.dataTableDetails.clearSelection();
+		await aura.dataTableDetails.clearSelection();
 
 		await expect(selectedItemsInfo).toBeHidden();
 
-		const rows = n8n.dataTableDetails.getDataRows();
+		const rows = aura.dataTableDetails.getDataRows();
 		await expect(rows).toHaveCount(3);
 	});
 
-	test('Should add columns of each type with rows and then delete all columns', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test('Should add columns of each type with rows and then delete all columns', async ({
+		aura,
+	}) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		const columnIds = await addColumnsAndGetIds(n8n, 'header');
+		const columnIds = await addColumnsAndGetIds(aura, 'header');
 		const testData = generateTestData().slice(0, 2);
 
-		await n8n.dataTableDetails.addRow();
-		await fillRowData(n8n, 0, columnIds, testData[0], true);
+		await aura.dataTableDetails.addRow();
+		await fillRowData(aura, 0, columnIds, testData[0], true);
 
-		await n8n.dataTableDetails.addRow();
-		await fillRowData(n8n, 1, columnIds, testData[1], true);
+		await aura.dataTableDetails.addRow();
+		await fillRowData(aura, 1, columnIds, testData[1], true);
 
-		const rows = n8n.dataTableDetails.getDataRows();
+		const rows = aura.dataTableDetails.getDataRows();
 		await expect(rows).toHaveCount(2);
 
-		await n8n.dataTableDetails.deleteColumn(COLUMN_NAMES.name);
-		await expect(n8n.dataTableDetails.getVisibleColumns()).toHaveCount(6);
+		await aura.dataTableDetails.deleteColumn(COLUMN_NAMES.name);
+		await expect(aura.dataTableDetails.getVisibleColumns()).toHaveCount(6);
 
-		await n8n.dataTableDetails.deleteColumn(COLUMN_NAMES.age);
-		await expect(n8n.dataTableDetails.getVisibleColumns()).toHaveCount(5);
+		await aura.dataTableDetails.deleteColumn(COLUMN_NAMES.age);
+		await expect(aura.dataTableDetails.getVisibleColumns()).toHaveCount(5);
 
-		await n8n.dataTableDetails.deleteColumn(COLUMN_NAMES.active);
-		await expect(n8n.dataTableDetails.getVisibleColumns()).toHaveCount(4);
+		await aura.dataTableDetails.deleteColumn(COLUMN_NAMES.active);
+		await expect(aura.dataTableDetails.getVisibleColumns()).toHaveCount(4);
 
-		await n8n.dataTableDetails.deleteColumn(COLUMN_NAMES.birthday);
+		await aura.dataTableDetails.deleteColumn(COLUMN_NAMES.birthday);
 
-		await expect(n8n.dataTableDetails.getVisibleColumns()).toHaveCount(3);
+		await expect(aura.dataTableDetails.getVisibleColumns()).toHaveCount(3);
 
-		await expect(n8n.dataTableDetails.getColumnHeaderByName('id')).toBeVisible();
-		await expect(n8n.dataTableDetails.getColumnHeaderByName('createdAt')).toBeVisible();
-		await expect(n8n.dataTableDetails.getColumnHeaderByName('updatedAt')).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName('id')).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName('createdAt')).toBeVisible();
+		await expect(aura.dataTableDetails.getColumnHeaderByName('updatedAt')).toBeVisible();
 
 		await expect(rows).toHaveCount(2);
 	});
 
-	test('Should rename data table from breadcrumbs', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test('Should rename data table from breadcrumbs', async ({ aura }) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		const nameBreadcrumb = n8n.dataTableDetails.getDataTableBreadcrumb();
+		const nameBreadcrumb = aura.dataTableDetails.getDataTableBreadcrumb();
 		const initialName = (await nameBreadcrumb.textContent())?.toString();
 
 		const newName = `Renamed Table ${nanoid(8)}`;
 
-		await n8n.dataTableDetails.renameDataTable(newName);
+		await aura.dataTableDetails.renameDataTable(newName);
 
 		await expect(nameBreadcrumb).toContainText(newName);
 
@@ -347,20 +351,20 @@ test.describe('Data Table details view', () => {
 	});
 
 	// eslint-disable-next-line playwright/no-skipped-test
-	test.skip('Should filter correctly using column filters', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test.skip('Should filter correctly using column filters', async ({ aura }) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		await n8n.dataTableDetails.setPageSize('10');
+		await aura.dataTableDetails.setPageSize('10');
 
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.age, 'number', 'header');
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.active, 'boolean', 'header');
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.birthday, 'date', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.age, 'number', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.active, 'boolean', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.birthday, 'date', 'header');
 
-		const nameColumn = await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name);
-		const ageColumn = await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.age);
-		const activeColumn = await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.active);
-		const birthdayColumn = await n8n.dataTableDetails.getColumnIdByName(COLUMN_NAMES.birthday);
+		const nameColumn = await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.name);
+		const ageColumn = await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.age);
+		const activeColumn = await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.active);
+		const birthdayColumn = await aura.dataTableDetails.getColumnIdByName(COLUMN_NAMES.birthday);
 
 		const rowsData = [
 			{ name: 'User 1', age: '20', active: 'true', birthday: '2024-01-01' },
@@ -381,9 +385,9 @@ test.describe('Data Table details view', () => {
 		] as const;
 
 		for (let i = 0; i < 15; i++) {
-			await n8n.dataTableDetails.addRow();
+			await aura.dataTableDetails.addRow();
 			const rowIndexOnPage = i % 10;
-			await n8n.dataTableDetails.setCellValue(
+			await aura.dataTableDetails.setCellValue(
 				rowIndexOnPage,
 				nameColumn,
 				rowsData[i].name,
@@ -392,14 +396,19 @@ test.describe('Data Table details view', () => {
 					skipDoubleClick: true,
 				},
 			);
-			await n8n.dataTableDetails.setCellValue(rowIndexOnPage, ageColumn, rowsData[i].age, 'number');
-			await n8n.dataTableDetails.setCellValue(
+			await aura.dataTableDetails.setCellValue(
+				rowIndexOnPage,
+				ageColumn,
+				rowsData[i].age,
+				'number',
+			);
+			await aura.dataTableDetails.setCellValue(
 				rowIndexOnPage,
 				activeColumn,
 				rowsData[i].active,
 				'boolean',
 			);
-			await n8n.dataTableDetails.setCellValue(
+			await aura.dataTableDetails.setCellValue(
 				rowIndexOnPage,
 				birthdayColumn,
 				rowsData[i].birthday,
@@ -407,43 +416,43 @@ test.describe('Data Table details view', () => {
 			);
 		}
 
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(5);
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(5);
 
-		await n8n.dataTableDetails.setTextFilter(COLUMN_NAMES.name, 'User 1');
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(7);
-		await n8n.dataTableDetails.clearColumnFilter(COLUMN_NAMES.name);
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(10);
+		await aura.dataTableDetails.setTextFilter(COLUMN_NAMES.name, 'User 1');
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(7);
+		await aura.dataTableDetails.clearColumnFilter(COLUMN_NAMES.name);
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(10);
 
-		await n8n.dataTableDetails.setNumberFilter(COLUMN_NAMES.age, '22', 'greaterThan');
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(6);
-		await n8n.dataTableDetails.clearColumnFilter(COLUMN_NAMES.age);
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(10);
+		await aura.dataTableDetails.setNumberFilter(COLUMN_NAMES.age, '22', 'greaterThan');
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(6);
+		await aura.dataTableDetails.clearColumnFilter(COLUMN_NAMES.age);
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(10);
 
-		await n8n.dataTableDetails.setBooleanFilter(COLUMN_NAMES.active, true);
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(8);
-		await n8n.dataTableDetails.clearColumnFilter(COLUMN_NAMES.active);
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(10);
+		await aura.dataTableDetails.setBooleanFilter(COLUMN_NAMES.active, true);
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(8);
+		await aura.dataTableDetails.clearColumnFilter(COLUMN_NAMES.active);
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(10);
 
-		await n8n.dataTableDetails.setDateFilter(COLUMN_NAMES.birthday, '2024-01-10', 'greaterThan');
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(5);
-		await n8n.dataTableDetails.clearColumnFilter(COLUMN_NAMES.birthday);
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(10);
+		await aura.dataTableDetails.setDateFilter(COLUMN_NAMES.birthday, '2024-01-10', 'greaterThan');
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(5);
+		await aura.dataTableDetails.clearColumnFilter(COLUMN_NAMES.birthday);
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(10);
 
-		await n8n.dataTableDetails.setBooleanFilter(COLUMN_NAMES.active, true);
-		await n8n.dataTableDetails.setNumberFilter(COLUMN_NAMES.age, '22', 'greaterThan');
-		await expect(n8n.dataTableDetails.getDataRows()).toHaveCount(4);
+		await aura.dataTableDetails.setBooleanFilter(COLUMN_NAMES.active, true);
+		await aura.dataTableDetails.setNumberFilter(COLUMN_NAMES.age, '22', 'greaterThan');
+		await expect(aura.dataTableDetails.getDataRows()).toHaveCount(4);
 	});
 
-	test('Should reorder columns using drag and drop', async ({ n8n }) => {
-		await expect(n8n.dataTableDetails.getPageWrapper()).toBeVisible();
+	test('Should reorder columns using drag and drop', async ({ aura }) => {
+		await expect(aura.dataTableDetails.getPageWrapper()).toBeVisible();
 
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.age, 'number', 'header');
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.active, 'boolean', 'header');
-		await n8n.dataTableDetails.addColumn(COLUMN_NAMES.birthday, 'date', 'header');
-		await n8n.dataTableDetails.addColumn('email', 'string', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.name, 'string', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.age, 'number', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.active, 'boolean', 'header');
+		await aura.dataTableDetails.addColumn(COLUMN_NAMES.birthday, 'date', 'header');
+		await aura.dataTableDetails.addColumn('email', 'string', 'header');
 
-		const initialOrder = await n8n.dataTableDetails.getColumnOrder();
+		const initialOrder = await aura.dataTableDetails.getColumnOrder();
 		expect(initialOrder).toContain(COLUMN_NAMES.name);
 		expect(initialOrder).toContain(COLUMN_NAMES.age);
 		expect(initialOrder).toContain(COLUMN_NAMES.active);
@@ -454,27 +463,27 @@ test.describe('Data Table details view', () => {
 		const activeIndex = initialOrder.indexOf(COLUMN_NAMES.active);
 		const emailIndex = initialOrder.indexOf('email');
 
-		await n8n.dataTableDetails.dragColumnToPosition(COLUMN_NAMES.active, COLUMN_NAMES.name);
+		await aura.dataTableDetails.dragColumnToPosition(COLUMN_NAMES.active, COLUMN_NAMES.name);
 
-		const orderAfterFirstDrag = await n8n.dataTableDetails.getColumnOrder();
+		const orderAfterFirstDrag = await aura.dataTableDetails.getColumnOrder();
 		const newActiveIndex = orderAfterFirstDrag.indexOf(COLUMN_NAMES.active);
 		const newNameIndex = orderAfterFirstDrag.indexOf(COLUMN_NAMES.name);
 
 		expect(newActiveIndex).toBeLessThan(newNameIndex);
 		expect(activeIndex).toBeGreaterThan(nameIndex);
 
-		await n8n.dataTableDetails.dragColumnToPosition('email', COLUMN_NAMES.age);
+		await aura.dataTableDetails.dragColumnToPosition('email', COLUMN_NAMES.age);
 
-		const orderAfterSecondDrag = await n8n.dataTableDetails.getColumnOrder();
+		const orderAfterSecondDrag = await aura.dataTableDetails.getColumnOrder();
 		const emailIndexAfter = orderAfterSecondDrag.indexOf('email');
 		const ageIndexAfter = orderAfterSecondDrag.indexOf(COLUMN_NAMES.age);
 
 		expect(emailIndexAfter).toBeLessThan(ageIndexAfter);
 		expect(emailIndex).toBeGreaterThan(initialOrder.indexOf(COLUMN_NAMES.age));
 
-		await n8n.dataTableDetails.dragColumnToPosition(COLUMN_NAMES.birthday, COLUMN_NAMES.name);
+		await aura.dataTableDetails.dragColumnToPosition(COLUMN_NAMES.birthday, COLUMN_NAMES.name);
 
-		const finalOrder = await n8n.dataTableDetails.getColumnOrder();
+		const finalOrder = await aura.dataTableDetails.getColumnOrder();
 		const birthdayFinalIndex = finalOrder.indexOf(COLUMN_NAMES.birthday);
 		const nameFinalIndex = finalOrder.indexOf(COLUMN_NAMES.name);
 

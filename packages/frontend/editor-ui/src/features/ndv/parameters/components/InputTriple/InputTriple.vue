@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { N8nResizeObserver } from '@n8n/design-system';
+import { N8nResizeObserver } from '@aura/design-system';
 
 type Props = {
 	middleWidth?: string;

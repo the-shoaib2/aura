@@ -3,10 +3,10 @@ import { linter as codeMirrorLinter } from '@codemirror/lint';
 import type { EditorView } from '@codemirror/view';
 import * as esprima from 'esprima-next';
 import type { Node, MemberExpression } from 'estree';
-import type { CodeExecutionMode, CodeNodeEditorLanguage } from 'n8n-workflow';
+import type { CodeExecutionMode, CodeNodeEditorLanguage } from 'workflow';
 import { computed, toValue, type MaybeRefOrGetter } from 'vue';
 
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import {
 	DEFAULT_LINTER_DELAY_IN_MS,
 	DEFAULT_LINTER_SEVERITY,
@@ -377,7 +377,7 @@ export const useLinter = (
 				node.right.callee.type === 'MemberExpression' &&
 				!node.right.callee.computed &&
 				node.right.callee.object.type === 'Identifier' &&
-				node.right.callee.object.name.startsWith('$'); // n8n var, e.g $input
+				node.right.callee.object.name.startsWith('$'); // aura var, e.g $input
 
 			const found = walk<TargetNode>(ast, isForOfStatementOverN8nVar);
 

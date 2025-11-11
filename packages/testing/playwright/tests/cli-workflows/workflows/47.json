@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 250],
 			"id": "033f4cbc-f36c-41df-bce3-5726a6aace1e"
@@ -21,7 +21,7 @@
 				"options": {}
 			},
 			"name": "Airtable",
-			"type": "n8n-nodes-base.airtable",
+			"type": "aura-nodes-base.airtable",
 			"typeVersion": 1,
 			"position": [550, 250],
 			"credentials": {
@@ -45,7 +45,7 @@
 				"options": {}
 			},
 			"name": "Set",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [400, 250],
 			"notesInFlow": true,
@@ -63,7 +63,7 @@
 				"options": {}
 			},
 			"name": "Airtable1",
-			"type": "n8n-nodes-base.airtable",
+			"type": "aura-nodes-base.airtable",
 			"typeVersion": 1,
 			"position": [850, 250],
 			"credentials": {
@@ -81,7 +81,7 @@
 				"id": "={{$node[\"Airtable\"].json[\"id\"]}}"
 			},
 			"name": "Airtable2",
-			"type": "n8n-nodes-base.airtable",
+			"type": "aura-nodes-base.airtable",
 			"typeVersion": 1,
 			"position": [1000, 250],
 			"credentials": {
@@ -105,7 +105,7 @@
 				"options": {}
 			},
 			"name": "Set1",
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 1,
 			"position": [700, 250],
 			"notesInFlow": true,
@@ -122,7 +122,7 @@
 				"additionalOptions": {}
 			},
 			"name": "Airtable3",
-			"type": "n8n-nodes-base.airtable",
+			"type": "aura-nodes-base.airtable",
 			"typeVersion": 1,
 			"position": [1150, 250],
 			"credentials": {
@@ -141,7 +141,7 @@
 				"id": "={{$node[\"Airtable\"].json[\"id\"]}}"
 			},
 			"name": "Airtable4",
-			"type": "n8n-nodes-base.airtable",
+			"type": "aura-nodes-base.airtable",
 			"typeVersion": 1,
 			"position": [1300, 250],
 			"credentials": {

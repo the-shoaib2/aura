@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import type { ChangeLocationSearchResult } from '../folders.types';
 import { useFoldersStore } from '../folders.store';
 import { computed, ref, watch } from 'vue';
 
-import { N8nIcon, N8nOption, N8nSelect, N8nText } from '@n8n/design-system';
+import { N8nIcon, N8nOption, N8nSelect, N8nText } from '@aura/design-system';
 /**
  * This component is used to select a folder within a project.
  * If parentFolderId is provided it will filter out the parent folder from the results.

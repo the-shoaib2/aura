@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ref, type Ref } from 'vue';
 import type { GridApi, ColDef } from 'ag-grid-community';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'workflow';
 import { useDataTableColumnFilters } from './useDataTableColumnFilters';
 import type { FilterModel, BackendFilter } from '../types/dataTableFilters.types';
 

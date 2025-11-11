@@ -387,7 +387,7 @@ describe('NodeReferenceParserUtils', () => {
 						jsCode:
 							"for (const item of $input.all()) {\n  item.json.myNewField = $('DebugHelper').first().json.uid;\n}\n\nreturn $input.all();",
 					},
-					type: 'n8n-nodes-base.code',
+					type: 'aura-nodes-base.code',
 					typeVersion: 2,
 					position: [660, 0],
 					id: 'c9de02d0-982a-4f8c-9af7-93f63795aa9b',
@@ -405,7 +405,7 @@ describe('NodeReferenceParserUtils', () => {
 						jsCode:
 							"for (const item of $input.all()) {\n  item.json.myNewField = $('Start').first().json.uid_firstItem;\n}\n\nreturn $input.all();",
 					},
-					type: 'n8n-nodes-base.code',
+					type: 'aura-nodes-base.code',
 					typeVersion: 2,
 					position: [660, 0],
 					id: 'c9de02d0-982a-4f8c-9af7-93f63795aa9b',
@@ -668,7 +668,7 @@ describe('NodeReferenceParserUtils', () => {
 						},
 						options: {},
 					},
-					type: 'n8n-nodes-base.set',
+					type: 'aura-nodes-base.set',
 					typeVersion: 3.4,
 					position: [80, 80],
 					id: '6e2fd284-2aba-4dee-8921-18be9a291484',
@@ -693,7 +693,7 @@ describe('NodeReferenceParserUtils', () => {
 						},
 						options: {},
 					},
-					type: 'n8n-nodes-base.set',
+					type: 'aura-nodes-base.set',
 					typeVersion: 3.4,
 					position: [80, 80],
 					id: '6e2fd284-2aba-4dee-8921-18be9a291484',
@@ -743,13 +743,13 @@ describe('NodeReferenceParserUtils', () => {
 			]);
 		});
 
-		it('should extract "fieldToSplitOut" constant fields in n8n-nodes-base.splitOut', () => {
+		it('should extract "fieldToSplitOut" constant fields in aura-nodes-base.splitOut', () => {
 			nodes = [
 				{
 					parameters: {
 						fieldToSplitOut: 'foo,bar',
 					},
-					type: 'n8n-nodes-base.splitOut',
+					type: 'aura-nodes-base.splitOut',
 					typeVersion: 1,
 					position: [200, 200],
 					id: 'splitOutNodeId',
@@ -765,13 +765,13 @@ describe('NodeReferenceParserUtils', () => {
 			]);
 		});
 
-		it('should error at extracting "fieldToSplitOut" expression in n8n-nodes-base.splitOut', () => {
+		it('should error at extracting "fieldToSplitOut" expression in aura-nodes-base.splitOut', () => {
 			nodes = [
 				{
 					parameters: {
 						fieldToSplitOut: '={{ foo,bar }}',
 					},
-					type: 'n8n-nodes-base.splitOut',
+					type: 'aura-nodes-base.splitOut',
 					typeVersion: 1,
 					position: [200, 200],
 					id: 'splitOutNodeId',

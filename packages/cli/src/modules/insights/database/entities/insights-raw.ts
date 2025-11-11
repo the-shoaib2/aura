@@ -1,8 +1,8 @@
-import { GlobalConfig } from '@n8n/config';
-import { DateTimeColumn } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from '@n8n/typeorm';
-import { UnexpectedError } from 'n8n-workflow';
+import { GlobalConfig } from '@aura/config';
+import { DateTimeColumn } from '@aura/db';
+import { Container } from '@aura/di';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from '@aura/typeorm';
+import { UnexpectedError } from 'workflow';
 
 import { isValidTypeNumber, NumberToType, TypeToNumber } from './insights-shared';
 

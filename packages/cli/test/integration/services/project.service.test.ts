@@ -1,8 +1,8 @@
-import { LicenseState } from '@n8n/backend-common';
-import { testDb } from '@n8n/backend-test-utils';
-import { ProjectRelationRepository, ProjectRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
-import { PROJECT_OWNER_ROLE_SLUG, type ProjectRole, type Scope } from '@n8n/permissions';
+import { LicenseState } from '@aura/backend-common';
+import { testDb } from '@aura/backend-test-utils';
+import { ProjectRelationRepository, ProjectRepository } from '@aura/db';
+import { Container } from '@aura/di';
+import { PROJECT_OWNER_ROLE_SLUG, type ProjectRole, type Scope } from '@aura/permissions';
 
 import { License } from '@/license';
 import { ProjectService } from '@/services/project.service.ee';

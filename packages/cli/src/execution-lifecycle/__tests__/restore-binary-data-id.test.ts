@@ -1,7 +1,7 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { Container } from '@n8n/di';
-import { BinaryDataConfig, BinaryDataService } from 'n8n-core';
-import type { IRun } from 'n8n-workflow';
+import { mockInstance } from '@aura/backend-test-utils';
+import { Container } from '@aura/di';
+import { BinaryDataConfig, BinaryDataService } from 'aura-core';
+import type { IRun } from 'workflow';
 
 import { restoreBinaryDataId } from '@/execution-lifecycle/restore-binary-data-id';
 

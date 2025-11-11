@@ -39,7 +39,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 			ok: true,
 			json: async () => ({
 				bugs: {
-					url: 'https://github.com/n8n-io/n8n/issues',
+					url: 'https://github.com/aura-io/aura/issues',
 				},
 			}),
 		});
@@ -56,7 +56,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 	it('calls router.push to open settings page when "Manage" is clicked', async () => {
 		const { getByText } = createComponentRenderer(CommunityNodeFooter)({
-			props: { packageName: 'n8n-nodes-test', showManage: true },
+			props: { packageName: 'aura-nodes-test', showManage: true },
 		});
 
 		const manageLink = getByText('Manage');
@@ -67,7 +67,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 	it('Manage should not be in the footer', () => {
 		const { queryByText } = createComponentRenderer(CommunityNodeFooter)({
-			props: { packageName: 'n8n-nodes-test', showManage: false },
+			props: { packageName: 'aura-nodes-test', showManage: false },
 		});
 
 		expect(queryByText('Manage')).not.toBeInTheDocument();
@@ -75,7 +75,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 	it('displays "Legacy" when updateAvailable', () => {
 		mockInstalledPackage.value = {
-			packageName: 'n8n-nodes-test',
+			packageName: 'aura-nodes-test',
 			installedVersion: '1.0.0',
 			updateAvailable: '1.0.1',
 			unverifiedUpdate: false,
@@ -86,7 +86,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 		const { getByText } = createComponentRenderer(CommunityNodeFooter)({
 			props: {
-				packageName: 'n8n-nodes-test',
+				packageName: 'aura-nodes-test',
 				showManage: false,
 			},
 		});
@@ -96,7 +96,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 	it('displays "Latest" when not updateAvailable', () => {
 		mockInstalledPackage.value = {
-			packageName: 'n8n-nodes-test',
+			packageName: 'aura-nodes-test',
 			installedVersion: '1.0.0',
 			unverifiedUpdate: false,
 			installedNodes: [],
@@ -106,7 +106,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 		const { getByText } = createComponentRenderer(CommunityNodeFooter)({
 			props: {
-				packageName: 'n8n-nodes-test',
+				packageName: 'aura-nodes-test',
 				showManage: false,
 			},
 		});
@@ -116,7 +116,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 	it('displays "Latest" when only unverified update is available', () => {
 		mockInstalledPackage.value = {
-			packageName: 'n8n-nodes-test',
+			packageName: 'aura-nodes-test',
 			installedVersion: '1.0.0',
 			unverifiedUpdate: true,
 			installedNodes: [],
@@ -126,7 +126,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 
 		const { getByText } = createComponentRenderer(CommunityNodeFooter)({
 			props: {
-				packageName: 'n8n-nodes-test',
+				packageName: 'aura-nodes-test',
 				showManage: false,
 			},
 		});
@@ -138,7 +138,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 		// mockInstalledPackage.value is already undefined from beforeEach
 		const { queryByText } = createComponentRenderer(CommunityNodeFooter)({
 			props: {
-				packageName: 'n8n-nodes-test',
+				packageName: 'aura-nodes-test',
 				showManage: false,
 			},
 		});

@@ -11,7 +11,7 @@ import {
 	type IPairedItemData,
 	NodeConnectionTypes,
 	type NodeExecutionHint,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { addBinariesToItem } from './utils';
 import { prepareFieldsArray } from '../utils/utils';
@@ -72,7 +72,7 @@ export class Aggregate implements INodeType {
 								type: 'string',
 								default: '',
 								description: 'The name of a field in the input items to aggregate together',
-								// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+								// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 								placeholder: 'e.g. id',
 								hint: ' Enter the field name as text',
 								requiresDataPath: 'single',

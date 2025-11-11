@@ -10,7 +10,7 @@ import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { CanvasNodeDirtiness } from '@/features/workflows/canvas/canvas.types';
 import { createTestingPinia } from '@pinia/testing';
-import { NodeConnectionTypes, type IConnections, type IRunData } from 'n8n-workflow';
+import { NodeConnectionTypes, type IConnections, type IRunData } from 'workflow';
 import { defineComponent } from 'vue';
 import { createRouter, createWebHistory, type RouteLocationNormalizedLoaded } from 'vue-router';
 import { useWorkflowState, injectWorkflowState, type WorkflowState } from './useWorkflowState';

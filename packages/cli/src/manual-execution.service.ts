@@ -1,6 +1,6 @@
-import { Logger } from '@n8n/backend-common';
-import { TOOL_EXECUTOR_NODE_NAME } from '@n8n/constants';
-import { Service } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { TOOL_EXECUTOR_NODE_NAME } from '@aura/constants';
+import { Service } from '@aura/di';
 import * as a from 'assert/strict';
 import {
 	DirectedGraph,
@@ -8,8 +8,8 @@ import {
 	recreateNodeExecutionStack,
 	WorkflowExecute,
 	rewireGraph,
-} from 'n8n-core';
-import { NodeHelpers } from 'n8n-workflow';
+} from 'aura-core';
+import { NodeHelpers } from 'workflow';
 import type {
 	IExecuteData,
 	IPinData,
@@ -20,7 +20,7 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	IWorkflowExecutionDataProcess,
 	Workflow,
-} from 'n8n-workflow';
+} from 'workflow';
 import type PCancelable from 'p-cancelable';
 
 @Service()

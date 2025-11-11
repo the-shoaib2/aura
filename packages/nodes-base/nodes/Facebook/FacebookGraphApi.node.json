@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.facebookGraphApi",
+	"node": "aura-nodes-base.facebookGraphApi",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/facebookgraph/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/facebookgraph/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.facebookgraphapi/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.facebookgraphapi/"
 			}
 		]
 	}

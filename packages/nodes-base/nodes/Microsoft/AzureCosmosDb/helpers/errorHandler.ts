@@ -3,8 +3,8 @@ import type {
 	IN8nHttpFullResponse,
 	INodeExecutionData,
 	JsonObject,
-} from 'n8n-workflow';
-import { jsonParse, NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { jsonParse, NodeApiError } from 'workflow';
 
 import type { IErrorResponse } from './interfaces';
 

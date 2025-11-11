@@ -3,7 +3,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [20, 920],
 			"id": "cfa1d2b9-9706-48a2-9dd4-39e4c3c0ccb4",
@@ -15,7 +15,7 @@
 				"limit": 2,
 				"filters": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 320],
 			"id": "7b925004-8583-4f43-b1f0-6a37331cabf4",
@@ -41,7 +41,7 @@
 					"receivedBefore": "2024-12-27T00:00:00"
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 520],
 			"id": "22fa66e3-ac89-4289-82c7-e3be3c271d04",
@@ -61,7 +61,7 @@
 				"threadId": "test-thread-id",
 				"labelIds": ["CHAT"]
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 700],
 			"id": "b94b2e79-a47d-4e05-a74b-957a9efe46a5",
@@ -81,7 +81,7 @@
 				"threadId": "test-thread-id",
 				"labelIds": ["CHAT"]
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 900],
 			"id": "5322c0f6-e040-4bb4-9014-041662e7a173",
@@ -100,7 +100,7 @@
 				"operation": "delete",
 				"threadId": "test-thread-id"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 1100],
 			"id": "6f7139f1-9236-4d35-b7ba-48f3e00d11ec",
@@ -120,7 +120,7 @@
 				"threadId": "test-thread-id",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 1300],
 			"id": "4e7bccd2-e663-4824-b870-bb5fe7ad6c57",
@@ -143,7 +143,7 @@
 					"returnOnlyMessages": true
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 1500],
 			"id": "4084a6fd-6770-4aa2-ac4e-6108f9b159a2",
@@ -171,13 +171,13 @@
 							}
 						]
 					},
-					"bccList": "test-bcc@n8n.io",
-					"ccList": "test-cc@n8n.io",
+					"bccList": "test-bcc@aura.io",
+					"ccList": "test-cc@aura.io",
 					"senderName": "Test Sender Name",
 					"replyToSenderOnly": true
 				}
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [1120, 2080],
 			"id": "d5b44033-655a-4e18-99c7-6ee19140967b",
@@ -196,7 +196,7 @@
 				"operation": "trash",
 				"threadId": "test-thread-id"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 1680],
 			"id": "1503c357-043c-45f5-bbe8-1d7141a84546",
@@ -215,7 +215,7 @@
 				"operation": "untrash",
 				"threadId": "test-thread-id"
 			},
-			"type": "n8n-nodes-base.gmail",
+			"type": "aura-nodes-base.gmail",
 			"typeVersion": 2.1,
 			"position": [800, 1880],
 			"id": "38c02fc0-2e8e-4a6b-a045-eb45f2811c0a",
@@ -242,7 +242,7 @@
 				},
 				"options": {}
 			},
-			"type": "n8n-nodes-base.set",
+			"type": "aura-nodes-base.set",
 			"typeVersion": 3.4,
 			"position": [800, 2080],
 			"id": "d6a20bfa-4bee-4aef-b1b0-198ed73d1b3f",
@@ -253,7 +253,7 @@
 				"operation": "toJson",
 				"options": {}
 			},
-			"type": "n8n-nodes-base.convertToFile",
+			"type": "aura-nodes-base.convertToFile",
 			"typeVersion": 1.1,
 			"position": [960, 2080],
 			"id": "47d4a53b-6019-444b-9746-f957704cd4e0",

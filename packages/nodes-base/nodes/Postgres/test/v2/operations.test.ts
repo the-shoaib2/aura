@@ -5,7 +5,7 @@ import type {
 	IGetNodeParameterOptions,
 	INode,
 	INodeParameters,
-} from 'n8n-workflow';
+} from 'workflow';
 import pgPromise from 'pg-promise';
 
 import * as deleteTable from '../../v2/actions/database/deleteTable.operation';
@@ -23,7 +23,7 @@ const node: INode = {
 	id: '1',
 	name: 'Postgres node',
 	typeVersion: 2,
-	type: 'n8n-nodes-base.postgres',
+	type: 'aura-nodes-base.postgres',
 	position: [60, 760],
 	parameters: {
 		operation: 'executeQuery',

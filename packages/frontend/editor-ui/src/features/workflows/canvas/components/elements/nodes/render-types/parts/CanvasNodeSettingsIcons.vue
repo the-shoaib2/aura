@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useCanvasNode } from '../../../../../composables/useCanvasNode';
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 
-import { N8nIcon, N8nTooltip } from '@n8n/design-system';
+import { N8nIcon, N8nTooltip } from '@aura/design-system';
 const { name } = useCanvasNode();
 const i18n = useI18n();
 const workflowsStore = useWorkflowsStore();

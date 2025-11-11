@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { nextTick, onBeforeMount, onMounted, ref, watch } from 'vue';
-import type { ITemplatesCollection } from '@n8n/rest-api-client/api/templates';
+import type { ITemplatesCollection } from '@aura/rest-api-client/api/templates';
 import Card from '@/app/components/CollectionWorkflowCard.vue';
 import TemplatesInfoCard from './TemplatesInfoCard.vue';
 import { VueAgile } from 'vue-agile';
 
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@aura/design-system';
 type SliderRef = InstanceType<typeof VueAgile>;
 
 const props = withDefaults(

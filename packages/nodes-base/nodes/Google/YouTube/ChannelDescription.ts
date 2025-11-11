@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const channelOperations: INodeProperties[] = [
 	{
@@ -194,7 +194,7 @@ export const channelFields: INodeProperties[] = [
 		},
 		options: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+				// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 				displayName: 'Language Code',
 				name: 'h1',
 				type: 'options',
@@ -203,7 +203,7 @@ export const channelFields: INodeProperties[] = [
 				},
 				default: '',
 				description:
-					'The hl parameter instructs the API to retrieve localized resource metadata for a specific application language that the YouTube website supports. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'The hl parameter instructs the API to retrieve localized resource metadata for a specific application language that the YouTube website supports. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'On Behalf Of Content Owner',
@@ -413,7 +413,7 @@ export const channelFields: INodeProperties[] = [
 									{
 										displayName: 'Profile Color',
 										name: 'profileColor',
-										// eslint-disable-next-line n8n-nodes-base/node-param-color-type-unused
+										// eslint-disable-next-line aura-nodes-base/node-param-color-type-unused
 										type: 'string',
 										default: '',
 										description: "A prominent color that complements the channel's content",

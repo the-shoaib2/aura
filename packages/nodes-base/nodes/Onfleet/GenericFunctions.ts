@@ -9,8 +9,8 @@ import type {
 	IRequestOptions,
 	IWebhookFunctions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 export async function onfleetApiRequest(
 	this: IWebhookFunctions | IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions,
@@ -27,7 +27,7 @@ export async function onfleetApiRequest(
 	const options: IRequestOptions = {
 		headers: {
 			'Content-Type': 'application/json',
-			'User-Agent': 'n8n-onfleet',
+			'User-Agent': 'aura-onfleet',
 		},
 		auth: {
 			user: credentials.apiKey as string,

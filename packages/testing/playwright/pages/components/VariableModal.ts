@@ -2,12 +2,12 @@ import type { Locator } from '@playwright/test';
 
 /**
  * Variable modal component for canvas and variables interactions.
- * Used within VariablesPage as `n8n.variables.modal.*`
+ * Used within VariablesPage as `aura.variables.modal.*`
  *
  * @example
  * // Access via canvas page or variables page
- * await n8n.variables.modal.addVariable();
- * await expect(n8n.variables.modal.getModal()).toBeVisible();
+ * await aura.variables.modal.addVariable();
+ * await expect(aura.variables.modal.getModal()).toBeVisible();
  */
 export class VariableModal {
 	constructor(private root: Locator) {}

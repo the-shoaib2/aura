@@ -10,18 +10,18 @@ const requirements: TestRequirements = {
 
 test.describe('SUG-121 Fields reset after closing NDV', () => {
 	test('should preserve changes to parameters after closing NDV when focus panel is open', async ({
-		n8n,
+		aura,
 		setupRequirements,
 	}) => {
 		await setupRequirements(requirements);
-		await n8n.canvas.clickZoomToFitButton();
-		await n8n.canvas.toggleFocusPanelButton().click();
-		await n8n.canvas.canvasPane().click();
-		await n8n.canvas.nodeByName('Code').dblclick();
-		await n8n.ndv.getParameterByLabel('JavaScript').getByRole('textbox').fill('alert(1)');
-		await n8n.ndv.close();
-		await n8n.canvas.nodeByName('Code').dblclick();
-		await expect(n8n.ndv.getParameterByLabel('JavaScript').getByRole('textbox')).toHaveText(
+		await aura.canvas.clickZoomToFitButton();
+		await aura.canvas.toggleFocusPanelButton().click();
+		await aura.canvas.canvasPane().click();
+		await aura.canvas.nodeByName('Code').dblclick();
+		await aura.ndv.getParameterByLabel('JavaScript').getByRole('textbox').fill('alert(1)');
+		await aura.ndv.close();
+		await aura.canvas.nodeByName('Code').dblclick();
+		await expect(aura.ndv.getParameterByLabel('JavaScript').getByRole('textbox')).toHaveText(
 			'alert(1)',
 		);
 	});

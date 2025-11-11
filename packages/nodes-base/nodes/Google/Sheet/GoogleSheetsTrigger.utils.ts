@@ -1,6 +1,6 @@
 import isEqual from 'lodash/isEqual';
 import zip from 'lodash/zip';
-import type { IDataObject, IPollFunctions } from 'n8n-workflow';
+import type { IDataObject, IPollFunctions } from 'workflow';
 import * as XLSX from 'xlsx';
 
 import type { SheetDataRow, SheetRangeData } from './v2/helpers/GoogleSheets.types';

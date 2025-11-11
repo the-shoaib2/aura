@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 export class RocketchatApi implements ICredentialType {
 	name = 'rocketchatApi';
@@ -31,7 +31,7 @@ export class RocketchatApi implements ICredentialType {
 			name: 'domain',
 			type: 'string',
 			default: '',
-			placeholder: 'https://n8n.rocket.chat',
+			placeholder: 'https://aura.rocket.chat',
 		},
 	];
 

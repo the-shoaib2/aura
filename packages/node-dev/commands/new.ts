@@ -13,7 +13,7 @@ import { createTemplate } from '../src';
 export class New extends Command {
 	static description = 'Create new credentials/node';
 
-	static examples = ['$ n8n-node-dev new'];
+	static examples = ['$ aura-node-dev new'];
 
 	async run() {
 		try {
@@ -135,7 +135,7 @@ export class New extends Command {
 			const replaceValues = {
 				ClassNameReplace: changeCase.pascalCase(nodeName),
 				DisplayNameReplace: changeCase.capitalCase(nodeName),
-				N8nNameReplace: changeCase.camelCase(nodeName),
+				auraNameReplace: changeCase.camelCase(nodeName),
 				NodeDescriptionReplace: additionalAnswers.description,
 			};
 

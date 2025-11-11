@@ -3,8 +3,8 @@ import type {
 	IHttpRequestOptions,
 	IN8nHttpFullResponse,
 	INodeExecutionData,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError } from 'workflow';
 
 // Regular expressions used to extract binId from parameter value
 const BIN_ID_REGEX = /\b\d{13}-\d{13}\b/g;

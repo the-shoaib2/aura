@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, IHookFunctions } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IExecuteFunctions, IHookFunctions } from 'workflow';
+import { NodeApiError } from 'workflow';
 
 import { spotifyApiRequest } from '../GenericFunctions';
 
@@ -31,7 +31,7 @@ describe('Spotify -> GenericFunctions', () => {
 			{
 				method,
 				headers: {
-					'User-Agent': 'n8n',
+					'User-Agent': 'aura',
 					'Content-Type': 'text/plain',
 					Accept: ' application/json',
 				},

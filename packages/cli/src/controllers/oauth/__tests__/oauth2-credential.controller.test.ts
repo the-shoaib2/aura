@@ -1,14 +1,14 @@
-import { Logger } from '@n8n/backend-common';
-import { mockInstance } from '@n8n/backend-test-utils';
-import { Time } from '@n8n/constants';
-import type { CredentialsEntity, User } from '@n8n/db';
-import { CredentialsRepository, GLOBAL_OWNER_ROLE } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { Logger } from '@aura/backend-common';
+import { mockInstance } from '@aura/backend-test-utils';
+import { Time } from '@aura/constants';
+import type { CredentialsEntity, User } from '@aura/db';
+import { CredentialsRepository, GLOBAL_OWNER_ROLE } from '@aura/db';
+import { Container } from '@aura/di';
 import Csrf from 'csrf';
 import { type Response } from 'express';
 import { captor, mock } from 'jest-mock-extended';
-import { Cipher, type InstanceSettings, ExternalSecretsProxy } from 'n8n-core';
-import type { IWorkflowExecuteAdditionalData } from 'n8n-workflow';
+import { Cipher, type InstanceSettings, ExternalSecretsProxy } from 'aura-core';
+import type { IWorkflowExecuteAdditionalData } from 'workflow';
 import nock from 'nock';
 import * as pkceChallenge from 'pkce-challenge';
 
@@ -230,8 +230,8 @@ describe('OAuth2CredentialController', () => {
 						token_endpoint_auth_method: expectedTokenEndpointAuthMethod,
 						grant_types: expectedGrantTypes,
 						response_types: ['code'],
-						client_name: 'n8n',
-						client_uri: 'https://n8n.io/',
+						client_name: 'aura',
+						client_uri: 'https://aura.io/',
 					})
 					.reply(200, { client_id: 'test-client-id', client_secret: 'test-client-secret' });
 

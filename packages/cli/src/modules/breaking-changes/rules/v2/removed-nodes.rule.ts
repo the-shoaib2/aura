@@ -1,7 +1,7 @@
-import { BreakingChangeRecommendation } from '@n8n/api-types';
-import type { WorkflowEntity } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { INode } from 'n8n-workflow';
+import { BreakingChangeRecommendation } from '@aura/api-types';
+import type { WorkflowEntity } from '@aura/db';
+import { Service } from '@aura/di';
+import { INode } from 'workflow';
 
 import type {
 	BreakingChangeRuleMetadata,
@@ -13,9 +13,9 @@ import { BreakingChangeCategory } from '../../types';
 @Service()
 export class RemovedNodesRule implements IBreakingChangeWorkflowRule {
 	private readonly REMOVED_NODES = [
-		'n8n-nodes-base.spontit',
-		'n8n-nodes-base.crowdDev',
-		'n8n-nodes-base.kitemaker',
+		'aura-nodes-base.spontit',
+		'aura-nodes-base.crowdDev',
+		'aura-nodes-base.kitemaker',
 	];
 
 	id: string = 'removed-nodes-v2';

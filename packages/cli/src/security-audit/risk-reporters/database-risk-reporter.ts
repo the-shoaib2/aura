@@ -1,5 +1,5 @@
-import { Service } from '@n8n/di';
-import type { IWorkflowBase } from 'n8n-workflow';
+import { Service } from '@aura/di';
+import type { IWorkflowBase } from 'workflow';
 
 import {
 	SQL_NODE_TYPES,

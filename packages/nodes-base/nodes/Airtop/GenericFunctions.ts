@@ -4,8 +4,8 @@ import {
 	type INode,
 	type IDataObject,
 	jsonParse,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeOperationError } from 'workflow';
 import type Stream from 'node:stream';
 
 import { SESSION_MODE } from './actions/common/fields';
@@ -486,7 +486,7 @@ function parseEvent(eventText: string): IAirtopServerEvent | null {
 
 /**
  * Waits for a session event to occur
- * @param this - The execution context providing access to n8n functionality
+ * @param this - The execution context providing access to aura functionality
  * @param sessionId - ID of the session to check for events
  * @param condition - Function to check if the event meets the condition
  * @param timeoutInSeconds - Maximum time in seconds to wait before failing (defaults to DEFAULT_DOWNLOAD_TIMEOUT_SECONDS)

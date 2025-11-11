@@ -1,6 +1,6 @@
-import { SecurityConfig } from '@n8n/config';
-import { WorkflowRepository } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
+import { SecurityConfig } from '@aura/config';
+import { WorkflowRepository } from '@aura/db';
+import { Container, Service } from '@aura/di';
 
 import config from '@/config';
 import { RISK_CATEGORIES } from '@/security-audit/constants';

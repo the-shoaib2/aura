@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "d47537bc-67a1-47ac-9410-957dda70e3f4"
@@ -23,7 +23,7 @@
 				}
 			},
 			"name": "Salesmate",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [450, 150],
 			"credentials": {
@@ -41,7 +41,7 @@
 				"id": "={{$node[\"Salesmate\"].json[\"id\"]}}"
 			},
 			"name": "Salesmate1",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [600, 150],
 			"credentials": {
@@ -63,7 +63,7 @@
 				}
 			},
 			"name": "Salesmate2",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [750, 150],
 			"credentials": {
@@ -97,7 +97,7 @@
 				}
 			},
 			"name": "Salesmate3",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [900, 150],
 			"credentials": {
@@ -115,7 +115,7 @@
 				"id": "={{$node[\"Salesmate\"].json[\"id\"]}}"
 			},
 			"name": "Salesmate4",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [1050, 150],
 			"credentials": {
@@ -141,7 +141,7 @@
 				}
 			},
 			"name": "Salesmate5",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [450, 300],
 			"credentials": {
@@ -159,7 +159,7 @@
 				"id": "={{$node[\"Salesmate5\"].json[\"id\"]}}"
 			},
 			"name": "Salesmate6",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [600, 300],
 			"credentials": {
@@ -182,7 +182,7 @@
 				}
 			},
 			"name": "Salesmate7",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [750, 300],
 			"credentials": {
@@ -204,7 +204,7 @@
 				}
 			},
 			"name": "Salesmate8",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [900, 300],
 			"credentials": {
@@ -222,7 +222,7 @@
 				"id": "={{$node[\"Salesmate5\"].json[\"id\"]}}"
 			},
 			"name": "Salesmate9",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [1050, 300],
 			"credentials": {
@@ -244,7 +244,7 @@
 				}
 			},
 			"name": "Salesmate10",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [450, 450],
 			"credentials": {
@@ -261,7 +261,7 @@
 				"id": "={{$node[\"Salesmate10\"].json[\"id\"]}}"
 			},
 			"name": "Salesmate11",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [600, 450],
 			"credentials": {
@@ -283,7 +283,7 @@
 				}
 			},
 			"name": "Salesmate12",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [750, 450],
 			"credentials": {
@@ -304,7 +304,7 @@
 				}
 			},
 			"name": "Salesmate13",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [900, 450],
 			"credentials": {
@@ -321,7 +321,7 @@
 				"id": "={{$node[\"Salesmate10\"].json[\"id\"]}}"
 			},
 			"name": "Salesmate14",
-			"type": "n8n-nodes-base.salesmate",
+			"type": "aura-nodes-base.salesmate",
 			"typeVersion": 1,
 			"position": [1050, 450],
 			"credentials": {

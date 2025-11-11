@@ -1,19 +1,19 @@
 packages:
   - packages/*
-  - packages/@n8n/*
+  - packages/@aura/*
   - packages/frontend/**
   - packages/extensions/**
   - packages/testing/**
 
 minimumReleaseAge: 2880 # 2 days
 minimumReleaseAgeExclude:
-  - '@n8n/*'
-  - '@n8n_io/*'
+  - '@aura/*'
+  - '@aura_io/*'
   - eslint-plugin-storybook
 
 catalog:
-  '@n8n/typeorm': 0.3.20-15
-  '@n8n_io/ai-assistant-sdk': 1.17.0
+  '@aura/typeorm': 0.3.20-15
+  '@aura_io/ai-assistant-sdk': 1.17.0
   '@langchain/core': 0.3.68
   '@langchain/openai': 0.6.16
   '@langchain/anthropic': 0.3.26

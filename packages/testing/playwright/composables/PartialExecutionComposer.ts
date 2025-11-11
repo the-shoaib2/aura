@@ -1,20 +1,20 @@
 import { expect } from '@playwright/test';
 
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 /**
  * A class for partial execution testing workflows that involve
  * complex multi-step scenarios across pages.
  */
 export class PartialExecutionComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Sets up partial execution version 2 in localStorage
 	 * This enables the v2 partial execution feature
 	 */
 	async enablePartialExecutionV2(): Promise<void> {
-		await this.n8n.page.evaluate(() => {
+		await this.aura.page.evaluate(() => {
 			window.localStorage.setItem('PartialExecution.version', '2');
 		});
 	}
@@ -24,11 +24,11 @@ export class PartialExecutionComposer {
 	 * @param nodeNames - Array of node names to verify
 	 */
 	async executeFullWorkflowAndVerifySuccess(nodeNames: string[]): Promise<void> {
-		await this.n8n.canvas.clickExecuteWorkflowButton();
+		await this.aura.canvas.clickExecuteWorkflowButton();
 
 		// Verify all nodes show success status
 		for (const nodeName of nodeNames) {
-			await expect(this.n8n.canvas.getNodeSuccessStatusIndicator(nodeName)).toBeVisible();
+			await expect(this.aura.canvas.getNodeSuccessStatusIndicator(nodeName)).toBeVisible();
 		}
 	}
 
@@ -38,13 +38,13 @@ export class PartialExecutionComposer {
 	 * @returns The captured text content
 	 */
 	async captureNodeOutputData(nodeName: string): Promise<string> {
-		await this.n8n.canvas.openNode(nodeName);
-		await this.n8n.ndv.outputPanel.getTable().waitFor();
+		await this.aura.canvas.openNode(nodeName);
+		await this.aura.ndv.outputPanel.getTable().waitFor();
 		// Note: Using row 0 for tbody (equivalent to row 1 in Cypress which includes header)
-		const cell = this.n8n.ndv.outputPanel.getTbodyCell(0, 0);
+		const cell = this.aura.ndv.outputPanel.getTbodyCell(0, 0);
 		await expect(cell).toHaveText(/.+/);
 		const beforeText = await cell.textContent();
-		await this.n8n.ndv.close();
+		await this.aura.ndv.close();
 
 		return beforeText!;
 	}
@@ -54,12 +54,12 @@ export class PartialExecutionComposer {
 	 * @param nodeName - The node to modify
 	 */
 	async modifyNodeToTriggerStaleState(nodeName: string): Promise<void> {
-		await this.n8n.canvas.openNode(nodeName);
-		await this.n8n.ndv.clickAssignmentCollectionDropArea();
+		await this.aura.canvas.openNode(nodeName);
+		await this.aura.ndv.clickAssignmentCollectionDropArea();
 
 		// Verify stale node indicator appears after parameter change
-		await expect(this.n8n.ndv.getStaleNodeIndicator()).toBeVisible();
-		await this.n8n.ndv.close();
+		await expect(this.aura.ndv.getStaleNodeIndicator()).toBeVisible();
+		await this.aura.ndv.close();
 	}
 
 	/**
@@ -73,12 +73,12 @@ export class PartialExecutionComposer {
 	): Promise<void> {
 		// Verify unchanged nodes still show success
 		for (const nodeName of unchangedNodes) {
-			await expect(this.n8n.canvas.getNodeSuccessStatusIndicator(nodeName)).toBeVisible();
+			await expect(this.aura.canvas.getNodeSuccessStatusIndicator(nodeName)).toBeVisible();
 		}
 
 		// Verify modified nodes show warning status
 		for (const nodeName of modifiedNodes) {
-			await expect(this.n8n.canvas.getNodeWarningStatusIndicator(nodeName)).toBeVisible();
+			await expect(this.aura.canvas.getNodeWarningStatusIndicator(nodeName)).toBeVisible();
 		}
 	}
 
@@ -92,11 +92,11 @@ export class PartialExecutionComposer {
 		allNodeNames: string[],
 	): Promise<void> {
 		// Perform partial execution by clicking execute button on target node
-		await this.n8n.canvas.executeNode(targetNodeName);
+		await this.aura.canvas.executeNode(targetNodeName);
 
 		// Verify all nodes show success status after partial execution
 		for (const nodeName of allNodeNames) {
-			await expect(this.n8n.canvas.getNodeSuccessStatusIndicator(nodeName)).toBeVisible();
+			await expect(this.aura.canvas.getNodeSuccessStatusIndicator(nodeName)).toBeVisible();
 		}
 	}
 
@@ -106,7 +106,7 @@ export class PartialExecutionComposer {
 	 * @returns Promise that resolves when node is open and ready for verification
 	 */
 	async openNodeForDataVerification(nodeName: string): Promise<void> {
-		await this.n8n.canvas.openNode(nodeName);
-		await this.n8n.ndv.outputPanel.getTable().waitFor();
+		await this.aura.canvas.openNode(nodeName);
+		await this.aura.ndv.outputPanel.getTable().waitFor();
 	}
 }

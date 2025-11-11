@@ -1,6 +1,6 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import type { AuthIdentity } from '@n8n/db';
-import { generateNanoId, User, AuthIdentityRepository, UserRepository } from '@n8n/db';
+import { mockInstance } from '@aura/backend-test-utils';
+import type { AuthIdentity } from '@aura/db';
+import { generateNanoId, User, AuthIdentityRepository, UserRepository } from '@aura/db';
 
 import * as helpers from '@/sso.ee/saml/saml-helpers';
 import type { SamlUserAttributes } from '@/sso.ee/saml/types';
@@ -11,7 +11,7 @@ mockInstance(AuthIdentityRepository);
 describe('sso/saml/samlHelpers', () => {
 	describe('updateUserFromSamlAttributes', () => {
 		// We need to use `save` so that that the subscriber in
-		// packages/@n8n/db/src/entities/Project.ts receives the full user.
+		// packages/@aura/db/src/entities/Project.ts receives the full user.
 		// With `update` it would only receive the updated fields, e.g. the `id`
 		// would be missing.
 		test('does not user `Repository.update`, but `Repository.save` instead', async () => {
@@ -27,7 +27,7 @@ describe('sso/saml/samlHelpers', () => {
 				lastName: 'Nathaniel',
 				email: 'n@8.n',
 				userPrincipalName: 'Huh?',
-				n8nInstanceRole: 'n8n_instance_role',
+				auraInstanceRole: 'aura_instance_role',
 			};
 
 			userRepository.findOne.mockImplementationOnce(async (_) => user);
@@ -157,11 +157,11 @@ describe('sso/saml/samlHelpers', () => {
 			expect(result).toEqual({
 				attributes: {
 					email: 'test@test.com',
-					n8nInstanceRole: 'instanceRole',
+					auraInstanceRole: 'instanceRole',
 					firstName: 'test',
 					lastName: 'test',
 					userPrincipalName: 'test',
-					n8nProjectRoles: ['projectRole1', 'projectRole2'],
+					auraProjectRoles: ['projectRole1', 'projectRole2'],
 				},
 				missingAttributes: [],
 			});

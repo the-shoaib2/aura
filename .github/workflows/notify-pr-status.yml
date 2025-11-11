@@ -21,7 +21,7 @@ jobs:
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
         with:
-          url: ${{ secrets.N8N_NOTIFY_PR_STATUS_CHANGED_URL }}
+          url: ${{ secrets.aura_NOTIFY_PR_STATUS_CHANGED_URL }}
           method: 'POST'
-          customHeaders: '{ "x-api-token": "${{ secrets.N8N_NOTIFY_PR_STATUS_CHANGED_TOKEN }}" }'
+          customHeaders: '{ "x-api-token": "${{ secrets.aura_NOTIFY_PR_STATUS_CHANGED_TOKEN }}" }'
           data: '{ "event_name": "${{ github.event_name }}", "pr_url": "${{ env.PR_URL }}",  "event": ${{ toJSON(github.event) }} }'

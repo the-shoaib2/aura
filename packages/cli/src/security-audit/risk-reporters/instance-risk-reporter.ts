@@ -1,10 +1,10 @@
-import { inDevelopment, Logger } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { separate } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
+import { inDevelopment, Logger } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { separate } from '@aura/db';
+import { Container, Service } from '@aura/di';
 import axios from 'axios';
-import { InstanceSettings } from 'n8n-core';
-import type { IWorkflowBase } from 'n8n-workflow';
+import { InstanceSettings } from 'aura-core';
+import type { IWorkflowBase } from 'workflow';
 
 import { N8N_VERSION } from '@/constants';
 import { CommunityPackagesConfig } from '@/modules/community-packages/community-packages.config';
@@ -15,7 +15,7 @@ import {
 	WEBHOOK_NODE_TYPE,
 	WEBHOOK_VALIDATOR_NODE_TYPES,
 } from '@/security-audit/constants';
-import type { RiskReporter, Risk, n8n } from '@/security-audit/types';
+import type { RiskReporter, Risk, aura } from '@/security-audit/types';
 import { toFlaggedNode } from '@/security-audit/utils';
 
 @Service()
@@ -66,7 +66,7 @@ export class InstanceRiskReporter implements RiskReporter {
 				title: INSTANCE_REPORT.SECTIONS.OUTDATED_INSTANCE,
 				description: outdatedState.description,
 				recommendation:
-					'Consider updating this n8n instance to the latest version to prevent security vulnerabilities.',
+					'Consider updating this aura instance to the latest version to prevent security vulnerabilities.',
 				nextVersions: outdatedState.nextVersions,
 			});
 		}
@@ -74,8 +74,8 @@ export class InstanceRiskReporter implements RiskReporter {
 		if (securitySettings !== null) {
 			report.sections.push({
 				title: INSTANCE_REPORT.SECTIONS.SECURITY_SETTINGS,
-				description: 'This n8n instance has the following security settings.',
-				recommendation: `Consider adjusting the security settings for your n8n instance based on your needs. See: ${ENV_VARS_DOCS_URL}`,
+				description: 'This aura instance has the following security settings.',
+				recommendation: `Consider adjusting the security settings for your aura instance based on your needs. See: ${ENV_VARS_DOCS_URL}`,
 				settings: securitySettings,
 			});
 		}
@@ -150,14 +150,14 @@ export class InstanceRiskReporter implements RiskReporter {
 		const BASE_URL = this.globalConfig.versionNotifications.endpoint;
 		const { instanceId } = this.instanceSettings;
 
-		const response = await axios.get<n8n.Version[]>(BASE_URL + currentVersionName, {
-			headers: { 'n8n-instance-id': instanceId },
+		const response = await axios.get<aura.Version[]>(BASE_URL + currentVersionName, {
+			headers: { 'aura-instance-id': instanceId },
 		});
 
 		return response.data;
 	}
 
-	private removeIconData(versions: n8n.Version[]) {
+	private removeIconData(versions: aura.Version[]) {
 		return versions.map((version) => {
 			if (version.nodes.length === 0) return version;
 
@@ -167,7 +167,7 @@ export class InstanceRiskReporter implements RiskReporter {
 		});
 	}
 
-	private classify(versions: n8n.Version[], currentVersionName: string) {
+	private classify(versions: aura.Version[], currentVersionName: string) {
 		const [pass, fail] = separate(versions, (v) => v.name === currentVersionName);
 
 		return { currentVersion: pass[0], nextVersions: fail };
@@ -182,7 +182,7 @@ export class InstanceRiskReporter implements RiskReporter {
 			versions = await this.getNextVersions(localVersion).then((v) => this.removeIconData(v));
 		} catch (error) {
 			if (inDevelopment) {
-				this.logger.error('Failed to fetch n8n versions. Skipping outdated instance report...');
+				this.logger.error('Failed to fetch aura versions. Skipping outdated instance report...');
 			}
 			return null;
 		}
@@ -194,7 +194,7 @@ export class InstanceRiskReporter implements RiskReporter {
 		if (nextVersionsNumber === 0) return null;
 
 		const description = [
-			`This n8n instance is outdated. Currently at version ${
+			`This aura instance is outdated. Currently at version ${
 				currentVersion.name
 			}, missing ${nextVersionsNumber} ${nextVersionsNumber > 1 ? 'updates' : 'update'}.`,
 		];

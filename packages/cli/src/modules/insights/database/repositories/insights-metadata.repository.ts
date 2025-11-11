@@ -1,5 +1,5 @@
-import { Service } from '@n8n/di';
-import { DataSource, Repository } from '@n8n/typeorm';
+import { Service } from '@aura/di';
+import { DataSource, Repository } from '@aura/typeorm';
 
 import { InsightsMetadata } from '../entities/insights-metadata';
 

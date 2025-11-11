@@ -5,12 +5,9 @@
 			"parameters": {},
 			"id": "209e36b6-de70-4cc4-ac95-ca17fd3f83ff",
 			"name": "When clicking \"Execute Workflow\"",
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
-			"position": [
-				1020,
-				640
-			]
+			"position": [1020, 640]
 		},
 		{
 			"parameters": {
@@ -18,12 +15,9 @@
 			},
 			"id": "1901bee9-d429-4485-9fdb-e5cd3aa64eab",
 			"name": "Read Binary File",
-			"type": "n8n-nodes-base.readBinaryFile",
+			"type": "aura-nodes-base.readBinaryFile",
 			"typeVersion": 1,
-			"position": [
-				1240,
-				640
-			]
+			"position": [1240, 640]
 		}
 	],
 	"pinData": {},

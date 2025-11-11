@@ -41,7 +41,7 @@
 						"id": "toolu_011HQYsRa6fTQJaVzCSRMztH",
 						"name": "categorize_prompt",
 						"input": {
-							"prompt": "I want to build an n8n workflow that automatically creates YouTube chapter timestamps by analyzing the video captions. When I trigger it manually, it should take a video ID as input, fetch the existing video metadata and captions from YouTube, use an AI language model like Google Gemini to parse the transcript into chapters with timestamps, and then update the video's description with these chapters appended. The goal is to save time and improve SEO by automating the whole process."
+							"prompt": "I want to build an aura workflow that automatically creates YouTube chapter timestamps by analyzing the video captions. When I trigger it manually, it should take a video ID as input, fetch the existing video metadata and captions from YouTube, use an AI language model like Google Gemini to parse the transcript into chapters with timestamps, and then update the video's description with these chapters appended. The goal is to save time and improve SEO by automating the whole process."
 						}
 					}
 				],

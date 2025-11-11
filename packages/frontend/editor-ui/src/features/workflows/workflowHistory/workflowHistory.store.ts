@@ -2,15 +2,15 @@ import { computed } from 'vue';
 import { defineStore } from 'pinia';
 import { saveAs } from 'file-saver';
 import type { IWorkflowDb } from '@/Interface';
-import type { WorkflowDataUpdate } from '@n8n/rest-api-client/api/workflows';
+import type { WorkflowDataUpdate } from '@aura/rest-api-client/api/workflows';
 import type {
 	WorkflowHistory,
 	WorkflowVersion,
 	WorkflowHistoryRequestParams,
 	WorkflowVersionId,
-} from '@n8n/rest-api-client/api/workflowHistory';
-import * as whApi from '@n8n/rest-api-client/api/workflowHistory';
-import { useRootStore } from '@n8n/stores/useRootStore';
+} from '@aura/rest-api-client/api/workflowHistory';
+import * as whApi from '@aura/rest-api-client/api/workflowHistory';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import { getNewWorkflow } from '@/app/api/workflows';

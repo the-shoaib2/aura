@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.rocketchat",
+	"node": "aura-nodes-base.rocketchat",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/rocketchat/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/rocketchat/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.rocketchat/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.rocketchat/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Automate Designs with Bannerbear and n8n",
+				"label": "Automate Designs with Bannerbear and aura",
 				"icon": "🎨",
-				"url": "https://n8n.io/blog/automate-designs-with-bannerbear-and-n8n/"
+				"url": "https://aura.io/blog/automate-designs-with-bannerbear-and-aura/"
 			}
 		]
 	}

@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.function",
+	"node": "aura-nodes-base.function",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "The Function node allows you to execute JavaScript in your workflow. Unlike the Function Item node, this node does not operate on incoming node data per-item. Instead, you must iterate over multiple items of incoming data yourself. This can be useful if you're performing data transformation where you want to manipulate the number of items being outputted by the node (i.e. 1 item is inputted in with nested object, 10 items are outputted without any nested objects)",
@@ -7,118 +7,118 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/"
+				"url": "https://docs.aura.io/integrations/builtin/core-nodes/aura-nodes-base.code/"
 			}
 		],
 		"generic": [
 			{
-				"label": "2021 Goals: Level Up Your Vocabulary With Vonage and n8n",
+				"label": "2021 Goals: Level Up Your Vocabulary With Vonage and aura",
 				"icon": "🎯",
-				"url": "https://n8n.io/blog/2021-goals-level-up-your-vocabulary-with-vonage-and-n8n/"
+				"url": "https://aura.io/blog/2021-goals-level-up-your-vocabulary-with-vonage-and-aura/"
 			},
 			{
 				"label": "Learn to Automate Your Factory's Incident Reporting: A Step by Step Guide",
 				"icon": "🏭",
-				"url": "https://n8n.io/blog/learn-to-automate-your-factorys-incident-reporting-a-step-by-step-guide/"
+				"url": "https://aura.io/blog/learn-to-automate-your-factorys-incident-reporting-a-step-by-step-guide/"
 			},
 			{
-				"label": "2021: The Year to Automate the New You with n8n",
+				"label": "2021: The Year to Automate the New You with aura",
 				"icon": "☀️",
-				"url": "https://n8n.io/blog/2021-the-year-to-automate-the-new-you-with-n8n/"
+				"url": "https://aura.io/blog/2021-the-year-to-automate-the-new-you-with-aura/"
 			},
 			{
-				"label": "Why business process automation with n8n can change your daily life",
+				"label": "Why business process automation with aura can change your daily life",
 				"icon": "🧬",
-				"url": "https://n8n.io/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+				"url": "https://aura.io/blog/why-business-process-automation-with-aura-can-change-your-daily-life/"
 			},
 			{
-				"label": "Why I chose n8n over Zapier in 2020",
+				"label": "Why I chose aura over Zapier in 2020",
 				"icon": "😍",
-				"url": "https://n8n.io/blog/why-i-chose-n8n-over-zapier-in-2020/"
+				"url": "https://aura.io/blog/why-i-chose-aura-over-zapier-in-2020/"
 			},
 			{
-				"label": "How to host virtual coffee breaks with n8n",
+				"label": "How to host virtual coffee breaks with aura",
 				"icon": "☕️",
-				"url": "https://n8n.io/blog/how-to-host-virtual-coffee-breaks-with-n8n/"
+				"url": "https://aura.io/blog/how-to-host-virtual-coffee-breaks-with-aura/"
 			},
 			{
-				"label": "Automatically pulling and visualizing data with n8n",
+				"label": "Automatically pulling and visualizing data with aura",
 				"icon": "📈",
-				"url": "https://n8n.io/blog/automatically-pulling-and-visualizing-data-with-n8n/"
+				"url": "https://aura.io/blog/automatically-pulling-and-visualizing-data-with-aura/"
 			},
 			{
-				"label": "Database Monitoring and Alerting with n8n",
+				"label": "Database Monitoring and Alerting with aura",
 				"icon": "📡",
-				"url": "https://n8n.io/blog/database-monitoring-and-alerting-with-n8n/"
+				"url": "https://aura.io/blog/database-monitoring-and-alerting-with-aura/"
 			},
 			{
-				"label": "Supercharging your conference registration process with n8n",
+				"label": "Supercharging your conference registration process with aura",
 				"icon": "🎫",
-				"url": "https://n8n.io/blog/supercharging-your-conference-registration-process-with-n8n/"
+				"url": "https://aura.io/blog/supercharging-your-conference-registration-process-with-aura/"
 			},
 			{
-				"label": "Creating triggers for n8n workflows using polling",
+				"label": "Creating triggers for aura workflows using polling",
 				"icon": "⏲",
-				"url": "https://n8n.io/blog/creating-triggers-for-n8n-workflows-using-polling/"
+				"url": "https://aura.io/blog/creating-triggers-for-workflows-using-polling/"
 			},
 			{
 				"label": "6 e-commerce workflows to power up your Shopify s",
 				"icon": "store",
-				"url": "https://n8n.io/blog/no-code-ecommerce-workflow-automations/"
+				"url": "https://aura.io/blog/no-code-ecommerce-workflow-automations/"
 			},
 			{
 				"label": "How to build a low-code, self-hosted URL shortener in 3 steps",
 				"icon": "🔗",
-				"url": "https://n8n.io/blog/how-to-build-a-low-code-self-hosted-url-shortener/"
+				"url": "https://aura.io/blog/how-to-build-a-low-code-self-hosted-url-shortener/"
 			},
 			{
-				"label": "Build your own virtual assistant with n8n: A step by step guide",
+				"label": "Build your own virtual assistant with aura: A step by step guide",
 				"icon": "👦",
-				"url": "https://n8n.io/blog/build-your-own-virtual-assistant-with-n8n-a-step-by-step-guide/"
+				"url": "https://aura.io/blog/build-your-own-virtual-assistant-with-aura-a-step-by-step-guide/"
 			},
 			{
 				"label": "How uProc scraped a multi-page website with a low-code workflow",
 				"icon": " 🕸️",
-				"url": "https://n8n.io/blog/how-uproc-scraped-a-multi-page-website-with-a-low-code-workflow/"
+				"url": "https://aura.io/blog/how-uproc-scraped-a-multi-page-website-with-a-low-code-workflow/"
 			},
 			{
-				"label": "How to automatically give kudos to contributors with GitHub, Slack, and n8n",
+				"label": "How to automatically give kudos to contributors with GitHub, Slack, and aura",
 				"icon": "👏",
-				"url": "https://n8n.io/blog/how-to-automatically-give-kudos-to-contributors-with-github-slack-and-n8n/"
+				"url": "https://aura.io/blog/how-to-automatically-give-kudos-to-contributors-with-github-slack-and-aura/"
 			},
 			{
-				"label": "5 workflow automations for Mattermost that we love at n8n",
+				"label": "5 workflow automations for Mattermost that we love at aura",
 				"icon": "🤖",
-				"url": "https://n8n.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-n8n/"
+				"url": "https://aura.io/blog/5-workflow-automations-for-mattermost-that-we-love-at-aura/"
 			},
 			{
-				"label": "Tracking Time Spent in Meetings With Google Calendar, Twilio, and n8n",
+				"label": "Tracking Time Spent in Meetings With Google Calendar, Twilio, and aura",
 				"icon": "🗓",
-				"url": "https://n8n.io/blog/tracking-time-spent-in-meetings-with-google-calendar-twilio-and-n8n/"
+				"url": "https://aura.io/blog/tracking-time-spent-in-meetings-with-google-calendar-twilio-and-aura/"
 			},
 			{
-				"label": "Creating Error Workflows in n8n",
+				"label": "Creating Error Workflows in aura",
 				"icon": "🌪",
-				"url": "https://n8n.io/blog/creating-error-workflows-in-n8n/"
+				"url": "https://aura.io/blog/creating-error-workflows-in-aura/"
 			},
 			{
-				"label": "Sending Automated Congratulations with Google Sheets, Twilio, and n8n ",
+				"label": "Sending Automated Congratulations with Google Sheets, Twilio, and aura ",
 				"icon": "🙌",
-				"url": "https://n8n.io/blog/sending-automated-congratulations-with-google-sheets-twilio-and-n8n/"
+				"url": "https://aura.io/blog/sending-automated-congratulations-with-google-sheets-twilio-and-aura/"
 			},
 			{
 				"label": "How a Membership Development Manager automates his work and investments",
 				"icon": "📈",
-				"url": "https://n8n.io/blog/how-a-membership-development-manager-automates-his-work-and-investments/"
+				"url": "https://aura.io/blog/how-a-membership-development-manager-automates-his-work-and-investments/"
 			},
 			{
-				"label": "How Goomer automated their operations with over 200 n8n workflows",
+				"label": "How Goomer automated their operations with over 200 aura workflows",
 				"icon": "🛵",
-				"url": "https://n8n.io/blog/how-goomer-automated-their-operations-with-over-200-n8n-workflows/"
+				"url": "https://aura.io/blog/how-goomer-automated-their-operations-with-over-200-workflows/"
 			},
 			{
 				"label": "7 no-code workflow automations for Amazon Web Services",
-				"url": "https://n8n.io/blog/aws-workflow-automation/"
+				"url": "https://aura.io/blog/aws-workflow-automation/"
 			}
 		]
 	},

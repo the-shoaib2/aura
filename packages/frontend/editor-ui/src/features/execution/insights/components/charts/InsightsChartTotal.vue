@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { generateBarChartOptions } from '@/features/execution/insights/chartjs.utils';
 import { GRANULARITY_DATE_FORMAT_MASK } from '@/features/execution/insights/insights.constants';
 import { useCssVar } from '@vueuse/core';

@@ -1,4 +1,4 @@
-import type { AuthenticatedRequest, User } from '@n8n/db';
+import type { AuthenticatedRequest, User } from '@aura/db';
 import type { Request, Response } from 'express';
 import type { WebSocket } from 'ws';
 

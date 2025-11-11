@@ -1,4 +1,4 @@
-import { SEND_AND_WAIT_OPERATION, type INodeProperties } from 'n8n-workflow';
+import { SEND_AND_WAIT_OPERATION, type INodeProperties } from 'workflow';
 
 import { appendAttributionOption } from '../../../../utils/descriptions';
 
@@ -209,7 +209,7 @@ export const messageFields: INodeProperties[] = [
 			{
 				...appendAttributionOption,
 				description:
-					'Whether to include the phrase “This email was sent automatically with n8n” to the end of the email',
+					'Whether to include the phrase “This email was sent automatically with aura” to the end of the email',
 			},
 			{
 				displayName: 'Attachments',
@@ -425,7 +425,7 @@ export const messageFields: INodeProperties[] = [
 				},
 				default: [],
 				description:
-					'Only return messages with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Only return messages with labels that match all of the specified label IDs. Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Search',
@@ -444,17 +444,17 @@ export const messageFields: INodeProperties[] = [
 				hint: 'Filter emails by whether they have been read or not',
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Unread and read emails',
 						value: 'both',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Unread emails only',
 						value: 'unread',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'Read emails only',
 						value: 'read',
 					},
@@ -554,6 +554,6 @@ export const messageFields: INodeProperties[] = [
 			},
 		},
 		description:
-			'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+			'Choose from the list, or specify IDs using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 	},
 ];

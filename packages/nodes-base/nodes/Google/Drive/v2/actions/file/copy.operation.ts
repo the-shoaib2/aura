@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	INodeParameterResourceLocator,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { updateDisplayOptions } from '@utils/utilities';
 

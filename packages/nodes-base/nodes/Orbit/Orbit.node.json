@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.orbit",
+	"node": "aura-nodes-base.orbit",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Analytics"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/orbit/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/orbit/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.orbit/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.orbit/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Migrating Community Metrics to Orbit using n8n",
+				"label": "Migrating Community Metrics to Orbit using aura",
 				"icon": "📈",
-				"url": "https://n8n.io/blog/migrating-community-metrics-to-orbit-using-n8n/"
+				"url": "https://aura.io/blog/migrating-community-metrics-to-orbit-using-aura/"
 			}
 		]
 	}

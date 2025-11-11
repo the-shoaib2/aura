@@ -9,25 +9,25 @@ import {
 	randomCredentialPayload,
 	testDb,
 	mockInstance,
-} from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { Project } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { Project } from '@aura/db';
 import {
 	FolderRepository,
 	ProjectRelationRepository,
 	ProjectRepository,
 	SharedCredentialsRepository,
 	SharedWorkflowRepository,
-} from '@n8n/db';
-import { Container } from '@n8n/di';
+} from '@aura/db';
+import { Container } from '@aura/di';
 import {
 	getRoleScopes,
 	PROJECT_OWNER_ROLE_SLUG,
 	type GlobalRole,
 	type ProjectRole,
 	type Scope,
-} from '@n8n/permissions';
-import { EntityNotFoundError } from '@n8n/typeorm';
+} from '@aura/permissions';
+import { EntityNotFoundError } from '@aura/typeorm';
 import { createFolder } from '@test-integration/db/folders';
 
 import {

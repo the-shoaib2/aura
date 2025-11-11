@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "ee0f6961-37a7-486d-9d75-f73aa8708750"
@@ -24,7 +24,7 @@
 				}
 			},
 			"name": "RabbitMQ",
-			"type": "n8n-nodes-base.rabbitmq",
+			"type": "aura-nodes-base.rabbitmq",
 			"typeVersion": 1,
 			"position": [500, 200],
 			"credentials": {
@@ -47,7 +47,7 @@
 				}
 			},
 			"name": "RabbitMQ1",
-			"type": "n8n-nodes-base.rabbitmq",
+			"type": "aura-nodes-base.rabbitmq",
 			"typeVersion": 1,
 			"position": [500, 350],
 			"credentials": {
@@ -71,7 +71,7 @@
 				}
 			},
 			"name": "RabbitMQ2",
-			"type": "n8n-nodes-base.rabbitmq",
+			"type": "aura-nodes-base.rabbitmq",
 			"typeVersion": 1,
 			"position": [650, 350],
 			"credentials": {
@@ -95,7 +95,7 @@
 				}
 			},
 			"name": "RabbitMQ3",
-			"type": "n8n-nodes-base.rabbitmq",
+			"type": "aura-nodes-base.rabbitmq",
 			"typeVersion": 1,
 			"position": [800, 350],
 			"credentials": {
@@ -119,7 +119,7 @@
 				}
 			},
 			"name": "RabbitMQ4",
-			"type": "n8n-nodes-base.rabbitmq",
+			"type": "aura-nodes-base.rabbitmq",
 			"typeVersion": 1,
 			"position": [950, 350],
 			"credentials": {

@@ -1,6 +1,6 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { ExecutionMetadataRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import { ExecutionMetadataRepository } from '@aura/db';
+import { Container } from '@aura/di';
 
 import { ExecutionMetadataService } from '@/services/execution-metadata.service';
 

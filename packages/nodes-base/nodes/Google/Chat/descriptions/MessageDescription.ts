@@ -1,4 +1,4 @@
-import { SEND_AND_WAIT_OPERATION, type INodeProperties } from 'n8n-workflow';
+import { SEND_AND_WAIT_OPERATION, type INodeProperties } from 'workflow';
 
 export const messageOperations: INodeProperties[] = [
 	{
@@ -57,7 +57,7 @@ export const spaceIdProperty: INodeProperties = {
 	},
 	default: '',
 	description:
-		'Space resource name, in the form "spaces/*". Example: spaces/AAAAMpdlehY. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+		'Space resource name, in the form "spaces/*". Example: spaces/AAAAMpdlehY. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 };
 
 export const messageFields: INodeProperties[] = [

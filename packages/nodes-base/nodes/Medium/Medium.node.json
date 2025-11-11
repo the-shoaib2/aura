@@ -1,24 +1,24 @@
 {
-	"node": "n8n-nodes-base.medium",
+	"node": "aura-nodes-base.medium",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Marketing"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/medium/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/medium/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.medium/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.medium/"
 			}
 		],
 		"generic": [
 			{
-				"label": "Learn how to automatically cross-post your content with n8n",
+				"label": "Learn how to automatically cross-post your content with aura",
 				"icon": "✍️",
-				"url": "https://n8n.io/blog/learn-how-to-automatically-cross-post-your-content-with-n8n/"
+				"url": "https://aura.io/blog/learn-how-to-automatically-cross-post-your-content-with-aura/"
 			}
 		]
 	}

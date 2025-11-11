@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.cloudflare",
+	"node": "aura-nodes-base.cloudflare",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/cloudflare/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/cloudflare/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.cloudflare/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.cloudflare/"
 			}
 		]
 	}

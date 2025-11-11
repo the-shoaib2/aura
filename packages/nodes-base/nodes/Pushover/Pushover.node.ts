@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes } from 'workflow';
 
 import { pushoverApiRequest } from './GenericFunctions';
 
@@ -105,7 +105,7 @@ export class Pushover implements INodeType {
 						operation: ['push'],
 					},
 				},
-				// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+				// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 				options: [
 					{
 						name: 'Lowest Priority',
@@ -234,7 +234,7 @@ export class Pushover implements INodeType {
 						},
 						default: '',
 						description:
-							'The name of one of the sounds supported by device clients to override the user\'s default sound choice. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+							'The name of one of the sounds supported by device clients to override the user\'s default sound choice. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'Timestamp',

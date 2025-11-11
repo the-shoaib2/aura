@@ -41,7 +41,7 @@
 						"id": "toolu_01Q6WVpcfX6zvaWhPXfcDXqR",
 						"name": "get_node_details",
 						"input": {
-							"nodeName": "n8n-nodes-base.manualTrigger",
+							"nodeName": "aura-nodes-base.manualTrigger",
 							"withConnections": true,
 							"withParameters": false
 						}
@@ -51,7 +51,7 @@
 						"id": "toolu_01M49Wv82nF7P3sDibwu5Lnv",
 						"name": "get_node_details",
 						"input": {
-							"nodeName": "n8n-nodes-base.set",
+							"nodeName": "aura-nodes-base.set",
 							"withConnections": true,
 							"withParameters": false
 						}
@@ -61,7 +61,7 @@
 						"id": "toolu_017uMUyBT7t5y581ZucrXNda",
 						"name": "get_node_details",
 						"input": {
-							"nodeName": "n8n-nodes-base.youTube",
+							"nodeName": "aura-nodes-base.youTube",
 							"withConnections": true,
 							"withParameters": true
 						}
@@ -71,7 +71,7 @@
 						"id": "toolu_01Xqbag1c5UTjpHDzQh8VgdP",
 						"name": "get_node_details",
 						"input": {
-							"nodeName": "@n8n/n8n-nodes-langchain.googleGemini",
+							"nodeName": "@aura/aura-nodes-langchain.googleGemini",
 							"withConnections": true,
 							"withParameters": true
 						}
@@ -81,7 +81,7 @@
 						"id": "toolu_01T9CepnnfkmhFofhovTdvEA",
 						"name": "get_node_details",
 						"input": {
-							"nodeName": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+							"nodeName": "@aura/aura-nodes-langchain.lmChatGoogleGemini",
 							"withConnections": true,
 							"withParameters": false
 						}
@@ -91,7 +91,7 @@
 						"id": "toolu_01P56fc3GhBLEyPvejzTnXTc",
 						"name": "get_node_details",
 						"input": {
-							"nodeName": "n8n-nodes-base.code",
+							"nodeName": "aura-nodes-base.code",
 							"withConnections": true,
 							"withParameters": false
 						}

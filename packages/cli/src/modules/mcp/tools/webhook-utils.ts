@@ -1,5 +1,5 @@
-import type { User } from '@n8n/db';
-import type { INode } from 'n8n-workflow';
+import type { User } from '@aura/db';
+import type { INode } from 'workflow';
 
 import {
 	hasHttpHeaderAuthDecryptedData,

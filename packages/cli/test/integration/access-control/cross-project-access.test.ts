@@ -5,8 +5,8 @@ import {
 	createWorkflow,
 	mockInstance,
 	testDb,
-} from '@n8n/backend-test-utils';
-import type { Project, User, Role } from '@n8n/db';
+} from '@aura/backend-test-utils';
+import type { Project, User, Role } from '@aura/db';
 
 import { UserManagementMailer } from '@/user-management/email';
 
@@ -405,7 +405,7 @@ describe('Cross-Project Access Control Tests', () => {
 					id: 'uuid-1234',
 					parameters: {},
 					name: 'Start',
-					type: 'n8n-nodes-base.start',
+					type: 'aura-nodes-base.start',
 					typeVersion: 1,
 					position: [240, 300],
 				},

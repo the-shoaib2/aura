@@ -3,7 +3,7 @@ import { cleanup, waitFor } from '@testing-library/vue';
 import userEvent from '@testing-library/user-event';
 import { createComponentRenderer } from '@/__tests__/render';
 import RunDataPinButton from '@/features/ndv/runData/components/RunDataPinButton.vue';
-import { STORES } from '@n8n/stores';
+import { STORES } from '@aura/stores';
 import type { usePinnedData } from '@/app/composables/usePinnedData';
 
 const renderComponent = createComponentRenderer(RunDataPinButton, {
@@ -15,7 +15,7 @@ const renderComponent = createComponentRenderer(RunDataPinButton, {
 						settings: {
 							templates: {
 								enabled: true,
-								host: 'https://api.n8n.io/api/',
+								host: 'https://api.aura.io/api/',
 							},
 						},
 					},

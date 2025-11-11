@@ -1,10 +1,10 @@
-import { mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { WorkflowEntity } from '@n8n/db';
-import { ExecutionRepository, WorkflowRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { WorkflowEntity } from '@aura/db';
+import { ExecutionRepository, WorkflowRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import { mock } from 'jest-mock-extended';
-import { ExternalSecretsProxy } from 'n8n-core';
+import { ExternalSecretsProxy } from 'aura-core';
 import type {
 	IWorkflowBase,
 	IExecuteWorkflowInfo,
@@ -12,7 +12,7 @@ import type {
 	ExecuteWorkflowOptions,
 	IRun,
 	INodeExecutionData,
-} from 'n8n-workflow';
+} from 'workflow';
 import type PCancelable from 'p-cancelable';
 
 import { ActiveExecutions } from '@/active-executions';
@@ -74,9 +74,9 @@ const getCancelablePromise = async (run: IRun) =>
 
 const processRunExecutionData = jest.fn();
 
-jest.mock('n8n-core', () => ({
+jest.mock('aura-core', () => ({
 	__esModule: true,
-	...jest.requireActual('n8n-core'),
+	...jest.requireActual('aura-core'),
 	WorkflowExecute: jest.fn().mockImplementation(() => ({
 		processRunExecutionData,
 	})),
@@ -111,10 +111,10 @@ describe('WorkflowExecuteAdditionalData', () => {
 		const payload = {
 			msg: 'test message',
 			executionId: '123',
-			nodeName: 'n8n-memory',
+			nodeName: 'aura-memory',
 			workflowId: 'workflow-id',
 			workflowName: 'workflow-name',
-			nodeType: 'n8n-memory',
+			nodeType: 'aura-memory',
 		};
 
 		additionalData.logAiEvent(eventName, payload);
@@ -206,7 +206,7 @@ describe('WorkflowExecuteAdditionalData', () => {
 			name: 'test',
 			nodes: [
 				{
-					type: 'n8n-nodes-base.executeWorkflowTrigger',
+					type: 'aura-nodes-base.executeWorkflowTrigger',
 				},
 			],
 			active: false,

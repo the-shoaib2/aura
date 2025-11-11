@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { MCP_STORE } from './mcp.constants';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import type { WorkflowListItem } from '@/Interface';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import {
 	updateMcpSettings,
 	toggleWorkflowMcpAccessApi,
@@ -14,7 +14,7 @@ import {
 import { computed, ref } from 'vue';
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { isWorkflowListItem } from '@/app/utils/typeGuards';
-import type { ApiKey, OAuthClientResponseDto, DeleteOAuthClientResponseDto } from '@n8n/api-types';
+import type { ApiKey, OAuthClientResponseDto, DeleteOAuthClientResponseDto } from '@aura/api-types';
 
 export const useMCPStore = defineStore(MCP_STORE, () => {
 	const workflowsStore = useWorkflowsStore();

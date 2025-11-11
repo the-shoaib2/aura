@@ -1,4 +1,4 @@
-import { Service } from '@n8n/di';
+import { Service } from '@aura/di';
 import { createHash, createCipheriv, createDecipheriv, randomBytes } from 'crypto';
 
 import { InstanceSettings } from '@/instance-settings';

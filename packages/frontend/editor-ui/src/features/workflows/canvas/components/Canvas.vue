@@ -26,10 +26,10 @@ import {
 	updateViewportToContainNodes,
 } from '@/app/utils/nodeViewUtils';
 import { isPresent } from '@/app/utils/typesUtils';
-import { useDeviceSupport } from '@n8n/composables/useDeviceSupport';
-import { useShortKeyPress } from '@n8n/composables/useShortKeyPress';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { useDeviceSupport } from '@aura/composables/useDeviceSupport';
+import { useShortKeyPress } from '@aura/composables/useShortKeyPress';
+import type { EventBus } from '@aura/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import type {
 	Connection,
 	Dimensions,
@@ -42,7 +42,7 @@ import type {
 import { getRectOfNodes, MarkerType, PanelPosition, useVueFlow, VueFlow } from '@vue-flow/core';
 import { MiniMap } from '@vue-flow/minimap';
 import { onKeyDown, onKeyUp, useThrottleFn } from '@vueuse/core';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'workflow';
 import {
 	computed,
 	nextTick,
@@ -1034,7 +1034,7 @@ defineExpose({
 			<MiniMap
 				v-show="isMinimapVisible"
 				data-test-id="canvas-minimap"
-				aria-label="n8n Minimap"
+				aria-label="aura Minimap"
 				:height="120"
 				:width="200"
 				:position="PanelPosition.BottomLeft"
@@ -1081,7 +1081,7 @@ defineExpose({
 	}
 
 	&.isExperimentalNdvActive {
-		/* stylelint-disable-next-line @n8n/css-var-naming */
+		/* stylelint-disable-next-line @aura/css-var-naming */
 		--canvas-zoom-compensation-factor: 0.5;
 	}
 }

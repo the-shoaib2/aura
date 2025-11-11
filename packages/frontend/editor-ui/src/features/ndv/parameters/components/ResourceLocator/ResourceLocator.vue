@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { ResourceLocatorRequestDto, ActionResultRequestDto } from '@n8n/api-types';
+import type { ResourceLocatorRequestDto, ActionResultRequestDto } from '@aura/api-types';
 import type { IResourceLocatorResultExpanded, IUpdateInformation } from '@/Interface';
 import DraggableTarget from '@/app/components/DraggableTarget.vue';
 import ExpressionParameterInput from '../ExpressionParameterInput.vue';
 import ParameterIssues from '../ParameterIssues.vue';
 import { useDebounce } from '@/app/composables/useDebounce';
-import { useI18n } from '@n8n/i18n';
-import type { BaseTextKey } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
+import type { BaseTextKey } from '@aura/i18n';
 import { useWorkflowHelpers } from '@/app/composables/useWorkflowHelpers';
 import { ndvEventBus } from '@/features/ndv/shared/ndv.eventBus';
 import { useNDVStore } from '@/features/ndv/shared/ndv.store';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { useUIStore } from '@/app/stores/ui.store';
 import { useWorkflowsStore } from '@/app/stores/workflows.store';
 import {
@@ -20,8 +20,8 @@ import {
 	hasOnlyListMode as hasOnlyListModeUtil,
 } from '@/app/utils/nodeTypesUtils';
 import stringify from 'fast-json-stable-stringify';
-import type { EventBus } from '@n8n/utils/event-bus';
-import { createEventBus } from '@n8n/utils/event-bus';
+import type { EventBus } from '@aura/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 import {
 	isResourceLocatorValue,
 	type INode,
@@ -32,7 +32,7 @@ import {
 	type INodePropertyMode,
 	type INodePropertyModeTypeOptions,
 	type NodeParameterValue,
-} from 'n8n-workflow';
+} from 'workflow';
 import {
 	computed,
 	nextTick,
@@ -67,7 +67,7 @@ import {
 	N8nOption,
 	N8nSelect,
 	N8nText,
-} from '@n8n/design-system';
+} from '@aura/design-system';
 /**
  * Regular expression to check if the error message contains credential-related phrases.
  */

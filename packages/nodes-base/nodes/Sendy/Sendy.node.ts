@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeApiError, NodeConnectionTypes, NodeOperationError } from 'workflow';
 
 import { campaignFields, campaignOperations } from './CampaignDescription';
 import { sendyApiRequest } from './GenericFunctions';
@@ -16,7 +16,7 @@ export class Sendy implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Sendy',
 		name: 'sendy',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:sendy.png',
 		group: ['input'],
 		version: 1,

@@ -1,4 +1,4 @@
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'workflow';
 import * as a from 'node:assert/strict';
 
 import type { DirectedGraph } from './directed-graph';

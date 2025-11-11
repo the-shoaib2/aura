@@ -1,11 +1,11 @@
-# n8n Test Containers - Usage Guide
+# aura Test Containers - Usage Guide
 
-A simple way to spin up n8n container stacks for development and testing.
+A simple way to spin up aura container stacks for development and testing.
 
 ## Quick Start
 
 ```bash
-# Start a basic n8n instance (SQLite database)
+# Start a basic aura instance (SQLite database)
 pnpm stack
 
 # Start with PostgreSQL database
@@ -71,7 +71,7 @@ pnpm run stack --name test-2 --queue
 
 ### Via Command Line
 ```bash
-# Pass any n8n env vars to containers
+# Pass any aura env vars to containers
 N8N_TEST_ENV='{"N8N_METRICS":"true"}' npm run stack:standard
 N8N_TEST_ENV='{"N8N_LOG_LEVEL":"debug","N8N_METRICS":"true","N8N_ENABLED_MODULES":"insights"}' npm run stack:postgres
 ```
@@ -79,7 +79,7 @@ N8N_TEST_ENV='{"N8N_LOG_LEVEL":"debug","N8N_METRICS":"true","N8N_ENABLED_MODULES
 ## Programmatic Usage
 
 ```typescript
-import { createN8NStack } from './containers/n8n-test-containers';
+import { createN8NStack } from './containers/aura-test-containers';
 
 // Simple SQLite instance
 const stack = await createN8NStack();
@@ -104,7 +104,7 @@ const stack = await createN8NStack({
 });
 
 // Use the stack
-console.log(`n8n available at: ${stack.baseUrl}`);
+console.log(`aura available at: ${stack.baseUrl}`);
 
 // Clean up when done
 await stack.stop();
@@ -124,7 +124,7 @@ await stack.stop();
 
 ## Performance Plans
 
-Simulate cloud plan resource constraints for testing. **Performance plans are SQLite-only** (like cloud n8n):
+Simulate cloud plan resource constraints for testing. **Performance plans are SQLite-only** (like cloud aura):
 
 ```bash
 # CLI usage
@@ -158,7 +158,7 @@ Resource quotas are applied using Docker's `--memory` and `--cpus` flags for rea
 ### Single Instance (Default)
 ```
 ┌─────────────┐
-│    n8n      │ ← SQLite database
+│    aura      │ ← SQLite database
 │  (SQLite)   │
 └─────────────┘
 ```
@@ -166,7 +166,7 @@ Resource quotas are applied using Docker's `--memory` and `--cpus` flags for rea
 ### With PostgreSQL
 ```
 ┌─────────────┐    ┌──────────────┐
-│    n8n      │────│ PostgreSQL   │
+│    aura      │────│ PostgreSQL   │
 │             │    │              │
 └─────────────┘    └──────────────┘
 ```
@@ -174,13 +174,13 @@ Resource quotas are applied using Docker's `--memory` and `--cpus` flags for rea
 ### Queue Mode
 ```
 ┌─────────────┐    ┌──────────────┐    ┌─────────────┐
-│  n8n-main   │────│ PostgreSQL   │    │   Redis     │
+│  aura-main   │────│ PostgreSQL   │    │   Redis     │
 └─────────────┘    └──────────────┘    └─────────────┘
 ┌─────────────┐                        │             │
-│ n8n-worker  │────────────────────────┘             │
+│ aura-worker  │────────────────────────┘             │
 └─────────────┘                                      │
 ┌─────────────┐                                      │
-│ n8n-worker  │──────────────────────────────────────┘
+│ aura-worker  │──────────────────────────────────────┘
 └─────────────┘
 ```
 
@@ -190,20 +190,20 @@ Resource quotas are applied using Docker's `--memory` and `--cpus` flags for rea
                 ────│              │ ← Entry point
                /    │ Load Balancer│
 ┌─────────────┐     └──────────────┘
-│ n8n-main-1  │────┐
+│ aura-main-1  │────┐
 └─────────────┘    │ ┌──────────────┐    ┌─────────────┐
 ┌─────────────┐    ├─│ PostgreSQL   │    │   Redis     │
-│ n8n-main-2  │────┤ └──────────────┘    └─────────────┘
+│ aura-main-2  │────┤ └──────────────┘    └─────────────┘
 └─────────────┘    │                     │             │
 ┌─────────────┐    │ ┌─────────────────────────────────┤
-│ n8n-worker  │────┘ │                                 │
+│ aura-worker  │────┘ │                                 │
 └─────────────┘      └─────────────────────────────────┘
 ```
 
 ## Cleanup
 
 ```bash
-# Remove all n8n containers and networks
+# Remove all aura containers and networks
 pnpm run stack:clean:all
 
 
@@ -218,8 +218,8 @@ pnpm run stack:clean:all
 
 ## Docker Image
 
-By default, uses the `n8nio/n8n:local` image. Override with:
+By default, uses the `auraio/aura:local` image. Override with:
 ```bash
-export N8N_DOCKER_IMAGE=n8nio/n8n:dev
+export N8N_DOCKER_IMAGE=auraio/aura:dev
 pnpm run stack
 ```

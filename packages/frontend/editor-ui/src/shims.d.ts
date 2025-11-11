@@ -4,7 +4,7 @@
 import type { VNode, ComponentPublicInstance } from 'vue';
 import type { PartialDeep } from 'type-fest';
 import type { ExternalHooks } from '@/app/types/externalHooks';
-import type { FrontendSettings } from '@n8n/api-types';
+import type { FrontendSettings } from '@aura/api-types';
 import type { Plugin as PrettierPlugin } from 'prettier';
 
 export {};
@@ -23,7 +23,7 @@ declare global {
 	interface Window {
 		BASE_PATH: string;
 		REST_ENDPOINT: string;
-		n8nExternalHooks?: PartialDeep<ExternalHooks>;
+		auraExternalHooks?: PartialDeep<ExternalHooks>;
 		preventNodeViewBeforeUnload?: boolean;
 		maxPinnedDataSize?: number;
 	}

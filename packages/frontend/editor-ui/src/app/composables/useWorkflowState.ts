@@ -23,10 +23,10 @@ import {
 	type IDataObject,
 	type INodeParameters,
 	type IWorkflowSettings,
-} from 'n8n-workflow';
+} from 'workflow';
 import { inject } from 'vue';
 import * as workflowsApi from '@/app/api/workflows';
-import { useRootStore } from '@n8n/stores/useRootStore';
+import { useRootStore } from '@aura/stores/useRootStore';
 import { isEmpty } from '@/app/utils/typesUtils';
 import { useProjectsStore } from '@/features/collaboration/projects/projects.store';
 import type { ProjectSharingData } from '@/features/collaboration/projects/projects.types';
@@ -38,7 +38,7 @@ import findLast from 'lodash/findLast';
 import { useNodeTypesStore } from '@/app/stores/nodeTypes.store';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
-import { createEventBus } from '@n8n/utils/event-bus';
+import { createEventBus } from '@aura/utils/event-bus';
 
 export type WorkflowStateBusEvents = {
 	updateNodeProperties: [WorkflowState, INodeUpdatePropertiesInformation];

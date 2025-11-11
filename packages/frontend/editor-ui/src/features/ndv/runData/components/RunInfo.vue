@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { ITaskData } from 'n8n-workflow';
+import type { ITaskData } from 'workflow';
 import { convertToDisplayDateComponents } from '@/app/utils/formatters/dateFormatter';
 import { computed } from 'vue';
-import { useI18n } from '@n8n/i18n';
-import { N8nInfoTip, N8nText } from '@n8n/design-system';
+import { useI18n } from '@aura/i18n';
+import { N8nInfoTip, N8nText } from '@aura/design-system';
 const i18n = useI18n();
 
 const props = defineProps<{
@@ -41,7 +41,7 @@ const runMetadata = computed(() => {
 		data-test-id="node-run-info-stale"
 	>
 		<span
-			v-n8n-html="
+			v-aura-html="
 				i18n.baseText(
 					hasPinData
 						? 'ndv.output.staleDataWarning.pinData'

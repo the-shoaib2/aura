@@ -1,5 +1,5 @@
-import { makeRestApiRequest } from '@n8n/rest-api-client';
-import type { IRestApiContext } from '@n8n/rest-api-client';
+import { makeRestApiRequest } from '@aura/rest-api-client';
+import type { IRestApiContext } from '@aura/rest-api-client';
 
 import type {
 	DataTableColumnCreatePayload,
@@ -7,7 +7,7 @@ import type {
 	DataTableColumn,
 	DataTableRow,
 } from '@/features/core/dataTable/dataTable.types';
-import type { DataTablesSizeResult } from 'n8n-workflow';
+import type { DataTablesSizeResult } from 'workflow';
 
 export const fetchDataTablesApi = async (
 	context: IRestApiContext,

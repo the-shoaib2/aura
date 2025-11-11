@@ -4,7 +4,7 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { getAddRow, makeAddRow } from '../../common/addRow';
 import { getDataTableProxyExecute } from '../../common/utils';

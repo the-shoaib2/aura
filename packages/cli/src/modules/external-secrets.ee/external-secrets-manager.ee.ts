@@ -1,9 +1,9 @@
-import { Logger } from '@n8n/backend-common';
-import { SettingsRepository } from '@n8n/db';
-import { OnPubSubEvent } from '@n8n/decorators';
-import { Service } from '@n8n/di';
-import { Cipher, type IExternalSecretsManager } from 'n8n-core';
-import { jsonParse, type IDataObject, ensureError, UnexpectedError } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { SettingsRepository } from '@aura/db';
+import { OnPubSubEvent } from '@aura/decorators';
+import { Service } from '@aura/di';
+import { Cipher, type IExternalSecretsManager } from 'aura-core';
+import { jsonParse, type IDataObject, ensureError, UnexpectedError } from 'workflow';
 
 import {
 	EXTERNAL_SECRETS_DB_KEY,

@@ -1,9 +1,9 @@
-# This workflow is used to build and push the Docker image for n8nio/n8n and n8nio/runners
+# This workflow is used to build and push the Docker image for auraio/aura and auraio/runners
 # - determine-build-context: Determines what needs to be built based on the trigger
 # - build-and-push-docker: This builds on both an ARM64 and AMD64 runner so the builds are native to the platform. Uses blacksmith native runners and build-push-action
 # - create_multi_arch_manifest: This creates the multi-arch manifest for the Docker image. Needed to recombine the images from the build-and-push-docker job since they are separate runners.
-# - security-scan: This scans the n8nio/n8n Docker image for security vulnerabilities using Trivy.
-# - security-scan-runners: This scans the n8nio/runners Docker image for security vulnerabilities using Trivy.
+# - security-scan: This scans the auraio/aura Docker image for security vulnerabilities using Trivy.
+# - security-scan-runners: This scans the auraio/runners Docker image for security vulnerabilities using Trivy.
 
 name: 'Docker: Build and Push'
 
@@ -17,8 +17,8 @@ on:
 
   workflow_call:
     inputs:
-      n8n_version:
-        description: 'N8N version to build'
+      aura_version:
+        description: 'aura version to build'
         required: true
         type: string
       release_type:
@@ -50,7 +50,7 @@ on:
       - ready_for_review
     paths:
       - '.github/workflows/docker-build-push.yml'
-      - 'docker/images/n8n/Dockerfile'
+      - 'docker/images/aura/Dockerfile'
       - 'docker/images/runners/Dockerfile'
       - 'docker/images/runners/Dockerfile.distroless'
 
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       release_type: ${{ steps.context.outputs.release_type }}
-      n8n_version: ${{ steps.context.outputs.n8n_version }}
+      aura_version: ${{ steps.context.outputs.aura_version }}
       push_enabled: ${{ steps.context.outputs.push_enabled }}
       build_matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
@@ -72,12 +72,12 @@ jobs:
           echo "Ref: ${{ github.ref }}"
           echo "Ref Name: ${{ github.ref_name }}"
 
-          # Check if called by another workflow (has n8n_version input)
-          if [[ -n "${{ inputs.n8n_version }}" ]]; then
+          # Check if called by another workflow (has aura_version input)
+          if [[ -n "${{ inputs.aura_version }}" ]]; then
             # workflow_call - used for releases
             {
               echo "release_type=${{ inputs.release_type }}"
-              echo "n8n_version=${{ inputs.n8n_version }}"
+              echo "aura_version=${{ inputs.aura_version }}"
               echo "push_enabled=${{ inputs.push_enabled }}"
             } >> "$GITHUB_OUTPUT"
 
@@ -85,7 +85,7 @@ jobs:
             # Nightly builds
             {
               echo "release_type=nightly"
-              echo "n8n_version=snapshot"
+              echo "aura_version=snapshot"
               echo "push_enabled=true"
             } >> "$GITHUB_OUTPUT"
 
@@ -108,7 +108,7 @@ jobs:
 
             {
               echo "release_type=branch"
-              echo "n8n_version=branch-${SAFE_BRANCH_NAME}"
+              echo "aura_version=branch-${SAFE_BRANCH_NAME}"
               echo "push_enabled=${{ inputs.push_enabled }}"
             } >> "$GITHUB_OUTPUT"
 
@@ -116,7 +116,7 @@ jobs:
             # Direct PR triggers for testing Dockerfile changes
             {
               echo "release_type=dev"
-              echo "n8n_version=pr-${{ github.event.pull_request.number }}"
+              echo "aura_version=pr-${{ github.event.pull_request.number }}"
               echo "push_enabled=false"
             } >> "$GITHUB_OUTPUT"
           fi
@@ -124,7 +124,7 @@ jobs:
           # Output summary for logs
           echo "=== Build Context Summary ==="
           echo "Release type: $(grep release_type "$GITHUB_OUTPUT" | cut -d= -f2)"
-          echo "N8N version: $(grep n8n_version "$GITHUB_OUTPUT" | cut -d= -f2)"
+          echo "aura version: $(grep aura_version "$GITHUB_OUTPUT" | cut -d= -f2)"
           echo "Push enabled: $(grep push_enabled "$GITHUB_OUTPUT" | cut -d= -f2)"
 
       - name: Determine build matrix
@@ -181,17 +181,17 @@ jobs:
           fetch-depth: 0
 
       - name: Setup and Build
-        uses: n8n-io/n8n/.github/actions/setup-nodejs-blacksmith@f5fbbbe0a28a886451c886cac6b49192a39b0eea # v1.104.1
+        uses: aura-io/aura/.github/actions/setup-nodejs-blacksmith@f5fbbbe0a28a886451c886cac6b49192a39b0eea # v1.104.1
         with:
-          build-command: pnpm build:n8n
+          build-command: pnpm build:aura
 
       - name: Determine Docker tags
         id: determine-tags
         run: |
           RELEASE_TYPE="${{ needs.determine-build-context.outputs.release_type }}"
-          N8N_VERSION_TAG="${{ needs.determine-build-context.outputs.n8n_version }}"
-          GHCR_BASE="ghcr.io/${{ github.repository_owner }}/n8n"
-          DOCKER_BASE="${{ secrets.DOCKER_USERNAME }}/n8n"
+          aura_VERSION_TAG="${{ needs.determine-build-context.outputs.aura_version }}"
+          GHCR_BASE="ghcr.io/${{ github.repository_owner }}/aura"
+          DOCKER_BASE="${{ secrets.DOCKER_USERNAME }}/aura"
           PLATFORM="${{ matrix.platform }}"
 
           GHCR_TAGS_FOR_PUSH=""
@@ -200,22 +200,22 @@ jobs:
           PRIMARY_GHCR_MANIFEST_TAG_VALUE=""
 
           # Validate inputs
-          if [[ "$RELEASE_TYPE" == "stable" && -z "$N8N_VERSION_TAG" ]]; then
-            echo "Error: N8N_VERSION_TAG is empty for a stable release."
+          if [[ "$RELEASE_TYPE" == "stable" && -z "$aura_VERSION_TAG" ]]; then
+            echo "Error: aura_VERSION_TAG is empty for a stable release."
             exit 1
           fi
 
-          if [[ "$RELEASE_TYPE" == "branch" && -z "$N8N_VERSION_TAG" ]]; then
-            echo "Error: N8N_VERSION_TAG is empty for a branch release."
+          if [[ "$RELEASE_TYPE" == "branch" && -z "$aura_VERSION_TAG" ]]; then
+            echo "Error: aura_VERSION_TAG is empty for a branch release."
             exit 1
           fi
 
           # Determine tags based on release type
           case "$RELEASE_TYPE" in
             "stable")
-              PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${N8N_VERSION_TAG}"
+              PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${aura_VERSION_TAG}"
               GHCR_TAGS_FOR_PUSH="${PRIMARY_GHCR_MANIFEST_TAG_VALUE}-${PLATFORM}"
-              DOCKER_TAGS_FOR_PUSH="${DOCKER_BASE}:${N8N_VERSION_TAG}-${PLATFORM}"
+              DOCKER_TAGS_FOR_PUSH="${DOCKER_BASE}:${aura_VERSION_TAG}-${PLATFORM}"
               ;;
             "nightly")
               PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:nightly"
@@ -223,15 +223,15 @@ jobs:
               DOCKER_TAGS_FOR_PUSH="${DOCKER_BASE}:nightly-${PLATFORM}"
               ;;
             "branch")
-              PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${N8N_VERSION_TAG}"
+              PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${aura_VERSION_TAG}"
               GHCR_TAGS_FOR_PUSH="${PRIMARY_GHCR_MANIFEST_TAG_VALUE}-${PLATFORM}"
               # No Docker Hub tags for branch builds
               DOCKER_TAGS_FOR_PUSH=""
               ;;
             "dev"|*)
-              if [[ "$N8N_VERSION_TAG" == pr-* ]]; then
+              if [[ "$aura_VERSION_TAG" == pr-* ]]; then
                 # PR builds only go to GHCR
-                PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${N8N_VERSION_TAG}"
+                PRIMARY_GHCR_MANIFEST_TAG_VALUE="${GHCR_BASE}:${aura_VERSION_TAG}"
                 GHCR_TAGS_FOR_PUSH="${PRIMARY_GHCR_MANIFEST_TAG_VALUE}-${PLATFORM}"
                 DOCKER_TAGS_FOR_PUSH=""
               else
@@ -271,7 +271,7 @@ jobs:
         run: |
           .github/scripts/determine-runners-tags.sh \
             "${{ needs.determine-build-context.outputs.release_type }}" \
-            "${{ needs.determine-build-context.outputs.n8n_version }}" \
+            "${{ needs.determine-build-context.outputs.aura_version }}" \
             "ghcr.io/${{ github.repository_owner }}/runners" \
             "${{ secrets.DOCKER_USERNAME }}/runners" \
             "${{ matrix.platform }}" \
@@ -298,15 +298,15 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push n8n Docker image
+      - name: Build and push aura Docker image
         uses: useblacksmith/build-push-action@574eb0ee0b59c6a687ace24192f0727dfb65d6d7 # v1.2
         with:
           context: .
-          file: ./docker/images/n8n/Dockerfile
+          file: ./docker/images/aura/Dockerfile
           build-args: |
             NODE_VERSION=${{ env.NODE_VERSION }}
-            N8N_VERSION=${{ needs.determine-build-context.outputs.n8n_version }}
-            N8N_RELEASE_TYPE=${{ needs.determine-build-context.outputs.release_type }}
+            aura_VERSION=${{ needs.determine-build-context.outputs.aura_version }}
+            aura_RELEASE_TYPE=${{ needs.determine-build-context.outputs.release_type }}
           platforms: ${{ matrix.docker_platform }}
           provenance: true
           sbom: true
@@ -320,8 +320,8 @@ jobs:
           file: ./docker/images/runners/Dockerfile
           build-args: |
             NODE_VERSION=${{ env.NODE_VERSION }}
-            N8N_VERSION=${{ needs.determine-build-context.outputs.n8n_version }}
-            N8N_RELEASE_TYPE=${{ needs.determine-build-context.outputs.release_type }}
+            aura_VERSION=${{ needs.determine-build-context.outputs.aura_version }}
+            aura_RELEASE_TYPE=${{ needs.determine-build-context.outputs.release_type }}
           platforms: ${{ matrix.docker_platform }}
           provenance: true
           sbom: true
@@ -335,8 +335,8 @@ jobs:
           file: ./docker/images/runners/Dockerfile.distroless
           build-args: |
             NODE_VERSION=${{ env.NODE_VERSION }}
-            N8N_VERSION=${{ needs.determine-build-context.outputs.n8n_version }}
-            N8N_RELEASE_TYPE=${{ needs.determine-build-context.outputs.release_type }}
+            aura_VERSION=${{ needs.determine-build-context.outputs.aura_version }}
+            aura_RELEASE_TYPE=${{ needs.determine-build-context.outputs.release_type }}
           platforms: ${{ matrix.docker_platform }}
           provenance: true
           sbom: true
@@ -365,14 +365,14 @@ jobs:
         id: dockerhub_check
         run: |
           RELEASE_TYPE="${{ needs.determine-build-context.outputs.release_type }}"
-          N8N_VERSION="${{ needs.determine-build-context.outputs.n8n_version }}"
-          DOCKER_BASE="${{ secrets.DOCKER_USERNAME }}/n8n"
+          aura_VERSION="${{ needs.determine-build-context.outputs.aura_version }}"
+          DOCKER_BASE="${{ secrets.DOCKER_USERNAME }}/aura"
 
           # Determine if Docker Hub manifest is needed and construct the tag
           case "$RELEASE_TYPE" in
             "stable")
               {
-                echo "DOCKER_MANIFEST_TAG=${DOCKER_BASE}:${N8N_VERSION}"
+                echo "DOCKER_MANIFEST_TAG=${DOCKER_BASE}:${aura_VERSION}"
                 echo "CREATE_DOCKERHUB_MANIFEST=true"
               } >> "$GITHUB_OUTPUT"
               ;;
@@ -383,7 +383,7 @@ jobs:
               } >> "$GITHUB_OUTPUT"
               ;;
             "dev")
-              if [[ "$N8N_VERSION" != pr-* ]]; then
+              if [[ "$aura_VERSION" != pr-* ]]; then
                 {
                   echo "DOCKER_MANIFEST_TAG=${DOCKER_BASE}:dev"
                   echo "CREATE_DOCKERHUB_MANIFEST=true"
@@ -401,7 +401,7 @@ jobs:
         id: dockerhub_runners_check
         run: |
           RELEASE_TYPE="${{ needs.determine-build-context.outputs.release_type }}"
-          N8N_VERSION="${{ needs.determine-build-context.outputs.n8n_version }}"
+          aura_VERSION="${{ needs.determine-build-context.outputs.aura_version }}"
           DOCKER_BASE="${{ secrets.DOCKER_USERNAME }}/runners"
 
           # Generate manifest tags for both Alpine and distroless variants
@@ -411,7 +411,7 @@ jobs:
 
             case "$RELEASE_TYPE" in
               "stable")
-                echo "DOCKER_MANIFEST_TAG${OUTPUT_SUFFIX}=${DOCKER_BASE}:${N8N_VERSION}${SUFFIX}" >> "$GITHUB_OUTPUT"
+                echo "DOCKER_MANIFEST_TAG${OUTPUT_SUFFIX}=${DOCKER_BASE}:${aura_VERSION}${SUFFIX}" >> "$GITHUB_OUTPUT"
                 echo "CREATE_DOCKERHUB_MANIFEST${OUTPUT_SUFFIX}=true" >> "$GITHUB_OUTPUT"
                 ;;
               "nightly")
@@ -419,7 +419,7 @@ jobs:
                 echo "CREATE_DOCKERHUB_MANIFEST${OUTPUT_SUFFIX}=true" >> "$GITHUB_OUTPUT"
                 ;;
               "dev")
-                if [[ "$N8N_VERSION" != pr-* ]]; then
+                if [[ "$aura_VERSION" != pr-* ]]; then
                   echo "DOCKER_MANIFEST_TAG${OUTPUT_SUFFIX}=${DOCKER_BASE}:dev${SUFFIX}" >> "$GITHUB_OUTPUT"
                   echo "CREATE_DOCKERHUB_MANIFEST${OUTPUT_SUFFIX}=true" >> "$GITHUB_OUTPUT"
                 else

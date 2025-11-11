@@ -1,4 +1,4 @@
-import type { INodeProperties, IExecuteFunctions, IDataObject } from 'n8n-workflow';
+import type { INodeProperties, IExecuteFunctions, IDataObject } from 'workflow';
 
 import { updateDisplayOptions } from '../../../../../utils/utilities';
 import { reportRLC } from '../../helpers/descriptions';

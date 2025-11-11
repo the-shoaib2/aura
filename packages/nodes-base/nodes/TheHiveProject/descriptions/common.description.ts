@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 import { TLPs } from '../helpers/interfaces';
 
@@ -32,7 +32,7 @@ export const responderOptions: INodeProperties = {
 	name: 'responder',
 	type: 'options',
 	description:
-		'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+		'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 	required: true,
 	default: '',
 	typeOptions: {
@@ -98,7 +98,7 @@ export const severityOptions: INodeProperties = {
 };
 
 export const observableTypeOptions: INodeProperties = {
-	// eslint-disable-next-line n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options
+	// eslint-disable-next-line aura-nodes-base/node-param-display-name-wrong-for-dynamic-options
 	displayName: 'Data Type',
 	name: 'dataType',
 	type: 'options',
@@ -107,7 +107,7 @@ export const observableTypeOptions: INodeProperties = {
 		loadOptionsMethod: 'loadObservableTypes',
 	},
 	description:
-		'Type of the observable. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+		'Type of the observable. Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 };
 
 export const alertStatusOptions: INodeProperties = {
@@ -231,17 +231,17 @@ export const searchOptions: INodeProperties = {
 					value: 'isOwner',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'links',
 					value: 'links',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'permissions',
 					value: 'permissions',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'seen',
 					value: 'seen',
 				},
@@ -250,7 +250,7 @@ export const searchOptions: INodeProperties = {
 					value: 'shareCount',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'shares',
 					value: 'shares',
 				},
@@ -280,7 +280,7 @@ export const searchOptions: INodeProperties = {
 					value: 'actionRequiredMap',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'case',
 					value: 'case',
 				},
@@ -330,7 +330,7 @@ export const searchOptions: INodeProperties = {
 					value: 'procedureCount',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'status',
 					value: 'status',
 				},
@@ -360,7 +360,7 @@ export const searchOptions: INodeProperties = {
 					value: 'alertCount',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'alerts',
 					value: 'alerts',
 				},
@@ -369,7 +369,7 @@ export const searchOptions: INodeProperties = {
 					value: 'attachmentCount',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'contributors',
 					value: 'contributors',
 				},
@@ -402,7 +402,7 @@ export const searchOptions: INodeProperties = {
 					value: 'observableStats',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'permissions',
 					value: 'permissions',
 				},
@@ -419,7 +419,7 @@ export const searchOptions: INodeProperties = {
 					value: 'similarAlerts',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'status',
 					value: 'status',
 				},
@@ -445,7 +445,7 @@ export const searchOptions: INodeProperties = {
 			description: 'Additional data to include in the response',
 			options: [
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'links',
 					value: 'links',
 				},
@@ -471,12 +471,12 @@ export const searchOptions: INodeProperties = {
 					value: 'actionCount',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'case',
 					value: 'case',
 				},
 				{
-					// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+					// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 					name: 'task',
 					value: 'task',
 				},

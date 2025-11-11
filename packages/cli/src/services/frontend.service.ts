@@ -3,16 +3,16 @@ import type {
 	IEnterpriseSettings,
 	ITelemetrySettings,
 	N8nEnvFeatFlags,
-} from '@n8n/api-types';
-import { LicenseState, Logger, ModuleRegistry } from '@n8n/backend-common';
-import { GlobalConfig, SecurityConfig } from '@n8n/config';
-import { LICENSE_FEATURES } from '@n8n/constants';
-import { Container, Service } from '@n8n/di';
+} from '@aura/api-types';
+import { LicenseState, Logger, ModuleRegistry } from '@aura/backend-common';
+import { GlobalConfig, SecurityConfig } from '@aura/config';
+import { LICENSE_FEATURES } from '@aura/constants';
+import { Container, Service } from '@aura/di';
 import { createWriteStream } from 'fs';
 import { mkdir } from 'fs/promises';
 import uniq from 'lodash/uniq';
-import { BinaryDataConfig, InstanceSettings } from 'n8n-core';
-import type { ICredentialType, INodeTypeBaseDescription } from 'n8n-workflow';
+import { BinaryDataConfig, InstanceSettings } from 'aura-core';
+import type { ICredentialType, INodeTypeBaseDescription } from 'workflow';
 import path from 'path';
 
 import { UrlService } from './url.service';

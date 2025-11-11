@@ -6,9 +6,9 @@ import userEvent from '@testing-library/user-event';
 import { createComponentRenderer } from '@/__tests__/render';
 import { useEmitters } from '@/__tests__/utils';
 import InsightsTableWorkflows from '@/features/execution/insights/components/tables/InsightsTableWorkflows.vue';
-import type { InsightsByWorkflow } from '@n8n/api-types';
+import type { InsightsByWorkflow } from '@aura/api-types';
 
-const { emitters, addEmitter } = useEmitters<'n8nDataTableServer'>();
+const { emitters, addEmitter } = useEmitters<'auraDataTableServer'>();
 
 const mockTelemetry = {
 	track: vi.fn(),
@@ -17,7 +17,7 @@ vi.mock('@/app/composables/useTelemetry', () => ({
 	useTelemetry: () => mockTelemetry,
 }));
 
-vi.mock('@n8n/design-system', async (importOriginal) => {
+vi.mock('@aura/design-system', async (importOriginal) => {
 	const original = await importOriginal<object>();
 	return {
 		...original,
@@ -31,7 +31,7 @@ vi.mock('@n8n/design-system', async (importOriginal) => {
 				itemsPerPage: { type: Number },
 			},
 			setup(_, { emit }) {
-				addEmitter('n8nDataTableServer', emit);
+				addEmitter('auraDataTableServer', emit);
 			},
 			template: `
 				<div data-test-id="insights-table">
@@ -247,7 +247,7 @@ describe('InsightsTableWorkflows', () => {
 				sortBy: [{ id: 'workflowName', desc: false }],
 			};
 
-			emitters.n8nDataTableServer.emit('update:options', updateOptions);
+			emitters.auraDataTableServer.emit('update:options', updateOptions);
 
 			expect(emitted()).toHaveProperty('update:options');
 			expect(emitted()['update:options'][0]).toEqual([updateOptions]);

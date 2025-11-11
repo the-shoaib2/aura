@@ -3,13 +3,13 @@ import {
 	BreakingChangeInstanceRuleResult,
 	BreakingChangeReportResult,
 	BreakingChangeWorkflowRuleResult,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { Time } from '@n8n/constants';
-import { WorkflowRepository } from '@n8n/db';
-import { Container, Service } from '@n8n/di';
-import { ErrorReporter } from 'n8n-core';
-import { INode } from 'n8n-workflow';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { Time } from '@aura/constants';
+import { WorkflowRepository } from '@aura/db';
+import { Container, Service } from '@aura/di';
+import { ErrorReporter } from 'aura-core';
+import { INode } from 'workflow';
 
 import { CacheService } from '@/services/cache/cache.service';
 

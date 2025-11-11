@@ -1,32 +1,34 @@
 import { test, expect } from '../../../fixtures/base';
 
 test.describe('Node Creator Workflow Building', () => {
-	test.beforeEach(async ({ n8n }) => {
-		await n8n.start.fromBlankCanvas();
+	test.beforeEach(async ({ aura }) => {
+		await aura.start.fromBlankCanvas();
 	});
 
 	test('should append manual trigger when adding action node from canvas add button', async ({
-		n8n,
+		aura,
 	}) => {
-		await n8n.canvas.clickCanvasPlusButton();
-		await n8n.canvas.nodeCreator.searchFor('n8n');
-		await n8n.canvas.nodeCreator.selectItem('n8n');
-		await n8n.canvas.nodeCreator.selectCategoryItem('Actions');
-		await n8n.canvas.nodeCreator.selectItem('Create a credential');
-		await n8n.page.keyboard.press('Escape');
+		await aura.canvas.clickCanvasPlusButton();
+		await aura.canvas.nodeCreator.searchFor('aura');
+		await aura.canvas.nodeCreator.selectItem('aura');
+		await aura.canvas.nodeCreator.selectCategoryItem('Actions');
+		await aura.canvas.nodeCreator.selectItem('Create a credential');
+		await aura.page.keyboard.press('Escape');
 
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(2);
-		await expect(n8n.canvas.nodeConnections()).toHaveCount(1);
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(2);
+		await expect(aura.canvas.nodeConnections()).toHaveCount(1);
 	});
 
-	test('should append manual trigger when adding action node from plus button', async ({ n8n }) => {
-		await n8n.canvas.clickCanvasPlusButton();
-		await n8n.canvas.nodeCreator.searchFor('n8n');
-		await n8n.canvas.nodeCreator.selectItem('n8n');
-		await n8n.canvas.nodeCreator.selectCategoryItem('Actions');
-		await n8n.canvas.nodeCreator.selectItem('Create a credential');
-		await n8n.page.keyboard.press('Escape');
+	test('should append manual trigger when adding action node from plus button', async ({
+		aura,
+	}) => {
+		await aura.canvas.clickCanvasPlusButton();
+		await aura.canvas.nodeCreator.searchFor('aura');
+		await aura.canvas.nodeCreator.selectItem('aura');
+		await aura.canvas.nodeCreator.selectCategoryItem('Actions');
+		await aura.canvas.nodeCreator.selectItem('Create a credential');
+		await aura.page.keyboard.press('Escape');
 
-		await expect(n8n.canvas.getCanvasNodes()).toHaveCount(2);
+		await expect(aura.canvas.getCanvasNodes()).toHaveCount(2);
 	});
 });

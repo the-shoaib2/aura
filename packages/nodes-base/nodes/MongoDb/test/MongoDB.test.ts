@@ -1,10 +1,10 @@
 import { NodeTestHarness } from '@nodes-testing/node-test-harness';
 import { Collection, MongoClient } from 'mongodb';
-import type { INodeParameters, WorkflowTestData } from 'n8n-workflow';
+import type { INodeParameters, WorkflowTestData } from 'workflow';
 
 MongoClient.connect = async function () {
 	const driverInfo = {
-		name: 'n8n_crud',
+		name: 'aura_crud',
 		version: '1.2',
 	};
 	const client = new MongoClient('mongodb://localhost:27017', { driverInfo });
@@ -24,7 +24,7 @@ function buildWorkflow({
 						parameters: {},
 						id: '8b7bb389-e4ef-424a-bca1-e7ead60e43eb',
 						name: 'When clicking "Execute Workflow"',
-						type: 'n8n-nodes-base.manualTrigger',
+						type: 'aura-nodes-base.manualTrigger',
 						typeVersion: 1,
 						position: [740, 380],
 					},
@@ -32,7 +32,7 @@ function buildWorkflow({
 						parameters,
 						id: '8b7bb389-e4ef-424a-bca1-e7ead60e43ec',
 						name: 'mongoDb',
-						type: 'n8n-nodes-base.mongoDb',
+						type: 'aura-nodes-base.mongoDb',
 						typeVersion: 1.2,
 						position: [1260, 360],
 						credentials: {

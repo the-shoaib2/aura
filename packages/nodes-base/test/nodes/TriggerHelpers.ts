@@ -4,9 +4,9 @@ import { mock } from 'jest-mock-extended';
 import get from 'lodash/get';
 import merge from 'lodash/merge';
 import set from 'lodash/set';
-import { PollContext, returnJsonArray } from 'n8n-core';
-import type { InstanceSettings, ExecutionLifecycleHooks } from 'n8n-core';
-import { ScheduledTaskManager } from 'n8n-core/dist/execution-engine/scheduled-task-manager';
+import { PollContext, returnJsonArray } from 'aura-core';
+import type { InstanceSettings, ExecutionLifecycleHooks } from 'aura-core';
+import { ScheduledTaskManager } from 'aura-core/dist/execution-engine/scheduled-task-manager';
 import {
 	createDeferredPromise,
 	type IBinaryData,
@@ -24,7 +24,7 @@ import {
 	type Workflow,
 	type CronContext,
 	type Cron,
-} from 'n8n-workflow';
+} from 'workflow';
 
 const logger = mock({
 	scoped: jest.fn().mockReturnValue(

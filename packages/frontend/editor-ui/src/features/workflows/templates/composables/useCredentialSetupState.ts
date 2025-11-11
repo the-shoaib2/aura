@@ -9,7 +9,7 @@ import {
 	keyFromCredentialTypeAndName,
 	normalizeTemplateNodeCredentials,
 } from '../utils/templateTransforms';
-import type { INodeCredentialsDetails } from 'n8n-workflow';
+import type { INodeCredentialsDetails } from 'workflow';
 import type { NodeTypeProvider } from '@/app/utils/nodeTypes/nodeTypeTransforms';
 import { getNodeTypeDisplayableCredentials } from '@/app/utils/nodes/nodeTransforms';
 import sortBy from 'lodash/sortBy';

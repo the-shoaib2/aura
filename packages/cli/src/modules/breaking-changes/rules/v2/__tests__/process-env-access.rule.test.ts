@@ -33,7 +33,7 @@ describe('ProcessEnvAccessRule', () => {
 				expect.arrayContaining([
 					{
 						action: 'Remove process.env usage',
-						description: 'Replace process.env with environment variables configured in n8n',
+						description: 'Replace process.env with environment variables configured in aura',
 					},
 					{
 						action: 'Enable access if required',
@@ -47,10 +47,10 @@ describe('ProcessEnvAccessRule', () => {
 	describe('detectWorkflow()', () => {
 		it('should return no issues when no process.env usage is found', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Clean Workflow', [
-				createNode('Code', 'n8n-nodes-base.code', {
+				createNode('Code', 'aura-nodes-base.code', {
 					code: 'const data = $input.all();',
 				}),
-				createNode('HTTP', 'n8n-nodes-base.httpRequest', {
+				createNode('HTTP', 'aura-nodes-base.httpRequest', {
 					url: 'https://api.example.com',
 				}),
 			]);
@@ -65,7 +65,7 @@ describe('ProcessEnvAccessRule', () => {
 
 		it('should detect process.env in Code node', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('Code', 'n8n-nodes-base.code', {
+				createNode('Code', 'aura-nodes-base.code', {
 					code: 'const apiKey = process.env.API_KEY;\nreturn { apiKey };',
 				}),
 			]);
@@ -84,7 +84,7 @@ describe('ProcessEnvAccessRule', () => {
 
 		it('should detect process.env in node parameters/expressions', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('HTTP', 'n8n-nodes-base.httpRequest', {
+				createNode('HTTP', 'aura-nodes-base.httpRequest', {
 					url: '{{ process.env.API_URL }}',
 					authentication: 'none',
 				}),
@@ -102,13 +102,13 @@ describe('ProcessEnvAccessRule', () => {
 
 		it('should detect process.env in multiple nodes', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('Code', 'n8n-nodes-base.code', {
+				createNode('Code', 'aura-nodes-base.code', {
 					code: 'const key = process.env.KEY;',
 				}),
-				createNode('HTTP', 'n8n-nodes-base.httpRequest', {
+				createNode('HTTP', 'aura-nodes-base.httpRequest', {
 					url: '{{ process.env.API_URL }}',
 				}),
-				createNode('Set', 'n8n-nodes-base.set', {
+				createNode('Set', 'aura-nodes-base.set', {
 					values: {},
 				}),
 			]);
@@ -123,15 +123,15 @@ describe('ProcessEnvAccessRule', () => {
 		it('should not detect false positives', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
 				// Variable named 'process' but not process.env
-				createNode('Code1', 'n8n-nodes-base.code', {
+				createNode('Code1', 'aura-nodes-base.code', {
 					code: 'const process = { data: "test" }; return process;',
 				}),
 				// String containing 'process.environment' as text (not process.env)
-				createNode('Code2', 'n8n-nodes-base.code', {
+				createNode('Code2', 'aura-nodes-base.code', {
 					code: 'const message = "This string mentions process.environment but not the actual object";',
 				}),
 				// process without env
-				createNode('Code3', 'n8n-nodes-base.code', {
+				createNode('Code3', 'aura-nodes-base.code', {
 					code: 'const pid = process.pid;',
 				}),
 			]);
@@ -164,7 +164,7 @@ describe('ProcessEnvAccessRule', () => {
 			['multiple spaces with optional chaining', 'const x = process  ?.env.VAR;'],
 		])('should detect process.env with %s', async (_description, code) => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('Code', 'n8n-nodes-base.code', { code }),
+				createNode('Code', 'aura-nodes-base.code', { code }),
 			]);
 
 			const result = await rule.detectWorkflow(workflow, nodesGroupedByType);

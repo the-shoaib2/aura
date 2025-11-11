@@ -1,5 +1,5 @@
-import type { User } from '@n8n/db';
-import { Service } from '@n8n/di';
+import type { User } from '@aura/db';
+import { Service } from '@aura/di';
 
 import { AbstractPush } from './abstract.push';
 import type { PushRequest, PushResponse } from './types';

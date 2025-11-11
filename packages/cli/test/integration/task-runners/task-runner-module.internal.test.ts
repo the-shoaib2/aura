@@ -1,5 +1,5 @@
-import { TaskRunnersConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
+import { TaskRunnersConfig } from '@aura/config';
+import { Container } from '@aura/di';
 
 import { InternalTaskRunnerDisconnectAnalyzer } from '@/task-runners/internal-task-runner-disconnect-analyzer';
 import { TaskBrokerWsServer } from '@/task-runners/task-broker/task-broker-ws-server';

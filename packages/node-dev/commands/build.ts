@@ -1,17 +1,17 @@
-import { Container } from '@n8n/di';
+import { Container } from '@aura/di';
 import { Command, Flags } from '@oclif/core';
-import { InstanceSettings } from 'n8n-core';
+import { InstanceSettings } from 'aura-core';
 
 import type { IBuildOptions } from '../src';
 import { buildFiles } from '../src';
 
 export class Build extends Command {
-	static description = 'Builds credentials and nodes and copies it to n8n custom extension folder';
+	static description = 'Builds credentials and nodes and copies it to aura custom extension folder';
 
 	static examples = [
-		'$ n8n-node-dev build',
-		'$ n8n-node-dev build --destination ~/n8n-nodes',
-		'$ n8n-node-dev build --watch',
+		'$ aura-node-dev build',
+		'$ aura-node-dev build --destination ~/aura-nodes',
+		'$ aura-node-dev build --watch',
 	];
 
 	static flags = {

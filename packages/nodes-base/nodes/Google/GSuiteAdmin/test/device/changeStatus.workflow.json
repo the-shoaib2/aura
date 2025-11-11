@@ -2,7 +2,7 @@
 	"nodes": [
 		{
 			"parameters": {},
-			"type": "n8n-nodes-base.manualTrigger",
+			"type": "aura-nodes-base.manualTrigger",
 			"typeVersion": 1,
 			"position": [-180, 240],
 			"id": "db450654-d59c-4fb4-a06c-af7b971f0c14",
@@ -19,7 +19,7 @@
 					"cachedResultName": "5CC115NN33"
 				}
 			},
-			"type": "n8n-nodes-base.gSuiteAdmin",
+			"type": "aura-nodes-base.gSuiteAdmin",
 			"typeVersion": 1,
 			"position": [-320, 680],
 			"id": "d441de38-e340-495d-8177-f8bd8bb33e50",

@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'workflow';
 
 const scopes = ['webhooks:write', 'webhooks:read', 'forms:read'];
 

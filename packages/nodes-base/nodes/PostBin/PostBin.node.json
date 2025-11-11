@@ -1,12 +1,12 @@
 {
-	"node": "n8n-nodes-base.postbin",
+	"node": "aura-nodes-base.postbin",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Data & Storage"],
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.postbin/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.postbin/"
 			}
 		]
 	}

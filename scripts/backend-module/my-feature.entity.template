@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity } from '@n8n/typeorm';
+import { BaseEntity, Column, Entity } from '@aura/typeorm';
 
 @Entity()
 export class MyFeatureEntity extends BaseEntity {

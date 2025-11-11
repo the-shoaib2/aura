@@ -8,7 +8,7 @@ import {
 	type INodeTypeDescription,
 	type IPairedItemData,
 	NodeConnectionTypes,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { preparePairedItemDataArray } from '@utils/utilities';
 
@@ -119,7 +119,7 @@ export class MergeV2 implements INodeType {
 									name: 'field1',
 									type: 'string',
 									default: '',
-									// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+									// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 									placeholder: 'e.g. id',
 									hint: ' Enter the field name as text',
 									requiresDataPath: 'single',
@@ -129,7 +129,7 @@ export class MergeV2 implements INodeType {
 									name: 'field2',
 									type: 'string',
 									default: '',
-									// eslint-disable-next-line n8n-nodes-base/node-param-placeholder-miscased-id
+									// eslint-disable-next-line aura-nodes-base/node-param-placeholder-miscased-id
 									placeholder: 'e.g. id',
 									hint: ' Enter the field name as text',
 									requiresDataPath: 'single',
@@ -148,7 +148,7 @@ export class MergeV2 implements INodeType {
 					displayName: 'Output Type',
 					name: 'joinMode',
 					type: 'options',
-					// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+					// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 					options: [
 						{
 							name: 'Keep Matches',

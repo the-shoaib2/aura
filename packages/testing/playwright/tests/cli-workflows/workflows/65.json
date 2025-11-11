@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [250, 300],
 			"id": "e33d511e-ced8-4880-a890-e943c6aab5dc"
@@ -21,7 +21,7 @@
 				}
 			},
 			"name": "Spontit",
-			"type": "n8n-nodes-base.spontit",
+			"type": "aura-nodes-base.spontit",
 			"typeVersion": 1,
 			"position": [470, 300],
 			"credentials": {
@@ -39,7 +39,7 @@
 				"options": {}
 			},
 			"name": "HTTP Request",
-			"type": "n8n-nodes-base.httpRequest",
+			"type": "aura-nodes-base.httpRequest",
 			"typeVersion": 1,
 			"position": [650, 300],
 			"id": "e22a1da8-01dc-476f-b449-527888f5d58e"
@@ -59,7 +59,7 @@
 				"options": {}
 			},
 			"name": "HTML Extract",
-			"type": "n8n-nodes-base.htmlExtract",
+			"type": "aura-nodes-base.htmlExtract",
 			"typeVersion": 1,
 			"position": [850, 300],
 			"id": "641a91ef-f7a2-4f1a-8876-bd0b0cf133cb"

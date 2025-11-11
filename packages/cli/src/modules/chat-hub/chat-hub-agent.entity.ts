@@ -1,6 +1,6 @@
-import { ChatHubProvider } from '@n8n/api-types';
-import { WithTimestamps, User, CredentialsEntity } from '@n8n/db';
-import { Column, Entity, ManyToOne, JoinColumn, PrimaryGeneratedColumn } from '@n8n/typeorm';
+import { ChatHubProvider } from '@aura/api-types';
+import { WithTimestamps, User, CredentialsEntity } from '@aura/db';
+import { Column, Entity, ManyToOne, JoinColumn, PrimaryGeneratedColumn } from '@aura/typeorm';
 
 @Entity({ name: 'chat_hub_agents' })
 export class ChatHubAgent extends WithTimestamps {
@@ -52,7 +52,7 @@ export class ChatHubAgent extends WithTimestamps {
 	credential?: CredentialsEntity | null;
 
 	/*
-	 * Enum value of the LLM provider to use, e.g. 'openai', 'anthropic', 'google', 'n8n' (if applicable).
+	 * Enum value of the LLM provider to use, e.g. 'openai', 'anthropic', 'google', 'aura' (if applicable).
 	 */
 	@Column({ type: 'varchar', length: 16, nullable: true })
 	provider: ChatHubProvider;

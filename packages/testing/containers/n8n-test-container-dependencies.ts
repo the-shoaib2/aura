@@ -4,7 +4,7 @@ import { setTimeout as wait } from 'node:timers/promises';
 import type { StartedNetwork, StartedTestContainer } from 'testcontainers';
 import { GenericContainer, Wait } from 'testcontainers';
 
-import { createSilentLogConsumer } from './n8n-test-container-utils';
+import { createSilentLogConsumer } from './aura-test-container-utils';
 
 export async function setupRedis({
 	redisImage,
@@ -44,8 +44,8 @@ export async function setupPostgres({
 	const postgres = await new PostgreSqlContainer(postgresImage)
 		.withNetwork(network)
 		.withNetworkAliases('postgres')
-		.withDatabase('n8n_db')
-		.withUsername('n8n_user')
+		.withDatabase('aura_db')
+		.withUsername('aura_user')
 		.withPassword('test_password')
 		.withStartupTimeout(30000)
 		.withLabels({
@@ -89,7 +89,7 @@ export async function setupNginxLoadBalancer({
 	// Generate upstream server entries from the list of main instances.
 	const upstreamServers = Array.from(
 		{ length: mainCount },
-		(_, index) => `  server ${projectName}-n8n-main-${index + 1}:5678;`,
+		(_, index) => `  server ${projectName}-aura-main-${index + 1}:5678;`,
 	).join('\n');
 
 	// Build the NGINX configuration with dynamic upstream servers.
@@ -118,7 +118,7 @@ export async function setupNginxLoadBalancer({
 }
 
 /**
- * Builds NGINX configuration for load balancing n8n instances
+ * Builds NGINX configuration for load balancing aura instances
  * @param upstreamServers The upstream server entries to include in the configuration
  * @returns The complete NGINX configuration as a string
  */
@@ -198,7 +198,7 @@ function buildNginxConfig(upstreamServers: string): string {
 }
 
 /**
- * Builds Caddy configuration for load balancing n8n instances
+ * Builds Caddy configuration for load balancing aura instances
  * @param upstreamServers Array of upstream server addresses
  * @returns The complete Caddyfile configuration as a string
  */
@@ -252,7 +252,7 @@ export async function setupCaddyLoadBalancer({
 	// Generate upstream server addresses
 	const upstreamServers = Array.from(
 		{ length: mainCount },
-		(_, index) => `${projectName}-n8n-main-${index + 1}:5678`,
+		(_, index) => `${projectName}-aura-main-${index + 1}:5678`,
 	);
 
 	// Build the Caddy configuration
@@ -351,7 +351,7 @@ export async function setupProxyServer({
 	}
 }
 
-const TASK_RUNNER_IMAGE = 'n8nio/runners:nightly';
+const TASK_RUNNER_IMAGE = 'auraio/runners:nightly';
 
 export async function setupTaskRunner({
 	projectName,

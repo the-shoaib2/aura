@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid';
 
-import type { n8nPage } from '../pages/n8nPage';
+import type { auraPage } from '../pages/auraPage';
 
 export class ProjectComposer {
-	constructor(private readonly n8n: n8nPage) {}
+	constructor(private readonly aura: auraPage) {}
 
 	/**
 	 * Create a project and return the project name and ID. If no project name is provided, a unique name will be generated.
@@ -11,13 +11,13 @@ export class ProjectComposer {
 	 * @returns The project name and ID.
 	 */
 	async createProject(projectName?: string) {
-		await this.n8n.page.getByTestId('universal-add').click();
-		await this.n8n.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click();
-		await this.n8n.notifications.waitForNotificationAndClose('saved successfully');
-		await this.n8n.page.waitForLoadState();
+		await this.aura.page.getByTestId('universal-add').click();
+		await this.aura.page.getByTestId('navigation-menu-item').filter({ hasText: 'Project' }).click();
+		await this.aura.notifications.waitForNotificationAndClose('saved successfully');
+		await this.aura.page.waitForLoadState();
 		const projectNameUnique = projectName ?? `Project ${nanoid(8)}`;
-		await this.n8n.projectSettings.fillProjectName(projectNameUnique);
-		await this.n8n.projectSettings.clickSaveButton();
+		await this.aura.projectSettings.fillProjectName(projectNameUnique);
+		await this.aura.projectSettings.clickSaveButton();
 		const projectId = this.extractProjectIdFromPage('projects', 'settings');
 		return { projectName: projectNameUnique, projectId };
 	}
@@ -35,8 +35,8 @@ export class ProjectComposer {
 		credentialFieldName: string,
 		credentialValue: string,
 	) {
-		await this.n8n.sideBar.openNewCredentialDialogForProject(projectName);
-		await this.n8n.credentials.createCredentialFromCredentialPicker(credentialType, {
+		await this.aura.sideBar.openNewCredentialDialogForProject(projectName);
+		await this.aura.credentials.createCredentialFromCredentialPicker(credentialType, {
 			[credentialFieldName]: credentialValue,
 		});
 	}
@@ -48,6 +48,6 @@ export class ProjectComposer {
 	}
 
 	extractProjectIdFromPage(beforeWord: string, afterWord: string): string {
-		return this.extractIdFromUrl(this.n8n.page.url(), beforeWord, afterWord);
+		return this.extractIdFromUrl(this.aura.page.url(), beforeWord, afterWord);
 	}
 }

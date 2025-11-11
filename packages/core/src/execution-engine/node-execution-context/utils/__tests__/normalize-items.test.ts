@@ -1,5 +1,5 @@
-import { ApplicationError } from '@n8n/errors';
-import type { IBinaryData, INodeExecutionData } from 'n8n-workflow';
+import { ApplicationError } from '@aura/errors';
+import type { IBinaryData, INodeExecutionData } from 'workflow';
 
 import { normalizeItems } from '../normalize-items';
 

@@ -10,7 +10,7 @@ import type {
 	Workflow,
 	WorkflowActivateMode,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import { TriggerContext } from '../trigger-context';
 

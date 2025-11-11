@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import {
 	generateLinearGradient,
 	generateLineChartOptions,
@@ -9,7 +9,7 @@ import {
 	INSIGHTS_UNIT_MAPPING,
 } from '@/features/execution/insights/insights.constants';
 import { transformInsightsAverageRunTime } from '@/features/execution/insights/insights.utils';
-import { smartDecimal } from '@n8n/utils/number/smartDecimal';
+import { smartDecimal } from '@aura/utils/number/smartDecimal';
 import { type ChartData, Filler, type ScriptableContext } from 'chart.js';
 import { computed } from 'vue';
 import { Line } from 'vue-chartjs';

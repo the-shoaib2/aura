@@ -1,4 +1,4 @@
-import { Get, Post, RestController, GlobalScope, Middleware } from '@n8n/decorators';
+import { Get, Post, RestController, GlobalScope, Middleware } from '@aura/decorators';
 import { Request, Response, NextFunction } from 'express';
 
 import { NotFoundError } from '@/errors/response-errors/not-found.error';

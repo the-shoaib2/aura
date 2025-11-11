@@ -15,7 +15,7 @@ const versionChangelogFile = resolve(baseDir, `CHANGELOG-${packageJson.version}.
 const changelogStream = conventionalChangelog({
 	preset: 'angular',
 	releaseCount: 1,
-	tagPrefix: 'n8n@',
+	tagPrefix: 'aura@',
 	transform: (commit, callback) => {
 		const hasNoChangelogInHeader = commit.header.includes('(no-changelog)');
 		const isBenchmarkScope = commit.scope === 'benchmark';

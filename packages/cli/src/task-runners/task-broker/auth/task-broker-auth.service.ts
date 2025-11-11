@@ -1,6 +1,6 @@
-import { GlobalConfig } from '@n8n/config';
-import { Time } from '@n8n/constants';
-import { Service } from '@n8n/di';
+import { GlobalConfig } from '@aura/config';
+import { Time } from '@aura/constants';
+import { Service } from '@aura/di';
 import { randomBytes, timingSafeEqual } from 'crypto';
 
 import { CacheService } from '@/services/cache/cache.service';

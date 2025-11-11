@@ -8,8 +8,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeConnectionTypes, NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'workflow';
+import { NodeConnectionTypes, NodeApiError, NodeOperationError } from 'workflow';
 
 import { eventFields, eventOperations } from './EventDescription';
 import { iterableApiRequest } from './GenericFunctions';
@@ -20,7 +20,7 @@ export class Iterable implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Iterable',
 		name: 'iterable',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
+		// eslint-disable-next-line aura-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:iterable.png',
 		group: ['input'],
 		version: 1,

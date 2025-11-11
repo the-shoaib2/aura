@@ -1,10 +1,10 @@
 # Breaking Changes Detection Module
 
-A rule-based system for detecting breaking changes before migrating to a new n8n version.
+A rule-based system for detecting breaking changes before migrating to a new aura version.
 
 ## Overview
 
-This module scans the n8n instance (workflows, configuration, environment) to identify issues that will be affected by breaking changes in the target version.
+This module scans the aura instance (workflows, configuration, environment) to identify issues that will be affected by breaking changes in the target version.
 
 ## Architecture
 
@@ -78,8 +78,8 @@ Returns:
       "lastExecutedAt": "2025-10-16T14:22:00.000Z",
       "issues": [
        {
-        "title": "Node 'n8n-nodes-base.spontit' with name 'Spontit' has been removed",
-        "description": "The node type 'n8n-nodes-base.spontit' is no longer available",
+        "title": "Node 'aura-nodes-base.spontit' with name 'Spontit' has been removed",
+        "description": "The node type 'aura-nodes-base.spontit' is no longer available",
         "level": "error",
         "nodeId": "node-123",
         "nodeName": "Spontit"
@@ -138,10 +138,10 @@ There are two types of rules you can create:
 Create your rule file in the appropriate version directory (e.g., `rules/v2/my-workflow-rule.rule.ts`):
 
 ```typescript
-import { BreakingChangeRecommendation } from '@n8n/api-types';
-import type { WorkflowEntity } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { INode } from 'n8n-workflow';
+import { BreakingChangeRecommendation } from '@aura/api-types';
+import type { WorkflowEntity } from '@aura/db';
+import { Service } from '@aura/di';
+import { INode } from 'workflow';
 
 import type {
   BreakingChangeRuleMetadata,
@@ -161,7 +161,7 @@ export class MyWorkflowRule implements IBreakingChangeWorkflowRule {
       description: 'Description of what changed in workflows',
       category: BreakingChangeCategory.workflow,
       severity: 'high',
-      documentationUrl: 'https://docs.n8n.io/migration/v2/...',
+      documentationUrl: 'https://docs.aura.io/migration/v2/...',
     };
   }
 
@@ -179,7 +179,7 @@ export class MyWorkflowRule implements IBreakingChangeWorkflowRule {
     nodesGroupedByType: Map<string, INode[]>,
   ): Promise<WorkflowDetectionReport> {
     // Check if workflow uses specific node types
-    const affectedNodes = nodesGroupedByType.get('n8n-nodes-base.someNode') ?? [];
+    const affectedNodes = nodesGroupedByType.get('aura-nodes-base.someNode') ?? [];
 
     if (affectedNodes.length === 0) {
       return { isAffected: false, issues: [] };
@@ -204,8 +204,8 @@ export class MyWorkflowRule implements IBreakingChangeWorkflowRule {
 Create your rule file in the appropriate version directory (e.g., `rules/v2/my-instance-rule.rule.ts`):
 
 ```typescript
-import { BreakingChangeRecommendation } from '@n8n/api-types';
-import { Service } from '@n8n/di';
+import { BreakingChangeRecommendation } from '@aura/api-types';
+import { Service } from '@aura/di';
 
 import type {
   BreakingChangeRuleMetadata,
@@ -225,7 +225,7 @@ export class MyInstanceRule implements IBreakingChangeInstanceRule {
       description: 'Description of what changed at instance level',
       category: BreakingChangeCategory.instance,
       severity: 'critical',
-      documentationUrl: 'https://docs.n8n.io/migration/v2/...',
+      documentationUrl: 'https://docs.aura.io/migration/v2/...',
     };
   }
 

@@ -7,7 +7,7 @@ import omit from 'lodash/omit';
 import set from 'lodash/set';
 import union from 'lodash/union';
 import unset from 'lodash/unset';
-import { ApplicationError, type IDataObject, type INodeExecutionData } from 'n8n-workflow';
+import { ApplicationError, type IDataObject, type INodeExecutionData } from 'workflow';
 
 import { fuzzyCompare, preparePairedItemDataArray } from '@utils/utilities';
 

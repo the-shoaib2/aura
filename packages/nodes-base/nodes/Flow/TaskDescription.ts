@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const taskOperations: INodeProperties[] = [
 	{
@@ -145,7 +145,7 @@ export const taskFields: INodeProperties[] = [
 				default: 'text/plain',
 				options: [
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'text/plain',
 						value: 'text/plain',
 					},
@@ -154,7 +154,7 @@ export const taskFields: INodeProperties[] = [
 						value: 'text/x-markdown',
 					},
 					{
-						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						// eslint-disable-next-line aura-nodes-base/node-param-display-name-miscased
 						name: 'text/html',
 						value: 'text/html',
 					},

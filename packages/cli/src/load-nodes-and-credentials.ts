@@ -1,10 +1,10 @@
-import { inTest, isContainedWithin, Logger, ModuleRegistry } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { Container, Service } from '@n8n/di';
+import { inTest, isContainedWithin, Logger, ModuleRegistry } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { Container, Service } from '@aura/di';
 import type ParcelWatcher from '@parcel/watcher';
 import glob from 'fast-glob';
 import fsPromises from 'fs/promises';
-import type { Class, DirectoryLoader, Types } from 'n8n-core';
+import type { Class, DirectoryLoader, Types } from 'aura-core';
 import {
 	CUSTOM_EXTENSION_ENV,
 	ErrorReporter,
@@ -14,7 +14,7 @@ import {
 	LazyPackageDirectoryLoader,
 	UnrecognizedCredentialTypeError,
 	UnrecognizedNodeTypeError,
-} from 'n8n-core';
+} from 'aura-core';
 import type {
 	KnownNodesAndCredentials,
 	INodeTypeBaseDescription,
@@ -25,8 +25,8 @@ import type {
 	IVersionedNodeType,
 	INodeProperties,
 	LoadedNodesAndCredentials,
-} from 'n8n-workflow';
-import { deepCopy, NodeConnectionTypes, UnexpectedError, UserError } from 'n8n-workflow';
+} from 'workflow';
+import { deepCopy, NodeConnectionTypes, UnexpectedError, UserError } from 'workflow';
 import path from 'path';
 import picocolors from 'picocolors';
 
@@ -72,21 +72,21 @@ export class LoadNodesAndCredentials {
 
 		if (!inE2ETests) {
 			this.excludeNodes = this.excludeNodes ?? [];
-			this.excludeNodes.push('n8n-nodes-base.e2eTest');
+			this.excludeNodes.push('aura-nodes-base.e2eTest');
 		}
 
-		// Load nodes from `n8n-nodes-base`
+		// Load nodes from `aura-nodes-base`
 		const basePathsToScan = [
-			// In case "n8n" package is in same node_modules folder.
+			// In case "aura" package is in same node_modules folder.
 			path.join(CLI_DIR, '..'),
-			// In case "n8n" package is the root and the packages are
+			// In case "aura" package is the root and the packages are
 			// in the "node_modules" folder underneath it.
 			path.join(CLI_DIR, 'node_modules'),
 		];
 
 		for (const nodeModulesDir of basePathsToScan) {
-			await this.loadNodesFromNodeModules(nodeModulesDir, 'n8n-nodes-base');
-			await this.loadNodesFromNodeModules(nodeModulesDir, '@n8n/n8n-nodes-langchain');
+			await this.loadNodesFromNodeModules(nodeModulesDir, 'aura-nodes-base');
+			await this.loadNodesFromNodeModules(nodeModulesDir, '@aura/aura-nodes-langchain');
 		}
 
 		for (const dir of this.moduleRegistry.loadDirs) {
@@ -133,8 +133,8 @@ export class LoadNodesAndCredentials {
 		const installedPackagePaths = packageName
 			? await glob(packageName, globOptions)
 			: [
-					...(await glob('n8n-nodes-*', globOptions)),
-					...(await glob('@*/n8n-nodes-*', { ...globOptions, deep: 2 })),
+					...(await glob('aura-nodes-*', globOptions)),
+					...(await glob('@*/aura-nodes-*', { ...globOptions, deep: 2 })),
 				];
 
 		for (const packagePath of installedPackagePaths) {

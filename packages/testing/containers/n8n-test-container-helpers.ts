@@ -10,7 +10,7 @@ import {
 	type MailpitQuery,
 	type MailpitMessage,
 	type MailpitMessageSummary,
-} from './n8n-test-container-mailpit';
+} from './aura-test-container-mailpit';
 
 export interface LogMatch {
 	container: StartedTestContainer;

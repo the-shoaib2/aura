@@ -1,6 +1,6 @@
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import type { Completion, CompletionContext, CompletionResult } from '@codemirror/autocomplete';
-import type { CodeExecutionMode } from 'n8n-workflow';
+import type { CodeExecutionMode } from 'workflow';
 import { toValue, type MaybeRefOrGetter } from 'vue';
 import { escape } from '../utils';
 

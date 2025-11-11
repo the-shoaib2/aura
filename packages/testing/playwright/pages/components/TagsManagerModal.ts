@@ -4,13 +4,13 @@ import { BasePage } from '../BasePage';
 
 /**
  * Tags Manager Modal component for managing workflow tags.
- * Used within CanvasPage as `n8n.canvas.tagsManagerModal.*`
+ * Used within CanvasPage as `aura.canvas.tagsManagerModal.*`
  *
  * @example
  * // Access via canvas page
- * await n8n.canvas.openTagManagerModal();
- * await n8n.canvas.tagsManagerModal.clickAddNewButton();
- * await expect(n8n.canvas.tagsManagerModal.getTable()).toBeVisible();
+ * await aura.canvas.openTagManagerModal();
+ * await aura.canvas.tagsManagerModal.clickAddNewButton();
+ * await expect(aura.canvas.tagsManagerModal.getTable()).toBeVisible();
  */
 export class TagsManagerModal extends BasePage {
 	constructor(private root: Locator) {

@@ -6,7 +6,7 @@ import {
 	type INodeTypeDescription,
 	type IWebhookFunctions,
 	type IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import {
 	downloadAttachments,
@@ -55,7 +55,7 @@ export class KoBoToolboxTrigger implements INodeType {
 				required: true,
 				default: '',
 				description:
-					'Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
+					'Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>.',
 			},
 			{
 				displayName: 'Trigger On',
@@ -102,7 +102,7 @@ export class KoBoToolboxTrigger implements INodeType {
 					method: 'POST',
 					url: `/api/v2/assets/${formId}/hooks/`,
 					body: {
-						name: `n8n webhook id ${workflow.id}: ${workflow.name}`,
+						name: `aura webhook id ${workflow.id}: ${workflow.name}`,
 						endpoint: webhookUrl,
 						email_notification: true,
 					},

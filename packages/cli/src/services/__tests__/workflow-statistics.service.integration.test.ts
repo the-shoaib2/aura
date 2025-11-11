@@ -1,23 +1,18 @@
-import { getPersonalProject, createWorkflow, testDb, mockInstance } from '@n8n/backend-test-utils';
-import { GlobalConfig } from '@n8n/config';
-import type { IWorkflowDb, Project, WorkflowEntity, User } from '@n8n/db';
-import { WorkflowStatisticsRepository } from '@n8n/db';
-import { Container } from '@n8n/di';
+import { getPersonalProject, createWorkflow, testDb, mockInstance } from '@aura/backend-test-utils';
+import { GlobalConfig } from '@aura/config';
+import type { IWorkflowDb, Project, WorkflowEntity, User } from '@aura/db';
+import { WorkflowStatisticsRepository } from '@aura/db';
+import { Container } from '@aura/di';
 import {
 	QueryFailedError,
 	type DataSource,
 	type EntityManager,
 	type EntityMetadata,
-} from '@n8n/typeorm';
+} from '@aura/typeorm';
 import { createUser } from '@test-integration/db/users';
 import { mocked } from 'jest-mock';
 import { mock } from 'jest-mock-extended';
-import {
-	type ExecutionStatus,
-	type INode,
-	type IRun,
-	type WorkflowExecuteMode,
-} from 'n8n-workflow';
+import { type ExecutionStatus, type INode, type IRun, type WorkflowExecuteMode } from 'workflow';
 
 import { EventService } from '@/events/event.service';
 import { OwnershipService } from '@/services/ownership.service';
@@ -281,7 +276,7 @@ describe('WorkflowStatisticsService', () => {
 				eventService,
 			);
 			globalConfig.diagnostics.enabled = true;
-			globalConfig.deployment.type = 'n8n-testing';
+			globalConfig.deployment.type = 'aura-testing';
 			mocked(ownershipService.getWorkflowProjectCached).mockResolvedValue(project);
 			mocked(ownershipService.getPersonalProjectOwnerCached).mockResolvedValue(user);
 		});
@@ -318,7 +313,7 @@ describe('WorkflowStatisticsService', () => {
 		test('should emit event with no `userId` if workflow is owned by team project', async () => {
 			const workflowId = '123';
 			mocked(ownershipService.getPersonalProjectOwnerCached).mockResolvedValueOnce(null);
-			const node = mock<INode>({ id: '123', type: 'n8n-nodes-base.noOp', credentials: {} });
+			const node = mock<INode>({ id: '123', type: 'aura-nodes-base.noOp', credentials: {} });
 
 			await workflowStatisticsService.nodeFetchedData(workflowId, node);
 

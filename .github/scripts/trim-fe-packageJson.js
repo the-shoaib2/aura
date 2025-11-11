@@ -7,12 +7,12 @@ const trimPackageJson = (packageName) => {
 	const { scripts, peerDependencies, devDependencies, dependencies, ...packageJson } = require(
 		filePath,
 	);
-	if (packageName === 'frontend/@n8n/chat') {
+	if (packageName === 'frontend/@aura/chat') {
 		packageJson.dependencies = dependencies;
 	}
 	writeFileSync(filePath, JSON.stringify(packageJson, null, 2) + '\n', 'utf-8');
 };
 
-trimPackageJson('frontend/@n8n/chat');
-trimPackageJson('frontend/@n8n/design-system');
+trimPackageJson('frontend/@aura/chat');
+trimPackageJson('frontend/@aura/design-system');
 trimPackageJson('frontend/editor-ui');

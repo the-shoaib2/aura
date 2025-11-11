@@ -1,8 +1,8 @@
-import { GlobalConfig } from '@n8n/config';
-import type { PublicUser } from '@n8n/db';
-import { Service } from '@n8n/di';
-import { InstanceSettings } from 'n8n-core';
-import type { FeatureFlags, ITelemetryTrackProperties } from 'n8n-workflow';
+import { GlobalConfig } from '@aura/config';
+import type { PublicUser } from '@aura/db';
+import { Service } from '@aura/di';
+import { InstanceSettings } from 'aura-core';
+import type { FeatureFlags, ITelemetryTrackProperties } from 'workflow';
 import type { PostHog } from 'posthog-node';
 
 @Service()

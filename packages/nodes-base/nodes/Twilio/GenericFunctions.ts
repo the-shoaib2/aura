@@ -6,7 +6,7 @@ import type {
 	IRequestOptions,
 	IHttpRequestOptions,
 	ILoadOptionsFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 /**
  * Make an API request to Twilio

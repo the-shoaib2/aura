@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'workflow';
 
 export const updateEmployeeSharedDescription = (sync = false): INodeProperties[] => {
 	let elements: INodeProperties[] = [
@@ -65,7 +65,7 @@ export const updateEmployeeSharedDescription = (sync = false): INodeProperties[]
 			name: 'department',
 			type: 'options',
 			description:
-				'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+				'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 			typeOptions: {
 				loadOptionsMethod: 'getDepartments',
 			},
@@ -76,7 +76,7 @@ export const updateEmployeeSharedDescription = (sync = false): INodeProperties[]
 			name: 'division',
 			type: 'options',
 			description:
-				'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+				'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 			typeOptions: {
 				loadOptionsMethod: 'getDivisions',
 			},
@@ -153,7 +153,7 @@ export const updateEmployeeSharedDescription = (sync = false): INodeProperties[]
 			name: 'location',
 			type: 'options',
 			description:
-				'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+				'Choose from the list, or specify an ID using an <a href="https://docs.aura.io/code/expressions/">expression</a>',
 			typeOptions: {
 				loadOptionsMethod: 'getEmployeeLocations',
 			},
@@ -190,7 +190,7 @@ export const updateEmployeeSharedDescription = (sync = false): INodeProperties[]
 			name: 'paidPer',
 			type: 'options',
 
-			// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
+			// eslint-disable-next-line aura-nodes-base/node-param-options-type-unsorted-items
 			options: [
 				{
 					name: 'Hour',

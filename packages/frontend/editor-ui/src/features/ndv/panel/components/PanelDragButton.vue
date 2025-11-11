@@ -2,7 +2,7 @@
 import Draggable from '@/app/components/Draggable.vue';
 import type { XYPosition } from '@/Interface';
 
-import { N8nIcon } from '@n8n/design-system';
+import { N8nIcon } from '@aura/design-system';
 defineProps<{
 	canMoveRight: boolean;
 	canMoveLeft: boolean;

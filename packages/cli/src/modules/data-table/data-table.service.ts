@@ -8,10 +8,10 @@ import type {
 	UpsertDataTableRowDto,
 	UpdateDataTableDto,
 	UpdateDataTableRowDto,
-} from '@n8n/api-types';
-import { Logger } from '@n8n/backend-common';
-import { ProjectRelationRepository, type User } from '@n8n/db';
-import { Service } from '@n8n/di';
+} from '@aura/api-types';
+import { Logger } from '@aura/backend-common';
+import { ProjectRelationRepository, type User } from '@aura/db';
+import { Service } from '@aura/di';
 import { DateTime } from 'luxon';
 import type {
 	DataTableColumnJsType,
@@ -25,8 +25,8 @@ import type {
 	DataTableInfoById,
 	DataTableColumnType,
 	DataTableRowReturnWithState,
-} from 'n8n-workflow';
-import { DATA_TABLE_SYSTEM_COLUMN_TYPE_MAP, validateFieldType } from 'n8n-workflow';
+} from 'workflow';
+import { DATA_TABLE_SYSTEM_COLUMN_TYPE_MAP, validateFieldType } from 'workflow';
 
 import { RoleService } from '@/services/role.service';
 

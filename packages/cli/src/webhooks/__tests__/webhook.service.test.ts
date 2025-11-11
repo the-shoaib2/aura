@@ -1,8 +1,8 @@
-import { WebhookEntity } from '@n8n/db';
-import type { WebhookRepository } from '@n8n/db';
+import { WebhookEntity } from '@aura/db';
+import type { WebhookRepository } from '@aura/db';
 import { mock } from 'jest-mock-extended';
-import type { INode, INodeType, IWebhookData, IWorkflowExecuteAdditionalData } from 'n8n-workflow';
-import { Workflow } from 'n8n-workflow';
+import type { INode, INodeType, IWebhookData, IWorkflowExecuteAdditionalData } from 'workflow';
+import { Workflow } from 'workflow';
 import { v4 as uuid } from 'uuid';
 
 import config from '@/config';
@@ -229,7 +229,7 @@ describe('WebhookService', () => {
 		test('should return webhooks for node with webhook definitions', async () => {
 			const node = {
 				name: 'Webhook',
-				type: 'n8n-nodes-base.webhook',
+				type: 'aura-nodes-base.webhook',
 				disabled: false,
 			} as INode;
 
@@ -266,7 +266,7 @@ describe('WebhookService', () => {
 			nodes: [
 				mock<INode>({
 					name: 'Webhook',
-					type: 'n8n-nodes-base.webhook',
+					type: 'aura-nodes-base.webhook',
 					typeVersion: 1,
 					parameters: {},
 				}),
@@ -414,7 +414,7 @@ describe('WebhookService', () => {
 
 			const node = mock<INode>({
 				name: 'Webhook',
-				type: 'n8n-nodes-base.webhook',
+				type: 'aura-nodes-base.webhook',
 			});
 
 			const nodeType = mock<INodeType>({
@@ -450,7 +450,7 @@ describe('WebhookService', () => {
 
 			const nodeWithWebhookId = mock<INode>({
 				name: 'Webhook',
-				type: 'n8n-nodes-base.webhook',
+				type: 'aura-nodes-base.webhook',
 			});
 
 			const nodeType = mock<INodeType>({
@@ -486,7 +486,7 @@ describe('WebhookService', () => {
 
 			const nodeWithWebhookId = mock<INode>({
 				name: 'Webhook',
-				type: 'n8n-nodes-base.webhook',
+				type: 'aura-nodes-base.webhook',
 				disabled: false,
 				webhookId: 'test-webhook-id',
 			});

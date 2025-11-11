@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from '@n8n/i18n';
+import { useI18n } from '@aura/i18n';
 import { useTelemetry } from '@/app/composables/useTelemetry';
 import { useToast } from '@/app/composables/useToast';
 import { useCredentialsStore } from '@/features/credentials/credentials.store';
@@ -8,17 +8,17 @@ import { useProjectsStore } from '@/features/collaboration/projects/projects.sto
 import { useSettingsStore } from '@/app/stores/settings.store';
 import { useUsersStore } from '@/features/settings/users/users.store';
 import { computed, ref } from 'vue';
-import { OPEN_AI_API_CREDENTIAL_TYPE } from 'n8n-workflow';
-import { N8nButton, N8nCallout, N8nText } from '@n8n/design-system';
+import { OPEN_AI_API_CREDENTIAL_TYPE } from 'workflow';
+import { N8nButton, N8nCallout, N8nText } from '@aura/design-system';
 type Props = {
 	credentialTypeName?: string;
 };
 
 const props = defineProps<Props>();
 
-const LANGCHAIN_NODES_PREFIX = '@n8n/n8n-nodes-langchain.';
+const LANGCHAIN_NODES_PREFIX = '@aura/aura-nodes-langchain.';
 
-const N8N_NODES_PREFIX = '@n8n/n8n-nodes.';
+const N8N_NODES_PREFIX = '@aura/aura-nodes.';
 
 const NODES_WITH_OPEN_AI_API_CREDENTIAL = [
 	`${LANGCHAIN_NODES_PREFIX}openAi`,

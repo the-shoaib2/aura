@@ -1,15 +1,15 @@
 import { RESPONSE_ERROR_MESSAGES } from '@/constants';
-import { inProduction } from '@n8n/backend-common';
-import { GlobalConfig } from '@n8n/config';
-import { type BooleanLicenseFeature } from '@n8n/constants';
-import type { AuthenticatedRequest } from '@n8n/db';
-import { ControllerRegistryMetadata } from '@n8n/decorators';
-import type { AccessScope, Controller, RateLimit, StaticRouterMetadata } from '@n8n/decorators';
-import { Container, Service } from '@n8n/di';
+import { inProduction } from '@aura/backend-common';
+import { GlobalConfig } from '@aura/config';
+import { type BooleanLicenseFeature } from '@aura/constants';
+import type { AuthenticatedRequest } from '@aura/db';
+import { ControllerRegistryMetadata } from '@aura/decorators';
+import type { AccessScope, Controller, RateLimit, StaticRouterMetadata } from '@aura/decorators';
+import { Container, Service } from '@aura/di';
 import { Router } from 'express';
 import type { Application, Request, Response, RequestHandler } from 'express';
 import { rateLimit as expressRateLimit } from 'express-rate-limit';
-import { UnexpectedError } from 'n8n-workflow';
+import { UnexpectedError } from 'workflow';
 import type { ZodClass } from 'zod-class';
 
 import { NotFoundError } from './errors/response-errors/not-found.error';

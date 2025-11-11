@@ -1,7 +1,7 @@
 import { SecretsManager, type SecretsManagerClientConfig } from '@aws-sdk/client-secrets-manager';
-import { Logger } from '@n8n/backend-common';
-import { Container } from '@n8n/di';
-import type { INodeProperties } from 'n8n-workflow';
+import { Logger } from '@aura/backend-common';
+import { Container } from '@aura/di';
+import type { INodeProperties } from 'workflow';
 
 import { DOCS_HELP_NOTICE, EXTERNAL_SECRETS_NAME_REGEX } from '../constants';
 import { UnknownAuthTypeError } from '../errors/unknown-auth-type.error';

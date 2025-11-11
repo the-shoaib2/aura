@@ -1,4 +1,4 @@
-import type { IHttpRequestMethods } from 'n8n-workflow';
+import type { IHttpRequestMethods } from 'workflow';
 
 import * as search from '../../../../v2/actions/fileFolder/search.operation';
 import * as transport from '../../../../v2/transport';

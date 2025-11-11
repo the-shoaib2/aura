@@ -51,7 +51,7 @@ describe('FileAccessRule', () => {
 
 		it('should detect ReadWriteFile node usage', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('Read File', 'n8n-nodes-base.readWriteFile'),
+				createNode('Read File', 'aura-nodes-base.readWriteFile'),
 			]);
 
 			const result = await rule.detectWorkflow(workflow, nodesGroupedByType);
@@ -59,7 +59,7 @@ describe('FileAccessRule', () => {
 			expect(result.isAffected).toBe(true);
 			expect(result.issues).toHaveLength(1);
 			expect(result.issues[0]).toMatchObject({
-				title: "File access node 'n8n-nodes-base.readWriteFile' with name 'Read File' affected",
+				title: "File access node 'aura-nodes-base.readWriteFile' with name 'Read File' affected",
 				description: 'File access for this node is now restricted to configured directories.',
 				level: 'warning',
 			});
@@ -67,22 +67,23 @@ describe('FileAccessRule', () => {
 
 		it('should detect ReadBinaryFiles node usage', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('Read Binary', 'n8n-nodes-base.readBinaryFiles'),
+				createNode('Read Binary', 'aura-nodes-base.readBinaryFiles'),
 			]);
 
 			const result = await rule.detectWorkflow(workflow, nodesGroupedByType);
 
 			expect(result.isAffected).toBe(true);
 			expect(result.issues[0]).toMatchObject({
-				title: "File access node 'n8n-nodes-base.readBinaryFiles' with name 'Read Binary' affected",
+				title:
+					"File access node 'aura-nodes-base.readBinaryFiles' with name 'Read Binary' affected",
 				level: 'warning',
 			});
 		});
 
 		it('should detect both file access nodes in the same workflow', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('Read File', 'n8n-nodes-base.readWriteFile'),
-				createNode('Read Binary', 'n8n-nodes-base.readBinaryFiles'),
+				createNode('Read File', 'aura-nodes-base.readWriteFile'),
+				createNode('Read Binary', 'aura-nodes-base.readBinaryFiles'),
 			]);
 
 			const result = await rule.detectWorkflow(workflow, nodesGroupedByType);
@@ -91,11 +92,12 @@ describe('FileAccessRule', () => {
 			expect(result.issues).toEqual(
 				expect.arrayContaining([
 					expect.objectContaining({
-						title: "File access node 'n8n-nodes-base.readWriteFile' with name 'Read File' affected",
+						title:
+							"File access node 'aura-nodes-base.readWriteFile' with name 'Read File' affected",
 					}),
 					expect.objectContaining({
 						title:
-							"File access node 'n8n-nodes-base.readBinaryFiles' with name 'Read Binary' affected",
+							"File access node 'aura-nodes-base.readBinaryFiles' with name 'Read Binary' affected",
 					}),
 				]),
 			);
@@ -103,9 +105,9 @@ describe('FileAccessRule', () => {
 
 		it('should only flag file access nodes, not other nodes', async () => {
 			const { workflow, nodesGroupedByType } = createWorkflow('wf-1', 'Test Workflow', [
-				createNode('Read File', 'n8n-nodes-base.readWriteFile'),
-				createNode('HTTP', 'n8n-nodes-base.httpRequest'),
-				createNode('Code', 'n8n-nodes-base.code'),
+				createNode('Read File', 'aura-nodes-base.readWriteFile'),
+				createNode('HTTP', 'aura-nodes-base.httpRequest'),
+				createNode('Code', 'aura-nodes-base.code'),
 			]);
 
 			const result = await rule.detectWorkflow(workflow, nodesGroupedByType);

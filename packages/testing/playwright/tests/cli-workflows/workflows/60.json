@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [170, 350],
 			"id": "f7f8b0e2-b017-4579-b9e0-3ba533335d3a"
@@ -22,7 +22,7 @@
 				}
 			},
 			"name": "Taiga",
-			"type": "n8n-nodes-base.taiga",
+			"type": "aura-nodes-base.taiga",
 			"typeVersion": 1,
 			"position": [350, 350],
 			"credentials": {
@@ -43,7 +43,7 @@
 				}
 			},
 			"name": "Taiga1",
-			"type": "n8n-nodes-base.taiga",
+			"type": "aura-nodes-base.taiga",
 			"typeVersion": 1,
 			"position": [500, 350],
 			"credentials": {
@@ -60,7 +60,7 @@
 				"issueId": "={{$node[\"Taiga\"].json[\"id\"]}}"
 			},
 			"name": "Taiga2",
-			"type": "n8n-nodes-base.taiga",
+			"type": "aura-nodes-base.taiga",
 			"typeVersion": 1,
 			"position": [650, 350],
 			"credentials": {
@@ -79,7 +79,7 @@
 				"filters": {}
 			},
 			"name": "Taiga3",
-			"type": "n8n-nodes-base.taiga",
+			"type": "aura-nodes-base.taiga",
 			"typeVersion": 1,
 			"position": [800, 350],
 			"credentials": {
@@ -96,7 +96,7 @@
 				"issueId": "={{$node[\"Taiga\"].json[\"id\"]}}"
 			},
 			"name": "Taiga4",
-			"type": "n8n-nodes-base.taiga",
+			"type": "aura-nodes-base.taiga",
 			"typeVersion": 1,
 			"position": [950, 350],
 			"credentials": {

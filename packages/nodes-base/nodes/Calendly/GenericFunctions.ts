@@ -6,7 +6,7 @@ import type {
 	IWebhookFunctions,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 function getAuthenticationTypeFromApiKey(data: string): 'accessToken' | 'apiKey' {
 	// The access token is a JWT, so it will always include dots to separate

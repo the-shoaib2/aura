@@ -8,7 +8,7 @@
 		{
 			"parameters": {},
 			"name": "Start",
-			"type": "n8n-nodes-base.start",
+			"type": "aura-nodes-base.start",
 			"typeVersion": 1,
 			"position": [140, 530],
 			"id": "58ef3e12-49b0-40f0-a5d1-264dfe9b0e17"
@@ -19,7 +19,7 @@
 				"limit": 1
 			},
 			"name": "NASA",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [450, 220],
 			"credentials": {
@@ -37,7 +37,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA1",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [620, 220],
 			"credentials": {
@@ -57,7 +57,7 @@
 				}
 			},
 			"name": "NASA2",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [790, 220],
 			"credentials": {
@@ -74,7 +74,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA3",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [450, 370],
 			"credentials": {
@@ -94,7 +94,7 @@
 				}
 			},
 			"name": "NASA4",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [450, 680],
 			"credentials": {
@@ -112,7 +112,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA5",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [450, 520],
 			"credentials": {
@@ -130,7 +130,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA6",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [650, 670],
 			"credentials": {
@@ -147,7 +147,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA7",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [650, 370],
 			"credentials": {
@@ -164,7 +164,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA8",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [650, 520],
 			"credentials": {
@@ -181,7 +181,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA9",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [450, 830],
 			"credentials": {
@@ -199,7 +199,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA10",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [650, 830],
 			"credentials": {
@@ -217,7 +217,7 @@
 				"additionalFields": {}
 			},
 			"name": "NASA11",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [450, 980],
 			"credentials": {
@@ -239,7 +239,7 @@
 				}
 			},
 			"name": "NASA12",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [620, 980],
 			"credentials": {
@@ -257,7 +257,7 @@
 				}
 			},
 			"name": "NASA14",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [450, 70],
 			"credentials": {
@@ -278,7 +278,7 @@
 				}
 			},
 			"name": "NASA13",
-			"type": "n8n-nodes-base.nasa",
+			"type": "aura-nodes-base.nasa",
 			"typeVersion": 1,
 			"position": [160, 790],
 			"credentials": {

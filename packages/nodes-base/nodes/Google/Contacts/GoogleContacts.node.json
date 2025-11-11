@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.googleContacts",
+	"node": "aura-nodes-base.googleContacts",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous "],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/credentials/google/oauth-single-service/"
+				"url": "https://docs.aura.io/integrations/builtin/credentials/google/oauth-single-service/"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecontacts/"
+				"url": "https://docs.aura.io/integrations/builtin/app-nodes/aura-nodes-base.googlecontacts/"
 			}
 		]
 	}

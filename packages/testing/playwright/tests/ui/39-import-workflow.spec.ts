@@ -3,8 +3,8 @@ import onboardingWorkflow from '../../workflows/Onboarding_workflow.json';
 
 test.describe('Import workflow', () => {
 	test.describe('From URL', () => {
-		test.beforeEach(async ({ n8n }) => {
-			await n8n.page.route('**/rest/workflows/from-url*', async (route) => {
+		test.beforeEach(async ({ aura }) => {
+			await aura.page.route('**/rest/workflows/from-url*', async (route) => {
 				await route.fulfill({
 					status: 200,
 					contentType: 'application/json',
@@ -13,88 +13,88 @@ test.describe('Import workflow', () => {
 			});
 		});
 
-		test('should import workflow', async ({ n8n }) => {
-			await n8n.navigate.toWorkflow('new');
-			await n8n.page.waitForLoadState('load');
+		test('should import workflow', async ({ aura }) => {
+			await aura.navigate.toWorkflow('new');
+			await aura.page.waitForLoadState('load');
 
-			await n8n.canvas.clickWorkflowMenu();
-			await n8n.canvas.clickImportFromURL();
+			await aura.canvas.clickWorkflowMenu();
+			await aura.canvas.clickImportFromURL();
 
-			await expect(n8n.canvas.getImportURLInput()).toBeVisible();
+			await expect(aura.canvas.getImportURLInput()).toBeVisible();
 
-			await n8n.canvas.fillImportURLInput('https://fakepage.com/workflow.json');
-			await n8n.canvas.clickConfirmImportURL();
+			await aura.canvas.fillImportURLInput('https://fakepage.com/workflow.json');
+			await aura.canvas.clickConfirmImportURL();
 
-			await n8n.canvas.clickZoomToFitButton();
+			await aura.canvas.clickZoomToFitButton();
 
-			await expect(n8n.canvas.getCanvasNodes()).toHaveCount(4);
+			await expect(aura.canvas.getCanvasNodes()).toHaveCount(4);
 
-			await expect(n8n.notifications.getErrorNotifications()).toHaveCount(0);
-			await expect(n8n.notifications.getSuccessNotifications()).toHaveCount(0);
+			await expect(aura.notifications.getErrorNotifications()).toHaveCount(0);
+			await expect(aura.notifications.getSuccessNotifications()).toHaveCount(0);
 		});
 
-		test('clicking outside modal should not show error toast', async ({ n8n }) => {
-			await n8n.navigate.toWorkflow('new');
-			await n8n.page.waitForLoadState('load');
+		test('clicking outside modal should not show error toast', async ({ aura }) => {
+			await aura.navigate.toWorkflow('new');
+			await aura.page.waitForLoadState('load');
 
-			await n8n.canvas.clickWorkflowMenu();
-			await n8n.canvas.clickImportFromURL();
+			await aura.canvas.clickWorkflowMenu();
+			await aura.canvas.clickImportFromURL();
 
-			await n8n.canvas.clickOutsideModal();
+			await aura.canvas.clickOutsideModal();
 
-			await expect(n8n.notifications.getErrorNotifications()).toHaveCount(0);
+			await expect(aura.notifications.getErrorNotifications()).toHaveCount(0);
 		});
 
-		test('canceling modal should not show error toast', async ({ n8n }) => {
-			await n8n.navigate.toWorkflow('new');
-			await n8n.page.waitForLoadState('load');
+		test('canceling modal should not show error toast', async ({ aura }) => {
+			await aura.navigate.toWorkflow('new');
+			await aura.page.waitForLoadState('load');
 
-			await n8n.canvas.clickWorkflowMenu();
-			await n8n.canvas.clickImportFromURL();
+			await aura.canvas.clickWorkflowMenu();
+			await aura.canvas.clickImportFromURL();
 
-			await n8n.canvas.clickCancelImportURL();
+			await aura.canvas.clickCancelImportURL();
 
-			await expect(n8n.notifications.getErrorNotifications()).toHaveCount(0);
+			await expect(aura.notifications.getErrorNotifications()).toHaveCount(0);
 		});
 
-		test('should import workflow from URL without .json extension', async ({ n8n }) => {
-			await n8n.navigate.toWorkflow('new');
-			await n8n.page.waitForLoadState('load');
+		test('should import workflow from URL without .json extension', async ({ aura }) => {
+			await aura.navigate.toWorkflow('new');
+			await aura.page.waitForLoadState('load');
 
-			await n8n.canvas.clickWorkflowMenu();
-			await n8n.canvas.clickImportFromURL();
+			await aura.canvas.clickWorkflowMenu();
+			await aura.canvas.clickImportFromURL();
 
-			await expect(n8n.canvas.getImportURLInput()).toBeVisible();
+			await expect(aura.canvas.getImportURLInput()).toBeVisible();
 
-			await n8n.canvas.fillImportURLInput('https://example.com/api/workflow');
-			await n8n.canvas.clickConfirmImportURL();
+			await aura.canvas.fillImportURLInput('https://example.com/api/workflow');
+			await aura.canvas.clickConfirmImportURL();
 
-			await n8n.canvas.clickZoomToFitButton();
+			await aura.canvas.clickZoomToFitButton();
 
-			await expect(n8n.canvas.getCanvasNodes()).toHaveCount(4);
+			await expect(aura.canvas.getCanvasNodes()).toHaveCount(4);
 
-			await expect(n8n.notifications.getErrorNotifications()).toHaveCount(0);
-			await expect(n8n.notifications.getSuccessNotifications()).toHaveCount(0);
+			await expect(aura.notifications.getErrorNotifications()).toHaveCount(0);
+			await expect(aura.notifications.getSuccessNotifications()).toHaveCount(0);
 		});
 	});
 
 	test.describe('From File', () => {
-		test('should import workflow', async ({ n8n }) => {
-			await n8n.navigate.toWorkflow('new');
-			await n8n.page.waitForLoadState('load');
+		test('should import workflow', async ({ aura }) => {
+			await aura.navigate.toWorkflow('new');
+			await aura.page.waitForLoadState('load');
 
-			await n8n.canvas.importWorkflow(
+			await aura.canvas.importWorkflow(
 				'Test_workflow-actions_paste-data.json',
 				'Import Test Workflow',
 			);
 
-			await n8n.page.waitForLoadState('load');
+			await aura.page.waitForLoadState('load');
 
-			await n8n.canvas.clickZoomToFitButton();
+			await aura.canvas.clickZoomToFitButton();
 
-			await expect(n8n.canvas.getCanvasNodes()).toHaveCount(5);
+			await expect(aura.canvas.getCanvasNodes()).toHaveCount(5);
 
-			const connections = n8n.page.getByTestId('edge');
+			const connections = aura.page.getByTestId('edge');
 			await expect(connections).toHaveCount(5);
 		});
 	});

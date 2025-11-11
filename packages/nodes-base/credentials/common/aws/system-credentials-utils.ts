@@ -1,6 +1,6 @@
-import { SecurityConfig } from '@n8n/config';
-import { Container } from '@n8n/di';
-import { ApplicationError } from 'n8n-workflow';
+import { SecurityConfig } from '@aura/config';
+import { Container } from '@aura/di';
+import { ApplicationError } from 'workflow';
 
 type Resolvers = 'environment' | 'podIdentity' | 'containerMetadata' | 'instanceMetadata';
 type RetrunData = {
@@ -82,7 +82,7 @@ async function getInstanceMetadataCredentials() {
 	try {
 		const baseUrl = 'http://169.254.169.254/latest';
 		const headers: Record<string, string> = {
-			'User-Agent': 'n8n-aws-credential',
+			'User-Agent': 'aura-aws-credential',
 		};
 
 		// Try to obtain an IMDSv2 token
@@ -91,7 +91,7 @@ async function getInstanceMetadataCredentials() {
 				method: 'PUT',
 				headers: {
 					'X-aws-ec2-metadata-token-ttl-seconds': '21600',
-					'User-Agent': 'n8n-aws-credential',
+					'User-Agent': 'aura-aws-credential',
 				},
 				signal: AbortSignal.timeout(2000),
 			});
@@ -168,7 +168,7 @@ async function getContainerMetadataCredentials() {
 
 		const authToken = envGetter('AWS_CONTAINER_AUTHORIZATION_TOKEN');
 		const headers: Record<string, string> = {
-			'User-Agent': 'n8n-aws-credential',
+			'User-Agent': 'aura-aws-credential',
 		};
 
 		if (authToken) {
@@ -217,7 +217,7 @@ async function getPodIdentityCredentials() {
 	try {
 		const authToken = envGetter('AWS_CONTAINER_AUTHORIZATION_TOKEN');
 		const headers: Record<string, string> = {
-			'User-Agent': 'n8n-aws-credential',
+			'User-Agent': 'aura-aws-credential',
 		};
 
 		if (authToken) {

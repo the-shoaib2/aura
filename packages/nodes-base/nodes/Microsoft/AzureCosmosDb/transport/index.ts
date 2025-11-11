@@ -4,7 +4,7 @@ import type {
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
 	IExecuteSingleFunctions,
-} from 'n8n-workflow';
+} from 'workflow';
 
 import type { ICosmosDbCredentials } from '../helpers/interfaces';
 
