@@ -1,0 +1,15 @@
+{
+  "name": "@aura/vm2",
+  "version": "3.9.25",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "description": "Shim package to re-export vm2 for Aura monorepo imports",
+  "dependencies": {
+    "vm2": "^3.9.25"
+  }
+}
+
+

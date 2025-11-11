@@ -205,7 +205,7 @@
     "@aura/di": "workspace:*",
     "@aura/errors": "workspace:^",
     "@aura/json-schema-to-zod": "workspace:*",
-    "@aura/typeorm": "catalog:",
+    "@n8n/typeorm": "catalog:",
     "@aura/typescript-config": "workspace:*",
     "@aura/vm2": "3.9.25",
     "@pinecone-database/pinecone": "^5.0.2",

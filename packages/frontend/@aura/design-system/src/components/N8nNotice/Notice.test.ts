@@ -1,7 +1,7 @@
 import { render } from '@testing-library/vue';
 
 import { N8nText } from '@aura/design-system/components';
-import { auraHtml } from '@aura/design-system/directives';
+import { Html } from '@aura/design-system/directives';
 
 import N8nNotice from './Notice.vue';
 
@@ -45,7 +45,7 @@ describe('components', () => {
 						},
 						global: {
 							directives: {
-								auraHtml,
+								Html,
 							},
 							components: {
 								N8nText,

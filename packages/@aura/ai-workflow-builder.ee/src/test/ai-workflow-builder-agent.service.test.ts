@@ -1,7 +1,7 @@
 import { ChatAnthropic } from '@langchain/anthropic';
 import { MemorySaver } from '@langchain/langgraph';
 import type { Logger } from '@aura/backend-common';
-import type { AiAssistantClient } from '@aura_io/ai-assistant-sdk';
+import type { AiAssistantClient } from '@n8n_io/ai-assistant-sdk';
 import { mock } from 'jest-mock-extended';
 import { Client as TracingClient } from 'langsmith';
 import type { IUser, INodeTypeDescription } from 'workflow';

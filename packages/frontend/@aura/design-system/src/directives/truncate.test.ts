@@ -1,6 +1,6 @@
 import { render } from '@testing-library/vue';
 
-import { auraTruncate } from './aura-truncate';
+import { auraTruncate } from './truncate';
 
 describe('Directive aura-truncate', () => {
 	it('should truncate text to 30 chars by default', async () => {

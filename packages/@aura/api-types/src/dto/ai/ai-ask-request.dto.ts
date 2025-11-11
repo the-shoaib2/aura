@@ -1,4 +1,4 @@
-import type { AiAssistantSDK, SchemaType } from '@aura_io/ai-assistant-sdk';
+import type { AiAssistantSDK, SchemaType } from '@n8n_io/ai-assistant-sdk';
 import { z } from 'zod';
 import { Z } from 'zod-class';
 

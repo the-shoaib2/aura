@@ -2,7 +2,7 @@ import sanitize from 'sanitize-html';
 import type { DirectiveBinding, FunctionDirective } from 'vue';
 
 /**
- * Custom directive `auraHtml` to replace v-html from Vue to sanitize content.
+ * Custom directive `Html` to replace v-html from Vue to sanitize content.
  *
  * Usage:
  * In your Vue template, use the directive `v-aura-html` passing the unsafe HTML.
@@ -28,7 +28,7 @@ const configuredSanitize = (html: string) =>
 		},
 	});
 
-export const auraHtml: FunctionDirective<HTMLElement, string> = (
+export const Html: FunctionDirective<HTMLElement, string> = (
 	el: HTMLElement,
 	binding: DirectiveBinding<string>,
 ) => {

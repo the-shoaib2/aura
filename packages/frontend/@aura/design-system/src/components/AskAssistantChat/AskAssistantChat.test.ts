@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
 
 import AskAssistantChat from './AskAssistantChat.vue';
-import { auraHtml } from '../../directives';
+import { Html } from '../../directives';
 import type { Props as MessageWrapperProps } from './messages/MessageWrapper.vue';
 import type { ChatUI } from '../../types/assistant';
 
@@ -78,7 +78,7 @@ describe('AskAssistantChat', () => {
 		const { container } = render(AskAssistantChat, {
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 				stubs: stubsWithMessageWrapper,
 			},
@@ -159,7 +159,7 @@ describe('AskAssistantChat', () => {
 		const { container } = render(AskAssistantChat, {
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 				stubs: stubsWithMessageWrapper,
 			},
@@ -185,7 +185,7 @@ describe('AskAssistantChat', () => {
 		const { container } = render(AskAssistantChat, {
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 				stubs: stubsWithMessageWrapper,
 			},
@@ -217,7 +217,7 @@ describe('AskAssistantChat', () => {
 		const { container } = render(AskAssistantChat, {
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 				stubs: stubsWithMessageWrapper,
 			},
@@ -244,7 +244,7 @@ describe('AskAssistantChat', () => {
 		const wrapper = render(AskAssistantChat, {
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 				stubs: stubsWithMessageWrapper,
 			},
@@ -273,7 +273,7 @@ describe('AskAssistantChat', () => {
 		const wrapper = render(AskAssistantChat, {
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 				stubs: stubsWithMessageWrapper,
 			},
@@ -327,7 +327,7 @@ describe('AskAssistantChat', () => {
 			MessageWrapperMock.mockClear();
 			return render(AskAssistantChat, {
 				global: {
-					directives: { auraHtml },
+					directives: { Html },
 					stubs: stubsWithCustomMessageWrapper,
 				},
 				props: {
@@ -841,7 +841,7 @@ describe('AskAssistantChat', () => {
 		) => {
 			return render(AskAssistantChat, {
 				global: {
-					directives: { auraHtml },
+					directives: { Html },
 					stubs: {
 						...Object.fromEntries(stubs.map((stub) => [stub, true])),
 						MessageWrapper: MessageWrapperStub,
@@ -1025,7 +1025,7 @@ describe('AskAssistantChat', () => {
 		it('should emit message when N8nPromptInput submits', async () => {
 			const wrapper = mount(AskAssistantChat, {
 				global: {
-					directives: { auraHtml },
+					directives: { Html },
 					stubs: {
 						...Object.fromEntries(
 							stubs.filter((stub) => stub !== 'N8nPromptInput').map((stub) => [stub, true]),

@@ -3,7 +3,7 @@ import { auraCommunityNodesPlugin } from '@aura/eslint-plugin-community-nodes';
 import { globalIgnores } from 'eslint/config';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import importPlugin from 'eslint-plugin-import-x';
-import auraNodesPlugin from 'eslint-plugin-aura-nodes-base';
+import auraNodesPlugin from 'eslint-plugin-n8n-nodes-base';
 import tseslint, { type ConfigArray } from 'typescript-eslint';
 
 function createConfig(supportCloud = true): ConfigArray {

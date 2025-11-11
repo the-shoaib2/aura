@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-import type { Workflow, Credential, DataTable } from '@/aura-api-client/aura-api-client.types';
+import type { Workflow, Credential, DataTable } from '@/api-client/api-client.types';
 import type { Scenario } from '@/types/scenario';
 
 export type LoadableScenarioData = {

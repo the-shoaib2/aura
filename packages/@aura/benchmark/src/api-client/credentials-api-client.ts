@@ -1,9 +1,9 @@
-import type { Credential } from '@/aura-api-client/aura-api-client.types';
+import type { Credential } from '@/api-client/api-client.types';
 
-import type { AuthenticatedauraApiClient } from './authenticated-aura-api-client';
+import type { AuthenticatedApiClient } from './authenticated-api-client';
 
 export class CredentialApiClient {
-	constructor(private readonly apiClient: AuthenticatedauraApiClient) {}
+	constructor(private readonly apiClient: AuthenticatedApiClient) {}
 
 	async getAllCredentials(): Promise<Credential[]> {
 		const response = await this.apiClient.get<{ count: number; data: Credential[] }>(

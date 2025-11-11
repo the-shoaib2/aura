@@ -1,6 +1,7 @@
 packages:
   - packages/*
   - packages/@aura/*
+  - packages/@aura_io/*
   - packages/frontend/**
   - packages/extensions/**
   - packages/testing/**
@@ -12,8 +13,8 @@ minimumReleaseAgeExclude:
   - eslint-plugin-storybook
 
 catalog:
-  '@aura/typeorm': 0.3.20-15
-  '@aura_io/ai-assistant-sdk': 1.17.0
+  '@n8n/typeorm': 0.3.20-15
+  '@n8n_io/ai-assistant-sdk': 1.17.0
   '@langchain/core': 0.3.68
   '@langchain/openai': 0.6.16
   '@langchain/anthropic': 0.3.26

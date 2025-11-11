@@ -50,7 +50,7 @@
     "@aura/config": "workspace:*",
     "@aura/di": "workspace:*",
     "@aura/utils": "workspace:*",
-    "@aura_io/ai-assistant-sdk": "catalog:",
+    "@n8n_io/ai-assistant-sdk": "catalog:",
     "csv-parse": "5.5.0",
     "langsmith": "^0.3.45",
     "lodash": "catalog:",

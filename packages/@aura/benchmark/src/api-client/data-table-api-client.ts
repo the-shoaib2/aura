@@ -1,9 +1,9 @@
-import type { DataTable } from '@/aura-api-client/aura-api-client.types';
+import type { DataTable } from '@/api-client/api-client.types';
 
-import type { AuthenticatedauraApiClient } from './authenticated-aura-api-client';
+import type { AuthenticatedApiClient } from './authenticated-api-client';
 
 export class DataTableApiClient {
-	constructor(private readonly apiClient: AuthenticatedauraApiClient) {}
+	constructor(private readonly apiClient: AuthenticatedApiClient) {}
 
 	async getAllDataTables(): Promise<DataTable[]> {
 		const response = await this.apiClient.get<{ data: { count: number; data: DataTable[] } }>(

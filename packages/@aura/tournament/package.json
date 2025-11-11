@@ -1,0 +1,12 @@
+{
+  "name": "@aura/tournament",
+  "version": "1.0.6",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "description": "Lightweight shim for Aura tournament evaluator used in OSS installs"
+}
+
+

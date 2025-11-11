@@ -1,7 +1,7 @@
 import { sleep } from 'zx';
 
-import { AuthenticatedN8nApiClient } from '@/aura-api-client/authenticated-aura-api-client';
-import type { N8nApiClient } from '@/aura-api-client/aura-api-client';
+import { AuthenticatedApiClient } from '@/api-client/authenticated-api-client';
+import type { ApiClient } from '@/api-client/api-client';
 import type { ScenarioDataFileLoader } from '@/scenario/scenario-data-loader';
 import { ScenarioDataImporter } from '@/test-execution/scenario-data-importer';
 import type { Scenario } from '@/types/scenario';
@@ -13,7 +13,7 @@ import type { K6Executor } from './k6-executor';
  */
 export class ScenarioRunner {
 	constructor(
-		private readonly auraClient: N8nApiClient,
+		private readonly auraClient: ApiClient,
 		private readonly dataLoader: ScenarioDataFileLoader,
 		private readonly k6Executor: K6Executor,
 		private readonly ownerConfig: {
@@ -30,7 +30,7 @@ export class ScenarioRunner {
 		console.log('Setting up owner');
 		await this.auraClient.setupOwnerIfNeeded(this.ownerConfig);
 
-		const authenticatedN8nClient = await AuthenticatedN8nApiClient.createUsingUsernameAndPassword(
+		const authenticatedN8nClient = await AuthenticatedApiClient.createUsingUsernameAndPassword(
 			this.auraClient,
 			this.ownerConfig,
 		);

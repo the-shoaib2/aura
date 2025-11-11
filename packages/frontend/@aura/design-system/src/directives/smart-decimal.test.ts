@@ -1,6 +1,6 @@
 import { render } from '@testing-library/vue';
 
-import { auraSmartDecimal } from './aura-smart-decimal';
+import { auraSmartDecimal } from './smart-decimal';
 
 describe('Directive aura-truncate', () => {
 	it('should leave number as is without decimals', async () => {

@@ -881,7 +881,7 @@
     "@types/ssh2-sftp-client": "^9.0.5",
     "@types/uuid": "catalog:",
     "@types/xml2js": "catalog:",
-    "eslint-plugin-aura-nodes-base": "^1.16.3",
+    "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "aura-core": "workspace:*"
   },
   "dependencies": {

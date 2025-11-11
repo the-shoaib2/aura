@@ -7,7 +7,7 @@ import { NoSkippedTestsRule } from './no-skipped-tests.js';
 import { NoInterpolationInRegularStringRule } from './no-interpolation-in-regular-string.js';
 import { NoPlainErrorsRule } from './no-plain-errors.js';
 import { NoDynamicImportTemplateRule } from './no-dynamic-import-template.js';
-import { MisplacedauraTypeormImportRule } from './misplaced-aura-typeorm-import.js';
+import { MisplacedTypeormImportRule } from './misplaced-typeorm-import.js';
 import { NoTypeUnsafeEventEmitterRule } from './no-type-unsafe-event-emitter.js';
 import { NoUntypedConfigClassFieldRule } from './no-untyped-config-class-field.js';
 import { NoTopLevelRelativeImportsInBackendModuleRule } from './no-top-level-relative-imports-in-backend-module.js';
@@ -27,7 +27,7 @@ export const rules = {
 	'no-interpolation-in-regular-string': NoInterpolationInRegularStringRule,
 	'no-plain-errors': NoPlainErrorsRule,
 	'no-dynamic-import-template': NoDynamicImportTemplateRule,
-	'misplaced-aura-typeorm-import': MisplacedauraTypeormImportRule,
+	'misplaced-aura-typeorm-import': MisplacedTypeormImportRule,
 	'no-type-unsafe-event-emitter': NoTypeUnsafeEventEmitterRule,
 	'no-untyped-config-class-field': NoUntypedConfigClassFieldRule,
 	'no-top-level-relative-imports-in-backend-module': NoTopLevelRelativeImportsInBackendModuleRule,

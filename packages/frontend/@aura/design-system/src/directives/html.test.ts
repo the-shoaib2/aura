@@ -1,6 +1,6 @@
 import { render } from '@testing-library/vue';
 
-import { auraHtml } from './aura-html';
+import { Html } from './html';
 
 const TestComponent = {
 	props: {
@@ -19,7 +19,7 @@ describe('Directive aura-html', () => {
 			},
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 			},
 		});
@@ -35,7 +35,7 @@ describe('Directive aura-html', () => {
 			},
 			global: {
 				directives: {
-					auraHtml,
+					Html,
 				},
 			},
 		});

@@ -1,9 +1,9 @@
-import type { AuthenticatedN8nApiClient } from '@/aura-api-client/authenticated-aura-api-client';
-import { CredentialApiClient } from '@/aura-api-client/credentials-api-client';
-import { DataTableApiClient } from '@/aura-api-client/data-table-api-client';
-import type { Workflow, Credential, DataTable } from '@/aura-api-client/aura-api-client.types';
-import { ProjectApiClient } from '@/aura-api-client/project-api-client';
-import { WorkflowApiClient } from '@/aura-api-client/workflows-api-client';
+import type { AuthenticatedApiClient } from '@/api-client/authenticated-api-client';
+import { CredentialApiClient } from '@/api-client/credentials-api-client';
+import { DataTableApiClient } from '@/api-client/data-table-api-client';
+import type { Workflow, Credential, DataTable } from '@/api-client/api-client.types';
+import { ProjectApiClient } from '@/api-client/project-api-client';
+import { WorkflowApiClient } from '@/api-client/workflows-api-client';
 import type { LoadableScenarioData } from '@/scenario/scenario-data-loader';
 
 /**
@@ -15,11 +15,11 @@ export class ScenarioDataImporter {
 	private readonly dataTableApiClient: DataTableApiClient;
 	private readonly projectApiClient: ProjectApiClient;
 
-	constructor(auraApiClient: AuthenticatedN8nApiClient) {
-		this.workflowApiClient = new WorkflowApiClient(auraApiClient);
-		this.credentialApiClient = new CredentialApiClient(auraApiClient);
-		this.dataTableApiClient = new DataTableApiClient(auraApiClient);
-		this.projectApiClient = new ProjectApiClient(auraApiClient);
+	constructor(ApiClient: AuthenticatedApiClient) {
+		this.workflowApiClient = new WorkflowApiClient(ApiClient);
+		this.credentialApiClient = new CredentialApiClient(ApiClient);
+		this.dataTableApiClient = new DataTableApiClient(ApiClient);
+		this.projectApiClient = new ProjectApiClient(ApiClient);
 	}
 
 	private replaceValuesInObject(obj: unknown, searchText: string, targetText: string) {

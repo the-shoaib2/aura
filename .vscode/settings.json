@@ -38,5 +38,6 @@
       "mode": "auto"
     }
   ],
-  "vitest.workspaceConfig": "./vitest.workspace.ts"
+  "vitest.workspaceConfig": "./vitest.workspace.ts",
+  "vitest.disableWorkspaceWarning": true
 }

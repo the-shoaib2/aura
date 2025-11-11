@@ -1,7 +1,7 @@
 import type { AxiosError, AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 
-export class auraApiClient {
+export class ApiClient {
 	constructor(readonly apiBaseUrl: string) {}
 
 	async waitForInstanceToBecomeOnline(): Promise<void> {

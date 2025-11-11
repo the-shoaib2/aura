@@ -3,7 +3,7 @@ import { ChatPayload } from '@aura/ai-workflow-builder/dist/workflow-builder-age
 import { Logger } from '@aura/backend-common';
 import { GlobalConfig } from '@aura/config';
 import { Service } from '@aura/di';
-import { AiAssistantClient } from '@aura_io/ai-assistant-sdk';
+import { AiAssistantClient } from '@n8n_io/ai-assistant-sdk';
 import type { IUser } from 'workflow';
 
 import { N8N_VERSION } from '@/constants';

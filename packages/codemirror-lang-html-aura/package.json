@@ -1,0 +1,15 @@
+{
+  "name": "codemirror-lang-html-aura",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "description": "Shim that re-exports @codemirror/lang-html for Aura editor",
+  "dependencies": {
+    "@codemirror/lang-html": "^6.0.0"
+  }
+}
+
+

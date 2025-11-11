@@ -1,4 +1,4 @@
-declare module 'eslint-plugin-aura-nodes-base' {
+declare module 'eslint-plugin-n8n-nodes-base' {
 	import type { ESLint } from 'eslint';
 
 	const plugin: ESLint.Plugin & {

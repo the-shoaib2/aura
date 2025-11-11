@@ -2,7 +2,7 @@ import { ChatAnthropic } from '@langchain/anthropic';
 import { LangChainTracer } from '@langchain/core/tracers/tracer_langchain';
 import { Logger } from '@aura/backend-common';
 import { Service } from '@aura/di';
-import { AiAssistantClient, AiAssistantSDK } from '@aura_io/ai-assistant-sdk';
+import { AiAssistantClient, AiAssistantSDK } from '@n8n_io/ai-assistant-sdk';
 import assert from 'assert';
 import { Client as TracingClient } from 'langsmith';
 import type { IUser, INodeTypeDescription } from 'workflow';

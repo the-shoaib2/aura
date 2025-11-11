@@ -7,7 +7,7 @@ import type {
 	AiSessionMetadataResponseDto,
 } from '@aura/api-types';
 import type { AuthenticatedRequest } from '@aura/db';
-import type { AiAssistantSDK } from '@aura_io/ai-assistant-sdk';
+import type { AiAssistantSDK } from '@n8n_io/ai-assistant-sdk';
 import { mock } from 'jest-mock-extended';
 
 import { InternalServerError } from '@/errors/response-errors/internal-server.error';

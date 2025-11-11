@@ -27,7 +27,7 @@
     "@aura/db": "workspace:^",
     "@aura/di": "workspace:^",
     "@aura/permissions": "workspace:^",
-    "@aura/typeorm": "catalog:",
+    "@n8n/typeorm": "catalog:",
     "jest-mock-extended": "^3.0.4",
     "workflow": "workspace:^",
     "reflect-metadata": "catalog:",

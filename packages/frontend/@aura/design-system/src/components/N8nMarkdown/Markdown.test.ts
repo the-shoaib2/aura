@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/vue';
 
-import { auraHtml } from '@aura/design-system/directives';
+import { Html } from '@aura/design-system/directives';
 
 import N8nMarkdown from './Markdown.vue';
 
@@ -10,7 +10,7 @@ describe('components', () => {
 			const wrapper = render(N8nMarkdown, {
 				global: {
 					directives: {
-						auraHtml,
+						Html,
 					},
 				},
 				props: {
@@ -28,7 +28,7 @@ describe('components', () => {
 			const wrapper = render(N8nMarkdown, {
 				global: {
 					directives: {
-						auraHtml,
+						Html,
 					},
 				},
 				props: {
@@ -46,7 +46,7 @@ describe('components', () => {
 			const wrapper = render(N8nMarkdown, {
 				global: {
 					directives: {
-						auraHtml,
+						Html,
 					},
 				},
 				props: {
@@ -70,7 +70,7 @@ describe('components', () => {
 			const wrapper = render(N8nMarkdown, {
 				global: {
 					directives: {
-						auraHtml,
+						Html,
 					},
 				},
 				props: {
@@ -90,7 +90,7 @@ describe('components', () => {
 			const wrapper = render(N8nMarkdown, {
 				global: {
 					directives: {
-						auraHtml,
+						Html,
 					},
 				},
 				props: {

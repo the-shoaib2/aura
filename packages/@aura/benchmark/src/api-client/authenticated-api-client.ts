@@ -1,8 +1,8 @@
 import type { AxiosRequestConfig } from 'axios';
 
-import { auraApiClient } from './aura-api-client';
+import { ApiClient } from './api-client';
 
-export class AuthenticatedauraApiClient extends auraApiClient {
+export class AuthenticatedApiClient extends ApiClient {
 	constructor(
 		apiBaseUrl: string,
 		private readonly authCookie: string,
@@ -11,12 +11,12 @@ export class AuthenticatedauraApiClient extends auraApiClient {
 	}
 
 	static async createUsingUsernameAndPassword(
-		apiClient: auraApiClient,
+		apiClient: ApiClient,
 		loginDetails: {
 			email: string;
 			password: string;
 		},
-	): Promise<AuthenticatedauraApiClient> {
+	): Promise<AuthenticatedApiClient> {
 		const response = await apiClient.restApiRequest('/login', {
 			method: 'POST',
 			data: {
@@ -47,7 +47,7 @@ export class AuthenticatedauraApiClient extends auraApiClient {
 			);
 		}
 
-		return new AuthenticatedauraApiClient(apiClient.apiBaseUrl, authCookie);
+		return new AuthenticatedApiClient(apiClient.apiBaseUrl, authCookie);
 	}
 
 	async get<T>(endpoint: string) {

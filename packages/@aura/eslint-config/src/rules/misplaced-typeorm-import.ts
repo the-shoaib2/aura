@@ -1,6 +1,6 @@
 import { ESLintUtils } from '@typescript-eslint/utils';
 
-export const MisplacedauraTypeormImportRule = ESLintUtils.RuleCreator.withoutDocs({
+export const MisplacedTypeormImportRule = ESLintUtils.RuleCreator.withoutDocs({
 	meta: {
 		type: 'problem',
 		docs: {

@@ -11,7 +11,7 @@ import {
 } from '@aura/api-types';
 import { AuthenticatedRequest } from '@aura/db';
 import { Body, Get, Licensed, Post, RestController } from '@aura/decorators';
-import { type AiAssistantSDK, APIResponseError } from '@aura_io/ai-assistant-sdk';
+import { type AiAssistantSDK, APIResponseError } from '@n8n_io/ai-assistant-sdk';
 import { Response } from 'express';
 import { OPEN_AI_API_CREDENTIAL_TYPE } from 'workflow';
 import { strict as assert } from 'node:assert';

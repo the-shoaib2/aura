@@ -1,7 +1,7 @@
 import { Command, Flags } from '@oclif/core';
 
 import { testScenariosPath } from '@/config/common-flags';
-import { auraApiClient } from '@/aura-api-client/aura-api-client';
+import { ApiClient } from '@/api-client/api-client';
 import { ScenarioDataFileLoader } from '@/scenario/scenario-data-loader';
 import { ScenarioLoader } from '@/scenario/scenario-loader';
 import type { K6Tag } from '@/test-execution/k6-executor';
@@ -81,7 +81,7 @@ export default class RunCommand extends Command {
 		const scenarioLoader = new ScenarioLoader();
 
 		const scenarioRunner = new ScenarioRunner(
-			new auraApiClient(flags.auraBaseUrl),
+			new ApiClient(flags.auraBaseUrl),
 			new ScenarioDataFileLoader(),
 			new K6Executor({
 				duration: flags.duration,

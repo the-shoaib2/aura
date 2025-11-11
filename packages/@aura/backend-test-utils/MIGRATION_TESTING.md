@@ -33,7 +33,7 @@ Undoes the last single migration.
 
 ```typescript
 import { Container } from '@aura/di';
-import { DataSource } from '@aura/typeorm';
+import { DataSource } from '@n8n/typeorm';
 import { initDbUpToMigration, runSingleMigration } from '@aura/backend-test-utils';
 
 describe('AddUserRole1234567890 Migration', () => {

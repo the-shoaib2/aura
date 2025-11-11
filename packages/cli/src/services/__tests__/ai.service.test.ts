@@ -4,7 +4,7 @@ import type {
 	AiChatRequestDto,
 } from '@aura/api-types';
 import type { GlobalConfig } from '@aura/config';
-import { AiAssistantClient, type AiAssistantSDK } from '@aura_io/ai-assistant-sdk';
+import { AiAssistantClient, type AiAssistantSDK } from '@n8n_io/ai-assistant-sdk';
 import { mock } from 'jest-mock-extended';
 import type { IUser } from 'workflow';
 
@@ -13,7 +13,7 @@ import type { License } from '@/license';
 
 import { AiService } from '../ai.service';
 
-jest.mock('@aura_io/ai-assistant-sdk', () => ({
+jest.mock('@n8n_io/ai-assistant-sdk', () => ({
 	AiAssistantClient: jest.fn(),
 }));
 

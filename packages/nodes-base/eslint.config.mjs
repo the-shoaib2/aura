@@ -1,6 +1,6 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
 import { nodeConfig } from '@aura/eslint-config/node';
-import nodesBasePlugin from 'eslint-plugin-aura-nodes-base';
+import nodesBasePlugin from 'eslint-plugin-n8n-nodes-base';
 import { auraCommunityNodesPlugin } from '@aura/eslint-plugin-community-nodes';
 
 export default defineConfig(
