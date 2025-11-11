@@ -68,7 +68,7 @@ dependencies are installed and the packages get linked correctly. Here's a short
 
 ### Dev Container
 
-If you already have VS Code and Docker installed, you can click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/aura-io/aura) to get started. Clicking these links will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
+If you already have VS Code and Docker installed, you can click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/aura) to get started. Clicking these links will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
 
 ### Requirements
 
@@ -156,7 +156,7 @@ checked out and set up:
 4. Add the original aura repository as `upstream` to your forked repository:
 
    ```
-   git remote add upstream https://github.com/aura-io/aura.git
+   git remote add upstream https://github.com/aura.git
    ```
 
 5. Install all dependencies of all modules and link them together:
@@ -326,7 +326,7 @@ Please address the requested changes or provide feedback within 14 days. If ther
 - **Testing Requirements:**
   - PRs **must include tests**:
     - Unit tests
-    - Workflow tests for nodes (example [here](https://github.com/aura-io/aura/tree/master/packages/nodes-base/nodes/Switch/V3/test))
+    - Workflow tests for nodes (example [here](https://github.com/aura/tree/master/packages/nodes-base/nodes/Switch/V3/test))
     - UI tests (if applicable)
 - **Typos:**
   - Use a spell-checking tool, such as [**Code Spell Checker**](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker), to avoid typos.
@@ -336,7 +336,7 @@ Please address the requested changes or provide feedback within 14 days. If ther
 - **Small PRs Only:**
   - Focus on a single feature or fix per PR.
 - **Naming Convention:**
-  - Follow [aura's PR Title Conventions](https://github.com/aura-io/aura/blob/master/.github/pull_request_title_conventions.md#L36).
+  - Follow [aura's PR Title Conventions](https://github.com/aura/blob/master/.github/pull_request_title_conventions.md#L36).
 - **New Nodes:**
   - PRs that introduce new nodes will be **auto-closed** unless they are explicitly requested by the aura team and aligned with an agreed project scope. However, you can still explore [building your own nodes](https://docs.aura.io/integrations/creating-nodes/overview/), as aura offers the flexibility to create your own custom nodes.
 - **Typo-Only PRs:**
@@ -384,7 +384,7 @@ See `packages/testing/playwright/README.md` for more test commands and `packages
 
 ## Releasing
 
-To start a release, trigger [this workflow](https://github.com/aura-io/aura/actions/workflows/release-create-pr.yml) with the SemVer release type, and select a branch to cut this release from. This workflow will then:
+To start a release, trigger [this workflow](https://github.com/aura/actions/workflows/release-create-pr.yml) with the SemVer release type, and select a branch to cut this release from. This workflow will then:
 
 1. Bump versions of packages that have changed or have dependencies that have changed
 2. Update the Changelog
@@ -392,7 +392,7 @@ To start a release, trigger [this workflow](https://github.com/aura-io/aura/acti
 4. Create a new pull-request to track any further changes that need to be included in this release
 
 Once ready to release, simply merge the pull-request.
-This triggers [another workflow](https://github.com/aura-io/aura/actions/workflows/release-publish.yml), that will:
+This triggers [another workflow](https://github.com/aura/actions/workflows/release-publish.yml), that will:
 
 1. Build and publish the packages that have a new version in this release
 2. Create a new tag, and GitHub release from squashed release commit
@@ -404,7 +404,7 @@ Learn about [building nodes](https://docs.aura.io/integrations/creating-nodes/ov
 
 ## Extend documentation
 
-The repository for the aura documentation on [docs.aura.io](https://docs.aura.io) can be found [here](https://github.com/aura-io/aura-docs).
+The repository for the aura documentation on [docs.aura.io](https://docs.aura.io) can be found [here](https://github.com/aura-docs).
 
 ## Contribute workflow templates
 

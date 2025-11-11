@@ -8,7 +8,7 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 });
 
 const meta = {
-	url: 'https://github.com/aura-io/aura',
+	url: 'https://github.com/aura',
 };
 
 // Reserved vocabulary from proposal.md

@@ -8,7 +8,7 @@ info:
     email: hello@aura.io
   license:
     name: Sustainable Use License
-    url: https://github.com/aura-io/aura/blob/master/LICENSE.md
+    url: https://github.com/aura/blob/master/LICENSE.md
   version: 1.1.1
 externalDocs:
   description: aura API documentation

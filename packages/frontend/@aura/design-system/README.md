@@ -48,4 +48,4 @@ pnpm watch:theme
 
 ## License
 
-You can find the license information [here](https://github.com/aura-io/aura/blob/master/README.md#license)
+You can find the license information [here](https://github.com/aura/blob/master/README.md#license)

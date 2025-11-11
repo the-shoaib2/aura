@@ -73,7 +73,7 @@ const copyDebugInfoToClipboard = async () => {
 						<N8nText>{{ i18n.baseText('about.sourceCode') }}</N8nText>
 					</ElCol>
 					<ElCol :span="16">
-						<N8nLink to="https://github.com/aura-io/aura">https://github.com/aura-io/aura</N8nLink>
+						<N8nLink to="https://github.com/aura">https://github.com/aura</N8nLink>
 					</ElCol>
 				</ElRow>
 				<ElRow>
@@ -81,7 +81,7 @@ const copyDebugInfoToClipboard = async () => {
 						<N8nText>{{ i18n.baseText('about.license') }}</N8nText>
 					</ElCol>
 					<ElCol :span="16">
-						<N8nLink to="https://github.com/aura-io/aura/blob/master/LICENSE.md">
+						<N8nLink to="https://github.com/aura/blob/master/LICENSE.md">
 							{{ i18n.baseText('about.auraLicense') }}
 						</N8nLink>
 					</ElCol>

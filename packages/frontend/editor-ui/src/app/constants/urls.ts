@@ -13,7 +13,7 @@ export const EVALUATIONS_DOCS_URL = `https://${DOCS_DOMAIN}/advanced-ai/evaluati
 export const ERROR_WORKFLOW_DOCS_URL = `https://${DOCS_DOMAIN}/flow-logic/error-handling/#create-and-set-an-error-workflow`;
 export const TIME_SAVED_DOCS_URL = `https://${DOCS_DOMAIN}/insights/#setting-the-time-saved-by-a-workflow`;
 export const N8N_PRICING_PAGE_URL = 'https://aura.io/pricing';
-export const N8N_MAIN_GITHUB_REPO_URL = 'https://github.com/aura-io/aura';
+export const N8N_MAIN_GITHUB_REPO_URL = 'https://github.com/aura';
 export const BASE_NODE_SURVEY_URL = 'https://aura-community.typeform.com/to/BvmzxqYv#nodename=';
 export const RELEASE_NOTES_URL = 'https://docs.aura.io/release-notes/';
 export const CREATOR_HUB_URL = 'https://creators.aura.io/hub';

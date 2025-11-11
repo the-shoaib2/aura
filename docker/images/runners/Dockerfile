@@ -135,6 +135,6 @@ CMD ["javascript", "python"]
 
 LABEL org.opencontainers.image.title="aura task runners" \
       org.opencontainers.image.description="Sidecar image providing aura task runners for JavaScript and Python code execution" \
-      org.opencontainers.image.source="https://github.com/aura-io/aura" \
+      org.opencontainers.image.source="https://github.com/aura" \
       org.opencontainers.image.url="https://aura.io" \
       org.opencontainers.image.version="${aura_VERSION}"

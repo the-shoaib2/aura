@@ -26,7 +26,7 @@ for (let { name, path, version, private: isPrivate } of packages) {
 		},
 		repository: {
 			type: 'git',
-			url: 'git+https://github.com/aura-io/aura.git',
+			url: 'git+https://github.com/aura.git',
 		},
 	};
 

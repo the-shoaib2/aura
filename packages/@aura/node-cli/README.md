@@ -282,7 +282,7 @@ npm run build
 
 ## 🤝 Contributing
 
-Found an issue? Contribute to the [aura repository](https://github.com/aura-io/aura) on GitHub.
+Found an issue? Contribute to the [aura repository](https://github.com/aura) on GitHub.
 
 ---
 

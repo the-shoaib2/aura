@@ -12,10 +12,10 @@ Create a aura workflow which you want to execute via chat. The workflow has to b
 
 Open the **Chat Trigger** node and add your domain to the **Allowed Origins (CORS)** field. This makes sure that only requests from your domain are accepted.
 
-[See example workflow](https://github.com/aura-io/aura/blob/master/packages/%40aura/chat/resources/workflow.json)
+[See example workflow](https://github.com/aura/blob/master/packages/%40aura/chat/resources/workflow.json)
 
 To use streaming responses, you need to enable the **Streaming response** response mode in the **Chat Trigger** node.
-[See example workflow with streaming](https://github.com/aura-io/aura/blob/master/packages/%40aura/chat/resources/workflow-streaming.json)
+[See example workflow with streaming](https://github.com/aura/blob/master/packages/%40aura/chat/resources/workflow-streaming.json)
 
 > Make sure the workflow is **Active.**
 
@@ -286,4 +286,4 @@ body,
 
 ## License
 
-You can find the license information [here](https://github.com/aura-io/aura/blob/master/README.md#license)
+You can find the license information [here](https://github.com/aura/blob/master/README.md#license)

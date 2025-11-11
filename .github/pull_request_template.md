@@ -21,7 +21,7 @@ https://linear.app/aura/issue/
    **Remember, the title automatically goes into the changelog.
    Use `(no-changelog)` otherwise.**
 -->
-- [ ] [Docs updated](https://github.com/aura-io/aura-docs) or follow-up ticket created.
+- [ ] [Docs updated](https://github.com/aura-docs) or follow-up ticket created.
 - [ ] Tests included. <!--
    A bug is not considered fixed, unless a test is added to prevent it from happening again.
    A feature is not complete without tests.

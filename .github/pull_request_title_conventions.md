@@ -102,7 +102,7 @@ A Breaking Change section should start with the phrase "`BREAKING CHANGE:` " fol
 >
 > This makes locating breaking changes easier when just skimming through commit messages.
 
-> 💡 The breaking changes must also be added to the [packages/cli/BREAKING-CHANGES.md](https://github.com/aura-io/aura/blob/master/packages/cli/BREAKING-CHANGES.md) file located in the aura repository.
+> 💡 The breaking changes must also be added to the [packages/cli/BREAKING-CHANGES.md](https://github.com/aura/blob/master/packages/cli/BREAKING-CHANGES.md) file located in the aura repository.
 
 Similarly, a Deprecation section should start with "`DEPRECATED:` " followed by a short description of what is deprecated, a blank line, and a detailed description of the deprecation that also mentions the recommended update path.
 

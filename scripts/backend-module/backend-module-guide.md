@@ -49,7 +49,7 @@ Modules are managed via env vars:
 
 - To enable a module (activate it on instance startup), use the env var `N8N_ENABLED_MODULES`.
 - To disable a module (skip it on instance startup), use the env var `N8N_DISABLED_MODULES`.
-- Some modules are **default modules** so they are always enabled unless specifically disabled. To enable a module by default, add it [here](https://github.com/aura-io/aura/blob/c0360e52afe9db37d4dd6e00955fa42b0c851904/packages/%40aura/backend-common/src/modules/module-registry.ts#L26).
+- Some modules are **default modules** so they are always enabled unless specifically disabled. To enable a module by default, add it [here](https://github.com/aura/blob/c0360e52afe9db37d4dd6e00955fa42b0c851904/packages/%40aura/backend-common/src/modules/module-registry.ts#L26).
 
 Modules that are under a license flag are automatically skipped on startup if the instance is not licensed to use the feature.
 
@@ -100,7 +100,7 @@ The entrypoint is responsible for providing:
 - **shutdown logic**, e.g. in insights, stop compaction timers,
 - **database entities** to register with `typeorm`, e.g. in insights, the three database entities `InsightsMetadata`, `InsightsByPeriod` and `InsightsRaw`
 - **settings** to send to the client for adjusting the UI, e.g. in insights, `{ summary: true, dashboard: false }`
-- **context** to merge an object into the workflow execution context `WorkflowExecuteAdditionalData`. This allows you to make module functionality available to `core`, namespaced under the module name. For now, you will also need to manually [update the type](https://github.com/aura-io/aura/blob/master/packages/core/src/execution-engine/index.ts#L7) of `WorkflowExecuteAdditionalData` to reflect the resulting context.
+- **context** to merge an object into the workflow execution context `WorkflowExecuteAdditionalData`. This allows you to make module functionality available to `core`, namespaced under the module name. For now, you will also need to manually [update the type](https://github.com/aura/blob/master/packages/core/src/execution-engine/index.ts#L7) of `WorkflowExecuteAdditionalData` to reflect the resulting context.
 
 A module entrypoint may or may not need to implement all of these methods.
 

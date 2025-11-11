@@ -8,7 +8,7 @@ export const NoUntypedConfigClassFieldRule = ESLintUtils.RuleCreator.withoutDocs
 		},
 		messages: {
 			noUntypedConfigClassField:
-				'Class field must have an explicit type annotation, e.g. `field: type = value`. See: https://github.com/aura-io/aura/pull/10433',
+				'Class field must have an explicit type annotation, e.g. `field: type = value`. See: https://github.com/aura/pull/10433',
 		},
 		schema: [],
 	},

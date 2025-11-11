@@ -93,7 +93,7 @@ describe('ActiveWorkflowManager', () => {
 			});
 
 			test('should return `true` for `init`', () => {
-				// ensure webhooks are populated on init: https://github.com/aura-io/aura/pull/8830
+				// ensure webhooks are populated on init: https://github.com/aura/pull/8830
 				const result = activeWorkflowManager.shouldAddWebhooks('init');
 				expect(result).toBe(true);
 			});

@@ -850,7 +850,7 @@ export class ActiveWorkflowManager {
 	 * @param {string} workflowId The id of the workflow to deactivate
 	 */
 	// TODO: this should happen in a transaction
-	// maybe, see: https://github.com/aura-io/aura/pull/8904#discussion_r1530150510
+	// maybe, see: https://github.com/aura/pull/8904#discussion_r1530150510
 	async remove(workflowId: WorkflowId) {
 		if (this.instanceSettings.isMultiMain) {
 			try {

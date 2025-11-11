@@ -27,7 +27,7 @@ export const pushFields: INodeProperties[] = [
 				name: 'targetRepository',
 				type: 'string',
 				default: '',
-				placeholder: 'https://github.com/aura-io/aura',
+				placeholder: 'https://github.com/aura',
 				description: 'The URL or path of the repository to push to',
 			},
 		],

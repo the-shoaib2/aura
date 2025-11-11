@@ -70,6 +70,6 @@ ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
 
 LABEL org.opencontainers.image.title="aura" \
       org.opencontainers.image.description="Workflow Automation Tool" \
-      org.opencontainers.image.source="https://github.com/aura-io/aura" \
+      org.opencontainers.image.source="https://github.com/aura" \
       org.opencontainers.image.url="https://aura.io" \
       org.opencontainers.image.version=${aura_VERSION}

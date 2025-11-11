@@ -11,7 +11,7 @@ export const cloneFields: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'https://github.com/aura-io/aura',
+		placeholder: 'https://github.com/aura',
 		description: 'The URL or path of the repository to clone',
 		required: true,
 	},

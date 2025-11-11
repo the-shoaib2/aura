@@ -293,12 +293,12 @@ npm run dev --custom-user-folder /path/to/custom/folder
 - **[Node Development Guide](https://docs.aura.io/integrations/creating-nodes/)** - Complete documentation
 - **[API Reference](https://docs.aura.io/integrations/creating-nodes/build/reference/)** - Technical specifications
 - **[Community Forum](https://community.aura.io)** - Get help and share your nodes
-- **[Node Examples](https://github.com/aura-io/aura/tree/master/packages/nodes-base/nodes)** - Official node implementations
+- **[Node Examples](https://github.com/aura/tree/master/packages/nodes-base/nodes)** - Official node implementations
 - **[@aura/node-cli](https://www.npmjs.com/package/@aura/node-cli)** - The underlying CLI tool
 
 ## 🤝 Contributing
 
-Found a bug or want to contribute? Check out the [aura repository](https://github.com/aura-io/aura) and join our community!
+Found a bug or want to contribute? Check out the [aura repository](https://github.com/aura) and join our community!
 
 ---
 

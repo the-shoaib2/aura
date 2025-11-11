@@ -121,7 +121,7 @@ docker run -it --rm \
  docker.aura.io/auraio/aura
 ```
 
-A full working setup with docker-compose can be found [here](https://github.com/aura-io/aura-hosting/blob/main/docker-compose/withPostgres/README.md).
+A full working setup with docker-compose can be found [here](https://github.com/aura-hosting/blob/main/docker-compose/withPostgres/README.md).
 
 ## Passing sensitive data using files
 
@@ -142,7 +142,7 @@ Example server setups for a range of cloud providers and scenarios can be found 
 
 ## Updating
 
-Before you upgrade to the latest version make sure to check here if there are any breaking changes which may affect you: [Breaking Changes](https://github.com/aura-io/aura/blob/master/packages/cli/BREAKING-CHANGES.md)
+Before you upgrade to the latest version make sure to check here if there are any breaking changes which may affect you: [Breaking Changes](https://github.com/aura/blob/master/packages/cli/BREAKING-CHANGES.md)
 
 From your Docker Desktop, navigate to the Images tab and select Pull from the context menu to download the latest aura image.
 
@@ -272,4 +272,4 @@ If you are interested in working for aura and so shape the future of the project
 
 ## License
 
-You can find the license information [here](https://github.com/aura-io/aura/blob/master/README.md#license).
+You can find the license information [here](https://github.com/aura/blob/master/README.md#license).

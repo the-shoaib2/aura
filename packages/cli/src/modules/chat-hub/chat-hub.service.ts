@@ -223,7 +223,7 @@ export class ChatHubService {
 		const results = await this.nodeParametersService.getOptionsViaLoadOptions(
 			{
 				// From Gemini node
-				// https://github.com/aura-io/aura/blob/master/packages/%40aura/nodes-langchain/nodes/llms/LmChatGoogleGemini/LmChatGoogleGemini.node.ts#L75
+				// https://github.com/aura/blob/master/packages/%40aura/nodes-langchain/nodes/llms/LmChatGoogleGemini/LmChatGoogleGemini.node.ts#L75
 				routing: {
 					request: {
 						method: 'GET',

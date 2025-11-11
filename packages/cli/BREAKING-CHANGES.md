@@ -72,7 +72,7 @@ If you've been ingesting route metrics from your aura instance (version 1.81.0 a
 how the `last_activity` metric has affected your Prometheus instance and potentially clean up the old data. Future
 metrics will also be served in a different format, which needs to be taken into account.
 
-If you are using `iframe`, `video`, or `source` tags with attributes beyond those listed [here](https://github.com/aura-io/aura/blob/master/packages/nodes-base/nodes/Form/utils/utils.ts#L61-L71) or are using schemes which are neither `http` or `https`, you will need to update your node or workflow.
+If you are using `iframe`, `video`, or `source` tags with attributes beyond those listed [here](https://github.com/aura/blob/master/packages/nodes-base/nodes/Form/utils/utils.ts#L61-L71) or are using schemes which are neither `http` or `https`, you will need to update your node or workflow.
 
 ### What changed?
 
@@ -316,7 +316,7 @@ If using these flags, remove them from your settings and be mindful of the new b
 
 ### What changed?
 
-The env var `N8N_PERSISTED_BINARY_DATA_TTL` no longer has any effect and can be removed. This legacy flag was originally introduced to support ephemeral executions (see [details](https://github.com/aura-io/aura/pull/7046)), which are no longer supported.
+The env var `N8N_PERSISTED_BINARY_DATA_TTL` no longer has any effect and can be removed. This legacy flag was originally introduced to support ephemeral executions (see [details](https://github.com/aura/pull/7046)), which are no longer supported.
 
 ### When is action necessary?
 

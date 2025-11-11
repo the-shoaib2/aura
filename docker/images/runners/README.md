@@ -1,7 +1,7 @@
 # aura - Task runners (`auraio/runners`) - (PREVIEW)
 
-`auraio/runners` image includes [JavaScript runner](https://github.com/aura-io/aura/tree/master/packages/%40aura/task-runner),
-[Python runner](https://github.com/aura-io/aura/tree/master/packages/%40aura/task-runner-python) and
+`auraio/runners` image includes [JavaScript runner](https://github.com/aura/tree/master/packages/%40aura/task-runner),
+[Python runner](https://github.com/aura/tree/master/packages/%40aura/task-runner-python) and
 [Task runner launcher](https://github.com/aura-io/task-runner-launcher) that connects to a Task Broker
 running on the main aura instance when running in `external` mode.  This image is to be launched as a sidecar
 container to the main aura container.

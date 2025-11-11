@@ -80,7 +80,7 @@ export const repoNameSelect: INodeProperties = {
 			displayName: 'Link',
 			name: 'url',
 			type: 'string',
-			placeholder: 'e.g. https://github.com/aura-io/aura',
+			placeholder: 'e.g. https://github.com/aura',
 			extractValue: {
 				type: 'regex',
 				regex: 'https:\\/\\/github.com\\/(?:[-_0-9a-zA-Z]+)\\/([-_.0-9a-zA-Z]+)',

@@ -39,7 +39,7 @@ describe('CommunityNodeInfo - links & bugs URL', () => {
 			ok: true,
 			json: async () => ({
 				bugs: {
-					url: 'https://github.com/aura-io/aura/issues',
+					url: 'https://github.com/aura/issues',
 				},
 			}),
 		});
